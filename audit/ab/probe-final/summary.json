@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "suite": "combo-ab-10-pairedcases",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "timeout_seconds": 180,
+  "max_parallel": 2,
+  "effective_sandbox": "danger-full-access",
+  "environment_note": "Identical bundled PowerShell runtime and isolated full-access fixture execution for both arms.",
+  "global_combo_path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\SKILL.md",
+  "variants": "D:\\combo-ab-evals\\staged-20260909-202834",
+  "discovery": {
+    "A": {
+      "returncode": 0,
+      "path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\probe-final\\discovery\\A.json",
+      "stderr": "",
+      "status": "passed"
+    },
+    "B": {
+      "returncode": 0,
+      "path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\probe-final\\discovery\\B.json",
+      "stderr": "",
+      "status": "passed"
+    }
+  },
+  "pair_order": [
+    {
+      "case_id": "bug-zero",
+      "first_arm": "A"
+    }
+  ],
+  "results": [
+    {
+      "case_id": "bug-zero",
+      "variant": "A",
+      "pair_index": 0,
+      "first_arm": "A",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 158.505,
+      "final_answer": "แก้แล้วใน [src/quantity.py](D:/combo-ab-evals/combo-ab-run-tmjw_vry/combo-ab-bug-zero-A-pu6v0jue/src/quantity.py:6) โดยใช้ `value is None` แทนการตรวจ truthiness\n\nผลตรวจสอบ:\n\n- `0` ยังคงเป็น `0`\n- `None` ยังคงคืนค่า default `1`\n- Tests: `3 passed`\n- Ruff และ Pyright ของไฟล์ที่แก้ผ่าน\n\nพอแล้วสำหรับตอนนี้ครับ",
+      "actual_fixture_files_read": [
+        "src/quantity.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/quantity.py",
+          "change": "modified",
+          "before_sha256": "d076fd6e17d4be6ff8e5d230cc46508ea65fbd458f300f3ac38453bdfcc6f5bc",
+          "after_sha256": "1c67d2e051ee242ce7cdd88c2c46d9efddf6954ff807b3e54e34b82ef6c018cb",
+          "before_bytes": 250,
+          "after_bytes": 177
+        }
+      ],
+      "tool_count": 36,
+      "usage": {
+        "input_tokens": 741209,
+        "cached_input_tokens": 698112,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4929,
+        "reasoning_output_tokens": 2637
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\probe-final\\arms\\A\\bug-zero\\result.json"
+    },
+    {
+      "case_id": "bug-zero",
+      "variant": "B",
+      "pair_index": 0,
+      "first_arm": "A",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 122.479,
+      "final_answer": "แก้เรียบร้อยใน [src/quantity.py](D:/combo-ab-evals/combo-ab-run-tmjw_vry/combo-ab-bug-zero-B-uglk4h2n/src/quantity.py:6)\n\n- `0` ยังคงเป็น `0`\n- `None` ยังคงใช้ค่า default `1`\n- focused tests ผ่าน `3 passed`\n- `ruff` และ `pyright` ของ parser ผ่านเรียบร้อย\n\nมี `ruff` issue เดิม 1 รายการในไฟล์ test แต่ไม่ได้แตะตาม scope ครับ",
+      "actual_fixture_files_read": [
+        "src/quantity.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/quantity.py",
+          "change": "modified",
+          "before_sha256": "d076fd6e17d4be6ff8e5d230cc46508ea65fbd458f300f3ac38453bdfcc6f5bc",
+          "after_sha256": "7b82e8bed5d68d42c3ff97bd1625d8cdd6c6a697b30d0ea8002b0459e1ae9f5d",
+          "before_bytes": 250,
+          "after_bytes": 213
+        }
+      ],
+      "tool_count": 33,
+      "usage": {
+        "input_tokens": 277836,
+        "cached_input_tokens": 228608,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3975,
+        "reasoning_output_tokens": 2026
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\probe-final\\arms\\B\\bug-zero\\result.json"
+    }
+  ],
+  "result_files": [
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\probe-final\\arms\\A\\bug-zero\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\probe-final\\arms\\B\\bug-zero\\result.json"
+  ],
+  "passed": 2,
+  "environmental": 0,
+  "task_failures": 0,
+  "coverage_note": "Ten matched cases, paired by case with alternating first arm. Automatic checks support root semantic grading; route labels are not scored."
+}

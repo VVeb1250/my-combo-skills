@@ -1,0 +1,8 @@
+Karpathy source-pack license notice
+
+At the pinned commit, the source checkout's README identifies the project
+license as MIT. The checkout has no standalone LICENSE file and supplies no
+copyright-holder text. Preserve this notice with the provenance map and verify
+the terms before redistributing adapted material.
+
+Source: https://github.com/multica-ai/andrej-karpathy-skills/blob/2c606141936f1eeef17fa3043a72095b4765b9c2/README.md

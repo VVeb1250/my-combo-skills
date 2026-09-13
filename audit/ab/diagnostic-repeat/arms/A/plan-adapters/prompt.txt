@@ -1,0 +1,1 @@
+Plan only a retryable notification gateway for this small codebase. Inspect the two existing production adapters and their callers, then give an actionable implementation plan that preserves the seam those adapters already use. Do not implement the gateway, create files, or modify anything.

@@ -1,0 +1,18 @@
+This is a read-only skill setup smoke check. Do not edit files, run services,
+invoke memory, or delegate. Use the installed guidance you would naturally select
+for the task, and actually read the relevant skill file(s) before your review.
+Do not inspect unrelated project files or write any artifacts.
+
+Review this proposed Python endpoint for correctness and security. Its requirement
+is that a logged-in customer can view only their own order, and quantity zero must
+remain a valid value. Assume get_order returns an order object with owner_id and
+quantity. login_required is valid and enforced. The requested implementation is:
+
+@login_required
+def show_order(current_user, order_id):
+    order = get_order(order_id)
+    quantity = order.quantity or 1
+    return {"id": order.id, "quantity": quantity}
+
+No implementation is requested. Report concrete findings and the smallest repair.
+At the end identify the skill names you actually read. Keep the answer concise.

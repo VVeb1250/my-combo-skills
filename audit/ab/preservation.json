@@ -1,0 +1,10 @@
+{
+  "receipt": "D:\\0_person-project\\my-combo-skills\\backups\\20260909-163949-897900\\receipt.json",
+  "agents_outside_combo_byte_identical": true,
+  "agents_outside_combo_sha256": "beda5d8efae5c21d25af9dd95cf251da7ac813e6565f204895704d346589a7c2",
+  "unowned_config_semantically_identical": true,
+  "unowned_changed_keys": [],
+  "main_model_unchanged": true,
+  "receipt_paths": 571,
+  "scope": "Compares Preferences/Memory text and non-owned config against receipt backups; no secret values emitted."
+}

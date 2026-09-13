@@ -1,0 +1,33 @@
+{
+  "removed_count": 23,
+  "removed_project_keys": [
+    "d:\\combo-ab-evals\\combo-ab-run-tmjw_vry\\combo-ab-bug-zero-a-pu6v0jue",
+    "d:\\combo-ab-evals\\combo-ab-run-tmjw_vry\\combo-ab-bug-zero-b-uglk4h2n",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-inventory-feature-b-a3b5o_tz",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-inventory-feature-a-88j27_lq",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-security-review-a-h1h25uxx",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-plan-adapters-b-ia63ag7b",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-plan-adapters-a-biubtu50",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-trivial-label-b-50lkcy11",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-trivial-label-a-2jkiibo9",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-translation-negative-b-zn4jqndk",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-translation-negative-a-r04ea4mh",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-thai-diagnosis-b-1snbsf7k",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-thai-diagnosis-a-iapwe_st",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-thai-delivery-b-egdb0jzo",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-thai-delivery-a-3u67cnxa",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-content-repurpose-b-ddcis696",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-content-repurpose-a-wwzfy13t",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-learning-lesson-a-b9msb3mr",
+    "d:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-learning-lesson-b-27yclyxj",
+    "d:\\combo-ab-evals\\combo-ab-run-wcq53nyr\\combo-ab-plan-adapters-b-33i4kcjt",
+    "d:\\combo-ab-evals\\combo-ab-run-wcq53nyr\\combo-ab-plan-adapters-a-39_ilw_s",
+    "d:\\combo-ab-evals\\combo-ab-run-wcq53nyr\\combo-ab-thai-delivery-b-mabig3ir",
+    "d:\\combo-ab-evals\\combo-ab-run-wcq53nyr\\combo-ab-thai-delivery-a-rk2zp9ox"
+  ],
+  "before_sha256": "0787b119d04fe9e10a7d43fe36bcbd4998e9f7f43b74ef010f702bb9a06ce3c1",
+  "after_sha256": "982ef07166191eac9e9ee9a7ca8f102f88e905aee751b1d67de97891e07f8d04",
+  "unrelated_config_semantically_identical": true,
+  "applied": true,
+  "backup": "D:\\0_person-project\\my-combo-skills\\backups\\ab-trust-cleanup\\0787b119d04fe9e10a7d43fe36bcbd4998e9f7f43b74ef010f702bb9a06ce3c1\\config.toml"
+}

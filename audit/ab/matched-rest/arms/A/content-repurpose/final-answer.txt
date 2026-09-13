@@ -1,0 +1,42 @@
+ร่างด้านล่างเป็นภาษาอังกฤษตาม brief และ voice notes โดย LinkedIn เป็นฉบับหลัก ทุกฉบับคง product facts ครบ และไม่มีการเผยแพร่ ส่งอีเมล หรือแก้ไขไฟล์
+
+### LinkedIn
+
+For commuters, the useful details are straightforward.
+
+Northstar is a reusable stainless-steel travel thermos that keeps drinks hot for 12 hours and cold for 24 hours. It has a leak-resistant lid and is available in slate blue and cream.
+
+Launch price: 32 USD.
+
+Learn more about Northstar: [link]
+
+### Email
+
+Subject: Northstar, a travel thermos for commuters
+
+Hi [Name],
+
+Northstar is a reusable stainless-steel travel thermos for commuters.
+
+It keeps drinks hot for 12 hours and cold for 24 hours. The lid is leak-resistant, and the thermos is available in slate blue and cream.
+
+Launch price: 32 USD.
+
+Learn more about Northstar: [link]
+
+Best,  
+[Brand name]
+
+### Instagram
+
+Northstar is made for commuters.
+
+A reusable stainless-steel travel thermos that keeps drinks hot for 12 hours and cold for 24 hours.
+
+- Leak-resistant lid
+- Available in slate blue and cream
+- Launch price: 32 USD
+
+Learn more about Northstar: [link]
+
+ปรับโครงสร้างให้เหมาะกับแต่ละช่องทางแล้ว โดย LinkedIn ให้บริบทสั้นๆ, email จัดข้อมูลให้อ่านเร็ว, และ Instagram ใช้รูปแบบสแกนง่าย ไม่มี testimonials หรือ claims ด้านสุขภาพและสิ่งแวดล้อมที่ไม่ได้อยู่ใน brief.

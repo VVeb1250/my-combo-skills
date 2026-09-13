@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "profile": "codex-combo",
+  "sources": {
+    "karpathy": { "decision": "ADAPT", "destination": "skills/combo/practices", "reason": "Intent, observable success, causal scope" },
+    "ponytail": { "decision": "ADAPT", "destination": "skills/combo/practices/simplicity.md", "reason": "Remove unnecessary complexity while retaining requirements and safety" },
+    "matt": { "decision": "ADAPT", "destination": "skills/combo/workflows", "reason": "Route planning, delivery, debug, review and verification without ceremonies" },
+    "ecc": { "decision": "ADAPT", "destination": "skills/combo/references/specialists", "reason": "Retain concrete debugging, build, E2E, security and language mechanics" }
+  },
+  "package": {
+    "entrypoints": ["skills/combo/SKILL.md", "skills/combo-maintain/SKILL.md"],
+    "workflows": ["deliver", "debug", "plan", "review", "verify", "investigate"],
+    "specialists": ["api", "react-typescript", "python", "rust", "sql", "mcp", "security", "build", "e2e", "language-database"],
+    "relative_references_only": true
+  },
+  "retired": {
+    "v0_entrypoints": ["codex-library", "codex-research", "codex-setup", "ecc-api-design", "ecc-build-fix", "ecc-database", "ecc-e2e", "ecc-language-review", "ecc-mcp", "ecc-python", "ecc-react", "ecc-rust", "ecc-security-review", "matt-plan", "matt-review", "matt-tdd", "ponytail-review"],
+    "broad_legacy": ["ask-matt", "debug-by-logging", "codex-agent-harness", "graphify-windows", "domain-modeling", "prototype", "code-review", "codebase-design", "diagnose", "diagnosing-bugs", "research", "tdd", "to-prd", "to-spec", "to-issues", "to-tickets", "triage", "wayfinder", "wizard"]
+  },
+  "preserved_utilities": ["api-check", "quality-gate", "test-affected", "secure-scan", "struct-search", "repo-pack"],
+  "source_commits": "See sources.lock.json; source lock is provenance, not a runtime dependency."
+}

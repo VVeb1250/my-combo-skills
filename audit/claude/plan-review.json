@@ -1,0 +1,32 @@
+{
+  "changed_paths": 599,
+  "entries": [
+    "combo",
+    "combo-business",
+    "combo-content",
+    "combo-debug",
+    "combo-deliver",
+    "combo-investigate",
+    "combo-learning",
+    "combo-maintain",
+    "combo-media",
+    "combo-plan",
+    "combo-productivity",
+    "combo-research",
+    "combo-review",
+    "combo-verify"
+  ],
+  "outside_policy_identical": true,
+  "unowned_settings_identical": true,
+  "disabled_plugins": [
+    "ecc-hubs@bundle",
+    "ecc@ecc",
+    "mattpocock-skills@mattpocock"
+  ],
+  "skill_overrides": {
+    "multi-model-orchestrator": "off"
+  },
+  "main_model": "sonnet",
+  "effort": "high",
+  "target": "C:\\Users\\VVeb1250\\.claude"
+}

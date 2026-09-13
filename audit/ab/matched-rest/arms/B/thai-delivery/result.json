@@ -1,0 +1,225 @@
+{
+  "case_id": "thai-delivery",
+  "variant": "B",
+  "pair_index": 7,
+  "first_arm": "B",
+  "fixture": "thai-delivery",
+  "requested_sandbox": "workspace-write",
+  "effective_sandbox": "danger-full-access",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "command": [
+    "C:\\Users\\VVeb1250\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+    "exec",
+    "--json",
+    "--ephemeral",
+    "--color",
+    "never",
+    "--disable",
+    "hooks",
+    "--disable",
+    "multi_agent",
+    "--disable",
+    "memories",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-5.6-luna",
+    "-c",
+    "model_reasoning_effort=max",
+    "-c",
+    "approval_policy=\"never\"",
+    "-c",
+    "mcp_servers={}",
+    "-c",
+    "skills.config=[{path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\ask-matt\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\claude-handoff\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\code-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\codebase-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\debug-by-logging\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnose\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnosing-bugs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\domain-modeling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\git-guardrails-claude-code\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\graphify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grill-with-docs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grilling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\implement\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\improve-codebase-architecture\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\loop-me\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\migrate-to-shoehorn\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\mistake-learning\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\multi-model-orchestrator\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\prototype\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\setup-matt-pocock-skills\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\source-command-resume\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-issues\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-prd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-questionnaire\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-spec\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-tickets\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\triage\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wayfinder\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wizard\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\write-a-skill\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-agent-harness\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-build\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-library\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-plan-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-setup\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-verify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-api-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-build-fix\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-database\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-e2e\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-language-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-mcp\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-python\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-react\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-rust\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-security-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-plan\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ponytail-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\combo\\\\SKILL.md\", enabled = false}]",
+    "-c",
+    "projects.\"D:\\\\combo-ab-evals\\\\combo-ab-run-siyimloi\\\\combo-ab-thai-delivery-B-egdb0jzo\".trust_level=\"trusted\"",
+    "-s",
+    "danger-full-access",
+    "-C",
+    "D:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-thai-delivery-B-egdb0jzo",
+    "-c",
+    "mcp_servers.codegraph.enabled=false",
+    "-c",
+    "mcp_servers.context7.enabled=false",
+    "-c",
+    "mcp_servers.cua_repl.enabled=false",
+    "-c",
+    "mcp_servers.exa.enabled=false",
+    "-c",
+    "mcp_servers.fetch.enabled=false",
+    "-c",
+    "mcp_servers.github.enabled=false",
+    "-c",
+    "mcp_servers.memory.enabled=false",
+    "-c",
+    "mcp_servers.node_repl.enabled=false",
+    "-c",
+    "mcp_servers.playwright.enabled=false",
+    "-c",
+    "mcp_servers.sequential-thinking.enabled=false"
+  ],
+  "workdir": "D:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-thai-delivery-B-egdb0jzo",
+  "returncode": 0,
+  "timed_out": false,
+  "process_error": null,
+  "duration_seconds": 203.491,
+  "events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\events.jsonl",
+  "stderr_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\stderr.txt",
+  "final_answer_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\final-answer.txt",
+  "final_answer": "เสร็จครบวงจรแล้ว\n\n- ปรับ `inventory_summary` ใน [src/inventory.py](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-delivery-B-egdb0jzo/src/inventory.py:12) ให้รับ `Iterable`, รองรับ generator และเพิ่ม `include_discontinued`\n- ตัด stock ที่ `<= 0` เสมอ\n- รวม discontinued เฉพาะเมื่อ `include_discontinued=True` และ stock เป็นบวก\n- คงรูปแบบผลลัพธ์เดิม `{count, units}`\n- เพิ่ม regression tests ใน [tests/test_inventory.py](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-delivery-B-egdb0jzo/tests/test_inventory.py:1)\n\nผลตรวจสอบ:\n\n- `pytest`: 3 passed\n- Ruff และ format ใน `src`/`tests`: ผ่าน\n- Pyright: 0 errors\n\nRoot-wide Ruff ยังพบ baseline ที่ไม่เกี่ยวข้องใน `.agents/skills/.../network_graph_scene.py` และ skill references จึงไม่ได้แก้ไขไฟล์นอก scope งานนี้ พอแล้วสำหรับตอนนี้ครับ",
+  "parse_errors": 0,
+  "tool_count": 24,
+  "tool_events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\tool-events.json",
+  "actual_references": [
+    "combo",
+    "combo/practices/build",
+    "combo/practices/simplicity",
+    "combo/practices/tests",
+    "combo/workflows/deliver"
+  ],
+  "reference_evidence": [
+    {
+      "item_id": "item_1",
+      "references": [
+        "combo",
+        "combo/workflows/deliver"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/SKILL.md; Get-Content -Raw .agents/skills/combo-deliver/SKILL.md'",
+      "output_bytes": 7451,
+      "output_sha256": "8d8f982f3d72b9e6346be5ddf3649457305f23415b18e50d2be2f3aae4cd8aeb"
+    },
+    {
+      "item_id": "item_3",
+      "references": [
+        "combo/practices/build",
+        "combo/practices/simplicity",
+        "combo/practices/tests",
+        "combo/workflows/deliver"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/workflows/deliver.md; Get-Content -Raw .agents/skills/combo/practices/tests.md; Get-Content -Raw .agents/skills/combo/practices/build.md; Get-Content -Raw .agents/skills/combo/practices/simplicity.md; Get-Content -Raw .agents/skills/combo/specialists/INDEX.md'",
+      "output_bytes": 11190,
+      "output_sha256": "6d499050cedfd001fbb4955b754eca73d43553dca0176684ad1abb17f177a76d"
+    },
+    {
+      "item_id": "item_12",
+      "references": [
+        "combo"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'python -m pytest -q\nruff check . --statistics\nruff format --check .\npyright src/inventory.py'",
+      "output_bytes": 171691,
+      "output_sha256": "d76de5a33ee09f8b445b0034918f38040718c5f27137d24f6ca20e2ef293cd34"
+    },
+    {
+      "item_id": "item_17",
+      "references": [
+        "combo"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'python --version\nruff check . --output-format concise\nGet-Content -Raw src/inventory.py\nGet-Content -Raw tests/test_inventory.py\nGet-ChildItem -Recurse -File src,tests | Select-Object FullName,Length,LastWriteTime'",
+      "output_bytes": 2547,
+      "output_sha256": "fcc9f470305576840ffd01975b94307db51200dc893faf5f9475f040cc8fd266"
+    }
+  ],
+  "actual_fixture_files_read": [
+    "src/inventory.py"
+  ],
+  "fixture_read_evidence": [
+    {
+      "item_id": "item_4",
+      "files": [
+        "src/inventory.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/specialists/python.md; Get-ChildItem -Force | Select-Object Mode,Length,LastWriteTime,Name; git status --short; rg --files'",
+      "output_bytes": 3385,
+      "output_sha256": "811353001bf2c3206bf332be6848c6c2b77f1189380eaddfd462f102e3d77eeb"
+    },
+    {
+      "item_id": "item_6",
+      "files": [
+        "src/inventory.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content -Raw src/inventory.py; Get-Content -Raw tests/test_inventory.py; if (Test-Path pyproject.toml) { Get-Content -Raw pyproject.toml }; if (Test-Path pytest.ini) { Get-Content -Raw pytest.ini }; if (Test-Path setup.cfg) { Get-Content -Raw setup.cfg }; if (Test-Path requirements.txt) { Get-Content -Raw requirements.txt }'",
+      "output_bytes": 703,
+      "output_sha256": "a540acd4fa471c0553b8e6301197a8a7a0c6fce834465becaa75ce7e152e42a1"
+    },
+    {
+      "item_id": "item_12",
+      "files": [
+        "src/inventory.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'python -m pytest -q\nruff check . --statistics\nruff format --check .\npyright src/inventory.py'",
+      "output_bytes": 171691,
+      "output_sha256": "d76de5a33ee09f8b445b0034918f38040718c5f27137d24f6ca20e2ef293cd34"
+    },
+    {
+      "item_id": "item_13",
+      "files": [
+        "src/inventory.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'ruff check src tests --statistics\nruff format --check src tests\npyright src/inventory.py tests/test_inventory.py'",
+      "output_bytes": 441,
+      "output_sha256": "7d208d998c3b84122b7af113f7ac83559ad11e41694b344940f18630a5c1cfba"
+    },
+    {
+      "item_id": "item_15",
+      "files": [
+        "src/inventory.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'python -m pytest -q\nruff check src tests --statistics\nruff format --check src tests\npyright src/inventory.py tests/test_inventory.py'",
+      "output_bytes": 163,
+      "output_sha256": "26766686beec6038960fc575c96ef250196e83c1ad70010b1e5c0edbabbd0735"
+    },
+    {
+      "item_id": "item_17",
+      "files": [
+        "src/inventory.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'python --version\nruff check . --output-format concise\nGet-Content -Raw src/inventory.py\nGet-Content -Raw tests/test_inventory.py\nGet-ChildItem -Recurse -File src,tests | Select-Object FullName,Length,LastWriteTime'",
+      "output_bytes": 2547,
+      "output_sha256": "fcc9f470305576840ffd01975b94307db51200dc893faf5f9475f040cc8fd266"
+    }
+  ],
+  "changed_files": [
+    {
+      "path": "src/inventory.py",
+      "change": "modified",
+      "before_sha256": "92ce279e17ca3c1ca633be12b90b9bf2ba7db96ffbf897fd641e1b074ccabfeb",
+      "after_sha256": "537c749c1080735e18cf8547fb799bd71d694c38d04ab2f04f8510c2b6afe17d",
+      "before_bytes": 482,
+      "after_bytes": 798
+    },
+    {
+      "path": "tests/test_inventory.py",
+      "change": "modified",
+      "before_sha256": "6eb8f6815e157c208cd163badfcae7fb279b9a8457af23af2b0e7fb61b5f1228",
+      "after_sha256": "326f9ee9745cc14e68ddd5aeb1de4a2d93cae426f90fbeccfdbe6eadbd7e0e3d",
+      "before_bytes": 217,
+      "after_bytes": 906
+    }
+  ],
+  "before_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\before-hashes.json",
+  "after_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\after-hashes.json",
+  "acceptance_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\acceptance.json",
+  "acceptance": {
+    "before": {
+      "passed": false,
+      "returncode": 1
+    },
+    "after": {
+      "passed": true,
+      "returncode": 0
+    }
+  },
+  "usage": {
+    "input_tokens": 479508,
+    "cached_input_tokens": 437248,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 7363,
+    "reasoning_output_tokens": 4387
+  },
+  "write_like_commands": [],
+  "environment_failures": [],
+  "task_failures": [],
+  "classification": "passed",
+  "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\result.json"
+}

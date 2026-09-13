@@ -1,0 +1,28 @@
+พบ 2 findings ที่ต้องแก้ก่อนใช้
+
+1. **High, Broken object-level authorization**  
+   `src/orders.py:18-22`
+
+   `current_user` ไม่ถูกใช้ตรวจว่า order เป็นของผู้ใช้หรือไม่ ผู้ใช้ที่ล็อกอินแล้วจึงส่ง `order_id` ของผู้อื่นและได้รับข้อมูล order ได้
+
+   การแก้ที่เล็กที่สุดคือเพิ่มหลัง `get_order`:
+
+   ```python
+   if current_user.id != order.owner_id:
+       raise PermissionError
+   ```
+
+   ควร map เป็น not-found ที่ HTTP boundary หากไม่ต้องการเปิดเผยว่า order มีอยู่
+
+2. **Medium, ค่า quantity ศูนย์ถูกเปลี่ยนผิด**  
+   `src/orders.py:21`
+
+   `order.quantity or 1` เปลี่ยน `0` เป็น `1` ทั้งที่ศูนย์เป็นค่าที่ถูกต้อง โดย `get_order` คืน `quantity=0` อยู่แล้ว
+
+   แก้เป็น:
+
+   ```python
+   quantity = order.quantity if order.quantity is not None else 1
+   ```
+
+ตรวจด้วยการอ่าน source แบบ read-only เท่านั้น ไม่ได้แก้ไฟล์ เพิ่ม test หรือรัน service. **ยังต้องแก้ก่อนใช้**

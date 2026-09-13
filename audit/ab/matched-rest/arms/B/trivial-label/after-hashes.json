@@ -1,0 +1,10 @@
+{
+  "AGENTS.md": {
+    "sha256": "d1cf4dbe039ed81175239ea3ad64e06b6ade700689b2033a869ec11c98edf1eb",
+    "bytes": 861
+  },
+  "src/ui.py": {
+    "sha256": "44c54329157231d0f2607ce62ce0648317f9f8cbe7c422afb98b73ebe6783e04",
+    "bytes": 99
+  }
+}

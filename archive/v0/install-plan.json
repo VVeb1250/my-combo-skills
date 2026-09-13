@@ -1,0 +1,260 @@
+[
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\config.toml",
+    "before_sha256": "31d35856dfc8aefe26f8100a56e04bb5aa993eae1c9f9bb5964ac9f97d304cb6",
+    "after_sha256": "6d900caad0df283b891e1615b51c1426bfc305d4bbd6e3d29a7328713401487c",
+    "bytes_after": 45161
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\AGENTS.md",
+    "before_sha256": "81e744f596d3982ab467ab6818b8fecc8d6368af672fa83181b5f81569dc9a75",
+    "after_sha256": "355debbaf37254b53055da317a0c0ca4bf161bd605a10e9f4fd83ee0e6c23d20",
+    "bytes_after": 7338
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-library\\SKILL.md",
+    "before_sha256": "3aacc7c2622fba3821b9eb93f55572d02b0c8666e854634ee4a2feebed7b4c7e",
+    "after_sha256": "0a11432d87a96302e8fc7c08493a39c20f899c232b5465350459790953432b82",
+    "bytes_after": 1240
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-research\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "c572e85f47d902038bf762b0e5fe5337ab1b0bac42a1f34af43c65e97c3eb24f",
+    "bytes_after": 1221
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-setup\\SKILL.md",
+    "before_sha256": "4a03a78447b0b07c7094684a64d595fb3add515c9fae673ff4d892871e6479a0",
+    "after_sha256": "52414fada6456c52a700ca5f9f155f35c20bb6f267e9ef3848d4eb8f657acde4",
+    "bytes_after": 1369
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-api-design\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "373b66e64de631bf91f369e689a9a4650dced3c67dec34be5f5a483d0902ed97",
+    "bytes_after": 1294
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-build-fix\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "61dd135748a39c5fcece5b31d7112fc250e79825a6dd077781f6609b30f5061a",
+    "bytes_after": 1578
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-database\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "869ec29adf9fa21b6a5cf15ec866dd1c690cbe31572cdb1dc859b365f66fe24a",
+    "bytes_after": 1390
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-e2e\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "86cf781c1adca67fed2bafce6a1e0da50e285f42bebd8b0fa7c12efb98aa7542",
+    "bytes_after": 1588
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-language-review\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "9a5c7d149243fea910c525ad958e6c334940bfce32d7ad4acf8f9b6a00fdef50",
+    "bytes_after": 1795
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-mcp\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "330b5e61fea0d2ac8189142d28d3e02dafc37acb0ea05939f85fea8af6cd2f74",
+    "bytes_after": 1146
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-python\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "102594349644d805d7bcdd11b1f1a710a2da14c9c4c5f723e4121f64725179f0",
+    "bytes_after": 1133
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-react\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "8bd88be37dd43f19f507815f2fc0602f6c25dcf7bd6333bfb0395287c6ebbc5f",
+    "bytes_after": 1249
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-rust\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "3f40e419c5b2f55ce70d06998765b395a8ee341c7f3d8138225f17a7c05e0f0b",
+    "bytes_after": 1159
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-security-review\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "6b09795850526119b28fc2a9a3a0a7ccf9435eaaac210eda58c614d99ae2b6c7",
+    "bytes_after": 1753
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\matt-plan\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "7e367147fe942dca66415db146dae1aa8ab84cb62e035660538f501e31c733ca",
+    "bytes_after": 1580
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\matt-review\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "c99a2d8055adf22cad64256feb968556f3f38550cc8334e9228339ae3e3f8266",
+    "bytes_after": 1862
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\matt-tdd\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "7f6867810966f3a1cb39a4c1aefe097e0d0fdc59c369113de791551aba2057bb",
+    "bytes_after": 1843
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ponytail-review\\SKILL.md",
+    "before_sha256": null,
+    "after_sha256": "3406ef8c3c834aaf8fd81d9ecb70692e2f73bfe1ad4d6a6bd45a3c000645a1c6",
+    "bytes_after": 1291
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ponytail-review\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\matt-tdd\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\matt-review\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\matt-plan\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-security-review\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-rust\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-rust\\references\\upstream.md",
+    "before_sha256": null,
+    "after_sha256": "51379df2bd92a482309e109e5a210210842594f660cceeb2d68d18e995108edf",
+    "bytes_after": 13500
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-react\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-react\\references\\upstream.md",
+    "before_sha256": null,
+    "after_sha256": "f3208d44a5d553038c42e046cec4dc16e4a3d90a9dbf931f883a2e21919a64a9",
+    "bytes_after": 11466
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-python\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-python\\references\\upstream.md",
+    "before_sha256": null,
+    "after_sha256": "103e0130dac33a49d26705fc5a2df804980fcab6a0138d65bc7f370a987d49f6",
+    "bytes_after": 16914
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-mcp\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-mcp\\references\\upstream.md",
+    "before_sha256": null,
+    "after_sha256": "eacb07c953e0440c758e3ee7d92984d2c9128e3444005ea7ad5da7bc0201d43d",
+    "bytes_after": 4192
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-language-review\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-e2e\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-database\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-database\\references\\upstream.md",
+    "before_sha256": null,
+    "after_sha256": "9c8c391ae9e9aa87faa7ca091e1d395c97766df14080d0bfbea8a97721776163",
+    "bytes_after": 3914
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-build-fix\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-api-design\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-api-design\\references\\upstream.md",
+    "before_sha256": null,
+    "after_sha256": "bfae53167acc91caff0ff9ab73a80ee3fd92caccdfa445c88302c3bf95255156",
+    "bytes_after": 13227
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-setup\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-research\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-library\\agents\\openai.yaml",
+    "before_sha256": null,
+    "after_sha256": "d9ef3372e04c488b227009cd14ef0ed84fa4335056d48219bc6cbf8a80a970bd",
+    "bytes_after": 44
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-library\\references\\catalog.json",
+    "before_sha256": null,
+    "after_sha256": "5c62ca80a1fbbd194d32ce720259a2f6d9059565101a3939210b875c4ada2755",
+    "bytes_after": 189209
+  }
+]

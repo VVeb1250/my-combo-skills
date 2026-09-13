@@ -1,0 +1,26 @@
+[
+  {
+    "pack": "karpathy",
+    "url": "https://github.com/multica-ai/andrej-karpathy-skills.git",
+    "commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+    "fetched_at": "2026-09-08T07:36:45Z"
+  },
+  {
+    "pack": "ponytail",
+    "url": "https://github.com/DietrichGebert/ponytail.git",
+    "commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+    "fetched_at": "2026-09-08T07:36:45Z"
+  },
+  {
+    "pack": "matt",
+    "url": "https://github.com/mattpocock/skills.git",
+    "commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+    "fetched_at": "2026-09-08T07:36:45Z"
+  },
+  {
+    "pack": "ecc",
+    "url": "https://github.com/affaan-m/ECC.git",
+    "commit": "5064474d4d762dc9640234a41617cccb79185cec",
+    "fetched_at": "2026-09-08T07:36:45Z"
+  }
+]

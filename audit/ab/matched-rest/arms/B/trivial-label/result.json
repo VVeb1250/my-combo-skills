@@ -1,0 +1,133 @@
+{
+  "case_id": "trivial-label",
+  "variant": "B",
+  "pair_index": 4,
+  "first_arm": "A",
+  "fixture": "trivial-label",
+  "requested_sandbox": "workspace-write",
+  "effective_sandbox": "danger-full-access",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "command": [
+    "C:\\Users\\VVeb1250\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+    "exec",
+    "--json",
+    "--ephemeral",
+    "--color",
+    "never",
+    "--disable",
+    "hooks",
+    "--disable",
+    "multi_agent",
+    "--disable",
+    "memories",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-5.6-luna",
+    "-c",
+    "model_reasoning_effort=max",
+    "-c",
+    "approval_policy=\"never\"",
+    "-c",
+    "mcp_servers={}",
+    "-c",
+    "skills.config=[{path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\ask-matt\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\claude-handoff\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\code-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\codebase-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\debug-by-logging\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnose\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnosing-bugs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\domain-modeling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\git-guardrails-claude-code\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\graphify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grill-with-docs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grilling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\implement\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\improve-codebase-architecture\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\loop-me\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\migrate-to-shoehorn\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\mistake-learning\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\multi-model-orchestrator\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\prototype\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\setup-matt-pocock-skills\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\source-command-resume\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-issues\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-prd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-questionnaire\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-spec\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-tickets\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\triage\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wayfinder\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wizard\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\write-a-skill\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-agent-harness\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-build\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-library\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-plan-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-setup\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-verify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-api-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-build-fix\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-database\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-e2e\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-language-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-mcp\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-python\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-react\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-rust\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-security-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-plan\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ponytail-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\combo\\\\SKILL.md\", enabled = false}]",
+    "-c",
+    "projects.\"D:\\\\combo-ab-evals\\\\combo-ab-run-siyimloi\\\\combo-ab-trivial-label-B-50lkcy11\".trust_level=\"trusted\"",
+    "-s",
+    "danger-full-access",
+    "-C",
+    "D:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-trivial-label-B-50lkcy11",
+    "-c",
+    "mcp_servers.codegraph.enabled=false",
+    "-c",
+    "mcp_servers.context7.enabled=false",
+    "-c",
+    "mcp_servers.cua_repl.enabled=false",
+    "-c",
+    "mcp_servers.exa.enabled=false",
+    "-c",
+    "mcp_servers.fetch.enabled=false",
+    "-c",
+    "mcp_servers.github.enabled=false",
+    "-c",
+    "mcp_servers.memory.enabled=false",
+    "-c",
+    "mcp_servers.node_repl.enabled=false",
+    "-c",
+    "mcp_servers.playwright.enabled=false",
+    "-c",
+    "mcp_servers.sequential-thinking.enabled=false"
+  ],
+  "workdir": "D:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-trivial-label-B-50lkcy11",
+  "returncode": 0,
+  "timed_out": false,
+  "process_error": null,
+  "duration_seconds": 51.443,
+  "events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\events.jsonl",
+  "stderr_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\stderr.txt",
+  "final_answer_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\final-answer.txt",
+  "final_answer": "เสร็จแล้วครับ แก้เฉพาะ `src/ui.py` จาก `Save` เป็น `Save changes` เท่านั้น.",
+  "parse_errors": 0,
+  "tool_count": 10,
+  "tool_events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\tool-events.json",
+  "actual_references": [
+    "combo",
+    "combo/workflows/deliver"
+  ],
+  "reference_evidence": [
+    {
+      "item_id": "item_2",
+      "references": [
+        "combo",
+        "combo/workflows/deliver"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Raw '.agents\\\\skills\\\\combo\\\\SKILL.md'; \\\"\"'`n---COMBO-DELIVER---`n\"; Get-Content -Raw '\"'.agents\\\\skills\\\\combo-deliver\\\\SKILL.md'\"",
+      "output_bytes": 7474,
+      "output_sha256": "7e41488f0e2c906307436933eddeb79d11be89036afab471b18e43abacf74cf1"
+    }
+  ],
+  "actual_fixture_files_read": [
+    "src/ui.py"
+  ],
+  "fixture_read_evidence": [
+    {
+      "item_id": "item_3",
+      "files": [
+        "src/ui.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"rg -n -C 2 'Save' 'src/ui.py'\"",
+      "output_bytes": 30,
+      "output_sha256": "733b6add9ac948eba48e6ac8793f9f36beaaff4c98058a7412c1f3265e1d0fe8"
+    }
+  ],
+  "changed_files": [
+    {
+      "path": "src/ui.py",
+      "change": "modified",
+      "before_sha256": "f10aa119776d1274f6cce468fa11eb7671cd2b291dbbf51336ce1a6209ca0f6c",
+      "after_sha256": "44c54329157231d0f2607ce62ce0648317f9f8cbe7c422afb98b73ebe6783e04",
+      "before_bytes": 91,
+      "after_bytes": 99
+    }
+  ],
+  "before_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\before-hashes.json",
+  "after_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\after-hashes.json",
+  "acceptance_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\acceptance.json",
+  "acceptance": {
+    "before": null,
+    "after": null
+  },
+  "usage": {
+    "input_tokens": 123584,
+    "cached_input_tokens": 85760,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 1274,
+    "reasoning_output_tokens": 703
+  },
+  "write_like_commands": [],
+  "environment_failures": [],
+  "task_failures": [],
+  "classification": "passed",
+  "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\result.json"
+}

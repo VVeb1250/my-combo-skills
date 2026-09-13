@@ -1,0 +1,8 @@
+แก้เรียบร้อยใน [src/quantity.py](D:/combo-ab-evals/combo-ab-run-tmjw_vry/combo-ab-bug-zero-B-uglk4h2n/src/quantity.py:6)
+
+- `0` ยังคงเป็น `0`
+- `None` ยังคงใช้ค่า default `1`
+- focused tests ผ่าน `3 passed`
+- `ruff` และ `pyright` ของ parser ผ่านเรียบร้อย
+
+มี `ruff` issue เดิม 1 รายการในไฟล์ test แต่ไม่ได้แตะตาม scope ครับ

@@ -1,0 +1,20 @@
+{
+  "skill_name": "combo-codex",
+  "evals": [
+    {"id": 1, "prompt": "Fix the parser: quantity 0 is treated as missing.", "expected_output": "Behavioral regression at the public parser seam; matt-tdd; preserve zero; no speculative framework."},
+    {"id": 2, "prompt": "แก้ typecheck ที่พังจาก import หลังเปลี่ยนชื่อ module", "expected_output": "ecc-build-fix; inspect configured command and causal import; no weakening of strict types."},
+    {"id": 3, "prompt": "Review this PR for missing requirements and regressions.", "expected_output": "matt-review; verified diff; requirement and correctness lenses; no automatic agent fanout."},
+    {"id": 4, "prompt": "Review this endpoint that fetches a customer record by an ID from the URL.", "expected_output": "matt-review and ecc-security-review if user-controlled ID crosses authorization boundary; check object-level authorization."},
+    {"id": 5, "prompt": "สอง adapter ใช้อยู่จริง แต่ช่วยดูว่าควร inline interface ไหม", "expected_output": "ponytail-review or matt-plan; inspect actual adapter contract; preserve justified seam."},
+    {"id": 6, "prompt": "Create a plugin interface; supporting future user-installed plugins is an explicit requirement.", "expected_output": "matt-plan; honor explicit extensibility; no automatic rejection as YAGNI."},
+    {"id": 7, "prompt": "Fix this shared helper; three callers exhibit the same failure.", "expected_output": "Inspect shared root cause and relevant callers; smallest correct blast radius can include multiple files."},
+    {"id": 8, "prompt": "Verify the checkout journey from cart to saved order in the test environment.", "expected_output": "ecc-e2e; observable journey; supported browser tools; no real purchases."},
+    {"id": 9, "prompt": "เปลี่ยนข้อความบนปุ่มจาก Save เป็น Save changes", "expected_output": "Direct small edit and proportional verification; no TDD/review/architecture ceremony."},
+    {"id": 10, "prompt": "Translate this paragraph to Thai.", "expected_output": "No coding combo skills or engineering workflow."},
+    {"id": 11, "prompt": "Design a safe PostgreSQL migration while old application instances are still running.", "expected_output": "ecc-database; rollout compatibility, locks, data recoverability; no unapproved production mutation."},
+    {"id": 12, "prompt": "Make this React effect stop showing an old request response after a filter change.", "expected_output": "ecc-react and focused behavioral check; race/stale state diagnosis; no new state framework."},
+    {"id": 13, "prompt": "Audit this proposed simplification: replace all email validation with checking for @.", "expected_output": "Reject if required semantics/security are lost; do not import unsafe simplicity examples."},
+    {"id": 14, "prompt": "Plan a weekend picnic.", "expected_output": "No matt-plan or coding workflow."},
+    {"id": 15, "prompt": "Fix a compiler error caused by an outdated MCP SDK method.", "expected_output": "ecc-build-fix plus ecc-mcp for the distinct protocol/API concern; verify installed/current SDK."}
+  ]
+}

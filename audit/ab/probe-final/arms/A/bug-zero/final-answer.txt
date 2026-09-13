@@ -1,0 +1,10 @@
+แก้แล้วใน [src/quantity.py](D:/combo-ab-evals/combo-ab-run-tmjw_vry/combo-ab-bug-zero-A-pu6v0jue/src/quantity.py:6) โดยใช้ `value is None` แทนการตรวจ truthiness
+
+ผลตรวจสอบ:
+
+- `0` ยังคงเป็น `0`
+- `None` ยังคงคืนค่า default `1`
+- Tests: `3 passed`
+- Ruff และ Pyright ของไฟล์ที่แก้ผ่าน
+
+พอแล้วสำหรับตอนนี้ครับ

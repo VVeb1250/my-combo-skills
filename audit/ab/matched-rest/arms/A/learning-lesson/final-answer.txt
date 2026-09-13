@@ -1,0 +1,98 @@
+## บทเรียนสั้น: Dependency Injection ใน Python
+
+เป้าหมาย: คุณควรระบุ dependency ของ class ได้ และส่งมันเข้ามาจากภายนอกเพื่อให้เปลี่ยน implementation หรือทดสอบได้ง่าย
+
+Dependency Injection (DI) คือการส่ง object ที่ class ต้องใช้เข้ามาจากภายนอก แทนการให้ class สร้าง object นั้นเอง
+
+แบบที่ผูกติดกัน:
+
+```python
+class OrderService:
+    def __init__(self):
+        self.notifier = EmailNotifier()  # สร้าง dependency เอง
+```
+
+`OrderService` จึงเปลี่ยนไปใช้ SMS หรือ fake notifier ได้ยาก
+
+แบบใช้ DI:
+
+```python
+from typing import Protocol
+
+
+class Notifier(Protocol):
+    def send(self, message: str) -> None:
+        ...
+
+
+class EmailNotifier:
+    def send(self, message: str) -> None:
+        print(f"Email: {message}")
+
+
+class OrderService:
+    def __init__(self, notifier: Notifier) -> None:
+        self.notifier = notifier
+
+    def place(self, order_id: str) -> None:
+        self.notifier.send(f"Order {order_id} placed")
+```
+
+ตอนใช้งานจริง เราเป็นคนประกอบ object:
+
+```python
+service = OrderService(EmailNotifier())
+service.place("A-101")
+```
+
+ตอน test ใช้ fake แทนได้:
+
+```python
+class FakeNotifier:
+    def __init__(self) -> None:
+        self.messages: list[str] = []
+
+    def send(self, message: str) -> None:
+        self.messages.append(message)
+
+
+fake = FakeNotifier()
+OrderService(fake).place("A-101")
+
+assert fake.messages == ["Order A-101 placed"]
+```
+
+ประเด็นสำคัญคือ `OrderService` รู้แค่ว่า object ที่รับเข้ามามีเมธอด `send()` ไม่จำเป็นต้องรู้ว่าเป็น email, SMS หรือ fake
+
+### Retrieval practice
+
+พิจารณาโค้ดนี้ แล้วลองตอบก่อนดูเฉลย:
+
+```python
+class UserService:
+    def __init__(self):
+        self.repo = PostgresUserRepo()
+```
+
+คำถาม:
+
+1. Dependency คืออะไร?
+2. ควรแก้ constructor อย่างไร?
+3. ตอน test ควรส่ง object แบบใดเข้าไป?
+
+<details>
+<summary>เฉลย</summary>
+
+1. `PostgresUserRepo` คือ dependency
+2. รับเข้ามาจากภายนอก:
+
+```python
+def __init__(self, repo):
+    self.repo = repo
+```
+
+3. ส่ง fake หรือ in-memory repository เพื่อไม่ต้องเชื่อมต่อ database จริง
+
+</details>
+
+จำสั้น ๆ: class ควร “รับ” dependency, ไม่ใช่ “สร้าง” dependency เอง.

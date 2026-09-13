@@ -1,0 +1,29 @@
+ตรวจแล้ว และยังไม่ได้สร้างหรือแก้ไฟล์ใด ๆ
+
+ข้อเท็จจริงจากโค้ด:
+
+- [`NotificationAdapter`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notification_adapters.py:7>) เป็น seam เดียว มี `send(recipient, body) -> str`
+- [`EmailAdapter`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notification_adapters.py:13>) และ [`SmsAdapter`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notification_adapters.py:21>) ใช้สัญญานี้โดยตรง
+- [`send_welcome`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notifications.py:6>) และ [`send_receipt`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notifications.py:10>) รับ adapter แบบ structural และเรียก `send` ครั้งเดียว
+- ไม่พบ test suite, package config หรือจุด composition/wiring อื่นใน codebase นี้
+
+แผนที่แนะนำ:
+
+1. เพิ่ม `RetryableNotificationGateway` ใน `src/notification_adapters.py` เป็น decorator ที่ห่อ `NotificationAdapter` และ implement `send` ด้วย signature เดิม ห้ามเปลี่ยน `Protocol`, adapter เดิม หรือ caller
+
+2. กำหนด policy ผ่าน constructor:
+
+   - `max_attempts` หมายถึงจำนวนครั้งรวม ต้องไม่น้อยกว่า 1
+   - `initial_delay` และ `max_delay`
+   - `retryable_exceptions` สำหรับระบุเฉพาะ transient errors
+   - `sleep` แบบ injectable โดย default ใช้ `time.sleep` เพื่อให้ทดสอบได้โดยไม่รอจริง
+
+3. ให้ `send` retry เฉพาะ exception ที่กำหนด ใช้ bounded exponential backoff, ไม่ sleep หลัง attempt สุดท้าย, คืน provider receipt จาก attempt ที่สำเร็จ และ re-raise exception สุดท้ายเมื่อ retry หมด
+
+4. ใช้ค่าเริ่มต้นที่แคบ เช่น `TimeoutError` และ `ConnectionError` ไม่จับ `BaseException` หรือ retry ทุก `Exception` โดยอัตโนมัติ หาก provider จริงมี custom transient errors ให้ส่งชนิดเหล่านั้นตอน wiring
+
+5. เพิ่ม `tests/test_notification_gateway.py` ครอบคลุม success ครั้งแรก, fail-then-success, retry หมด, non-retryable error, จำนวนครั้งและ delay ที่ถูกต้อง, การส่ง `recipient/body` เดิมทุก attempt และการใช้งานผ่าน `send_welcome` กับ `send_receipt`
+
+เกณฑ์ยอมรับคือ caller เดิมใช้ gateway ได้โดยไม่เปลี่ยน signature และ adapter เดิมยังคืน receipt เหมือนเดิม การ retry เป็น at-least-once จึงอาจส่งซ้ำเมื่อ provider รับข้อความแล้วแต่ response หาย การทำ exactly-once หรือ outbox เป็นงานนอกขอบเขตนี้
+
+ตรวจสอบภายหลังด้วย `PYTHONPATH=src python -m unittest discover -s tests -p "test_*.py"` แผนนี้พอแล้วสำหรับตอนนี้

@@ -1,0 +1,17 @@
+เสร็จครบวงจรแล้วครับ
+
+- ปรับ [src/inventory.py](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-thai-delivery-B-mabig3ir/src/inventory.py:13) ให้รับ `Iterable[Item]` และเพิ่ม `include_discontinued`
+- รวมเฉพาะรายการที่ `quantity > 0`
+- รวม discontinued เมื่อเปิด flag เท่านั้น
+- รักษาผลลัพธ์เดิม `{count, units}`
+- เพิ่มเทสต์ generator, iterator, discontinued และ stock ศูนย์/ติดลบใน [tests/test_inventory.py](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-thai-delivery-B-mabig3ir/tests/test_inventory.py:4)
+
+ตรวจสอบผ่าน:
+
+- `python -m pytest -q`: 2 passed
+- `ruff check src tests`: ผ่าน
+- `ruff format --check src tests`: ผ่าน
+- `pyright src tests`: 0 errors
+- `compileall`: ผ่าน
+
+`ruff check .` ยังพบปัญหาเดิม 1 จุดในไฟล์ภายใต้ `.agents/skills` ซึ่งอยู่นอก scope งานและไม่ได้แก้ไขครับ

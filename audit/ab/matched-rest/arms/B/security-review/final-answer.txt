@@ -1,0 +1,25 @@
+ผล review: **ยังต้องแก้ก่อนใช้** พบ 2 จุดที่ยืนยันได้
+
+1. **High, Broken object-level authorization**  
+   ที่ [src/orders.py:18-22](/D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-B-bkjej1mn/src/orders.py:18) `current_user` ไม่ถูกใช้ตรวจ `order.owner_id` ทำให้ลูกค้าที่ล็อกอินคนใดก็อ่าน order ของลูกค้าอื่นได้
+
+   แก้ขั้นต่ำ โดยสมมติ identity อยู่ที่ `current_user.id`:
+
+   ```python
+   order = get_order(order_id)
+   if current_user.id != order.owner_id:
+       raise PermissionError("forbidden")
+   ```
+
+   หากมี repository จริง ควรกรอง ownership ตั้งแต่ตอนโหลด order และ map เป็น 403 หรือ 404 ตาม contract
+
+2. **Medium, ค่า quantity ศูนย์ถูกแปลงผิด**  
+   ที่ [src/orders.py:21](/D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-B-bkjej1mn/src/orders.py:21) `order.quantity or 1` เปลี่ยน `0` เป็น `1`
+
+   แก้เป็น:
+
+   ```python
+   quantity = 1 if order.quantity is None else order.quantity
+   ```
+
+ตรวจแบบ static เท่านั้นตามคำสั่ง, ไม่ได้แก้ไฟล์ เพิ่ม test หรือรัน service.

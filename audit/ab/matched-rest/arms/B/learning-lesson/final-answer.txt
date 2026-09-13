@@ -1,0 +1,87 @@
+## บทเรียนสั้น: Dependency Injection
+
+เป้าหมาย: หลังจบบทนี้ คุณจะเขียน class ที่เปลี่ยน dependency ได้ง่าย และทดสอบได้โดยไม่ต้องเรียก service จริง
+
+Dependency Injection (DI) คือการให้ object รับสิ่งที่มันต้องใช้จากภายนอก แทนการสร้างสิ่งนั้นเองภายใน class
+
+- `dependency` คือสิ่งที่ class ต้องพึ่งพา
+- `injection` คือการส่งสิ่งนั้นเข้าไปให้ class
+- ใน Python วิธีที่ง่ายและพบบ่อยคือส่งผ่าน `__init__`
+
+### ตัวอย่าง
+
+```python
+class PaymentGateway:
+    def charge(self, amount: int) -> str:
+        return f"charged {amount} baht"
+
+
+class Checkout:
+    def __init__(self, gateway: PaymentGateway):
+        self.gateway = gateway
+
+    def pay(self, amount: int) -> str:
+        return self.gateway.charge(amount)
+
+
+gateway = PaymentGateway()
+checkout = Checkout(gateway)
+
+print(checkout.pay(100))
+# charged 100 baht
+```
+
+ในตัวอย่างนี้ `Checkout` มี dependency คือ `PaymentGateway`
+
+การส่ง `gateway` เข้าไปใน `Checkout(gateway)` คือการทำ dependency injection
+
+ข้อดีคือ เราเปลี่ยน gateway เป็นตัวปลอมสำหรับ test ได้:
+
+```python
+class FakeGateway:
+    def __init__(self):
+        self.charged_amounts = []
+
+    def charge(self, amount: int) -> str:
+        self.charged_amounts.append(amount)
+        return "test payment"
+
+
+fake_gateway = FakeGateway()
+checkout = Checkout(fake_gateway)
+
+assert checkout.pay(100) == "test payment"
+assert fake_gateway.charged_amounts == [100]
+```
+
+`Checkout` ไม่จำเป็นต้องรู้ว่า gateway เป็นของจริงหรือ fake ขอเพียงมีเมธอด `charge()` ที่ใช้ได้
+
+### Retrieval practice
+
+ลองตอบก่อนอ่านเฉลย:
+
+ถ้าเขียนแบบนี้
+
+```python
+class Checkout:
+    def __init__(self):
+        self.gateway = PaymentGateway()
+```
+
+ปัญหาคืออะไร และควรแก้อย่างไร?
+
+---
+
+### เฉลย
+
+ปัญหาคือ `Checkout` สร้าง `PaymentGateway` เอง ทำให้เปลี่ยนเป็น `FakeGateway` หรือ gateway แบบอื่นได้ยาก และ test อาจไปเรียก payment service จริง
+
+ควรรับ gateway จากภายนอก:
+
+```python
+class Checkout:
+    def __init__(self, gateway):
+        self.gateway = gateway
+```
+
+จำสั้น ๆ: “อย่าสร้างสิ่งที่ต้องพึ่งพาไว้ข้างใน ถ้าส่งเข้ามาจากข้างนอกได้”

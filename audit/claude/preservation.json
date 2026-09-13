@@ -1,0 +1,9 @@
+{
+  "checked": 827,
+  "unchanged": true,
+  "changed": [],
+  "unrelated_changes_observed_before_install": [
+    ".codex/config.toml"
+  ],
+  "baseline": "preservation-install-baseline.json"
+}

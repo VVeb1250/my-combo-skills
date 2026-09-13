@@ -1,0 +1,1 @@
+จากการอ่านโค้ดพบ seam หลักชัดเจน: `NotificationAdapter.send(recipient, body) -> str` อยู่ใน `src/notification_adapters.py`, และ callers ทั้ง `send_welcome` กับ `send_receipt` รับ seam นี้โดยตรง ไม่มี test/config/package metadata เพิ่มเติมใน tree ที่ค้นพบ ผมจะตรวจสถานะ worktree และรายละเอียด runtime แบบ read-only เพื่อให้แผนระบุจุดแก้และ verification ได้ตรงกับ repo จริงครับ

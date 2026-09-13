@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-09-08T07:41:50.993Z",
+  "policy_lines": 49,
+  "skills": [
+    {
+      "name": "codex-library",
+      "description_chars": 253,
+      "body_lines": 15
+    },
+    {
+      "name": "codex-research",
+      "description_chars": 283,
+      "body_lines": 14
+    },
+    {
+      "name": "codex-setup",
+      "description_chars": 268,
+      "body_lines": 19
+    },
+    {
+      "name": "ecc-api-design",
+      "description_chars": 255,
+      "body_lines": 16
+    },
+    {
+      "name": "ecc-build-fix",
+      "description_chars": 277,
+      "body_lines": 21
+    },
+    {
+      "name": "ecc-database",
+      "description_chars": 271,
+      "body_lines": 17
+    },
+    {
+      "name": "ecc-e2e",
+      "description_chars": 301,
+      "body_lines": 21
+    },
+    {
+      "name": "ecc-language-review",
+      "description_chars": 309,
+      "body_lines": 22
+    },
+    {
+      "name": "ecc-mcp",
+      "description_chars": 205,
+      "body_lines": 15
+    },
+    {
+      "name": "ecc-python",
+      "description_chars": 250,
+      "body_lines": 14
+    },
+    {
+      "name": "ecc-react",
+      "description_chars": 236,
+      "body_lines": 15
+    },
+    {
+      "name": "ecc-rust",
+      "description_chars": 258,
+      "body_lines": 14
+    },
+    {
+      "name": "ecc-security-review",
+      "description_chars": 281,
+      "body_lines": 23
+    },
+    {
+      "name": "matt-plan",
+      "description_chars": 270,
+      "body_lines": 21
+    },
+    {
+      "name": "matt-review",
+      "description_chars": 296,
+      "body_lines": 25
+    },
+    {
+      "name": "matt-tdd",
+      "description_chars": 283,
+      "body_lines": 25
+    },
+    {
+      "name": "ponytail-review",
+      "description_chars": 320,
+      "body_lines": 16
+    }
+  ],
+  "errors": []
+}

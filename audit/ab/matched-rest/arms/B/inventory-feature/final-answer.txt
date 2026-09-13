@@ -1,0 +1,16 @@
+เสร็จแล้ว
+
+- อัปเดต [`src/inventory.py`](<D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-inventory-feature-B-a3b5o_tz/src/inventory.py:12>) ให้รับ `Iterable[Item]`
+- เพิ่ม `include_discontinued=False`
+- รวม discontinued เฉพาะเมื่อ flag เป็น `True` และ stock มากกว่า 0
+- stock ศูนย์หรือติดลบยังถูกตัดออก
+- คงผลลัพธ์รูปแบบเดิม `{count, units}`
+- เพิ่ม regression test ใน [`tests/test_inventory.py`](<D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-inventory-feature-B-a3b5o_tz/tests/test_inventory.py:12>)
+
+ตรวจสอบแล้ว:
+
+- `python -m pytest -q`: 2 passed
+- Ruff lint และ format: ผ่าน
+- Pyright: 0 errors
+
+พอแล้วสำหรับตอนนี้

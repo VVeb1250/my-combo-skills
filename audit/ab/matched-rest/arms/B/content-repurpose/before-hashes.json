@@ -1,0 +1,14 @@
+{
+  "AGENTS.md": {
+    "sha256": "d1cf4dbe039ed81175239ea3ad64e06b6ade700689b2033a869ec11c98edf1eb",
+    "bytes": 861
+  },
+  "brief.md": {
+    "sha256": "983b1408f5af27ee5a900bf612a61eb7b94b87029e13aced03fb84816b6c4f73",
+    "bytes": 419
+  },
+  "voice.md": {
+    "sha256": "d0a11759a45549f9ec8163c5170c6051983e990b68b54591b8fd18d00da64cab",
+    "bytes": 284
+  }
+}

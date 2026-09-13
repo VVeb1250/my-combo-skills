@@ -1,0 +1,1 @@
+Review src/orders.py for correctness and security only. A logged-in customer must be able to view only that customer's own order, and quantity zero is a valid value. Report concrete findings with the smallest repair. Do not modify files, add tests, run services, or publish anything.

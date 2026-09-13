@@ -1,0 +1,323 @@
+{
+  "version": 2,
+  "profile": "codex-combo",
+  "source_roots": [
+    {
+      "source": "skills/combo",
+      "target": "skills/combo"
+    },
+    {
+      "source": "skills/combo-business",
+      "target": "skills/combo-business"
+    },
+    {
+      "source": "skills/combo-content",
+      "target": "skills/combo-content"
+    },
+    {
+      "source": "skills/combo-debug",
+      "target": "skills/combo-debug"
+    },
+    {
+      "source": "skills/combo-deliver",
+      "target": "skills/combo-deliver"
+    },
+    {
+      "source": "skills/combo-investigate",
+      "target": "skills/combo-investigate"
+    },
+    {
+      "source": "skills/combo-learning",
+      "target": "skills/combo-learning"
+    },
+    {
+      "source": "skills/combo-maintain",
+      "target": "skills/combo-maintain"
+    },
+    {
+      "source": "skills/combo-media",
+      "target": "skills/combo-media"
+    },
+    {
+      "source": "skills/combo-plan",
+      "target": "skills/combo-plan"
+    },
+    {
+      "source": "skills/combo-productivity",
+      "target": "skills/combo-productivity"
+    },
+    {
+      "source": "skills/combo-research",
+      "target": "skills/combo-research"
+    },
+    {
+      "source": "skills/combo-review",
+      "target": "skills/combo-review"
+    },
+    {
+      "source": "skills/combo-verify",
+      "target": "skills/combo-verify"
+    }
+  ],
+  "adapter_files": [
+    {
+      "source": "adapters/codex/combo-worker.toml",
+      "target": "agents/combo-worker.toml"
+    }
+  ],
+  "ownership_index": "skills/combo/.combo-owned.json",
+  "config": {
+    "markers": {
+      "begin": "# BEGIN COMBO CONFIG",
+      "end": "# END COMBO CONFIG"
+    },
+    "disable_plugins": [
+      "ecc@ecc"
+    ],
+    "worker_role": {
+      "name": "combo_worker",
+      "config_file": "agents/combo-worker.toml",
+      "description": "Bounded worker for independent research, implementation, artifacts, and checks."
+    }
+  },
+  "agents": {
+    "markers": {
+      "begin": "<!-- BEGIN COMBO -->",
+      "end": "<!-- END COMBO -->"
+    }
+  },
+  "disable_local": [
+    {
+      "path": ".agents/skills/ask-matt/SKILL.md",
+      "reason": "Superseded engineering router"
+    },
+    {
+      "path": ".agents/skills/claude-handoff/SKILL.md",
+      "reason": "Claude-specific workflow"
+    },
+    {
+      "path": ".agents/skills/code-review/SKILL.md",
+      "reason": "Superseded review workflow"
+    },
+    {
+      "path": ".agents/skills/codebase-design/SKILL.md",
+      "reason": "Superseded design wrapper"
+    },
+    {
+      "path": ".agents/skills/diagnose/SKILL.md",
+      "reason": "Superseded debug workflow"
+    },
+    {
+      "path": ".agents/skills/diagnosing-bugs/SKILL.md",
+      "reason": "Superseded debug workflow"
+    },
+    {
+      "path": ".agents/skills/git-guardrails-claude-code/SKILL.md",
+      "reason": "Claude-specific workflow"
+    },
+    {
+      "path": ".agents/skills/grill-with-docs/SKILL.md",
+      "reason": "Superseded planning wrapper"
+    },
+    {
+      "path": ".agents/skills/grilling/SKILL.md",
+      "reason": "Superseded planning wrapper"
+    },
+    {
+      "path": ".agents/skills/implement/SKILL.md",
+      "reason": "Superseded execution wrapper"
+    },
+    {
+      "path": ".agents/skills/improve-codebase-architecture/SKILL.md",
+      "reason": "Superseded design wrapper"
+    },
+    {
+      "path": ".agents/skills/loop-me/SKILL.md",
+      "reason": "Superseded loop workflow"
+    },
+    {
+      "path": ".agents/skills/migrate-to-shoehorn/SKILL.md",
+      "reason": "Unrequested migration workflow"
+    },
+    {
+      "path": ".agents/skills/mistake-learning/SKILL.md",
+      "reason": "Competing memory workflow"
+    },
+    {
+      "path": ".agents/skills/multi-model-orchestrator/SKILL.md",
+      "reason": "Superseded orchestration wrapper"
+    },
+    {
+      "path": ".agents/skills/research/SKILL.md",
+      "reason": "Superseded coding research wrapper"
+    },
+    {
+      "path": ".agents/skills/setup-matt-pocock-skills/SKILL.md",
+      "reason": "Superseded setup workflow"
+    },
+    {
+      "path": ".agents/skills/source-command-resume/SKILL.md",
+      "reason": "Superseded resume workflow"
+    },
+    {
+      "path": ".agents/skills/tdd/SKILL.md",
+      "reason": "Superseded TDD workflow"
+    },
+    {
+      "path": ".agents/skills/to-issues/SKILL.md",
+      "reason": "Tracker publishing workflow"
+    },
+    {
+      "path": ".agents/skills/to-prd/SKILL.md",
+      "reason": "Tracker publishing workflow"
+    },
+    {
+      "path": ".agents/skills/to-questionnaire/SKILL.md",
+      "reason": "Superseded planning workflow"
+    },
+    {
+      "path": ".agents/skills/to-spec/SKILL.md",
+      "reason": "Tracker publishing workflow"
+    },
+    {
+      "path": ".agents/skills/to-tickets/SKILL.md",
+      "reason": "Tracker publishing workflow"
+    },
+    {
+      "path": ".agents/skills/triage/SKILL.md",
+      "reason": "Tracker workflow"
+    },
+    {
+      "path": ".agents/skills/wayfinder/SKILL.md",
+      "reason": "Tracker workflow"
+    },
+    {
+      "path": ".agents/skills/wizard/SKILL.md",
+      "reason": "Infrastructure wizard workflow"
+    },
+    {
+      "path": ".agents/skills/write-a-skill/SKILL.md",
+      "reason": "Built-in skill creator owns authoring"
+    },
+    {
+      "path": ".agents/skills/debug-by-logging/SKILL.md",
+      "reason": "Broad logging-first bug wrapper"
+    },
+    {
+      "path": ".agents/skills/graphify/SKILL.md",
+      "reason": "Competing graph workflow"
+    },
+    {
+      "path": ".agents/skills/domain-modeling/SKILL.md",
+      "reason": "Competing coding design wrapper"
+    },
+    {
+      "path": ".agents/skills/prototype/SKILL.md",
+      "reason": "Competing coding design wrapper"
+    },
+    {
+      "path": ".codex/skills/codex-agent-harness/SKILL.md",
+      "reason": "Competing orchestration wrapper"
+    },
+    {
+      "path": ".codex/skills/codex-build/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/codex-plan-research/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/codex-verify/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/codex-library/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/codex-research/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/codex-setup/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-api-design/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-build-fix/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-database/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-e2e/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-language-review/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-mcp/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-python/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-react/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-rust/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ecc-security-review/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/matt-plan/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/matt-review/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/matt-tdd/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    },
+    {
+      "path": ".codex/skills/ponytail-review/SKILL.md",
+      "reason": "Retired v0 entrypoint"
+    }
+  ],
+  "preserve_roots": [
+    ".codex/hooks.json",
+    ".codex/agents",
+    ".codex/mcp",
+    ".codex/plugins/cache",
+    ".agents/skills/quality-gate",
+    ".agents/skills/test-affected",
+    ".agents/skills/api-check",
+    ".agents/skills/secure-scan",
+    ".agents/skills/struct-search",
+    ".agents/skills/repo-pack"
+  ],
+  "architecture": {
+    "layout": "modular-workflow-pack",
+    "primary_entries": 12,
+    "shared_router": "combo",
+    "maintenance": "combo-maintain",
+    "decision": "audit/ab/DECISION.md"
+  },
+  "full_library": true
+}

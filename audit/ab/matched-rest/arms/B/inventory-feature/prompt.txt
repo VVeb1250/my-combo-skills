@@ -1,0 +1,1 @@
+Extend the inventory summary in src/inventory.py. It must accept any iterable, preserve the current default of excluding discontinued items, and add an include_discontinued flag that includes discontinued items with positive stock. Zero or negative stock stays excluded. Preserve the existing result shape and keep the change limited to this feature. Verify the behavior.

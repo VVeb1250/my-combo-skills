@@ -1,0 +1,73 @@
+ตรวจแล้ว พบ seam เดียวที่ callers ใช้ร่วมกัน:
+
+- [`NotificationAdapter.send`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notification_adapters.py:7) รับ `(recipient, body)` และคืน `str`
+- [`EmailAdapter`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notification_adapters.py:13) และ [`SmsAdapter`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notification_adapters.py:21) ทำตาม protocol เดียวกัน
+- [`send_welcome`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notifications.py:6) และ [`send_receipt`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notifications.py:10) ไม่รู้จัก provider และคืน receipt เดิม
+- ไม่พบ tests, dependency config หรือ composition root ใน snapshot นี้ และ adapters ปัจจุบันยังไม่มี error path จริง
+
+## คำแนะนำหลัก
+
+สร้าง `RetryingNotificationGateway` เป็น decorator ที่ implement `NotificationAdapter` แล้วห่อ `EmailAdapter` หรือ `SmsAdapter` ที่จุด wiring
+
+ไม่ควรทำเป็น composite หรือ email-to-SMS failover เพราะ protocol ปัจจุบันไม่มี channel หรือ fallback semantics และการเปลี่ยน signature จะกระทบ callers
+
+## แผน implementation
+
+1. เพิ่ม error contract ใน `src/notification_adapters.py`
+
+   - คง `NotificationAdapter.send(recipient: str, body: str) -> str` เหมือนเดิม
+   - เพิ่ม marker exception เช่น `RetryableNotificationError`
+   - เมื่อ provider call จริงถูกเติมภายหลัง ให้ adapter แปลงเฉพาะ transient provider errors เป็น marker นี้ โดยใช้ `raise ... from err`
+   - validation, authentication, invalid recipient และ permanent provider errors ต้องไม่ถูกแปลงเป็น retryable
+
+2. เพิ่ม `src/notification_gateway.py`
+
+   - ใช้ import แบบเดียวกับ code ปัจจุบัน คือ `from notification_adapters import ...`
+   - เพิ่ม immutable `RetryPolicy` โดยมี:
+     - `max_attempts` นับเป็นจำนวนครั้งทั้งหมด, ค่าเริ่มต้น 3
+     - `initial_delay_seconds`, ค่าเริ่มต้นประมาณ 0.5
+     - `max_delay_seconds`, ค่าเริ่มต้นประมาณ 5
+     - `retryable_exceptions` สำหรับ marker และ transport errors ที่ยืนยันว่า retry ได้
+   - `RetryingNotificationGateway.send(...)` ต้องมี signature เดิมทุกประการ
+   - สำเร็จเมื่อใด ให้คืน provider receipt ทันที
+   - retry เฉพาะ exception ใน policy, ใช้ bounded exponential backoff, ไม่ sleep หลัง attempt สุดท้าย
+   - inject `sleep` callable เพื่อให้ tests ตรวจ delay ได้โดยไม่รอจริง
+   - เมื่อหมด attempts ให้ re-raise exception ล่าสุด, exception อื่นให้ propagate โดยไม่ retry
+   - ไม่จับ `BaseException` และไม่ retry แบบไม่จำกัด
+
+3. Wiring
+
+   ```python
+   adapter = RetryingNotificationGateway(
+       EmailAdapter(smtp_host),
+       RetryPolicy(),
+   )
+   send_welcome(adapter, recipient)
+   ```
+
+   `notifications.py` ไม่ต้องแก้ ทั้ง welcome body, receipt body, caller signatures และ receipt contract จะคงเดิม สำหรับ SMS ใช้ wrapper แบบเดียวกัน
+
+4. เพิ่ม focused tests ใน `tests/test_notification_gateway.py`
+
+   - สำเร็จตั้งแต่ครั้งแรก, ไม่มี sleep
+   - transient failure แล้วสำเร็จ, ตรวจจำนวน calls และ receipt จากครั้งที่สำเร็จ
+   - transient failure จนครบ `max_attempts`, ตรวจว่า re-raise และ sleep แค่ `max_attempts - 1` ครั้ง
+   - permanent error, ไม่มี retry
+   - ตรวจ exponential backoff และ delay cap
+   - เรียกผ่าน `send_welcome` และ `send_receipt` เพื่อยืนยัน seam ระดับ caller
+   - wrap ทั้ง `EmailAdapter` และ `SmsAdapter` แล้วตรวจ receipt เดิม
+
+   เมื่อ implement แล้ว ควรตรวจด้วย:
+
+   ```powershell
+   $env:PYTHONPATH = "src"
+   python -m unittest discover -s tests -v
+   ```
+
+## ความเสี่ยงและขอบเขต
+
+การออกแบบนี้ให้ semantics แบบ at-least-once เท่านั้น หาก timeout เกิดหลัง provider รับข้อความแล้ว การ retry อาจส่งซ้ำได้ เพราะ seam ปัจจุบันไม่มี idempotency key
+
+ยังไม่รวม durable retry หลัง process restart, queue/outbox, async execution, provider failover หรือการรับประกัน exactly-once หากต้องการสิ่งเหล่านี้ต้องขยาย contract และเพิ่ม persistence แยกต่างหาก
+
+คำตัดสิน: ใช้ decorator gateway ตามแผนนี้ พอแล้วสำหรับตอนนี้ในระดับ plan, ยังต้อง implement และผ่าน tests ก่อนใช้จริง ไม่มีไฟล์ใดถูกสร้างหรือแก้ไขในการตรวจครั้งนี้

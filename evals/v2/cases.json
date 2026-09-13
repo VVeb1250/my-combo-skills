@@ -1,0 +1,235 @@
+{
+  "schema_version": 2,
+  "suite": "combo-workflow-smoke-v2",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "max_parallel": 2,
+  "timeout_seconds": 180,
+  "cases": [
+    {
+      "id": "bug-zero",
+      "title": "Seeded zero and None parser bug",
+      "fixture": "bug-zero",
+      "sandbox": "workspace-write",
+      "prompt": "The quantity parser has a regression: a quantity of zero is being treated as missing. Fix the implementation in src/quantity.py, keep None's default behavior, and verify the focused behavior with tests. Keep the change scoped to this parser.",
+      "acceptance": {
+        "before": "acceptance/bug_zero_test.py",
+        "after": "acceptance/bug_zero_test.py",
+        "before_must_fail": true,
+        "after_must_pass": true
+      },
+      "allowed_changed_paths": [
+        "src/quantity.py",
+        "tests/test_quantity.py"
+      ],
+      "required_actual_ref_any": [
+        "combo/workflows/debug"
+      ],
+      "required_actual_ref_all": [
+        "combo/workflows/debug",
+        "combo"
+      ],
+      "required_actual_file_any": ["src/quantity.py"],
+      "required_actual_file_markers": {
+        "src/quantity.py": ["normalize_quantity", "return value or 1"]
+      },
+      "forbidden_actual_ref_any": [
+        "combo/workflows/review",
+        "combo/workflows/plan",
+        "combo/practices/security"
+      ],
+      "assertions": {
+        "kind": "implementation",
+        "must_have_changed": ["src/quantity.py"],
+        "must_have_no_new_files_outside_allowed": true
+      }
+    },
+    {
+      "id": "inventory-feature",
+      "title": "Scoped iterable inventory summary feature",
+      "fixture": "inventory-feature",
+      "sandbox": "workspace-write",
+      "prompt": "Extend the inventory summary in src/inventory.py. It must accept any iterable, preserve the current default of excluding discontinued items, and add an include_discontinued flag that includes discontinued items with positive stock. Zero or negative stock stays excluded. Preserve the existing result shape and keep the change limited to this feature. Verify the behavior.",
+      "acceptance": {
+        "before": "acceptance/inventory_feature_test.py",
+        "after": "acceptance/inventory_feature_test.py",
+        "before_must_fail": true,
+        "after_must_pass": true
+      },
+      "allowed_changed_paths": [
+        "src/inventory.py",
+        "tests/test_inventory.py"
+      ],
+      "required_actual_ref_any": [
+        "combo/workflows/deliver"
+      ],
+      "required_actual_ref_all": [
+        "combo/workflows/deliver",
+        "combo",
+        "combo/practices/tests"
+      ],
+      "required_actual_file_any": ["src/inventory.py"],
+      "required_actual_file_markers": {
+        "src/inventory.py": ["inventory_summary", "class Item"]
+      },
+      "forbidden_actual_ref_any": [
+        "combo/workflows/review",
+        "combo/workflows/plan",
+        "combo/practices/security"
+      ],
+      "assertions": {
+        "kind": "implementation",
+        "must_have_changed": ["src/inventory.py"],
+        "must_have_no_new_files_outside_allowed": true
+      }
+    },
+    {
+      "id": "security-review",
+      "title": "Read-only cross-user order review",
+      "fixture": "security-review",
+      "sandbox": "read-only",
+      "prompt": "Review src/orders.py for correctness and security only. A logged-in customer must be able to view only that customer's own order, and quantity zero is a valid value. Report concrete findings with the smallest repair. Do not modify files, add tests, run services, or publish anything.",
+      "no_writes": true,
+      "required_actual_ref_any": [
+        "combo/workflows/review"
+      ],
+      "required_actual_ref_all": [
+        "combo/workflows/review",
+        "combo",
+        "combo/practices/security"
+      ],
+      "required_actual_file_any": ["src/orders.py"],
+      "required_actual_file_markers": {
+        "src/orders.py": ["def show_order", "owner_id", "quantity or 1"]
+      },
+      "required_final_term_groups": [
+        {
+          "name": "object-level authorization",
+          "any": ["authorization", "authorisation", "owner_id", "object-level", "สิทธิ์", "เจ้าของ"]
+        },
+        {
+          "name": "zero or missing-value semantics",
+          "any": ["zero", "0", "ศูนย์", "none", "null", "quantity"]
+        }
+      ],
+      "forbidden_actual_ref_any": [
+        "combo/workflows/debug",
+        "combo/workflows/plan",
+        "combo/practices/tests"
+      ],
+      "assertions": {
+        "kind": "review-only",
+        "must_have_no_changed_files": true,
+        "must_not_claim_implementation": true
+      }
+    },
+    {
+      "id": "plan-adapters",
+      "title": "Plan a gateway around two real adapters",
+      "fixture": "plan-adapters",
+      "sandbox": "read-only",
+      "prompt": "Plan only a retryable notification gateway for this small codebase. Inspect the two existing production adapters and their callers, then give an actionable implementation plan that preserves the seam those adapters already use. Do not implement the gateway, create files, or modify anything.",
+      "no_writes": true,
+      "required_actual_ref_any": [
+        "combo/workflows/plan"
+      ],
+      "required_actual_ref_all": [
+        "combo/workflows/plan",
+        "combo",
+        "combo/practices/design"
+      ],
+      "required_actual_file_any": [
+        "src/notification_adapters.py",
+        "src/notifications.py"
+      ],
+      "required_actual_file_markers": {
+        "src/notification_adapters.py": ["class EmailAdapter", "class SmsAdapter"],
+        "src/notifications.py": ["send_welcome", "send_receipt"]
+      },
+      "required_final_term_groups": [
+        {
+          "name": "planning intent",
+          "any": ["plan", "แผน", "วางแผน", "proposed"]
+        },
+        {
+          "name": "adapter seam",
+          "any": ["adapter", "emailadapter", "smsadapter", "interface", "protocol", "seam", "อะแดปเตอร์"]
+        }
+      ],
+      "required_final_adapter_evidence": [
+        {
+          "name": "EmailAdapter",
+          "any": ["emailadapter", "email adapter", "อีเมล"],
+          "context_any": ["smtp", "recipient", "send", "adapter", "อะแดปเตอร์"]
+        },
+        {
+          "name": "SmsAdapter",
+          "any": ["smsadapter", "sms adapter", "sms", "ข้อความ"],
+          "context_any": ["account", "recipient", "send", "adapter", "อะแดปเตอร์"]
+        }
+      ],
+      "forbidden_actual_ref_any": [
+        "combo/workflows/debug",
+        "combo/workflows/review",
+        "combo/practices/security",
+        "combo/practices/tests"
+      ],
+      "assertions": {
+        "kind": "plan-only",
+        "must_have_no_changed_files": true,
+        "must_not_claim_implementation": true,
+        "must_preserve_existing_seam": true
+      }
+    },
+    {
+      "id": "trivial-label",
+      "title": "Inline label edit",
+      "fixture": "trivial-label",
+      "sandbox": "workspace-write",
+      "prompt": "In src/ui.py, change the visible button label from Save to Save changes. Make only that small edit and finish.",
+      "allowed_changed_paths": ["src/ui.py"],
+      "forbidden_actual_ref_any": [
+        "combo/workflows/",
+        "combo/practices/",
+        "matt-tdd",
+        "matt-review",
+        "matt-plan",
+        "ecc-",
+        "ponytail-review",
+        "skills/combo/workflows/"
+      ],
+      "assertions": {
+        "kind": "direct",
+        "must_have_changed": ["src/ui.py"],
+        "must_have_no_changed_files_outside_allowed": true,
+        "must_not_load_workflow_or_specialist": true,
+        "must_match_text": "Save changes"
+      }
+    },
+    {
+      "id": "translation-negative",
+      "title": "Noncoding translation negative",
+      "fixture": "translation-negative",
+      "sandbox": "read-only",
+      "prompt": "Translate this sentence into Thai: The invoice is ready for review.",
+      "no_writes": true,
+      "no_tools": true,
+      "forbidden_actual_ref_any": [
+        "skills/combo",
+        "combo/workflows/",
+        "combo/practices/",
+        "matt-",
+        "ecc-",
+        "ponytail",
+        "codex-research"
+      ],
+      "required_final_unicode_range": "thai",
+      "assertions": {
+        "kind": "noncoding-negative",
+        "must_have_no_changed_files": true,
+        "must_have_no_tool_events": true,
+        "must_not_read_combo": true
+      }
+    }
+  ]
+}

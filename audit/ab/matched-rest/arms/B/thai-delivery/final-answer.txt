@@ -1,0 +1,15 @@
+เสร็จครบวงจรแล้ว
+
+- ปรับ `inventory_summary` ใน [src/inventory.py](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-delivery-B-egdb0jzo/src/inventory.py:12) ให้รับ `Iterable`, รองรับ generator และเพิ่ม `include_discontinued`
+- ตัด stock ที่ `<= 0` เสมอ
+- รวม discontinued เฉพาะเมื่อ `include_discontinued=True` และ stock เป็นบวก
+- คงรูปแบบผลลัพธ์เดิม `{count, units}`
+- เพิ่ม regression tests ใน [tests/test_inventory.py](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-delivery-B-egdb0jzo/tests/test_inventory.py:1)
+
+ผลตรวจสอบ:
+
+- `pytest`: 3 passed
+- Ruff และ format ใน `src`/`tests`: ผ่าน
+- Pyright: 0 errors
+
+Root-wide Ruff ยังพบ baseline ที่ไม่เกี่ยวข้องใน `.agents/skills/.../network_graph_scene.py` และ skill references จึงไม่ได้แก้ไขไฟล์นอก scope งานนี้ พอแล้วสำหรับตอนนี้ครับ

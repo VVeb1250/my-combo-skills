@@ -1,0 +1,1 @@
+The quantity parser has a regression: a quantity of zero is being treated as missing. Fix the implementation in src/quantity.py, keep None's default behavior, and verify the focused behavior with tests. Keep the change scoped to this parser.

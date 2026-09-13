@@ -1,0 +1,29 @@
+Reading prompt from stdin...
+2026-09-09T11:38:41.115997Z ERROR codex_models_manager::manager: failed to load models cache: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:38:42.175237Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:38:42.178596Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:38:42.186217Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:38:42.188254Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:38:42.190553Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:38:42.192616Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:38:42.347330Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-09-09T11:38:42.347364Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-09-09T11:38:42.388447Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-09-09T11:38:43.780022Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:39:10.110768Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 1 seconds
+Output:
+
+Mode  Length LastWriteTime     Name
+----  ------ -------------     ----
+d----        9/9/2569 20:38:36 .agents
+d----        9/9/2569 12:26:30 src
+-a--- 861    9/9/2569 20:28:46 AGENTS.md
+--- files ---
+src\notification_adapters.py
+src\notifications.py
+AGENTS.md
+--- status ---
+
+fatal: not a git repository (or any of the parent directories): .git
+

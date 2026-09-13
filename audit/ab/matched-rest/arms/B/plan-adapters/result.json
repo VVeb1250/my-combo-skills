@@ -1,0 +1,133 @@
+{
+  "case_id": "plan-adapters",
+  "variant": "B",
+  "pair_index": 3,
+  "first_arm": "B",
+  "fixture": "plan-adapters",
+  "requested_sandbox": "read-only",
+  "effective_sandbox": "danger-full-access",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "command": [
+    "C:\\Users\\VVeb1250\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+    "exec",
+    "--json",
+    "--ephemeral",
+    "--color",
+    "never",
+    "--disable",
+    "hooks",
+    "--disable",
+    "multi_agent",
+    "--disable",
+    "memories",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-5.6-luna",
+    "-c",
+    "model_reasoning_effort=max",
+    "-c",
+    "approval_policy=\"never\"",
+    "-c",
+    "mcp_servers={}",
+    "-c",
+    "skills.config=[{path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\ask-matt\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\claude-handoff\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\code-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\codebase-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\debug-by-logging\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnose\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnosing-bugs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\domain-modeling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\git-guardrails-claude-code\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\graphify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grill-with-docs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grilling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\implement\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\improve-codebase-architecture\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\loop-me\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\migrate-to-shoehorn\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\mistake-learning\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\multi-model-orchestrator\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\prototype\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\setup-matt-pocock-skills\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\source-command-resume\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-issues\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-prd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-questionnaire\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-spec\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-tickets\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\triage\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wayfinder\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wizard\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\write-a-skill\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-agent-harness\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-build\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-library\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-plan-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-setup\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-verify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-api-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-build-fix\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-database\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-e2e\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-language-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-mcp\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-python\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-react\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-rust\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-security-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-plan\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ponytail-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\combo\\\\SKILL.md\", enabled = false}]",
+    "-c",
+    "projects.\"D:\\\\combo-ab-evals\\\\combo-ab-run-siyimloi\\\\combo-ab-plan-adapters-B-ia63ag7b\".trust_level=\"trusted\"",
+    "-s",
+    "danger-full-access",
+    "-C",
+    "D:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-plan-adapters-B-ia63ag7b",
+    "-c",
+    "mcp_servers.codegraph.enabled=false",
+    "-c",
+    "mcp_servers.context7.enabled=false",
+    "-c",
+    "mcp_servers.cua_repl.enabled=false",
+    "-c",
+    "mcp_servers.exa.enabled=false",
+    "-c",
+    "mcp_servers.fetch.enabled=false",
+    "-c",
+    "mcp_servers.github.enabled=false",
+    "-c",
+    "mcp_servers.memory.enabled=false",
+    "-c",
+    "mcp_servers.node_repl.enabled=false",
+    "-c",
+    "mcp_servers.playwright.enabled=false",
+    "-c",
+    "mcp_servers.sequential-thinking.enabled=false"
+  ],
+  "workdir": "D:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-plan-adapters-B-ia63ag7b",
+  "returncode": 1,
+  "timed_out": true,
+  "process_error": null,
+  "duration_seconds": 247.717,
+  "events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\events.jsonl",
+  "stderr_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\stderr.txt",
+  "final_answer_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\final-answer.txt",
+  "final_answer": "จากโค้ดที่อ่านได้ seam ปัจจุบันชัดเจน: `NotificationAdapter.send(recipient, body) -> str` เป็น Protocol เดียวที่ `EmailAdapter` และ `SmsAdapter` ทำตาม และ callers ทั้ง `send_welcome` กับ `send_receipt` รับ seam นี้โดยตรง ไม่มี test/config/dependency convention อื่นใน repo ตอนนี้ ผมกำลังล็อกแบบที่เพิ่ม retry ด้วย composition โดยไม่เปลี่ยน callers หรือสัญญาณ `send` เดิม】【。",
+  "parse_errors": 0,
+  "tool_count": 10,
+  "tool_events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\tool-events.json",
+  "actual_references": [
+    "combo",
+    "combo/workflows/plan"
+  ],
+  "reference_evidence": [
+    {
+      "item_id": "item_1",
+      "references": [
+        "combo",
+        "combo/workflows/plan"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Raw 'D:\\\\combo-ab-evals\\\\combo-ab-run-siyimloi\\\\combo-ab-plan-adapters-B-ia63ag7b\\\\.agents\\\\skills\\\\combo-plan\\\\SKILL.md'\"",
+      "output_bytes": 677,
+      "output_sha256": "1150f037bd4090928f407b27cd01ab582170e17c363caf0c9f4600aeb73233d4"
+    }
+  ],
+  "actual_fixture_files_read": [
+    "src/notification_adapters.py",
+    "src/notifications.py"
+  ],
+  "fixture_read_evidence": [
+    {
+      "item_id": "item_5",
+      "files": [
+        "src/notification_adapters.py",
+        "src/notifications.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command '$design='\"'D:\\\\combo-ab-evals\\\\combo-ab-run-siyimloi\\\\combo-ab-plan-adapters-B-ia63ag7b\\\\.agents\\\\skills\\\\combo\\\\practices\\\\design.md'; \"'$tests='\"'D:\\\\combo-ab-evals\\\\combo-ab-run-siyimloi\\\\combo-ab-plan-adapters-B-ia63ag7b\\\\.agents\\\\skills\\\\combo\\\\practices\\\\tests.md'; \"'$py='\"'D:\\\\combo-ab-evals\\\\combo-ab-run-siyimloi\\\\combo-ab-plan-adapters-B-ia63ag7b\\\\.agents\\\\skills\\\\combo\\\\specialists\\\\python.md'; Get-Content -Raw \"'$design; \"`n--- TESTS ---`n\"; Get-Content -Raw $tests; \"`n--- PYTHON ---`n\"; Get-Content -Raw $py; \"`n--- notification_adapters.py ---`n\"; $n=0; Get-Content '\"'src\\\\notification_adapters.py' | ForEach-Object { \"'$n++; '\"'{0,4}: {1}' -f \"'$n,$_ }; \"`n--- notifications.py ---`n\"; $n=0; Get-Content '\"'src\\\\notifications.py' | ForEach-Object { \"'$n++; '\"'{0,4}: {1}' -f \"'$n,$_ }'",
+      "output_bytes": 7171,
+      "output_sha256": "d561ccc8d9b33b3570035e49832f52b6f0b28f2e2dd4773beb479c75f6631f3b"
+    },
+    {
+      "item_id": "item_6",
+      "files": [
+        "src/notification_adapters.py",
+        "src/notifications.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Write-Output '--- symbols and references ---'; rg -n --hidden -g '\"'!'\"\\\\.agents/**' -g '\"'!__pycache__/**'\"' 'NotificationAdapter|EmailAdapter|SmsAdapter|send_welcome|send_receipt|\\\\.send\\\\(' .; Write-Output '--- directories ---'; Get-ChildItem -Recurse -Force | Where-Object { \"'$_.FullName -notmatch '\"'\\\\\\\\.agents(\\\\\\\\|\"'$)'\"' -and \"'$_.FullName -notmatch '\"'__pycache__' } | Select-Object FullName,Mode,Length\"",
+      "output_bytes": 1357,
+      "output_sha256": "7cb545028ff8c5a85a8dc4eecc3f7b02d38b1d4336bb50ebd87e5191078ebc16"
+    }
+  ],
+  "changed_files": [],
+  "before_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\before-hashes.json",
+  "after_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\after-hashes.json",
+  "acceptance_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\acceptance.json",
+  "acceptance": {
+    "before": null,
+    "after": null
+  },
+  "usage": null,
+  "write_like_commands": [],
+  "environment_failures": [
+    "session exceeded 240s",
+    "Codex exited with 1"
+  ],
+  "task_failures": [],
+  "classification": "environmental",
+  "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\result.json"
+}

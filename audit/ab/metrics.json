@@ -1,0 +1,3152 @@
+{
+  "schema_version": 1,
+  "generated_at_utc": "2026-09-09T12:02:36.591321Z",
+  "source": {
+    "cases": "evals/ab/cases.json",
+    "audit_root": "audit/ab",
+    "runs": [
+      "probe-final",
+      "matched-rest"
+    ],
+    "preferred_run": {
+      "bug-zero": "probe-final",
+      "other_cases": "matched-rest"
+    }
+  },
+  "suite": {
+    "suite": "combo-ab-10-pairedcases",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "max",
+    "expected_cases": 10,
+    "expected_arms": 20
+  },
+  "coverage": {
+    "expected_case_count": 10,
+    "expected_arm_count": 20,
+    "completed_result_artifacts": 20,
+    "pending_or_partial_arm_count": 0,
+    "state_counts": {
+      "completed-artifact": 20
+    },
+    "classification_counts": {
+      "environmental": 3,
+      "passed": 15,
+      "task": 2
+    },
+    "malformed_result_files": []
+  },
+  "discovery": {
+    "probe-final": {
+      "A": {
+        "path": "audit/ab/probe-final/discovery/A.json",
+        "state": "read",
+        "entry_count": 110,
+        "repo_combo_entries": [
+          {
+            "name": "combo",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\A\\fixtures\\bug-zero\\.agents\\skills\\combo\\SKILL.md"
+          }
+        ],
+        "global_combo_entries": [
+          {
+            "name": "combo",
+            "scope": "user",
+            "enabled": false,
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\SKILL.md"
+          }
+        ]
+      },
+      "B": {
+        "path": "audit/ab/probe-final/discovery/B.json",
+        "state": "read",
+        "entry_count": 122,
+        "repo_combo_entries": [
+          {
+            "name": "combo",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo\\SKILL.md"
+          },
+          {
+            "name": "combo-business",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-business\\SKILL.md"
+          },
+          {
+            "name": "combo-content",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-content\\SKILL.md"
+          },
+          {
+            "name": "combo-debug",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-debug\\SKILL.md"
+          },
+          {
+            "name": "combo-deliver",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-deliver\\SKILL.md"
+          },
+          {
+            "name": "combo-investigate",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-investigate\\SKILL.md"
+          },
+          {
+            "name": "combo-learning",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-learning\\SKILL.md"
+          },
+          {
+            "name": "combo-media",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-media\\SKILL.md"
+          },
+          {
+            "name": "combo-plan",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-plan\\SKILL.md"
+          },
+          {
+            "name": "combo-productivity",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-productivity\\SKILL.md"
+          },
+          {
+            "name": "combo-research",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-research\\SKILL.md"
+          },
+          {
+            "name": "combo-review",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-review\\SKILL.md"
+          },
+          {
+            "name": "combo-verify",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\bug-zero\\.agents\\skills\\combo-verify\\SKILL.md"
+          }
+        ],
+        "global_combo_entries": [
+          {
+            "name": "combo",
+            "scope": "user",
+            "enabled": false,
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\SKILL.md"
+          }
+        ]
+      }
+    },
+    "matched-rest": {
+      "A": {
+        "path": "audit/ab/matched-rest/discovery/A.json",
+        "state": "read",
+        "entry_count": 110,
+        "repo_combo_entries": [
+          {
+            "name": "combo",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\A\\fixtures\\inventory-feature\\.agents\\skills\\combo\\SKILL.md"
+          }
+        ],
+        "global_combo_entries": [
+          {
+            "name": "combo",
+            "scope": "user",
+            "enabled": false,
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\SKILL.md"
+          }
+        ]
+      },
+      "B": {
+        "path": "audit/ab/matched-rest/discovery/B.json",
+        "state": "read",
+        "entry_count": 122,
+        "repo_combo_entries": [
+          {
+            "name": "combo",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo\\SKILL.md"
+          },
+          {
+            "name": "combo-business",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-business\\SKILL.md"
+          },
+          {
+            "name": "combo-content",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-content\\SKILL.md"
+          },
+          {
+            "name": "combo-debug",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-debug\\SKILL.md"
+          },
+          {
+            "name": "combo-deliver",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-deliver\\SKILL.md"
+          },
+          {
+            "name": "combo-investigate",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-investigate\\SKILL.md"
+          },
+          {
+            "name": "combo-learning",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-learning\\SKILL.md"
+          },
+          {
+            "name": "combo-media",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-media\\SKILL.md"
+          },
+          {
+            "name": "combo-plan",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-plan\\SKILL.md"
+          },
+          {
+            "name": "combo-productivity",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-productivity\\SKILL.md"
+          },
+          {
+            "name": "combo-research",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-research\\SKILL.md"
+          },
+          {
+            "name": "combo-review",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-review\\SKILL.md"
+          },
+          {
+            "name": "combo-verify",
+            "scope": "repo",
+            "enabled": true,
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\B\\fixtures\\inventory-feature\\.agents\\skills\\combo-verify\\SKILL.md"
+          }
+        ],
+        "global_combo_entries": [
+          {
+            "name": "combo",
+            "scope": "user",
+            "enabled": false,
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\SKILL.md"
+          }
+        ]
+      }
+    },
+    "comparison": {
+      "expected_repo_combo_entries": {
+        "A": 1,
+        "B": 13
+      },
+      "observed_repo_combo_entries": {
+        "A": 1,
+        "B": 13
+      },
+      "repo_combo_count_verified": true,
+      "global_combo_disabled": {
+        "A": true,
+        "B": true
+      },
+      "repo_combo_names": {
+        "A": [
+          "combo"
+        ],
+        "B": [
+          "combo",
+          "combo-business",
+          "combo-content",
+          "combo-debug",
+          "combo-deliver",
+          "combo-investigate",
+          "combo-learning",
+          "combo-media",
+          "combo-plan",
+          "combo-productivity",
+          "combo-research",
+          "combo-review",
+          "combo-verify"
+        ]
+      },
+      "unrelated_inventory": {
+        "comparable": true,
+        "A_count": 109,
+        "B_count": 109,
+        "preserved": true,
+        "missing_in_B": [],
+        "extra_in_B": [],
+        "method": "Compare name, scope, enabled, and normalized path after excluding repo-scoped combo entries."
+      },
+      "verified": true,
+      "source_run": "probe-final"
+    }
+  },
+  "tokens": {
+    "completed_artifact_count": 20,
+    "artifacts_with_usage": 17,
+    "artifacts_missing_usage": 3,
+    "by_arm_sum": {
+      "input_tokens": 4016540,
+      "cached_input_tokens": 3523584,
+      "uncached_input_tokens": 492956,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 63120,
+      "reasoning_output_tokens": 37624
+    },
+    "note": "input_tokens is the reported input field; cached_input_tokens and uncached_input_tokens are separate. uncached_input_tokens is derived as input_tokens minus cached_input_tokens. No total-input cost is inferred."
+  },
+  "tool_calls": {
+    "completed_unique_calls": 210,
+    "completed_unique_calls_by_type": {
+      "command_execution": 197,
+      "file_change": 13
+    },
+    "method": "One item.completed event per unique item_id within each arm; arm-local IDs are not merged across arms."
+  },
+  "results": [
+    {
+      "run": "probe-final",
+      "case_id": "bug-zero",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/probe-final/arms/A/bug-zero/result.json",
+      "acceptance": {
+        "configured": true,
+        "before": {
+          "passed": false,
+          "returncode": 1
+        },
+        "before_status": "failed",
+        "after": {
+          "passed": true,
+          "returncode": 0
+        },
+        "after_status": "passed",
+        "expected_before_status": "failed",
+        "expected_after_status": "passed",
+        "meets_config": true
+      },
+      "wall_time_seconds": 158.505,
+      "tokens": {
+        "input_tokens": 741209,
+        "cached_input_tokens": 698112,
+        "uncached_input_tokens": 43097,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4929,
+        "reasoning_output_tokens": 2637
+      },
+      "tool_calls": {
+        "completed_unique": 13,
+        "completed_unique_by_type": {
+          "command_execution": 12,
+          "file_change": 1
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/probe-final/arms/A/bug-zero/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "quality-gate/skill.md",
+            "source": "global-codex",
+            "evidence_item_ids": [
+              "item_14"
+            ]
+          },
+          {
+            "path": "combo/practices/tests.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/workflows/debug.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          }
+        ],
+        "unique_path_count": 6,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/SKILL.md\""
+          },
+          {
+            "item_id": "item_14",
+            "paths": [
+              {
+                "path": "quality-gate/SKILL.md",
+                "source": "global-codex"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw C:/Users/VVeb1250/.codex/skills/quality-gate/SKILL.md\""
+          },
+          {
+            "item_id": "item_3",
+            "paths": [
+              {
+                "path": "combo/workflows/debug.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/practices/tests.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/specialists/python.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/workflows/debug.md; Get-Content -Raw .agents/skills/combo/practices/tests.md; Get-Content -Raw .agents/skills/combo/specialists/INDEX.md; Get-Content -Raw .agents/skills/combo/specialists/python.md\""
+          }
+        ],
+        "evidence_command_count": 3,
+        "existing_parser_references": [
+          "combo",
+          "combo/practices/build",
+          "combo/practices/context",
+          "combo/practices/delegation",
+          "combo/practices/design",
+          "combo/practices/e2e",
+          "combo/practices/security",
+          "combo/practices/simplicity",
+          "combo/practices/tests",
+          "combo/workflows/debug",
+          "combo/workflows/deliver",
+          "combo/workflows/investigate",
+          "combo/workflows/plan",
+          "combo/workflows/review",
+          "combo/workflows/verify"
+        ],
+        "paths_not_in_existing_parser": [
+          "quality-gate/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "probe-final",
+      "case_id": "bug-zero",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/probe-final/arms/B/bug-zero/result.json",
+      "acceptance": {
+        "configured": true,
+        "before": {
+          "passed": false,
+          "returncode": 1
+        },
+        "before_status": "failed",
+        "after": {
+          "passed": true,
+          "returncode": 0
+        },
+        "after_status": "passed",
+        "expected_before_status": "failed",
+        "expected_after_status": "passed",
+        "meets_config": true
+      },
+      "wall_time_seconds": 122.479,
+      "tokens": {
+        "input_tokens": 277836,
+        "cached_input_tokens": 228608,
+        "uncached_input_tokens": 49228,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3975,
+        "reasoning_output_tokens": 2026
+      },
+      "tool_calls": {
+        "completed_unique": 12,
+        "completed_unique_by_type": {
+          "command_execution": 11,
+          "file_change": 1
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/probe-final/arms/B/bug-zero/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo-deliver/skill.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/workflows/deliver.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "quality-gate/skill.md",
+            "source": "global-codex",
+            "evidence_item_ids": [
+              "item_17"
+            ]
+          }
+        ],
+        "unique_path_count": 4,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo-deliver/SKILL.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-tmjw_vry/combo-ab-bug-zero-B-uglk4h2n/.agents/skills/combo-deliver/SKILL.md'\""
+          },
+          {
+            "item_id": "item_17",
+            "paths": [
+              {
+                "path": "quality-gate/SKILL.md",
+                "source": "global-codex"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'C:/Users/VVeb1250/.codex/skills/quality-gate/SKILL.md'\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/workflows/deliver.md",
+                "source": "candidate"
+              },
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-tmjw_vry/combo-ab-bug-zero-B-uglk4h2n/.agents/skills/combo/workflows/deliver.md'; Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-tmjw_vry/combo-ab-bug-zero-B-uglk4h2n/.agents/skills/combo/specialists/INDEX.md'\""
+          }
+        ],
+        "evidence_command_count": 3,
+        "existing_parser_references": [
+          "combo",
+          "combo/workflows/deliver"
+        ],
+        "paths_not_in_existing_parser": [
+          "combo-deliver/skill.md",
+          "quality-gate/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "inventory-feature",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/A/inventory-feature/result.json",
+      "acceptance": {
+        "configured": true,
+        "before": {
+          "passed": false,
+          "returncode": 1
+        },
+        "before_status": "failed",
+        "after": {
+          "passed": true,
+          "returncode": 0
+        },
+        "after_status": "passed",
+        "expected_before_status": "failed",
+        "expected_after_status": "passed",
+        "meets_config": true
+      },
+      "wall_time_seconds": 187.039,
+      "tokens": {
+        "input_tokens": 400868,
+        "cached_input_tokens": 357888,
+        "uncached_input_tokens": 42980,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7236,
+        "reasoning_output_tokens": 4213
+      },
+      "tool_calls": {
+        "completed_unique": 25,
+        "completed_unique_by_type": {
+          "command_execution": 23,
+          "file_change": 2
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/A/inventory-feature/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "quality-gate/skill.md",
+            "source": "global-codex",
+            "evidence_item_ids": [
+              "item_24"
+            ]
+          },
+          {
+            "path": "combo/practices/simplicity.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_4"
+            ]
+          },
+          {
+            "path": "combo/practices/tests.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_5"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_6"
+            ]
+          },
+          {
+            "path": "combo/workflows/deliver.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          }
+        ],
+        "unique_path_count": 7,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/SKILL.md'"
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/workflows/deliver.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/workflows/deliver.md'\""
+          },
+          {
+            "item_id": "item_24",
+            "paths": [
+              {
+                "path": "quality-gate/SKILL.md",
+                "source": "global-codex"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'C:/Users/VVeb1250/.codex/skills/quality-gate/SKILL.md'\""
+          },
+          {
+            "item_id": "item_3",
+            "paths": [
+              {
+                "path": "combo/practices/tests.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/practices/tests.md'\""
+          },
+          {
+            "item_id": "item_4",
+            "paths": [
+              {
+                "path": "combo/practices/simplicity.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/practices/simplicity.md'\""
+          },
+          {
+            "item_id": "item_5",
+            "paths": [
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/specialists/INDEX.md'\""
+          },
+          {
+            "item_id": "item_6",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/specialists/python.md'"
+          }
+        ],
+        "evidence_command_count": 7,
+        "existing_parser_references": [
+          "combo",
+          "combo/practices/simplicity",
+          "combo/practices/tests",
+          "combo/workflows/deliver"
+        ],
+        "paths_not_in_existing_parser": [
+          "quality-gate/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "inventory-feature",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/B/inventory-feature/result.json",
+      "acceptance": {
+        "configured": true,
+        "before": {
+          "passed": false,
+          "returncode": 1
+        },
+        "before_status": "failed",
+        "after": {
+          "passed": true,
+          "returncode": 0
+        },
+        "after_status": "passed",
+        "expected_before_status": "failed",
+        "expected_after_status": "passed",
+        "meets_config": true
+      },
+      "wall_time_seconds": 234.5,
+      "tokens": {
+        "input_tokens": 595940,
+        "cached_input_tokens": 556800,
+        "uncached_input_tokens": 39140,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9016,
+        "reasoning_output_tokens": 5375
+      },
+      "tool_calls": {
+        "completed_unique": 18,
+        "completed_unique_by_type": {
+          "command_execution": 16,
+          "file_change": 2
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/B/inventory-feature/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo-deliver/skill.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "quality-gate/skill.md",
+            "source": "global-codex",
+            "evidence_item_ids": [
+              "item_18"
+            ]
+          },
+          {
+            "path": "combo/practices/simplicity.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/practices/tests.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/workflows/deliver.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          }
+        ],
+        "unique_path_count": 8,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "candidate"
+              },
+              {
+                "path": "combo-deliver/SKILL.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-inventory-feature-B-a3b5o_tz/.agents/skills/combo/SKILL.md'; Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-inventory-feature-B-a3b5o_tz/.agents/skills/combo-deliver/SKILL.md'\""
+          },
+          {
+            "item_id": "item_18",
+            "paths": [
+              {
+                "path": "quality-gate/SKILL.md",
+                "source": "global-codex"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'C:/Users/VVeb1250/.codex/skills/quality-gate/SKILL.md'\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/workflows/deliver.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/practices/tests.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/practices/simplicity.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/workflows/deliver.md'; Get-Content -Raw '.agents/skills/combo/specialists/INDEX.md'; Get-Content -Raw '.agents/skills/combo/practices/tests.md'; Get-Content -Raw '.agents/skills/combo/practices/simplicity.md'\""
+          },
+          {
+            "item_id": "item_3",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/specialists/python.md'\""
+          }
+        ],
+        "evidence_command_count": 4,
+        "existing_parser_references": [
+          "combo",
+          "combo/workflows/deliver"
+        ],
+        "paths_not_in_existing_parser": [
+          "combo-deliver/skill.md",
+          "quality-gate/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "security-review",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/A/security-review/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 95.503,
+      "tokens": {
+        "input_tokens": 155092,
+        "cached_input_tokens": 134400,
+        "uncached_input_tokens": 20692,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3521,
+        "reasoning_output_tokens": 2330
+      },
+      "tool_calls": {
+        "completed_unique": 14,
+        "completed_unique_by_type": {
+          "command_execution": 14
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/A/security-review/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo/practices/security.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_11",
+              "item_7"
+            ]
+          },
+          {
+            "path": "combo/workflows/review.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_4"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          }
+        ],
+        "unique_path_count": 5,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/SKILL.md\""
+          },
+          {
+            "item_id": "item_11",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-A-h1h25uxx/.agents/skills/combo/specialists/python.md'\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-A-h1h25uxx/.agents/skills/combo/specialists/INDEX.md'\""
+          },
+          {
+            "item_id": "item_3",
+            "paths": [
+              {
+                "path": "combo/practices/security.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-A-h1h25uxx/.agents/skills/combo/practices/security.md'\""
+          },
+          {
+            "item_id": "item_4",
+            "paths": [
+              {
+                "path": "combo/workflows/review.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-A-h1h25uxx/.agents/skills/combo/workflows/review.md'\""
+          },
+          {
+            "item_id": "item_7",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-A-h1h25uxx/.agents/skills/combo/specialists/python.md'\""
+          }
+        ],
+        "evidence_command_count": 6,
+        "existing_parser_references": [
+          "combo"
+        ],
+        "paths_not_in_existing_parser": [],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "security-review",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "task",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/B/security-review/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 108.14,
+      "tokens": {
+        "input_tokens": 196558,
+        "cached_input_tokens": 168960,
+        "uncached_input_tokens": 27598,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4081,
+        "reasoning_output_tokens": 2396
+      },
+      "tool_calls": {
+        "completed_unique": 14,
+        "completed_unique_by_type": {
+          "command_execution": 14
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/B/security-review/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo-review/skill.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/practices/security.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/workflows/review.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          }
+        ],
+        "unique_path_count": 5,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo-review/SKILL.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-B-bkjej1mn/.agents/skills/combo-review/SKILL.md'\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/workflows/review.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/workflows/review.md'; Get-Content -Raw '.agents/skills/combo/specialists/INDEX.md'\""
+          },
+          {
+            "item_id": "item_3",
+            "paths": [
+              {
+                "path": "combo/practices/security.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/specialists/python.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/practices/security.md'; Get-Content -Raw '.agents/skills/combo/specialists/python.md'\""
+          }
+        ],
+        "evidence_command_count": 3,
+        "existing_parser_references": [
+          "combo",
+          "combo/workflows/review"
+        ],
+        "paths_not_in_existing_parser": [
+          "combo-review/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": [
+        "read-only case changed files or emitted write command"
+      ]
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "plan-adapters",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "environmental",
+      "completion_quality": "deadline-incomplete",
+      "result_path": "audit/ab/matched-rest/arms/A/plan-adapters/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 247.749,
+      "tokens": {
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "uncached_input_tokens": null,
+        "cache_write_input_tokens": null,
+        "output_tokens": null,
+        "reasoning_output_tokens": null
+      },
+      "tool_calls": {
+        "completed_unique": 13,
+        "completed_unique_by_type": {
+          "command_execution": 13
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/A/plan-adapters/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo/practices/design.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_5"
+            ]
+          },
+          {
+            "path": "combo/practices/tests.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_4"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/workflows/plan.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          }
+        ],
+        "unique_path_count": 4,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/SKILL.md\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/workflows/plan.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/workflows/plan.md\""
+          },
+          {
+            "item_id": "item_4",
+            "paths": [
+              {
+                "path": "combo/practices/tests.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/practices/tests.md\""
+          },
+          {
+            "item_id": "item_5",
+            "paths": [
+              {
+                "path": "combo/practices/design.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/practices/design.md\""
+          }
+        ],
+        "evidence_command_count": 4,
+        "existing_parser_references": [
+          "combo"
+        ],
+        "paths_not_in_existing_parser": [],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 1,
+      "timed_out": true,
+      "environment_failures": [
+        "session exceeded 240s",
+        "Codex exited with 1"
+      ],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "plan-adapters",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "environmental",
+      "completion_quality": "deadline-incomplete",
+      "result_path": "audit/ab/matched-rest/arms/B/plan-adapters/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 247.717,
+      "tokens": {
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "uncached_input_tokens": null,
+        "cache_write_input_tokens": null,
+        "output_tokens": null,
+        "reasoning_output_tokens": null
+      },
+      "tool_calls": {
+        "completed_unique": 4,
+        "completed_unique_by_type": {
+          "command_execution": 4
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/B/plan-adapters/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo-plan/skill.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/practices/design.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_5"
+            ]
+          },
+          {
+            "path": "combo/practices/tests.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_5"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_5"
+            ]
+          },
+          {
+            "path": "combo/workflows/plan.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          }
+        ],
+        "unique_path_count": 6,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo-plan/SKILL.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw 'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-plan-adapters-B-ia63ag7b/.agents/skills/combo-plan/SKILL.md'\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/workflows/plan.md",
+                "source": "candidate"
+              },
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command '$plan='\"'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-plan-adapters-B-ia63ag7b/.agents/skills/combo/workflows/plan.md'; \"'$index='\"'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-plan-adapters-B-ia63ag7b/.agents/skills/combo/specialists/INDEX.md'; Get-Content -Raw \"'$plan; \"`n--- SPECIALIST INDEX ---`n\"; Get-Content -Raw $index'"
+          },
+          {
+            "item_id": "item_5",
+            "paths": [
+              {
+                "path": "combo/practices/design.md",
+                "source": "candidate"
+              },
+              {
+                "path": "combo/practices/tests.md",
+                "source": "candidate"
+              },
+              {
+                "path": "combo/specialists/python.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command '$design='\"'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-plan-adapters-B-ia63ag7b/.agents/skills/combo/practices/design.md'; \"'$tests='\"'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-plan-adapters-B-ia63ag7b/.agents/skills/combo/practices/tests.md'; \"'$py='\"'D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-plan-adapters-B-ia63ag7b/.agents/skills/combo/specialists/python.md'; Get-Content -Raw \"'$design; \"`n--- TESTS ---`n\"; Get-Content -Raw $tests; \"`n--- PYTHON ---`n\"; Get-Content -Raw $py; \"`n--- notification_adapters.py ---`n\"; $n=0; Get-Content '\"'src/notification_adapters.py' | ForEach-Object { \"'$n++; '\"'{0,4}: {1}' -f \"'$n,$_ }; \"`n--- notifications.py ---`n\"; $n=0; Get-Content '\"'src/notifications.py' | ForEach-Object { \"'$n++; '\"'{0,4}: {1}' -f \"'$n,$_ }'"
+          }
+        ],
+        "evidence_command_count": 3,
+        "existing_parser_references": [
+          "combo",
+          "combo/workflows/plan"
+        ],
+        "paths_not_in_existing_parser": [
+          "combo-plan/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 1,
+      "timed_out": true,
+      "environment_failures": [
+        "session exceeded 240s",
+        "Codex exited with 1"
+      ],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "trivial-label",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/A/trivial-label/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 27.963,
+      "tokens": {
+        "input_tokens": 55766,
+        "cached_input_tokens": 42240,
+        "uncached_input_tokens": 13526,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 438,
+        "reasoning_output_tokens": 216
+      },
+      "tool_calls": {
+        "completed_unique": 2,
+        "completed_unique_by_type": {
+          "command_execution": 1,
+          "file_change": 1
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/A/trivial-label/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [],
+        "unique_path_count": 0,
+        "evidence_commands": [],
+        "evidence_command_count": 0,
+        "existing_parser_references": [],
+        "paths_not_in_existing_parser": [],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "trivial-label",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/B/trivial-label/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 51.443,
+      "tokens": {
+        "input_tokens": 123584,
+        "cached_input_tokens": 85760,
+        "uncached_input_tokens": 37824,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1274,
+        "reasoning_output_tokens": 703
+      },
+      "tool_calls": {
+        "completed_unique": 3,
+        "completed_unique_by_type": {
+          "command_execution": 2,
+          "file_change": 1
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/B/trivial-label/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo-deliver/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          }
+        ],
+        "unique_path_count": 2,
+        "evidence_commands": [
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo-deliver/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/SKILL.md'; /\"\"'`n---COMBO-DELIVER---`n\"; Get-Content -Raw '\"'.agents/skills/combo-deliver/SKILL.md'\""
+          }
+        ],
+        "evidence_command_count": 1,
+        "existing_parser_references": [
+          "combo",
+          "combo/workflows/deliver"
+        ],
+        "paths_not_in_existing_parser": [
+          "combo-deliver/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "translation-negative",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/A/translation-negative/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 17.463,
+      "tokens": {
+        "input_tokens": 18065,
+        "cached_input_tokens": 8960,
+        "uncached_input_tokens": 9105,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 98,
+        "reasoning_output_tokens": 82
+      },
+      "tool_calls": {
+        "completed_unique": 0,
+        "completed_unique_by_type": {},
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/A/translation-negative/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [],
+        "unique_path_count": 0,
+        "evidence_commands": [],
+        "evidence_command_count": 0,
+        "existing_parser_references": [],
+        "paths_not_in_existing_parser": [],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "translation-negative",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/B/translation-negative/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 16.695,
+      "tokens": {
+        "input_tokens": 18400,
+        "cached_input_tokens": 0,
+        "uncached_input_tokens": 18400,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 98,
+        "reasoning_output_tokens": 82
+      },
+      "tool_calls": {
+        "completed_unique": 0,
+        "completed_unique_by_type": {},
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/B/translation-negative/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [],
+        "unique_path_count": 0,
+        "evidence_commands": [],
+        "evidence_command_count": 0,
+        "existing_parser_references": [],
+        "paths_not_in_existing_parser": [],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "thai-diagnosis",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/A/thai-diagnosis/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 130.848,
+      "tokens": {
+        "input_tokens": 188579,
+        "cached_input_tokens": 141568,
+        "uncached_input_tokens": 47011,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5400,
+        "reasoning_output_tokens": 3736
+      },
+      "tool_calls": {
+        "completed_unique": 6,
+        "completed_unique_by_type": {
+          "command_execution": 6
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/A/thai-diagnosis/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_5"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_6"
+            ]
+          },
+          {
+            "path": "combo/workflows/debug.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_4"
+            ]
+          }
+        ],
+        "unique_path_count": 4,
+        "evidence_commands": [
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/SKILL.md\""
+          },
+          {
+            "item_id": "item_4",
+            "paths": [
+              {
+                "path": "combo/workflows/debug.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/workflows/debug.md\""
+          },
+          {
+            "item_id": "item_5",
+            "paths": [
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/specialists/INDEX.md\""
+          },
+          {
+            "item_id": "item_6",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/specialists/python.md\""
+          }
+        ],
+        "evidence_command_count": 4,
+        "existing_parser_references": [],
+        "paths_not_in_existing_parser": [
+          "combo/skill.md",
+          "combo/specialists/index.md",
+          "combo/specialists/python.md",
+          "combo/workflows/debug.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "thai-diagnosis",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/B/thai-diagnosis/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 138.173,
+      "tokens": {
+        "input_tokens": 288509,
+        "cached_input_tokens": 264192,
+        "uncached_input_tokens": 24317,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4719,
+        "reasoning_output_tokens": 2572
+      },
+      "tool_calls": {
+        "completed_unique": 13,
+        "completed_unique_by_type": {
+          "command_execution": 13
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/B/thai-diagnosis/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo-debug/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_4"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_5",
+              "item_8"
+            ]
+          },
+          {
+            "path": "combo/workflows/debug.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          }
+        ],
+        "unique_path_count": 5,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo-debug/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo-debug/SKILL.md\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/SKILL.md\""
+          },
+          {
+            "item_id": "item_3",
+            "paths": [
+              {
+                "path": "combo/workflows/debug.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/workflows/debug.md\""
+          },
+          {
+            "item_id": "item_4",
+            "paths": [
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/specialists/INDEX.md\""
+          },
+          {
+            "item_id": "item_5",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/specialists/python.md\""
+          },
+          {
+            "item_id": "item_8",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/specialists/python.md\""
+          }
+        ],
+        "evidence_command_count": 6,
+        "existing_parser_references": [
+          "combo",
+          "combo/workflows/debug"
+        ],
+        "paths_not_in_existing_parser": [
+          "combo-debug/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "thai-delivery",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "environmental",
+      "completion_quality": "deadline-incomplete",
+      "result_path": "audit/ab/matched-rest/arms/A/thai-delivery/result.json",
+      "acceptance": {
+        "configured": true,
+        "before": {
+          "passed": false,
+          "returncode": 1
+        },
+        "before_status": "failed",
+        "after": {
+          "passed": true,
+          "returncode": 0
+        },
+        "after_status": "passed",
+        "expected_before_status": "failed",
+        "expected_after_status": "passed",
+        "meets_config": true
+      },
+      "wall_time_seconds": 248.375,
+      "tokens": {
+        "input_tokens": null,
+        "cached_input_tokens": null,
+        "uncached_input_tokens": null,
+        "cache_write_input_tokens": null,
+        "output_tokens": null,
+        "reasoning_output_tokens": null
+      },
+      "tool_calls": {
+        "completed_unique": 37,
+        "completed_unique_by_type": {
+          "command_execution": 34,
+          "file_change": 3
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/A/thai-delivery/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "quality-gate/skill.md",
+            "source": "global-codex",
+            "evidence_item_ids": [
+              "item_21"
+            ]
+          },
+          {
+            "path": "combo/practices/build.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/practices/simplicity.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_4"
+            ]
+          },
+          {
+            "path": "combo/practices/tests.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_5"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_6"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_7"
+            ]
+          },
+          {
+            "path": "combo/workflows/deliver.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          }
+        ],
+        "unique_path_count": 8,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/SKILL.md\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/practices/build.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/practices/build.md'\""
+          },
+          {
+            "item_id": "item_21",
+            "paths": [
+              {
+                "path": "quality-gate/SKILL.md",
+                "source": "global-codex"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw C:/Users/VVeb1250/.codex/skills/quality-gate/SKILL.md\""
+          },
+          {
+            "item_id": "item_3",
+            "paths": [
+              {
+                "path": "combo/workflows/deliver.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/workflows/deliver.md'\""
+          },
+          {
+            "item_id": "item_4",
+            "paths": [
+              {
+                "path": "combo/practices/simplicity.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/practices/simplicity.md'\""
+          },
+          {
+            "item_id": "item_5",
+            "paths": [
+              {
+                "path": "combo/practices/tests.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/practices/tests.md'\""
+          },
+          {
+            "item_id": "item_6",
+            "paths": [
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/specialists/INDEX.md'\""
+          },
+          {
+            "item_id": "item_7",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/specialists/python.md\""
+          }
+        ],
+        "evidence_command_count": 8,
+        "existing_parser_references": [],
+        "paths_not_in_existing_parser": [
+          "combo/practices/build.md",
+          "combo/practices/simplicity.md",
+          "combo/practices/tests.md",
+          "combo/skill.md",
+          "combo/specialists/index.md",
+          "combo/specialists/python.md",
+          "combo/workflows/deliver.md",
+          "quality-gate/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 1,
+      "timed_out": true,
+      "environment_failures": [
+        "session exceeded 240s",
+        "Codex exited with 1"
+      ],
+      "task_failures": [
+        "candidate instructions changed during execution"
+      ]
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "thai-delivery",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/B/thai-delivery/result.json",
+      "acceptance": {
+        "configured": true,
+        "before": {
+          "passed": false,
+          "returncode": 1
+        },
+        "before_status": "failed",
+        "after": {
+          "passed": true,
+          "returncode": 0
+        },
+        "after_status": "passed",
+        "expected_before_status": "failed",
+        "expected_after_status": "passed",
+        "meets_config": true
+      },
+      "wall_time_seconds": 203.491,
+      "tokens": {
+        "input_tokens": 479508,
+        "cached_input_tokens": 437248,
+        "uncached_input_tokens": 42260,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7363,
+        "reasoning_output_tokens": 4387
+      },
+      "tool_calls": {
+        "completed_unique": 12,
+        "completed_unique_by_type": {
+          "command_execution": 10,
+          "file_change": 2
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/B/thai-delivery/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "quality-gate/skill.md",
+            "source": "global-codex",
+            "evidence_item_ids": [
+              "item_11"
+            ]
+          },
+          {
+            "path": "combo-deliver/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/practices/build.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/practices/simplicity.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/practices/tests.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_4"
+            ]
+          },
+          {
+            "path": "combo/workflows/deliver.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          }
+        ],
+        "unique_path_count": 9,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo-deliver/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/SKILL.md; Get-Content -Raw .agents/skills/combo-deliver/SKILL.md'"
+          },
+          {
+            "item_id": "item_11",
+            "paths": [
+              {
+                "path": "quality-gate/SKILL.md",
+                "source": "global-codex"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw C:/Users/VVeb1250/.codex/skills/quality-gate/SKILL.md\""
+          },
+          {
+            "item_id": "item_3",
+            "paths": [
+              {
+                "path": "combo/workflows/deliver.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/practices/tests.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/practices/build.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/practices/simplicity.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/workflows/deliver.md; Get-Content -Raw .agents/skills/combo/practices/tests.md; Get-Content -Raw .agents/skills/combo/practices/build.md; Get-Content -Raw .agents/skills/combo/practices/simplicity.md; Get-Content -Raw .agents/skills/combo/specialists/INDEX.md'"
+          },
+          {
+            "item_id": "item_4",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/specialists/python.md; Get-ChildItem -Force | Select-Object Mode,Length,LastWriteTime,Name; git status --short; rg --files'"
+          }
+        ],
+        "evidence_command_count": 4,
+        "existing_parser_references": [
+          "combo",
+          "combo/practices/build",
+          "combo/practices/simplicity",
+          "combo/practices/tests",
+          "combo/workflows/deliver"
+        ],
+        "paths_not_in_existing_parser": [
+          "combo-deliver/skill.md",
+          "quality-gate/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "content-repurpose",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/A/content-repurpose/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 100.542,
+      "tokens": {
+        "input_tokens": 128717,
+        "cached_input_tokens": 109056,
+        "uncached_input_tokens": 19661,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3774,
+        "reasoning_output_tokens": 2572
+      },
+      "tool_calls": {
+        "completed_unique": 9,
+        "completed_unique_by_type": {
+          "command_execution": 9
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/A/content-repurpose/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo/references/library/content.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_4"
+            ]
+          },
+          {
+            "path": "combo/references/library/ecc/skills/brand-voice/reference.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_7"
+            ]
+          },
+          {
+            "path": "combo/references/library/ecc/skills/content-engine/reference.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_10"
+            ]
+          },
+          {
+            "path": "combo/references/library/ecc/skills/crosspost/reference.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_9"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/workflows/content.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          }
+        ],
+        "unique_path_count": 6,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/SKILL.md'\""
+          },
+          {
+            "item_id": "item_10",
+            "paths": [
+              {
+                "path": "combo/references/library/ecc/skills/content-engine/REFERENCE.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/references/library/ecc/skills/content-engine/REFERENCE.md'\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/workflows/content.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/workflows/content.md'\""
+          },
+          {
+            "item_id": "item_4",
+            "paths": [
+              {
+                "path": "combo/references/library/content.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/references/library/content.md'\""
+          },
+          {
+            "item_id": "item_7",
+            "paths": [
+              {
+                "path": "combo/references/library/ecc/skills/brand-voice/REFERENCE.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/references/library/ecc/skills/brand-voice/REFERENCE.md'\""
+          },
+          {
+            "item_id": "item_9",
+            "paths": [
+              {
+                "path": "combo/references/library/ecc/skills/crosspost/REFERENCE.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/references/library/ecc/skills/crosspost/REFERENCE.md'\""
+          }
+        ],
+        "evidence_command_count": 6,
+        "existing_parser_references": [
+          "combo"
+        ],
+        "paths_not_in_existing_parser": [],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "content-repurpose",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "task",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/B/content-repurpose/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 91.686,
+      "tokens": {
+        "input_tokens": 183472,
+        "cached_input_tokens": 163584,
+        "uncached_input_tokens": 19888,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2948,
+        "reasoning_output_tokens": 1908
+      },
+      "tool_calls": {
+        "completed_unique": 7,
+        "completed_unique_by_type": {
+          "command_execution": 7
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/B/content-repurpose/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo-content/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/references/library/content.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_6"
+            ]
+          },
+          {
+            "path": "combo/references/library/ecc/skills/brand-voice/reference.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_7"
+            ]
+          },
+          {
+            "path": "combo/references/library/ecc/skills/crosspost/reference.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_7"
+            ]
+          },
+          {
+            "path": "combo/workflows/content.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          }
+        ],
+        "unique_path_count": 5,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo-content/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo-content/SKILL.md\""
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/workflows/content.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/workflows/content.md\""
+          },
+          {
+            "item_id": "item_6",
+            "paths": [
+              {
+                "path": "combo/references/library/content.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/references/library/content.md\""
+          },
+          {
+            "item_id": "item_7",
+            "paths": [
+              {
+                "path": "combo/references/library/ecc/skills/crosspost/REFERENCE.md",
+                "source": "relative"
+              },
+              {
+                "path": "combo/references/library/ecc/skills/brand-voice/REFERENCE.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw .agents/skills/combo/references/library/ecc/skills/crosspost/REFERENCE.md; Get-Content -Raw .agents/skills/combo/references/library/ecc/skills/brand-voice/REFERENCE.md; Get-ChildItem -Force | Select-Object Mode,Length,LastWriteTime,Name\""
+          }
+        ],
+        "evidence_command_count": 4,
+        "existing_parser_references": [
+          "combo"
+        ],
+        "paths_not_in_existing_parser": [
+          "combo-content/skill.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": [
+        "read-only case changed files or emitted write command"
+      ]
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "learning-lesson",
+      "variant": "A",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/A/learning-lesson/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 80.125,
+      "tokens": {
+        "input_tokens": 107883,
+        "cached_input_tokens": 89856,
+        "uncached_input_tokens": 18027,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2792,
+        "reasoning_output_tokens": 1706
+      },
+      "tool_calls": {
+        "completed_unique": 6,
+        "completed_unique_by_type": {
+          "command_execution": 6
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/A/learning-lesson/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo/references/library/learning.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_4"
+            ]
+          },
+          {
+            "path": "combo/references/library/matt/skills/productivity/teach/reference.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_6"
+            ]
+          },
+          {
+            "path": "combo/specialists/index.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          },
+          {
+            "path": "combo/specialists/python.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_5"
+            ]
+          },
+          {
+            "path": "combo/workflows/learning.md",
+            "source": "candidate",
+            "evidence_item_ids": [
+              "item_3"
+            ]
+          },
+          {
+            "path": "combo/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          }
+        ],
+        "unique_path_count": 6,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/SKILL.md'"
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/specialists/INDEX.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw /\"D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-learning-lesson-A-b9msb3mr/.agents/skills/combo/specialists/INDEX.md/\"\""
+          },
+          {
+            "item_id": "item_3",
+            "paths": [
+              {
+                "path": "combo/workflows/learning.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw /\"D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-learning-lesson-A-b9msb3mr/.agents/skills/combo/workflows/learning.md/\"\""
+          },
+          {
+            "item_id": "item_4",
+            "paths": [
+              {
+                "path": "combo/references/library/learning.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw /\"D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-learning-lesson-A-b9msb3mr/.agents/skills/combo/references/library/learning.md/\"\""
+          },
+          {
+            "item_id": "item_5",
+            "paths": [
+              {
+                "path": "combo/specialists/python.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw /\"D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-learning-lesson-A-b9msb3mr/.agents/skills/combo/specialists/python.md/\"\""
+          },
+          {
+            "item_id": "item_6",
+            "paths": [
+              {
+                "path": "combo/references/library/matt/skills/productivity/teach/REFERENCE.md",
+                "source": "candidate"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command \"Get-Content -Raw /\"D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-learning-lesson-A-b9msb3mr/.agents/skills/combo/references/library/matt/skills/productivity/teach/REFERENCE.md/\"\""
+          }
+        ],
+        "evidence_command_count": 6,
+        "existing_parser_references": [
+          "combo"
+        ],
+        "paths_not_in_existing_parser": [],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    },
+    {
+      "run": "matched-rest",
+      "case_id": "learning-lesson",
+      "variant": "B",
+      "state": "completed-artifact",
+      "classification": "passed",
+      "completion_quality": "recorded",
+      "result_path": "audit/ab/matched-rest/arms/B/learning-lesson/result.json",
+      "acceptance": {
+        "configured": false,
+        "before": null,
+        "before_status": "not-run",
+        "after": null,
+        "after_status": "not-run",
+        "expected_before_status": null,
+        "expected_after_status": null,
+        "meets_config": null
+      },
+      "wall_time_seconds": 54.673,
+      "tokens": {
+        "input_tokens": 56554,
+        "cached_input_tokens": 36352,
+        "uncached_input_tokens": 20202,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1458,
+        "reasoning_output_tokens": 683
+      },
+      "tool_calls": {
+        "completed_unique": 2,
+        "completed_unique_by_type": {
+          "command_execution": 2
+        },
+        "completed_events_without_id": 0,
+        "source": "audit/ab/matched-rest/arms/B/learning-lesson/tool-events.json"
+      },
+      "instructions": {
+        "unique_paths": [
+          {
+            "path": "combo-learning/skill.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_1"
+            ]
+          },
+          {
+            "path": "combo/workflows/learning.md",
+            "source": "relative",
+            "evidence_item_ids": [
+              "item_2"
+            ]
+          }
+        ],
+        "unique_path_count": 2,
+        "evidence_commands": [
+          {
+            "item_id": "item_1",
+            "paths": [
+              {
+                "path": "combo-learning/SKILL.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo-learning/SKILL.md'"
+          },
+          {
+            "item_id": "item_2",
+            "paths": [
+              {
+                "path": "combo/workflows/learning.md",
+                "source": "relative"
+              }
+            ],
+            "command_normalized": "\"C:/Users/VVeb1250/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/powershell/pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/workflows/learning.md'"
+          }
+        ],
+        "evidence_command_count": 2,
+        "existing_parser_references": [],
+        "paths_not_in_existing_parser": [
+          "combo-learning/skill.md",
+          "combo/workflows/learning.md"
+        ],
+        "method": "Successful item.completed command_execution events only, deduplicated by item_id; command paths normalized for doubled Windows slashes."
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "environment_failures": [],
+      "task_failures": []
+    }
+  ],
+  "pairs": [
+    {
+      "case_id": "bug-zero",
+      "title": "Repair zero versus missing parser bug",
+      "domain": "engineering",
+      "pair_index": 0,
+      "first_arm": "A",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "passed",
+        "B": "passed"
+      },
+      "wall_time_seconds": 158.505,
+      "sum_arm_wall_time_seconds": 280.984
+    },
+    {
+      "case_id": "inventory-feature",
+      "title": "Extend iterable inventory summary",
+      "domain": "engineering",
+      "pair_index": 1,
+      "first_arm": "B",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "passed",
+        "B": "passed"
+      },
+      "wall_time_seconds": 234.5,
+      "sum_arm_wall_time_seconds": 421.539
+    },
+    {
+      "case_id": "security-review",
+      "title": "Review ownership and zero-value order handling",
+      "domain": "engineering",
+      "pair_index": 2,
+      "first_arm": "A",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "passed",
+        "B": "task"
+      },
+      "wall_time_seconds": 108.14,
+      "sum_arm_wall_time_seconds": 203.643
+    },
+    {
+      "case_id": "plan-adapters",
+      "title": "Plan a gateway around existing adapters",
+      "domain": "engineering",
+      "pair_index": 3,
+      "first_arm": "B",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "environmental",
+        "B": "environmental"
+      },
+      "wall_time_seconds": 247.749,
+      "sum_arm_wall_time_seconds": 495.466
+    },
+    {
+      "case_id": "trivial-label",
+      "title": "Make a tiny inline label edit",
+      "domain": "engineering",
+      "pair_index": 4,
+      "first_arm": "A",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "passed",
+        "B": "passed"
+      },
+      "wall_time_seconds": 51.443,
+      "sum_arm_wall_time_seconds": 79.406
+    },
+    {
+      "case_id": "translation-negative",
+      "title": "Translate a noncoding sentence",
+      "domain": "content",
+      "pair_index": 5,
+      "first_arm": "B",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "passed",
+        "B": "passed"
+      },
+      "wall_time_seconds": 17.463,
+      "sum_arm_wall_time_seconds": 34.158
+    },
+    {
+      "case_id": "thai-diagnosis",
+      "title": "Thai diagnosis and repair plan only",
+      "domain": "engineering",
+      "pair_index": 6,
+      "first_arm": "A",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "passed",
+        "B": "passed"
+      },
+      "wall_time_seconds": 138.173,
+      "sum_arm_wall_time_seconds": 269.021
+    },
+    {
+      "case_id": "thai-delivery",
+      "title": "Thai complete delivery with checks",
+      "domain": "engineering",
+      "pair_index": 7,
+      "first_arm": "B",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "environmental",
+        "B": "passed"
+      },
+      "wall_time_seconds": 248.375,
+      "sum_arm_wall_time_seconds": 451.866
+    },
+    {
+      "case_id": "content-repurpose",
+      "title": "Repurpose a supplied product brief",
+      "domain": "content",
+      "pair_index": 8,
+      "first_arm": "A",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "passed",
+        "B": "task"
+      },
+      "wall_time_seconds": 100.542,
+      "sum_arm_wall_time_seconds": 192.228
+    },
+    {
+      "case_id": "learning-lesson",
+      "title": "Teach a bounded concept with practice",
+      "domain": "learning",
+      "pair_index": 9,
+      "first_arm": "B",
+      "arm_states": {
+        "A": "completed-artifact",
+        "B": "completed-artifact"
+      },
+      "arm_classifications": {
+        "A": "passed",
+        "B": "passed"
+      },
+      "wall_time_seconds": 80.125,
+      "sum_arm_wall_time_seconds": 134.798
+    }
+  ],
+  "limits": [
+    "Only result.json artifacts present when this report ran are counted; absent arms remain pending or partial.",
+    "Harness classification and failure strings are copied metadata derived from exit, timeout, answer, acceptance, and scope checks. A heuristic task flag, including write-like command detection, is not by itself proof of a real fixture write; changed_files and acceptance remain separate evidence.",
+    "Acceptance and semantic evidence in the harness use keyword or metadata checks. They do not prove that a human would accept every answer.",
+    "Instruction reads are inferred from successful completed command strings with a concrete skills Markdown path. Path evidence cannot prove that every command returned the intended bytes, and output is not re-read here.",
+    "uncached_input_tokens is derived from reported input_tokens minus cached_input_tokens. Token fields are reported separately and are not converted into a total-input cost.",
+    "Discovery verification compares inventory metadata and expected combo counts. It does not establish runtime routing quality or choose an architecture."
+  ]
+}

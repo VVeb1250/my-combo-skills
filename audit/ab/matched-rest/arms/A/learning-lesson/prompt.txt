@@ -1,0 +1,1 @@
+Use the supplied learner context to teach dependency injection in one bounded lesson. Give a short explanation for a junior Python developer, a small worked example, and retrieval practice with a question before revealing the answer. Keep the lesson within this response.

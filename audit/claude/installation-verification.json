@@ -1,0 +1,9 @@
+{
+  "receipt": "D:\\0_person-project\\my-combo-skills\\backups\\claude-20260910-031317-323800\\receipt.json",
+  "changed_paths": 599,
+  "live_bytes_match_receipt": true,
+  "mismatches": [],
+  "claude_outside_combo_byte_identical": true,
+  "rollback_on_copy_passed": true,
+  "rollback_errors": []
+}

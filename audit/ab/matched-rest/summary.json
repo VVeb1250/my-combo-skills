@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "suite": "combo-ab-10-pairedcases",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "timeout_seconds": 240,
+  "max_parallel": 2,
+  "effective_sandbox": "danger-full-access",
+  "environment_note": "Identical bundled PowerShell runtime and isolated full-access fixture execution for both arms.",
+  "global_combo_path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\SKILL.md",
+  "variants": "D:\\combo-ab-evals\\staged-20260909-202834",
+  "discovery": {
+    "A": {
+      "returncode": 0,
+      "path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\discovery\\A.json",
+      "stderr": "",
+      "status": "passed"
+    },
+    "B": {
+      "returncode": 0,
+      "path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\discovery\\B.json",
+      "stderr": "",
+      "status": "passed"
+    }
+  },
+  "pair_order": [
+    {
+      "case_id": "inventory-feature",
+      "first_arm": "B"
+    },
+    {
+      "case_id": "security-review",
+      "first_arm": "A"
+    },
+    {
+      "case_id": "plan-adapters",
+      "first_arm": "B"
+    },
+    {
+      "case_id": "trivial-label",
+      "first_arm": "A"
+    },
+    {
+      "case_id": "translation-negative",
+      "first_arm": "B"
+    },
+    {
+      "case_id": "thai-diagnosis",
+      "first_arm": "A"
+    },
+    {
+      "case_id": "thai-delivery",
+      "first_arm": "B"
+    },
+    {
+      "case_id": "content-repurpose",
+      "first_arm": "A"
+    },
+    {
+      "case_id": "learning-lesson",
+      "first_arm": "B"
+    }
+  ],
+  "results": [
+    {
+      "case_id": "inventory-feature",
+      "variant": "A",
+      "pair_index": 1,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 187.039,
+      "final_answer": "เสร็จแล้วใน [src/inventory.py](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-inventory-feature-A-88j27_lq/src/inventory.py:13)\n\n- เพิ่ม `include_discontinued=False`\n- รองรับ iterable รวมถึง generator\n- ค่า default ยังคงตัด discontinued\n- เมื่อเปิด flag จะรวมเฉพาะ discontinued ที่มี stock มากกว่า 0\n- stock ศูนย์หรือติดลบถูกตัดเสมอ\n- คงผลลัพธ์รูปแบบเดิม `{count, units}`\n- เพิ่ม regression test ใน [tests/test_inventory.py](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-inventory-feature-A-88j27_lq/tests/test_inventory.py:11)\n\nตรวจสอบแล้ว:\n\n- `pytest`: 2 passed\n- scoped `ruff`: ผ่าน\n- `pyright`: 0 errors\n\nFull-tree format check ยังพบปัญหาเดิมในไฟล์ `.agents` และ assertion เดิมใน test file จึงไม่ได้แตะนอก scope ฟีเจอร์ พอแล้วสำหรับตอนนี้.",
+      "actual_fixture_files_read": [
+        "src/inventory.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/inventory.py",
+          "change": "modified",
+          "before_sha256": "02963f4951bdcc8900520e8d669f7f877057e12fc431145c04ddd62190b04088",
+          "after_sha256": "2e40ddb50342902f1eada4518ee7bd816281d435ab9126aaa9701277e281a662",
+          "before_bytes": 494,
+          "after_bytes": 578
+        },
+        {
+          "path": "tests/test_inventory.py",
+          "change": "modified",
+          "before_sha256": "25a5f028552cd99c1f5d62a96290138684f69e59cb3f37c9e2720ca5033a22b5",
+          "after_sha256": "1c21107723398c3b46db61a32dc12403a3c884fe319e4544b1721708d8d2f339",
+          "before_bytes": 236,
+          "after_bytes": 771
+        }
+      ],
+      "tool_count": 62,
+      "usage": {
+        "input_tokens": 400868,
+        "cached_input_tokens": 357888,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7236,
+        "reasoning_output_tokens": 4213
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\inventory-feature\\result.json"
+    },
+    {
+      "case_id": "inventory-feature",
+      "variant": "B",
+      "pair_index": 1,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 234.5,
+      "final_answer": "เสร็จแล้ว\n\n- อัปเดต [`src/inventory.py`](<D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-inventory-feature-B-a3b5o_tz/src/inventory.py:12>) ให้รับ `Iterable[Item]`\n- เพิ่ม `include_discontinued=False`\n- รวม discontinued เฉพาะเมื่อ flag เป็น `True` และ stock มากกว่า 0\n- stock ศูนย์หรือติดลบยังถูกตัดออก\n- คงผลลัพธ์รูปแบบเดิม `{count, units}`\n- เพิ่ม regression test ใน [`tests/test_inventory.py`](<D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-inventory-feature-B-a3b5o_tz/tests/test_inventory.py:12>)\n\nตรวจสอบแล้ว:\n\n- `python -m pytest -q`: 2 passed\n- Ruff lint และ format: ผ่าน\n- Pyright: 0 errors\n\nพอแล้วสำหรับตอนนี้",
+      "actual_fixture_files_read": [
+        "src/inventory.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/inventory.py",
+          "change": "modified",
+          "before_sha256": "02963f4951bdcc8900520e8d669f7f877057e12fc431145c04ddd62190b04088",
+          "after_sha256": "ba79f66849acb20193ae97d055292f9bce4d9d42ec21a498b9ed47eac9611224",
+          "before_bytes": 494,
+          "after_bytes": 663
+        },
+        {
+          "path": "tests/test_inventory.py",
+          "change": "modified",
+          "before_sha256": "25a5f028552cd99c1f5d62a96290138684f69e59cb3f37c9e2720ca5033a22b5",
+          "after_sha256": "d0f9840df70870530f845f33a2f04349020f001931be9e02bfca606d604fd0f8",
+          "before_bytes": 236,
+          "after_bytes": 677
+        }
+      ],
+      "tool_count": 46,
+      "usage": {
+        "input_tokens": 595940,
+        "cached_input_tokens": 556800,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9016,
+        "reasoning_output_tokens": 5375
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\inventory-feature\\result.json"
+    },
+    {
+      "case_id": "security-review",
+      "variant": "A",
+      "pair_index": 2,
+      "first_arm": "A",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 95.503,
+      "final_answer": "พบ 2 findings ที่ต้องแก้ก่อนใช้\n\n1. **High, Broken object-level authorization**  \n   `src/orders.py:18-22`\n\n   `current_user` ไม่ถูกใช้ตรวจว่า order เป็นของผู้ใช้หรือไม่ ผู้ใช้ที่ล็อกอินแล้วจึงส่ง `order_id` ของผู้อื่นและได้รับข้อมูล order ได้\n\n   การแก้ที่เล็กที่สุดคือเพิ่มหลัง `get_order`:\n\n   ```python\n   if current_user.id != order.owner_id:\n       raise PermissionError\n   ```\n\n   ควร map เป็น not-found ที่ HTTP boundary หากไม่ต้องการเปิดเผยว่า order มีอยู่\n\n2. **Medium, ค่า quantity ศูนย์ถูกเปลี่ยนผิด**  \n   `src/orders.py:21`\n\n   `order.quantity or 1` เปลี่ยน `0` เป็น `1` ทั้งที่ศูนย์เป็นค่าที่ถูกต้อง โดย `get_order` คืน `quantity=0` อยู่แล้ว\n\n   แก้เป็น:\n\n   ```python\n   quantity = order.quantity if order.quantity is not None else 1\n   ```\n\nตรวจด้วยการอ่าน source แบบ read-only เท่านั้น ไม่ได้แก้ไฟล์ เพิ่ม test หรือรัน service. **ยังต้องแก้ก่อนใช้**",
+      "actual_fixture_files_read": [
+        "src/orders.py"
+      ],
+      "changed_files": [],
+      "tool_count": 30,
+      "usage": {
+        "input_tokens": 155092,
+        "cached_input_tokens": 134400,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3521,
+        "reasoning_output_tokens": 2330
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\security-review\\result.json"
+    },
+    {
+      "case_id": "security-review",
+      "variant": "B",
+      "pair_index": 2,
+      "first_arm": "A",
+      "classification": "task",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 108.14,
+      "final_answer": "ผล review: **ยังต้องแก้ก่อนใช้** พบ 2 จุดที่ยืนยันได้\n\n1. **High, Broken object-level authorization**  \n   ที่ [src/orders.py:18-22](/D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-B-bkjej1mn/src/orders.py:18) `current_user` ไม่ถูกใช้ตรวจ `order.owner_id` ทำให้ลูกค้าที่ล็อกอินคนใดก็อ่าน order ของลูกค้าอื่นได้\n\n   แก้ขั้นต่ำ โดยสมมติ identity อยู่ที่ `current_user.id`:\n\n   ```python\n   order = get_order(order_id)\n   if current_user.id != order.owner_id:\n       raise PermissionError(\"forbidden\")\n   ```\n\n   หากมี repository จริง ควรกรอง ownership ตั้งแต่ตอนโหลด order และ map เป็น 403 หรือ 404 ตาม contract\n\n2. **Medium, ค่า quantity ศูนย์ถูกแปลงผิด**  \n   ที่ [src/orders.py:21](/D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-security-review-B-bkjej1mn/src/orders.py:21) `order.quantity or 1` เปลี่ยน `0` เป็น `1`\n\n   แก้เป็น:\n\n   ```python\n   quantity = 1 if order.quantity is None else order.quantity\n   ```\n\nตรวจแบบ static เท่านั้นตามคำสั่ง, ไม่ได้แก้ไฟล์ เพิ่ม test หรือรัน service.",
+      "actual_fixture_files_read": [
+        "src/orders.py"
+      ],
+      "changed_files": [],
+      "tool_count": 33,
+      "usage": {
+        "input_tokens": 196558,
+        "cached_input_tokens": 168960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4081,
+        "reasoning_output_tokens": 2396
+      },
+      "environment_failures": [],
+      "task_failures": [
+        "read-only case changed files or emitted write command"
+      ],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\security-review\\result.json"
+    },
+    {
+      "case_id": "plan-adapters",
+      "variant": "A",
+      "pair_index": 3,
+      "first_arm": "B",
+      "classification": "environmental",
+      "returncode": 1,
+      "timed_out": true,
+      "duration_seconds": 247.749,
+      "final_answer": "จากการอ่านโค้ดพบ seam หลักชัดเจน: `NotificationAdapter.send(recipient, body) -> str` อยู่ใน `src/notification_adapters.py`, และ callers ทั้ง `send_welcome` กับ `send_receipt` รับ seam นี้โดยตรง ไม่มี test/config/package metadata เพิ่มเติมใน tree ที่ค้นพบ ผมจะตรวจสถานะ worktree และรายละเอียด runtime แบบ read-only เพื่อให้แผนระบุจุดแก้และ verification ได้ตรงกับ repo จริงครับ",
+      "actual_fixture_files_read": [
+        "src/notification_adapters.py",
+        "src/notifications.py"
+      ],
+      "changed_files": [],
+      "tool_count": 40,
+      "usage": null,
+      "environment_failures": [
+        "session exceeded 240s",
+        "Codex exited with 1"
+      ],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\plan-adapters\\result.json"
+    },
+    {
+      "case_id": "plan-adapters",
+      "variant": "B",
+      "pair_index": 3,
+      "first_arm": "B",
+      "classification": "environmental",
+      "returncode": 1,
+      "timed_out": true,
+      "duration_seconds": 247.717,
+      "final_answer": "จากโค้ดที่อ่านได้ seam ปัจจุบันชัดเจน: `NotificationAdapter.send(recipient, body) -> str` เป็น Protocol เดียวที่ `EmailAdapter` และ `SmsAdapter` ทำตาม และ callers ทั้ง `send_welcome` กับ `send_receipt` รับ seam นี้โดยตรง ไม่มี test/config/dependency convention อื่นใน repo ตอนนี้ ผมกำลังล็อกแบบที่เพิ่ม retry ด้วย composition โดยไม่เปลี่ยน callers หรือสัญญาณ `send` เดิม】【。",
+      "actual_fixture_files_read": [
+        "src/notification_adapters.py",
+        "src/notifications.py"
+      ],
+      "changed_files": [],
+      "tool_count": 10,
+      "usage": null,
+      "environment_failures": [
+        "session exceeded 240s",
+        "Codex exited with 1"
+      ],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\result.json"
+    },
+    {
+      "case_id": "trivial-label",
+      "variant": "A",
+      "pair_index": 4,
+      "first_arm": "A",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 27.963,
+      "final_answer": "แก้ไข `src/ui.py` แล้ว: ปุ่มแสดงเป็น `Save changes` เรียบร้อยครับ",
+      "actual_fixture_files_read": [
+        "src/ui.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/ui.py",
+          "change": "modified",
+          "before_sha256": "f10aa119776d1274f6cce468fa11eb7671cd2b291dbbf51336ce1a6209ca0f6c",
+          "after_sha256": "44c54329157231d0f2607ce62ce0648317f9f8cbe7c422afb98b73ebe6783e04",
+          "before_bytes": 91,
+          "after_bytes": 99
+        }
+      ],
+      "tool_count": 4,
+      "usage": {
+        "input_tokens": 55766,
+        "cached_input_tokens": 42240,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 438,
+        "reasoning_output_tokens": 216
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\trivial-label\\result.json"
+    },
+    {
+      "case_id": "trivial-label",
+      "variant": "B",
+      "pair_index": 4,
+      "first_arm": "A",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 51.443,
+      "final_answer": "เสร็จแล้วครับ แก้เฉพาะ `src/ui.py` จาก `Save` เป็น `Save changes` เท่านั้น.",
+      "actual_fixture_files_read": [
+        "src/ui.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/ui.py",
+          "change": "modified",
+          "before_sha256": "f10aa119776d1274f6cce468fa11eb7671cd2b291dbbf51336ce1a6209ca0f6c",
+          "after_sha256": "44c54329157231d0f2607ce62ce0648317f9f8cbe7c422afb98b73ebe6783e04",
+          "before_bytes": 91,
+          "after_bytes": 99
+        }
+      ],
+      "tool_count": 10,
+      "usage": {
+        "input_tokens": 123584,
+        "cached_input_tokens": 85760,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1274,
+        "reasoning_output_tokens": 703
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\result.json"
+    },
+    {
+      "case_id": "translation-negative",
+      "variant": "A",
+      "pair_index": 5,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 17.463,
+      "final_answer": "ใบแจ้งหนี้พร้อมให้ตรวจสอบแล้ว",
+      "actual_fixture_files_read": [],
+      "changed_files": [],
+      "tool_count": 0,
+      "usage": {
+        "input_tokens": 18065,
+        "cached_input_tokens": 8960,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 98,
+        "reasoning_output_tokens": 82
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\translation-negative\\result.json"
+    },
+    {
+      "case_id": "translation-negative",
+      "variant": "B",
+      "pair_index": 5,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 16.695,
+      "final_answer": "ใบแจ้งหนี้พร้อมให้ตรวจสอบแล้ว",
+      "actual_fixture_files_read": [],
+      "changed_files": [],
+      "tool_count": 0,
+      "usage": {
+        "input_tokens": 18400,
+        "cached_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 98,
+        "reasoning_output_tokens": 82
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\translation-negative\\result.json"
+    },
+    {
+      "case_id": "thai-diagnosis",
+      "variant": "A",
+      "pair_index": 6,
+      "first_arm": "A",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 130.848,
+      "final_answer": "วินิจฉัยเสร็จแล้ว สาเหตุอยู่ที่ [src/quantity.py:7](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-diagnosis-A-iapwe_st/src/quantity.py:7):\n\n```python\nreturn value or 1\n```\n\nใน Python ค่า `0` เป็น `False` ในเชิง truthiness จึงถูกแทนด้วย `1` เช่นเดียวกับ `None` และค่า falsy อื่น ๆ\n\nหลักฐานจาก direct probe:\n\n```text\n0 -> 1\nNone -> 1\n2 -> 2\n-1 -> -1\n```\n\nสมมติฐานจาก docstring ที่ [บรรทัด 5](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-diagnosis-A-iapwe_st/src/quantity.py:5) คือ ควรใช้ค่าเริ่มต้นเฉพาะเมื่อค่า “หายไป” ซึ่งควรตรวจแบบ explicit เช่น:\n\n```python\nif value is None:\n    return 1\nreturn value\n```\n\nแผนซ่อม:\n\n1. เปลี่ยน truthiness check เป็น `value is None`\n2. คงค่า `0` และค่าที่ไม่ใช่ `None` ไว้ตามเดิม\n3. ภายหลังเพิ่ม regression test สำหรับ `0`, `None` และค่าปกติ\n4. ตรวจสอบด้วย assertion ว่า `normalize_quantity(0) == 0`, `normalize_quantity(None) == 1` และ `normalize_quantity(2) == 2`\n\nรอบนี้ไม่มีการแก้ไฟล์หรือเพิ่มเทสต์ และยังไม่ได้ตรวจ caller ภายนอกตามขอบเขตที่จำกัดไว้เฉพาะ `src/quantity.py`ครับ",
+      "actual_fixture_files_read": [
+        "src/quantity.py"
+      ],
+      "changed_files": [],
+      "tool_count": 14,
+      "usage": {
+        "input_tokens": 188579,
+        "cached_input_tokens": 141568,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 5400,
+        "reasoning_output_tokens": 3736
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\thai-diagnosis\\result.json"
+    },
+    {
+      "case_id": "thai-diagnosis",
+      "variant": "B",
+      "pair_index": 6,
+      "first_arm": "A",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 138.173,
+      "final_answer": "วินิจฉัยเสร็จแล้ว โดยยังไม่มีการแก้ไฟล์หรือเพิ่มเทสต์\n\nสาเหตุอยู่ที่ [`src/quantity.py:7`](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-diagnosis-B-1snbsf7k/src/quantity.py:7):\n\n```python\nreturn value or 1\n```\n\nใน Python ค่า `0` เป็น falsy จึงถูกแทนด้วย `1` เช่นเดียวกับค่า falsy อื่น ๆ ทั้งหมด การตรวจสอบนี้จึงแยก “ไม่มีค่า” (`None`) ออกจาก `0` ไม่ได้\n\nหลักฐาน:\n\n- [`tests/test_quantity.py:5`](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-diagnosis-B-1snbsf7k/tests/test_quantity.py:5) ล้มเหลว โดยได้ `1` แทน `0`\n- `None` ยังทำงานถูกต้อง\n- `python -m pytest -q tests\\test_quantity.py` ได้ผล `1 failed, 1 passed`\n\nแผนซ่อม:\n\n1. เปลี่ยนเงื่อนไขให้ใช้ `None` เป็นตัวบ่งชี้ค่าที่หายไปโดยตรง เช่น `1 if value is None else value`\n2. รันชุดทดสอบเดิมด้วย `python -m pytest -q tests\\test_quantity.py`\n3. ตรวจเพิ่มแบบ manual ว่า `0` คงเป็น `0`, `None` ได้ `1`, และค่าที่ไม่ใช่ `None` ไม่ถูกเปลี่ยน\n\nพอแล้วสำหรับตอนนี้, พร้อมซ่อมในรอบถัดไปเมื่อได้รับอนุญาตેણ",
+      "actual_fixture_files_read": [
+        "src/quantity.py"
+      ],
+      "changed_files": [],
+      "tool_count": 33,
+      "usage": {
+        "input_tokens": 288509,
+        "cached_input_tokens": 264192,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4719,
+        "reasoning_output_tokens": 2572
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-diagnosis\\result.json"
+    },
+    {
+      "case_id": "thai-delivery",
+      "variant": "A",
+      "pair_index": 7,
+      "first_arm": "B",
+      "classification": "environmental",
+      "returncode": 1,
+      "timed_out": true,
+      "duration_seconds": 248.375,
+      "final_answer": "ตรวจไฟล์สุดท้ายแล้ว และปรับ docstring ให้ระบุเงื่อนไขของ `include_discontinued` ชัดเจนขึ้นโดยไม่เปลี่ยน logic ตอนนี้จะรัน final gate หลังการปรับเอกสารอีกครั้ง แล้วปิดงานครับ",
+      "actual_fixture_files_read": [
+        "src/inventory.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/inventory.py",
+          "change": "modified",
+          "before_sha256": "92ce279e17ca3c1ca633be12b90b9bf2ba7db96ffbf897fd641e1b074ccabfeb",
+          "after_sha256": "0f07afb257172c3b13f02b8b2948df6023a500658d2f3a1dfc55375eb2e619d8",
+          "before_bytes": 482,
+          "after_bytes": 750
+        },
+        {
+          "path": "tests/test_inventory.py",
+          "change": "modified",
+          "before_sha256": "6eb8f6815e157c208cd163badfcae7fb279b9a8457af23af2b0e7fb61b5f1228",
+          "after_sha256": "cf348214a6c0d52a0cae89b8a1784daec409108024dfc9cde138572ea88215f5",
+          "before_bytes": 217,
+          "after_bytes": 755
+        }
+      ],
+      "tool_count": 80,
+      "usage": null,
+      "environment_failures": [
+        "session exceeded 240s",
+        "Codex exited with 1"
+      ],
+      "task_failures": [
+        "candidate instructions changed during execution"
+      ],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\thai-delivery\\result.json"
+    },
+    {
+      "case_id": "thai-delivery",
+      "variant": "B",
+      "pair_index": 7,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 203.491,
+      "final_answer": "เสร็จครบวงจรแล้ว\n\n- ปรับ `inventory_summary` ใน [src/inventory.py](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-delivery-B-egdb0jzo/src/inventory.py:12) ให้รับ `Iterable`, รองรับ generator และเพิ่ม `include_discontinued`\n- ตัด stock ที่ `<= 0` เสมอ\n- รวม discontinued เฉพาะเมื่อ `include_discontinued=True` และ stock เป็นบวก\n- คงรูปแบบผลลัพธ์เดิม `{count, units}`\n- เพิ่ม regression tests ใน [tests/test_inventory.py](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-delivery-B-egdb0jzo/tests/test_inventory.py:1)\n\nผลตรวจสอบ:\n\n- `pytest`: 3 passed\n- Ruff และ format ใน `src`/`tests`: ผ่าน\n- Pyright: 0 errors\n\nRoot-wide Ruff ยังพบ baseline ที่ไม่เกี่ยวข้องใน `.agents/skills/.../network_graph_scene.py` และ skill references จึงไม่ได้แก้ไขไฟล์นอก scope งานนี้ พอแล้วสำหรับตอนนี้ครับ",
+      "actual_fixture_files_read": [
+        "src/inventory.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/inventory.py",
+          "change": "modified",
+          "before_sha256": "92ce279e17ca3c1ca633be12b90b9bf2ba7db96ffbf897fd641e1b074ccabfeb",
+          "after_sha256": "537c749c1080735e18cf8547fb799bd71d694c38d04ab2f04f8510c2b6afe17d",
+          "before_bytes": 482,
+          "after_bytes": 798
+        },
+        {
+          "path": "tests/test_inventory.py",
+          "change": "modified",
+          "before_sha256": "6eb8f6815e157c208cd163badfcae7fb279b9a8457af23af2b0e7fb61b5f1228",
+          "after_sha256": "326f9ee9745cc14e68ddd5aeb1de4a2d93cae426f90fbeccfdbe6eadbd7e0e3d",
+          "before_bytes": 217,
+          "after_bytes": 906
+        }
+      ],
+      "tool_count": 24,
+      "usage": {
+        "input_tokens": 479508,
+        "cached_input_tokens": 437248,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 7363,
+        "reasoning_output_tokens": 4387
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\result.json"
+    },
+    {
+      "case_id": "content-repurpose",
+      "variant": "A",
+      "pair_index": 8,
+      "first_arm": "A",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 100.542,
+      "final_answer": "ร่างด้านล่างเป็นภาษาอังกฤษตาม brief และ voice notes โดย LinkedIn เป็นฉบับหลัก ทุกฉบับคง product facts ครบ และไม่มีการเผยแพร่ ส่งอีเมล หรือแก้ไขไฟล์\n\n### LinkedIn\n\nFor commuters, the useful details are straightforward.\n\nNorthstar is a reusable stainless-steel travel thermos that keeps drinks hot for 12 hours and cold for 24 hours. It has a leak-resistant lid and is available in slate blue and cream.\n\nLaunch price: 32 USD.\n\nLearn more about Northstar: [link]\n\n### Email\n\nSubject: Northstar, a travel thermos for commuters\n\nHi [Name],\n\nNorthstar is a reusable stainless-steel travel thermos for commuters.\n\nIt keeps drinks hot for 12 hours and cold for 24 hours. The lid is leak-resistant, and the thermos is available in slate blue and cream.\n\nLaunch price: 32 USD.\n\nLearn more about Northstar: [link]\n\nBest,  \n[Brand name]\n\n### Instagram\n\nNorthstar is made for commuters.\n\nA reusable stainless-steel travel thermos that keeps drinks hot for 12 hours and cold for 24 hours.\n\n- Leak-resistant lid\n- Available in slate blue and cream\n- Launch price: 32 USD\n\nLearn more about Northstar: [link]\n\nปรับโครงสร้างให้เหมาะกับแต่ละช่องทางแล้ว โดย LinkedIn ให้บริบทสั้นๆ, email จัดข้อมูลให้อ่านเร็ว, และ Instagram ใช้รูปแบบสแกนง่าย ไม่มี testimonials หรือ claims ด้านสุขภาพและสิ่งแวดล้อมที่ไม่ได้อยู่ใน brief.",
+      "actual_fixture_files_read": [
+        "brief.md",
+        "voice.md"
+      ],
+      "changed_files": [],
+      "tool_count": 18,
+      "usage": {
+        "input_tokens": 128717,
+        "cached_input_tokens": 109056,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 3774,
+        "reasoning_output_tokens": 2572
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\content-repurpose\\result.json"
+    },
+    {
+      "case_id": "content-repurpose",
+      "variant": "B",
+      "pair_index": 8,
+      "first_arm": "A",
+      "classification": "task",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 91.686,
+      "final_answer": "ด้านล่างเป็น drafts ภาษาอังกฤษสำหรับ review เท่านั้น โดยคง product facts ทั้งหมดไว้ในแต่ละช่องทาง และไม่ได้แก้ไขไฟล์ ส่งอีเมล หรือเผยแพร่เนื้อหาใด ๆ\n\n### LinkedIn\n\nCommuting calls for a thermos with clear, useful specifications.\n\nNorthstar is a reusable stainless-steel travel thermos for commuters. It keeps drinks hot for 12 hours and cold for 24 hours, with a leak-resistant lid.\n\nAvailable in slate blue and cream.\n\nLaunch price: 32 USD.\n\nLearn more about Northstar.\n\n### Email\n\n**Subject:** Northstar, a thermos for the commute\n\n**Preheader:** Hot for 12 hours, cold for 24.\n\nMeet Northstar.\n\nNorthstar is a reusable stainless-steel travel thermos for commuters. It keeps drinks hot for 12 hours and cold for 24 hours, with a leak-resistant lid.\n\nAvailable in slate blue and cream.\n\nLaunch price: 32 USD.\n\n**[Learn more about Northstar]**\n\n### Instagram\n\nNorthstar, for the commute.\n\nA reusable stainless-steel travel thermos for commuters.\n\nKeeps drinks hot for 12 hours.  \nKeeps drinks cold for 24 hours.  \nLeak-resistant lid.  \nAvailable in slate blue and cream.\n\nLaunch price: 32 USD.\n\nLearn more about Northstar.",
+      "actual_fixture_files_read": [
+        "brief.md",
+        "voice.md"
+      ],
+      "changed_files": [],
+      "tool_count": 16,
+      "usage": {
+        "input_tokens": 183472,
+        "cached_input_tokens": 163584,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2948,
+        "reasoning_output_tokens": 1908
+      },
+      "environment_failures": [],
+      "task_failures": [
+        "read-only case changed files or emitted write command"
+      ],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\content-repurpose\\result.json"
+    },
+    {
+      "case_id": "learning-lesson",
+      "variant": "A",
+      "pair_index": 9,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 80.125,
+      "final_answer": "## บทเรียนสั้น: Dependency Injection ใน Python\n\nเป้าหมาย: คุณควรระบุ dependency ของ class ได้ และส่งมันเข้ามาจากภายนอกเพื่อให้เปลี่ยน implementation หรือทดสอบได้ง่าย\n\nDependency Injection (DI) คือการส่ง object ที่ class ต้องใช้เข้ามาจากภายนอก แทนการให้ class สร้าง object นั้นเอง\n\nแบบที่ผูกติดกัน:\n\n```python\nclass OrderService:\n    def __init__(self):\n        self.notifier = EmailNotifier()  # สร้าง dependency เอง\n```\n\n`OrderService` จึงเปลี่ยนไปใช้ SMS หรือ fake notifier ได้ยาก\n\nแบบใช้ DI:\n\n```python\nfrom typing import Protocol\n\n\nclass Notifier(Protocol):\n    def send(self, message: str) -> None:\n        ...\n\n\nclass EmailNotifier:\n    def send(self, message: str) -> None:\n        print(f\"Email: {message}\")\n\n\nclass OrderService:\n    def __init__(self, notifier: Notifier) -> None:\n        self.notifier = notifier\n\n    def place(self, order_id: str) -> None:\n        self.notifier.send(f\"Order {order_id} placed\")\n```\n\nตอนใช้งานจริง เราเป็นคนประกอบ object:\n\n```python\nservice = OrderService(EmailNotifier())\nservice.place(\"A-101\")\n```\n\nตอน test ใช้ fake แทนได้:\n\n```python\nclass FakeNotifier:\n    def __init__(self) -> None:\n        self.messages: list[str] = []\n\n    def send(self, message: str) -> None:\n        self.messages.append(message)\n\n\nfake = FakeNotifier()\nOrderService(fake).place(\"A-101\")\n\nassert fake.messages == [\"Order A-101 placed\"]\n```\n\nประเด็นสำคัญคือ `OrderService` รู้แค่ว่า object ที่รับเข้ามามีเมธอด `send()` ไม่จำเป็นต้องรู้ว่าเป็น email, SMS หรือ fake\n\n### Retrieval practice\n\nพิจารณาโค้ดนี้ แล้วลองตอบก่อนดูเฉลย:\n\n```python\nclass UserService:\n    def __init__(self):\n        self.repo = PostgresUserRepo()\n```\n\nคำถาม:\n\n1. Dependency คืออะไร?\n2. ควรแก้ constructor อย่างไร?\n3. ตอน test ควรส่ง object แบบใดเข้าไป?\n\n<details>\n<summary>เฉลย</summary>\n\n1. `PostgresUserRepo` คือ dependency\n2. รับเข้ามาจากภายนอก:\n\n```python\ndef __init__(self, repo):\n    self.repo = repo\n```\n\n3. ส่ง fake หรือ in-memory repository เพื่อไม่ต้องเชื่อมต่อ database จริง\n\n</details>\n\nจำสั้น ๆ: class ควร “รับ” dependency, ไม่ใช่ “สร้าง” dependency เอง.",
+      "actual_fixture_files_read": [
+        "lesson-context.md"
+      ],
+      "changed_files": [],
+      "tool_count": 12,
+      "usage": {
+        "input_tokens": 107883,
+        "cached_input_tokens": 89856,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 2792,
+        "reasoning_output_tokens": 1706
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\result.json"
+    },
+    {
+      "case_id": "learning-lesson",
+      "variant": "B",
+      "pair_index": 9,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 54.673,
+      "final_answer": "## บทเรียนสั้น: Dependency Injection\n\nเป้าหมาย: หลังจบบทนี้ คุณจะเขียน class ที่เปลี่ยน dependency ได้ง่าย และทดสอบได้โดยไม่ต้องเรียก service จริง\n\nDependency Injection (DI) คือการให้ object รับสิ่งที่มันต้องใช้จากภายนอก แทนการสร้างสิ่งนั้นเองภายใน class\n\n- `dependency` คือสิ่งที่ class ต้องพึ่งพา\n- `injection` คือการส่งสิ่งนั้นเข้าไปให้ class\n- ใน Python วิธีที่ง่ายและพบบ่อยคือส่งผ่าน `__init__`\n\n### ตัวอย่าง\n\n```python\nclass PaymentGateway:\n    def charge(self, amount: int) -> str:\n        return f\"charged {amount} baht\"\n\n\nclass Checkout:\n    def __init__(self, gateway: PaymentGateway):\n        self.gateway = gateway\n\n    def pay(self, amount: int) -> str:\n        return self.gateway.charge(amount)\n\n\ngateway = PaymentGateway()\ncheckout = Checkout(gateway)\n\nprint(checkout.pay(100))\n# charged 100 baht\n```\n\nในตัวอย่างนี้ `Checkout` มี dependency คือ `PaymentGateway`\n\nการส่ง `gateway` เข้าไปใน `Checkout(gateway)` คือการทำ dependency injection\n\nข้อดีคือ เราเปลี่ยน gateway เป็นตัวปลอมสำหรับ test ได้:\n\n```python\nclass FakeGateway:\n    def __init__(self):\n        self.charged_amounts = []\n\n    def charge(self, amount: int) -> str:\n        self.charged_amounts.append(amount)\n        return \"test payment\"\n\n\nfake_gateway = FakeGateway()\ncheckout = Checkout(fake_gateway)\n\nassert checkout.pay(100) == \"test payment\"\nassert fake_gateway.charged_amounts == [100]\n```\n\n`Checkout` ไม่จำเป็นต้องรู้ว่า gateway เป็นของจริงหรือ fake ขอเพียงมีเมธอด `charge()` ที่ใช้ได้\n\n### Retrieval practice\n\nลองตอบก่อนอ่านเฉลย:\n\nถ้าเขียนแบบนี้\n\n```python\nclass Checkout:\n    def __init__(self):\n        self.gateway = PaymentGateway()\n```\n\nปัญหาคืออะไร และควรแก้อย่างไร?\n\n---\n\n### เฉลย\n\nปัญหาคือ `Checkout` สร้าง `PaymentGateway` เอง ทำให้เปลี่ยนเป็น `FakeGateway` หรือ gateway แบบอื่นได้ยาก และ test อาจไปเรียก payment service จริง\n\nควรรับ gateway จากภายนอก:\n\n```python\nclass Checkout:\n    def __init__(self, gateway):\n        self.gateway = gateway\n```\n\nจำสั้น ๆ: “อย่าสร้างสิ่งที่ต้องพึ่งพาไว้ข้างใน ถ้าส่งเข้ามาจากข้างนอกได้”",
+      "actual_fixture_files_read": [
+        "lesson-context.md"
+      ],
+      "changed_files": [],
+      "tool_count": 4,
+      "usage": {
+        "input_tokens": 56554,
+        "cached_input_tokens": 36352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 1458,
+        "reasoning_output_tokens": 683
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\learning-lesson\\result.json"
+    }
+  ],
+  "result_files": [
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\inventory-feature\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\inventory-feature\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\security-review\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\security-review\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\plan-adapters\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\plan-adapters\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\trivial-label\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\trivial-label\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\translation-negative\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\translation-negative\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\thai-diagnosis\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-diagnosis\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\thai-delivery\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\thai-delivery\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\content-repurpose\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\content-repurpose\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\B\\learning-lesson\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\result.json"
+  ],
+  "passed": 13,
+  "environmental": 3,
+  "task_failures": 2,
+  "coverage_note": "Ten matched cases, paired by case with alternating first arm. Automatic checks support root semantic grading; route labels are not scored."
+}

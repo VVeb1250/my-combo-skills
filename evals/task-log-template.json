@@ -1,0 +1,13 @@
+{
+  "task_id": "REPLACE_WITH_REAL_TASK_ID",
+  "host": "codex",
+  "model": "actual model",
+  "profile": "codex-immediate-auto",
+  "invoked_skills": [],
+  "expected_skill_invoked": null,
+  "adherence_observed": null,
+  "user_corrections": null,
+  "wasted_steps": null,
+  "result": "unmeasured",
+  "evidence": "Record during a real task; do not backfill invented history."
+}

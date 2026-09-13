@@ -1,0 +1,1001 @@
+Reading prompt from stdin...
+2026-09-09T11:32:59.253424Z ERROR codex_models_manager::manager: failed to load models cache: missing field `supports_parallel_tool_calls` at line 95 column 5
+2026-09-09T11:33:00.399101Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:33:00.401675Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:33:00.408948Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:33:00.410663Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:33:00.412353Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:33:00.414115Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:33:00.543300Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-09-09T11:33:00.543342Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-09-09T11:33:00.579420Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-09-09T11:33:01.006373Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T11:33:37.230287Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0.9 seconds
+Output:
+fatal: not a git repository (or any of the parent directories): .git
+
+2026-09-09T11:33:37.319058Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:33:46.350775Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:33:50.489806Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:34:22.907167Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:34:29.859030Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:34:39.081953Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:34:48.145169Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 1.9 seconds
+Total output lines: 4183
+Output:
+unformatted: File would be reformatted
+  --> .agents\skills\combo\references\library\ecc\skills\agent-self-evaluation\examples\low-score-example.md:16:15
+   |
+15 | # Add this somewhere in your HTTP client
+   - retry = Retry(
+   -     total=3,
+   -     backoff_factor=1.0,
+   -     status_forcelist=[500, 502, 503, 504]
+   - )
+16 + retry = Retry(total=3, backoff_factor=1.0, status_forcelist=[500, 502, 503, 504])
+17 | ```
+   |
+
+unformatted: File would be reformatted
+   --> .agents\skills\combo\references\library\ecc\skills\api-design\REFERENCE.md:455:1
+    |
+454 |
+455 +
+456 | class CreateUserSerializer(serializers.Serializer):
+457 |     email = serializers.EmailField()
+458 |     name = serializers.CharField(max_length=100)
+459 |
+460 +
+461 | class UserSerializer(serializers.ModelSerializer):
+--------------------------------------------------------------------------------
+465 |
+466 +
+467 | class UserViewSet(viewsets.ModelViewSet):
+    |
+
+unformatted: File would be reformatted
+   --> .agents\skills\combo\references\library\ecc\skills\content-hash-cache-pattern\REFERENCE.md:37:1
+    |
+36  |
+37  +
+38  | def compute_file_hash(path: Path) -> str:
+--------------------------------------------------------------------------------
+58  |
+59  +
+60  | @dataclass(frozen=True, slots=True)
+--------------------------------------------------------------------------------
+74  |
+75  +
+76  | def write_cache(cache_dir: Path, entry: CacheEntry) -> None:
+--------------------------------------------------------------------------------
+81  |
+82  +
+83  | def read_cache(cache_dir: Path, file_hash: str) -> CacheEntry | None:
+--------------------------------------------------------------------------------
+150 |
+151 +
+152 | # BAD: Adding cache logic inside the processing function (SRP violation)
+--------------------------------------------------------------------------------
+156 |
+157 +
+158 | # BAD: Using dataclasses.asdict() with nested frozen dataclasses
+    |
+
+unformatted: File would be reformatted
+   --> .agents\skills\combo\references\library\ecc\skills\cost-aware-llm-pipeline\REFERENCE.md:36:30
+    |
+35  | _SONNET_TEXT_THRESHOLD = 10_000  # chars
+    - _SONNET_ITEM_THRESHOLD = 30     # items
+36  + _SONNET_ITEM_THRESHOLD = 30  # items
+37  +
+38  |
+--------------------------------------------------------------------------------
+58  |
+59  +
+60  | @dataclass(frozen=True, slots=True)
+--------------------------------------------------------------------------------
+66  |
+67  +
+68  | @dataclass(frozen=True, slots=True)
+--------------------------------------------------------------------------------
+102 |
+103 +
+104 | def call_with_retry(func, *, max_retries: int = _MAX_RETRIES):
+--------------------------------------------------------------------------------
+111 |                 raise
+    -             time.sleep(2 ** attempt)  # Exponential backoff
+112 +             time.sleep(2**attempt)  # Exponential backoff
+113 |     # AuthenticationError, BadRequestError etc. → raise immediately
+--------------------------------------------------------------------------------
+143 | ```python
+    - def process(text: str, config: Config, tracker: CostTracker) -> tuple[Result, CostTracker]:
+144 + def process(
+145 +     text: str, config: Config, tracker: CostTracker
+146 + ) -> tuple[Result, CostTracker]:
+147 |     # 1. Route model
+--------------------------------------------------------------------------------
+154 |     # 3. Call with retry + caching
+    -     response = call_with_retry(lambda: client.messages.create(
+    -         model=model,
+    -         messages=build_cached_messages(system_prompt, text),
+    -     ))
+155 +     response = call_with_retry(
+156 +         lambda: client.messages.create(
+157 +             model=model,
+158 +             messages=build_cached_messages(system_prompt, text),
+159 +         )
+160 +     )
+161 |
+    |
+
+unformatted: File would be reformatted
+   --> .agents\skills\combo\references\library\ecc\skills\data-scraper-agent\REFERENCE.md:163:1
+    |
+162 | """
+163 +
+164 | import requests
+--------------------------------------------------------------------------------
+215 | import xml.etree.ElementTree as ET
+216 +
+217 | root = ET.fromstring(resp.text)
+--------------------------------------------------------------------------------
+252 |
+    -     models = [model] + [m for m in MODEL_FALLBACK if m != model] if model else MODEL_FALLBACK
+253 +     models = (
+254 +         [model] + [m for m in MODEL_FALLBACK if m != model] if model else MODEL_FALLBACK
+255 +     )
+256 |     _last_call = time.time()
+--------------------------------------------------------------------------------
+309 |
+    - def analyse_batch(items: list[dict], context: str = "", preference_prompt: str = "") -> list[dict]:
+310 +
+311 + def analyse_batch(
+312 +     items: list[dict], context: str = "", preference_prompt: str = ""
+313 + ) -> list[dict]:
+314 |     """Analyse items in batches. Returns items enriched with AI fields."""
+--------------------------------------------------------------------------------
+320 |
+    -     batches = [items[i:i + batch_size] for i in range(0, len(items), batch_size)]
+321 +     batches = [items[i : i + batch_size] for i in range(0, len(items), batch_size)]
+322 |     print(f"  [AI] {len(items)} items → {len(batches)} API calls")
+--------------------------------------------------------------------------------
+336 |                     continue
+    -                 enriched.append({**item, "ai_score": score, "ai_summary": ai.get("summary", ""), "ai_notes": ai.get("notes", "")})
+337 +                 enriched.append(
+338 +                     {
+339 +                         **item,
+340 +                         "ai_score": score,
+341 +                         "ai_summary": ai.get("summary", ""),
+342 +                         "ai_notes": ai.get("notes", ""),
+343 +                     }
+344 +                 )
+345 |             else:
+--------------------------------------------------------------------------------
+353 |     items_text = "\n\n".join(
+    -         f"Item {i+1}: {json.dumps({k: v for k, v in item.items() if not k.startswith('_')})}"
+354 +         f"Item {i + 1}: {json.dumps({k: v for k, v in item.items() if not k.startswith('_')})}"
+355 |         for i, item in enumerate(batch)
+--------------------------------------------------------------------------------
+382 | """Learn from user decisions to improve future scoring."""
+383 +
+384 | import json
+--------------------------------------------------------------------------------
+433 |
+434 +
+435 | def get_client():
+--------------------------------------------------------------------------------
+440 |
+441 +
+442 | def get_existing_urls(db_id: str) -> set[str]:
+443 |     """Fetch all URLs already stored — used for deduplication."""
+444 |     client, seen, cursor = get_client(), set(), None
+445 |     while True:
+    -         resp = client.databases.query(database_id=db_id, page_size=100, **{"start_cursor": cursor} if cursor else {})
+446 +         resp = client.databases.query(
+447 +             database_id=db_id,
+448 +             page_size=100,
+449 +             **{"start_cursor": cursor} if cursor else {},
+450 +         )
+451 |         for page in resp["results"]:
+452 |             url = page["properties"].get("URL", {}).get("url", "")
+    -             if url: seen.add(url)
+    -         if not resp["has_more"]: break
+453 +             if url:
+454 +                 seen.add(url)
+455 +         if not resp["has_more"]:
+456 +             break
+457 |         cursor = resp["next_cursor"]
+458 |     return seen
+459 |
+460 +
+461 | def push_item(db_id: str, item: dict) -> bool:
+--------------------------------------------------------------------------------
+473 |     if item.get("ai_summary"):
+    -         props["Summary"] = {"rich_text": [{"text": {"content": item["ai_summary"][:2000]}}]}
+474 +         props["Summary"] = {
+475 +             "rich_text": [{"text": {"content": item["ai_summary"][:2000]}}]
+476 +         }
+477 |     if item.get("ai_notes"):
+--------------------------------------------------------------------------------
+486 |
+487 +
+488 | def sync(db_id: str, items: list[dict]) -> tuple[int, int]:
+--------------------------------------------------------------------------------
+492 |         if item.get("url") in existing:
+    -             skipped += 1; continue
+493 +             skipped += 1
+494 +             continue
+495 |         if push_item(db_id, item):
+    -             added += 1; existing.add(item["url"])
+496 +             added += 1
+497 +             existing.add(item["url"])
+498 |         else:
+--------------------------------------------------------------------------------
+514 |
+    - from scraper.sources import my_source          # add your sources
+515 + from scraper.sources import my_source  # add your sources
+516 |
+--------------------------------------------------------------------------------
+525 |
+526 +
+527 | def ai_enabled():
+528 |     return bool(os.environ.get("GEMINI_API_KEY"))
+529 |
+530 +
+531 | def main():
+--------------------------------------------------------------------------------
+538 |         if not db_id:
+    -             print("ERROR: NOTION_DATABASE_ID not set"); sys.exit(1)
+539 +             print("ERROR: NOTION_DATABASE_ID not set")
+540 +             sys.exit(1)
+541 |     else:
+542 |         # Extend here for sheets (SHEET_ID) or supabase (SUPABASE_TABLE) etc.
+    -         print(f"ERROR: provider '{provider}' not yet wired in main.py"); sys.exit(1)
+543 +         print(f"ERROR: provider '{provider}' not yet wired in main.py")
+544 +         sys.exit(1)
+545 |
+--------------------------------------------------------------------------------
+560 |         if (url := item.get("url", "")) and url not in seen:
+    -             seen.add(url); deduped.append(item)
+561 +             seen.add(url)
+562 +             deduped.append(item)
+563 |
+--------------------------------------------------------------------------------
+583 |
+584 +
+585 | if __name__ == "__main__":
+--------------------------------------------------------------------------------
+695 | import xml.etree.ElementTree as ET
+696 +
+697 | root = ET.fromstring(resp.text)
+    |
+
+unformatted: File would be reformatted
+   --> .agents\skills\combo\references\library\ecc\skills\database-migrations\REFERENCE.md:331:1
+    |
+330 |
+331 +
+332 | def backfill_display_names(apps, schema_editor):
+--------------------------------------------------------------------------------
+341 |
+342 +
+343 | def reverse_backfill(apps, schema_editor):
+344 |     pass  # Data migration, no reverse needed
+345 |
+346 +
+347 | class Migration(migrations.Migration):
+    |
+
+unformatted: File would be reformatted
+   --> .agents\skills\combo\references\library\ecc\skills\django-celery\REFERENCE.md:42:23
+    |
+41  |
+    - os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings.development')
+42  + os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.development")
+43  |
+    - app = Celery('myproject')
+    - app.config_from_object('django.conf:settings', namespace='CELERY')
+44  + app = Celery("myproject")
+45  + app.config_from_object("django.conf:settings", namespace="CELERY")
+46  | app.autodiscover_tasks()  # Discovers tasks.py in each INSTALLED_APP
+47  |
+48  +
+49  | @app.task(bind=True, ignore_result=True)
+50  | def debug_task(self):
+    -     print(f'Request: {self.request!r}')
+51  +     print(f"Request: {self.request!r}")
+52  | ```
+--------------------------------------------------------------------------------
+57  |
+    - __all__ = ('celery_app',)
+58  + __all__ = ("celery_app",)
+59  | ```
+--------------------------------------------------------------------------------
+66  | # Broker (Redis recommended for production)
+    - CELERY_BROKER_URL = env('CELERY_BROKER_URL', default='redis://localhost:6379/0')
+    - CELERY_RESULT_BACKEND = env('CELERY_RESULT_BACKEND', default='django-db')
+67  + CELERY_BROKER_URL = env("CELERY_BROKER_URL", default="redis://localhost:6379/0")
+68  + CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND", default="django-db")
+69  |
+70  | # Serialization
+    - CELERY_ACCEPT_CONTENT = ['json']
+    - CELERY_TASK_SERIALIZER = 'json'
+    - CELERY_RESULT_SERIALIZER = 'json'
+71  + CELERY_ACCEPT_CONTENT = ["json"]
+72  + CELERY_TASK_SERIALIZER = "json"
+73  + CELERY_RESULT_SERIALIZER = "json"
+74  |
+75  | # Task behavior
+76  | CELERY_TASK_TRACK_STARTED = True
+    - CELERY_TASK_TIME_LIMIT = 30 * 60        # Hard limit: 30 min
+    - CELERY_TASK_SOFT_TIME_LIMIT = 25 * 60   # Soft limit: sends SoftTimeLimitExceeded
+    - CELERY_WORKER_PREFETCH_MULTIPLIER = 1   # Prevent worker hoarding long tasks
+    - CELERY_TASK_ACKS_LATE = True            # Re-queue on worker crash
+77  + CELERY_TASK_TIME_LIMIT = 30 * 60  # Hard limit: 30 min
+78  + CELERY_TASK_SOFT_TIME_LIMIT = 25 * 60  # Soft limit: sends SoftTimeLimitExceeded
+79  + CELERY_WORKER_PREFETCH_MULTIPLIER = 1  # Prevent worker hoarding long tasks
+80  + CELERY_TASK_ACKS_LATE = True  # Re-queue on worker crash
+81  |
+82  | # Result persistence
+    - CELERY_RESULT_EXPIRES = 60 * 60 * 24   # Keep results 24 hours
+83  + CELERY_RESULT_EXPIRES = 60 * 60 * 24  # Keep results 24 hours
+84  |
+85  | # Beat scheduler (for periodic tasks)
+    - CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+86  + CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+87  |
+88  | # Installed apps
+89  | INSTALLED_APPS += [
+    -     'django_celery_results',
+    -     'django_celery_beat',
+90  +     "django_celery_results",
+91  +     "django_celery_beat",
+92  | ]
+--------------------------------------------------------------------------------
+121 |
+    - @shared_task(name='notifications.send_welcome_email')
+122 +
+123 + @shared_task(name="notifications.send_welcome_email")
+124 | def send_welcome_email(user_id: int) -> None:
+--------------------------------------------------------------------------------
+131 |     except User.DoesNotExist:
+    -         logger.warning('send_welcome_email: user %s not found', user_id)
+132 +         logger.warning("send_welcome_email: user %s not found", user_id)
+133 |         return  # Idempotent — do not raise, task already impossible to complete
+134 |
+135 |     EmailService.send_welcome(user)
+    -     logger.info('Welcome email sent to user %s', user_id)
+136 +     logger.info("Welcome email sent to user %s", user_id)
+137 | ```
+--------------------------------------------------------------------------------
+143 |     bind=True,
+    -     name='integrations.sync_to_crm',
+144 +     name="integrations.sync_to_crm",
+145 |     max_retries=5,
+    -     default_retry_delay=60,       # seconds before first retry
+146 +     default_retry_delay=60,  # seconds before first retry
+147 |     autoretry_for=(ConnectionError, TimeoutError),
+    -     retry_backoff=True,           # exponential backoff
+    -     retry_backoff_max=600,        # cap at 10 minutes
+    -     retry_jitter=True,            # randomise to avoid thundering herd
+148 +     retry_backoff=True,  # exponential backoff
+149 +     retry_backoff_max=600,  # cap at 10 minutes
+150 +     retry_jitter=True,  # randomise to avoid thundering herd
+151 | )
+--------------------------------------------------------------------------------
+168 | ```python
+    - @shared_task(name='orders.mark_shipped')
+169 + @shared_task(name="orders.mark_shipped")
+170 | def mark_order_shipped(order_id: int, tracking_number: str) -> None:
+--------------------------------------------------------------------------------
+175 |         pk=order_id,
+    -         status=Order.Status.PROCESSING,    # Guard: only update if not already shipped
+176 +         status=Order.Status.PROCESSING,  # Guard: only update if not already shipped
+177 |     ).update(
+--------------------------------------------------------------------------------
+182 |     if not updated:
+    -         logger.info('mark_order_shipped: order %s already shipped or not found', order_id)
+183 +         logger.info(
+184 +             "mark_order_shipped: order %s already shipped or not found", order_id
+185 +         )
+186 | ```
+--------------------------------------------------------------------------------
+192 |
+193 +
+194 | @shared_task(
+195 |     bind=True,
+    -     name='reports.generate_pdf',
+196 +     name="reports.generate_pdf",
+197 |     soft_time_limit=120,
+--------------------------------------------------------------------------------
+226 | # Apply with queue routing
+    - sync_contact_to_crm.apply_async(args=[contact.pk], queue='high_priority')
+227 + sync_contact_to_crm.apply_async(args=[contact.pk], queue="high_priority")
+228 |
+--------------------------------------------------------------------------------
+241 | CELERY_BEAT_SCHEDULE = {
+    -     'cleanup-expired-sessions': {
+    -         'task': 'users.cleanup_expired_sessions',
+    -         'schedule': crontab(hour=2, minute=0),   # 2am daily
+242 +     "cleanup-expired-sessions": {
+243 +         "task": "users.cleanup_expired_sessions",
+244 +         "schedule": crontab(hour=2, minute=0),  # 2am daily
+245 |     },
+    -     'sync-inventory': {
+    -         'task': 'products.sync_inventory',
+    -         'schedule': 60.0,                         # every 60 seconds
+246 +     "sync-inventory": {
+247 +         "task": "products.sync_inventory",
+248 +         "schedule": 60.0,  # every 60 seconds
+249 |     },
+    -     'weekly-digest': {
+    -         'task': 'notifications.send_weekly_digest',
+    -         'schedule': crontab(day_of_week='monday', hour=8, minute=0),
+250 +     "weekly-digest": {
+251 +         "task": "notifications.send_weekly_digest",
+252 +         "schedule": crontab(day_of_week="monday", hour=8, minute=0),
+253 |     },
+--------------------------------------------------------------------------------
+264 | schedule, _ = CrontabSchedule.objects.get_or_create(
+    -     hour='*/6', minute='0',
+    -     timezone='UTC',
+265 +     hour="*/6",
+266 +     minute="0",
+267 +     timezone="UTC",
+268 | )
+269 |
+270 | PeriodicTask.objects.update_or_create(
+    -     name='Sync inventory every 6 hours',
+271 +     name="Sync inventory every 6 hours",
+272 |     defaults={
+    -         'crontab': schedule,
+    -         'task': 'products.sync_inventory',
+    -         'args': json.dumps([]),
+    -         'enabled': True,
+    -     }
+273 +         "crontab": schedule,
+274 +         "task": "products.sync_inventory",
+275 +         "args": json.dumps([]),
+276 +         "enabled": True,
+277 +     },
+278 | )
+--------------------------------------------------------------------------------
+288 |     fetch_data.s(source_id),
+    -     transform_data.s(),          # receives fetch_data result as first arg
+289 +     transform_data.s(),  # receives fetch_data result as first arg
+290 |     load_to_warehouse.s(),
+--------------------------------------------------------------------------------
+294 | # Group: run tasks in parallel
+    - parallel = group(
+    -     send_welcome_email.s(user_id)
+    -     for user_id in new_user_ids
+    - )
+295 + parallel = group(send_welcome_email.s(user_id) for user_id in new_user_ids)
+296 | parallel.delay()
+--------------------------------------------------------------------------------
+300 |     group(process_chunk.s(chunk) for chunk in data_chunks),
+    -     aggregate_results.s(),       # called with list of chunk results
+301 +     aggregate_results.s(),  # called with list of chunk results
+302 | )
+--------------------------------------------------------------------------------
+311 |
+312 +
+313 | @task_failure.connect
+314 | def on_task_failure(sender, task_id, exception, args, kwargs, traceback, einfo, **kw):
+315 |     """Log all task failures to Sentry / alerting."""
+316 |     import sentry_sdk
+317 +
+318 |     with sentry_sdk.new_scope() as scope:
+    -         scope.set_context('celery', {
+    -             'task': sender.name,
+    -             'task_id': task_id,
+    -             'args': args,
+    -             'kwargs': kwargs,
+    -         })
+319 …32873 tokens truncated…ills\combo\references\library\ecc\skills\videodb\reference\streaming.md:90:22
+    |
+89  | # Text overlay at the beginning
+    - timeline.add_overlay(0, TextAsset(
+    -     text="Live Demo",
+    -     duration=3,
+    -     style=TextStyle(fontsize=48, fontcolor="white", boxcolor="#000000"),
+    - ))
+90  + timeline.add_overlay(
+91  +     0,
+92  +     TextAsset(
+93  +         text="Live Demo",
+94  +         duration=3,
+95  +         style=TextStyle(fontsize=48, fontcolor="white", boxcolor="#000000"),
+96  +     ),
+97  + )
+98  |
+--------------------------------------------------------------------------------
+141 |         stream_url = shot.generate_stream()
+    -         print(f"Hit {i+1} [{shot.start:.1f}s-{shot.end:.1f}s]: {stream_url}")
+142 +         print(f"Hit {i + 1} [{shot.start:.1f}s-{shot.end:.1f}s]: {stream_url}")
+143 | except InvalidRequestError as exc:
+--------------------------------------------------------------------------------
+197 |     # Add the section label where this batch starts in the compiled timeline
+    -     timeline.add_overlay(timeline_offset, TextAsset(
+    -         text=query.title(),
+    -         duration=2,
+    -         style=TextStyle(fontsize=36, fontcolor="white", boxcolor="#222222"),
+    -     ))
+198 +     timeline.add_overlay(
+199 +         timeline_offset,
+200 +         TextAsset(
+201 +             text=query.title(),
+202 +             duration=2,
+203 +             style=TextStyle(fontsize=36, fontcolor="white", boxcolor="#222222"),
+204 +         ),
+205 +     )
+206 |
+--------------------------------------------------------------------------------
+280 |         found_any = True
+    -         timeline.add_overlay(timeline_offset, TextAsset(
+    -             text=topic.title(),
+    -             duration=2,
+    -             style=TextStyle(fontsize=32, fontcolor="white", boxcolor="#1a1a2e"),
+    -         ))
+281 +         timeline.add_overlay(
+282 +             timeline_offset,
+283 +             TextAsset(
+284 +                 text=topic.title(),
+285 +                 duration=2,
+286 +                 style=TextStyle(fontsize=32, fontcolor="white", boxcolor="#1a1a2e"),
+287 +             ),
+288 +         )
+289 |         for shot in shots:
+--------------------------------------------------------------------------------
+375 | # Overlay title card image
+    - timeline.add_overlay(0, ImageAsset(
+    -     asset_id=title_img.id, width=100, height=100, x=80, y=20, duration=5
+    - ))
+376 + timeline.add_overlay(
+377 +     0, ImageAsset(asset_id=title_img.id, width=100, height=100, x=80, y=20, duration=5)
+378 + )
+379 |
+380 | # Overlay section labels at the correct timeline offsets
+381 | if keynote_start is not None:
+    -     timeline.add_overlay(max(5, keynote_start), TextAsset(
+    -         text="Keynote Highlights",
+    -         duration=3,
+    -         style=TextStyle(fontsize=40, fontcolor="white", boxcolor="#0d1117"),
+    -     ))
+382 +     timeline.add_overlay(
+383 +         max(5, keynote_start),
+384 +         TextAsset(
+385 +             text="Keynote Highlights",
+386 +             duration=3,
+387 +             style=TextStyle(fontsize=40, fontcolor="white", boxcolor="#0d1117"),
+388 +         ),
+389 +     )
+390 | if demo_start is not None:
+    -     timeline.add_overlay(max(5, demo_start), TextAsset(
+    -         text="Demo Highlights",
+    -         duration=3,
+    -         style=TextStyle(fontsize=36, fontcolor="white", boxcolor="#0d1117"),
+    -     ))
+391 +     timeline.add_overlay(
+392 +         max(5, demo_start),
+393 +         TextAsset(
+394 +             text="Demo Highlights",
+395 +             duration=3,
+396 +             style=TextStyle(fontsize=36, fontcolor="white", boxcolor="#0d1117"),
+397 +         ),
+398 +     )
+399 |
+400 | # Overlay background music
+    - timeline.add_overlay(0, AudioAsset(
+    -     asset_id=music.id, fade_in_duration=3
+    - ))
+401 + timeline.add_overlay(0, AudioAsset(asset_id=music.id, fade_in_duration=3))
+402 |
+    |
+
+unformatted: File would be reformatted
+   --> .agents\skills\combo\references\library\ecc\skills\windows-desktop-e2e\REFERENCE.md:70:1
+    |
+69  | from pywinauto import Desktop
+70  +
+71  | Desktop(backend="uia").windows()  # lists all top-level windows
+--------------------------------------------------------------------------------
+137 |
+138 +
+139 | class BasePage:
+--------------------------------------------------------------------------------
+198 |             import sys, pywinauto.keyboard as kb
+    -             print(f"[windows-desktop-e2e] set_edit_text failed ({e}), using keyboard fallback", file=sys.stderr)
+199 +
+200 +             print(
+201 +                 f"[windows-desktop-e2e] set_edit_text failed ({e}), using keyboard fallback",
+202 +                 file=sys.stderr,
+203 +             )
+204 |             ctrl.click_input()
+--------------------------------------------------------------------------------
+232 |
+233 +
+234 | class LoginPage(BasePage):
+235 |     @property
+    -     def username(self): return self.by_id("usernameInput")
+236 +     def username(self):
+237 +         return self.by_id("usernameInput")
+238 |
+239 |     @property
+    -     def password(self): return self.by_id("passwordInput")
+240 +     def password(self):
+241 +         return self.by_id("passwordInput")
+242 |
+243 |     @property
+    -     def btn_login(self): return self.by_id("btnLogin")
+244 +     def btn_login(self):
+245 +         return self.by_id("btnLogin")
+246 |
+247 |     @property
+    -     def error_label(self): return self.by_id("lblError")
+248 +     def error_label(self):
+249 +         return self.by_id("lblError")
+250 |
+--------------------------------------------------------------------------------
+271 | import os, pytest
+272 +
+273 | os.environ["QT_ACCESSIBILITY"] = "1"  # Required for Qt 5.x UIA support
+--------------------------------------------------------------------------------
+277 |
+278 +
+279 | @pytest.fixture
+--------------------------------------------------------------------------------
+283 |     proc = Application(backend="uia").start(APP_PATH, timeout=LAUNCH_TIMEOUT)
+    -     win  = proc.window(title=MAIN_WINDOW_TITLE)
+284 +     win = proc.window(title=MAIN_WINDOW_TITLE)
+285 |     win.wait("visible", timeout=LAUNCH_TIMEOUT)
+--------------------------------------------------------------------------------
+303 |
+304 +
+305 | @pytest.hookimpl(tryfirst=True, hookwrapper=True)
+--------------------------------------------------------------------------------
+314 | import os
+    - APP_PATH          = os.environ.get("APP_PATH", "")           # set via env — no default path
+315 +
+316 + APP_PATH = os.environ.get("APP_PATH", "")  # set via env — no default path
+317 | MAIN_WINDOW_TITLE = os.environ.get("APP_TITLE", "")
+    - LAUNCH_TIMEOUT    = int(os.environ.get("LAUNCH_TIMEOUT", "15"))
+    - ACTION_TIMEOUT    = int(os.environ.get("ACTION_TIMEOUT", "10"))
+    - ARTIFACT_DIR      = os.path.join(os.path.dirname(__file__), "artifacts")
+318 + LAUNCH_TIMEOUT = int(os.environ.get("LAUNCH_TIMEOUT", "15"))
+319 + ACTION_TIMEOUT = int(os.environ.get("ACTION_TIMEOUT", "10"))
+320 + ARTIFACT_DIR = os.path.join(os.path.dirname(__file__), "artifacts")
+321 | ```
+--------------------------------------------------------------------------------
+375 | import pyautogui
+376 +
+377 | pyautogui.screenshot("artifacts/fullscreen.png")
+--------------------------------------------------------------------------------
+381 |
+382 +
+383 | def start_recording(name):
+    -     return subprocess.Popen([
+    -         "ffmpeg", "-f", "gdigrab", "-framerate", "10",
+    -         "-i", "desktop", "-y", f"artifacts/videos/{name}.mp4"
+    -     ], stdin=subprocess.PIPE, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+384 +     return subprocess.Popen(
+385 +         [
+386 +             "ffmpeg",
+387 +             "-f",
+388 +             "gdigrab",
+389 +             "-framerate",
+390 +             "10",
+391 +             "-i",
+392 +             "desktop",
+393 +             "-y",
+394 +             f"artifacts/videos/{name}.mp4",
+395 +         ],
+396 +         stdin=subprocess.PIPE,
+397 +         stdout=subprocess.DEVNULL,
+398 +         stderr=subprocess.DEVNULL,
+399 +     )
+400 +
+401 |
+402 | def stop_recording(proc):
+    -     proc.stdin.write(b"q"); proc.stdin.flush(); proc.wait(timeout=10)
+403 +     proc.stdin.write(b"q")
+404 +     proc.stdin.flush()
+405 +     proc.wait(timeout=10)
+406 | ```
+--------------------------------------------------------------------------------
+423 | import os, json, time
+    - TRACE_ENABLED      = os.environ.get("E2E_TRACE") == "1"
+424 +
+425 + TRACE_ENABLED = os.environ.get("E2E_TRACE") == "1"
+426 | TRACE_INCLUDE_TEXT = os.environ.get("E2E_TRACE_INCLUDE_TEXT") == "1"
+427 |
+428 +
+429 | class BasePage:
+--------------------------------------------------------------------------------
+439 |             self.window.capture_as_image().save(
+    -                 os.path.join(ARTIFACT_DIR, f"step_{idx}_{action}.png"))
+440 +                 os.path.join(ARTIFACT_DIR, f"step_{idx}_{action}.png")
+441 +             )
+442 |         except Exception:
+443 |             pass  # capture failure must not break the test
+444 |         rec = {
+    -             "ts": time.time(), "step": BasePage._step, "action": action,
+445 +             "ts": time.time(),
+446 +             "step": BasePage._step,
+447 +             "action": action,
+448 |             "locator": getattr(spec, "criteria", None),
+--------------------------------------------------------------------------------
+454 |     def click(self, spec):
+    -         self.wait_visible(spec); self._trace("click_before", spec)
+    -         spec.click_input();      self._trace("click_after",  spec)
+455 +         self.wait_visible(spec)
+456 +         self._trace("click_before", spec)
+457 +         spec.click_input()
+458 +         self._trace("click_after", spec)
+459 |
+460 |     def type_text(self, spec, text):
+    -         self.wait_visible(spec); self._trace("type_before", spec, text)
+461 +         self.wait_visible(spec)
+462 +         self._trace("type_before", spec, text)
+463 |         # ... existing set_edit_text / keyboard fallback ...
+--------------------------------------------------------------------------------
+481 |
+482 +
+483 | # Skip in CI only
+--------------------------------------------------------------------------------
+511 | from pywinauto import Application
+    - from config import APP_PATH, APP_ARGS, APP_TITLE, LAUNCH_TIMEOUT, ACTION_TIMEOUT, ARTIFACT_DIR
+512 + from config import (
+513 +     APP_PATH,
+514 +     APP_ARGS,
+515 +     APP_TITLE,
+516 +     LAUNCH_TIMEOUT,
+517 +     ACTION_TIMEOUT,
+518 +     ARTIFACT_DIR,
+519 + )
+520 +
+521 |
+--------------------------------------------------------------------------------
+529 |     sandbox_env = os.environ.copy()
+    -     sandbox_env["QT_ACCESSIBILITY"]  = "1"
+    -     sandbox_env["APPDATA"]           = str(tmp_path / "AppData" / "Roaming")
+    -     sandbox_env["LOCALAPPDATA"]      = str(tmp_path / "AppData" / "Local")
+530 +     sandbox_env["QT_ACCESSIBILITY"] = "1"
+531 +     sandbox_env["APPDATA"] = str(tmp_path / "AppData" / "Roaming")
+532 +     sandbox_env["LOCALAPPDATA"] = str(tmp_path / "AppData" / "Local")
+533 |     sandbox_env["TEMP"] = sandbox_env["TMP"] = str(tmp_path / "Temp")
+--------------------------------------------------------------------------------
+541 |     import shlex
+542 +
+543 |     # Launch via subprocess so we can pass env; connect pywinauto by PID
+--------------------------------------------------------------------------------
+547 |     )
+    -     pw_app = Application(backend="uia").connect(process=proc.pid, timeout=LAUNCH_TIMEOUT)
+    -     win    = pw_app.window(title=APP_TITLE)
+548 +     pw_app = Application(backend="uia").connect(
+549 +         process=proc.pid, timeout=LAUNCH_TIMEOUT
+550 +     )
+551 +     win = pw_app.window(title=APP_TITLE)
+552 |     win.wait("visible", timeout=LAUNCH_TIMEOUT)
+--------------------------------------------------------------------------------
+569 |
+570 +
+571 | @pytest.hookimpl(tryfirst=True, hookwrapper=True)
+--------------------------------------------------------------------------------
+592 |
+593 +
+594 | def restrict_process(pid: int):
+--------------------------------------------------------------------------------
+601 |     # Minimal rights: SET_QUOTA (0x0100) | TERMINATE (0x0001)
+    -     PROCESS_SET_QUOTA_AND_TERMINATE    = 0x0101
+602 +     PROCESS_SET_QUOTA_AND_TERMINATE = 0x0101
+603 |
+604 |     kernel32 = ctypes.windll.kernel32
+    -     job   = kernel32.CreateJobObjectW(None, None)
+605 +     job = kernel32.CreateJobObjectW(None, None)
+606 |     hproc = kernel32.OpenProcess(PROCESS_SET_QUOTA_AND_TERMINATE, False, pid)
+--------------------------------------------------------------------------------
+611 |             ("PerProcessUserTimeLimit", wt.LARGE_INTEGER),
+    -             ("PerJobUserTimeLimit",     wt.LARGE_INTEGER),
+    -             ("LimitFlags",             wt.DWORD),
+    -             ("MinimumWorkingSetSize",   ctypes.c_size_t),
+    -             ("MaximumWorkingSetSize",   ctypes.c_size_t),
+    -             ("ActiveProcessLimit",      wt.DWORD),
+    -             ("Affinity",               ctypes.c_size_t),
+    -             ("PriorityClass",          wt.DWORD),
+    -             ("SchedulingClass",        wt.DWORD),
+612 +             ("PerJobUserTimeLimit", wt.LARGE_INTEGER),
+613 +             ("LimitFlags", wt.DWORD),
+614 +             ("MinimumWorkingSetSize", ctypes.c_size_t),
+615 +             ("MaximumWorkingSetSize", ctypes.c_size_t),
+616 +             ("ActiveProcessLimit", wt.DWORD),
+617 +             ("Affinity", ctypes.c_size_t),
+618 +             ("PriorityClass", wt.DWORD),
+619 +             ("SchedulingClass", wt.DWORD),
+620 |         ]
+621 |
+622 |     info = JOBOBJECT_BASIC_LIMIT_INFORMATION()
+623 |     info.LimitFlags = JOB_OBJECT_LIMIT_KILL_ON_JOB_CLOSE
+    -     ok = kernel32.SetInformationJobObject(job, 2, ctypes.byref(info), ctypes.sizeof(info))
+624 +     ok = kernel32.SetInformationJobObject(
+625 +         job, 2, ctypes.byref(info), ctypes.sizeof(info)
+626 +     )
+627 |     if not ok:
+--------------------------------------------------------------------------------
+632 |
+633 +
+634 | # After proc = subprocess.Popen(...):  job = restrict_process(proc.pid)
+--------------------------------------------------------------------------------
+742 | import os
+743 +
+744 | os.environ["QT_ACCESSIBILITY"] = "1"
+--------------------------------------------------------------------------------
+786 |
+787 +
+788 | def select_combo_item(page, combo_spec, item_text):
+--------------------------------------------------------------------------------
+800 | ```python
+    - dlg = page.wait_window("Confirm")          # wait for dialog title
+    - dlg.child_window(title="OK").click_input() # click button inside it
+801 + dlg = page.wait_window("Confirm")  # wait for dialog title
+802 + dlg.child_window(title="OK").click_input()  # click button inside it
+803 | ```
+--------------------------------------------------------------------------------
+808 | table = page.by_id("tblUsers").wrapper_object()
+    - cell  = table.cell(row=0, column=1)
+809 + cell = table.cell(row=0, column=1)
+810 | print(cell.window_text())
+--------------------------------------------------------------------------------
+826 |
+827 +
+828 | def find_image_on_screen(template_path, confidence=0.85):
+829 |     """Locate a template image on screen. Returns (x, y) center or None."""
+    -     screen   = np.array(pyautogui.screenshot())
+830 +     screen = np.array(pyautogui.screenshot())
+831 |     template = np.array(Image.open(template_path))
+    -     result   = cv2.matchTemplate(
+832 +     result = cv2.matchTemplate(
+833 |         cv2.cvtColor(screen, cv2.COLOR_RGB2BGR),
+--------------------------------------------------------------------------------
+842 |
+843 +
+844 | def click_image(template_path, confidence=0.85):
+--------------------------------------------------------------------------------
+871 |     import os, cv2, pyautogui, numpy as np
+872 +
+873 |     screen = np.array(pyautogui.screenshot())[:, :, ::-1]
+    -     tpl    = cv2.imread(template_path)
+874 +     tpl = cv2.imread(template_path)
+875 |     if tpl is None:
+876 |         raise RuntimeError(f"Template unreadable: {template_path}")
+    -     res    = cv2.matchTemplate(screen, tpl, cv2.TM_CCOEFF_NORMED)
+877 +     res = cv2.matchTemplate(screen, tpl, cv2.TM_CCOEFF_NORMED)
+878 |     _, mv, _, ml = cv2.minMaxLoc(res)
+    -     h, w   = tpl.shape[:2]
+879 +     h, w = tpl.shape[:2]
+880 |     colour = (0, 255, 0) if mv >= confidence else (0, 0, 255)  # green pass / red fail
+    -     cv2.rectangle(screen, ml, (ml[0]+w, ml[1]+h), colour, 2)
+    -     cv2.putText(screen, f"score={mv:.3f} thr={confidence}",
+    -                 (ml[0], max(20, ml[1]-6)),
+    -                 cv2.FONT_HERSHEY_SIMPLEX, 0.7, colour, 2)
+881 +     cv2.rectangle(screen, ml, (ml[0] + w, ml[1] + h), colour, 2)
+882 +     cv2.putText(
+883 +         screen,
+884 +         f"score={mv:.3f} thr={confidence}",
+885 +         (ml[0], max(20, ml[1] - 6)),
+886 +         cv2.FONT_HERSHEY_SIMPLEX,
+887 +         0.7,
+888 +         colour,
+889 +         2,
+890 +     )
+891 |     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
+--------------------------------------------------------------------------------
+932 |
+933 +
+934 | # GOOD: fresh process per test (or per class at most)
+    |
+
+unformatted: File would be reformatted
+   --> .agents\skills\combo\references\library\ecc\skills\x-api\REFERENCE.md:53:55
+    |
+52  |     headers=headers,
+    -     params={"query": "claude code", "max_results": 10}
+53  +     params={"query": "claude code", "max_results": 10},
+54  | )
+--------------------------------------------------------------------------------
+88  | ```python
+    - resp = oauth.post(
+    -     "https://api.x.com/2/tweets",
+    -     json={"text": "Hello from Claude Code"}
+    - )
+89  + resp = oauth.post("https://api.x.com/2/tweets", json={"text": "Hello from Claude Code"})
+90  | resp.raise_for_status()
+--------------------------------------------------------------------------------
+119 |         "tweet.fields": "created_at,public_metrics",
+    -     }
+120 +     },
+121 | )
+--------------------------------------------------------------------------------
+133 |         "tweet.fields": "public_metrics,created_at",
+    -     }
+134 +     },
+135 | )
+--------------------------------------------------------------------------------
+147 |         "tweet.fields": "created_at,public_metrics",
+    -     }
+148 +     },
+149 | )
+--------------------------------------------------------------------------------
+158 |     headers=headers,
+    -     params={"user.fields": "public_metrics,description,created_at"}
+159 +     params={"user.fields": "public_metrics,description,created_at"},
+160 | )
+--------------------------------------------------------------------------------
+170 |     "https://upload.twitter.com/1.1/media/upload.json",
+    -     files={"media": open("image.png", "rb")}
+171 +     files={"media": open("image.png", "rb")},
+172 | )
+--------------------------------------------------------------------------------
+177 |     "https://api.x.com/2/tweets",
+    -     json={"text": "Check this out", "media": {"media_ids": [media_id]}}
+178 +     json={"text": "Check this out", "media": {"media_ids": [media_id]}},
+179 | )
+    |
+
+unformatted: File would be reformatted
+  --> .agents\skills\combo\specialists\fastapi.md:23:1
+   |
+22 |
+23 +
+24 | class UserResponse(BaseModel):
+   |
+
+unformatted: File would be reformatted
+  --> tests\test_inventory.py:5:30
+  |
+4 | def test_default_excludes_discontinued_items():
+  -     assert inventory_summary([Item("active", 2), Item("old", 3, discontinued=True)]) == {
+5 +     assert inventory_summary(
+6 +         [Item("active", 2), Item("old", 3, discontinued=True)]
+7 +     ) == {
+8 |         "count": 1,
+  |
+
+44 files would be reformatted, 526 files already formatted
+
+2026-09-09T11:34:48.561788Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 1.4 seconds
+Output:
+1	I001	[*] unsorted-imports
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+
+2026-09-09T11:34:50.235588Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:35:01.380472Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 1.4 seconds
+Output:
+.agents\skills\combo\references\library\ecc\skills\manim-video\assets\network_graph_scene.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+
+2026-09-09T11:35:01.813423Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 1.9 seconds
+Output:
+unformatted: File would be reformatted
+  --> tests\test_inventory.py:5:30
+  |
+4 | def test_default_excludes_discontinued_items():
+  -     assert inventory_summary([Item("active", 2), Item("old", 3, discontinued=True)]) == {
+5 +     assert inventory_summary(
+6 +         [Item("active", 2), Item("old", 3, discontinued=True)]
+7 +     ) == {
+8 |         "count": 1,
+  |
+
+1 file would be reformatted, 1 file already formatted
+
+2026-09-09T11:35:01.881105Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:35:33.169673Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T11:35:42.879242Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5

@@ -1,0 +1,21 @@
+พบ 2 จุดที่ต้องแก้ก่อนใช้:
+
+- **High, ขาด object-level authorization**: `login_required` ยืนยันแค่ว่าล็อกอินแล้ว แต่ไม่ได้ตรวจว่า order เป็นของ `current_user` ผู้ใช้ที่รู้ `order_id` อาจดู order ของคนอื่นได้  
+  แก้โดยตรวจ `order.owner_id != current_user.id` แล้วคืน 404 หรือ 403 ตาม convention ของระบบ
+
+- **Medium, ค่า zero ถูกเปลี่ยน**: `order.quantity or 1` เปลี่ยน `0` เป็น `1`  
+  ใช้ `1 if order.quantity is None else order.quantity` แทน
+
+ตัวแก้ขั้นต่ำ:
+
+```python
+order = get_order(order_id)
+if order.owner_id != current_user.id:
+    raise NotFound()  # หรือ 403 ตาม contract ของระบบ
+
+quantity = 1 if order.quantity is None else order.quantity
+```
+
+ยังต้องแก้ก่อนใช้
+
+ทักษะที่อ่านจริง: `matt-review`, `ecc-security-review`

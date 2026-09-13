@@ -1,0 +1,722 @@
+[
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\AGENTS.md",
+    "action": "write",
+    "before_sha256": "355debbaf37254b53055da317a0c0ca4bf161bd605a10e9f4fd83ee0e6c23d20",
+    "after_sha256": "f6ad6204a8ec17a644eabd93f3b5381b7a10bfa3b39508bcf928862b73f9d173",
+    "bytes_before": 7338,
+    "bytes_after": 6952
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\agents\\combo-worker.toml",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "56e033729d8bb864230983a9bbac60a4aa48cd7898d172ceabaebe2d0f40d797",
+    "bytes_before": null,
+    "bytes_after": 497
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\config.toml",
+    "action": "write",
+    "before_sha256": "25e23838fd00a075bd78fd526a46aef4573e1ffd6bf3f174dc24ff2b7fcdba8b",
+    "after_sha256": "edd144e6ccf08bfa6e14c225cb22319dc4c93600ddaa7f30739aa7f036db2dd6",
+    "bytes_before": 45262,
+    "bytes_after": 47694
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo-maintain\\agents\\openai.yaml",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "8619a54e8c098122a7f3881394f84ca89b684366e848233a29ad18b6ec363935",
+    "bytes_before": null,
+    "bytes_after": 42
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo-maintain\\SKILL.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "895d3ec27c7aafee00f7b3e819e5be1f1f893ba7792d06952da67b5da98d4641",
+    "bytes_before": null,
+    "bytes_after": 1569
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\.combo-owned.json",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "f1629d1a288b2b46808d5ed5dad8f482d5b25b3de0f5ea7299edd43b162e8e3e",
+    "bytes_before": null,
+    "bytes_after": 15304
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\agents\\openai.yaml",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "8619a54e8c098122a7f3881394f84ca89b684366e848233a29ad18b6ec363935",
+    "bytes_before": null,
+    "bytes_after": 42
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\practices\\build.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "fa0ca7fac6c4921e2185df62d4ef157dc86addd996469c4673d32c4ac8b8d030",
+    "bytes_before": null,
+    "bytes_after": 1224
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\practices\\context.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "7c31fc5bc5356672b01137e2959e5129e9fb908b1b202584f6dcc6a25ea793f5",
+    "bytes_before": null,
+    "bytes_after": 1352
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\practices\\delegation.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "9e651330e6fa106e68e6dec1038ac84cbac0ef7a3fc9c37bc959e14819bfbc2c",
+    "bytes_before": null,
+    "bytes_after": 1312
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\practices\\design.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "9b59e5618e04a3ed60a9668af3e94e708ddac8e595af54e95fbef5a8b2b095f6",
+    "bytes_before": null,
+    "bytes_after": 1493
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\practices\\e2e.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "2bbdb9ad613ec40286f187bcd99309e12ebc6379fdd202ef9606544b2b832cb9",
+    "bytes_before": null,
+    "bytes_after": 1268
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\practices\\security.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "ccca64bec8840f989010088652f4b4c73e92355d70bec737604d6150b885a7c9",
+    "bytes_before": null,
+    "bytes_after": 1445
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\practices\\simplicity.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "59f81c199212234d263236d6a66a8207c9573197537641913265bbc208b23e76",
+    "bytes_before": null,
+    "bytes_after": 1432
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\practices\\tests.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "553ac0de9e7bbca2c4d4efd76b7289b24f3926902251809a805979a5819f8c1f",
+    "bytes_before": null,
+    "bytes_after": 1309
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\angular-animations.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "0361278cabc4925807c8a93ebce717f1c8d52d553870ddd8634b1075b0395dbc",
+    "bytes_before": null,
+    "bytes_after": 3955
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\angular-aria.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "96daed398824f2947c5f4221065cdeabf82ac020874f99cb4338e5e84cd96aa1",
+    "bytes_before": null,
+    "bytes_after": 12642
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\cli.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "b7a5f9f85125659966fe087b623939fe2b89ea5d7cdf53265476adf1666e37d9",
+    "bytes_before": null,
+    "bytes_after": 3714
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\component-harnesses.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "ffa4258a4877fe4e200c2fca5eb65507dafc85296e2861ba420765f43cd98d16",
+    "bytes_before": null,
+    "bytes_after": 2903
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\component-styling.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "de3351fdb72174361c6eee150940193f20d148afaceab0f22107758a3cb2d787",
+    "bytes_before": null,
+    "bytes_after": 2531
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\components.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "dbfb520f2dddd017acb617369c45544374440fcb0b178d9648fab7ada0178468",
+    "bytes_before": null,
+    "bytes_after": 3422
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\creating-services.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "9b0d8b6d627ec33e5957638049877eac655cd31444cd4afa440597e191e4cb94",
+    "bytes_before": null,
+    "bytes_after": 2700
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\data-resolvers.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "0a6eb7ee89b29d1766941ed88881803b32870e705f2e438a7cae1c4e59ed8289",
+    "bytes_before": null,
+    "bytes_after": 1587
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\define-routes.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "1288b38bad6cc9749e9d0fd35a294771ea2181dd712bfc2887d80e8b40fab7e6",
+    "bytes_before": null,
+    "bytes_after": 1727
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\defining-providers.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "e654c23a080c642cf7031b5cc5de1101b8c75030c15256f7e3b81b0336953c6d",
+    "bytes_before": null,
+    "bytes_after": 2256
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\di-fundamentals.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "45d4431765c46d7492d1daeb2de2aecc326e3255518e95b7b8303e259a4d8a64",
+    "bytes_before": null,
+    "bytes_after": 3594
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\e2e-testing.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "50aa1fa9a832666407b66c524ffc05fb2fe8e7063300fb26e304dc278cb907fc",
+    "bytes_before": null,
+    "bytes_after": 1904
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\effects.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "c06ad02460be7f57d024bb8e263a3390e72059815879bf6bcd0583e510a2b4ad",
+    "bytes_before": null,
+    "bytes_after": 2758
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\hierarchical-injectors.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "05546d8043b93a2ab8deccdc2bd9c1704350883107701139e790ff8adb0f626a",
+    "bytes_before": null,
+    "bytes_after": 2091
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\host-elements.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "b898bab74d518feba3c527dbf9694abe6d3ec7bfa44d81b34cff119016984080",
+    "bytes_before": null,
+    "bytes_after": 2114
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\injection-context.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "0ab76274d761da9c8ad5d789be2a4b4158d637f06074908d6fb4540cb8f45a34",
+    "bytes_before": null,
+    "bytes_after": 1927
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\inputs.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "229a6e37f7006a6f3426cc2bc42baa67ecbbab77c343d141e44b10c1bb11de09",
+    "bytes_before": null,
+    "bytes_after": 2445
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\linked-signal.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "4971692a36c4d470b5c8efec1a8106418ac28cdc33601e554ecff9dded95d289",
+    "bytes_before": null,
+    "bytes_after": 2584
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\loading-strategies.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "fa82c48573532a7f5e3ccf7eaa50dc7a2db1f23a8599638d9c18e023dbd73e2f",
+    "bytes_before": null,
+    "bytes_after": 1457
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\mcp.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "7197d06d79bb57084a5c4ff203ddf9d86a30116dddb103b9d4fc138bf2dd8cb1",
+    "bytes_before": null,
+    "bytes_after": 4079
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\navigate-to-routes.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "ea3c3d53b5db47b4f8d8b05124330e72bea92fc908d42c06aa7edb9e652b425e",
+    "bytes_before": null,
+    "bytes_after": 1639
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\outputs.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "a191f8982d9ac6868023d56c887f362052c4fccc70a89adc8a6bc546f851e5dc",
+    "bytes_before": null,
+    "bytes_after": 2604
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\reactive-forms.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "e71118562247c94141dfaca74efd246e38226bf26ffedbd7f3337f1866113283",
+    "bytes_before": null,
+    "bytes_after": 3561
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\rendering-strategies.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "329aa9aa35c85dd2048c899f26025439d3b0244067dbb508e724d291fdad7c97",
+    "bytes_before": null,
+    "bytes_after": 1828
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\resource.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "ff03e5f21219cb0cb6e8ea9fe3c47ead2308471a15a925cbcaf051473669c40c",
+    "bytes_before": null,
+    "bytes_after": 2714
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\route-animations.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "eda1452f85ce05f3f28753cc77cd8c31c7a52515d7ccebbb35de0ec1e3beb374",
+    "bytes_before": null,
+    "bytes_after": 1688
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\route-guards.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "491a93cb49fbcba04f7e8ffcd0f784fce7319ca3e2fe393c553f3d683a68424c",
+    "bytes_before": null,
+    "bytes_after": 1397
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\router-lifecycle.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "4abc8cb8dfeb2e9f57dc11c117d5f4a5b756b39dc076910d9ced9da640effc2d",
+    "bytes_before": null,
+    "bytes_after": 1534
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\router-testing.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "42bdaa9ac7d523093fb44ab945f3235ff72715ac4faeb99176bb0ae2fc406213",
+    "bytes_before": null,
+    "bytes_after": 3840
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\show-routes-with-outlets.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "43a2ed62ea2edafa8569bf7045f20928110f8f844d5890bfb6a2f2dde45e754b",
+    "bytes_before": null,
+    "bytes_after": 1672
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\signal-forms.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "7ff19051876697eeb43058fb52ab01ec9bc6bd486fd8674be723978dcde16b90",
+    "bytes_before": null,
+    "bytes_after": 24203
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\signals-overview.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "f0a4d5fe4a88a3f06d81683cedddf1b65ee1c771ef3eaaec4ff1ca5d804e45a3",
+    "bytes_before": null,
+    "bytes_after": 2841
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\tailwind-css.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "bdb952d0dd2d415560a796ecaf843cacff5ac20d8ef961eaaf75656fef9b9263",
+    "bytes_before": null,
+    "bytes_after": 1868
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\template-driven-forms.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "52e83e576b0c6dc05f854e903c4cfda1222bcd55c50ddee07344d1e53d02c1df",
+    "bytes_before": null,
+    "bytes_after": 3752
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\angular\\testing-fundamentals.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "94fe1a3b42f4cc299d71d3dcc12190485913bba00fc1d0757097c91306084356",
+    "bytes_before": null,
+    "bytes_after": 2640
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\licenses\\ecc.txt",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "326146379f01bb137c0a5d3c54770c1aa31076705c8b88a7f6b26a460f6221b2",
+    "bytes_before": null,
+    "bytes_after": 1071
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\licenses\\karpathy.txt",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "ce27d27710d31eb9fc42c4e08044bc12eb415aa38cf27be3891b8b9a4e563d9c",
+    "bytes_before": null,
+    "bytes_after": 434
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\licenses\\matt.txt",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "4981c5f6a90eb3a969dacabb9350f5a75695ff3910b39b6534952908dfdc5ff7",
+    "bytes_before": null,
+    "bytes_after": 1089
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\licenses\\ponytail.txt",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "f1af4301bd3b85026965f9f1cfa101b9bfd73a75c6b92f7a2a72bab5768abd36",
+    "bytes_before": null,
+    "bytes_after": 1092
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\references\\source-map.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "fc1cc9148aefdb9ea8758c1610513316c1c3b6edb4a041dabb18d3e2f818a9ea",
+    "bytes_before": null,
+    "bytes_after": 12971
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\SKILL.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "ca65afb550e4579df6287d0aee2eb39fe821635ffe572f7846ab709f868cb4cb",
+    "bytes_before": null,
+    "bytes_after": 5300
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\angular.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "d8f3cd42ab7c8ab40cf6ad31ce4daebb93e671defdf537aba1b42802fbb05467",
+    "bytes_before": null,
+    "bytes_after": 2267
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\bun.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "b1536a2a85ad9b4177e8b9b70dd83e0a0385e449751bf3fc9a4e45be3c60142b",
+    "bytes_before": null,
+    "bytes_after": 1626
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\cpp.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "192f07fb6730ab923e4bbe4c5a68945f0cd2dc3322f77120c3b252bbd871db68",
+    "bytes_before": null,
+    "bytes_after": 1965
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\django.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "49aabd21cf4db6c7c5bf32978740b66fc66977ce27b4558747bdcdbd66acb4a4",
+    "bytes_before": null,
+    "bytes_after": 1843
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\docker.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "607cefd1528b5eb131c4453d802441915b234f820950488b373649ad1d233247",
+    "bytes_before": null,
+    "bytes_after": 1999
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\dotnet.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "f098011d4511d38478b8f30975008fca01a1ad570f7ae7b7b8ffc9846d0d7b20",
+    "bytes_before": null,
+    "bytes_after": 1650
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\fastapi.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "f7a0bb31ec4d3ea8d2d8dc010507ad13a1459d4d9da929646e7d8c950fd27fcf",
+    "bytes_before": null,
+    "bytes_after": 2005
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\flutter.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "6f3ccb4355ed402264a49d6103039e2ec57b964c8269ef2caa4868e2ebce719c",
+    "bytes_before": null,
+    "bytes_after": 1345
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\go.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "17bbdf968e0dd468ee47d545f933643d36d50474fa03da5746129597983d3dba",
+    "bytes_before": null,
+    "bytes_after": 1536
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\http-api.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "78572a04a8ae2f3a90d6cf7f13c8f52d0d0730b51f9914ef2e8e72ca0e3f1724",
+    "bytes_before": null,
+    "bytes_after": 4395
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\INDEX.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "6054d00c92b3ba881b18975cb468a009c19fdfa3e6016a3920504dd6dcca411d",
+    "bytes_before": null,
+    "bytes_after": 4068
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\java-jvm.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "cdbc4d4f15c71a14dba11e05e76b284a428c1c8c9b59aeff173fdd359892c4b8",
+    "bytes_before": null,
+    "bytes_after": 1499
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\kotlin.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "252f72fe6ca2347f0a26e6599cedf8047e126cabe825708f3eb3f62b49317989",
+    "bytes_before": null,
+    "bytes_after": 1293
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\kubernetes.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "dc9c4d47f5c92c792f2820ffaae724f5f2c5d39dacb7462a4ecc310136784fe9",
+    "bytes_before": null,
+    "bytes_after": 1626
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\mcp.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "d3d2f69775f79383fc64494a24d4e703afc5096ecced8e5a3f8b2bdc86faaba7",
+    "bytes_before": null,
+    "bytes_after": 2521
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\nestjs.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "13d8791757d286163c69622c6c0484b615f9760c320b9ac3e7356fe127c2a881",
+    "bytes_before": null,
+    "bytes_after": 1303
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\nextjs.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "0e151e2ad29f4372bd6ad8417168491d22f166ef06688ae3d68c331cb410096d",
+    "bytes_before": null,
+    "bytes_after": 1225
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\postgres.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "5633c848b15821275481c3df4cf6eca0708879ac18fb45123d65b9ea2bb8670f",
+    "bytes_before": null,
+    "bytes_after": 1522
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\prisma.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "1659400454cfdf2656303768860a29d33f98277e1f848d3192fbd7b59beaab87",
+    "bytes_before": null,
+    "bytes_after": 1600
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\python.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "a0ee07a0518f354be19f8e3e1346c78c6b461b546dc119b21c9b8a43b62f6104",
+    "bytes_before": null,
+    "bytes_after": 3029
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\react-native.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "a0fc69dcf516677604af4df72a92e21c9999efa472b1c8c3eaf1adf8e03551a8",
+    "bytes_before": null,
+    "bytes_after": 1321
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\react-typescript.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "f06d3bc7b12211c10824e0961cd9dd11500c0699b0354aac1e8713cf7a84e4e2",
+    "bytes_before": null,
+    "bytes_after": 3860
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\redis.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "456cb92d198c452eb314a6a5815bb183b87a860db96874d99aa1a973af20638c",
+    "bytes_before": null,
+    "bytes_after": 1393
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\rust.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "5e0bd71c30c2cdd097fe0d18668f887a97d375bc7b0e56e7959612414d6b8320",
+    "bytes_before": null,
+    "bytes_after": 2681
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\springboot.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "1f9bfea49001e34cb440d23ed3e58aa405a97361903bd2f97ebba353587da8b7",
+    "bytes_before": null,
+    "bytes_after": 1390
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\sql-migrations.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "e946e1db42027125b051c68435c0ce5d901f16de126599adc9826a94125b8a2c",
+    "bytes_before": null,
+    "bytes_after": 3009
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\swift.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "3560bee4b32cf1da408bdcb5eb64c90451266cec01be2fc45c80d47e624fede6",
+    "bytes_before": null,
+    "bytes_after": 1333
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\specialists\\vue.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "9383e35a55636d7c0004b5223d85508b0072119f21da0fc26a624c2ecc49f82e",
+    "bytes_before": null,
+    "bytes_after": 1252
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\workflows\\debug.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "dc330719073063f87594acc270d665a4b4d81928bf67bc49bf7df9d9d2568560",
+    "bytes_before": null,
+    "bytes_after": 3591
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\workflows\\deliver.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "1daf62679f7b6f173db7c6ad70f661c98b35123d074ee47e4d9c14a2098ea2d8",
+    "bytes_before": null,
+    "bytes_after": 3147
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\workflows\\investigate.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "2a6a86e7765af149926715a3eb1a3919f5f26566fd5d9bffd76086db383b79aa",
+    "bytes_before": null,
+    "bytes_after": 2058
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\workflows\\plan.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "cbc474611c8b63309609080354f4f8635d8df3c020c0bbbb3a600ec36d7d5174",
+    "bytes_before": null,
+    "bytes_after": 2657
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\workflows\\review.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "f080c42c14e2f50980961dbd838af871edf12b73b7e66cf702cfaaca15812813",
+    "bytes_before": null,
+    "bytes_after": 2486
+  },
+  {
+    "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\workflows\\verify.md",
+    "action": "write",
+    "before_sha256": null,
+    "after_sha256": "e81be136bfc2bc5649a4d94c946ce21dfa157fc31087bb2e6e8fa17948487c6d",
+    "bytes_before": null,
+    "bytes_after": 2106
+  }
+]

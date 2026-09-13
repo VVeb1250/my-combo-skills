@@ -1,0 +1,33 @@
+วินิจฉัยเสร็จแล้ว สาเหตุอยู่ที่ [src/quantity.py:7](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-diagnosis-A-iapwe_st/src/quantity.py:7):
+
+```python
+return value or 1
+```
+
+ใน Python ค่า `0` เป็น `False` ในเชิง truthiness จึงถูกแทนด้วย `1` เช่นเดียวกับ `None` และค่า falsy อื่น ๆ
+
+หลักฐานจาก direct probe:
+
+```text
+0 -> 1
+None -> 1
+2 -> 2
+-1 -> -1
+```
+
+สมมติฐานจาก docstring ที่ [บรรทัด 5](D:/combo-ab-evals/combo-ab-run-siyimloi/combo-ab-thai-diagnosis-A-iapwe_st/src/quantity.py:5) คือ ควรใช้ค่าเริ่มต้นเฉพาะเมื่อค่า “หายไป” ซึ่งควรตรวจแบบ explicit เช่น:
+
+```python
+if value is None:
+    return 1
+return value
+```
+
+แผนซ่อม:
+
+1. เปลี่ยน truthiness check เป็น `value is None`
+2. คงค่า `0` และค่าที่ไม่ใช่ `None` ไว้ตามเดิม
+3. ภายหลังเพิ่ม regression test สำหรับ `0`, `None` และค่าปกติ
+4. ตรวจสอบด้วย assertion ว่า `normalize_quantity(0) == 0`, `normalize_quantity(None) == 1` และ `normalize_quantity(2) == 2`
+
+รอบนี้ไม่มีการแก้ไฟล์หรือเพิ่มเทสต์ และยังไม่ได้ตรวจ caller ภายนอกตามขอบเขตที่จำกัดไว้เฉพาะ `src/quantity.py`ครับ

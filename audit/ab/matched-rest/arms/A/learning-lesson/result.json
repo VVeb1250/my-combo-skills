@@ -1,0 +1,122 @@
+{
+  "case_id": "learning-lesson",
+  "variant": "A",
+  "pair_index": 9,
+  "first_arm": "B",
+  "fixture": "learning-lesson",
+  "requested_sandbox": "read-only",
+  "effective_sandbox": "danger-full-access",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "command": [
+    "C:\\Users\\VVeb1250\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+    "exec",
+    "--json",
+    "--ephemeral",
+    "--color",
+    "never",
+    "--disable",
+    "hooks",
+    "--disable",
+    "multi_agent",
+    "--disable",
+    "memories",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-5.6-luna",
+    "-c",
+    "model_reasoning_effort=max",
+    "-c",
+    "approval_policy=\"never\"",
+    "-c",
+    "mcp_servers={}",
+    "-c",
+    "skills.config=[{path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\ask-matt\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\claude-handoff\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\code-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\codebase-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\debug-by-logging\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnose\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnosing-bugs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\domain-modeling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\git-guardrails-claude-code\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\graphify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grill-with-docs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grilling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\implement\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\improve-codebase-architecture\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\loop-me\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\migrate-to-shoehorn\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\mistake-learning\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\multi-model-orchestrator\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\prototype\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\setup-matt-pocock-skills\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\source-command-resume\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-issues\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-prd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-questionnaire\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-spec\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-tickets\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\triage\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wayfinder\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wizard\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\write-a-skill\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-agent-harness\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-build\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-library\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-plan-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-setup\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-verify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-api-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-build-fix\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-database\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-e2e\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-language-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-mcp\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-python\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-react\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-rust\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-security-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-plan\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ponytail-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\combo\\\\SKILL.md\", enabled = false}]",
+    "-c",
+    "projects.\"D:\\\\combo-ab-evals\\\\combo-ab-run-siyimloi\\\\combo-ab-learning-lesson-A-b9msb3mr\".trust_level=\"trusted\"",
+    "-s",
+    "danger-full-access",
+    "-C",
+    "D:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-learning-lesson-A-b9msb3mr",
+    "-c",
+    "mcp_servers.codegraph.enabled=false",
+    "-c",
+    "mcp_servers.context7.enabled=false",
+    "-c",
+    "mcp_servers.cua_repl.enabled=false",
+    "-c",
+    "mcp_servers.exa.enabled=false",
+    "-c",
+    "mcp_servers.fetch.enabled=false",
+    "-c",
+    "mcp_servers.github.enabled=false",
+    "-c",
+    "mcp_servers.memory.enabled=false",
+    "-c",
+    "mcp_servers.node_repl.enabled=false",
+    "-c",
+    "mcp_servers.playwright.enabled=false",
+    "-c",
+    "mcp_servers.sequential-thinking.enabled=false"
+  ],
+  "workdir": "D:\\combo-ab-evals\\combo-ab-run-siyimloi\\combo-ab-learning-lesson-A-b9msb3mr",
+  "returncode": 0,
+  "timed_out": false,
+  "process_error": null,
+  "duration_seconds": 80.125,
+  "events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\events.jsonl",
+  "stderr_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\stderr.txt",
+  "final_answer_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\final-answer.txt",
+  "final_answer": "## บทเรียนสั้น: Dependency Injection ใน Python\n\nเป้าหมาย: คุณควรระบุ dependency ของ class ได้ และส่งมันเข้ามาจากภายนอกเพื่อให้เปลี่ยน implementation หรือทดสอบได้ง่าย\n\nDependency Injection (DI) คือการส่ง object ที่ class ต้องใช้เข้ามาจากภายนอก แทนการให้ class สร้าง object นั้นเอง\n\nแบบที่ผูกติดกัน:\n\n```python\nclass OrderService:\n    def __init__(self):\n        self.notifier = EmailNotifier()  # สร้าง dependency เอง\n```\n\n`OrderService` จึงเปลี่ยนไปใช้ SMS หรือ fake notifier ได้ยาก\n\nแบบใช้ DI:\n\n```python\nfrom typing import Protocol\n\n\nclass Notifier(Protocol):\n    def send(self, message: str) -> None:\n        ...\n\n\nclass EmailNotifier:\n    def send(self, message: str) -> None:\n        print(f\"Email: {message}\")\n\n\nclass OrderService:\n    def __init__(self, notifier: Notifier) -> None:\n        self.notifier = notifier\n\n    def place(self, order_id: str) -> None:\n        self.notifier.send(f\"Order {order_id} placed\")\n```\n\nตอนใช้งานจริง เราเป็นคนประกอบ object:\n\n```python\nservice = OrderService(EmailNotifier())\nservice.place(\"A-101\")\n```\n\nตอน test ใช้ fake แทนได้:\n\n```python\nclass FakeNotifier:\n    def __init__(self) -> None:\n        self.messages: list[str] = []\n\n    def send(self, message: str) -> None:\n        self.messages.append(message)\n\n\nfake = FakeNotifier()\nOrderService(fake).place(\"A-101\")\n\nassert fake.messages == [\"Order A-101 placed\"]\n```\n\nประเด็นสำคัญคือ `OrderService` รู้แค่ว่า object ที่รับเข้ามามีเมธอด `send()` ไม่จำเป็นต้องรู้ว่าเป็น email, SMS หรือ fake\n\n### Retrieval practice\n\nพิจารณาโค้ดนี้ แล้วลองตอบก่อนดูเฉลย:\n\n```python\nclass UserService:\n    def __init__(self):\n        self.repo = PostgresUserRepo()\n```\n\nคำถาม:\n\n1. Dependency คืออะไร?\n2. ควรแก้ constructor อย่างไร?\n3. ตอน test ควรส่ง object แบบใดเข้าไป?\n\n<details>\n<summary>เฉลย</summary>\n\n1. `PostgresUserRepo` คือ dependency\n2. รับเข้ามาจากภายนอก:\n\n```python\ndef __init__(self, repo):\n    self.repo = repo\n```\n\n3. ส่ง fake หรือ in-memory repository เพื่อไม่ต้องเชื่อมต่อ database จริง\n\n</details>\n\nจำสั้น ๆ: class ควร “รับ” dependency, ไม่ใช่ “สร้าง” dependency เอง.",
+  "parse_errors": 0,
+  "tool_count": 12,
+  "tool_events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\tool-events.json",
+  "actual_references": [
+    "combo"
+  ],
+  "reference_evidence": [
+    {
+      "item_id": "item_1",
+      "references": [
+        "combo"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo/SKILL.md'",
+      "output_bytes": 7043,
+      "output_sha256": "553569d0838f4e279d68adc24d506330018e2be84ec249116a9b8d2e785204ed"
+    }
+  ],
+  "actual_fixture_files_read": [
+    "lesson-context.md"
+  ],
+  "fixture_read_evidence": [
+    {
+      "item_id": "item_3",
+      "files": [
+        "lesson-context.md"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Raw \\\"D:\\\\combo-ab-evals\\\\combo-ab-run-siyimloi\\\\combo-ab-learning-lesson-A-b9msb3mr\\\\.agents\\\\skills\\\\combo\\\\workflows/learning.md\\\"\"",
+      "output_bytes": 1683,
+      "output_sha256": "17f507de414e862b06c553f627a6262eafc9905c4db47ca7d4015977925e8c05"
+    }
+  ],
+  "changed_files": [],
+  "before_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\before-hashes.json",
+  "after_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\after-hashes.json",
+  "acceptance_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\acceptance.json",
+  "acceptance": {
+    "before": null,
+    "after": null
+  },
+  "usage": {
+    "input_tokens": 107883,
+    "cached_input_tokens": 89856,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2792,
+    "reasoning_output_tokens": 1706
+  },
+  "write_like_commands": [],
+  "environment_failures": [],
+  "task_failures": [],
+  "classification": "passed",
+  "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\matched-rest\\arms\\A\\learning-lesson\\result.json"
+}

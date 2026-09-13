@@ -1,0 +1,154 @@
+{
+  "diagnostic_repeats": [
+    {
+      "case": "plan-adapters",
+      "variant": "A",
+      "duration_seconds": 297.099,
+      "classification": "passed",
+      "acceptance": {
+        "before": null,
+        "after": null
+      },
+      "timed_out": false,
+      "errors": [],
+      "usage": {
+        "input_tokens": 313507,
+        "cached_input_tokens": 270592,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13929,
+        "reasoning_output_tokens": 11632
+      },
+      "changed_files": []
+    },
+    {
+      "case": "thai-delivery",
+      "variant": "A",
+      "duration_seconds": 272.67,
+      "classification": "environmental",
+      "acceptance": {
+        "before": {
+          "passed": false,
+          "returncode": 1
+        },
+        "after": {
+          "passed": true,
+          "returncode": 0
+        }
+      },
+      "timed_out": false,
+      "errors": [
+        {
+          "type": "error",
+          "message": "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Sep 10th, 2026 1:37 AM."
+        },
+        {
+          "type": "turn.failed",
+          "error": {
+            "message": "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at Sep 10th, 2026 1:37 AM."
+          }
+        }
+      ],
+      "usage": null,
+      "changed_files": [
+        {
+          "path": "src/inventory.py",
+          "change": "modified",
+          "before_sha256": "92ce279e17ca3c1ca633be12b90b9bf2ba7db96ffbf897fd641e1b074ccabfeb",
+          "after_sha256": "877039550d3a7b100a28076536fd6fc66eebb89ec1d7496ecc12b0279772ecd6",
+          "before_bytes": 482,
+          "after_bytes": 670
+        },
+        {
+          "path": "tests/test_inventory.py",
+          "change": "modified",
+          "before_sha256": "6eb8f6815e157c208cd163badfcae7fb279b9a8457af23af2b0e7fb61b5f1228",
+          "after_sha256": "948544b647597ad2cf7d870bcdb98abc7e8a4d933b576751a210e26daeef6edf",
+          "before_bytes": 217,
+          "after_bytes": 868
+        }
+      ]
+    },
+    {
+      "case": "plan-adapters",
+      "variant": "B",
+      "duration_seconds": 360.2,
+      "classification": "passed",
+      "acceptance": {
+        "before": null,
+        "after": null
+      },
+      "timed_out": false,
+      "errors": [],
+      "usage": {
+        "input_tokens": 231252,
+        "cached_input_tokens": 180992,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 17347,
+        "reasoning_output_tokens": 14994
+      },
+      "changed_files": []
+    },
+    {
+      "case": "thai-delivery",
+      "variant": "B",
+      "duration_seconds": 265.054,
+      "classification": "passed",
+      "acceptance": {
+        "before": {
+          "passed": false,
+          "returncode": 1
+        },
+        "after": {
+          "passed": true,
+          "returncode": 0
+        }
+      },
+      "timed_out": false,
+      "errors": [],
+      "usage": {
+        "input_tokens": 522330,
+        "cached_input_tokens": 452352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10846,
+        "reasoning_output_tokens": 6210
+      },
+      "changed_files": [
+        {
+          "path": "src/inventory.py",
+          "change": "modified",
+          "before_sha256": "92ce279e17ca3c1ca633be12b90b9bf2ba7db96ffbf897fd641e1b074ccabfeb",
+          "after_sha256": "b712ea99012e6c81c4d718f0619798e6aa532514a974a09358e9e4ea09fd1af5",
+          "before_bytes": 482,
+          "after_bytes": 698
+        },
+        {
+          "path": "tests/test_inventory.py",
+          "change": "modified",
+          "before_sha256": "6eb8f6815e157c208cd163badfcae7fb279b9a8457af23af2b0e7fb61b5f1228",
+          "after_sha256": "7a268b0e8baaa138211928a64605bd75345bbaa8c4e310eac2ebafeec869127c",
+          "before_bytes": 217,
+          "after_bytes": 763
+        }
+      ]
+    }
+  ],
+  "initial_thai_a_instruction_diff": {
+    "modified": [
+      "combo/references/library/ecc/skills/manim-video/assets/network_graph_scene.py"
+    ],
+    "removed": [],
+    "added": []
+  },
+  "installation": {
+    "receipt": "backups/20260909-163949-897900/receipt.json",
+    "selected_variant": "B",
+    "workflow_entries": 12,
+    "packages": 14,
+    "files": 649,
+    "changed_install_paths": 571,
+    "source_entries": 330,
+    "reset_credits_used": 1,
+    "verification": "audit/ab/installation-verification.json",
+    "preservation": "audit/ab/preservation.json"
+  }
+}

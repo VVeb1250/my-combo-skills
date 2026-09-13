@@ -1,0 +1,252 @@
+{
+  "schema_version": 1,
+  "suite": "combo-ab-10-pairedcases",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "max_parallel": 2,
+  "timeout_seconds": 240,
+  "pairing": {
+    "pairs_per_case": 2,
+    "interleave_by_case": true,
+    "alternate_first_arm": true,
+    "arm_order": ["A", "B"]
+  },
+  "coverage": {
+    "source_packs": ["karpathy", "ponytail", "matt", "ecc"],
+    "domains": ["engineering", "research", "content", "learning", "business", "media", "productivity"],
+    "note": "The same common expanded source library is staged into both arms. Cases exercise coding and noncoding behavior; source coverage is recorded from the staged package and final outcome is graded semantically."
+  },
+  "cases": [
+    {
+      "id": "bug-zero",
+      "title": "Repair zero versus missing parser bug",
+      "domain": "engineering",
+      "source_groups": ["karpathy", "ponytail", "matt", "ecc"],
+      "fixture": "bug-zero",
+      "sandbox": "workspace-write",
+      "stopping_point": "delivery",
+      "prompt": "The quantity parser has a regression: a quantity of zero is being treated as missing. Fix the implementation in src/quantity.py, keep None's default behavior, and verify the focused behavior with tests. Keep the change scoped to this parser.",
+      "acceptance": {
+        "before": "bug_zero_test.py",
+        "after": "bug_zero_test.py",
+        "before_must_fail": true,
+        "after_must_pass": true
+      },
+      "allowed_changed_paths": ["src/quantity.py", "tests/test_quantity.py"],
+      "required_actual_files": ["src/quantity.py"],
+      "required_actual_file_markers": {"src/quantity.py": ["normalize_quantity", "return value or 1"]},
+      "semantic_evidence": {
+        "required_final_term_groups": [
+          {"name": "zero semantics", "any": ["zero", "0", "ศูนย์"]},
+          {"name": "missing default", "any": ["none", "missing", "default", "ค่าเริ่มต้น"]},
+          {"name": "verification", "any": ["test", "pytest", "ทดสอบ"]}
+        ]
+      }
+    },
+    {
+      "id": "inventory-feature",
+      "title": "Extend iterable inventory summary",
+      "domain": "engineering",
+      "source_groups": ["karpathy", "ponytail", "matt", "ecc"],
+      "fixture": "inventory-feature",
+      "sandbox": "workspace-write",
+      "stopping_point": "delivery",
+      "prompt": "Extend the inventory summary in src/inventory.py. It must accept any iterable, preserve the current default of excluding discontinued items, and add an include_discontinued flag that includes discontinued items with positive stock. Zero or negative stock stays excluded. Preserve the existing result shape and keep the change limited to this feature. Verify the behavior.",
+      "acceptance": {
+        "before": "inventory_feature_test.py",
+        "after": "inventory_feature_test.py",
+        "before_must_fail": true,
+        "after_must_pass": true
+      },
+      "allowed_changed_paths": ["src/inventory.py", "tests/test_inventory.py"],
+      "required_actual_files": ["src/inventory.py"],
+      "required_actual_file_markers": {"src/inventory.py": ["inventory_summary", "class Item"]},
+      "semantic_evidence": {
+        "required_final_term_groups": [
+          {"name": "iterable", "any": ["iterable", "generator", "iterator"]},
+          {"name": "flag", "any": ["include_discontinued", "discontinued"]},
+          {"name": "positive stock", "any": ["positive", "zero", "negative"]}
+        ]
+      }
+    },
+    {
+      "id": "security-review",
+      "title": "Review ownership and zero-value order handling",
+      "domain": "engineering",
+      "source_groups": ["karpathy", "ponytail", "matt", "ecc"],
+      "fixture": "security-review",
+      "sandbox": "read-only",
+      "stopping_point": "review-only",
+      "prompt": "Review src/orders.py for correctness and security only. A logged-in customer must be able to view only that customer's own order, and quantity zero is a valid value. Report concrete findings with the smallest repair. Do not modify files, add tests, run services, or publish anything.",
+      "no_writes": true,
+      "required_actual_files": ["src/orders.py"],
+      "required_actual_file_markers": {"src/orders.py": ["def show_order", "owner_id", "quantity or 1"]},
+      "semantic_evidence": {
+        "required_final_term_groups": [
+          {"name": "object-level authorization", "any": ["authorization", "authorisation", "owner_id", "object-level", "สิทธิ์", "เจ้าของ"]},
+          {"name": "zero and missing semantics", "any": ["zero", "0", "none", "null", "quantity", "ศูนย์"]},
+          {"name": "concrete repair", "any": ["repair", "fix", "ตรวจสอบสิทธิ์", "แก้"]}
+        ],
+        "must_not_claim_implementation": true
+      }
+    },
+    {
+      "id": "plan-adapters",
+      "title": "Plan a gateway around existing adapters",
+      "domain": "engineering",
+      "source_groups": ["karpathy", "ponytail", "matt", "ecc"],
+      "fixture": "plan-adapters",
+      "sandbox": "read-only",
+      "stopping_point": "plan-only",
+      "prompt": "Plan only a retryable notification gateway for this small codebase. Inspect the two existing production adapters and their callers, then give an actionable implementation plan that preserves the seam those adapters already use. Do not implement the gateway, create files, or modify anything.",
+      "no_writes": true,
+      "required_actual_files": ["src/notification_adapters.py", "src/notifications.py"],
+      "required_actual_file_markers": {
+        "src/notification_adapters.py": ["class EmailAdapter", "class SmsAdapter"],
+        "src/notifications.py": ["send_welcome", "send_receipt"]
+      },
+      "semantic_evidence": {
+        "required_final_term_groups": [
+          {"name": "planning intent", "any": ["plan", "proposed", "แผน", "วางแผน"]},
+          {"name": "adapter seam", "any": ["adapter", "interface", "protocol", "seam", "อะแดปเตอร์"]},
+          {"name": "retry behavior", "any": ["retry", "backoff", "idempot", "ลองใหม่"]}
+        ],
+        "required_final_adapter_evidence": [
+          {"name": "EmailAdapter", "any": ["emailadapter", "email adapter", "อีเมล"], "context_any": ["smtp", "recipient", "send", "adapter", "อะแดปเตอร์"]},
+          {"name": "SmsAdapter", "any": ["smsadapter", "sms adapter", "sms", "ข้อความ"], "context_any": ["account", "recipient", "send", "adapter", "อะแดปเตอร์"]}
+        ],
+        "must_not_claim_implementation": true
+      }
+    },
+    {
+      "id": "trivial-label",
+      "title": "Make a tiny inline label edit",
+      "domain": "engineering",
+      "source_groups": ["karpathy", "ponytail"],
+      "fixture": "trivial-label",
+      "sandbox": "workspace-write",
+      "stopping_point": "direct-edit",
+      "prompt": "In src/ui.py, change the visible button label from Save to Save changes. Make only that small edit and finish.",
+      "allowed_changed_paths": ["src/ui.py"],
+      "required_actual_files": ["src/ui.py"],
+      "required_actual_file_markers": {"src/ui.py": ["BUTTON_LABEL", "Save"]},
+      "semantic_evidence": {
+        "required_file_text": {"path": "src/ui.py", "contains": "Save changes", "excludes": ["BUTTON_LABEL = \"Save\""]},
+        "expect_no_workflow_reads": true
+      }
+    },
+    {
+      "id": "translation-negative",
+      "title": "Translate a noncoding sentence",
+      "domain": "content",
+      "source_groups": ["karpathy", "ponytail", "matt", "ecc"],
+      "fixture": "translation-negative",
+      "sandbox": "read-only",
+      "stopping_point": "direct-answer",
+      "prompt": "Translate this sentence into Thai: The invoice is ready for review.",
+      "no_writes": true,
+      "no_tools": true,
+      "required_final_unicode_range": "thai",
+      "semantic_evidence": {
+        "required_final_term_groups": [
+          {"name": "Thai translation", "any": ["ใบแจ้งหนี้", "พร้อมสำหรับการตรวจสอบ", "พร้อมให้ตรวจสอบ"]}
+        ],
+        "expect_no_workflow_reads": true
+      }
+    },
+    {
+      "id": "thai-diagnosis",
+      "title": "Thai diagnosis and repair plan only",
+      "domain": "engineering",
+      "source_groups": ["karpathy", "ponytail", "matt", "ecc"],
+      "fixture": "thai-diagnosis",
+      "sandbox": "read-only",
+      "stopping_point": "diagnosis-and-plan-only",
+      "prompt": "ช่วยวินิจฉัยบั๊กใน src/quantity.py เท่านั้น: ค่า quantity เป็น 0 แล้วถูกมองว่าไม่มีค่า โปรดตรวจโค้ด ระบุสาเหตุและเสนอแผนซ่อมพร้อมวิธีตรวจสอบ โดยยังไม่แก้ไฟล์ ไม่เพิ่มเทสต์ และไม่ลงมือทำการซ่อมในรอบนี้",
+      "no_writes": true,
+      "required_actual_files": ["src/quantity.py"],
+      "required_actual_file_markers": {"src/quantity.py": ["normalize_quantity", "return value or 1"]},
+      "semantic_evidence": {
+        "required_final_unicode_range": "thai",
+        "required_final_term_groups": [
+          {"name": "diagnosis", "any": ["วินิจฉัย", "สาเหตุ", "บั๊ก", "defect"]},
+          {"name": "repair plan", "any": ["แผน", "แก้ไข", "ตรวจสอบ", "plan"]}
+        ],
+        "must_not_claim_implementation": true
+      }
+    },
+    {
+      "id": "thai-delivery",
+      "title": "Thai complete delivery with checks",
+      "domain": "engineering",
+      "source_groups": ["karpathy", "ponytail", "matt", "ecc"],
+      "fixture": "thai-delivery",
+      "sandbox": "workspace-write",
+      "stopping_point": "complete-delivery",
+      "prompt": "ขอให้ทำงานให้เสร็จครบวงจรในรอบนี้: วางแผนและปรับปรุงฟังก์ชัน inventory_summary ใน src/inventory.py ให้รับ iterable ทุกชนิด และเพิ่ม include_discontinued เพื่อรวมสินค้าที่เลิกจำหน่ายซึ่งมี stock เป็นบวกเท่านั้น ค่า stock ศูนย์หรือติดลบต้องถูกตัดออก รักษารูปแบบผลลัพธ์เดิม แก้โค้ด เพิ่มหรือปรับเทสต์ที่จำเป็น และรันการตรวจสอบให้เรียบร้อย ห้ามหยุดแค่แผน",
+      "acceptance": {
+        "before": "thai_delivery_test.py",
+        "after": "thai_delivery_test.py",
+        "before_must_fail": true,
+        "after_must_pass": true
+      },
+      "allowed_changed_paths": ["src/inventory.py", "tests/test_inventory.py"],
+      "required_actual_files": ["src/inventory.py"],
+      "required_actual_file_markers": {"src/inventory.py": ["inventory_summary", "class Item"]},
+      "semantic_evidence": {
+        "required_final_unicode_range": "thai",
+        "required_final_term_groups": [
+          {"name": "complete delivery", "any": ["เสร็จ", "สำเร็จ", "แก้ไขแล้ว", "ทดสอบแล้ว"]},
+          {"name": "iterable and flag", "any": ["iterable", "include_discontinued", "เลิกจำหน่าย"]},
+          {"name": "stock rule", "any": ["ศูนย์", "ติดลบ", "เป็นบวก", "positive"]}
+        ]
+      }
+    },
+    {
+      "id": "content-repurpose",
+      "title": "Repurpose a supplied product brief",
+      "domain": "content",
+      "source_groups": ["karpathy", "ponytail", "matt", "ecc"],
+      "fixture": "content-repurpose",
+      "sandbox": "read-only",
+      "stopping_point": "draft-only",
+      "prompt": "Using the supplied product brief and voice notes, draft distinct platform-appropriate content for LinkedIn, an email, and Instagram. Retain every product fact and the calm, practical voice. Do not invent claims, testimonials, health or environmental benefits. Show the drafts for review only, and do not publish, send, or modify files.",
+      "no_writes": true,
+      "required_actual_files": ["brief.md", "voice.md"],
+      "required_actual_file_markers": {
+        "brief.md": ["Northstar", "12 hours", "24 hours", "32 USD"],
+        "voice.md": ["practical", "calm", "specific"]
+      },
+      "semantic_evidence": {
+        "required_final_term_groups": [
+          {"name": "LinkedIn draft", "any": ["linkedin"]},
+          {"name": "email draft", "any": ["email"]},
+          {"name": "Instagram draft", "any": ["instagram"]},
+          {"name": "product facts", "any": ["northstar", "12 hours", "24 hours", "32 usd", "slate blue", "cream"]},
+          {"name": "no publication", "any": ["not published", "review only", "ไม่เผยแพร่", "ตรวจทาน"]}
+        ]
+      }
+    },
+    {
+      "id": "learning-lesson",
+      "title": "Teach a bounded concept with practice",
+      "domain": "learning",
+      "source_groups": ["karpathy", "ponytail", "matt", "ecc"],
+      "fixture": "learning-lesson",
+      "sandbox": "read-only",
+      "stopping_point": "one-lesson",
+      "prompt": "Use the supplied learner context to teach dependency injection in one bounded lesson. Give a short explanation for a junior Python developer, a small worked example, and retrieval practice with a question before revealing the answer. Keep the lesson within this response.",
+      "no_writes": true,
+      "required_actual_files": ["lesson-context.md"],
+      "required_actual_file_markers": {"lesson-context.md": ["junior Python", "worked example", "personal memory"]},
+      "semantic_evidence": {
+        "required_final_term_groups": [
+          {"name": "concept explanation", "any": ["dependency injection", "การฉีด dependency"]},
+          {"name": "worked example", "any": ["worked example", "ตัวอย่าง"]},
+          {"name": "retrieval practice", "any": ["retrieval", "ลองตอบ", "คำถาม", "practice"]},
+          {"name": "bounded no persistence", "any": ["one session", "ไม่บันทึก", "ไม่สร้าง", "within this response"]}
+        ]
+      }
+    }
+  ]
+}

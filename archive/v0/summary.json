@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-09-08T07:41:01Z",
+  "before_enabled_skills": 433,
+  "after_enabled_skills": 76,
+  "curated_skills": 17,
+  "before_description_chars": 111940,
+  "after_description_chars": 22215,
+  "parse_errors": [],
+  "actual_receipt_rollback_rehearsal_files": 49,
+  "smoke_model": "gpt-5.6-luna",
+  "smoke_effort": "max",
+  "positive_smoke": "Read matt-review and ecc-security-review; found both seeded defects.",
+  "negative_smoke": "Translation answered without tool/skill reads.",
+  "real_outcome_tasks_measured": 0,
+  "all_models_tested": false,
+  "notes": [
+    "Enabled count includes skills with explicit-only invocation metadata.",
+    "Character counts are not actual injected tokens.",
+    "Synthetic smoke checks are not intervention-rate evidence.",
+    "Rollback retains the CLI marketplace refresh, while reverting combo-owned config changes."
+  ]
+}

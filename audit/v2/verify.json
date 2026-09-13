@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-09-08T11:58:22Z",
+  "validation": {
+    "checked_at": "2026-09-08T11:58:07.002Z",
+    "package_roots": [
+      "combo",
+      "combo-maintain"
+    ],
+    "package_files": 86,
+    "skills": [
+      {
+        "name": "combo",
+        "files": 84,
+        "description_chars": 359,
+        "body_lines": 71
+      },
+      {
+        "name": "combo-maintain",
+        "files": 2,
+        "description_chars": 222,
+        "body_lines": 21
+      }
+    ],
+    "errors": []
+  },
+  "inventory": {
+    "available": true,
+    "before_count": 107,
+    "after_count": 109,
+    "native_count": 12,
+    "active_combo": [
+      "combo",
+      "combo-maintain"
+    ]
+  },
+  "rollback_rehearsal_files": 90
+}

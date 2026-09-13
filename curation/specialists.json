@@ -1,0 +1,459 @@
+{
+  "schema_version": 1,
+  "purpose": "Selective coding specialist shelf for the combo skill; this is build metadata, not a runtime router.",
+  "source_packs": [
+    {
+      "name": "karpathy",
+      "repository": "https://github.com/multica-ai/andrej-karpathy-skills.git",
+      "immutable_commit": "2c606141936f1eeef17fa3043a72095b4765b9c2",
+      "primary_source": "skills/karpathy-guidelines/SKILL.md",
+      "license": "skills/combo/references/licenses/karpathy.txt",
+      "decision": "ADAPT",
+      "reason": "Intent, observable success, and causal scope are expressed in the router and workflow owners; specialist notes keep technology-specific mechanics only.",
+      "destination": "skills/combo/SKILL.md"
+    },
+    {
+      "name": "ponytail",
+      "repository": "https://github.com/DietrichGebert/ponytail.git",
+      "immutable_commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "primary_source": "skills/ponytail-review/SKILL.md",
+      "license": "skills/combo/references/licenses/ponytail.txt",
+      "decision": "ADAPT",
+      "reason": "The simplicity lens is owned by combo practices; technology notes preserve only concrete choices that affect design or operational risk.",
+      "destination": "skills/combo/practices/simplicity.md"
+    },
+    {
+      "name": "matt",
+      "repository": "https://github.com/mattpocock/skills.git",
+      "immutable_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+      "primary_source": "skills/engineering/ask-matt/SKILL.md",
+      "license": "skills/combo/references/licenses/matt.txt",
+      "decision": "ADAPT",
+      "reason": "Matt's decision boundaries and behavioral seams are owned by combo workflows; no upstream interview, tracker, or mandatory fanout is copied into the shelf.",
+      "destination": "skills/combo/workflows",
+      "related_sources": [
+        {
+          "id": "ask-matt",
+          "primary_source": "skills/engineering/ask-matt/SKILL.md",
+          "source_url": "https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/ask-matt/SKILL.md",
+          "immutable_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "decision": "ADAPT",
+          "reason": "Keep intent and phase-boundary decisions, remove mandatory interview and approval ceremony.",
+          "destination": "skills/combo/workflows"
+        },
+        {
+          "id": "phase-boundaries",
+          "primary_source": "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+          "source_url": "https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+          "immutable_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "decision": "ADAPT",
+          "reason": "Keep compact transitions and context limits for the combo context practice.",
+          "destination": "skills/combo/practices/context.md"
+        },
+        {
+          "id": "code-review",
+          "primary_source": "skills/engineering/code-review/SKILL.md",
+          "source_url": "https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/code-review/SKILL.md",
+          "immutable_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "decision": "ADAPT",
+          "reason": "Keep requirement fidelity and actionable finding structure, remove fixed fanout and publishing expectations.",
+          "destination": "skills/combo/workflows/review.md"
+        },
+        {
+          "id": "tdd",
+          "primary_source": "skills/engineering/tdd/SKILL.md",
+          "source_url": "https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/tdd/SKILL.md",
+          "immutable_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "decision": "ADAPT",
+          "reason": "Keep behavior-first seams and focused regression evidence, without forcing TDD for every task.",
+          "destination": "skills/combo/practices/tests.md"
+        },
+        {
+          "id": "codebase-design",
+          "primary_source": "skills/engineering/codebase-design/SKILL.md",
+          "source_url": "https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/codebase-design/SKILL.md",
+          "immutable_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "decision": "ADAPT",
+          "reason": "Keep evidence-backed seam and design exploration where ambiguity changes correctness; skip ceremony for bounded work.",
+          "destination": "skills/combo/practices/design.md"
+        },
+        {
+          "id": "diagnosing-bugs",
+          "primary_source": "skills/engineering/diagnosing-bugs/SKILL.md",
+          "source_url": "https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/engineering/diagnosing-bugs/SKILL.md",
+          "immutable_commit": "3cca18b368ae95cdbdebbff572ccafa662551015",
+          "decision": "ADAPT",
+          "reason": "Keep discriminating checks and causal diagnosis, without mandatory logging or an external HITL loop.",
+          "destination": "skills/combo/workflows/debug.md"
+        }
+      ]
+    },
+    {
+      "name": "ecc",
+      "repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "primary_source": "skills/api-design/SKILL.md",
+      "license": "skills/combo/references/licenses/ecc.txt",
+      "decision": "ADAPT",
+      "reason": "ECC supplies the concrete HTTP, language, framework, database, and MCP mechanics in the curated entries below; broad workflow, memory, orchestration, and duplicate owners stay archived.",
+      "destination": "skills/combo/specialists"
+    }
+  ],
+  "specialists": [
+    {
+      "id": "http-api",
+      "title": "HTTP and API contracts",
+      "primary_source": "sources/ecc/skills/api-design/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/api-design/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain resource naming, method semantics, status codes, pagination, errors, idempotency, versioning, and rate-limit mechanics for API design work.",
+      "destination": "skills/combo/specialists/http-api.md",
+      "support_files": []
+    },
+    {
+      "id": "react-typescript",
+      "title": "React and TypeScript UI",
+      "primary_source": "sources/ecc/skills/react-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/react-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain render purity, hook cleanup, state placement, RSC boundaries, Suspense, forms, data fetching, and accessibility-sensitive component decisions.",
+      "destination": "skills/combo/specialists/react-typescript.md",
+      "support_files": []
+    },
+    {
+      "id": "python",
+      "title": "Python",
+      "primary_source": "sources/ecc/skills/python-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/python-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain typed, readable Python, explicit exception handling, context-managed resources, iterators, async cancellation, and package boundaries.",
+      "destination": "skills/combo/specialists/python.md",
+      "support_files": []
+    },
+    {
+      "id": "rust",
+      "title": "Rust",
+      "primary_source": "sources/ecc/skills/rust-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/rust-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain ownership choices, Result and Option handling, state enums, trait boundaries, async concurrency, and public-surface discipline.",
+      "destination": "skills/combo/specialists/rust.md",
+      "support_files": []
+    },
+    {
+      "id": "sql-migrations",
+      "title": "SQL schemas and migrations",
+      "primary_source": "sources/ecc/skills/database-migrations/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/database-migrations/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain immutable forward migrations, expand-contract changes, lock-aware indexes, separate backfills, production-sized rehearsal, and ORM workflows.",
+      "destination": "skills/combo/specialists/sql-migrations.md",
+      "support_files": []
+    },
+    {
+      "id": "mcp",
+      "title": "MCP servers",
+      "primary_source": "sources/ecc/skills/mcp-server-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/mcp-server-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain tools/resources/prompts, schema-first validation, transport separation, structured errors, idempotency, and version-sensitive SDK checks.",
+      "destination": "skills/combo/specialists/mcp.md",
+      "support_files": []
+    },
+    {
+      "id": "angular",
+      "title": "Angular",
+      "primary_source": "sources/ecc/skills/angular-developer/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/angular-developer/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain version-sensitive Signals, linkedSignal/resource, DI context, forms, route loading, SSR hydration, and ARIA guidance; copy its linked reference set as support files.",
+      "destination": "skills/combo/specialists/angular.md",
+      "support_destination": "skills/combo/references/angular",
+      "support_files": ["sources/ecc/skills/angular-developer/references/*.md"]
+    },
+    {
+      "id": "bun",
+      "title": "Bun runtime",
+      "primary_source": "sources/ecc/skills/bun-runtime/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/bun-runtime/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain the Node-versus-Bun compatibility decision, lockfile and frozen-install behavior, built-in runner/tester, and deployment checks.",
+      "destination": "skills/combo/specialists/bun.md",
+      "support_files": []
+    },
+    {
+      "id": "cpp",
+      "title": "Modern C++",
+      "primary_source": "sources/ecc/skills/cpp-coding-standards/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/cpp-coding-standards/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain RAII, value semantics, strong interfaces, Rule of Zero, ownership-aware parameters, smart pointers, and thread-safety boundaries.",
+      "destination": "skills/combo/specialists/cpp.md",
+      "support_files": []
+    },
+    {
+      "id": "django",
+      "title": "Django and DRF",
+      "primary_source": "sources/ecc/skills/django-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/django-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain split settings, app boundaries, QuerySet discipline, DRF serializer/view separation, transactions, cache keys, and signal caution.",
+      "destination": "skills/combo/specialists/django.md",
+      "support_files": []
+    },
+    {
+      "id": "docker",
+      "title": "Docker and Compose",
+      "primary_source": "sources/ecc/skills/docker-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/docker-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain multi-stage images, dev/prod Compose separation, health-gated dependencies, non-root production images, and reproducible build context.",
+      "destination": "skills/combo/specialists/docker.md",
+      "support_files": []
+    },
+    {
+      "id": "dotnet",
+      "title": ".NET and C#",
+      "primary_source": "sources/ecc/skills/dotnet-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/dotnet-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain immutable records, explicit nullability, DI, cancellation-aware async, options binding, and expected-failure result modeling.",
+      "destination": "skills/combo/specialists/dotnet.md",
+      "support_files": []
+    },
+    {
+      "id": "fastapi",
+      "title": "FastAPI",
+      "primary_source": "sources/ecc/skills/fastapi-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/fastapi-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain app factories and lifespan, Pydantic v2 boundaries, dependency-injected sessions, async cancellation, and API-level tests.",
+      "destination": "skills/combo/specialists/fastapi.md",
+      "support_files": []
+    },
+    {
+      "id": "go",
+      "title": "Go",
+      "primary_source": "sources/ecc/skills/golang-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/golang-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain useful zero values, interface-at-input/concrete-at-output boundaries, wrapped errors, cancellation, and channel ownership.",
+      "destination": "skills/combo/specialists/go.md",
+      "support_files": []
+    },
+    {
+      "id": "java-jvm",
+      "title": "Java, Spring, and Quarkus",
+      "primary_source": "sources/ecc/skills/java-coding-standards/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/java-coding-standards/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain build-file framework detection, records and Optional, constructor injection, Spring-versus-Quarkus naming, and blocking/reactive boundaries.",
+      "destination": "skills/combo/specialists/java-jvm.md",
+      "support_files": []
+    },
+    {
+      "id": "kotlin",
+      "title": "Kotlin coroutines and Flow",
+      "primary_source": "sources/ecc/skills/kotlin-coroutines-flows/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/kotlin-coroutines-flows/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain structured concurrency, supervisorScope, lifecycle-scoped StateFlow, cancellation, retry, and one-time event separation.",
+      "destination": "skills/combo/specialists/kotlin.md",
+      "support_files": []
+    },
+    {
+      "id": "kubernetes",
+      "title": "Kubernetes workloads",
+      "primary_source": "sources/ecc/skills/kubernetes-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/kubernetes-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain probe roles and timing, requests/limits, non-root pod security, least-privilege RBAC, HPA/PDB, and kubectl diagnosis.",
+      "destination": "skills/combo/specialists/kubernetes.md",
+      "support_files": []
+    },
+    {
+      "id": "nestjs",
+      "title": "NestJS",
+      "primary_source": "sources/ecc/skills/nestjs-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/nestjs-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain feature modules, thin controllers, DTO validation, guards/interceptors, config validation, and exception-shape consistency.",
+      "destination": "skills/combo/specialists/nestjs.md",
+      "support_files": []
+    },
+    {
+      "id": "nextjs",
+      "title": "Next.js and Turbopack",
+      "primary_source": "sources/ecc/skills/nextjs-turbopack/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/nextjs-turbopack/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain version-aware Turbopack defaults, cache behavior, App Router boundaries, and the Next 16 proxy.ts versus older middleware.ts distinction.",
+      "destination": "skills/combo/specialists/nextjs.md",
+      "support_files": []
+    },
+    {
+      "id": "postgres",
+      "title": "PostgreSQL",
+      "primary_source": "sources/ecc/skills/postgres-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/postgres-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain PostgreSQL index/type choices, query plans, JSONB and full-text tradeoffs, and anti-pattern checks that complement migration safety.",
+      "destination": "skills/combo/specialists/postgres.md",
+      "support_files": []
+    },
+    {
+      "id": "prisma",
+      "title": "Prisma ORM",
+      "primary_source": "sources/ecc/skills/prisma-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/prisma-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain select/include discipline, transaction form selection, client lifecycle, cursor pagination, and N+1/soft-delete hazards.",
+      "destination": "skills/combo/specialists/prisma.md",
+      "support_files": []
+    },
+    {
+      "id": "react-native",
+      "title": "React Native and Expo",
+      "primary_source": "sources/ecc/skills/react-native-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/react-native-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain route-param validation, cache-backed data fetching, list virtualization, hook cleanup for native APIs, and secure token storage.",
+      "destination": "skills/combo/specialists/react-native.md",
+      "support_files": []
+    },
+    {
+      "id": "redis",
+      "title": "Redis",
+      "primary_source": "sources/ecc/skills/redis-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/redis-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain cache-aside and invalidation choices, TTLs, namespaced keys, atomic rate limits, streams/queues, and failure behavior.",
+      "destination": "skills/combo/specialists/redis.md",
+      "support_files": []
+    },
+    {
+      "id": "springboot",
+      "title": "Spring Boot",
+      "primary_source": "sources/ecc/skills/springboot-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/springboot-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain controller/service/repository boundaries, DTO validation, transaction placement, exception mapping, pagination, and cache/async defaults.",
+      "destination": "skills/combo/specialists/springboot.md",
+      "support_files": []
+    },
+    {
+      "id": "swift",
+      "title": "Swift 6.2 concurrency",
+      "primary_source": "sources/ecc/skills/swift-concurrency-6-2/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/swift-concurrency-6-2/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain Swift 6.2 isolation choices, MainActor inference, isolated conformances, @concurrent offloading, and migration hazards.",
+      "destination": "skills/combo/specialists/swift.md",
+      "support_files": []
+    },
+    {
+      "id": "flutter",
+      "title": "Dart and Flutter",
+      "primary_source": "sources/ecc/skills/dart-flutter-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/dart-flutter-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain null-safe/sealed state, immutable widget architecture, structured async, GoRouter auth refresh, Dio retry guards, and scoped rebuilds.",
+      "destination": "skills/combo/specialists/flutter.md",
+      "support_files": []
+    },
+    {
+      "id": "vue",
+      "title": "Vue",
+      "primary_source": "sources/ecc/skills/vue-patterns/SKILL.md",
+      "source_repository": "https://github.com/affaan-m/ECC.git",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "source_url": "https://github.com/affaan-m/ECC/blob/5064474d4d762dc9640234a41617cccb79185cec/skills/vue-patterns/SKILL.md",
+      "decision": "ADAPT",
+      "reason": "Retain feature-first components, SFC ordering, props/emits contracts, composables, Pinia placement, and SSR/hydration-safe data flow.",
+      "destination": "skills/combo/specialists/vue.md",
+      "support_files": []
+    }
+  ],
+  "excluded_sources": [
+    {
+      "primary_source": "sources/ecc/skills/tdd-workflow/SKILL.md",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "decision": "ARCHIVE",
+      "reason": "Competing broad workflow; combo practices and the Matt TDD owner cover behavioral testing selectively.",
+      "destination": null
+    },
+    {
+      "primary_source": "sources/ecc/skills/verification-loop/SKILL.md",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "decision": "ARCHIVE",
+      "reason": "Competing verification workflow; combo verify workflow owns stopping-point and evidence decisions.",
+      "destination": null
+    },
+    {
+      "primary_source": "sources/ecc/skills/team-agent-orchestration/SKILL.md",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "decision": "ARCHIVE",
+      "reason": "General orchestration is outside the specialist shelf and cannot become a hidden delegation path.",
+      "destination": null
+    },
+    {
+      "primary_source": "sources/ecc/skills/unified-memory/SKILL.md",
+      "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
+      "decision": "ARCHIVE",
+      "reason": "Memory is governed by the named M2D authority and does not belong in combo runtime references.",
+      "destination": null
+    }
+  ]
+}

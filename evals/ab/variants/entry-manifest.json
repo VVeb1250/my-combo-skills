@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "fallback": {
+    "name": "combo",
+    "description": "Fallback router for cross-workflow or uncertain substantive requests, or explicit $combo invocation."
+  },
+  "entries": [
+    {
+      "name": "combo-deliver",
+      "domain": "engineering",
+      "description": "Implement software features, behavior changes, or refactors through verification. Use when the user wants working code, including requests to plan and build together; tiny understood edits can stay inline.",
+      "target": "workflows/deliver.md"
+    },
+    {
+      "name": "combo-debug",
+      "domain": "engineering",
+      "description": "Diagnose and repair software failures, regressions, build errors, or slowness using evidence and focused verification. Honor diagnosis-only requests without making repairs.",
+      "target": "workflows/debug.md"
+    },
+    {
+      "name": "combo-plan",
+      "domain": "engineering",
+      "description": "Develop software requirements, architecture decisions, or implementation plans from the actual code and constraints. Use for plan-only work; a request to build as well continues through delivery.",
+      "target": "workflows/plan.md"
+    },
+    {
+      "name": "combo-review",
+      "domain": "engineering",
+      "description": "Review code or changes for requirement fidelity and implementation risks.",
+      "target": "workflows/review.md"
+    },
+    {
+      "name": "combo-verify",
+      "domain": "engineering",
+      "description": "Run software tests, validate builds, or exercise a product user journey and report observed results. Use for verification requests, with native browser tools when the check needs a UI.",
+      "target": "workflows/verify.md"
+    },
+    {
+      "name": "combo-investigate",
+      "domain": "engineering",
+      "description": "Trace code or compare technical options without changing the repository.",
+      "target": "workflows/investigate.md"
+    },
+    {
+      "name": "combo-research",
+      "domain": "research",
+      "description": "Research scientific literature, markets, competitors, or substantive evidence questions. Evaluate sources and support the requested explanation or decision; simple factual answers can stay inline.",
+      "target": "workflows/research.md"
+    },
+    {
+      "name": "combo-content",
+      "domain": "content",
+      "description": "Write articles, brand copy, outreach drafts, or campaigns; derive voice from samples and repurpose material across social, email, and video formats. Use native tools for document and design artifacts.",
+      "target": "workflows/content.md"
+    },
+    {
+      "name": "combo-learning",
+      "domain": "learning",
+      "description": "Teach concepts and skills, design exercises, or create lessons and courses for the learner's goals. Use worked examples and retrieval practice at the requested depth; brief definitions can stay inline.",
+      "target": "workflows/learning.md"
+    },
+    {
+      "name": "combo-business",
+      "domain": "business",
+      "description": "Analyze business strategy, finance, inventory, demand, logistics, procurement, or production operations using the user's data and constraints. Produce traceable calculations, plans, or authorized operational updates.",
+      "target": "workflows/business.md"
+    },
+    {
+      "name": "combo-media",
+      "domain": "media",
+      "description": "Develop visual direction, motion, video edits, or multimedia production using source assets and the requested story. Pair domain techniques with the native image, design, presentation, and video tools.",
+      "target": "workflows/media.md"
+    },
+    {
+      "name": "combo-productivity",
+      "domain": "productivity",
+      "description": "Organize work, triage backlogs, prepare handoffs or questionnaires, and improve agent-facing instructions. Use the existing workspace and trackers, with native host tools for task management and scheduling.",
+      "target": "workflows/productivity.md"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "AGENTS.md": {
+    "sha256": "105bbf2b711c8dfab1c92cccc0f502afddedead0374accbf23a5be5597118e7f",
+    "bytes": 764
+  },
+  "src/inventory.py": {
+    "sha256": "0f07afb257172c3b13f02b8b2948df6023a500658d2f3a1dfc55375eb2e619d8",
+    "bytes": 750
+  },
+  "tests/test_inventory.py": {
+    "sha256": "cf348214a6c0d52a0cae89b8a1784daec409108024dfc9cde138572ea88215f5",
+    "bytes": 755
+  }
+}

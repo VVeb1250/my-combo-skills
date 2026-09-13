@@ -1,0 +1,167 @@
+{
+  "settings_keys": [
+    "advisorModel",
+    "agentPushNotifEnabled",
+    "autoCompactEnabled",
+    "autoUpdatesChannel",
+    "effortLevel",
+    "enableWorkflows",
+    "enabledPlugins",
+    "env",
+    "extraKnownMarketplaces",
+    "hooks",
+    "inputNeededNotifEnabled",
+    "model",
+    "permissions",
+    "skipWorkflowUsageWarning",
+    "statusLine",
+    "theme",
+    "tui"
+  ],
+  "model": "sonnet",
+  "effortLevel": "high",
+  "enabledPlugins": {
+    "ecc-hubs@bundle": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "csharp-lsp@claude-plugins-official": true,
+    "clangd-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "jdtls-lsp@claude-plugins-official": true,
+    "caveman@caveman": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "ecc@ecc": true,
+    "code-review@claude-plugins-official": true,
+    "mattpocock-skills@mattpocock": true,
+    "bundle-tools@bundle": true,
+    "context-mode@context-mode": true,
+    "claude-mem@thedotmack": false
+  },
+  "env_keys": [
+    "ECC_DISABLED_HOOKS",
+    "ECC_HOOK_PROFILE"
+  ],
+  "hook_event_counts": {
+    "PostToolUse": 1,
+    "PreToolUse": 2,
+    "PostToolUseFailure": 1,
+    "SessionStart": 1,
+    "UserPromptSubmit": 1,
+    "Stop": 1,
+    "SessionEnd": 1
+  },
+  "skills": [
+    {
+      "name": "codegraph-affected",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\codegraph-affected",
+      "has_skill": true,
+      "frontmatter": "\nname: codegraph-affected\ndescription: >-\n  Run only the tests affected by your current changes, mapping changed files to\n  impacted test files via CodeGraph's dependency graph (`codegraph affected`).\n  Use when the user says \"run affected tests\", \"test just my diff\", \"รันเทสต์ที่กระทบ\",\n  \"เทสต์เฉพาะที่เปลี่ยน\", or wants to skip a full-suite run after edits. Requires an\n  existing CodeGraph index (`.codegraph/`) — if none exists, use test-affected\n  instead (works via testmon/vitest/go list, no index needed).\n"
+    },
+    {
+      "name": "codegraph-link",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\codegraph-link",
+      "has_skill": true,
+      "frontmatter": "\nname: codegraph-link\ndescription: >-\n  Wire a project to CodeGraph MCP (@colbymchenry/codegraph): verify CLI/index/MCP/\n  permissions, auto-build the index if missing, and write the CLAUDE.md role-split\n  block. Use when the user says \"link codegraph\", \"set up codegraph\", \"เชื่อม codegraph\",\n  \"ผูก project กับ codegraph\", or \"codegraph-link\". Handles unlink when args contain\n  unlink/ยกเลิก/cancel/remove/ลบ/ถอด.\n"
+    },
+    {
+      "name": "fantasygen",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\fantasygen",
+      "has_skill": true,
+      "frontmatter": "\nname: fantasygen\ndescription: >-\n  AI-DM text RPG. Plays a D&D-style tabletop roleplaying game in chat where\n  you (the AI) are the Dungeon Master and the user is the player. An MCP\n  backend (fantasy-gen) owns all deterministic state — dice, character\n  sheet, world graph (geography, NPCs, facts) — so you only narrate, play\n  NPCs, and pace the story; you never invent numbers or remember world facts\n  in your head. Enter with /fantasygen (resume or new), /fantasygen new,\n  /fantasygen continue, /fantasygen list, or /fantasygen end. Use when the\n  user wants to play, continue, or manage a tabletop-RPG-style adventure\n  moderated by the AI in chat. The game persists to disk, so it survives\n  across sessions and hosts.\ndisable-model-invocation: true\n"
+    },
+    {
+      "name": "find-skills",
+      "symlink": false,
+      "junction": true,
+      "target": "C:\\Users\\VVeb1250\\.agents\\skills\\find-skills",
+      "has_skill": true,
+      "frontmatter": "\nname: find-skills\ndescription: >-\n  Search and install existing agent skills from the skills.sh ecosystem (`npx skills\n  find` / `add`). Use when the user asks \"is there a skill for X\", \"find a skill that\n  does X\", \"หา skill สำหรับ X\", \"มี skill อะไรที่ช่วย X ไหม\", or wants to extend\n  capabilities without writing new code. Not for authoring a brand-new skill from\n  scratch — use write-a-skill for that.\n"
+    },
+    {
+      "name": "git-guardrails-claude-code",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\git-guardrails-claude-code",
+      "has_skill": true,
+      "frontmatter": "\nname: git-guardrails-claude-code\ndescription: Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code.\n"
+    },
+    {
+      "name": "learned",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\learned",
+      "has_skill": false
+    },
+    {
+      "name": "microsoft-foundry",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\microsoft-foundry",
+      "has_skill": true,
+      "frontmatter": "\nname: microsoft-foundry\ndescription: >-\n  Deploy, evaluate, fine-tune, and operate Microsoft Foundry AI agents end-to-end via\n  azd — hosted/prompt agent create, deploy, invoke, eval, prompt optimization,\n  fine-tuning (SFT/DPO/RFT), RBAC, quota, and troubleshooting. USE FOR: azd ai agent,\n  Foundry project/resource, deploy or invoke an agent, evaluate/optimize a prompt,\n  fine-tune a model, quota or permission issues. DO NOT USE FOR: Azure Functions,\n  App Service, or general Azure deploy/prep (use azure-deploy / azure-prepare).\nlicense: MIT\nmetadata:\n  author: Microsoft\n  version: \"1.1.33\"\n"
+    },
+    {
+      "name": "migrate-to-shoehorn",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\migrate-to-shoehorn",
+      "has_skill": true,
+      "frontmatter": "\nname: migrate-to-shoehorn\ndescription: Migrate test files from `as` type assertions to @total-typescript/shoehorn. Use when user mentions shoehorn, wants to replace `as` in tests, or needs partial test data.\n"
+    },
+    {
+      "name": "multi-model-orchestrator",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\multi-model-orchestrator",
+      "has_skill": true,
+      "frontmatter": "\nname: multi-model-orchestrator\ndescription: >-\n  Run a multi-model pipeline (Codex Fable 5 วางแผน, Opus ให้คำปรึกษา, Sonnet ลงมือทำ)\n  for high-stakes coding or research work. Use when the user asks for something complex\n  and high-quality — \"สร้าง API แบบ production-ready\", \"วิจัย X อย่างละเอียด\",\n  \"ออกแบบ system architecture\", \"research แล้ว implement\" — or explicitly wants\n  several models collaborating.\n"
+    },
+    {
+      "name": "scaffold-exercises",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\scaffold-exercises",
+      "has_skill": true,
+      "frontmatter": "\nname: scaffold-exercises\ndescription: Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course section.\n"
+    },
+    {
+      "name": "setup-pre-commit",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\setup-pre-commit",
+      "has_skill": true,
+      "frontmatter": "\nname: setup-pre-commit\ndescription: Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing.\n"
+    },
+    {
+      "name": "source-command-resume",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\source-command-resume",
+      "has_skill": true,
+      "frontmatter": "\nname: \"source-command-resume\"\ndescription: \"โหลด context จาก Obsidian vault เพื่อ resume session\"\ndisable-model-invocation: true\n"
+    },
+    {
+      "name": "write-a-skill",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\write-a-skill",
+      "has_skill": true,
+      "frontmatter": "\nname: write-a-skill\ndescription: >-\n  Author a new agent skill from scratch: SKILL.md structure, progressive disclosure,\n  bundled scripts and references. Use when the user says \"create a skill\", \"write a\n  skill\", \"build a new skill\", \"สร้าง skill ใหม่\", \"เขียน skill\", or \"ทำ skill เอง\".\n  Not for finding an existing skill to install — use find-skills for that.\ndisable-model-invocation: true\n"
+    }
+  ],
+  "commands": [
+    {
+      "name": "prototype-v0.md",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\commands\\prototype-v0.md"
+    }
+  ],
+  "agents": []
+}

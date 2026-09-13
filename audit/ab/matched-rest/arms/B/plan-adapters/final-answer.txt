@@ -1,0 +1,1 @@
+จากโค้ดที่อ่านได้ seam ปัจจุบันชัดเจน: `NotificationAdapter.send(recipient, body) -> str` เป็น Protocol เดียวที่ `EmailAdapter` และ `SmsAdapter` ทำตาม และ callers ทั้ง `send_welcome` กับ `send_receipt` รับ seam นี้โดยตรง ไม่มี test/config/dependency convention อื่นใน repo ตอนนี้ ผมกำลังล็อกแบบที่เพิ่ม retry ด้วย composition โดยไม่เปลี่ยน callers หรือสัญญาณ `send` เดิม】【。

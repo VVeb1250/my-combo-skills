@@ -1,0 +1,216 @@
+{
+  "baseline_skills": 363,
+  "cases": [
+    {
+      "case": "diagnosis",
+      "exit_code": 0,
+      "result_error": false,
+      "seconds": 32.89,
+      "model": "claude-sonnet-5",
+      "total_skills": 58,
+      "combo_skills": [
+        "combo",
+        "combo-business",
+        "combo-content",
+        "combo-debug",
+        "combo-deliver",
+        "combo-investigate",
+        "combo-learning",
+        "combo-maintain",
+        "combo-media",
+        "combo-plan",
+        "combo-productivity",
+        "combo-research",
+        "combo-review",
+        "combo-verify"
+      ],
+      "retired_remaining": [],
+      "worker_discovered": true,
+      "skill_calls": [
+        {
+          "id": "toolu_01FiNfEUMh1pxGGrXDA28BFp",
+          "name": "Skill",
+          "input": {
+            "skill": "combo-debug"
+          },
+          "is_error": false
+        }
+      ],
+      "workflow_reads": [
+        {
+          "id": "toolu_01LYeoATNZr2qZ8dWQDK5UAS",
+          "name": "Read",
+          "input": {
+            "file_path": "C:/Users/VVeb1250/.claude/skills/combo/workflows/debug.md"
+          },
+          "is_error": false
+        }
+      ],
+      "tool_errors": [],
+      "files_changed": [],
+      "independent_test": null,
+      "final_response": "## สาเหตุ: `ZeroDivisionError: division by zero`\n\n**Reproduced** — รัน `py -m pytest test_stats.py` แล้ว `test_empty` fail จริง\n\n### อธิบายจากโค้ด\n\n`stats.py:2`\n```python\ndef mean(values):\n    return sum(values) / len(values)\n```\n\nเมื่อ `values == []`:\n- `sum([])` → `0`\n- `len([])` → `0`\n- นิพจน์กลายเป็น `0 / 0` → Python ยก `ZeroDivisionError`\n\nฟังก์ชันไม่มีการตรวจ list ว่าง (guard) ก่อนหาร ตัวหาร `len(values)` จึงเป็น 0 ได้\n\n### อธิบายจาก test\n\n`test_stats.py:5-6`\n```python\ndef test_empty(self):\n    self.assertEqual(mean([]), 0)\n```\n\nTest คาดหวังว่า `mean([])` คืน `0` แต่โค้ดปัจจุบันไม่เคยคืนค่า — มัน raise exception ตอนคำนวณ `sum(values) / len(values)` ก่อนถึง `assertEqual` ด้วยซ้ำ traceback ชี้ตรงไปที่ `stats.py:2`\n\n`test_values` (`mean([2, 4])` → `3`) ผ่านปกติ เพราะ `len` ไม่เป็น 0 → ยืนยันว่าปัญหาอยู่ที่เคส list ว่างเท่านั้น ไม่ใช่ตรรกะการหาค่าเฉลี่ยโดยรวม\n\n### สรุป\nRoot cause คือ `mean` หารด้วย `len(values)` โดยไม่จัดการกรณี `values` ว่าง ทำให้เกิด `0/0`। ความไม่ตรงกันคือ test กำหนด contract ว่า empART → `0` แต่โค้ดไม่ได้ implement contract นั้น (ยังไม่แก้ไฟล์ตามที่สั่ง)"
+    },
+    {
+      "case": "delivery",
+      "exit_code": 0,
+      "result_error": false,
+      "seconds": 65.95,
+      "model": "claude-sonnet-5",
+      "total_skills": 58,
+      "combo_skills": [
+        "combo",
+        "combo-business",
+        "combo-content",
+        "combo-debug",
+        "combo-deliver",
+        "combo-investigate",
+        "combo-learning",
+        "combo-maintain",
+        "combo-media",
+        "combo-plan",
+        "combo-productivity",
+        "combo-research",
+        "combo-review",
+        "combo-verify"
+      ],
+      "retired_remaining": [],
+      "worker_discovered": true,
+      "skill_calls": [
+        {
+          "id": "toolu_01UQYzCYzpGfAMjBWWjGTf3C",
+          "name": "Skill",
+          "input": {
+            "skill": "combo-deliver"
+          },
+          "is_error": false
+        }
+      ],
+      "workflow_reads": [
+        {
+          "id": "toolu_01PEiTCyYmC4WuaF1sNomdgd",
+          "name": "Read",
+          "input": {
+            "file_path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\deliver.md"
+          },
+          "is_error": false
+        }
+      ],
+      "tool_errors": [],
+      "files_changed": [
+        "stats.py"
+      ],
+      "independent_test": {
+        "exit_code": 0,
+        "output": "test_empty (test_stats.MeanTest.test_empty) ... ok\ntest_values (test_stats.MeanTest.test_values) ... ok\ntest_empty (test_summary.SummaryTest.test_empty) ... ok\ntest_mixed (test_summary.SummaryTest.test_mixed) ... ok\ntest_only_none (test_summary.SummaryTest.test_only_none) ... ok\ntest_zero_float (test_summary.SummaryTest.test_zero_float) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n"
+      },
+      "final_response": "เสร็จแล้ว\n\n**ไฟล์ที่แก้:** `stats.py` (ไฟล์เดียว)\n\n- `mean([])` → คืน `0`; ข้อมูลทั่วไปยังหารเฉลี่ยปกติ\n- เพิ่ม `summarize(values)` → คืน dict `count, mean, min, max` โดยกรอง `None` ออกด้วย `v is not None` (ไม่ใช่ truthiness จึงไม่ทิ้งเลข 0), ไม่แตะ input เดิม (สร้าง list ใหม่), และถ้าไม่มีตัวเลขคืน `{'count': 0, 'mean': 0, 'min': None, 'max': None}`. เรียกใช้ `mean()` ที่มีอยู่ซ้ำ\n\n**ผลรัน test:** `py -m unittest discover -s . -v` → `Ran 6 tests ... OK` (2 จาก test_stats.py, 4 จาก test_summary.py)"
+    },
+    {
+      "case": "learning",
+      "exit_code": 0,
+      "result_error": false,
+      "seconds": 31.78,
+      "model": "claude-sonnet-5",
+      "total_skills": 58,
+      "combo_skills": [
+        "combo",
+        "combo-business",
+        "combo-content",
+        "combo-debug",
+        "combo-deliver",
+        "combo-investigate",
+        "combo-learning",
+        "combo-maintain",
+        "combo-media",
+        "combo-plan",
+        "combo-productivity",
+        "combo-research",
+        "combo-review",
+        "combo-verify"
+      ],
+      "retired_remaining": [],
+      "worker_discovered": true,
+      "skill_calls": [
+        {
+          "id": "toolu_01996yhzZsGhDfrzX8UjQhDX",
+          "name": "Skill",
+          "input": {
+            "skill": "combo-learning",
+            "args": "สอน junior เรื่อง mutable default arguments ใน Python"
+          },
+          "is_error": false
+        }
+      ],
+      "workflow_reads": [
+        {
+          "id": "toolu_01B89SErVAwDnrhYowozp36c",
+          "name": "Read",
+          "input": {
+            "file_path": "C:/Users/VVeb1250/.claude/skills/combo/workflows/learning.md"
+          },
+          "is_error": false
+        }
+      ],
+      "tool_errors": [],
+      "files_changed": [],
+      "independent_test": null,
+      "final_response": "# Mutable Default Arguments ใน Python\n\n## แนวคิดหลัก (สั้นๆ)\n\nค่า default ของพารามิเตอร์ถูกสร้าง **ครั้งเดียว** ตอนที่ Python นิยามฟังก์ชัน ไม่ใช่ทุกครั้งที่เรียกฟังก์ชัน\n\nถ้า default เป็นของที่แก้ไขได้ (mutable) เช่น `list`, `dict`, `set` — ทุกการเรียกที่ไม่ส่ง argument มา จะ **ใช้ออบเจกต์ตัวเดียวกันร่วมกัน** การแก้ไขในครั้งหนึ่งจึงติดไปถึงครั้งต่อไป\n\n## ตัวอย่างผิด\n\n```python\ndef add_item(item, basket=[]):\n    basket.append(item)\n    return basket\n\nprint(add_item(\"apple\"))   # ['apple']\nprint(add_item(\"banana\"))  # ['apple', 'banana']  ← ไม่ได้ตั้งใจ!\nprint(add_item(\"cherry\"))  # ['apple', 'banana', 'cherry']\n```\n\nเราคาดว่าแต่ละครั้งจะได้ตะกร้าใหม่ที่มีของชิ้นเดียว แต่ `basket` คือ list ตัวเดิมที่ถูกสร้างตอน `def` และถูกสะสมไปเรื่อยๆ\n\nตรวจสอบได้:\n```python\nprint(add_item.__defaults__)  # (['apple', 'banana', 'cherry'],)\n```\n\n## ตัวอย่างที่แก้แล้ว\n\nใช้ `None` เป็น sentinel แล้วสร้างออบเจกต์ใหม่ภายในฟังก์ชัน:\n\n```python\ndef add_item(item, basket=None):\n    if basket is None:\n        basket = []\n    basket.append(item)\n    return basket\n\nprint(add_item(\"apple\"))   # ['apple']\nprint(add_item(\"banana\"))  # ['banana']   ← ถูกต้อง\n```\n\nจุดสำคัญ: ใช้ `is None` (ไม่ใช่ `if not basket:` เพราะ list ว่างที่ผู้เรียกส่งมาเองก็ falsy และจะโดนแทนที่โดยไม่ตั้งใจ)\n\n**หมายเหตุ:** ปัญหานี้เกิดเฉพาะกับ mutable default ที่ถูก \"แก้ไข\" ภายในฟังก์ชัน ถ้า default เป็น immutable (`0`, `\"\"`, `None`, tuple) ไม่มีปัญหานี้\n\n## แบบฝึกหัด\n\nฟังก์ชันนี้มีบั๊กแบบเดียวกัน — เรียก `register(\"a\")` แล้วตามด้วย `register(\"b\")` จะได้ผลลัพธ์อะไร และแก้ให้ถูกอย่างไร?\n\n```python\ndef register(name, log={}):\n    log[name] = log.get(name, 0) + 1\n    return log\n```\n\nลองตอบมาได้เลย เดี๋ยวผมเช็คให้"
+    },
+    {
+      "case": "simple",
+      "exit_code": 0,
+      "result_error": false,
+      "seconds": 5.35,
+      "model": "claude-sonnet-5",
+      "total_skills": 58,
+      "combo_skills": [
+        "combo",
+        "combo-business",
+        "combo-content",
+        "combo-debug",
+        "combo-deliver",
+        "combo-investigate",
+        "combo-learning",
+        "combo-maintain",
+        "combo-media",
+        "combo-plan",
+        "combo-productivity",
+        "combo-research",
+        "combo-review",
+        "combo-verify"
+      ],
+      "retired_remaining": [],
+      "worker_discovered": true,
+      "skill_calls": [],
+      "workflow_reads": [],
+      "tool_errors": [],
+      "files_changed": [],
+      "independent_test": null,
+      "final_response": "It's raining today."
+    }
+  ],
+  "lexical_findings": [
+    {
+      "path": "references/library/ecc/skills/ito-baskets/REFERENCE.md",
+      "line": 71,
+      "pattern": "secret_transfer_shape",
+      "match": "send credentials",
+      "context": "   `generated_at` is recent. Never send credentials to these routes, never"
+    },
+    {
+      "path": "references/library/ecc/skills/mailtrap-email-integration/REFERENCE.md",
+      "line": 62,
+      "pattern": "secret_transfer_shape",
+      "match": "send/${process.env",
+      "context": "  : `https://sandbox.api.mailtrap.io/api/send/${process.env.MAILTRAP_INBOX_ID}`;"
+    },
+    {
+      "path": "references/library/ecc/skills/springboot-security/REFERENCE.md",
+      "line": 159,
+      "pattern": "secret_transfer_shape",
+      "match": "cation.yml` free of credentials",
+      "context": "- Keep `application.yml` free of credentials; use placeholders"
+    }
+  ]
+}

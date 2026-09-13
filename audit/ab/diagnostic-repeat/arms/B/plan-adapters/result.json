@@ -1,0 +1,192 @@
+{
+  "case_id": "plan-adapters",
+  "variant": "B",
+  "pair_index": 3,
+  "first_arm": "B",
+  "fixture": "plan-adapters",
+  "requested_sandbox": "read-only",
+  "effective_sandbox": "danger-full-access",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "command": [
+    "C:\\Users\\VVeb1250\\AppData\\Roaming\\npm\\node_modules\\@openai\\codex\\node_modules\\@openai\\codex-win32-x64\\vendor\\x86_64-pc-windows-msvc\\bin\\codex.exe",
+    "exec",
+    "--json",
+    "--ephemeral",
+    "--color",
+    "never",
+    "--disable",
+    "hooks",
+    "--disable",
+    "multi_agent",
+    "--disable",
+    "memories",
+    "--skip-git-repo-check",
+    "--model",
+    "gpt-5.6-luna",
+    "-c",
+    "model_reasoning_effort=max",
+    "-c",
+    "approval_policy=\"never\"",
+    "-c",
+    "mcp_servers={}",
+    "-c",
+    "skills.config=[{path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\ask-matt\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\claude-handoff\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\code-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\codebase-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\debug-by-logging\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnose\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\diagnosing-bugs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\domain-modeling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\git-guardrails-claude-code\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\graphify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grill-with-docs\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\grilling\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\implement\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\improve-codebase-architecture\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\loop-me\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\migrate-to-shoehorn\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\mistake-learning\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\multi-model-orchestrator\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\prototype\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\setup-matt-pocock-skills\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\source-command-resume\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-issues\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-prd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-questionnaire\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-spec\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\to-tickets\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\triage\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wayfinder\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\wizard\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.agents\\\\skills\\\\write-a-skill\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-agent-harness\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-build\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-library\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-plan-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-research\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-setup\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\codex-verify\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-api-design\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-build-fix\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-database\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-e2e\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-language-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-mcp\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-python\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-react\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-rust\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ecc-security-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-plan\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\matt-tdd\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\ponytail-review\\\\SKILL.md\", enabled = false}, {path = \"C:\\\\Users\\\\VVeb1250\\\\.codex\\\\skills\\\\combo\\\\SKILL.md\", enabled = false}]",
+    "-c",
+    "projects.\"d:\\\\combo-ab-evals\\\\combo-ab-run-wcq53nyr\\\\combo-ab-plan-adapters-b-33i4kcjt\".trust_level=\"trusted\"",
+    "-s",
+    "danger-full-access",
+    "-C",
+    "D:\\combo-ab-evals\\combo-ab-run-wcq53nyr\\combo-ab-plan-adapters-B-33i4kcjt",
+    "-c",
+    "mcp_servers.codegraph.enabled=false",
+    "-c",
+    "mcp_servers.context7.enabled=false",
+    "-c",
+    "mcp_servers.cua_repl.enabled=false",
+    "-c",
+    "mcp_servers.exa.enabled=false",
+    "-c",
+    "mcp_servers.fetch.enabled=false",
+    "-c",
+    "mcp_servers.github.enabled=false",
+    "-c",
+    "mcp_servers.memory.enabled=false",
+    "-c",
+    "mcp_servers.node_repl.enabled=false",
+    "-c",
+    "mcp_servers.playwright.enabled=false",
+    "-c",
+    "mcp_servers.sequential-thinking.enabled=false"
+  ],
+  "workdir": "D:\\combo-ab-evals\\combo-ab-run-wcq53nyr\\combo-ab-plan-adapters-B-33i4kcjt",
+  "returncode": 0,
+  "timed_out": false,
+  "process_error": null,
+  "duration_seconds": 360.2,
+  "events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\events.jsonl",
+  "stderr_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\stderr.txt",
+  "final_answer_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\final-answer.txt",
+  "final_answer": "ตรวจแล้ว พบ seam เดียวที่ callers ใช้ร่วมกัน:\n\n- [`NotificationAdapter.send`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notification_adapters.py:7) รับ `(recipient, body)` และคืน `str`\n- [`EmailAdapter`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notification_adapters.py:13) และ [`SmsAdapter`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notification_adapters.py:21) ทำตาม protocol เดียวกัน\n- [`send_welcome`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notifications.py:6) และ [`send_receipt`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notifications.py:10) ไม่รู้จัก provider และคืน receipt เดิม\n- ไม่พบ tests, dependency config หรือ composition root ใน snapshot นี้ และ adapters ปัจจุบันยังไม่มี error path จริง\n\n## คำแนะนำหลัก\n\nสร้าง `RetryingNotificationGateway` เป็น decorator ที่ implement `NotificationAdapter` แล้วห่อ `EmailAdapter` หรือ `SmsAdapter` ที่จุด wiring\n\nไม่ควรทำเป็น composite หรือ email-to-SMS failover เพราะ protocol ปัจจุบันไม่มี channel หรือ fallback semantics และการเปลี่ยน signature จะกระทบ callers\n\n## แผน implementation\n\n1. เพิ่ม error contract ใน `src/notification_adapters.py`\n\n   - คง `NotificationAdapter.send(recipient: str, body: str) -> str` เหมือนเดิม\n   - เพิ่ม marker exception เช่น `RetryableNotificationError`\n   - เมื่อ provider call จริงถูกเติมภายหลัง ให้ adapter แปลงเฉพาะ transient provider errors เป็น marker นี้ โดยใช้ `raise ... from err`\n   - validation, authentication, invalid recipient และ permanent provider errors ต้องไม่ถูกแปลงเป็น retryable\n\n2. เพิ่ม `src/notification_gateway.py`\n\n   - ใช้ import แบบเดียวกับ code ปัจจุบัน คือ `from notification_adapters import ...`\n   - เพิ่ม immutable `RetryPolicy` โดยมี:\n     - `max_attempts` นับเป็นจำนวนครั้งทั้งหมด, ค่าเริ่มต้น 3\n     - `initial_delay_seconds`, ค่าเริ่มต้นประมาณ 0.5\n     - `max_delay_seconds`, ค่าเริ่มต้นประมาณ 5\n     - `retryable_exceptions` สำหรับ marker และ transport errors ที่ยืนยันว่า retry ได้\n   - `RetryingNotificationGateway.send(...)` ต้องมี signature เดิมทุกประการ\n   - สำเร็จเมื่อใด ให้คืน provider receipt ทันที\n   - retry เฉพาะ exception ใน policy, ใช้ bounded exponential backoff, ไม่ sleep หลัง attempt สุดท้าย\n   - inject `sleep` callable เพื่อให้ tests ตรวจ delay ได้โดยไม่รอจริง\n   - เมื่อหมด attempts ให้ re-raise exception ล่าสุด, exception อื่นให้ propagate โดยไม่ retry\n   - ไม่จับ `BaseException` และไม่ retry แบบไม่จำกัด\n\n3. Wiring\n\n   ```python\n   adapter = RetryingNotificationGateway(\n       EmailAdapter(smtp_host),\n       RetryPolicy(),\n   )\n   send_welcome(adapter, recipient)\n   ```\n\n   `notifications.py` ไม่ต้องแก้ ทั้ง welcome body, receipt body, caller signatures และ receipt contract จะคงเดิม สำหรับ SMS ใช้ wrapper แบบเดียวกัน\n\n4. เพิ่ม focused tests ใน `tests/test_notification_gateway.py`\n\n   - สำเร็จตั้งแต่ครั้งแรก, ไม่มี sleep\n   - transient failure แล้วสำเร็จ, ตรวจจำนวน calls และ receipt จากครั้งที่สำเร็จ\n   - transient failure จนครบ `max_attempts`, ตรวจว่า re-raise และ sleep แค่ `max_attempts - 1` ครั้ง\n   - permanent error, ไม่มี retry\n   - ตรวจ exponential backoff และ delay cap\n   - เรียกผ่าน `send_welcome` และ `send_receipt` เพื่อยืนยัน seam ระดับ caller\n   - wrap ทั้ง `EmailAdapter` และ `SmsAdapter` แล้วตรวจ receipt เดิม\n\n   เมื่อ implement แล้ว ควรตรวจด้วย:\n\n   ```powershell\n   $env:PYTHONPATH = \"src\"\n   python -m unittest discover -s tests -v\n   ```\n\n## ความเสี่ยงและขอบเขต\n\nการออกแบบนี้ให้ semantics แบบ at-least-once เท่านั้น หาก timeout เกิดหลัง provider รับข้อความแล้ว การ retry อาจส่งซ้ำได้ เพราะ seam ปัจจุบันไม่มี idempotency key\n\nยังไม่รวม durable retry หลัง process restart, queue/outbox, async execution, provider failover หรือการรับประกัน exactly-once หากต้องการสิ่งเหล่านี้ต้องขยาย contract และเพิ่ม persistence แยกต่างหาก\n\nคำตัดสิน: ใช้ decorator gateway ตามแผนนี้ พอแล้วสำหรับตอนนี้ในระดับ plan, ยังต้อง implement และผ่าน tests ก่อนใช้จริง ไม่มีไฟล์ใดถูกสร้างหรือแก้ไขในการตรวจครั้งนี้",
+  "parse_errors": 0,
+  "tool_count": 28,
+  "tool_events_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\tool-events.json",
+  "actual_references": [
+    "combo",
+    "combo/practices/design",
+    "combo/practices/tests",
+    "combo/workflows/plan"
+  ],
+  "reference_evidence": [
+    {
+      "item_id": "item_1",
+      "references": [
+        "combo",
+        "combo/workflows/plan"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command 'Get-Content -Raw .agents/skills/combo-plan/SKILL.md'",
+      "output_bytes": 677,
+      "output_sha256": "1150f037bd4090928f407b27cd01ab582170e17c363caf0c9f4600aeb73233d4"
+    },
+    {
+      "item_id": "item_3",
+      "references": [
+        "combo/workflows/plan"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/workflows/plan.md'\"",
+      "output_bytes": 2659,
+      "output_sha256": "b40aee005bc2de7c0d7f57f29ba3abc3d229eaea6992003f6f67deb013307208"
+    },
+    {
+      "item_id": "item_4",
+      "references": [
+        "combo/practices/tests"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/practices/tests.md'\"",
+      "output_bytes": 1311,
+      "output_sha256": "a4de3ccdd612161d2eb728947d036aac30f4d33ef91f496e366d4cbc67ac7704"
+    },
+    {
+      "item_id": "item_5",
+      "references": [
+        "combo/practices/design"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"Get-Content -Raw '.agents/skills/combo/practices/design.md'\"",
+      "output_bytes": 1495,
+      "output_sha256": "f17b120ec87e7218be99603841ce79941208b20294f5592f1a2bd8c5ff7c6aee"
+    },
+    {
+      "item_id": "item_15",
+      "references": [
+        "combo"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"rg --files -uu -g 'pyproject.toml' -g 'setup.py' -g 'setup.cfg' -g 'requirements*.txt' -g 'Pipfile*' -g 'tox.ini' -g 'pytest.ini' -g 'Makefile' -g 'tests/**' -g 'test_*.py' -g '*_test.py'; python --version\"",
+      "output_bytes": 94,
+      "output_sha256": "a3555aa962841f61170253c7024bc86e035a7a934f252ac9a19e4710980e8e48"
+    }
+  ],
+  "actual_fixture_files_read": [
+    "src/notification_adapters.py",
+    "src/notifications.py"
+  ],
+  "fixture_read_evidence": [
+    {
+      "item_id": "item_7",
+      "files": [
+        "src/notification_adapters.py",
+        "src/notifications.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"rg --files -g '\"'!node_modules'\"' -g '\"'!dist'\"' -g '\"'!build'\"' -g '\"'!coverage'\"' | Select-Object -First 300\"",
+      "output_bytes": 63,
+      "output_sha256": "24931c30f6d9dd97d72362607c6937f440bfa64b47b5b4eeb2c410eee5862de9"
+    },
+    {
+      "item_id": "item_8",
+      "files": [
+        "src/notification_adapters.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command '$n=0; Get-Content '\"'src/notification_adapters.py' | ForEach-Object { \"'$n++; '\"'{0,4}: {1}' -f \"'$n, $_ }'",
+      "output_bytes": 785,
+      "output_sha256": "60b2867ada58c0c53efaba3b5915ea765088d22d34033ab2effb9ccb2c8ff468"
+    },
+    {
+      "item_id": "item_9",
+      "files": [
+        "src/notifications.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command '$n=0; Get-Content '\"'src/notifications.py' | ForEach-Object { \"'$n++; '\"'{0,4}: {1}' -f \"'$n, $_ }'",
+      "output_bytes": 450,
+      "output_sha256": "017ac3ab68d75c0a17c8f5d47fa347f17fd643c1ca485533ccd0d194152bf296"
+    },
+    {
+      "item_id": "item_11",
+      "files": [
+        "src/notification_adapters.py",
+        "src/notifications.py"
+      ],
+      "command": "\"C:\\\\Users\\\\VVeb1250\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\powershell\\\\pwsh.exe\" -Command \"rg -n \\\"NotificationAdapter|EmailAdapter|SmsAdapter|send_welcome|send_receipt|\\\\.send\\\\(\\\" -g '\"'!*.pyc'\"' .; git status --short; Get-ChildItem -Force | Select-Object Name,Mode\"",
+      "output_bytes": 769,
+      "output_sha256": "2c97d17552916a4e559d0761eb7070b297dbbc4828758bd6ccfe2e38bd50104c"
+    }
+  ],
+  "changed_files": [],
+  "before_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\before-hashes.json",
+  "after_hashes_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\after-hashes.json",
+  "acceptance_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\acceptance.json",
+  "acceptance": {
+    "before": null,
+    "after": null
+  },
+  "usage": {
+    "input_tokens": 231252,
+    "cached_input_tokens": 180992,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 17347,
+    "reasoning_output_tokens": 14994
+  },
+  "write_like_commands": [],
+  "environment_failures": [],
+  "task_failures": [],
+  "classification": "passed",
+  "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\result.json"
+}

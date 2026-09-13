@@ -1,0 +1,1 @@
+In src/ui.py, change the visible button label from Save to Save changes. Make only that small edit and finish.

@@ -1,0 +1,14 @@
+{
+  "before": {
+    "returncode": 1,
+    "passed": false,
+    "stdout": "",
+    "stderr": "test_none_uses_the_default (__main__.QuantityAcceptance.test_none_uses_the_default) ... ok\ntest_positive_values_are_unchanged (__main__.QuantityAcceptance.test_positive_values_are_unchanged) ... ok\ntest_zero_is_a_real_value (__main__.QuantityAcceptance.test_zero_is_a_real_value) ... FAIL\n\n======================================================================\nFAIL: test_zero_is_a_real_value (__main__.QuantityAcceptance.test_zero_is_a_real_value)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"D:\\0_person-project\\my-combo-skills\\evals\\ab\\acceptance\\bug_zero_test.py\", line 17, in test_zero_is_a_real_value\n    self.assertEqual(normalize_quantity(0), 0)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 1 != 0\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (failures=1)\n"
+  },
+  "after": {
+    "returncode": 0,
+    "passed": true,
+    "stdout": "",
+    "stderr": "test_none_uses_the_default (__main__.QuantityAcceptance.test_none_uses_the_default) ... ok\ntest_positive_values_are_unchanged (__main__.QuantityAcceptance.test_positive_values_are_unchanged) ... ok\ntest_zero_is_a_real_value (__main__.QuantityAcceptance.test_zero_is_a_real_value) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+  }
+}

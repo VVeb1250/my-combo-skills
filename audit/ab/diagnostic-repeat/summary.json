@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "suite": "combo-ab-10-pairedcases",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "timeout_seconds": 600,
+  "max_parallel": 2,
+  "effective_sandbox": "danger-full-access",
+  "environment_note": "Identical bundled PowerShell runtime and isolated full-access fixture execution for both arms.",
+  "global_combo_path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\SKILL.md",
+  "variants": "D:\\combo-ab-evals\\staged-20260909-202834",
+  "discovery": {
+    "A": {
+      "returncode": 0,
+      "path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\discovery\\A.json",
+      "stderr": "",
+      "status": "passed"
+    },
+    "B": {
+      "returncode": 0,
+      "path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\discovery\\B.json",
+      "stderr": "",
+      "status": "passed"
+    }
+  },
+  "pair_order": [
+    {
+      "case_id": "plan-adapters",
+      "first_arm": "B"
+    },
+    {
+      "case_id": "thai-delivery",
+      "first_arm": "B"
+    }
+  ],
+  "results": [
+    {
+      "case_id": "plan-adapters",
+      "variant": "A",
+      "pair_index": 3,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 297.099,
+      "final_answer": "ตรวจแล้ว และยังไม่ได้สร้างหรือแก้ไฟล์ใด ๆ\n\nข้อเท็จจริงจากโค้ด:\n\n- [`NotificationAdapter`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notification_adapters.py:7>) เป็น seam เดียว มี `send(recipient, body) -> str`\n- [`EmailAdapter`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notification_adapters.py:13>) และ [`SmsAdapter`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notification_adapters.py:21>) ใช้สัญญานี้โดยตรง\n- [`send_welcome`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notifications.py:6>) และ [`send_receipt`](<D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-A-39_ilw_s/src/notifications.py:10>) รับ adapter แบบ structural และเรียก `send` ครั้งเดียว\n- ไม่พบ test suite, package config หรือจุด composition/wiring อื่นใน codebase นี้\n\nแผนที่แนะนำ:\n\n1. เพิ่ม `RetryableNotificationGateway` ใน `src/notification_adapters.py` เป็น decorator ที่ห่อ `NotificationAdapter` และ implement `send` ด้วย signature เดิม ห้ามเปลี่ยน `Protocol`, adapter เดิม หรือ caller\n\n2. กำหนด policy ผ่าน constructor:\n\n   - `max_attempts` หมายถึงจำนวนครั้งรวม ต้องไม่น้อยกว่า 1\n   - `initial_delay` และ `max_delay`\n   - `retryable_exceptions` สำหรับระบุเฉพาะ transient errors\n   - `sleep` แบบ injectable โดย default ใช้ `time.sleep` เพื่อให้ทดสอบได้โดยไม่รอจริง\n\n3. ให้ `send` retry เฉพาะ exception ที่กำหนด ใช้ bounded exponential backoff, ไม่ sleep หลัง attempt สุดท้าย, คืน provider receipt จาก attempt ที่สำเร็จ และ re-raise exception สุดท้ายเมื่อ retry หมด\n\n4. ใช้ค่าเริ่มต้นที่แคบ เช่น `TimeoutError` และ `ConnectionError` ไม่จับ `BaseException` หรือ retry ทุก `Exception` โดยอัตโนมัติ หาก provider จริงมี custom transient errors ให้ส่งชนิดเหล่านั้นตอน wiring\n\n5. เพิ่ม `tests/test_notification_gateway.py` ครอบคลุม success ครั้งแรก, fail-then-success, retry หมด, non-retryable error, จำนวนครั้งและ delay ที่ถูกต้อง, การส่ง `recipient/body` เดิมทุก attempt และการใช้งานผ่าน `send_welcome` กับ `send_receipt`\n\nเกณฑ์ยอมรับคือ caller เดิมใช้ gateway ได้โดยไม่เปลี่ยน signature และ adapter เดิมยังคืน receipt เหมือนเดิม การ retry เป็น at-least-once จึงอาจส่งซ้ำเมื่อ provider รับข้อความแล้วแต่ response หาย การทำ exactly-once หรือ outbox เป็นงานนอกขอบเขตนี้\n\nตรวจสอบภายหลังด้วย `PYTHONPATH=src python -m unittest discover -s tests -p \"test_*.py\"` แผนนี้พอแล้วสำหรับตอนนี้",
+      "actual_fixture_files_read": [
+        "src/notification_adapters.py",
+        "src/notifications.py"
+      ],
+      "changed_files": [],
+      "tool_count": 16,
+      "usage": {
+        "input_tokens": 313507,
+        "cached_input_tokens": 270592,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 13929,
+        "reasoning_output_tokens": 11632
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\A\\plan-adapters\\result.json"
+    },
+    {
+      "case_id": "plan-adapters",
+      "variant": "B",
+      "pair_index": 3,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 360.2,
+      "final_answer": "ตรวจแล้ว พบ seam เดียวที่ callers ใช้ร่วมกัน:\n\n- [`NotificationAdapter.send`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notification_adapters.py:7) รับ `(recipient, body)` และคืน `str`\n- [`EmailAdapter`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notification_adapters.py:13) และ [`SmsAdapter`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notification_adapters.py:21) ทำตาม protocol เดียวกัน\n- [`send_welcome`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notifications.py:6) และ [`send_receipt`](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-plan-adapters-B-33i4kcjt/src/notifications.py:10) ไม่รู้จัก provider และคืน receipt เดิม\n- ไม่พบ tests, dependency config หรือ composition root ใน snapshot นี้ และ adapters ปัจจุบันยังไม่มี error path จริง\n\n## คำแนะนำหลัก\n\nสร้าง `RetryingNotificationGateway` เป็น decorator ที่ implement `NotificationAdapter` แล้วห่อ `EmailAdapter` หรือ `SmsAdapter` ที่จุด wiring\n\nไม่ควรทำเป็น composite หรือ email-to-SMS failover เพราะ protocol ปัจจุบันไม่มี channel หรือ fallback semantics และการเปลี่ยน signature จะกระทบ callers\n\n## แผน implementation\n\n1. เพิ่ม error contract ใน `src/notification_adapters.py`\n\n   - คง `NotificationAdapter.send(recipient: str, body: str) -> str` เหมือนเดิม\n   - เพิ่ม marker exception เช่น `RetryableNotificationError`\n   - เมื่อ provider call จริงถูกเติมภายหลัง ให้ adapter แปลงเฉพาะ transient provider errors เป็น marker นี้ โดยใช้ `raise ... from err`\n   - validation, authentication, invalid recipient และ permanent provider errors ต้องไม่ถูกแปลงเป็น retryable\n\n2. เพิ่ม `src/notification_gateway.py`\n\n   - ใช้ import แบบเดียวกับ code ปัจจุบัน คือ `from notification_adapters import ...`\n   - เพิ่ม immutable `RetryPolicy` โดยมี:\n     - `max_attempts` นับเป็นจำนวนครั้งทั้งหมด, ค่าเริ่มต้น 3\n     - `initial_delay_seconds`, ค่าเริ่มต้นประมาณ 0.5\n     - `max_delay_seconds`, ค่าเริ่มต้นประมาณ 5\n     - `retryable_exceptions` สำหรับ marker และ transport errors ที่ยืนยันว่า retry ได้\n   - `RetryingNotificationGateway.send(...)` ต้องมี signature เดิมทุกประการ\n   - สำเร็จเมื่อใด ให้คืน provider receipt ทันที\n   - retry เฉพาะ exception ใน policy, ใช้ bounded exponential backoff, ไม่ sleep หลัง attempt สุดท้าย\n   - inject `sleep` callable เพื่อให้ tests ตรวจ delay ได้โดยไม่รอจริง\n   - เมื่อหมด attempts ให้ re-raise exception ล่าสุด, exception อื่นให้ propagate โดยไม่ retry\n   - ไม่จับ `BaseException` และไม่ retry แบบไม่จำกัด\n\n3. Wiring\n\n   ```python\n   adapter = RetryingNotificationGateway(\n       EmailAdapter(smtp_host),\n       RetryPolicy(),\n   )\n   send_welcome(adapter, recipient)\n   ```\n\n   `notifications.py` ไม่ต้องแก้ ทั้ง welcome body, receipt body, caller signatures และ receipt contract จะคงเดิม สำหรับ SMS ใช้ wrapper แบบเดียวกัน\n\n4. เพิ่ม focused tests ใน `tests/test_notification_gateway.py`\n\n   - สำเร็จตั้งแต่ครั้งแรก, ไม่มี sleep\n   - transient failure แล้วสำเร็จ, ตรวจจำนวน calls และ receipt จากครั้งที่สำเร็จ\n   - transient failure จนครบ `max_attempts`, ตรวจว่า re-raise และ sleep แค่ `max_attempts - 1` ครั้ง\n   - permanent error, ไม่มี retry\n   - ตรวจ exponential backoff และ delay cap\n   - เรียกผ่าน `send_welcome` และ `send_receipt` เพื่อยืนยัน seam ระดับ caller\n   - wrap ทั้ง `EmailAdapter` และ `SmsAdapter` แล้วตรวจ receipt เดิม\n\n   เมื่อ implement แล้ว ควรตรวจด้วย:\n\n   ```powershell\n   $env:PYTHONPATH = \"src\"\n   python -m unittest discover -s tests -v\n   ```\n\n## ความเสี่ยงและขอบเขต\n\nการออกแบบนี้ให้ semantics แบบ at-least-once เท่านั้น หาก timeout เกิดหลัง provider รับข้อความแล้ว การ retry อาจส่งซ้ำได้ เพราะ seam ปัจจุบันไม่มี idempotency key\n\nยังไม่รวม durable retry หลัง process restart, queue/outbox, async execution, provider failover หรือการรับประกัน exactly-once หากต้องการสิ่งเหล่านี้ต้องขยาย contract และเพิ่ม persistence แยกต่างหาก\n\nคำตัดสิน: ใช้ decorator gateway ตามแผนนี้ พอแล้วสำหรับตอนนี้ในระดับ plan, ยังต้อง implement และผ่าน tests ก่อนใช้จริง ไม่มีไฟล์ใดถูกสร้างหรือแก้ไขในการตรวจครั้งนี้",
+      "actual_fixture_files_read": [
+        "src/notification_adapters.py",
+        "src/notifications.py"
+      ],
+      "changed_files": [],
+      "tool_count": 28,
+      "usage": {
+        "input_tokens": 231252,
+        "cached_input_tokens": 180992,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 17347,
+        "reasoning_output_tokens": 14994
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\result.json"
+    },
+    {
+      "case_id": "thai-delivery",
+      "variant": "A",
+      "pair_index": 7,
+      "first_arm": "B",
+      "classification": "environmental",
+      "returncode": 1,
+      "timed_out": false,
+      "duration_seconds": 272.67,
+      "final_answer": "ตรวจพบเฉพาะ cache ที่คำสั่งตรวจสอบสร้างขึ้น (`.pytest_cache`, `.ruff_cache`, `__pycache__`) ผมจะลบเฉพาะ path เหล่านี้ภายใน workspace เพื่อให้ผลลัพธ์สะอาด แล้วปิดงานด้วยการตรวจไฟล์อีกครั้งครับ",
+      "actual_fixture_files_read": [
+        "src/inventory.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/inventory.py",
+          "change": "modified",
+          "before_sha256": "92ce279e17ca3c1ca633be12b90b9bf2ba7db96ffbf897fd641e1b074ccabfeb",
+          "after_sha256": "877039550d3a7b100a28076536fd6fc66eebb89ec1d7496ecc12b0279772ecd6",
+          "before_bytes": 482,
+          "after_bytes": 670
+        },
+        {
+          "path": "tests/test_inventory.py",
+          "change": "modified",
+          "before_sha256": "6eb8f6815e157c208cd163badfcae7fb279b9a8457af23af2b0e7fb61b5f1228",
+          "after_sha256": "948544b647597ad2cf7d870bcdb98abc7e8a4d933b576751a210e26daeef6edf",
+          "before_bytes": 217,
+          "after_bytes": 868
+        }
+      ],
+      "tool_count": 80,
+      "usage": null,
+      "environment_failures": [
+        "Codex exited with 1"
+      ],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\A\\thai-delivery\\result.json"
+    },
+    {
+      "case_id": "thai-delivery",
+      "variant": "B",
+      "pair_index": 7,
+      "first_arm": "B",
+      "classification": "passed",
+      "returncode": 0,
+      "timed_out": false,
+      "duration_seconds": 265.054,
+      "final_answer": "เสร็จครบวงจรแล้วครับ\n\n- ปรับ [src/inventory.py](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-thai-delivery-B-mabig3ir/src/inventory.py:13) ให้รับ `Iterable[Item]` และเพิ่ม `include_discontinued`\n- รวมเฉพาะรายการที่ `quantity > 0`\n- รวม discontinued เมื่อเปิด flag เท่านั้น\n- รักษาผลลัพธ์เดิม `{count, units}`\n- เพิ่มเทสต์ generator, iterator, discontinued และ stock ศูนย์/ติดลบใน [tests/test_inventory.py](D:/combo-ab-evals/combo-ab-run-wcq53nyr/combo-ab-thai-delivery-B-mabig3ir/tests/test_inventory.py:4)\n\nตรวจสอบผ่าน:\n\n- `python -m pytest -q`: 2 passed\n- `ruff check src tests`: ผ่าน\n- `ruff format --check src tests`: ผ่าน\n- `pyright src tests`: 0 errors\n- `compileall`: ผ่าน\n\n`ruff check .` ยังพบปัญหาเดิม 1 จุดในไฟล์ภายใต้ `.agents/skills` ซึ่งอยู่นอก scope งานและไม่ได้แก้ไขครับ",
+      "actual_fixture_files_read": [
+        "src/inventory.py"
+      ],
+      "changed_files": [
+        {
+          "path": "src/inventory.py",
+          "change": "modified",
+          "before_sha256": "92ce279e17ca3c1ca633be12b90b9bf2ba7db96ffbf897fd641e1b074ccabfeb",
+          "after_sha256": "b712ea99012e6c81c4d718f0619798e6aa532514a974a09358e9e4ea09fd1af5",
+          "before_bytes": 482,
+          "after_bytes": 698
+        },
+        {
+          "path": "tests/test_inventory.py",
+          "change": "modified",
+          "before_sha256": "6eb8f6815e157c208cd163badfcae7fb279b9a8457af23af2b0e7fb61b5f1228",
+          "after_sha256": "7a268b0e8baaa138211928a64605bd75345bbaa8c4e310eac2ebafeec869127c",
+          "before_bytes": 217,
+          "after_bytes": 763
+        }
+      ],
+      "tool_count": 42,
+      "usage": {
+        "input_tokens": 522330,
+        "cached_input_tokens": 452352,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 10846,
+        "reasoning_output_tokens": 6210
+      },
+      "environment_failures": [],
+      "task_failures": [],
+      "result_path": "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\thai-delivery\\result.json"
+    }
+  ],
+  "result_files": [
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\plan-adapters\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\A\\plan-adapters\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\B\\thai-delivery\\result.json",
+    "D:\\0_person-project\\my-combo-skills\\audit\\ab\\diagnostic-repeat\\arms\\A\\thai-delivery\\result.json"
+  ],
+  "passed": 3,
+  "environmental": 1,
+  "task_failures": 0,
+  "coverage_note": "Ten matched cases, paired by case with alternating first arm. Automatic checks support root semantic grading; route labels are not scored."
+}

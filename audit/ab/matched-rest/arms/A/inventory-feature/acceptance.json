@@ -1,0 +1,14 @@
+{
+  "before": {
+    "returncode": 1,
+    "passed": false,
+    "stdout": "",
+    "stderr": "test_any_iterable_and_nonpositive_stock_are_handled (__main__.InventoryFeatureAcceptance.test_any_iterable_and_nonpositive_stock_are_handled) ... ERROR\ntest_default_preserves_existing_available_only_behavior (__main__.InventoryFeatureAcceptance.test_default_preserves_existing_available_only_behavior) ... ok\ntest_flag_includes_positive_discontinued_items (__main__.InventoryFeatureAcceptance.test_flag_includes_positive_discontinued_items) ... ERROR\n\n======================================================================\nERROR: test_any_iterable_and_nonpositive_stock_are_handled (__main__.InventoryFeatureAcceptance.test_any_iterable_and_nonpositive_stock_are_handled)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"D:\\0_person-project\\my-combo-skills\\evals\\ab\\acceptance\\inventory_feature_test.py\", line 35, in test_any_iterable_and_nonpositive_stock_are_handled\n    inventory_summary(iter([Item(\"x\", 1, discontinued=True)]), include_discontinued=True),\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: inventory_summary() got an unexpected keyword argument 'include_discontinued'\n\n======================================================================\nERROR: test_flag_includes_positive_discontinued_items (__main__.InventoryFeatureAcceptance.test_flag_includes_positive_discontinued_items)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"D:\\0_person-project\\my-combo-skills\\evals\\ab\\acceptance\\inventory_feature_test.py\", line 29, in test_flag_includes_positive_discontinued_items\n    inventory_summary((item for item in self.items), include_discontinued=True),\n    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: inventory_summary() got an unexpected keyword argument 'include_discontinued'\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (errors=2)\n"
+  },
+  "after": {
+    "returncode": 0,
+    "passed": true,
+    "stdout": "",
+    "stderr": "test_any_iterable_and_nonpositive_stock_are_handled (__main__.InventoryFeatureAcceptance.test_any_iterable_and_nonpositive_stock_are_handled) ... ok\ntest_default_preserves_existing_available_only_behavior (__main__.InventoryFeatureAcceptance.test_default_preserves_existing_available_only_behavior) ... ok\ntest_flag_includes_positive_discontinued_items (__main__.InventoryFeatureAcceptance.test_flag_includes_positive_discontinued_items) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+  }
+}

@@ -1,0 +1,1292 @@
+{
+  "captured_at": "2026-09-09T11:28:57Z",
+  "initialization": {
+    "userAgent": "Codex Desktop/0.147.0 (Windows 10.0.26200; x86_64) dumb (combo-audit; 0.1.0)",
+    "codexHome": "C:\\Users\\VVeb1250\\.codex",
+    "platformFamily": "windows",
+    "platformOs": "windows"
+  },
+  "skills": {
+    "data": [
+      {
+        "cwd": "D:\\combo-ab-evals\\staged-20260909-202834\\A\\fixtures\\bug-zero",
+        "skills": [
+          {
+            "name": "combo",
+            "description": "Route substantive engineering, research, content, teaching, business, media, and productivity tasks to a relevant workflow and source reference. ใช้เลือก workflow สำหรับงานพัฒนา วิเคราะห์ เขียน สอน และวางระบบงาน; simple conversation, translation, and tiny edits can stay inline.",
+            "path": "D:\\combo-ab-evals\\staged-20260909-202834\\A\\fixtures\\bug-zero\\.agents\\skills\\combo\\SKILL.md",
+            "scope": "repo",
+            "enabled": true
+          },
+          {
+            "name": "api-check",
+            "description": "Test, probe or contract-check an HTTP API with hurl instead of hand-rolled curl chains. Use when the user wants to verify an endpoint, reproduce an API bug, chain authenticated requests, assert on JSON response fields, or keep a runnable API contract in the repo. Also use to capture a failing request as a regression file.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\api-check\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "ask-matt",
+            "description": "Ask which skill or flow fits your situation. A router over the skills in this repo.",
+            "interface": {
+              "displayName": "Ask Matt",
+              "shortDescription": "Find the right skill or workflow",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\ask-matt\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "browser:control-in-app-browser",
+            "description": "Control the in-app Browser for opening, navigating, inspecting visible or interactive page state, clicking, typing, screenshots, and local web testing. It can have existing signed-in sessions. For semantic operations on linked resources, prefer a purpose-built connector, API, or CLI when available.",
+            "interface": {
+              "displayName": "Browser",
+              "shortDescription": "Browser lets ChatGPT open and control the in-app browser, mainly for local development pages and files. Use it to navigate, inspect, click, type, and take screenshots while testing pages inside ChatGPT.",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Inspect the current in-app browser tab or open a local app in the in-app browser and verify it."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-bundled\\browser\\26.901.51231\\skills\\control-in-app-browser\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "capacity",
+            "description": "Discovers available Azure OpenAI model capacity across regions and projects. Analyzes quota limits, compares availability, and recommends optimal deployment locations based on capacity requirements. USE FOR: find capacity, check quota, where can I deploy, capacity discovery, best region for capacity, multi-project capacity search, quota analysis, model availability, region comparison, check TPM availability. DO NOT USE FOR: actual deployment (hand off to preset or customize after discovery), quota increase requests (direct user to Azure Portal), listing existing deployments.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\microsoft-foundry\\models\\deploy-model\\capacity\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "caveman",
+            "description": "Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, and pleasantries while keeping full technical accuracy. Use when user says \"caveman mode\", \"talk like caveman\", \"use caveman\", \"less tokens\", \"be brief\", or invokes /caveman.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\caveman\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "chrome:control-chrome",
+            "description": "Control the user's Chrome browser for tasks that depend on existing Chrome state: tabs, logged-in sessions, or extensions. Prefer purpose-built connectors, APIs, or CLIs when available.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-bundled\\chrome\\26.901.51231\\skills\\control-chrome\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "claude-handoff",
+            "description": "Hand the current conversation off to a fresh background agent that picks up the work immediately.",
+            "interface": {
+              "displayName": "Claude Handoff",
+              "shortDescription": "Hand off to a background agent",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\claude-handoff\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "code-review",
+            "description": "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes — Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\".",
+            "interface": {
+              "displayName": "Code Review",
+              "shortDescription": "Review a diff on standards and spec",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\code-review\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "codebase-design",
+            "description": "Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or AI-navigable, or when another skill needs the deep-module vocabulary.",
+            "interface": {
+              "displayName": "Codebase Design",
+              "shortDescription": "Vocabulary for deep-module design",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\codebase-design\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "codegraph-affected",
+            "description": "Run only the tests impacted by your changes, using CodeGraph's dependency graph (`codegraph affected`) to map changed source files to the test files that exercise them. Use when the user wants to test a diff/branch fast, run \"affected tests only\", or avoid a full-suite run after edits. Requires a CodeGraph index (`.codegraph/`).",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\codegraph-affected\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "codegraph-link",
+            "description": "Wire a project to use CodeGraph MCP (@colbymchenry/codegraph) alongside graphify. Verifies CLI/index/MCP/permissions, auto-runs `codegraph index` if index is missing, writes or removes the managed AGENTS.md role-split block. Handles unlink when args contain unlink/ยกเลิก/cancel/remove/ลบ/ถอด.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\codegraph-link\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "codex-agent-harness",
+            "description": "Reference library for building and running multi-agent systems, agent harnesses, and long-running loops — agent OS layout, parallel dispatch, worktree isolation, loop patterns, adversarial decision framing, and LLM cost control. Use when designing an agent harness, running several agents at once, choosing a loop pattern, planning a multi-session feature, debugging a stuck agent run, or budgeting LLM spend.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-agent-harness\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "codex-build",
+            "description": "Reference library for writing and shipping application code — REST API design, connector patterns, TS/JS conventions, React composition, MCP server development, error handling, caching, text parsing, latency work, and ship-readiness audits. Use when designing an endpoint, wiring a new integration, writing or reviewing React/TS code, building an MCP server, adding error handling, caching expensive work, parsing structured text, chasing slowness, or asking whether something is ready to ship.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-build\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "codex-library",
+            "description": "Look up a retained specialist reference for uncommon frameworks, infrastructure, science, media, or industry-specific work when no direct skill covers it. ค้นคลัง specialist เฉพาะทาง. Skip generic coding, planning, TDD, review, and routine conversation.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-library\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "codex-plan-research",
+            "description": "Reference library for the work before and around writing code — turning a vague ask into a capability contract, deciding whether to build at all, multi-source web research with citations, neural web and code search, guided walkthroughs of unfamiliar code, and gh CLI recipes for issues, CI, and releases. Use when a request is ambiguous, when researching a library or market, when searching the web or other codebases, when onboarding someone into code, or when triaging issues and cutting releases.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-plan-research\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "codex-research",
+            "description": "Research code, libraries, or technical alternatives with source evidence before an engineering decision. Use for documentation lookup, repository investigation, or uncertain software facts. ค้นคว้า code และเอกสารเทคนิค. Skip ordinary implementation planning and nontechnical reports.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-research\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "codex-setup",
+            "description": "Audit or maintain this Codex installation's skills, discovery, plugins, configuration, and context cost. Use when setup is broken, skills duplicate or fail to trigger, or the user asks to renovate the install. จัดการ setup Codex. Skip ordinary application development.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-setup\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "codex-verify",
+            "description": "Reference library for testing and verification — test-driven development, Playwright end-to-end tests, regression tests for bugs an AI just fixed, defining pass/fail criteria, the post-change build/lint/test/security pass, and reporting command results precisely. Use when writing tests first, fixing a bug properly, deciding what \"done\" means, checking work after a change, or reporting whether something actually passed.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\codex-verify\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "combo",
+            "description": "Automatically route software implementation, debugging, review, planning, verification, and repository investigation tasks to the smallest useful engineering workflow. ใช้กับงาน software engineering ที่ต้องอ่าน code หรือ เปลี่ยนแปลงระบบ. ไม่ใช้กับงานสนทนาทั่วไป งานเขียน หรือคำถามที่ไม่ใช่ technical; ผู้ใช้เรียก $combo ได้เมื่อ automatic discovery ไม่ทำงาน.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "combo-maintain",
+            "description": "Maintain the installed Combo package, its discovery state, source manifest, adapter role, verification evidence, or drift aware rollback. Use for Combo installation and maintenance tasks, not ordinary software development.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo-maintain\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "computer-use:computer-use",
+            "description": "Control Windows apps from ChatGPT",
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-bundled\\computer-use\\26.901.51231\\skills\\computer-use\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "customize",
+            "description": "Interactive guided deployment flow for Azure OpenAI models with full customization control. Step-by-step selection of model version, SKU (GlobalStandard/Standard/ProvisionedManaged), capacity, RAI policy (content filter), and advanced options (dynamic quota, priority processing, spillover). USE FOR: custom deployment, customize model deployment, choose version, select SKU, set capacity, configure content filter, RAI policy, deployment options, detailed deployment, advanced deployment, PTU deployment, provisioned throughput. DO NOT USE FOR: quick deployment to optimal region (use preset).",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\microsoft-foundry\\models\\deploy-model\\customize\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "data-query",
+            "description": "Query CSV, TSV, Parquet, JSON, NDJSON, SQLite or Excel files with duckdb/jq instead of reading them. Use whenever the user asks to count, filter, aggregate, join, sort, sample, or find rows in a data file, or when a data file is over ~200 rows. Also use before any Read of a .csv/.parquet/.db/.sqlite/.ndjson file — read the answer, not the file.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\data-query\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "debug-by-logging",
+            "description": "Use this skill whenever there's a bug — especially after adding new features or code. Don't reason about the root cause; instead, write log statements directly into the code to observe exactly what's happening at runtime. Triggers on: \"there's a bug\", \"debug this\", \"why isn't this working\", \"something broke\", \"not working as expected\", \"fix this bug\", or any time new code was added and something stopped working. Always instrument the code with logs before attempting any fix.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\debug-by-logging\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "deploy-model",
+            "description": "Unified Azure OpenAI model deployment skill with intelligent intent-based routing. Handles quick preset deployments, fully customized deployments (version/SKU/capacity/RAI policy), and capacity discovery across regions and projects. USE FOR: deploy model, deploy gpt, create deployment, model deployment, deploy openai model, set up model, provision model, find capacity, check model availability, where can I deploy, best region for model, capacity analysis. DO NOT USE FOR: listing existing deployments (use foundry_models_deployments_list MCP tool), deleting deployments, agent creation (use agent/create), project creation (use project/create).",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\microsoft-foundry\\models\\deploy-model\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "diagnose",
+            "description": "Disciplined diagnosis loop for hard bugs and performance regressions. Reproduce → minimise → hypothesise → instrument → fix → regression-test. Use when user says \"diagnose this\" / \"debug this\", reports a bug, says something is broken/throwing/failing, or describes a performance regression.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\diagnose\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "diagnosing-bugs",
+            "description": "Diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow.",
+            "interface": {
+              "displayName": "Diagnosing Bugs",
+              "shortDescription": "Diagnose hard bugs and regressions",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\diagnosing-bugs\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "doc-extract",
+            "description": "Convert binary documents (.docx, .xlsx, .pptx, .pdf, images, .epub, .zip) to Markdown with markitdown before reading them. Use whenever the user points at an Office file, PDF, or scanned document and asks what is in it, to summarize it, or to pull data out of it. file-read tools cannot parse these formats — convert first.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\doc-extract\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "documents:documents",
+            "description": "Create, edit, redline, and comment on `.docx`, Word, and Google Docs-targeted document artifacts inside the container, with a strict render-and-verify workflow. Use `render_docx.py` to generate page PNGs (and optional PDF) for visual QA, then iterate until layout is flawless before delivering the final document.",
+            "interface": {
+              "displayName": "Documents",
+              "shortDescription": "Create and edit Word and Google Docs files",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\documents\\26.905.11957\\skills\\documents\\assets\\file-document.png",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\documents\\26.905.11957\\skills\\documents\\assets\\file-document.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": "#2563EB",
+              "defaultPrompt": "Use $documents to create, edit, redline, or review a Word file or Google Doc."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\documents\\26.905.11957\\skills\\documents\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "domain-modeling",
+            "description": "Build and sharpen a project's domain model. Use when discussing codebase terminology, writing or editing a CONTEXT.md, or recording or editing an ADR.",
+            "interface": {
+              "displayName": "Domain Modeling",
+              "shortDescription": "Build and sharpen a domain model",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\domain-modeling\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-api-design",
+            "description": "Design or change HTTP API contracts, resource names, pagination, versioning, errors, and idempotency. Use when endpoint behavior or compatibility is a design decision. ออกแบบ API contract. Skip simple calls to an existing API and general project planning.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-api-design\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-build-fix",
+            "description": "Diagnose and repair failing builds, compiler errors, typecheck errors, imports, and dependency resolution using existing project commands. Use when build, CI compilation, or type checking fails. แก้ build พังและ type error. Runtime behavior bugs use behavioral diagnosis/tests.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-build-fix\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-database",
+            "description": "Design SQL schemas, indexes, queries, transactions, and safe database migrations. Use for query performance, concurrent updates, schema evolution, or database integrity decisions. ออกแบบฐานข้อมูลและ migration. Skip ordinary data analysis over CSV and generic code review.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-database\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-e2e",
+            "description": "Verify a real user journey across UI and backend or diagnose a failing end-to-end test. Use for requested E2E coverage, browser regressions, checkout/login journeys, or cross-component integration risks. ทดสอบ flow จริงและ E2E. Skip isolated logic and cosmetic edits unless browser evidence is needed.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-e2e\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-language-review",
+            "description": "Review language or database-specific correctness: lifetimes, concurrency, async cancellation, ownership, transactions, schema migrations, and query behavior. Use when those mechanisms are central to a change or explicitly requested. รีวิวเฉพาะภาษาและฐานข้อมูล. Skip generic PR review and routine syntax edits.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-language-review\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-mcp",
+            "description": "Build or debug an MCP server's tools, resources, prompts, schemas, or transport. Use when implementing MCP protocol integration. สร้างหรือแก้ MCP server. Skip ordinary tool use and generic API client work.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-mcp\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-python",
+            "description": "Implement Python logic where typing, resource management, iterators, exceptions, or async behavior matters. Use for substantive Python changes and Python-specific design questions. เขียน Python. Skip formatting, generic planning, and non-Python work.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-python\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-react",
+            "description": "Implement React components, hooks, state, effects, forms, and server/client boundaries. Use when those React behaviors affect a requested UI change. เขียน React และแก้ state/effect. Skip unrelated backend code and simple CSS/text edits.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-react\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-rust",
+            "description": "Implement Rust behavior involving ownership, borrowing, errors, traits, or async concurrency. Use for substantive Rust code and design decisions around these mechanisms. เขียน Rust. Skip trivial formatting and generic reviews without a Rust-specific concern.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-rust\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "ecc-security-review",
+            "description": "Inspect concrete security risks in authentication, authorization, secrets, untrusted input, uploads, shell/SQL execution, or sensitive data changes. Use for security reviews and changes crossing a trust boundary. ตรวจ security และช่องโหว่. Skip ordinary presentation/style changes.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ecc-security-review\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "fantasygen",
+            "description": "Compatibility router for the FantasyGen MCP-native AI Dungeon Master. Use when the player wants to start, resume, play, list, open the panel, switch prose mode, or end a persistent FantasyGen adventure.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\fantasygen\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "find-skills",
+            "description": "Search and install existing agent skills from the skills.sh ecosystem (`npx skills find` / `add`). Use when the user asks \"is there a skill for X\", \"find a skill that does X\", \"หา skill สำหรับ X\", \"มี skill อะไรที่ช่วย X ไหม\", or wants to extend capabilities without writing new code. Not for authoring a brand-new skill from scratch — use write-a-skill for that.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\find-skills\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "finetuning",
+            "description": "Fine-tune models on Microsoft Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders). Covers dataset preparation, training job submission, deployment, and evaluation. USE FOR: fine-tune, SFT, DPO, RFT, training data, grader, distillation, fine-tuned model, training job, large file upload, calibrate grader, deploy fine-tuned model, evaluate fine-tuned model. DO NOT USE FOR: general model deployment without fine-tuning (use deploy-model), agent creation (use agents), prompt optimization without training (use prompt-optimizer).",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\microsoft-foundry\\finetuning\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "git-guardrails-claude-code",
+            "description": "Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks, or block git push/reset in Claude Code.",
+            "interface": {
+              "displayName": "Git Guardrails for Claude Code",
+              "shortDescription": "Block dangerous git commands",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\git-guardrails-claude-code\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "graphify-link",
+            "description": "Initialize or connect a project graphify knowledge graph. Use for first-time graph setup, adding a submodule to an existing graph, starting graphify watch, or unlinking a registered root. Not needed every session because reset-graphify.ps1 starts watch automatically when a registered graph exists.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\graphify-link\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "graphify-windows",
+            "description": "any input (code, docs, papers, images) → knowledge graph → clustered communities → HTML + JSON + audit report. Use when user asks any question about a codebase, project content, architecture, or file relationships — especially if graphify-out/ exists. Provides persistent graph with god nodes, community detection, and BFS/DFS query tools.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\graphify\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "grill-me",
+            "description": "A relentless interview to sharpen a plan or design.",
+            "interface": {
+              "displayName": "Grill Me",
+              "shortDescription": "Sharpen a plan through interview",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\grill-me\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "grill-with-docs",
+            "description": "A relentless interview to sharpen a plan or design, which also creates docs (ADR's and glossary) as we go.",
+            "interface": {
+              "displayName": "Grill with Docs",
+              "shortDescription": "Grill a design and write its docs",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\grill-with-docs\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "grilling",
+            "description": "Grill the user relentlessly about a plan, decision, or idea. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.",
+            "interface": {
+              "displayName": "Grilling",
+              "shortDescription": "Stress-test thinking a round of questions at a time",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\grilling\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "handoff",
+            "description": "Compact the current conversation into a handoff document for another agent to pick up.",
+            "interface": {
+              "displayName": "Handoff",
+              "shortDescription": "Compact a conversation into a handoff",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\handoff\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "implement",
+            "description": "Implement a piece of work based on a spec or set of tickets.",
+            "interface": {
+              "displayName": "Implement",
+              "shortDescription": "Build work from a spec or tickets",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\implement\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "improve-codebase-architecture",
+            "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick.",
+            "interface": {
+              "displayName": "Improve Codebase Architecture",
+              "shortDescription": "Find and grill architecture improvements",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\improve-codebase-architecture\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "loop-me",
+            "description": "Grill me about specs for the workflows I want to build, within this workspace.",
+            "interface": {
+              "displayName": "Loop Me",
+              "shortDescription": "Spec the workflows you want to build",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\loop-me\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "matt-plan",
+            "description": "Plan a nontrivial coding feature or refactor from requirements and repository evidence. Use for implementation plans, ambiguous software requirements, test seams, or a requested technical spec. วางแผนพัฒนาและออกแบบขอบเขตงาน code. Skip routine edits and non-coding plans.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\matt-plan\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "matt-review",
+            "description": "Review a code diff, PR, branch, or substantive implementation for correctness and requirement coverage. Use for code review, missing behavior, regressions, or a final review of a risky change. รีวิว code และตรวจว่าทำครบ requirement. Security-only and complexity-only reviews have separate owners.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\matt-review\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "matt-tdd",
+            "description": "Build or fix behavioral code with focused regression tests and vertical red-green cycles. Use for bugs in logic, parsers, state transitions, new testable behavior, or explicit TDD. เขียน test และแก้ bug เชิงพฤติกรรม. Skip docs, formatting, and trivial reversible configuration edits.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\matt-tdd\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "microsoft-foundry",
+            "description": "Build, deploy, evaluate, optimize, fine-tune, and manage Microsoft Foundry agents, models, and resources end to end. USE FOR: azd ai agent, azd provision/deploy, hosted agent scaffold/develop/run/deploy/troubleshoot, prompt agent create, create agent, update agent, add tool to agent, invoke agent, agent.yaml, evaluate agent, batch eval, continuous eval, continuous monitoring, agent CI/CD, optimize prompt, improve prompt, prompt optimizer, optimize agent instructions, Agent Optimizer scaffold, dataset curation from traces, deploy model, model fine-tuning (SFT/DPO/RFT), Foundry project, RBAC, role assignment, permissions, quota, capacity, region, deployment failure, AI Services, create Foundry resource, knowledge index, customize deployment, onboard, availability, training-data, grader, distillation, large file upload. DO NOT USE FOR: Azure Functions, App Service, general Azure deploy (use azure-deploy), general Azure prep (use azure-prepare).",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\microsoft-foundry\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "migrate-to-shoehorn",
+            "description": "Migrate test files from `as` type assertions to @total-typescript/shoehorn. Use when user mentions shoehorn, wants to replace `as` in tests, or needs partial test data.",
+            "interface": {
+              "displayName": "Migrate to Shoehorn",
+              "shortDescription": "Replace test assertions with shoehorn",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\migrate-to-shoehorn\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "mistake-learning",
+            "description": "Auto-bump recurring mistake counters in the paw L3 lesson store via Stop hook. Manual capture goes through `portaw memory add`. The old mistakes-index.md files are a frozen archive.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\mistake-learning\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "multi-model-orchestrator",
+            "description": "Pipeline ที่ประสาน Codex Fable 5 (วางแผน), Opus (ให้คำปรึกษา), และ Sonnet (ลงมือทำ) สำหรับงาน coding และ research ขั้นสูง ใช้ skill นี้เมื่อผู้ใช้ต้องการงานคุณภาพสูงที่ ซับซ้อน เช่น \"สร้าง API แบบ production-ready\", \"วิจัย X อย่างละเอียด\", \"ออกแบบ system architecture\", \"วิเคราะห์งานวิชาการ\", \"research แล้ว implement\", หรือเมื่อต้องการให้หลาย model ร่วมกันคิดและทำงาน",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\multi-model-orchestrator\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "obsidian-link",
+            "description": "Create, sync, rebuild, or unlink a project-local Obsidian second-brain vault. Use when the user runs /obsidian-link, asks to create a vault for project knowledge, wants Markdown wikilinks for skills/docs/code maps, or wants automatic bridging between an Obsidian vault and graphify-link/graphify-out artifacts in the same project root. Handles unlink intent when args contain \"unlink\", \"cancel\", \"remove\", \"ยกเลิก\", \"ลบ\", or similar.",
+            "interface": {
+              "displayName": "Obsidian Link",
+              "shortDescription": "Build and sync a project Obsidian vault with graphify bridges.",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Create or sync an Obsidian second-brain vault for the current project, linking graphify outputs when present."
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\obsidian-link\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "pdf",
+            "description": "Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, rotating pages, adding watermarks, creating new PDFs, filling PDF forms, encrypting/decrypting PDFs, extracting images, and OCR on scanned PDFs to make them searchable. If the user mentions a .pdf file or asks to produce one, use this skill.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\pdf\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "pdf:pdf",
+            "description": "Read, create, inspect, render, and verify PDF files where visual layout matters, including fillable AcroForms. Use Poppler rendering plus Python tools such as reportlab, pdfplumber, and pypdf for generation and extraction.",
+            "interface": {
+              "displayName": "PDF",
+              "shortDescription": "Read, create, render, and verify PDF files",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\pdf\\26.905.11957\\skills\\pdf\\assets\\file-document.png",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\pdf\\26.905.11957\\skills\\pdf\\assets\\file-document.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": "#DC2626",
+              "defaultPrompt": "Use $pdf to read, create, render, or visually verify a PDF file."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\pdf\\26.905.11957\\skills\\pdf\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "ponytail-review",
+            "description": "Review code for unnecessary complexity, speculative abstractions, redundant dependencies, or dead flexibility. Use when asked to simplify, delete unnecessary code, check over-engineering, or when a change introduces substantial new layers. ตรวจ over-engineering. Skip general correctness review and ordinary small edits.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\ponytail-review\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "presentations:Presentations",
+            "description": "Read, create or edit PowerPoint or Google Slides decks. Use for presentation, slide deck, PowerPoint, PPT, PPTX, or Google Slides requests.",
+            "interface": {
+              "displayName": "Presentations",
+              "shortDescription": "Create polished PowerPoint and Google Slides decks",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\presentations\\26.905.11957\\skills\\presentations\\assets\\file-presentation.png",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\presentations\\26.905.11957\\skills\\presentations\\assets\\file-presentation.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": "#C43E1C",
+              "defaultPrompt": "Create a presentation slide deck with $Presentations."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\presentations\\26.905.11957\\skills\\presentations\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "preset",
+            "description": "Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR: quick deployment, optimal region, best region, automatic region selection, fast setup, multi-region capacity check, high availability deployment, deploy to best location. DO NOT USE FOR: custom SKU selection (use customize), specific version selection (use customize), custom capacity configuration (use customize), PTU deployments (use customize).",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\microsoft-foundry\\models\\deploy-model\\preset\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "prototype",
+            "description": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.",
+            "interface": {
+              "displayName": "Prototype",
+              "shortDescription": "Prototype to answer a design question",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\prototype\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "quality-gate",
+            "description": "Run the fast local lint/format/typecheck gate before declaring code done, and read the summary instead of the raw log. Use after editing source files, before committing, when the user asks whether the code is clean, or when a build/CI failure needs reproducing locally. Covers Python (ruff, pyright) and JS/TS (oxlint, biome).",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\quality-gate\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "repo-pack",
+            "description": "Pack a directory subtree, or a git diff, into a single token-counted Markdown/XML prompt with repomix (primary) or code2prompt (scoped fallback). Use when the user wants to hand a codebase or a PR to another model, asks \"how many tokens is this folder\", wants a self-contained context file for review, or needs a portable snapshot of a subtree.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\repo-pack\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "research",
+            "description": "Investigate a question against high-trust primary sources and capture the findings as a Markdown file in the repo. Use when the user wants a topic researched, docs or API facts gathered, or reading legwork delegated to a background agent.",
+            "interface": {
+              "displayName": "Research",
+              "shortDescription": "Research from high-trust sources",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\research\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "resolving-merge-conflicts",
+            "description": "Use when you need to resolve an in-progress git merge/rebase conflict.",
+            "interface": {
+              "displayName": "Resolving Merge Conflicts",
+              "shortDescription": "Resolve merge and rebase conflicts",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\resolving-merge-conflicts\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "scaffold-exercises",
+            "description": "Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course section.",
+            "interface": {
+              "displayName": "Scaffold Exercises",
+              "shortDescription": "Scaffold lint-ready course exercises",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\scaffold-exercises\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "secure-scan",
+            "description": "Scan a repo for leaked secrets with gitleaks and for vulnerable dependencies with osv-scanner. Use before publishing or open-sourcing a repo, before a first push to a public remote, when the user asks whether credentials leaked or whether dependencies have known CVEs, and when reviewing a lockfile change.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\secure-scan\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "setup-matt-pocock-skills",
+            "description": "Configure this repo for the engineering skills — set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills.",
+            "interface": {
+              "displayName": "Setup Matt Pocock Skills",
+              "shortDescription": "Configure a repo for the skills",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\setup-matt-pocock-skills\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "setup-pre-commit",
+            "description": "Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add commit-time formatting/typechecking/testing.",
+            "interface": {
+              "displayName": "Setup Pre-Commit",
+              "shortDescription": "Add pre-commit quality checks",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\setup-pre-commit\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "setup-ts-deep-modules",
+            "description": "Wire dependency-cruiser into a TypeScript repo so each package is a deep module — implementation hidden in subfolders, reachable only through its entry-point files. User-invoked.",
+            "interface": {
+              "displayName": "Setup TS Deep Modules",
+              "shortDescription": "Enforce deep TypeScript modules",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\setup-ts-deep-modules\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "sites:sites-building",
+            "description": "Use Sites to build websites, including landing pages, portfolios, dashboards, portals, trackers, hubs, and internal tools. Always use Sites when the project contains `.openai/hosting.json`.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-bundled\\sites\\0.1.57\\skills\\sites-building\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "sites:sites-hosting",
+            "description": "Host websites with Sites. Always use after `sites-building`, and use for website publishing, deployment, hosting management, or projects containing `.openai/hosting.json`.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-bundled\\sites\\0.1.57\\skills\\sites-hosting\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "skill-audit",
+            "description": "Audit installed agent skills, plugins and MCP server configs for prompt injection, hidden characters, exfiltration-shaped URLs, and silent content drift after an update. Use before or after installing a plugin/marketplace/skill/MCP server, when the user asks whether an installed component is safe, or when a plugin update changed behaviour unexpectedly.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\skill-audit\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "source-command-resume",
+            "description": "โหลด context จาก Obsidian vault เพื่อ resume session",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\source-command-resume\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "spreadsheets:Spreadsheets",
+            "description": "Use skill when user requests to create, modify, analyze, visualize, or work with spreadsheet files (`.xlsx`, `.xls`, `.csv`, `.tsv`) or Google Sheets with formulas, formatting, charts, tables, and recalculation. Do not use for live controlling Microsoft Excel app or a live Excel session.",
+            "interface": {
+              "displayName": "Spreadsheets",
+              "shortDescription": "Create and edit spreadsheet or Google Sheets-ready files",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\spreadsheets\\26.905.11957\\skills\\spreadsheets\\assets\\file-spreadsheet.png",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\spreadsheets\\26.905.11957\\skills\\spreadsheets\\assets\\file-spreadsheet.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": "#107C41",
+              "defaultPrompt": "Use $Spreadsheets to build or update a spreadsheet artifact with formulas, formatting, and verification."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\spreadsheets\\26.905.11957\\skills\\spreadsheets\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "spreadsheets:excel-live-control",
+            "description": "Control an open or active Microsoft Excel workbook through the ChatGPT add-in or connected session. Use when the user tags the Microsoft Excel app in Codex or follows up on an established live Excel task. Do not use for standalone spreadsheet files or Google Sheets.",
+            "interface": {
+              "displayName": "Excel Live Control",
+              "shortDescription": "Control an open Microsoft Excel workbook using Microsoft Excel desktop app live control",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": "#107C41",
+              "defaultPrompt": "Use $excel-live-control to update and verify my open Microsoft Excel workbook."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\spreadsheets\\26.905.11957\\skills\\excel-live-control\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "struct-search",
+            "description": "Search or rewrite code by syntax tree with ast-grep instead of regex. Use when the task is \"find every call to X\", \"find functions with N args\", \"rename this API everywhere\", \"add a param to all callers\", or any codemod across many files — cases where grep produces false positives from comments, strings, and similar-looking names.",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\struct-search\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "tdd",
+            "description": "Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions \"red-green-refactor\", or wants integration tests.",
+            "interface": {
+              "displayName": "TDD",
+              "shortDescription": "Test-driven red-green-refactor",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\tdd\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "teach",
+            "description": "Teach the user a new skill or concept, within this workspace.",
+            "interface": {
+              "displayName": "Teach",
+              "shortDescription": "Learn a concept in a guided workspace",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\teach\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "template-creator:template-creator",
+            "description": "Create or update a reusable personal Codex artifact-template skill. Use when the user invokes $template-creator or asks in natural language to create a reusable template from a reference document, presentation, spreadsheet, Google Docs, Slides, or Sheets link, ImageGen or Product Design image, email, Slack message, or Site project, or explicitly asks to edit or update a passed artifact-template skill. Do not use for one-off creation from an existing template.",
+            "interface": {
+              "displayName": "Template Creator",
+              "shortDescription": "Create or update personal reference-backed templates",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\template-creator\\26.905.11957\\assets\\icon.png",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\template-creator\\26.905.11957\\assets\\logo.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $template-creator to create a template from my documents, presentations, spreadsheets, Google Docs, Slides, or Sheets links, ImageGen or Product Design images, emails, Slack messages, and Site projects or update the artifact template skill I pass."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-primary-runtime\\template-creator\\26.905.11957\\skills\\template-creator\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "test-affected",
+            "description": "Run only the tests a change actually touches instead of the whole suite. Use after editing source in a repo with a slow or large test suite, when iterating red-green on a fix, or when the user asks to verify a change without waiting for full CI. Covers Python (pytest-testmon), JS/TS (vitest/jest changed-file modes) and Go (go list dependency walk).",
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\test-affected\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "to-issues",
+            "description": "Break a plan, spec, or PRD into independently-grabbable issues on the project issue tracker using tracer-bullet vertical slices. Use when user wants to convert a plan into issues, create implementation tickets, or break down work into issues.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\to-issues\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "to-prd",
+            "description": "Turn the current conversation context into a PRD and publish it to the project issue tracker. Use when user wants to create a PRD from the current context.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\to-prd\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "to-questionnaire",
+            "description": "Turn a decision you can't fully answer into a questionnaire for someone else to fill in.",
+            "interface": {
+              "displayName": "To Questionnaire",
+              "shortDescription": "Front-load questions into a doc for someone to answer",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\to-questionnaire\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "to-spec",
+            "description": "Turn the current conversation into a spec and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed.",
+            "interface": {
+              "displayName": "To Spec",
+              "shortDescription": "Turn a conversation into a spec",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\to-spec\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "to-tickets",
+            "description": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker — edges as text in one file per ticket locally, or native blocking links on a real tracker.",
+            "interface": {
+              "displayName": "To Tickets",
+              "shortDescription": "Split a plan into tracer-bullet tickets",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\to-tickets\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "triage",
+            "description": "Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs.",
+            "interface": {
+              "displayName": "Triage",
+              "shortDescription": "Move issues through triage roles",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\triage\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "visualize:visualize",
+            "description": "Create visualizations and interactive tools directly in conversation. Proactively use to show how something works; explore 'what happens when', 'what changes', or 'help me understand'; compare or inspect; create simulations, maps, charts, graphs, and mockups. Use standard tools for static scientific figures.",
+            "interface": {
+              "displayName": "Visualize",
+              "shortDescription": "Turn ideas and data into interactive visuals",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $visualize to create an interactive visual when a chart, map, diagram, simulation, 3D model, data explorer, or UI preview would make the result easier to understand or adjust."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\plugins\\cache\\openai-bundled\\visualize\\1.0.29\\skills\\visualize\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "wait-what",
+            "description": "Stop. That last message did not land — re-pitch it.",
+            "interface": {
+              "displayName": "Wait What",
+              "shortDescription": "Re-pitch that — simpler, with the context I'm missing",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\wait-what\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "wayfinder",
+            "description": "Plan a huge chunk of work — more than one agent session can hold — as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear.",
+            "interface": {
+              "displayName": "Wayfinder",
+              "shortDescription": "Map a large effort as decision tickets",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\wayfinder\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "wizard",
+            "description": "Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover. Don't invoke this for steps the agent can perform itself.",
+            "interface": {
+              "displayName": "Wizard",
+              "shortDescription": "Generate an interactive setup wizard",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\wizard\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "write-a-skill",
+            "description": "Author a new agent skill from scratch: SKILL.md structure, progressive disclosure, bundled scripts and references. Use when the user says \"create a skill\", \"write a skill\", \"build a new skill\", \"สร้าง skill ใหม่\", \"เขียน skill\", or \"ทำ skill เอง\". Not for finding an existing skill to install — use find-skills for that.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\write-a-skill\\SKILL.md",
+            "scope": "user",
+            "enabled": false
+          },
+          {
+            "name": "writing-beats",
+            "description": "Writing, exploit — assemble raw material into a journey of beats, grounding each term before a beat leans on it.",
+            "interface": {
+              "displayName": "Writing Beats",
+              "shortDescription": "Assemble raw material into beats",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\writing-beats\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "writing-for-agents",
+            "description": "Writing documents for agents. Use when creating or editing skills, or modifying AGENTS.md or CLAUDE.md.",
+            "interface": {
+              "displayName": "Writing for Agents",
+              "shortDescription": "Write documents agents consume",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\writing-for-agents\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "writing-fragments",
+            "description": "Writing, explore — mine raw fragments, no structure yet.",
+            "interface": {
+              "displayName": "Writing Fragments",
+              "shortDescription": "Mine raw writing fragments",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\writing-fragments\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "writing-shape",
+            "description": "Writing, exploit — shape raw material into an article, paragraph by paragraph.",
+            "interface": {
+              "displayName": "Writing Shape",
+              "shortDescription": "Shape raw material into an article",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\writing-shape\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "zoom-out",
+            "description": "Tell the agent to zoom out and give broader context or a higher-level perspective. Use when you're unfamiliar with a section of code or need to understand how it fits into the bigger picture.",
+            "path": "C:\\Users\\VVeb1250\\.agents\\skills\\zoom-out\\SKILL.md",
+            "scope": "user",
+            "enabled": true
+          },
+          {
+            "name": "imagegen",
+            "description": "Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex should create a brand-new image, transform an existing image, or derive visual variants from references, and the output should be a bitmap asset rather than repo-native code or vector. Do not use when the task is better handled by editing existing SVG/vector/code-native assets, extending an established icon or logo system, or building the visual directly in HTML/CSS/canvas.",
+            "interface": {
+              "displayName": "Image Gen",
+              "shortDescription": "Generate or edit images for websites, games, and more",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\imagegen\\assets\\imagegen-small.svg",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\imagegen\\assets\\imagegen.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $imagegen to make or edit an image for this project."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\imagegen\\SKILL.md",
+            "scope": "system",
+            "enabled": true
+          },
+          {
+            "name": "openai-docs",
+            "description": "Use for Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, customization, automations, and self-knowledge—including 'you,' 'your,' 'this app,' or 'this coding agent' when they refer to Codex—and for OpenAI APIs/products and ChatGPT Work. Also use for model choice/migration, prompting, SDKs, Responses, Realtime, agents, evals, and Chat/Work/Codex comparisons. Do not use for generic app/software tasks that merely mention Codex.",
+            "shortDescription": "Codex models/pricing, scheduled tasks, skills, settings, setup, troubleshooting, and self-knowledge; OpenAI APIs and ChatGPT Work. 'You'/'this app' means Codex only.",
+            "interface": {
+              "displayName": "OpenAI Docs",
+              "shortDescription": "OpenAI and Codex docs for models, skills, tasks, and setup",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\openai-docs\\assets\\openai-small.svg",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\openai-docs\\assets\\openai.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use OpenAI Docs for official docs lookup, questions about Codex itself or Codex surfaces, model selection, model migration, and prompt-upgrade work."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\openai-docs\\SKILL.md",
+            "scope": "system",
+            "enabled": true
+          },
+          {
+            "name": "plugin-creator",
+            "description": "Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, valid manifest defaults, and personal-marketplace entries by default. Use when Codex needs to create a new personal plugin, add optional plugin structure, generate or update marketplace entries for plugin ordering and availability metadata, or update an existing local plugin during development with the CLI-driven cachebuster and reinstall flow.",
+            "interface": {
+              "displayName": "Plugin Creator",
+              "shortDescription": "Scaffold plugins and marketplace entries",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\plugin-creator\\assets\\plugin-creator-small.svg",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\plugin-creator\\assets\\plugin-creator.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $plugin-creator to scaffold a valid plugin in the personal marketplace, then validate it before handing it back."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\plugin-creator\\SKILL.md",
+            "scope": "system",
+            "enabled": true
+          },
+          {
+            "name": "review-agent",
+            "description": "Perform a read-only, defect-first review of a specified code change and return every actionable finding. Use when another agent delegates review of uncommitted changes, a base-branch diff, a commit, or custom review instructions.",
+            "interface": {
+              "displayName": "Review Agent",
+              "shortDescription": "Find actionable bugs in code changes",
+              "iconSmall": null,
+              "iconLarge": null,
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": "Use $review-agent to review the requested code changes and return actionable findings."
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\review-agent\\SKILL.md",
+            "scope": "system",
+            "enabled": true
+          },
+          {
+            "name": "skill-creator",
+            "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations.",
+            "shortDescription": "Create or update a skill",
+            "interface": {
+              "displayName": "Skill Creator",
+              "shortDescription": "Create or update a skill",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\assets\\skill-creator-small.svg",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\assets\\skill-creator.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\SKILL.md",
+            "scope": "system",
+            "enabled": true
+          },
+          {
+            "name": "skill-installer",
+            "description": "Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another repo (including private repos).",
+            "shortDescription": "Install curated skills from openai/skills or other repos",
+            "interface": {
+              "displayName": "Skill Installer",
+              "shortDescription": "Install curated skills from openai/skills or other repos",
+              "iconSmall": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-installer\\assets\\skill-installer-small.svg",
+              "iconLarge": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-installer\\assets\\skill-installer.png",
+              "iconSmallUrl": null,
+              "iconLargeUrl": null,
+              "brandColor": null,
+              "defaultPrompt": null
+            },
+            "path": "C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-installer\\SKILL.md",
+            "scope": "system",
+            "enabled": true
+          }
+        ],
+        "errors": []
+      }
+    ]
+  }
+}

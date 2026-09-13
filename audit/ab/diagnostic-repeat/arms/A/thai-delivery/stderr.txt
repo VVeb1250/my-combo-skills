@@ -1,0 +1,92 @@
+Reading prompt from stdin...
+2026-09-09T12:00:18.607018Z ERROR codex_models_manager::manager: failed to load models cache: missing field `supports_parallel_tool_calls` at line 95 column 5
+2026-09-09T12:00:19.236302Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T12:00:19.240734Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T12:00:19.248893Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T12:00:19.251877Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T12:00:19.253998Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T12:00:19.256176Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T12:00:19.423664Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-09-09T12:00:19.423702Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-09-09T12:00:19.462345Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell
+2026-09-09T12:00:20.344936Z  WARN codex_core_plugins::manifest: ignoring hooks: expected a string, string array, object, or object array; found object
+2026-09-09T12:00:39.557715Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:00:43.935363Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:00:49.055403Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:00:59.191330Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 1.6 seconds
+Output:
+fatal: not a git repository (or any of the parent directories): .git
+
+2026-09-09T12:00:59.327336Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:01:07.816042Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0.4 seconds
+Output:
+fatal: not a git repository (or any of the parent directories): .git
+
+2026-09-09T12:01:08.273079Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:01:16.616433Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:01:37.263069Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 2.9 seconds
+Output:
+
+Name        Source
+----        ------
+ruff.exe    C:\Users\VVeb1250\scoop\apps\python\current\Scripts\ruff.exe
+pyright.exe C:\Users\VVeb1250\.local\bin\pyright.exe
+pytest.exe  C:\Users\VVeb1250\AppData\Local\Programs\Python\Python314\Scripts\pytest.exe
+
+
+2026-09-09T12:01:37.358306Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:01:46.931671Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 1.1 seconds
+Output:
+
+Name        Source
+----        ------
+ruff.exe    C:\Users\VVeb1250\scoop\apps\python\current\Scripts\ruff.exe
+pyright.exe C:\Users\VVeb1250\.local\bin\pyright.exe
+pytest.exe  C:\Users\VVeb1250\AppData\Local\Programs\Python\Python314\Scripts\pytest.exe
+
+
+2026-09-09T12:01:47.011037Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:02:10.882364Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:02:17.100599Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:02:29.849011Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:02:38.931349Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:02:48.595984Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 1.9 seconds
+Output:
+2	I001	[*] unsorted-imports
+Found 2 errors.
+[*] 2 fixable with the `--fix` option.
+
+2026-09-09T12:02:49.796050Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:02:53.774185Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 0.7 seconds
+Output:
+.agents\skills\combo\references\library\ecc\skills\manim-video\assets\network_graph_scene.py:1:1: I001 [*] Import block is un-sorted or un-formatted
+src\inventory.py:3:1: I001 [*] Import block is un-sorted or un-formatted
+Found 2 errors.
+[*] 2 fixable with the `--fix` option.
+
+2026-09-09T12:02:53.850420Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:02:59.993880Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:03:10.241223Z ERROR codex_core::tools::router: error=Exit code: 1
+Wall time: 1.1 seconds
+Output:
+unformatted: File would be reformatted
+  --> tests\test_inventory.py:5:30
+  |
+4 | def test_default_behavior():
+  -     assert inventory_summary([Item("active", 2), Item("old", 3, discontinued=True)]) == {
+5 +     assert inventory_summary(
+6 +         [Item("active", 2), Item("old", 3, discontinued=True)]
+7 +     ) == {
+8 |         "count": 1,
+  |
+
+1 file would be reformatted, 1 file already formatted
+
+2026-09-09T12:03:15.530085Z ERROR codex_models_manager::manager: failed to renew cache TTL: missing field `supports_parallel_tool_calls` at line 130 column 5
+2026-09-09T12:04:23.965856Z ERROR codex_core::tools::router: error=`"C:\\Users\\VVeb1250\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\powershell\\pwsh.exe" -Command '$targets = @('"'.pytest_cache', '.ruff_cache', 'src\\__pycache__', 'tests\\__pycache__'); foreach ("'$target in $targets) { Remove-Item -LiteralPath $target -Recurse -Force -ErrorAction Stop }'` rejected: blocked by policy

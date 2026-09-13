@@ -1,0 +1,82 @@
+{
+  "schema_version": 2,
+  "generated_by": "scripts/build-full-library.py",
+  "mode": "read-only coverage inventory plus reference-library build stats",
+  "date": "2026-09-09",
+  "source_commits": {
+    "karpathy": {
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills.git",
+      "commit": "2c606141936f1eeef17fa3043a72095b4765b9c2"
+    },
+    "ponytail": {
+      "url": "https://github.com/DietrichGebert/ponytail.git",
+      "commit": "356918eba965ee1eac64bd3a7f0dd02108350de5"
+    },
+    "matt": {
+      "url": "https://github.com/mattpocock/skills.git",
+      "commit": "3cca18b368ae95cdbdebbff572ccafa662551015"
+    },
+    "ecc": {
+      "url": "https://github.com/affaan-m/ECC.git",
+      "commit": "5064474d4d762dc9640234a41617cccb79185cec"
+    }
+  },
+  "direct_source_entrypoints": {
+    "karpathy": 1,
+    "ponytail": 6,
+    "matt": 37,
+    "ecc": 286,
+    "total": 330
+  },
+  "current_combo": {
+    "entrypoints": 2,
+    "workflows": 6,
+    "practices": 8,
+    "specialist_notes": 27
+  },
+  "reference_library": {
+    "destination": "candidates/common/combo/references/library",
+    "entries": 330,
+    "domain_entries": {
+      "engineering": 174,
+      "research": 23,
+      "content": 11,
+      "learning": 2,
+      "business": 23,
+      "media": 18,
+      "productivity": 12,
+      "host-integration": 67,
+      "uncategorized": 0
+    },
+    "labels": {
+      "adapted-in-combo": 35,
+      "alternate-persona": 1,
+      "deprecated-duplicate": 1,
+      "direct-source-reference": 330,
+      "experimental-or-version-sensitive": 15,
+      "host-bound": 69,
+      "host-bound-state": 2
+    },
+    "review_status": {
+      "body-reviewed-for-adaptation": 35,
+      "metadata-classified": 295
+    },
+    "copied_files": 518,
+    "excluded_files": 53,
+    "link_stats": {
+      "local_rewrites": 178,
+      "immutable_rewrites": 9,
+      "unresolved": 0
+    }
+  },
+  "decisions": {
+    "software_and_all_types": "Both experiment arms should expose the same reference domains and source revisions; vary discovery and entrypoint shape only.",
+    "active_router": "The A/B arms use the same full-domain reference library. The selected shipping layout and evidence are in audit/ab/DECISION.md; domain files remain indexes, not global skill entrypoints.",
+    "host_bound": "Memory, hooks, installers, orchestration, notifications, and native UI assumptions are reference-only. M2D and host tools remain authoritative."
+  },
+  "limits": [
+    "Only selected sources were body-reviewed for prior adaptation. Remaining entries are retained and metadata-classified.",
+    "Domain labels use explicit source-name maps with engineering as the ECC default and uncategorized as the future-name fallback.",
+    "Version-sensitive and regulated material still requires current official-source verification at task time."
+  ]
+}
