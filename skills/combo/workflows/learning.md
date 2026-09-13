@@ -1,28 +1,25 @@
 # Teaching and learning
 
-Use the learner's stated goal, prior knowledge, and available time to choose one
-tangible learning outcome. Infer routine choices from their context. Ask about
-prerequisites only when the answer changes what can be taught correctly.
+Choose a tangible learning outcome from the learner's goal, prior knowledge,
+and time. Read [context](../practices/context.md) once for evidence selection
+and reporting. Ask about prerequisites only when they change correctness.
 
-For lesson design or a sustained course, consult the
-[learning index](../references/library/learning.md). Use the teaching reference's
-retrieval practice, worked examples, spacing, and interleaving where they help
-this learner. Its multi-session workspace is an optional format for a requested
-course, not an assumption about every question.
+Explain the concept needed for that outcome, then work a concrete example with
+useful reasoning visible. Check example mechanics, including executable behavior
+and type consistency for code. Offer a small recall or transfer exercise aimed
+at an important misconception; avoid recognition-only questions when they would
+hide misunderstanding.
 
-Explain the minimum concept needed, then work through a concrete example with
-the reasoning visible. Follow with a small transfer or recall exercise that
-reveals understanding rather than recognition alone. Give feedback when the
-learner responds; keep answers separate when revealing them immediately would
-spoil practice. Adjust the challenge from evidence, not a fixed questionnaire.
+Give feedback from the learner's actual response and adjust the next step.
+Keep solutions separate when early disclosure spoils practice. For a bounded
+one-response lesson, provide the requested usable practice within that response;
+a course does not need to be invented.
 
-Use authoritative references when the topic is uncertain, changing, or needs
-source support. A simple stable concept does not need a new research project.
-Use a visual or interactive example when it clarifies the mechanism, and use
-the native artifact skill when the user requests a reusable lesson file.
+For sustained courses or an unresolved teaching method, consult the
+[learning index](../references/library/learning.md) for spacing, interleaving, or
+course structure. Use authoritative references for changing or uncertain facts
+and native visuals/artifacts when they clarify the mechanism or are requested.
 
-A single lesson can finish in chat. Create course records, reference sheets, or
-shared components when the requested learning workspace benefits from them.
-Treat durable personal learning preferences according to the host's memory
-rules; upstream NOTES or memory instructions do not create another authority.
-Finish with the requested explanation and a usable opportunity to practice.
+Finish with the requested explanation and practice. Reduce redundant framing,
+not the examples or reasoning the learner needs. Create course records only for
+a requested workspace; durable personal information follows host memory rules.

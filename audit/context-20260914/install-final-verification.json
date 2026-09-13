@@ -1,0 +1,154 @@
+{
+  "checked_at": "2026-09-13T18:02:48Z",
+  "validation": {
+    "checked_at": "2026-09-13T18:00:18.871Z",
+    "package_roots": [
+      "combo",
+      "combo-business",
+      "combo-content",
+      "combo-debug",
+      "combo-deliver",
+      "combo-investigate",
+      "combo-learning",
+      "combo-maintain",
+      "combo-media",
+      "combo-plan",
+      "combo-productivity",
+      "combo-research",
+      "combo-review",
+      "combo-verify"
+    ],
+    "package_files": 649,
+    "ownership_index": "skills/combo/.combo-owned.json",
+    "skills": [
+      {
+        "name": "combo",
+        "files": 623,
+        "description_chars": 101,
+        "body_lines": 61
+      },
+      {
+        "name": "combo-business",
+        "files": 2,
+        "description_chars": 217,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-content",
+        "files": 2,
+        "description_chars": 201,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-debug",
+        "files": 2,
+        "description_chars": 173,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-deliver",
+        "files": 2,
+        "description_chars": 206,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-investigate",
+        "files": 2,
+        "description_chars": 73,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-learning",
+        "files": 2,
+        "description_chars": 202,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-maintain",
+        "files": 2,
+        "description_chars": 222,
+        "body_lines": 27
+      },
+      {
+        "name": "combo-media",
+        "files": 2,
+        "description_chars": 202,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-plan",
+        "files": 2,
+        "description_chars": 196,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-productivity",
+        "files": 2,
+        "description_chars": 207,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-research",
+        "files": 2,
+        "description_chars": 197,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-review",
+        "files": 2,
+        "description_chars": 74,
+        "body_lines": 3
+      },
+      {
+        "name": "combo-verify",
+        "files": 2,
+        "description_chars": 185,
+        "body_lines": 3
+      }
+    ],
+    "errors": []
+  },
+  "inventory": {
+    "available": true,
+    "before_count": 121,
+    "after_count": 121,
+    "native_count": 12,
+    "active_combo": [
+      "combo",
+      "combo-business",
+      "combo-content",
+      "combo-debug",
+      "combo-deliver",
+      "combo-investigate",
+      "combo-learning",
+      "combo-maintain",
+      "combo-media",
+      "combo-plan",
+      "combo-productivity",
+      "combo-research",
+      "combo-review",
+      "combo-verify"
+    ],
+    "live_packages": [
+      "combo",
+      "combo-business",
+      "combo-content",
+      "combo-debug",
+      "combo-deliver",
+      "combo-investigate",
+      "combo-learning",
+      "combo-maintain",
+      "combo-media",
+      "combo-plan",
+      "combo-productivity",
+      "combo-research",
+      "combo-review",
+      "combo-verify"
+    ]
+  },
+  "inventory_paths": {
+    "before": "audit\\context-20260914\\discovery-before.json",
+    "after": "audit\\context-20260914\\discovery-final.json"
+  },
+  "rollback_rehearsal_files": 2
+}

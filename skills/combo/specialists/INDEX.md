@@ -1,9 +1,9 @@
 # Coding specialist index
 
-Use this shelf after the combo router has selected a substantive coding task.
-Search the task terms in the table, open the smallest relevant set of notes,
-and keep unrelated material unloaded. Tiny edits normally do not need this
-shelf.
+Use this shelf when a technical mechanism remains unresolved after reading the
+relevant project evidence. Search the table for that mechanism and open only
+the needed notes; use an already-known note path directly. A direct workflow
+entry needs no router reread, and a technology name alone needs no shelf read.
 Version-sensitive framework behavior still needs a check against the project's
 lockfile and current official documentation.
 

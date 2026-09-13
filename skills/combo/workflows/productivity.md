@@ -1,30 +1,27 @@
 # Productivity and coordination
 
-Identify the actual outcome: organize work, clarify a decision, triage a backlog,
-prepare a handoff, improve agent-facing writing, or carry out an authorized
-coordination task. Consult the
-[productivity index](../references/library/productivity.md) for the relevant
-method. Prefer the user's existing tracker, files, and sources of truth.
+Identify the requested organization, decision, triage, handoff, agent-facing
+writing, or authorized update. Read [context](../practices/context.md) once for
+evidence selection and reporting.
 
-Read the current state before classifying work. Distinguish active, waiting,
-completed, and merely proposed items; preserve owners, dates, dependencies, and
-uncertainty. Create only enough structure to make the next action clear.
-Questioning should resolve material ambiguity, not force a grilling session
-when the brief already supports the work.
+Read current state in the user's existing tracker/files before classifying items.
+Distinguish active, waiting, completed, and proposed work; preserve owners, dates,
+dependencies, and uncertainty. Prioritize actions that unblock the actual outcome.
+Create enough structure to clarify those actions without duplicating a tracker.
 
-For handoffs, preserve the objective, decisions, constraints, completed evidence,
-current artifacts, and next unresolved action. Include context the recipient
-cannot cheaply recover; omit obsolete exploration. For agent-facing writing,
-put conditional detail behind precise pointers and keep one source of truth.
-Use the native skill-creation workflow when authoring skills.
+For handoffs, retain binding decisions, completed evidence, current artifacts,
+and the next unresolved action; add context the recipient cannot cheaply recover.
+For agent-facing writing, keep one source of truth and conditional detail behind
+precise pointers. Use the native skill-creation workflow for skill authoring.
 
-Use host task and scheduling tools for their operations. A source's GitHub or
-Linear conventions are examples rather than a mandatory two-tracker system.
-Message people, publish updates, or create recurring work only when authorized.
-Use the [host integration index](../references/library/host-integration.md) only
-for explicit host customization or integration work. Its alternate memory,
-hook, and orchestration designs are reference material, not automatic setup.
+Consult the [productivity index](../references/library/productivity.md) only when
+an unresolved coordination method needs detail. Use the
+[host integration index](../references/library/host-integration.md) only for
+explicit host customization. Upstream tracker, memory, and hook conventions do
+not authorize alternate systems.
 
-Deliver the requested organization, decision, handoff, or verified update. Keep
-personal memory under the configured host authority and preserve prior user
-authorization rather than introducing extra confirmation rounds.
+Use native task/scheduling tools. Messages, publishing, and recurring work require
+applicable authorization; preserve authorization already provided. Verify actual
+updates and check state before retrying uncertain mutations. Return changed
+decisions/status and next actions; include the full inventory only when requested.
+Personal memory remains under the host's configured authority.

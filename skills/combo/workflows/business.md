@@ -1,26 +1,28 @@
 # Business and operations
 
-Identify the operational decision, time horizon, business constraints, and
-source data. Consult the [business index](../references/library/business.md) for
-the relevant finance, inventory, logistics, production, commercial, or compliance
-method. Use the user's actual operating model. Upstream roles, company sizes,
-thresholds, escalation chains, and KPIs are examples to calibrate, not facts
-about the user's organization.
+Start from the operational decision, time horizon, constraints, and actual data.
+Read [context](../practices/context.md) once for evidence selection and reporting.
 
-Check units, currencies, periods, missing records, and definitions before
-calculating. For forecasts, distinguish historical demand from constrained
-sales, account for stockouts and seasonality, and validate on held-out periods.
-For financial models, expose assumptions and sensitivities that affect the
-decision. Trace conclusions to records or calculations, with uncertainty where
-the inputs cannot support a precise estimate.
+Identify the variables that can change the action. Before calculating, check
+units, currencies, periods, missing records, definitions, and relevant totals.
+Use native spreadsheet/data-query tools to aggregate and reconcile records
+without filling context with raw rows. Trace conclusions to data and calculations.
 
-Use native spreadsheet or data-query tools for tabular calculations and native
-connectors for the user's actual systems. Current financial, legal, regulatory,
-or medical claims need authoritative verification. Reference material is not
-proof of compliance, a license to diagnose, or authority to transact.
+For forecasts, distinguish demand from stockout-constrained sales, account for
+seasonality, and validate on held-out periods. For financial models, expose
+decision-changing assumptions and sensitivities. Use ranges when data cannot
+support precision. A model is useful when its recommendation remains supported
+under the relevant uncertainty, or the required missing data is identified.
 
-Produce the requested analysis, plan, operating document, or authorized system
-update. An operations plan can include proposed owners and escalation criteria
-without sending notifications or committing purchases. Execute external actions
-only within the user's existing authorization, verifying the concrete result
-and avoiding duplicate mutations after uncertain responses.
+Consult the [business index](../references/library/business.md) when an unresolved
+finance, inventory, logistics, production, commercial, or compliance method needs
+detail. Calibrate example company sizes, thresholds, KPIs, and escalation chains
+to the user's operating model. Verify current financial/legal/regulatory/medical
+claims with authoritative sources; reference text does not prove compliance or
+authorize transactions.
+
+Deliver the analysis, operating plan, or authorized update, emphasizing the
+recommended action and assumptions that could reverse it. Proposed owners and
+escalation criteria do not send notifications or commit purchases. Use native
+connectors for authorized operations, verify resulting state, and inspect
+uncertain responses before retrying a mutation.

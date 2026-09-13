@@ -1,64 +1,43 @@
 # Debug
 
-Use this path when the user reports a failure, regression, exception, wrong
-result, flaky behavior, or performance problem and wants it understood or
-repaired. The target is a causal repair supported by evidence, with verification
-at the user's original symptom.
+Use for a failure, regression, wrong result, flaky behavior, or performance
+problem. For diagnosis-only, stop with evidence and a repair proposal.
+Read [context](../practices/context.md) once for evidence selection and reporting.
 
-## Establish the signal
+## Establish and distinguish
 
-1. Read relevant repository instructions, `CONTEXT.md` and nearby ADRs when
-   present, then inspect the affected callers and recent changes.
-2. Define the exact symptom, input, environment, expected result, and the
-   cheapest check that could distinguish fixed from unfixed.
-3. Prefer a tight failing test, fixture, CLI/API request, browser journey, trace
-   replay, or timing harness. Make it deterministic and specific to the
-   reported behavior. Narrow it when practical, but do not turn setup into a
-   ritual.
-4. If no reproduction is available, continue from the reported input, logs,
-   traces, code path, or known-good comparison. Mark each claim as observed,
-   inferred, or unknown. Lack of reproduction does not prohibit an evidence-
-   based hypothesis and does not automatically make the task blocked.
+1. Identify the reported input, environment, expected result, and exact symptom.
+   Inspect affected code, real callers, relevant instructions, and recent changes.
+   Choose the cheapest check that distinguishes fixed from unfixed.
+2. Prefer a deterministic repro, request, journey, trace replay, or timing
+   harness. If reproduction is unavailable, use logs, the reported input, and
+   known-good comparisons; distinguish observed, inferred, and unknown claims.
+   Verify that any reproduced failure is the user's symptom.
+3. For performance, measure a baseline. For build/type failures, group dependent
+   errors and inspect the earliest causal one using [build](../practices/build.md).
+4. When causes compete, use a short hypothesis -> distinguishing probe ->
+   observation -> next action loop. Change one relevant variable. If a probe
+   cannot separate explanations, choose another boundary instead of repeating
+   it. Trace shared transformations, configuration, lifecycle, or concurrency
+   only as the signal requires. Prefer a debugger/REPL or targeted instrumentation;
+   tag temporary logs and keep secrets out.
 
-Do not confuse a nearby failure with the user's bug. For a performance issue,
-measure a baseline before changing code. For a build or type failure, group
-messages by dependency and repair the earliest causal error first.
+Use [security](../practices/security.md) when the failing path crosses a real
+trust or sensitive-data boundary. Lack of reproduction alone is not a blocker.
 
-## Narrow the cause
+## Repair within authorization
 
-- Trace shared callers, data transformations, configuration, error boundaries,
-  and concurrency or lifecycle assumptions. Look for the smallest boundary at
-  which the symptom can be explained.
-- When multiple explanations are plausible, choose the smallest set of ranked,
-  falsifiable hypotheses needed to select the next probe. State the observation
-  that would increase or reduce confidence. Hypotheses are working
-  explanations, not verified causes, and do not need user reapproval before a
-  cheap discriminating check.
-- Change one relevant variable at a time. Prefer a debugger or REPL, then a
-  targeted log or metric at a boundary that distinguishes hypotheses. Tag
-  temporary logs so they can be removed in one search. Never log everything by
-  default or expose secrets.
-- Use [security](../practices/security.md) if the path crosses auth, untrusted
-  input, secrets, uploads, external side effects, or sensitive data. Use
-  [build](../practices/build.md) for compiler and dependency failures.
+- Convert the repro into a regression at the highest existing seam that detects
+  this defect. If no suitable seam exists, keep integration/E2E evidence and
+  identify the confidence gap. Use [tests](../practices/tests.md) for seam choices.
+- Make the smallest causal repair, preserving real callers' contracts. Retries,
+  catches, or refactors need evidence that they address the cause.
+- Check the regression and original unminimized symptom; one run can cover both.
+  Broaden for affected callers, contracts, dependencies, or required gates.
+- Remove diagnostic-only instrumentation; retain durable regression fixtures.
+  After relevant checks pass, finish unless new changes or evidence require more.
 
-## Repair and verify
-
-1. Turn a minimized repro into a regression test at the highest seam that
-   exercises the real bug pattern. If that seam does not exist, use the best
-   available end-to-end or integration evidence and record the confidence gap.
-2. Apply the smallest root-cause repair. Do not mask the symptom with retries,
-   broad catches, or unrelated refactors unless evidence requires them.
-3. Re-run the regression or discriminating check, then the original unminimized
-   signal. Broaden checks according to blast radius.
-4. Remove temporary instrumentation and diagnostic-only harnesses created by
-   this diagnosis. Retain regression tests or fixtures that encode the defect
-   or provide durable verification. Re-check that the original symptom is gone
-   and state whether the cause is verified or still only the best-supported
-   explanation.
-
-If the environment or artifact needed for a decisive check is unavailable,
-report the exact gap, the evidence already gathered, and the next check that
-would resolve it. Continue useful code analysis; stop only when no authorized
-or safe progress remains. A final report must distinguish fixed, reproduced,
-not reproduced, inconclusive, and blocked states.
+Report the cause with its evidence/confidence, repair if authorized, and observed
+verification. Distinguish fixed, reproduced, not reproduced, inconclusive, and
+blocked outcomes. If decisive access is missing, state the exact gap and next
+discriminating check while completing independent authorized work.

@@ -1,0 +1,21 @@
+{
+  "target_root": "C:\\Users\\VVeb1250\\.claude",
+  "files": [
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\.combo-owned.json",
+      "action": "write",
+      "before_sha256": "684c7d97de86b0111f36c7a8aa475d10365fb8af2379f349164a4a9aec5c2512",
+      "after_sha256": "507aacac6c04c2a2d92627a75fdb310bd38f9a2265d3445b7e130926d7e2da9f",
+      "bytes_before": 122656,
+      "bytes_after": 122656
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\practices\\context.md",
+      "action": "write",
+      "before_sha256": "b79e3476e30848075b99c1b3594e120d1bcb1cc87af242f2bee4581ffa1ed754",
+      "after_sha256": "a7071b6a709adbdb7c4db51059d9d074833d5d92e6b44470f92f702dc1692737",
+      "bytes_before": 4091,
+      "bytes_after": 3310
+    }
+  ]
+}

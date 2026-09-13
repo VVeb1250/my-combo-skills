@@ -1,27 +1,29 @@
 # Content, voice, and adaptation
 
-Anchor the draft in the user's supplied brief, source asset, intended audience,
-and requested outcome. Identify the facts, concrete claims, and useful scenes.
-Preserve dates, prices, limits, attribution, and uncertainty. Missing proof is a
-gap to state or write around, not a license to invent traction or endorsements.
+Produce the requested drafts or artifacts for the supplied brief, audience,
+medium, and outcome. Read [context](../practices/context.md) once for evidence
+selection and reporting.
 
-For substantive articles, brand work, campaigns, outreach, SEO, or repurposing,
-consult the [content index](../references/library/content.md) and load the
-relevant reference. For voice-sensitive work, derive rhythm, vocabulary, claim
-strength, and degree of explanation from the user's examples. A brief voice
-model in current context is enough for one assignment. Upstream author personas
-and example brands are examples, not the user's identity or default voice.
+Extract source facts that must survive adaptation: names, dates, prices, limits,
+attribution, uncertainty, and supported claims. For voice-sensitive work, infer
+rhythm, vocabulary, claim strength, and explanation depth from representative
+user samples. Keep this working model in context; create a persistent profile
+only when authorized.
 
-Adapt structure to the medium. X rewards a compressed concrete point; LinkedIn
-may need context for readers outside the niche; video needs a visual sequence;
-a newsletter needs an argument worth following. Each output should add a useful
-angle rather than repeat the same paragraph with a different heading. Preserve
-the author's voice across formats. Let proof and specificity carry the copy.
+Write to the medium's actual reading/viewing conditions and requested format.
+Across channels, vary the useful angle or structure while preserving facts and
+voice. Let concrete proof carry the copy; a missing endorsement, benefit, or
+result remains unsupported. Consult the
+[content index](../references/library/content.md) only when a specific method,
+such as SEO analysis or a reusable voice schema, remains necessary. Upstream
+brands, sample quotas, and personas are not defaults for this user.
 
-Check every draft against the source for factual drift, invented promises,
-unearned engagement bait, and platform-shaped filler. Provide the requested
-drafts or artifacts, with a calendar or voice profile only when useful to the
-assignment. Use native document, presentation, image, or design skills for their
-artifact operations. Publishing, sending outreach, scheduling posts, or saving
-a persistent personal profile requires the user's applicable authorization.
-Do not ask again when that authorization is already present.
+Check drafts against the fact set, voice, and brief. Inspect for invented
+promises, factual drift, repetitive angles, and engagement filler. Revise actual
+defects; stop polishing when the requested criteria are met.
+
+Deliver the requested copy with only editorial notes needed to use or assess it.
+A shorter process report must not shrink the requested article or campaign.
+Use native document/design/image/presentation skills for artifacts. Publishing,
+outreach, scheduling, and persistent profiles need applicable authorization;
+honor authorization already supplied.

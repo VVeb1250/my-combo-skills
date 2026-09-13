@@ -1,0 +1,21 @@
+{
+  "receipt": "D:\\0_person-project\\my-combo-skills\\backups\\20260913-175922-355400\\receipt.json",
+  "files": [
+    {
+      "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\.combo-owned.json",
+      "action": "write",
+      "before_sha256": "e147f7ddfacfede5a794482974c10c1af73e8ac460380e6164c06b48a86b7d30",
+      "after_sha256": "a5be0929a72f2c417b92586872e50c8223e93a8b291c20421c99814cef4f4087",
+      "bytes_before": 133916,
+      "bytes_after": 133916
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.codex\\skills\\combo\\practices\\context.md",
+      "action": "write",
+      "before_sha256": "b79e3476e30848075b99c1b3594e120d1bcb1cc87af242f2bee4581ffa1ed754",
+      "after_sha256": "a7071b6a709adbdb7c4db51059d9d074833d5d92e6b44470f92f702dc1692737",
+      "bytes_before": 4091,
+      "bytes_after": 3310
+    }
+  ]
+}

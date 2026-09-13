@@ -4,4 +4,6 @@ description: >
   Write articles, brand copy, outreach drafts, or campaigns; derive voice from samples and repurpose material across social, email, and video formats. Use native tools for document and design artifacts.
 ---
 
-Read and follow the shared Combo workflow at [workflows/content.md](../combo/workflows/content.md). Preserve the user's requested stopping point and load only the relevant practice or specialist notes.
+Read [content](../combo/workflows/content.md) and complete the task at the user's
+requested stopping point. The workflow owns context selection and conditional
+reference loading; no router reread is needed.

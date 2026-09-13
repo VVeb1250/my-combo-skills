@@ -7,6 +7,13 @@ Workflow pack ที่ออกแบบการทำงานร่วมก
 ทุกทางเข้าใช้ workflow และ library ร่วมกัน อ่านเฉพาะส่วนที่ต้องใช้
 รายละเอียดการเลือกและผลทดสอบอยู่ใน [รายงาน A/B](audit/ab/DECISION.md)
 
+**ปรับ context และ output (14 กันยายน 2026):** ทุก workflow ใช้
+[กฎเลือกหลักฐานร่วม](skills/combo/practices/context.md) เพื่ออ่านตามคำถามที่มีผลต่อ
+การตัดสินใจ รักษา contract และข้อขัดแย้ง ใช้ผลตรวจที่ยัง valid และรายงานเฉพาะ
+ผลกับหลักฐานที่จำเป็น โดยคงความลึกและ coverage ที่ผู้ใช้ขอ
+ดู [ผลตรวจรอบนี้](audit/context-20260914/REPORT.md) และ
+[โจทย์ context probes](evals/context/README.md)
+
 **ติดตั้งใน Codex และตรวจแล้ว (10 กันยายน 2026):** discovery ครบ 14 entries,
 ไฟล์ตรงกับ source และซ้อม rollback ผ่าน โดย config ส่วนอื่นและ M2D คงเดิม
 

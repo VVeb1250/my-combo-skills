@@ -1,58 +1,46 @@
 # Deliver
 
-Use this path for a requested feature, behavior change, bug fix whose cause is
-already clear, or behavior-preserving refactor. The output is working code at
-the user's requested stopping point.
+Deliver working code for a feature, behavior change, known-cause fix, or refactor.
+Honor the requested stopping point; a request to build includes verification.
+Read [context](../practices/context.md) once for evidence selection and reporting.
 
-## Understand the slice
+## Choose the slice
 
-1. Restate the user-visible behavior and the smallest observable success check.
-   Include compatibility, security, performance, or data-loss constraints that
-   are actually present.
-2. Read repository instructions, the affected modules, real callers, and nearby
-   tests. Inspect status before editing and preserve unrelated user changes.
-3. Separate observed facts, assumptions, and decisions. Resolve routine choices
-   from the codebase. Ask one focused question only when an answer changes
-   correctness or the requested scope.
-4. Choose the narrowest design that satisfies the complete requirement. Prefer
-   an existing public seam. Use [design](../practices/design.md) when module
-   boundaries, adapters, or invariants need explicit thought.
+1. Identify user-visible behavior and an observable acceptance condition for
+   each requirement, including actual compatibility, security, performance,
+   accessibility, and data-loss constraints.
+2. Inspect status, relevant repository instructions, affected code, real callers,
+   and nearby tests. Preserve unrelated edits. Resolve routine choices from
+   evidence; ask only when missing input changes correctness or intended scope.
+3. Reuse existing public seams. Read [design](../practices/design.md) for unresolved
+   ownership, adapter, or invariant decisions. Choose the smallest design that
+   meets the complete requirement, retaining demonstrated extension needs.
 
-For a multi-part change, split along independently verifiable vertical behavior
-slices. Keep each slice small enough to understand and check in the current
-context. A wide mechanical refactor may use expand, migrate, and contract steps
-when keeping the old form temporarily is what keeps callers green.
+Implement independently verifiable vertical slices. For mechanical migration,
+use expand/migrate/contract when it preserves working callers. Keep validation
+and error handling at trust boundaries; use [security](../practices/security.md)
+when those boundaries change. Add dependencies, flexibility, or adjacent changes
+only when the requirement or causal evidence needs them.
 
-## Implement
+## Verify and finish
 
-- Change the smallest correct set of files. Do not add speculative options,
-  dependencies, abstractions, or adjacent cleanup.
-- Use [tests](../practices/tests.md) to select the highest seam that can observe
-  the requested behavior. Use a red-green test-first loop when it clarifies a
-  new behavior or regression; a trivial reversible edit needs no artificial
-  test suite.
-- Keep validation at trust boundaries and preserve accessibility, error
-  handling, and explicit user requirements. Add [security](../practices/security.md)
-  only when the change crosses a real security or data boundary.
-- Run the narrowest useful check after each meaningful slice. Group compiler or
-  dependency errors by causal root with [build](../practices/build.md).
+- Select behavioral checks with [tests](../practices/tests.md). Use red-green
+  when it clarifies new behavior or a regression. Tiny reversible edits need
+  inspection and the cheapest relevant check, not an artificial suite.
+- Check each meaningful slice. Map every acceptance condition to actual evidence;
+  keep this mapping in context unless a report needs it.
+- A shared contract change needs affected-caller coverage; dependency/config
+  changes need the relevant build or integration check; trust-boundary changes
+  need rejection-path evidence. Complete explicit repository/user gates.
+  Reuse still-valid checks instead of automatically rerunning each phase.
+- Inspect the final diff for scope, missed requirements, error paths, and coupling.
+  Apply [simplicity](../practices/simplicity.md) when new layers or options appear.
+  Repair actionable in-scope findings and verify the affected behavior again.
 
-## Finish
+For failed checks, retain the command and first useful symptom, distinguish
+change-caused from pre-existing/environment failures, and fix the causal issue.
+Use [build](../practices/build.md) for compiler/dependency chains or
+[debug](debug.md) when diagnosis becomes the main task.
 
-1. Re-run the focused behavior check and then broaden to typecheck, lint, build,
-   integration, or full tests in proportion to the blast radius.
-2. Inspect the diff for accidental changes, dead code created by this work,
-   error-boundary regressions, and hidden coupling. Apply the [simplicity](../practices/simplicity.md)
-   lens when the change has new layers or flexibility.
-3. Review requirement fidelity and implementation quality proportionally. Fix
-   findings that are within the user's authorized scope; leave a finding for
-   anything that needs a separate decision.
-4. Report changed files, user-visible result, checks with their verdicts, and
-   any check that could not run. A commit, issue publication, or handoff is a
-   separate action unless the request or repository workflow already includes
-   it.
-
-If a check fails, retain the exact command and useful output in the state
-snapshot, identify whether the failure is caused by this change, and continue
-with the smallest corrective step or route to [debug](debug.md) when diagnosis
-has become the dominant task.
+Return the result, useful file links, check verdicts, and material unchecked
+limits. Commit, publish, or hand off only when existing authorization includes it.

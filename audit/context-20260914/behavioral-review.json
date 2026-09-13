@@ -1,0 +1,69 @@
+{
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "max",
+  "scope": "Two fresh cases, one synthetic fixture, installed host context, no baseline comparison",
+  "initial_attempt": "Windows sandbox could not enter temporary fixture; diagnosis timed out and repair was interrupted. Raw results retained separately.",
+  "candidate_context_sha256": "a7071b6a709adbdb7c4db51059d9d074833d5d92e6b44470f92f702dc1692737",
+  "cases": [
+    {
+      "case": "diagnosis",
+      "harness_status": "passed",
+      "completed_turn": true,
+      "context_read_confirmed": true,
+      "completed_commands": 18,
+      "changed_files": [],
+      "before_acceptance": null,
+      "after_acceptance": null,
+      "usage": {
+        "input_tokens": 187730,
+        "cached_input_tokens": 166656,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 4530,
+        "reasoning_output_tokens": 2275
+      },
+      "duration_seconds": 114.814,
+      "errors": [],
+      "semantic_review": "Correct live caller diagnosis, no edits, completed answer. Reads include the irrelevant small gallery note; this is not proof of optimal context selection.",
+      "final_answer": "พบสาเหตุชัดเจน และยังไม่ได้แก้ไฟล์\n\nใน [src/filters.py:10](D:/combo-context-evals/combo-context-probes-jhnszxwb/combo-eval-diagnosis-o22moh9s/src/filters.py:10) การล้าง checkbox ส่ง `[]` เข้า [src/catalog.py:5](D:/combo-context-evals/combo-context-probes-jhnszxwb/combo-eval-diagnosis-o22moh9s/src/catalog.py:5):\n\n```python\nselected = requested or LABELS\n```\n\nเนื่องจาก `[]` เป็น falsy จึงถูกแทนด้วย `LABELS` และเลือกทุก label ใหม่\n\nการซ่อมที่เล็กที่สุดคือเปลี่ยนเป็น:\n\n```python\nselected = LABELS if requested is None else requested\n```\n\nผลลัพธ์คือ:\n\n- initial load ส่ง `None` และยังได้ทุก labelเหมือนเดิม\n- clear ทั้งหมดส่ง `[]` และได้ `[]`\n- selection ปกติและการกรอง unknown ยังทำงานเหมือนเดิม\n\nVerification:\n\n- test เดิมผ่าน 2/2 แต่ยังไม่มีกรณี `[]`\n- reproduce ปัจจุบันได้ `after_user_selection([]) == ['new', 'sale', 'archived']`\n- candidate repair ผ่าน assertions สำหรับ `None`, `[]` และ `[\"sale\", \"unknown\"]`\n\nควรเพิ่ม regression test ให้ `select_labels([]) == []` แล้วรัน `python -m unittest discover -s tests -v` หลังแก้จริง ตอนนี้ยังต้องแก้ก่อนใช้ครับ"
+    },
+    {
+      "case": "repair",
+      "harness_status": "failed",
+      "completed_turn": false,
+      "context_read_confirmed": true,
+      "completed_commands": 29,
+      "changed_files": [
+        "src/catalog.py",
+        "tests/test_catalog.py"
+      ],
+      "before_acceptance": {
+        "path": "D:\\0_person-project\\my-combo-skills\\evals\\context\\acceptance\\selection_test.py",
+        "returncode": 1,
+        "passed": false,
+        "timed_out": false,
+        "duration_seconds": 0.191,
+        "stdout": "",
+        "stderr": "F...\n======================================================================\nFAIL: test_clear_all_stays_empty (__main__.SelectionContract.test_clear_all_stays_empty)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"D:\\0_person-project\\my-combo-skills\\evals\\context\\acceptance\\selection_test.py\", line 18, in test_clear_all_stays_empty\n    self.assertEqual(after_user_selection([]), [])\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Lists differ: ['new', 'sale', 'archived'] != []\n\nFirst list contains 3 additional elements.\nFirst extra element 0:\n'new'\n\n- ['new', 'sale', 'archived']\n+ []\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=1)\n"
+      },
+      "after_acceptance": {
+        "path": "D:\\0_person-project\\my-combo-skills\\evals\\context\\acceptance\\selection_test.py",
+        "returncode": 0,
+        "passed": true,
+        "timed_out": false,
+        "duration_seconds": 0.197,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n"
+      },
+      "usage": null,
+      "duration_seconds": 141.401,
+      "errors": [
+        "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 3:55 AM.",
+        {
+          "message": "You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase more credits or try again at 3:55 AM."
+        }
+      ],
+      "semantic_review": "Correct None-only default repair and scoped regression tests. Independent acceptance and model-run lint/type checks pass. Account usage limit prevented final completion; do not classify the session as passed.",
+      "final_answer": null
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "receipt": "D:\\0_person-project\\my-combo-skills\\backups\\claude-20260913-175245-247400\\receipt.json",
+  "files": [
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\agents\\combo-worker.md",
+      "action": "write",
+      "before_sha256": "422cb91b2bfcca33b92ebe650740b0ef02b3b8a284a24075f6edc244170f2125",
+      "after_sha256": "e65eed63230f271879afdfebca37cf785fa82e92889f91f92d2ddbc20ccc2978",
+      "bytes_before": 965,
+      "bytes_after": 1123
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-maintain\\SKILL.md",
+      "action": "write",
+      "before_sha256": "bff7e08ec5b1929ea055690def7e384b7217e845600b68c23d28a2488f0c199d",
+      "after_sha256": "609c8afba3cd31d2235e2e1b55714a61baadedc2444ef151323b024ffc1f8e5c",
+      "bytes_before": 1487,
+      "bytes_after": 1649
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\.combo-owned.json",
+      "action": "write",
+      "before_sha256": "391b16a6f91405d02b4c2276e5771fd29aae77a00dbd3be0bd883ec0af23c952",
+      "after_sha256": "684c7d97de86b0111f36c7a8aa475d10365fb8af2379f349164a4a9aec5c2512",
+      "bytes_before": 122655,
+      "bytes_after": 122656
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\practices\\context.md",
+      "action": "write",
+      "before_sha256": "7c31fc5bc5356672b01137e2959e5129e9fb908b1b202584f6dcc6a25ea793f5",
+      "after_sha256": "b79e3476e30848075b99c1b3594e120d1bcb1cc87af242f2bee4581ffa1ed754",
+      "bytes_before": 1352,
+      "bytes_after": 4091
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\practices\\tests.md",
+      "action": "write",
+      "before_sha256": "553ac0de9e7bbca2c4d4efd76b7289b24f3926902251809a805979a5819f8c1f",
+      "after_sha256": "d167ace82edf1aa6d719b6f7798ac3e34bab4806d203b3bc0dfa865ec01fd787",
+      "bytes_before": 1309,
+      "bytes_after": 1693
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\SKILL.md",
+      "action": "write",
+      "before_sha256": "deb2109aefe608c7cee0266aa49d596384750b2e529cce4e27804678a860916a",
+      "after_sha256": "b585ee60aac307013b9c01bc15afe7d7f7b04ba5ada202f0d38b8f62cb21b06e",
+      "bytes_before": 7089,
+      "bytes_after": 3867
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\specialists\\INDEX.md",
+      "action": "write",
+      "before_sha256": "6054d00c92b3ba881b18975cb468a009c19fdfa3e6016a3920504dd6dcca411d",
+      "after_sha256": "36aaa8a8530936865748977cb80f149b4c74dd17aed31f36f4181b2cef2f3002",
+      "bytes_before": 4068,
+      "bytes_after": 4143
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\business.md",
+      "action": "write",
+      "before_sha256": "13190b578f4ddd515e6c4bf1fb6ec208295dc28caf6ac59263e7957deef143e4",
+      "after_sha256": "9cbd46e746e1b6699136f6a66f60b4c9fff9b05a1c41b5b57f17699f86f2d413",
+      "bytes_before": 1564,
+      "bytes_after": 1680
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\content.md",
+      "action": "write",
+      "before_sha256": "ceb2f8533b086221e4bcfa346c01176dbf521614322cdf8862d4517ee1b8b68b",
+      "after_sha256": "c12c467a21796a30f5ff6ae0a52324a6e64abae4f0927da2f160989d440f33a8",
+      "bytes_before": 1742,
+      "bytes_after": 1623
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\debug.md",
+      "action": "write",
+      "before_sha256": "dc330719073063f87594acc270d665a4b4d81928bf67bc49bf7df9d9d2568560",
+      "after_sha256": "f24c5b433619b1b56559fda043b0ba0430b63e028a7ee7a06d921fff7c721856",
+      "bytes_before": 3591,
+      "bytes_after": 2598
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\deliver.md",
+      "action": "write",
+      "before_sha256": "1daf62679f7b6f173db7c6ad70f661c98b35123d074ee47e4d9c14a2098ea2d8",
+      "after_sha256": "92c2eeb6cda3e4b281a8ea5ace5d528aa41572d357bbedbc027fcb7fc4aa3c1f",
+      "bytes_before": 3147,
+      "bytes_after": 2709
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\investigate.md",
+      "action": "write",
+      "before_sha256": "2a6a86e7765af149926715a3eb1a3919f5f26566fd5d9bffd76086db383b79aa",
+      "after_sha256": "514ef95ac06b965621a7496f05002db5a0d7c8a5cb9ae343e84c30778db23606",
+      "bytes_before": 2058,
+      "bytes_after": 1179
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\learning.md",
+      "action": "write",
+      "before_sha256": "9836e30243f4a91baeee07f47fc4361274acf2c738d202b9968248c2a41350c2",
+      "after_sha256": "c6db7db874b9bcc6c0c2cff1df78282f77df984fc9127a02e28574ed36a2e1e7",
+      "bytes_before": 1681,
+      "bytes_after": 1417
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\media.md",
+      "action": "write",
+      "before_sha256": "a65129479ed83eb9be5d0b9f7a9f71b111bd64628fe501174ea74505f3c03210",
+      "after_sha256": "3d77ec9c6c00621ecf25287ab6ea91848820448753932b25c8fe674b441429dd",
+      "bytes_before": 1549,
+      "bytes_after": 1452
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\plan.md",
+      "action": "write",
+      "before_sha256": "cbc474611c8b63309609080354f4f8635d8df3c020c0bbbb3a600ec36d7d5174",
+      "after_sha256": "1cef86f60519d73004372b8aa3ff15ffe308fc1a19e811f96e223546b0b7bf23",
+      "bytes_before": 2657,
+      "bytes_after": 1920
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\productivity.md",
+      "action": "write",
+      "before_sha256": "926cd2fad4fcc3910fa6da252623e0079812f6b46f228630abad76f54500d937",
+      "after_sha256": "9ea2cabd8c8d3c22edb01e86426e881f0cf1730a21d94638c7152de7deb55bc9",
+      "bytes_before": 1787,
+      "bytes_after": 1589
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\research.md",
+      "action": "write",
+      "before_sha256": "8471cb3c7b43a093001cd754cacd02cec761d57379a1abba54ad345a1acc651a",
+      "after_sha256": "cd81805a48ee050d6be24d11cd1fe921d24380fcdadc80417b67513cdfb6298a",
+      "bytes_before": 1539,
+      "bytes_after": 1788
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\review.md",
+      "action": "write",
+      "before_sha256": "f080c42c14e2f50980961dbd838af871edf12b73b7e66cf702cfaaca15812813",
+      "after_sha256": "a106fb9a4d82941f9b6403173ef8b484969dc4756d0927e12345117dcf665786",
+      "bytes_before": 2486,
+      "bytes_after": 1781
+    },
+    {
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\verify.md",
+      "action": "write",
+      "before_sha256": "e81be136bfc2bc5649a4d94c946ce21dfa157fc31087bb2e6e8fa17948487c6d",
+      "after_sha256": "972e411212967356b08603c4142475275e43dcbc5048c94783f7c09868fb6191",
+      "bytes_before": 2106,
+      "bytes_after": 1612
+    }
+  ]
+}

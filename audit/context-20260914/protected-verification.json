@@ -1,0 +1,26 @@
+[
+  {
+    "Path": "C:\\Users\\VVeb1250\\.codex\\config.toml",
+    "Unchanged": false
+  },
+  {
+    "Path": "C:\\Users\\VVeb1250\\.codex\\AGENTS.md",
+    "Unchanged": true
+  },
+  {
+    "Path": "C:\\Users\\VVeb1250\\.codex\\hooks.json",
+    "Unchanged": true
+  },
+  {
+    "Path": "C:\\Users\\VVeb1250\\.claude\\settings.json",
+    "Unchanged": true
+  },
+  {
+    "Path": "C:\\Users\\VVeb1250\\.claude\\CLAUDE.md",
+    "Unchanged": true
+  },
+  {
+    "Path": "E:\\mental-model-relevance-eval\\MEMORY_BASE_M2D_GLOBAL_AGENT_RULES.md",
+    "Unchanged": true
+  }
+]

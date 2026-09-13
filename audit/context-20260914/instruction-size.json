@@ -1,0 +1,78 @@
+{
+  "measure": "whitespace-separated words, not tokens",
+  "files": [
+    {
+      "path": "skills/combo/SKILL.md",
+      "before_words": 924,
+      "after_words": 454
+    },
+    {
+      "path": "skills/combo/practices/context.md",
+      "before_words": 215,
+      "after_words": 443
+    },
+    {
+      "path": "skills/combo/workflows/business.md",
+      "before_words": 199,
+      "after_words": 208
+    },
+    {
+      "path": "skills/combo/workflows/content.md",
+      "before_words": 250,
+      "after_words": 216
+    },
+    {
+      "path": "skills/combo/workflows/debug.md",
+      "before_words": 528,
+      "after_words": 344
+    },
+    {
+      "path": "skills/combo/workflows/deliver.md",
+      "before_words": 442,
+      "after_words": 338
+    },
+    {
+      "path": "skills/combo/workflows/investigate.md",
+      "before_words": 301,
+      "after_words": 154
+    },
+    {
+      "path": "skills/combo/workflows/learning.md",
+      "before_words": 242,
+      "after_words": 191
+    },
+    {
+      "path": "skills/combo/workflows/media.md",
+      "before_words": 215,
+      "after_words": 186
+    },
+    {
+      "path": "skills/combo/workflows/plan.md",
+      "before_words": 393,
+      "after_words": 251
+    },
+    {
+      "path": "skills/combo/workflows/productivity.md",
+      "before_words": 231,
+      "after_words": 189
+    },
+    {
+      "path": "skills/combo/workflows/research.md",
+      "before_words": 219,
+      "after_words": 236
+    },
+    {
+      "path": "skills/combo/workflows/review.md",
+      "before_words": 359,
+      "after_words": 229
+    },
+    {
+      "path": "skills/combo/workflows/verify.md",
+      "before_words": 322,
+      "after_words": 215
+    }
+  ],
+  "before_words": 4840,
+  "after_words": 3654,
+  "limits": "Aggregate authored text only. Direct paths now also read context; some first-load paths grow. This does not measure input/output usage or quality."
+}

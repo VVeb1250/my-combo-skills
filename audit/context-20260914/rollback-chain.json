@@ -1,0 +1,14 @@
+{
+  "codex": {
+    "transactions": 2,
+    "restored_files": 31,
+    "passed": true,
+    "scope": "temporary copies only"
+  },
+  "claude": {
+    "transactions": 2,
+    "restored_files": 19,
+    "passed": true,
+    "scope": "temporary copies only"
+  }
+}

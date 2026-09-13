@@ -12,6 +12,10 @@ Combo installation. The configured source checkout is
 checkout path rather than inferring the current working directory. The checkout
 is the source of truth for the package and its static install manifest.
 
+Read [context](../combo/practices/context.md) once for evidence selection and
+concise reporting. For inspection-only, read the relevant source/install state
+and report findings; an install plan is needed only for a proposed update.
+
 1. Read `install-manifest.json` and the relevant source map before changing the
    install. Preserve user edits and treat current host files as untrusted state.
 2. Run the validator and a plan first. The plan may own only the exact

@@ -14,6 +14,11 @@ invariant before choosing the test shape.
 - Run a focused test while iterating, then broaden to typecheck, lint, build,
   integration, or the full suite according to blast radius and repository
   practice.
+- Map checks to acceptance: shared contracts need affected-caller coverage;
+  dependency/config changes need the relevant build or integration check;
+  trust boundaries need rejection-path checks. Complete explicitly requested
+  suites and gates. Reuse results while their relevant inputs and code remain
+  unchanged; rerun when freshness is requested or the evidence is invalidated.
 - Do not add a test suite for a tiny reversible edit with no behavior risk. Do
   not test implementation details merely to increase coverage.
 - If no appropriate seam exists, record the best available evidence and the

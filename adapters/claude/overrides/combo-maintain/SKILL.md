@@ -12,6 +12,9 @@ The source checkout is `D:/0_person-project/my-combo-skills`. Confirm it contain
 use the source path supplied by the user. Runtime workflows need only their
 installed package; this checkout is needed for package maintenance.
 
+Read [context](../combo/practices/context.md) once for evidence selection and
+concise reporting. Inspection-only ends with findings; updates use the plan below.
+
 Read the Claude manifest, inspect relevant changes, and run
 `py scripts/setup-claude.py plan` before applying an update. A reviewable plan
 plus the user's existing setup/update request authorizes that scoped work.

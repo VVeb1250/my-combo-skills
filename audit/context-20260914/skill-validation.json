@@ -1,0 +1,72 @@
+[
+  {
+    "skill": "combo",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-business",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-content",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-debug",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-deliver",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-investigate",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-learning",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-maintain",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-media",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-plan",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-productivity",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-research",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-review",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  },
+  {
+    "skill": "combo-verify",
+    "passed": false,
+    "output": "Traceback (most recent call last):\n  File \"C:\\Users\\VVeb1250\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'"
+  }
+]

@@ -1,41 +1,26 @@
 # Verify
 
-Use this path when the user asks to run checks, validate a build, or exercise a
-real user journey. The task ends with an observed verdict and its limits. Do not
-silently implement a fix during verification.
+Exercise the requested check or user journey and report an observed verdict.
+Verification-only does not authorize repair.
+Read [context](../practices/context.md) once for evidence selection and reporting.
 
-## Choose the check
+1. Identify requested coverage, revision, environment, fixture, and pass signal
+   tied to behavior or an invariant. Inspect existing scripts before choosing
+   commands.
+2. Choose the cheapest reliable check that meets that coverage: focused test,
+   typecheck, lint, build, API/integration, or E2E. If a full suite or broad gate
+   was requested, run it completely; focused checks may order work, not replace
+   requested coverage. Explicit fail-fast behavior remains valid.
+3. For UI/cross-component journeys, use the native browser skill and
+   [E2E](../practices/e2e.md). Keep secrets out of commands and captured artifacts.
+   External state changes require the journey's applicable authorization.
+4. Capture the actual completion signal, command, relevant output, revision,
+   and environment. A started command is not a pass. Reuse earlier evidence only
+   when it remains applicable and fresh verification was not requested.
+5. Classify pass, fail, inconclusive, or blocked by environment/access. On failure,
+   retain the first useful symptom and distinguish product, fixture, and setup
+   failures. An unrelated setup error does not establish a product defect.
 
-1. Identify the exact requested outcome, target revision, environment, fixture,
-   and any explicit stopping point. Inspect repository scripts and conventions
-   before inventing commands.
-2. Define a pass signal tied to user-visible behavior or a concrete invariant.
-   Pick the cheapest reliable check: focused test, typecheck, lint, build,
-   integration path, API request, or E2E journey.
-3. For a UI or cross-component journey, use the host's native browser skill and
-   its current session capabilities. Follow [E2E](../practices/e2e.md) for
-   fixtures, screenshots, console/network evidence, and environment diagnosis.
-4. Redact secrets from commands, outputs, screenshots, and captured artifacts.
-   Do not broaden scope or alter external state unless the requested journey
-   requires it and the action is authorized.
-
-## Run and classify
-
-- Run the selected check and capture the command, relevant output, revision, and
-  environment details needed to interpret it.
-- Classify the result as **pass**, **fail**, **inconclusive**, or **blocked by
-  environment/access**. A command that starts is not proof of a pass. A failed
-  unrelated setup step is not proof that the product behavior fails.
-- If the check fails, preserve the first useful symptom and identify whether it
-  points to a product defect, a test/fixture defect, or an environment issue.
-  Recommend [debug](debug.md) when repair or causal analysis is the next task.
-- If the user asked for a broad gate, begin with focused evidence and broaden
-  only as the actual change or journey warrants. Do not run a full suite merely
-  for ceremony.
-
-## Report
-
-State what was exercised, the observed verdict, evidence, checks not run, and
-the smallest next action. For E2E, include the user path and artifacts that
-make the result inspectable. Never fabricate a result for a check that could not
-run.
+Report what ran and its verdict, decisive evidence/artifacts, missing coverage,
+and any necessary next action. Suggest [debug](debug.md) for causal analysis or
+repair without silently changing the requested stopping point.
