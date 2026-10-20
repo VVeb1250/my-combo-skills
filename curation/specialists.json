@@ -452,7 +452,7 @@
       "primary_source": "sources/ecc/skills/unified-memory/SKILL.md",
       "immutable_commit": "5064474d4d762dc9640234a41617cccb79185cec",
       "decision": "ARCHIVE",
-      "reason": "Memory is governed by the named M2D authority and does not belong in combo runtime references.",
+      "reason": "Memory is governed by the host's configured memory rules and does not belong in combo runtime references.",
       "destination": null
     }
   ]

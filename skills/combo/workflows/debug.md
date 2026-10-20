@@ -30,6 +30,8 @@ trust or sensitive-data boundary. Lack of reproduction alone is not a blocker.
 - Convert the repro into a regression at the highest existing seam that detects
   this defect. If no suitable seam exists, keep integration/E2E evidence and
   identify the confidence gap. Use [tests](../practices/tests.md) for seam choices.
+  If you forced the red by mutating code or a fixture, diff against a pristine
+  copy to confirm the mutation landed before trusting the failure.
 - Make the smallest causal repair, preserving real callers' contracts. Retries,
   catches, or refactors need evidence that they address the cause.
 - Check the regression and original unminimized symptom; one run can cover both.

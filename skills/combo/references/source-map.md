@@ -68,4 +68,4 @@ workflow, memory, or orchestration owners.
 | `sources/ecc/skills/tdd-workflow/SKILL.md` | `5064474d4d76` | ARCHIVE | Competing broad workflow; combo practices and the Matt TDD owner cover behavioral testing selectively. |
 | `sources/ecc/skills/verification-loop/SKILL.md` | `5064474d4d76` | ARCHIVE | Competing verification workflow; combo verify workflow owns stopping-point and evidence decisions. |
 | `sources/ecc/skills/team-agent-orchestration/SKILL.md` | `5064474d4d76` | ARCHIVE | General orchestration is outside the specialist shelf and cannot become a hidden delegation path. |
-| `sources/ecc/skills/unified-memory/SKILL.md` | `5064474d4d76` | ARCHIVE | Memory is governed by the named M2D authority and does not belong in combo runtime references. |
+| `sources/ecc/skills/unified-memory/SKILL.md` | `5064474d4d76` | ARCHIVE | Memory is governed by the host's configured memory rules and does not belong in combo runtime references. |

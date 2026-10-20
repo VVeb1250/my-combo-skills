@@ -48,7 +48,7 @@ dependency is needed for this design.
 | Karpathy | Understand intent, observable success, causal/surgical scope | Routine decisions proceed from evidence; preserve the complete user requirement |
 | Ponytail | Challenge unnecessary complexity before and after a change | Preserve proven design, safety, accessibility, and requested extensibility; no code golf |
 | Matt | Workflow shape, decision exploration, behavioral TDD, spec/standards review, context boundaries | Borrow ask-matt's paths and on-ramps; route automatically; remove mandatory interviews, tracker setup, commits, and fanout |
-| ECC | Engineering specialists plus research, content, commercial operations, media, and productivity methods | Consult relevant source methods, adapt example companies/thresholds/personas, and keep native tools and M2D authoritative |
+| ECC | Engineering specialists plus research, content, commercial operations, media, and productivity methods | Consult relevant source methods, adapt example companies/thresholds/personas, and keep native tools and the host's configured memory rules authoritative |
 
 Role ownership applies to knowledge/process, not branding in the user's normal
 output. A response should describe work and evidence rather than reciting packs.
@@ -143,8 +143,8 @@ Alternate memory systems, hooks, installers, orchestration frameworks, and
 personas remain source knowledge for explicit design or integration requests.
 Their defaults never silently replace the host or user's authority. Examples of
 companies, metrics, author voice, escalation chains, and multi-session learning
-workspaces must be adapted to the actual request. Existing M2D rules remain
-the authority for personal memory. Original-reference coverage is distinct from
+workspaces must be adapted to the actual request. The host's configured memory rules
+remain the authority for personal memory. Original-reference coverage is distinct from
 semantic review and from successful execution in the installed host.
 
 Six noncoding workflows turn the library into usable task paths: research
@@ -240,7 +240,7 @@ user's current Claude main model, effort, and permissions.
 Retire only the overlapping ECC, ECC hubs, Matt plugin discovery and the old
 multi-model-orchestrator skill. Keep original plugin/skill files and unrelated
 utilities. Claude has its own configured memory authority; adapt navigation
-guidance to that host instead of importing Codex's M2D policy. Preserve all
+guidance to that host instead of importing another host's memory policy. Preserve all
 unowned CLAUDE.md bytes and settings semantics, including user memory hooks.
 
 Reuse the transaction/receipt/rollback engine with a separate Claude manifest.

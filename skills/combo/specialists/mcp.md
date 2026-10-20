@@ -44,7 +44,14 @@ const input = z.object({ query: z.string().min(1).max(200) });
 - Pin the SDK version, review release notes before upgrades, and run a client
   handshake plus one success and one validation-error call after transport or
   registration changes.
+- Pin MCP server packages and images in client configs (`.mcp.json` and
+  equivalents) to an exact version or image digest. `@latest`, dist-tags, bare
+  names, and ranges let different code run after the config was reviewed. Report
+  that as a review finding, not proof of compromise, and do not run a config's
+  command to check it.
 - Keep capability descriptions short and precise. They are part of the model's
   decision surface, so name side effects and required arguments clearly.
 
 Source: ECC `mcp-server-patterns`, pinned and mapped in [source-map.md](../references/source-map.md).
+The package-pinning bullet is added by Combo, informed by ECC `mcp-dependency-review`
+(newer than the pin, not mapped).

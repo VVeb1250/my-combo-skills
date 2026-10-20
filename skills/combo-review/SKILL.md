@@ -1,7 +1,7 @@
 ---
 name: combo-review
 description: >
-  Review code or changes for requirement fidelity and implementation risks.
+  Review code, a diff, a branch, or a security concern for requirement fidelity and implementation risks without editing. Use when asked to review or audit changes; running tests or journeys is combo-verify.
 ---
 
 Read [review](../combo/workflows/review.md) and complete the task at the user's

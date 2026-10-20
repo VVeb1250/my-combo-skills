@@ -10,7 +10,9 @@ evidence selection and reporting.
    and conventions. Cover the requested scope even when early files look clean.
 3. Evaluate requirement fidelity (missing, incompatible, partial, or extra
    behavior) and implementation quality (correctness, error boundaries, data,
-   concurrency, security, and maintainability) in one impact ranking.
+   concurrency, security, and maintainability) in one impact ranking. When
+   volume or concurrency matters, state the load assumed (from the README or
+   deploy config) and judge scale against it.
 4. For each candidate finding, establish location -> reachable trigger ->
    consequence -> evidence -> smallest remedy. Inspect guards and callers that
    could invalidate it; use a focused non-mutating probe when useful.

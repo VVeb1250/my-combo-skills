@@ -5,7 +5,8 @@ in terms of public behavior, an API contract, a user journey, or a meaningful
 invariant before choosing the test shape.
 
 - Prefer the highest existing seam that can detect the real behavior. Add a new
-  seam only when the existing surface cannot make the result observable.
+  seam only when the existing surface cannot make the result observable. When
+  proposing seams, note for each what it catches and what it misses.
 - Use a focused red-green loop for new behavior and demonstrated regressions
   when it gives useful feedback. Keep the test at the call chain where the bug
   actually occurs; a shallow test can give false confidence.

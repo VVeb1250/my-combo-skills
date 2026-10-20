@@ -1,6 +1,6 @@
 ---
 name: combo-review
-description: Review code or changes for requirement fidelity and implementation risks.
+description: Review code, a diff, a branch, or a security concern for requirement fidelity and implementation risks without editing. Use when asked to review or audit changes; running tests or journeys is combo-verify.
 disable-model-invocation: false
 user-invocable: true
 ---

@@ -5,7 +5,8 @@ layers, retries, or a broad refactor, or when the user asks for simplification.
 The goal is a smaller maintainable design that still meets the full requirement.
 
 - Before adding code, check existing code, the standard library, native
-  platform facilities, and installed dependencies in that order.
+  platform facilities, and installed dependencies in that order. A project's
+  own component or helper beats a native or standard-library equivalent.
 - Challenge single-use wrappers, dead flexibility, unused parameters,
   speculative extension points, and abstractions with no demonstrated second
   use when evidence shows they are unnecessary. Keep a cohesive module that
@@ -15,7 +16,8 @@ The goal is a smaller maintainable design that still meets the full requirement.
   what the task or the new change makes relevant.
 - Preserve validation, data-loss protection, security, accessibility, explicit
   user requirements, and proven adapters. Fewer lines is not a reason to remove
-  a necessary boundary.
+  a necessary boundary. Code that is moved or merged keeps its validation and
+  error handling.
 - Do not perform unrelated cleanup or enforce a line-count target. Match the
   repository's style when it does not conflict with correctness.
 

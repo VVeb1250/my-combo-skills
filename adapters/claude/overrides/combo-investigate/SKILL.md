@@ -1,6 +1,6 @@
 ---
 name: combo-investigate
-description: Trace code or compare technical options without changing the repository.
+description: Trace how existing code works or compare technical options, read-only. Use for explanations and option comparisons about this codebase; not for failures, edits, or market and literature research.
 disable-model-invocation: false
 user-invocable: true
 ---
