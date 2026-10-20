@@ -1,0 +1,1136 @@
+[
+  {
+    "case": "neg-translate-th",
+    "arm": "policy",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "Thank you for helping review my work.",
+    "result_subtype": "success",
+    "cost_usd": 0.0870198,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-translate-th",
+    "arm": "description-only",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "\"Thank you for helping review my work.\"",
+    "result_subtype": "success",
+    "cost_usd": 0.0696338,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-typo-inline",
+    "arm": "policy",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Edit"
+    ],
+    "final_text": "Done — updated the docstring in `src/quantity.py`.",
+    "result_subtype": "success",
+    "cost_usd": 0.1050702,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-typo-inline",
+    "arm": "description-only",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Edit"
+    ],
+    "final_text": "Done — updated the docstring in src/quantity.py:5.",
+    "result_subtype": "success",
+    "cost_usd": 0.085504,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-fact-http",
+    "arm": "policy",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "HTTP 409 **Conflict** means the request couldn't be completed because it conflicts with the current state of the resource on the server.\n\nCommon causes:\n- **Edit conflicts**: Two clients try to update the same resource concurrently (e.g., optimistic locking/version mismatch — your `If-Match`/ETag or version number is stale).\n- **Duplicate creation**: Trying to create a resource that already exists (e.g., a username or unique key that's taken).\n- **State conflicts**: The action is invalid given t",
+    "result_subtype": "success",
+    "cost_usd": 0.08947179999999999,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-fact-http",
+    "arm": "description-only",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "HTTP status **409 Conflict** means the request couldn't be completed because it conflicts with the current state of the resource on the server.\n\nCommon causes:\n- Trying to create a resource that already exists (e.g., duplicate username/email on signup).\n- Concurrent edits — someone else modified the resource between your read and your write (optimistic locking/versioning conflict).\n- Trying to delete a resource that's in a state that prevents deletion (e.g., a folder that's not empty).\n- A PUT/P",
+    "result_subtype": "success",
+    "cost_usd": 0.0719078,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-chat-th",
+    "arm": "policy",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "สวัสดีครับ เข้าใจเลยว่าเหนื่อย 😔 — อ้าว ไม่พูดเรื่องอิโมจิก็ได้ครับ\n\nวันนี้มีอะไรให้ช่วยผ่อนแรงบ้างไหม หรืออยากพักก่อนก็ได้นะครับ ถ้ามีงานโค้ดหรือเรื่องที่ค้างอยู่ บอกมาได้เลย จะช่วยจัดการให้เบาที่สุด",
+    "result_subtype": "success",
+    "cost_usd": 0.0892898,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-chat-th",
+    "arm": "description-only",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "สวัสดีค่ะ/ครับ เหนื่อยมาทั้งวันเลยนะ พักผ่อนบ้างน้า ☺️ มีอะไรให้ช่วยไหม หรือแค่อยากพักก่อนก็ได้นะ",
+    "result_subtype": "success",
+    "cost_usd": 0.0708638,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-regex",
+    "arm": "policy",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "`^\\d{4}-\\d{2}-\\d{2}$`\n\nMatches `YYYY-MM-DD` like `2026-10-21`. Note it doesn't validate real calendar ranges (e.g. `2026-13-99` would still match) — just the digit pattern. If you need actual date validity, use a date-parsing library instead.",
+    "result_subtype": "success",
+    "cost_usd": 0.08796380000000001,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-regex",
+    "arm": "description-only",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "Here's a regex for ISO 8601 dates (`YYYY-MM-DD`):\n\n```\n^\\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])$\n```\n\n- `\\d{4}` — 4-digit year\n- `(0[1-9]|1[0-2])` — month 01–12\n- `(0[1-9]|[12]\\d|3[01])` — day 01–31\n\nNote this validates format/ranges but not month-specific day limits (e.g. it'll accept `2026-02-30`). If you need full calendar validity, better to parse with a date library rather than regex alone.",
+    "result_subtype": "success",
+    "cost_usd": 0.07157179999999999,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-concept-brief",
+    "arm": "policy",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none",
+      "combo-learning"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "A closure is a function that retains access to the variables from its enclosing lexical scope even after that outer function has finished executing. This lets the inner function \"remember\" and continue using those variables, which is commonly used for data privacy, memoization, and creating factory functions.",
+    "result_subtype": "success",
+    "cost_usd": 0.08764179999999999,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "neg-concept-brief",
+    "arm": "description-only",
+    "kind": "negative",
+    "expected": "none",
+    "acceptable": [
+      "none",
+      "combo-learning"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "A closure is a function that retains access to variables from its enclosing lexical scope even after that outer scope has finished executing. This lets the function \"remember\" and manipulate state from where it was defined, rather than from where it's called.",
+    "result_subtype": "success",
+    "cost_usd": 0.0701098,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "pos-debug-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "combo-debug",
+    "tools_before_skill": [],
+    "final_text": "I'll invoke the debugging skill for this task.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "pos-debug-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Read",
+      "Grep",
+      "Edit"
+    ],
+    "final_text": "Fixed `src\\quantity.py:7` — it now only defaults to `1` when `value is None`, so `0` (and other falsy-but-present values) pass through unchanged. Existing tests (`normalize_quantity(None) == 1`, `normalize_quantity(4) == 4`) still hold, and `normalize_quantity(0) == 0` now works correctly.",
+    "result_subtype": "success",
+    "cost_usd": 0.0970788,
+    "pass": false,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "pos-debug-th",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "combo-debug",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "pos-debug-th",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Read",
+      "Read",
+      "Edit"
+    ],
+    "final_text": "Fix: `value or 1` ตีความ `0` เป็นค่า falsy เลย fallback ไปที่ 1 ด้วย ต้องเช็กว่า `value is None` เท่านั้น",
+    "result_subtype": "error_max_turns",
+    "cost_usd": 0.0975058,
+    "pass": false,
+    "seconds": 17.1,
+    "timed_out": false
+  },
+  {
+    "case": "pos-deliver-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-deliver",
+    "acceptable": [
+      "combo-deliver"
+    ],
+    "routed": "combo-deliver",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "pos-deliver-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-deliver",
+    "acceptable": [
+      "combo-deliver"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Read",
+      "Read",
+      "Edit",
+      "Edit"
+    ],
+    "final_text": "",
+    "result_subtype": "error_max_turns",
+    "cost_usd": 0.10380380000000002,
+    "pass": false,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "pos-plan-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-plan",
+    "acceptable": [
+      "combo-plan"
+    ],
+    "routed": "combo-plan",
+    "tools_before_skill": [
+      "Glob",
+      "Read",
+      "Read"
+    ],
+    "final_text": "This is plan-only architecture work, so I'll invoke the matching skill before proposing anything.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "pos-plan-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-plan",
+    "acceptable": [
+      "combo-plan"
+    ],
+    "routed": "combo-plan",
+    "tools_before_skill": [],
+    "final_text": "I'll use the planning skill to develop this based on the actual parser code.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": null,
+    "timed_out": false
+  },
+  {
+    "case": "pos-plan-th",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-plan",
+    "acceptable": [
+      "combo-plan"
+    ],
+    "routed": "combo-plan",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 6.8,
+    "timed_out": false
+  },
+  {
+    "case": "pos-plan-th",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-plan",
+    "acceptable": [
+      "combo-plan"
+    ],
+    "routed": "combo-plan",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 7.1,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [
+      "Glob"
+    ],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 8.5,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read"
+    ],
+    "final_text": "Found the issue in `src/quantity.py:4-7`.\n\n**Bug:** `value or 1` treats *any* falsy value as missing, not just a genuinely missing (`None`) value. Per the docstring, the default should only apply when the input is actually missing, but `or` also triggers for:\n\n- `normalize_quantity(0)` → returns `1` (wrong — 0 is a valid, present quantity, not a missing one)\n- `normalize_quantity(0.0)` → returns `1` (same issue)\n- `normalize_quantity(False)` → returns `1`\n- `normalize_quantity(\"\")` → returns `1`",
+    "result_subtype": "success",
+    "cost_usd": 0.0931516,
+    "pass": false,
+    "seconds": 18.6,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-th",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.0,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-th",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 8.9,
+    "timed_out": false
+  },
+  {
+    "case": "pos-verify-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-verify",
+    "acceptable": [
+      "combo-verify"
+    ],
+    "routed": "combo-verify",
+    "tools_before_skill": [],
+    "final_text": "I'll invoke the combo-verify skill since this is a test-running/verification task.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 6.2,
+    "timed_out": false
+  },
+  {
+    "case": "pos-verify-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-verify",
+    "acceptable": [
+      "combo-verify"
+    ],
+    "routed": "combo-verify",
+    "tools_before_skill": [
+      "Glob",
+      "Read",
+      "Read"
+    ],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 14.5,
+    "timed_out": false
+  },
+  {
+    "case": "pos-verify-th",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-verify",
+    "acceptable": [
+      "combo-verify"
+    ],
+    "routed": "combo-verify",
+    "tools_before_skill": [],
+    "final_text": "String literal \"รันเทสต์ทั้งหมดแล้วรายงานผลว่าผ่านหรือไม่\" (run all tests and report results) matches combo-verify's scope, so I'll invoke that skill.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 8.2,
+    "timed_out": false
+  },
+  {
+    "case": "pos-verify-th",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-verify",
+    "acceptable": [
+      "combo-verify"
+    ],
+    "routed": "combo-verify",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 6.1,
+    "timed_out": false
+  },
+  {
+    "case": "pos-investigate-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [
+      "Grep"
+    ],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 8.2,
+    "timed_out": false
+  },
+  {
+    "case": "pos-investigate-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Read",
+      "Read"
+    ],
+    "final_text": "## `normalize_quantity` (`src/quantity.py:4-7`)\n\n```python\ndef normalize_quantity(value):\n    return value or 1\n```\n\nIt takes a raw `value` and returns `1` whenever `value` is falsy, otherwise returns `value` unchanged. In Python, `or` falls through to its right-hand operand for *any* falsy left operand — not just `None`. That includes `0`, `0.0`, `\"\"`, `[]`, and `False`, in addition to `None`.\n\nThe docstring says it should \"use one as the default only when the input is actually missing,\" but th",
+    "result_subtype": "success",
+    "cost_usd": 0.09073439999999999,
+    "pass": false,
+    "seconds": 16.6,
+    "timed_out": false
+  },
+  {
+    "case": "pos-research-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-research",
+    "acceptable": [
+      "combo-research"
+    ],
+    "routed": "combo-research",
+    "tools_before_skill": [],
+    "final_text": "I'll route this to the research skill since it's asking for a literature-backed evidence summary.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 18.4,
+    "timed_out": false
+  },
+  {
+    "case": "pos-research-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-research",
+    "acceptable": [
+      "combo-research"
+    ],
+    "routed": "combo-research",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.6,
+    "timed_out": false
+  },
+  {
+    "case": "pos-content-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-content",
+    "acceptable": [
+      "combo-content"
+    ],
+    "routed": "combo-content",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 3.4,
+    "timed_out": false
+  },
+  {
+    "case": "pos-content-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-content",
+    "acceptable": [
+      "combo-content"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "Here's a draft LinkedIn post:\n\n---\n\n🎉 **New Feature Alert: Quantity Validation**\n\nWe just shipped quantity validation in our inventory tool! 📦\n\nNo more overselling, no more mismatched counts. The system now catches quantity errors in real time — before they turn into fulfillment headaches or costly reorders.\n\n✅ Instant validation on stock entries and updates\n✅ Fewer manual errors\n✅ More confidence in your numbers, every time\n\nSmoother operations start with cleaner data. Give it a try and let us ",
+    "result_subtype": "success",
+    "cost_usd": 0.0761938,
+    "pass": false,
+    "seconds": 13.0,
+    "timed_out": false
+  },
+  {
+    "case": "pos-learning-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-learning",
+    "acceptable": [
+      "combo-learning"
+    ],
+    "routed": "combo-learning",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.9,
+    "timed_out": false
+  },
+  {
+    "case": "pos-learning-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-learning",
+    "acceptable": [
+      "combo-learning"
+    ],
+    "routed": "combo-learning",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.2,
+    "timed_out": false
+  },
+  {
+    "case": "pos-learning-th",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-learning",
+    "acceptable": [
+      "combo-learning"
+    ],
+    "routed": "combo-learning",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.7,
+    "timed_out": false
+  },
+  {
+    "case": "pos-learning-th",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-learning",
+    "acceptable": [
+      "combo-learning"
+    ],
+    "routed": "combo-learning",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.0,
+    "timed_out": false
+  },
+  {
+    "case": "pos-business-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-business",
+    "acceptable": [
+      "combo-business"
+    ],
+    "routed": "combo-business",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.8,
+    "timed_out": false
+  },
+  {
+    "case": "pos-business-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-business",
+    "acceptable": [
+      "combo-business"
+    ],
+    "routed": "combo-business",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.3,
+    "timed_out": false
+  },
+  {
+    "case": "pos-media-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-media",
+    "acceptable": [
+      "combo-media"
+    ],
+    "routed": "combo-media",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.1,
+    "timed_out": false
+  },
+  {
+    "case": "pos-media-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-media",
+    "acceptable": [
+      "combo-media"
+    ],
+    "routed": "combo-media",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.0,
+    "timed_out": false
+  },
+  {
+    "case": "pos-productivity-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-productivity",
+    "acceptable": [
+      "combo-productivity"
+    ],
+    "routed": "agent-handoff-spec",
+    "tools_before_skill": [],
+    "final_text": "Turning these notes into a structured handoff for another agent to pick up — this matches the agent-handoff-spec skill.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": false,
+    "seconds": 5.6,
+    "timed_out": false
+  },
+  {
+    "case": "pos-productivity-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-productivity",
+    "acceptable": [
+      "combo-productivity"
+    ],
+    "routed": "agent-handoff-spec",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": false,
+    "seconds": 3.6,
+    "timed_out": false
+  },
+  {
+    "case": "pos-maintain",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-maintain",
+    "acceptable": [
+      "combo-maintain"
+    ],
+    "routed": "combo-maintain",
+    "tools_before_skill": [],
+    "final_text": "I'll invoke the combo-maintain skill to check and update the Combo skills installation.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 3.9,
+    "timed_out": false
+  },
+  {
+    "case": "pos-maintain",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-maintain",
+    "acceptable": [
+      "combo-maintain"
+    ],
+    "routed": "combo-maintain",
+    "tools_before_skill": [],
+    "final_text": "I'll use the combo-maintain skill, which handles installation health checks and updates for Combo.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.4,
+    "timed_out": false
+  },
+  {
+    "case": "conf-investigate-research",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate",
+      "combo-research"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.2,
+    "timed_out": false
+  },
+  {
+    "case": "conf-investigate-research",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate",
+      "combo-research"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read",
+      "Read"
+    ],
+    "final_text": "There's no cache here at all — `src/quantity.py` is a two-line truthiness check (`value or 1`), with no Redis client, no in-process cache, nothing to parse that's expensive. Caching it would be pure overhead either way: an in-process dict lookup (~100ns) costs about what calling the function costs, and a Redis round trip (~0.1–1ms) is three to four orders of magnitude slower than just recomputing. So for this specific function, the right answer is neither — don't cache it.\n\nThe general tradeoff,",
+    "result_subtype": "success",
+    "cost_usd": 0.32453679999999996,
+    "pass": false,
+    "seconds": 68.9,
+    "timed_out": false
+  },
+  {
+    "case": "conf-review-verify",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review",
+      "combo-verify"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "I don't have any change in front of me to review — this session just started, the working directory isn't a git repo, and no diff, file, or PR has been shared yet.\n\nCould you point me to what you mean? For example:\n- A specific file path or diff/patch content\n- A GitHub PR URL or number (if there's a remote repo)\n- Paste the code change directly\n\nOnce I can see the actual change, I can review it for correctness and risk (or use `/code-review` for a more structured pass).",
+    "result_subtype": "success",
+    "cost_usd": 0.0897318,
+    "pass": false,
+    "seconds": 8.2,
+    "timed_out": false
+  },
+  {
+    "case": "conf-review-verify",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review",
+      "combo-verify"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "I don't see any change in our conversation yet — no diff, file, PR, or description has been shared. Could you point me to the change you mean (a file path, PR link, or paste the diff)?",
+    "result_subtype": "success",
+    "cost_usd": 0.0699738,
+    "pass": false,
+    "seconds": 5.0,
+    "timed_out": false
+  },
+  {
+    "case": "conf-plan-deliver",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-deliver",
+    "acceptable": [
+      "combo-deliver",
+      "combo-plan"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read",
+      "Read"
+    ],
+    "final_text": "The working directory only has `src\\quantity.py` (7 lines) and its test — no parsing logic, just `return value or 1`. There's nothing expensive or repeated to memoize here, so caching would be pure overhead with no real benefit.\n\nWhat I did find: that line has a real bug — `normalize_quantity(0)` returns `1` instead of `0`, since `0 or 1` evaluates falsy. The file comment even flags it as a seeded defect. Fix would be a one-liner: `return 1 if value is None else value`. Want me to apply that ins",
+    "result_subtype": "success",
+    "cost_usd": 0.30685300000000004,
+    "pass": false,
+    "seconds": 36.4,
+    "timed_out": false
+  },
+  {
+    "case": "conf-plan-deliver",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-deliver",
+    "acceptable": [
+      "combo-deliver",
+      "combo-plan"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read",
+      "Read"
+    ],
+    "final_text": "No caching needed here, and I didn't add any.\n\n`src/quantity.py` is the only candidate file in the repo (the glob found just this module and its test), and it's a one-line truthiness check: `return value or 1`. There's nothing to cache — no expensive computation, I/O, recursion, or repeated subparsing. Worse, wrapping it in something like `functools.lru_cache` would actively break it: `value` is untyped, and unhashable falsy inputs like `[]` or `{}` (which currently return `1` correctly) would r",
+    "result_subtype": "success",
+    "cost_usd": 0.32059210000000005,
+    "pass": false,
+    "seconds": 65.6,
+    "timed_out": false
+  },
+  {
+    "case": "conf-debug-investigate",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug",
+      "combo-investigate"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Read"
+    ],
+    "final_text": "`normalize_quantity` returns `value or 1` — and in Python, `0` is falsy, so `0 or 1` evaluates to `1`. The function conflates \"missing\" (`None`) with \"falsy\" (`0`, `\"\"`, etc.), but the docstring says it should only default when the input is *actually missing*. Since `0` is a legitimate quantity but still falsy, it gets incorrectly replaced by `1`.\n\nThe file even labels this a \"Deliberately seeded defect for the workflow eval\" (quantity.py:6), so it's an intentionally planted bug rather than an o",
+    "result_subtype": "success",
+    "cost_usd": 0.1068138,
+    "pass": false,
+    "seconds": 13.1,
+    "timed_out": false
+  },
+  {
+    "case": "conf-debug-investigate",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug",
+      "combo-investigate"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Read"
+    ],
+    "final_text": "`return value or 1` relies on Python/JS-style truthiness: `0` is falsy, so `value or 1` evaluates `value` as false and falls through to `1`, even though `0` is a legitimate, non-missing quantity. The function conflates \"missing\" (`None`, not passed) with \"falsy\" (`0`, `\"\"`, etc.), so any real zero gets silently replaced by the default.",
+    "result_subtype": "success",
+    "cost_usd": 0.08517119999999999,
+    "pass": false,
+    "seconds": 9.0,
+    "timed_out": false
+  },
+  {
+    "case": "conf-learning-code",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-learning",
+    "acceptable": [
+      "none",
+      "combo-learning"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "Binary search finds a target value in a **sorted** array by repeatedly halving the search space.\n\n**How it works:**\n1. Look at the middle element of the current range.\n2. If it equals the target, done.\n3. If the target is smaller, repeat the search in the left half.\n4. If the target is larger, repeat the search in the right half.\n5. Repeat until the range is empty (not found) or the target is found.\n\nEach step eliminates half the remaining elements, giving **O(log n)** time complexity, versus O(",
+    "result_subtype": "success",
+    "cost_usd": 0.0948518,
+    "pass": true,
+    "seconds": 12.3,
+    "timed_out": false
+  },
+  {
+    "case": "conf-learning-code",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-learning",
+    "acceptable": [
+      "none",
+      "combo-learning"
+    ],
+    "routed": "none",
+    "tools_before_skill": [],
+    "final_text": "## How binary search works\n\nBinary search finds a target value in a **sorted** array efficiently by repeatedly halving the search space:\n\n1. Look at the middle element of the current range.\n2. If it equals the target, you're done.\n3. If the target is smaller, repeat the search in the left half.\n4. If the target is larger, repeat the search in the right half.\n5. Repeat until found or the range is empty.\n\nBecause the search space is cut in half each step, it runs in **O(log n)** time, much faster ",
+    "result_subtype": "success",
+    "cost_usd": 0.0740258,
+    "pass": true,
+    "seconds": 9.4,
+    "timed_out": false
+  },
+  {
+    "case": "conf-security-review",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [
+      "Glob",
+      "Read"
+    ],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 16.2,
+    "timed_out": false
+  },
+  {
+    "case": "conf-security-review",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read"
+    ],
+    "final_text": "`src/quantity.py` is a 4-line stub — no injection, deserialization, or crypto issues since there's no I/O, parsing of untrusted formats, or external calls. The one real issue:\n\n**Logic flaw treating falsy values as missing** (`src/quantity.py:7`)\n`value or 1` doesn't distinguish \"missing\" from legitimate falsy values — `0`, `False`, `\"\"`, `[]`, `{}` are all silently replaced with `1`. The docstring/comment even flags this as an intentionally seeded defect. This isn't a classic OWASP vulnerabilit",
+    "result_subtype": "success",
+    "cost_usd": 0.0903148,
+    "pass": false,
+    "seconds": 16.7,
+    "timed_out": false
+  },
+  {
+    "case": "conf-cross",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo",
+    "acceptable": [
+      "combo",
+      "combo-research",
+      "combo-plan"
+    ],
+    "routed": "combo",
+    "tools_before_skill": [],
+    "final_text": "This task spans research, planning, and content drafting — I'll start with the combo router to pick the right primary workflow.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 6.9,
+    "timed_out": false
+  },
+  {
+    "case": "conf-cross",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo",
+    "acceptable": [
+      "combo",
+      "combo-research",
+      "combo-plan"
+    ],
+    "routed": "combo",
+    "tools_before_skill": [],
+    "final_text": "I'll start by invoking the combo router since this task spans research, planning, and content-writing workflows.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 8.6,
+    "timed_out": false
+  }
+]

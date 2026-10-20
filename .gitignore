@@ -4,3 +4,4 @@ audit/private/
 sources/
 __pycache__/
 .venv/
+evals/routing/results/

@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "suite": "combo-routing-probe",
+  "fixture": "evals/v2/fixtures/bug-zero",
+  "purpose": "Measure which Combo entry (or none) Claude Code selects from a natural prompt, with and without the global CLAUDE.md routing paragraph.",
+  "cases": [
+    {
+      "id": "neg-translate-th",
+      "kind": "negative",
+      "prompt": "แปลเป็นอังกฤษ: ขอบคุณที่ช่วยตรวจงานให้นะครับ",
+      "expected": "none",
+      "acceptable": [
+        "none"
+      ]
+    },
+    {
+      "id": "neg-typo-inline",
+      "kind": "negative",
+      "prompt": "In src/quantity.py the docstring says 'Use one as the default only when the input is actually missing.' Change 'Use one' to 'Use 1'.",
+      "expected": "none",
+      "acceptable": [
+        "none"
+      ],
+      "note": "tiny understood edit stays inline"
+    },
+    {
+      "id": "neg-fact-http",
+      "kind": "negative",
+      "prompt": "What does HTTP status 409 mean?",
+      "expected": "none",
+      "acceptable": [
+        "none"
+      ]
+    },
+    {
+      "id": "neg-chat-th",
+      "kind": "negative",
+      "prompt": "สวัสดี วันนี้เหนื่อยจังเลย",
+      "expected": "none",
+      "acceptable": [
+        "none"
+      ]
+    },
+    {
+      "id": "neg-regex",
+      "kind": "negative",
+      "prompt": "Give me a regex that matches ISO 8601 dates like 2026-10-21.",
+      "expected": "none",
+      "acceptable": [
+        "none"
+      ]
+    },
+    {
+      "id": "neg-concept-brief",
+      "kind": "negative",
+      "prompt": "In two sentences, what is a closure in JavaScript?",
+      "expected": "none",
+      "acceptable": [
+        "none",
+        "combo-learning"
+      ],
+      "note": "brief definitions may stay inline; a lesson entry is tolerated"
+    },
+    {
+      "id": "pos-debug-en",
+      "kind": "positive",
+      "prompt": "A quantity of 0 is being treated as missing in src/quantity.py. Find out why and fix it.",
+      "expected": "combo-debug",
+      "acceptable": [
+        "combo-debug"
+      ]
+    },
+    {
+      "id": "pos-debug-th",
+      "kind": "positive",
+      "prompt": "ฟังก์ชัน normalize_quantity คืนค่า 1 ทั้งที่ส่ง 0 เข้าไป ช่วยหาสาเหตุและแก้ให้หน่อย",
+      "expected": "combo-debug",
+      "acceptable": [
+        "combo-debug"
+      ]
+    },
+    {
+      "id": "pos-deliver-en",
+      "kind": "positive",
+      "prompt": "Add an optional max_quantity argument to normalize_quantity that clamps the result, with tests.",
+      "expected": "combo-deliver",
+      "acceptable": [
+        "combo-deliver"
+      ]
+    },
+    {
+      "id": "pos-plan-en",
+      "kind": "positive",
+      "prompt": "Plan how we should add per-warehouse quantity limits to this parser. Do not write code yet.",
+      "expected": "combo-plan",
+      "acceptable": [
+        "combo-plan"
+      ],
+      "confusable_with": [
+        "combo-deliver"
+      ]
+    },
+    {
+      "id": "pos-plan-th",
+      "kind": "positive",
+      "prompt": "ช่วยวางแผนการย้าย quantity parser ไปเป็นโมดูลแยก ยังไม่ต้องเขียนโค้ด",
+      "expected": "combo-plan",
+      "acceptable": [
+        "combo-plan"
+      ],
+      "confusable_with": [
+        "combo-deliver"
+      ]
+    },
+    {
+      "id": "pos-review-en",
+      "kind": "positive",
+      "prompt": "Review the code in src/ for correctness problems and missing edge cases.",
+      "expected": "combo-review",
+      "acceptable": [
+        "combo-review"
+      ]
+    },
+    {
+      "id": "pos-review-th",
+      "kind": "positive",
+      "prompt": "ช่วยรีวิวโค้ดใน src/ ว่ามีจุดเสี่ยงอะไรบ้าง",
+      "expected": "combo-review",
+      "acceptable": [
+        "combo-review"
+      ]
+    },
+    {
+      "id": "pos-verify-en",
+      "kind": "positive",
+      "prompt": "Run the tests in this repo and tell me whether they pass.",
+      "expected": "combo-verify",
+      "acceptable": [
+        "combo-verify"
+      ]
+    },
+    {
+      "id": "pos-verify-th",
+      "kind": "positive",
+      "prompt": "รันเทสต์ทั้งหมดแล้วรายงานผลว่าผ่านหรือไม่",
+      "expected": "combo-verify",
+      "acceptable": [
+        "combo-verify"
+      ]
+    },
+    {
+      "id": "pos-investigate-en",
+      "kind": "positive",
+      "prompt": "Explain how normalize_quantity works and which tests cover it. Do not change anything.",
+      "expected": "combo-investigate",
+      "acceptable": [
+        "combo-investigate"
+      ]
+    },
+    {
+      "id": "pos-research-en",
+      "kind": "positive",
+      "prompt": "What does the research literature say about the effectiveness of spaced repetition for adult learners?",
+      "expected": "combo-research",
+      "acceptable": [
+        "combo-research"
+      ]
+    },
+    {
+      "id": "pos-content-en",
+      "kind": "positive",
+      "prompt": "Write a short LinkedIn post announcing the new quantity validation feature for our inventory tool.",
+      "expected": "combo-content",
+      "acceptable": [
+        "combo-content"
+      ]
+    },
+    {
+      "id": "pos-learning-en",
+      "kind": "positive",
+      "prompt": "Teach me how Python generators work, with a few exercises I can try.",
+      "expected": "combo-learning",
+      "acceptable": [
+        "combo-learning"
+      ]
+    },
+    {
+      "id": "pos-learning-th",
+      "kind": "positive",
+      "prompt": "สอนฉันเรื่อง dependency injection พร้อมแบบฝึกหัด",
+      "expected": "combo-learning",
+      "acceptable": [
+        "combo-learning"
+      ]
+    },
+    {
+      "id": "pos-business-en",
+      "kind": "positive",
+      "prompt": "Monthly demand was 120, 135, 110, 150 and 160 units with a 2-week lead time. How much safety stock should I hold and when should I reorder?",
+      "expected": "combo-business",
+      "acceptable": [
+        "combo-business"
+      ]
+    },
+    {
+      "id": "pos-media-en",
+      "kind": "positive",
+      "prompt": "Help me plan the color grade and camera movement for a moody 20-second product teaser.",
+      "expected": "combo-media",
+      "acceptable": [
+        "combo-media"
+      ]
+    },
+    {
+      "id": "pos-productivity-en",
+      "kind": "positive",
+      "prompt": "Turn these rough notes into a handoff another agent can execute: parser fixed, tests pending, deploy blocked on credentials.",
+      "expected": "combo-productivity",
+      "acceptable": [
+        "combo-productivity"
+      ]
+    },
+    {
+      "id": "pos-maintain",
+      "kind": "positive",
+      "prompt": "Check that my Combo skills installation is healthy and update it if needed.",
+      "expected": "combo-maintain",
+      "acceptable": [
+        "combo-maintain"
+      ],
+      "names_product": true
+    },
+    {
+      "id": "conf-investigate-research",
+      "kind": "confusable",
+      "prompt": "Compare Redis and an in-process cache for caching parsed quantities in this service.",
+      "expected": "combo-investigate",
+      "acceptable": [
+        "combo-investigate",
+        "combo-research"
+      ],
+      "confusable_with": [
+        "combo-research"
+      ],
+      "note": "audit 6.3: investigate vs research overlap"
+    },
+    {
+      "id": "conf-review-verify",
+      "kind": "confusable",
+      "prompt": "Is this change safe to merge?",
+      "expected": "combo-review",
+      "acceptable": [
+        "combo-review",
+        "combo-verify"
+      ],
+      "confusable_with": [
+        "combo-verify"
+      ],
+      "note": "audit 6.3: review vs verify overlap"
+    },
+    {
+      "id": "conf-plan-deliver",
+      "kind": "confusable",
+      "prompt": "Figure out how to add caching to this parser, and implement it if it looks straightforward.",
+      "expected": "combo-deliver",
+      "acceptable": [
+        "combo-deliver",
+        "combo-plan"
+      ],
+      "confusable_with": [
+        "combo-plan"
+      ],
+      "note": "a build request includes planning"
+    },
+    {
+      "id": "conf-debug-investigate",
+      "kind": "confusable",
+      "prompt": "Why does normalize_quantity return 1 for 0? Just explain, do not fix it.",
+      "expected": "combo-debug",
+      "acceptable": [
+        "combo-debug",
+        "combo-investigate"
+      ],
+      "confusable_with": [
+        "combo-investigate"
+      ],
+      "note": "diagnosis-only is the debug path"
+    },
+    {
+      "id": "conf-learning-code",
+      "kind": "confusable",
+      "prompt": "Explain how binary search works and show me a Python example.",
+      "expected": "combo-learning",
+      "acceptable": [
+        "none",
+        "combo-learning"
+      ],
+      "confusable_with": [
+        "combo-deliver"
+      ],
+      "note": "coding vocabulary in a lesson is not implementation"
+    },
+    {
+      "id": "conf-security-review",
+      "kind": "confusable",
+      "prompt": "Audit src/quantity.py for security problems.",
+      "expected": "combo-review",
+      "acceptable": [
+        "combo-review"
+      ],
+      "confusable_with": [
+        "combo-verify"
+      ]
+    },
+    {
+      "id": "conf-cross",
+      "kind": "confusable",
+      "prompt": "Research competing quantity-validation libraries, then write a plan for adopting one, and draft an announcement post.",
+      "expected": "combo",
+      "acceptable": [
+        "combo",
+        "combo-research",
+        "combo-plan"
+      ],
+      "note": "cross-workflow request; the router is the intended fallback"
+    }
+  ]
+}
