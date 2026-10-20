@@ -1,0 +1,191 @@
+[
+  {
+    "case": "pos-debug-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "combo-debug",
+    "tools_before_skill": [],
+    "final_text": "This is a debugging task, so I'll use the combo-debug skill to diagnose the root cause.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.9,
+    "timed_out": false
+  },
+  {
+    "case": "pos-debug-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Read",
+      "Grep",
+      "Edit"
+    ],
+    "final_text": "Fixed: `value or 1` treated any falsy value (including `0`) as missing. Now it only defaults when `value is None`, so `normalize_quantity(0)` correctly returns `0`.",
+    "result_subtype": "success",
+    "cost_usd": 0.0963048,
+    "pass": false,
+    "seconds": 13.5,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "I'll use the combo-review skill for this code review task.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.2,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 3.9,
+    "timed_out": false
+  },
+  {
+    "case": "pos-investigate-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.1,
+    "timed_out": false
+  },
+  {
+    "case": "pos-investigate-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Read",
+      "Read"
+    ],
+    "final_text": "## `normalize_quantity` (src/quantity.py:4-7)\n\n```python\ndef normalize_quantity(value):\n    return value or 1\n```\n\nIt relies on Python's `or` operator: if `value` is falsy, it returns `1`; otherwise it returns `value` unchanged.\n\n**The bug:** \"falsy\" includes `0`, `0.0`, `\"\"`, `False`, and `None` — not just \"missing\" values. So `normalize_quantity(0)` returns `1` instead of `0`, silently corrupting a legitimate zero quantity. The docstring says it should \"use one as the default only when the inp",
+    "result_subtype": "success",
+    "cost_usd": 0.0909806,
+    "pass": false,
+    "seconds": 12.7,
+    "timed_out": false
+  },
+  {
+    "case": "conf-investigate-research",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate",
+      "combo-research"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [
+      "Glob",
+      "Read",
+      "Read"
+    ],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 15.2,
+    "timed_out": false
+  },
+  {
+    "case": "conf-investigate-research",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate",
+      "combo-research"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.6,
+    "timed_out": false
+  },
+  {
+    "case": "conf-security-review",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [
+      "Glob"
+    ],
+    "final_text": "I'll find the file first, then use the combo-review skill to run the security audit.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 7.3,
+    "timed_out": false
+  },
+  {
+    "case": "conf-security-review",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read"
+    ],
+    "final_text": "`src/quantity.py` is a 4-line pure function with no I/O, no external input parsing, no filesystem/network/subprocess/eval use — there's no attack surface here, so there are no security vulnerabilities to flag.\n\n```python\ndef normalize_quantity(value):\n    return value or 1\n```\n\nWhat it does have is a **correctness bug**, not a security one: `value or 1` treats any falsy input the same way, so `0`, `0.0`, `\"\"`, `False`, and `None` all get silently replaced with `1`. The docstring says it should o",
+    "result_subtype": "success",
+    "cost_usd": 0.0921838,
+    "pass": false,
+    "seconds": 18.4,
+    "timed_out": false
+  }
+]

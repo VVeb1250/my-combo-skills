@@ -1,0 +1,182 @@
+[
+  {
+    "case": "pos-debug-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "combo-debug",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 3.5,
+    "timed_out": false
+  },
+  {
+    "case": "pos-debug-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read",
+      "Grep",
+      "Edit"
+    ],
+    "final_text": "Found it: `value or 1` treats `0` as falsy, so it's replaced with the default. Only `None` should count as missing.",
+    "result_subtype": "error_max_turns",
+    "cost_usd": 0.0948256,
+    "pass": false,
+    "seconds": 16.3,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "I'll invoke the code review workflow for this.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 6.1,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read"
+    ],
+    "final_text": "This is a tiny, single-function file with an intentionally seeded bug — no need for a heavier review workflow here; I can just call it out directly.\n\n**Bug in `normalize_quantity` (src/quantity.py:7):**\n\n```python\nreturn value or 1\n```\n\n`value or 1` returns `1` whenever `value` is falsy — not just when it's missing (`None`). That conflates several distinct cases:\n\n- `normalize_quantity(0)` → returns `1`, but `0` is a legitimate, present quantity (e.g., \"zero items ordered\"). This silently corrup",
+    "result_subtype": "success",
+    "cost_usd": 0.0917788,
+    "pass": false,
+    "seconds": 15.7,
+    "timed_out": false
+  },
+  {
+    "case": "pos-investigate-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.5,
+    "timed_out": false
+  },
+  {
+    "case": "pos-investigate-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 6.2,
+    "timed_out": false
+  },
+  {
+    "case": "conf-investigate-research",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate",
+      "combo-research"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.1,
+    "timed_out": false
+  },
+  {
+    "case": "conf-investigate-research",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate",
+      "combo-research"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 6.3,
+    "timed_out": false
+  },
+  {
+    "case": "conf-security-review",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 6.8,
+    "timed_out": false
+  },
+  {
+    "case": "conf-security-review",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "security-review",
+    "tools_before_skill": [],
+    "final_text": "I'll invoke the security-review skill to properly audit this file.",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": false,
+    "seconds": 5.1,
+    "timed_out": false
+  }
+]

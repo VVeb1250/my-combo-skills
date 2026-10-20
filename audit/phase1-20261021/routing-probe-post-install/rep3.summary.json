@@ -1,0 +1,190 @@
+[
+  {
+    "case": "pos-debug-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "combo-debug",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.5,
+    "timed_out": false
+  },
+  {
+    "case": "pos-debug-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Read",
+      "Grep",
+      "Read",
+      "Edit"
+    ],
+    "final_text": "The bug is `value or 1`: Python treats `0` as falsy, so it falls through to the default of `1` even though `0` is a legitimate quantity — only `None` (actually missing) should trigger the default.",
+    "result_subtype": "error_max_turns",
+    "cost_usd": 0.1012822,
+    "pass": false,
+    "seconds": 20.6,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.2,
+    "timed_out": false
+  },
+  {
+    "case": "pos-review-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read"
+    ],
+    "final_text": "I only found one file: `src/quantity.py` (4 lines of logic). Here's the review.\n\n**Bug: `value or 1` collapses valid falsy quantities to the default**\n\n```python\ndef normalize_quantity(value):\n    return value or 1\n```\n\nThe docstring says the default should apply \"only when the input is actually missing,\" but `or` treats *any* falsy value as missing. This misfires on legitimate inputs:\n\n- `normalize_quantity(0)` → returns `1`, silently turning a real zero quantity into one.\n- `normalize_quantity",
+    "result_subtype": "success",
+    "cost_usd": 0.09415779999999999,
+    "pass": false,
+    "seconds": 20.0,
+    "timed_out": false
+  },
+  {
+    "case": "pos-investigate-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.7,
+    "timed_out": false
+  },
+  {
+    "case": "pos-investigate-en",
+    "arm": "description-only",
+    "kind": "positive",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Read",
+      "Read"
+    ],
+    "final_text": "## `normalize_quantity` (src/quantity.py:4-7)\n\n```python\ndef normalize_quantity(value):\n    return value or 1\n```\n\nIt's meant to default missing quantities to `1`, but it's implemented with `value or 1`, which means **any falsy value** — not just `None` — gets replaced by `1`. That includes `0`, `\"\"`, `False`, and `[]`. The comment on line 6 even flags this as \"a deliberately seeded defect.\"\n\nSo `normalize_quantity(0)` returns `1` instead of `0`, which is almost certainly wrong for a quantity fi",
+    "result_subtype": "success",
+    "cost_usd": 0.0909962,
+    "pass": false,
+    "seconds": 12.5,
+    "timed_out": false
+  },
+  {
+    "case": "conf-investigate-research",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate",
+      "combo-research"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 5.9,
+    "timed_out": false
+  },
+  {
+    "case": "conf-investigate-research",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-investigate",
+    "acceptable": [
+      "combo-investigate",
+      "combo-research"
+    ],
+    "routed": "combo-investigate",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 3.8,
+    "timed_out": false
+  },
+  {
+    "case": "conf-security-review",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 9.4,
+    "timed_out": false
+  },
+  {
+    "case": "conf-security-review",
+    "arm": "description-only",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Glob",
+      "Read",
+      "Grep"
+    ],
+    "final_text": "I reviewed `src/quantity.py` (4 lines of actual logic) and its only caller context (`tests/test_quantity.py` — nothing else in the repo imports it).\n\n**No actual security vulnerabilities** — there's no injection, deserialization, auth, crypto, file/network I/O, or any external input handled unsafely here. It's just a pure function with no sink that could be exploited.\n\n**What's actually wrong (a correctness bug, not a security one):**\n\n```python\nreturn value or 1\n```\n\n`or` treats *any* falsy val",
+    "result_subtype": "success",
+    "cost_usd": 0.10502480000000002,
+    "pass": false,
+    "seconds": 25.5,
+    "timed_out": false
+  }
+]
