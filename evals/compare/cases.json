@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "suite": "combo-outcome-compare",
+  "purpose": "Compare task outcome (acceptance, scope, answer evidence) and cost between instruction arms on the same cases and hosts.",
+  "v2_case_ids": [
+    "bug-zero",
+    "inventory-feature",
+    "security-review",
+    "plan-adapters",
+    "trivial-label",
+    "translation-negative"
+  ],
+  "cases": [
+    {
+      "id": "shared-root-cause",
+      "title": "Cent rounding bug shared by two callers",
+      "fixture": "shared-root-cause",
+      "sandbox": "workspace-write",
+      "prompt": "In the cart, an item priced 19.99 is counted as 1998 cents instead of 1999. Fix the cart total and verify it. Keep the change small.",
+      "acceptance": {
+        "before": "acceptance/shared_root_cause_test.py",
+        "after": "acceptance/shared_root_cause_test.py",
+        "before_must_fail": true,
+        "after_must_pass": true
+      },
+      "allowed_changed_paths": [
+        "src/money.py",
+        "src/cart.py",
+        "src/invoice.py",
+        "tests/test_cart.py"
+      ],
+      "assertions": {
+        "kind": "implementation",
+        "must_have_changed": [
+          "src/money.py"
+        ]
+      }
+    },
+    {
+      "id": "diagnose-only",
+      "title": "Diagnosis without repair",
+      "fixture": "diagnose-only",
+      "sandbox": "read-only",
+      "no_writes": true,
+      "prompt": "normalize_quantity in src/quantity.py returns 1 when I pass 0. Explain the root cause. Do not change any files.",
+      "required_final_term_groups": [
+        {
+          "name": "falsy-or",
+          "any": [
+            "falsy",
+            "value or 1",
+            "`or`",
+            " or 1"
+          ]
+        },
+        {
+          "name": "none-vs-zero",
+          "any": [
+            "none",
+            "missing"
+          ]
+        }
+      ],
+      "assertions": {
+        "kind": "diagnosis-only",
+        "must_have_no_changed_files": true,
+        "must_not_claim_implementation": true
+      }
+    }
+  ]
+}
