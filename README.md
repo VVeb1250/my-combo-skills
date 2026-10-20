@@ -7,6 +7,13 @@ Workflow pack ที่ออกแบบการทำงานร่วมก
 ทุกทางเข้าใช้ workflow และ library ร่วมกัน อ่านเฉพาะส่วนที่ต้องใช้
 รายละเอียดการเลือกและผลทดสอบอยู่ใน [รายงาน A/B](audit/ab/DECISION.md)
 
+**Outcome ownership และ decision triage:** แกนร่วมใน
+[context](skills/combo/practices/context.md) ให้ agent ค้นงานที่จำเป็นจาก intent
+หาข้อเท็จจริงเองก่อนถาม และรักษา spec/ทางเลือกที่ผู้ใช้ยืนยันไว้ ส่วน
+[outcome evidence](skills/combo/practices/outcome-evidence.md) ใช้เฉพาะงานที่ต้อง
+ตรวจ fidelity หรือ success signal ที่ยังพิสูจน์ผลไม่ได้ ไม่เพิ่ม skill หรือ global hook
+ดูวิธีรันและข้อจำกัดของ [paired outcome probes](evals/outcome/README.md)
+
 **ปรับ context และ output (14 กันยายน 2026):** ทุก workflow ใช้
 [กฎเลือกหลักฐานร่วม](skills/combo/practices/context.md) เพื่ออ่านตามคำถามที่มีผลต่อ
 การตัดสินใจ รักษา contract และข้อขัดแย้ง ใช้ผลตรวจที่ยัง valid และรายงานเฉพาะ
@@ -39,7 +46,7 @@ discovery ครบ 14 entries และทดสอบการเรียก�
 | เขียนเนื้อหา วิเคราะห์ voice และดัดแปลงหลายช่องทาง | `combo-content` |
 | สอน ออกแบบแบบฝึกหัด บทเรียน และ course | `combo-learning` |
 | วิเคราะห์ธุรกิจ การเงิน inventory และ operations | `combo-business` |
-| Visual direction, motion, video และ multimedia | `combo-media` |
+| Visual direction, 3D, motion, video และ multimedia | `combo-media` |
 | จัดงาน triage backlog, handoff และปรับวิธีทำงาน | `combo-productivity` |
 
 เมื่อคำขอคาบเกี่ยวหรือยังเลือกทางไม่ได้ ใช้ [combo](skills/combo/SKILL.md)
@@ -66,7 +73,7 @@ flowchart TD
 ```
 
 - [12 workflows](skills/combo/workflows/) เป็นกระบวนการที่ออกแบบให้ทำงานร่วมกัน
-- [8 practices](skills/combo/practices/) และ [27 engineering specialists](skills/combo/specialists/INDEX.md) ใช้เพิ่มความลึกเฉพาะเรื่อง
+- [Shared practices](skills/combo/practices/) และ [27 engineering specialists](skills/combo/specialists/INDEX.md) ใช้เพิ่มความลึกเฉพาะเรื่อง
 - [Source library](skills/combo/references/library/INDEX.md) เก็บครบ **330 direct source entries** จาก 4 repositories พร้อม support files, source pins และ license notices
 - [POLICY.md](POLICY.md) รวมหลัก Karpathy/Ponytail สำหรับ engineering และกติกาเลือก workflow
 - [DESIGN.md](DESIGN.md) อธิบายการตัดสินใจของ architecture
@@ -106,6 +113,11 @@ Claude Code ใช้ [native `combo-worker`](adapters/claude/agents/combo-worke
 การค้นพบ skill ผ่านไม่ได้แปลว่าทุกคำตอบของ model ถูกต้องโดยอัตโนมัติ
 
 ## ติดตั้งและดูแล
+
+กฎเอกสารและคอมเมนต์ใช้ [ต้นฉบับร่วม](skills/combo/practices/project-knowledge-rule.md)
+ตัวติดตั้งใส่กฎนี้ในส่วน Combo ของ global `AGENTS.md` (Codex) และ `CLAUDE.md`
+(Claude Code) โดยอัตโนมัติ ส่วน [project knowledge](skills/combo/practices/project-knowledge.md)
+เป็นรายละเอียดที่ workflow อ่านตามความจำเป็น ไม่เพิ่ม skill หรือคลัง memory ใหม่
 
 Codex ใช้คำสั่งด้านล่าง ส่วน Claude Code ใช้
 [ตัวติดตั้งและคำแนะนำเฉพาะ Claude](adapters/claude/README.md)

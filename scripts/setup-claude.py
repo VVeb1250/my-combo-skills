@@ -284,6 +284,9 @@ def _policy_text(manifest: dict) -> str:
     if not policy_source.is_file():
         raise ValueError(f"Missing Claude policy source: {policy_source}")
     text = policy_source.read_text(encoding="utf-8")
+    rule_source = ROOT / "skills/combo/practices/project-knowledge-rule.md"
+    _assert_source(rule_source)
+    text = text.rstrip() + "\n\n" + rule_source.read_text(encoding="utf-8").strip()
     if CLAUDE_BEGIN in text or CLAUDE_END in text:
         raise ValueError("Claude policy source must not contain owned markers")
     return text.rstrip("\r\n")

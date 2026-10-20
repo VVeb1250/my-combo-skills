@@ -1,0 +1,30 @@
+{
+  "source": "mattpocock/skills",
+  "installation_lock": "C:\\Users\\VVeb1250\\.agents\\.skill-lock.json",
+  "installed_at_from_lock": "2026-08-13T15:28:12.820Z",
+  "upstream_tree": "bd9c9c4762db0a9a094fd419316ebd4b0444d06e",
+  "files": [
+    {
+      "file": "SKILL-MECHANICS.md",
+      "sha256": "e6e11ddb50bf3c521818a2c3f550ce03fe94b13cd9d70a1926d1ebb7a39226a8",
+      "matches_upstream_git_blob_after_crlf_normalization": true
+    },
+    {
+      "file": "SKILL.md",
+      "sha256": "71838e2109a58434cfc4c1d6c8410ac7c517d127494274204152fc65d8811223",
+      "matches_upstream_git_blob_after_crlf_normalization": true
+    },
+    {
+      "file": "agents/openai.yaml",
+      "sha256": "486c388ed1babac6ea25001147b41d3ff6c8892b0128ae1b0bef8feea6363428",
+      "matches_upstream_git_blob_after_crlf_normalization": true
+    }
+  ],
+  "scope": "Installed standalone skill and all supporting files; compared with public GitHub tree recorded at installation. Read-only inspection of skill and host configuration.",
+  "content_findings": [
+    "No executable files, remote URLs, hidden Unicode, encoded payloads, authority override or exfiltration instructions found in the three files.",
+    "Broad authoring trigger and prescriptive writing heuristics can influence style; these are not validated guarantees about model behavior.",
+    "New Combo project-knowledge documents do not reference this standalone skill or import its invocation mechanics, leading-word prescriptions, or one-line-comment example."
+  ],
+  "recommendation": "Use reviewed Combo policy as the authority for this behavior. Standalone skill is not required by the new implementation. No rollback indicated by this audit; no skill disabled or removed."
+}

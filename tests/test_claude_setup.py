@@ -29,6 +29,11 @@ class ClaudeSetupTests(unittest.TestCase):
                 encoding="utf-8",
             )
         adapter_root = root / "adapters" / "claude"
+        practices = root / "skills/combo/practices"
+        practices.mkdir(parents=True)
+        (practices / "project-knowledge-rule.md").write_text(
+            "## Shared documentation rule\nPreserve rationale.\n", encoding="utf-8"
+        )
         (adapter_root / "agents").mkdir(parents=True, exist_ok=True)
         (adapter_root / "POLICY.md").write_text(
             "## Mini policy\nUse the selected workflow.\n", encoding="utf-8"
@@ -41,6 +46,42 @@ class ClaudeSetupTests(unittest.TestCase):
 
     def _mini_manifest(self) -> dict:
         return copy.deepcopy(claude_setup.load_manifest())
+
+    def test_both_hosts_load_updated_rule_from_one_source(self):
+        spec = importlib.util.spec_from_file_location(
+            "combo_setup", ROOT / "scripts/setup.py"
+        )
+        assert spec is not None and spec.loader is not None
+        codex_setup = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(codex_setup)
+        manifest = self._mini_manifest()
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self._mini_root(root)
+            rule = root / "skills/combo/practices/project-knowledge-rule.md"
+            with (
+                mock.patch.object(claude_setup, "ROOT", root),
+                mock.patch.object(codex_setup, "ROOT", root),
+            ):
+                for body in (
+                    "## Shared rule\nFirst revision.",
+                    "## Shared rule\nRevised rationale.",
+                ):
+                    rule.write_text(body, encoding="utf-8")
+                    raw = b"# Preferences\nKeep me.\n"
+                    for rendered in (
+                        claude_setup.render_claude(raw, manifest),
+                        codex_setup.render_agents(
+                            raw, {"global_pointer": "Use Combo."}
+                        ),
+                    ):
+                        self.assertEqual(rendered.count(body.encode()), 1)
+                        self.assertEqual(rendered.count(raw), 1)
+                rule.unlink()
+                with self.assertRaises(FileNotFoundError):
+                    claude_setup.render_claude(raw, manifest)
+                with self.assertRaises(FileNotFoundError):
+                    codex_setup.render_agents(raw, {"global_pointer": "Use Combo."})
 
     def test_render_settings_preserves_unowned_semantics_and_is_idempotent(self):
         manifest = claude_setup.load_manifest()

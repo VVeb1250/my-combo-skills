@@ -24,7 +24,7 @@ entry already selected its workflow, continue there without reopening this route
 | Draft content, derive voice, repurpose assets | [content](workflows/content.md) |
 | Teach concepts, practice, lessons, courses | [learning](workflows/learning.md) |
 | Business, finance, inventory, logistics, operations | [business](workflows/business.md) |
-| Visual direction, motion, images, footage | [media](workflows/media.md) |
+| Visual direction, 3D, motion, images, footage | [media](workflows/media.md) |
 | Organize work, triage, handoff, agent-facing writing | [productivity](workflows/productivity.md) |
 
 Tiny understood reversible edits can stay inline: inspect the result and use
@@ -39,7 +39,8 @@ result instead of offering implementation as an optional follow-up.
 
 ## Load on demand
 
-Read the chosen workflow and its [context practice](practices/context.md) once.
+Read the chosen workflow and its [context practice](practices/context.md) once
+for outcome ownership, decision triage, and evidence selection.
 Use the smallest additional material that resolves a concrete uncertainty:
 
 - [tests](practices/tests.md) for behavioral seams and coverage;

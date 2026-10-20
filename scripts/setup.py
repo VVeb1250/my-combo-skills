@@ -355,6 +355,11 @@ def _combo_global_block(manifest: dict | None = None) -> str:
     if not isinstance(pointer, str) or not pointer.strip():
         raise ValueError("manifest global_pointer must be a non-empty string")
     parts = [policy] if policy else []
+    parts.append(
+        (ROOT / "skills/combo/practices/project-knowledge-rule.md")
+        .read_text(encoding="utf-8")
+        .strip()
+    )
     parts.append(pointer.strip())
     return "\n\n".join(parts)
 

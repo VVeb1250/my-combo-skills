@@ -39,7 +39,7 @@ Explicit extensibility requirements can justify abstraction. Shared root causes 
 For substantive engineering, research, content, learning, business, media, or
 productivity work, invoke the matching `combo-*` skill with the Skill tool.
 Use `/combo` for uncertain or cross-workflow requests. Choose one primary path
-and load its shared workflow, then only the relevant supporting references.
+and load its workflow and shared context for outcome and decision triage, then relevant references.
 Continue using loaded guidance on follow-ups; simple chat, one-sentence
 translation, and tiny understood edits can stay inline. Native tool-specific
 skills remain responsible for browser and artifact operations.

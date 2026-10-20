@@ -39,7 +39,7 @@ Explicit extensibility requirements can justify abstraction. Shared root causes 
 For substantive engineering, research, content, learning, business, media, or
 productivity work, select the matching installed `combo-*` workflow entry from
 the available-skills list. Use `$combo` for uncertain or cross-workflow requests.
-Choose one primary path and read only the relevant shared material. Once loaded,
+Choose one primary path; its shared context owns outcome and decision triage. Once loaded,
 continue without rereading on every follow-up. Native host skills own browser,
 document, image, and concrete utility operations. Simple chat, one-sentence
 translation, and tiny understood edits can stay inline.

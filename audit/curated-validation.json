@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-10T03:07:08.453Z",
+  "checked_at": "2026-09-16T10:02:36.625Z",
   "package_roots": [
     "combo",
     "combo-business",
@@ -16,92 +16,92 @@
     "combo-review",
     "combo-verify"
   ],
-  "package_files": 649,
+  "package_files": 651,
   "ownership_index": "skills/combo/.combo-owned.json",
   "skills": [
     {
       "name": "combo",
-      "files": 623,
+      "files": 625,
       "description_chars": 101,
-      "body_lines": 90
+      "body_lines": 61
     },
     {
       "name": "combo-business",
       "files": 2,
       "description_chars": 217,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-content",
       "files": 2,
       "description_chars": 201,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-debug",
       "files": 2,
       "description_chars": 173,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-deliver",
       "files": 2,
       "description_chars": 206,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-investigate",
       "files": 2,
       "description_chars": 73,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-learning",
       "files": 2,
       "description_chars": 202,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-maintain",
       "files": 2,
-      "description_chars": 222,
-      "body_lines": 23
+      "description_chars": 229,
+      "body_lines": 49
     },
     {
       "name": "combo-media",
       "files": 2,
       "description_chars": 202,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-plan",
       "files": 2,
       "description_chars": 196,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-productivity",
       "files": 2,
       "description_chars": 207,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-research",
       "files": 2,
       "description_chars": 197,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-review",
       "files": 2,
       "description_chars": 74,
-      "body_lines": 1
+      "body_lines": 3
     },
     {
       "name": "combo-verify",
       "files": 2,
       "description_chars": 185,
-      "body_lines": 1
+      "body_lines": 3
     }
   ],
   "errors": []

@@ -33,6 +33,10 @@ only when the requirement or causal evidence needs them.
   changes need the relevant build or integration check; trust-boundary changes
   need rejection-path evidence. Complete explicit repository/user gates.
   Reuse still-valid checks instead of automatically rerunning each phase.
+- For interactive UI changes, exercise the primary journey using
+  [e2e](../practices/e2e.md) when browser testing is within the authorized scope.
+  Include the transitions that could invalidate saved or derived state, rather
+  than treating successful individual controls as a completed journey.
 - Inspect the final diff for scope, missed requirements, error paths, and coupling.
   Apply [simplicity](../practices/simplicity.md) when new layers or options appear.
   Repair actionable in-scope findings and verify the affected behavior again.

@@ -1,0 +1,19 @@
+{
+  "preserved_files": 382,
+  "outside_policy_identical": true,
+  "drift": [],
+  "both_hosts_match_source": true,
+  "installer_tests": 27,
+  "ruff": "passed",
+  "pyright": "0 errors",
+  "behavioral_model_test": "not run",
+  "discovery": {
+    "codex_app_server_combo_skills": 14,
+    "claude_local_combo_skills": 14
+  },
+  "format_check": "Pre-existing formatting differences confirmed in HEAD for the three checked Python files; unrelated formatting preserved.",
+  "receipts": {
+    "codex": "D:\\0_person-project\\my-combo-skills\\backups\\20260913-212429-768500\\receipt.json",
+    "claude": "D:\\0_person-project\\my-combo-skills\\backups\\claude-20260913-212432-847100\\receipt.json"
+  }
+}

@@ -13,6 +13,7 @@
     "inputNeededNotifEnabled",
     "model",
     "permissions",
+    "skillOverrides",
     "skipWorkflowUsageWarning",
     "statusLine",
     "theme",
@@ -21,7 +22,7 @@
   "model": "sonnet",
   "effortLevel": "high",
   "enabledPlugins": {
-    "ecc-hubs@bundle": true,
+    "ecc-hubs@bundle": false,
     "gopls-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
     "csharp-lsp@claude-plugins-official": true,
@@ -30,9 +31,9 @@
     "jdtls-lsp@claude-plugins-official": true,
     "caveman@caveman": true,
     "rust-analyzer-lsp@claude-plugins-official": true,
-    "ecc@ecc": true,
+    "ecc@ecc": false,
     "code-review@claude-plugins-official": true,
-    "mattpocock-skills@mattpocock": true,
+    "mattpocock-skills@mattpocock": false,
     "bundle-tools@bundle": true,
     "context-mode@context-mode": true,
     "claude-mem@thedotmack": false
@@ -66,6 +67,118 @@
       "target": "C:\\Users\\VVeb1250\\.claude\\skills\\codegraph-link",
       "has_skill": true,
       "frontmatter": "\nname: codegraph-link\ndescription: >-\n  Wire a project to CodeGraph MCP (@colbymchenry/codegraph): verify CLI/index/MCP/\n  permissions, auto-build the index if missing, and write the CLAUDE.md role-split\n  block. Use when the user says \"link codegraph\", \"set up codegraph\", \"เชื่อม codegraph\",\n  \"ผูก project กับ codegraph\", or \"codegraph-link\". Handles unlink when args contain\n  unlink/ยกเลิก/cancel/remove/ลบ/ถอด.\n"
+    },
+    {
+      "name": "combo",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo",
+      "has_skill": true,
+      "frontmatter": "\nname: combo\ndescription: >\n  Fallback router for cross-workflow or uncertain substantive requests, or explicit /combo invocation.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-business",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-business",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-business\ndescription: Analyze business strategy, finance, inventory, demand, logistics, procurement, or production operations using the user's data and constraints. Produce traceable calculations, plans, or authorized operational updates.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-content",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-content",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-content\ndescription: Write articles, brand copy, outreach drafts, or campaigns; derive voice from samples and repurpose material across social, email, and video formats. Use native tools for document and design artifacts.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-debug",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-debug",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-debug\ndescription: Diagnose and repair software failures, regressions, build errors, or slowness using evidence and focused verification. Honor diagnosis-only requests without making repairs.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-deliver",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-deliver",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-deliver\ndescription: Implement software features, behavior changes, or refactors through verification. Use when the user wants working code, including requests to plan and build together; tiny understood edits can stay inline.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-investigate",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-investigate",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-investigate\ndescription: Trace code or compare technical options without changing the repository.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-learning",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-learning",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-learning\ndescription: Teach concepts and skills, design exercises, or create lessons and courses for the learner's goals. Use worked examples and retrieval practice at the requested depth; brief definitions can stay inline.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-maintain",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-maintain",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-maintain\ndescription: Inspect, update, verify, or roll back the Combo installation for Claude Code, including source provenance and skill discovery. Use for package maintenance, not ordinary task execution.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-media",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-media",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-media\ndescription: Develop visual direction, motion, video edits, or multimedia production using source assets and the requested story. Pair domain techniques with the native image, design, presentation, and video tools.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-plan",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-plan",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-plan\ndescription: Develop software requirements, architecture decisions, or implementation plans from the actual code and constraints. Use for plan-only work; a request to build as well continues through delivery.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-productivity",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-productivity",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-productivity\ndescription: Organize work, triage backlogs, prepare handoffs or questionnaires, and improve agent-facing instructions. Use the existing workspace and trackers, with native host tools for task management and scheduling.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-research",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-research",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-research\ndescription: Research scientific literature, markets, competitors, or substantive evidence questions. Evaluate sources and support the requested explanation or decision; simple factual answers can stay inline.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-review",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-review",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-review\ndescription: Review code or changes for requirement fidelity and implementation risks.\ndisable-model-invocation: false\nuser-invocable: true\n"
+    },
+    {
+      "name": "combo-verify",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\skills\\combo-verify",
+      "has_skill": true,
+      "frontmatter": "\nname: combo-verify\ndescription: Run software tests, validate builds, or exercise a product user journey and report observed results. Use for verification requests, with native browser tools when the check needs a UI.\ndisable-model-invocation: false\nuser-invocable: true\n"
     },
     {
       "name": "fantasygen",
@@ -163,5 +276,12 @@
       "target": "C:\\Users\\VVeb1250\\.claude\\commands\\prototype-v0.md"
     }
   ],
-  "agents": []
+  "agents": [
+    {
+      "name": "combo-worker.md",
+      "symlink": false,
+      "junction": false,
+      "target": "C:\\Users\\VVeb1250\\.claude\\agents\\combo-worker.md"
+    }
+  ]
 }

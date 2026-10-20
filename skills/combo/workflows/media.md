@@ -4,6 +4,13 @@ Identify the artifact, source assets, audience, story, and delivery format.
 Read [context](../practices/context.md) once for evidence selection and reporting.
 Native image/design/video/document/presentation tools own concrete operations.
 
+For reference-led work, inspect the actual reference and separate its role
+(shape, style, pose, framing, or identity) from unrelated qualities. Lock choices
+already supplied by the user; use context's decision triage for material gaps.
+For 3D/Blender, inspect silhouette, major masses, and relevant views before fine
+detail. Use [outcome evidence](../practices/outcome-evidence.md) to choose rendered
+checks; a valid scene or completed script alone does not establish visual fidelity.
+
 Define observable acceptance before production: required content, dimensions,
 readability at delivery size, timing, audio, or visual style as applicable.
 Inspect real footage timing/content before an edit decision list. For explainers,

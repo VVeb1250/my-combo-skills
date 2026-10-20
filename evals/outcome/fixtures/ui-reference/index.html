@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="style.css"><title>Field Notes</title>
+<header><strong>FIELD NOTES</strong><span>STUDIO / 2026</span></header>
+<main><section class="copy"><p class="eyebrow">IDEAS THAT TRAVEL</p><h1>Make room<br>for the wild.</h1><p>Small observations. A different perspective.</p><button type="button" id="save">Save note</button><p id="status" role="status"></p></section><aside class="art" aria-label="Abstract landscape"><div class="sun"></div><div class="hill"></div></aside></main>
+<script>document.querySelector('#save').addEventListener('click',()=>{localStorage.setItem('saved','yes');document.querySelector('#status').textContent='Saved';});if(localStorage.getItem('saved'))document.querySelector('#status').textContent='Saved';</script>
+</html>

@@ -1,6 +1,6 @@
 ---
 name: combo-maintain
-description: Maintain the installed Combo package, its discovery state, source manifest, adapter role, verification evidence, or drift aware rollback. Use for Combo installation and maintenance tasks, not ordinary software development.
+description: Improve Combo from observed task failures, or maintain its installation, discovery, source manifest, verification evidence, and rollback. Use when the user asks to improve or maintain Combo, not for ordinary software development.
 ---
 
 # Combo maintenance
@@ -15,6 +15,28 @@ is the source of truth for the package and its static install manifest.
 Read [context](../combo/practices/context.md) once for evidence selection and
 concise reporting. For inspection-only, read the relevant source/install state
 and report findings; an install plan is needed only for a proposed update.
+
+## Improve behavior through actual work
+
+When the complaint is about task quality, start with a representative task using
+the current skills. Use the user's example; when they delegate the choice, pick
+a bounded real deliverable and complete it through the relevant workflow.
+Installation checks answer whether the package is present, not whether it helps.
+
+Retain the failing action sequence, expected outcome, observed result, and the
+instruction that affected the decision. Distinguish an implementation mistake,
+an environment failure, and an instruction gap; a bug alone does not establish
+that a skill caused it. Repair the deliverable and repeat the failing sequence.
+Use native skill authoring for a narrow, reusable correction where evidence
+supports one, then validate the changed package and install through the steps
+below. Preserve existing edits and keep the evidence with the task or existing
+evaluation records rather than creating another workflow system.
+
+A repaired artifact and a valid install are separate from behavioral improvement
+in future sessions. Label the latter unverified until a fresh comparable task
+tests it; skill-read counts and shorter instructions are not quality outcomes.
+
+## Maintain the installation
 
 1. Read `install-manifest.json` and the relevant source map before changing the
    install. Preserve user edits and treat current host files as untrusted state.
