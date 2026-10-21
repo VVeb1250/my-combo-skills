@@ -1,5 +1,8 @@
 # Phase 1 source audit, 2026-10-21
 
+Status after execution: see [PHASE1-CLOSEOUT.md](PHASE1-CLOSEOUT.md). This file is the
+pre-execution audit and is kept unchanged below.
+
 Scope: audit only. No instruction, source pin, library file, or installed copy was
 changed. `sources/*` was fetched (`git fetch`) but not checked out. Output of this
 round is a classified proposal list for the owner to approve before any edit.
