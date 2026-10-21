@@ -172,6 +172,11 @@ Decided by the owner:
    routing pointer) with the numbers; (b) hard-task track: source real failures from past
    sessions (observed-failure bar) before writing any new gate, since the synthetic probes
    hit the ceiling twice (Phase 1 and pilots A, B).
+   **Track (a) started 2026-10-22 with 0 model sessions:** [cost/RESULTS.md](cost/RESULTS.md)
+   reprices the 48 stored Phase 1 sessions. A workflow load costs about $0.033 per loaded
+   task (15% of a Sonnet run); `context.md` is the largest single step ($0.015 per read);
+   Combo's own policy block costs about $0.004 per run; the owner's non-Combo CLAUDE.md
+   content costs about $0.020 per run. Track (b) is not started.
 
 Still open:
 - Pilot G: reproduce py-fsrs scheduling in a scratch venv before any learning-workflow pointer.
