@@ -1,0 +1,135 @@
+{
+  "case": "B3",
+  "model": "sonnet",
+  "returncode": 0,
+  "result": {
+    "duration_api_ms": 20624,
+    "stop_reason": "end_turn",
+    "session_id": "e21b4af5-0a74-4c4f-bc80-a5b3b7c87cee",
+    "total_cost_usd": 0.0412599,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3535,
+      "cache_read_input_tokens": 1559,
+      "output_tokens": 2696,
+      "output_tokens_details": {
+        "thinking_tokens": 1896
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 3535,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2696,
+          "cache_read_input_tokens": 1559,
+          "cache_creation_input_tokens": 3535,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3535
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2696,
+        "cacheReadInputTokens": 1559,
+        "cacheCreationInputTokens": 3535,
+        "webSearchRequests": 0,
+        "costUSD": 0.0412599,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1896,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "```json\n[\n  {\n    \"stem_id\": 7,\n    \"options\": {\"A\": 5, \"B\": 10, \"C\": 25, \"D\": 30},\n    \"key\": \"B\",\n    \"key_computation\": \"10/100*50 + 50/100*10\",\n    \"distractors\": {\n      \"A\": {\"misconception\": \"Stops after the first term: finds 10% of 50 and ignores the 'plus 50% of 10' part\", \"computation\": \"10/100*50\"},\n      \"C\": {\"misconception\": \"Multiplies the two partial results instead of adding them (5 x 5)\", \"computation\": \"(10/100*50) * (50/100*10)\"},\n      \"D\": {\"misconception\": \"Adds the percentages first (10% + 50% = 60%) and applies the combined percentage to 50\", \"computation\": \"(10+50)/100*50\"}\n    }\n  },\n  {\n    \"stem_id\": 8,\n    \"options\": {\"A\": 0.25, \"B\": 3.4, \"C\": 0.075, \"D\": 0.75},\n    \"key\": \"D\",\n    \"key_computation\": \"3/4\",\n    \"distractors\": {\n      \"A\": {\"misconception\": \"Uses only the denominator: reads 3/4 as 1/4, or takes the 'leftover' part of the whole\", \"computation\": \"1/4\"},\n      \"B\": {\"misconception\": \"Treats the fraction bar as a decimal point, so 3/4 becomes 3.4\", \"computation\": \"34/10\"},\n      \"C\": {\"misconception\": \"Place-value error: treats the hundredths digits 75 as thousandths, so 75/100 becomes 75/1000\", \"computation\": \"75/1000\"}\n    }\n  },\n  {\n    \"stem_id\": 9,\n    \"options\": {\"A\": 45, \"B\": 40, \"C\": 90, \"D\": 30},\n    \"key\": \"A\",\n    \"key_computation\": \"(60*1 + 30*1) / (1 + 1)\",\n    \"distractors\": {\n      \"B\": {\"misconception\": \"Applies the equal-distance average-speed formula (harmonic mean) even though the times are equal\", \"computation\": \"2*60*30/(60+30)\"},\n      \"C\": {\"misconception\": \"Adds the two speeds and does not divide by the number of hours (or confuses total distance with average speed)\", \"computation\": \"60 + 30\"},\n      \"D\": {\"misconception\": \"Subtracts the speeds to find the 'difference' instead of averaging them\", \"computation\": \"60 - 30\"}\n    }\n  }\n]\n```",
+    "ttft_ms": 16529,
+    "type": "result",
+    "duration_ms": 24613,
+    "uuid": "8617f661-6ec2-4bb0-9e2d-c9848b8348e5",
+    "ttft_stream_ms": 1463,
+    "time_to_request_ms": 97,
+    "time_to_request_phases_ms": {
+      "other": 16,
+      "system_prompt": 35,
+      "resume_other": 0,
+      "process_user_input": 3,
+      "input_attachments": 5,
+      "input_hooks": 2,
+      "tool_pool_refresh": 1,
+      "init_message": 20,
+      "engine_pickup": 0,
+      "message_prep": 1,
+      "model_config_wait": 1,
+      "autocompact": 2,
+      "query_setup": 0,
+      "model_gates": 0,
+      "tool_schema_build": 2,
+      "message_normalization": 1,
+      "client_creation": 4,
+      "request_build": 4
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 13,
+    "time_to_request_cpu_ms": 109,
+    "time_to_request_major_faults": 3018,
+    "input_attachments_detail": {
+      "slowest_producer": "queued_commands",
+      "slowest_producer_ms": 3,
+      "cpu_ms": 0,
+      "major_faults": 132
+    },
+    "first_content_frame_ms": 1463,
+    "queued_turn_count": 0,
+    "result_index": 0
+  }
+}

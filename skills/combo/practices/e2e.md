@@ -20,6 +20,12 @@ It supplements unit and integration checks; it does not replace them.
 - Capture the smallest useful evidence: final UI state, screenshot when layout
   matters, console/network error when relevant, and the command or session
   context. Redact tokens, personal data, and authorization headers.
+- For an accessibility claim, a rule engine gives a signal that the browser's
+  accessibility snapshot does not. If axe-core is already installed in the project, or
+  installing it is authorized, run it on the rendered page and report `violations` as
+  findings. Report `incomplete` as needs review, never as a pass. A clean run is not WCAG
+  conformance, since automated rules cover only part of it: still check keyboard
+  operation and labels on the affected controls.
 - Separate product failures from unavailable servers, stale fixtures, browser
   permissions, timing, and environment setup. Retry only to distinguish a
   transient condition, not to hide a failure.

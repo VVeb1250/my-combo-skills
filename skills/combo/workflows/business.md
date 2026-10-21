@@ -14,6 +14,10 @@ decision-changing assumptions and sensitivities. Use ranges when data cannot
 support precision. A model is useful when its recommendation remains supported
 under the relevant uncertainty, or the required missing data is identified.
 
+For an A/B or controlled test of a rate, compute the sample size with
+[experiment sample size](../references/addenda/experiment-sample-size.md) rather than
+quoting a table.
+
 Consult the [business index](../references/library/business.md) when an unresolved
 finance, inventory, logistics, production, commercial, or compliance method needs
 detail. Calibrate example company sizes, thresholds, KPIs, and escalation chains

@@ -1,0 +1,135 @@
+{
+  "case": "B1",
+  "model": "sonnet",
+  "returncode": 0,
+  "result": {
+    "duration_api_ms": 18949,
+    "stop_reason": "end_turn",
+    "session_id": "5ac41e0c-fdbf-48f0-a677-c015c6987b98",
+    "total_cost_usd": 0.0365959,
+    "usage": {
+      "input_tokens": 2,
+      "cache_creation_input_tokens": 3539,
+      "cache_read_input_tokens": 1559,
+      "output_tokens": 2228,
+      "output_tokens_details": {
+        "thinking_tokens": 1425
+      },
+      "server_tool_use": {
+        "web_search_requests": 0,
+        "web_fetch_requests": 0
+      },
+      "service_tier": "standard",
+      "cache_creation": {
+        "ephemeral_1h_input_tokens": 3539,
+        "ephemeral_5m_input_tokens": 0
+      },
+      "inference_geo": "global",
+      "iterations": [
+        {
+          "input_tokens": 2,
+          "output_tokens": 2228,
+          "cache_read_input_tokens": 1559,
+          "cache_creation_input_tokens": 3539,
+          "cache_creation": {
+            "ephemeral_5m_input_tokens": 0,
+            "ephemeral_1h_input_tokens": 3539
+          },
+          "type": "message"
+        }
+      ],
+      "speed": "standard",
+      "fallback_credit": null
+    },
+    "modelUsage": {
+      "claude-sonnet-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 2228,
+        "cacheReadInputTokens": 1559,
+        "cacheCreationInputTokens": 3539,
+        "webSearchRequests": 0,
+        "costUSD": 0.0365959,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1425,
+        "canonicalModel": "claude-sonnet-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "permission_denials": [],
+    "terminal_reason": "completed",
+    "fast_mode_state": "off",
+    "fast_mode_disabled_reason": "sdk_opt_in_required",
+    "subagent_stats": {
+      "spawned": 0,
+      "requested": {
+        "background": 0,
+        "foreground": 0,
+        "unset": 0
+      },
+      "started_in_background": 0,
+      "max_depth": 0,
+      "spawned_by_subagents": 0,
+      "completed": 0,
+      "failed": 0,
+      "killed": {
+        "parent": 0,
+        "user": 0,
+        "system": 0
+      },
+      "refused": {
+        "depth_limit": 0,
+        "concurrency_limit": 0,
+        "budget": 0
+      },
+      "by_type": {}
+    },
+    "safety_stops": 0,
+    "is_error": false,
+    "num_turns": 1,
+    "subtype": "success",
+    "api_error_status": null,
+    "result": "[\n  {\n    \"stem_id\": 1,\n    \"options\": {\"A\": 0.428571428571, \"B\": 0.916666666667, \"C\": 0.25, \"D\": 0.166666666667},\n    \"key\": \"B\",\n    \"key_computation\": \"2/3 + 1/4\",\n    \"distractors\": {\n      \"A\": {\"misconception\": \"Adds numerators and adds denominators (2+1)/(3+4)\", \"computation\": \"(2+1)/(3+4)\"},\n      \"C\": {\"misconception\": \"Finds common denominator 12 but adds the original numerators without converting them\", \"computation\": \"(2+1)/12\"},\n      \"D\": {\"misconception\": \"Confuses the operation, multiplying the fractions instead of adding\", \"computation\": \"(2/3) * (1/4)\"}\n    }\n  },\n  {\n    \"stem_id\": 2,\n    \"options\": {\"A\": 1.05, \"B\": 0.8, \"C\": 1.0, \"D\": 1.25},\n    \"key\": \"C\",\n    \"key_computation\": \"1.25 * 0.8\",\n    \"distractors\": {\n      \"A\": {\"misconception\": \"Adds and subtracts the percentages (+25% - 20% = +5%) instead of compounding multiplicatively\", \"computation\": \"1 + 0.25 - 0.20\"},\n      \"B\": {\"misconception\": \"Applies only the final change (the 20% fall) and ignores the earlier rise\", \"computation\": \"1 - 0.20\"},\n      \"D\": {\"misconception\": \"Applies only the first change (the 25% rise) and forgets the following fall\", \"computation\": \"1 + 0.25\"}\n    }\n  },\n  {\n    \"stem_id\": 3,\n    \"options\": {\"A\": 12.0, \"B\": 9.5, \"C\": 36.0, \"D\": 5.333333333333},\n    \"key\": \"A\",\n    \"key_computation\": \"4.5 / 3 * 8\",\n    \"distractors\": {\n      \"B\": {\"misconception\": \"Additive reasoning: adds the 5 extra pens to the cost instead of scaling proportionally\", \"computation\": \"4.5 + (8 - 3)\"},\n      \"C\": {\"misconception\": \"Multiplies the total cost of 3 pens by 8, skipping the step of finding the unit price\", \"computation\": \"4.5 * 8\"},\n      \"D\": {\"misconception\": \"Inverts the unit rate (pens per dollar used as dollars per pen)\", \"computation\": \"3 / 4.5 * 8\"}\n    }\n  }\n]",
+    "ttft_ms": 14358,
+    "type": "result",
+    "duration_ms": 21516,
+    "uuid": "20ca6778-df2c-4d8c-bef5-893b53a301df",
+    "ttft_stream_ms": 1427,
+    "time_to_request_ms": 102,
+    "time_to_request_phases_ms": {
+      "other": 17,
+      "system_prompt": 40,
+      "resume_other": 0,
+      "process_user_input": 2,
+      "input_attachments": 5,
+      "input_hooks": 2,
+      "tool_pool_refresh": 1,
+      "init_message": 21,
+      "engine_pickup": 1,
+      "message_prep": 0,
+      "model_config_wait": 1,
+      "autocompact": 2,
+      "query_setup": 0,
+      "model_gates": 0,
+      "tool_schema_build": 2,
+      "message_normalization": 1,
+      "client_creation": 3,
+      "request_build": 4
+    },
+    "turn_start_resume_kind": "none",
+    "process_turn_index": 0,
+    "time_to_request_loop_lag_ms": 18,
+    "time_to_request_cpu_ms": 125,
+    "time_to_request_major_faults": 3276,
+    "input_attachments_detail": {
+      "slowest_producer": "queued_commands",
+      "slowest_producer_ms": 3,
+      "cpu_ms": 15,
+      "major_faults": 127
+    },
+    "first_content_frame_ms": 1428,
+    "queued_turn_count": 0,
+    "result_index": 0
+  }
+}

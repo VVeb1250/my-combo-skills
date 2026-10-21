@@ -15,6 +15,7 @@ lockfile and current official documentation.
 | Rust ownership, errors, traits, enums, async/concurrency | [rust.md](rust.md) |
 | SQL schema changes, migrations, backfills, zero downtime, ORM migration | [sql-migrations.md](sql-migrations.md) |
 | MCP tools/resources/prompts, stdio, Streamable HTTP, SDK upgrades | [mcp.md](mcp.md) |
+| ML training or evaluation: leakage, split policy, guardrail metrics, calibration | [mle-workflow](../references/library/ecc/skills/mle-workflow/REFERENCE.md) |
 
 ## Rare framework and infrastructure catalog
 
