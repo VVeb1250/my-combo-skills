@@ -1,0 +1,357 @@
+{
+  "coverage": {
+    "criteria": {
+      "advisories": {
+        "assessed_clean": 1,
+        "assessed_flagged": 1,
+        "unassessable": 1
+      },
+      "archived": {
+        "assessed_clean": 1,
+        "assessed_flagged": 1,
+        "unassessable": 1
+      },
+      "binary_artifacts": {
+        "assessed_clean": 2,
+        "assessed_flagged": 0,
+        "unassessable": 1
+      },
+      "code_review": {
+        "assessed_clean": 2,
+        "assessed_flagged": 0,
+        "unassessable": 1
+      },
+      "dangerous_workflow": {
+        "assessed_clean": 1,
+        "assessed_flagged": 0,
+        "unassessable": 2
+      },
+      "deprecated": {
+        "assessed_clean": 2,
+        "assessed_flagged": 0,
+        "unassessable": 1
+      },
+      "downloads": {
+        "assessed_clean": 2,
+        "assessed_flagged": 0,
+        "unassessable": 1
+      },
+      "install_script": {
+        "assessed_clean": 2,
+        "assessed_flagged": 0,
+        "unassessable": 1
+      },
+      "provenance": {
+        "assessed_clean": 2,
+        "assessed_flagged": 0,
+        "unassessable": 1
+      },
+      "publisher_concentration": {
+        "assessed_clean": 2,
+        "assessed_flagged": 0,
+        "unassessable": 1
+      },
+      "security_policy": {
+        "assessed_clean": 2,
+        "assessed_flagged": 0,
+        "unassessable": 1
+      },
+      "staleness": {
+        "assessed_clean": 1,
+        "assessed_flagged": 1,
+        "unassessable": 1
+      },
+      "token_permissions": {
+        "assessed_clean": 1,
+        "assessed_flagged": 0,
+        "unassessable": 2
+      }
+    },
+    "total_dependencies": 3
+  },
+  "dependencies": [
+    {
+      "dev": false,
+      "ecosystem": "npm",
+      "exists": true,
+      "flagged": [
+        "archived",
+        "staleness"
+      ],
+      "name": "is-odd",
+      "non_registry_reason": null,
+      "repo": "github.com/jonschlinkert/is-odd",
+      "signals": {
+        "advisories": {
+          "detail": "no advisories recorded",
+          "state": "assessed_clean",
+          "value": []
+        },
+        "archived": {
+          "detail": "repository is archived",
+          "state": "assessed_flagged",
+          "value": true
+        },
+        "binary_artifacts": {
+          "detail": "Binary-Artifacts scores 10/10",
+          "state": "assessed_clean",
+          "value": 10
+        },
+        "code_review": {
+          "detail": "Code-Review scores 1/10",
+          "state": "assessed_clean",
+          "value": 1
+        },
+        "dangerous_workflow": {
+          "detail": "Scorecard could not evaluate Dangerous-Workflow (score -1)",
+          "state": "unassessable",
+          "value": null
+        },
+        "deprecated": {
+          "detail": "not deprecated",
+          "state": "assessed_clean",
+          "value": false
+        },
+        "downloads": {
+          "detail": "548,914 downloads/week (normal volume)",
+          "state": "assessed_clean",
+          "value": 548914
+        },
+        "install_script": {
+          "detail": "no install script",
+          "state": "assessed_clean",
+          "value": false
+        },
+        "provenance": {
+          "detail": "no publish provenance",
+          "state": "assessed_clean",
+          "value": false
+        },
+        "publisher_concentration": {
+          "detail": "2 human publishers hold publish rights",
+          "state": "assessed_clean",
+          "value": [
+            "doowb",
+            "jonschlinkert"
+          ]
+        },
+        "security_policy": {
+          "detail": "no security policy found",
+          "state": "assessed_clean",
+          "value": false
+        },
+        "staleness": {
+          "detail": "no push in 8 years (last 2019-04-18)",
+          "state": "assessed_flagged",
+          "value": "2019-04-18T23:39:16Z"
+        },
+        "token_permissions": {
+          "detail": "Scorecard could not evaluate Token-Permissions (score -1)",
+          "state": "unassessable",
+          "value": null
+        }
+      },
+      "version": "3.0.1",
+      "version_source": "lockfile"
+    },
+    {
+      "dev": false,
+      "ecosystem": "npm",
+      "exists": true,
+      "flagged": [
+        "advisories"
+      ],
+      "name": "minimist",
+      "non_registry_reason": null,
+      "repo": "github.com/minimistjs/minimist",
+      "signals": {
+        "advisories": {
+          "detail": "2 advisories affect the installed 1.2.0",
+          "state": "assessed_flagged",
+          "value": [
+            "GHSA-vh95-rmgr-6w4m",
+            "GHSA-xvch-5gv4-984h"
+          ]
+        },
+        "archived": {
+          "detail": "repository is active",
+          "state": "assessed_clean",
+          "value": false
+        },
+        "binary_artifacts": {
+          "detail": "Binary-Artifacts scores 10/10",
+          "state": "assessed_clean",
+          "value": 10
+        },
+        "code_review": {
+          "detail": "Code-Review scores 3/10",
+          "state": "assessed_clean",
+          "value": 3
+        },
+        "dangerous_workflow": {
+          "detail": "Dangerous-Workflow scores 10/10",
+          "state": "assessed_clean",
+          "value": 10
+        },
+        "deprecated": {
+          "detail": "not deprecated",
+          "state": "assessed_clean",
+          "value": false
+        },
+        "downloads": {
+          "detail": "100,616,223 downloads/week (normal volume)",
+          "state": "assessed_clean",
+          "value": 100616223
+        },
+        "install_script": {
+          "detail": "no install script",
+          "state": "assessed_clean",
+          "value": false
+        },
+        "provenance": {
+          "detail": "no publish provenance",
+          "state": "assessed_clean",
+          "value": false
+        },
+        "publisher_concentration": {
+          "detail": "3 human publishers hold publish rights",
+          "state": "assessed_clean",
+          "value": [
+            "shadowspawn",
+            "ljharb",
+            "emilbayes"
+          ]
+        },
+        "security_policy": {
+          "detail": "publishes a security policy",
+          "state": "assessed_clean",
+          "value": true
+        },
+        "staleness": {
+          "detail": "pushed 10 months ago",
+          "state": "assessed_clean",
+          "value": "2025-12-30T01:57:54Z"
+        },
+        "token_permissions": {
+          "detail": "Token-Permissions scores 10/10",
+          "state": "assessed_clean",
+          "value": 10
+        }
+      },
+      "version": "1.2.0",
+      "version_source": "lockfile"
+    },
+    {
+      "dev": false,
+      "ecosystem": "npm",
+      "exists": false,
+      "flagged": [],
+      "name": "zz-acme-auth-utils-9q7",
+      "non_registry_reason": null,
+      "repo": null,
+      "signals": {
+        "advisories": {
+          "detail": "OSV recorded no advisories, but this package was not confirmed to exist in its registry, and an empty answer cannot distinguish 'no advisories' from 'unknown package'",
+          "state": "unassessable",
+          "value": null
+        },
+        "archived": {
+          "detail": "no source repository could be resolved for this package",
+          "state": "unassessable",
+          "value": null
+        },
+        "binary_artifacts": {
+          "detail": "no source repository to score",
+          "state": "unassessable",
+          "value": null
+        },
+        "code_review": {
+          "detail": "no source repository to score",
+          "state": "unassessable",
+          "value": null
+        },
+        "dangerous_workflow": {
+          "detail": "no source repository to score",
+          "state": "unassessable",
+          "value": null
+        },
+        "deprecated": {
+          "detail": "not published in the npm registry",
+          "state": "unassessable",
+          "value": null
+        },
+        "downloads": {
+          "detail": "not published in the npm download API",
+          "state": "unassessable",
+          "value": "404 from https://api.npmjs.org/downloads/point/last-week/zz-acme-auth-utils-9q7"
+        },
+        "install_script": {
+          "detail": "not published in the npm registry",
+          "state": "unassessable",
+          "value": null
+        },
+        "provenance": {
+          "detail": "not published in the npm registry",
+          "state": "unassessable",
+          "value": null
+        },
+        "publisher_concentration": {
+          "detail": "not published in the npm registry",
+          "state": "unassessable",
+          "value": null
+        },
+        "security_policy": {
+          "detail": "no source repository could be resolved for this package",
+          "state": "unassessable",
+          "value": null
+        },
+        "staleness": {
+          "detail": "no source repository could be resolved for this package",
+          "state": "unassessable",
+          "value": null
+        },
+        "token_permissions": {
+          "detail": "no source repository to score",
+          "state": "unassessable",
+          "value": null
+        }
+      },
+      "version": "1.0.0",
+      "version_source": "lockfile"
+    }
+  ],
+  "ecosystems": {
+    "npm": 3
+  },
+  "notes": [
+    "cache directory ownership was not verified: os.getuid is POSIX-only, so a cache at C:\\Users\\VVeb1250\\AppData\\Local\\Temp\\claude\\D--0-person-project-my-combo-skills\\a3719bcf-893c-4a10-a72d-1d3e112f4f1d\\scratchpad\\pilot-e-cache owned by another user would not be detected on this platform. Keep the cache under your own user profile, or pass --cache with a private path.",
+    "gh is not authenticated. GitHub allows 60 requests/hour unauthenticated against 5000 authenticated, so repository signals may be unassessable.",
+    "Optional tooling detected: npm, osv-scanner. Not installed, so not used: bundler-audit, cargo-audit, pip-audit.",
+    "The lockfile (package-lock.json) resolves no packages beyond the direct dependencies.",
+    "HTTP sources: 10 fetched, 3 served from cache (oldest 0.0h old), 0 refetched as stale, 0 unavailable offline, 0 errors."
+  ],
+  "scan": {
+    "commit": null,
+    "manifests": [
+      "package.json",
+      "package-lock.json"
+    ],
+    "path": "C:\\Users\\VVeb1250\\AppData\\Local\\Temp\\claude\\D--0-person-project-my-combo-skills\\a3719bcf-893c-4a10-a72d-1d3e112f4f1d\\scratchpad\\pilot-e-fx",
+    "scanned_at": "2026-10-21T15:42:58+00:00",
+    "subject": "pilot-e-fx"
+  },
+  "target": "C:\\Users\\VVeb1250\\AppData\\Local\\Temp\\claude\\D--0-person-project-my-combo-skills\\a3719bcf-893c-4a10-a72d-1d3e112f4f1d\\scratchpad\\pilot-e-fx",
+  "transitive": {
+    "checked": 0,
+    "examined": true,
+    "excluded_direct": 3,
+    "flagged": [],
+    "lockfile_entries": 3,
+    "reason": null,
+    "sources": [
+      "package-lock.json"
+    ],
+    "total": 0,
+    "unverifiable": []
+  }
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "case": "pos-productivity-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-productivity",
+    "acceptable": [
+      "combo-productivity"
+    ],
+    "routed": "anthropic-skills:agent-handoff-spec",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": false,
+    "seconds": 4.8,
+    "timed_out": false
+  },
+  {
+    "case": "conf-review-verify",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review",
+      "combo-verify"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 3.5,
+    "timed_out": false
+  },
+  {
+    "case": "conf-plan-deliver",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-deliver",
+    "acceptable": [
+      "combo-deliver",
+      "combo-plan"
+    ],
+    "routed": "combo-deliver",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 3.7,
+    "timed_out": false
+  },
+  {
+    "case": "conf-debug-investigate",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug",
+      "combo-investigate"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Read",
+      "Read"
+    ],
+    "final_text": "`normalize_quantity` returns 1 for 0 because of `return value or 1` at `src\\quantity.py:7`.\n\nPython's `or` returns the right-hand operand whenever the left side is falsy, not only when it is `None`. `0` is falsy, so `0 or 1` gives `1`. The same thing happens for `0.0`, `\"\"`, `False` and empty containers.\n\nThis contradicts the function's own docstring, \"Use one as the default only when the input is actually missing.\" Only `None` should count as missing. The comment on line 6 also says the defect ",
+    "result_subtype": "success",
+    "cost_usd": 0.0913576,
+    "pass": false,
+    "seconds": 20.3,
+    "timed_out": false
+  }
+]

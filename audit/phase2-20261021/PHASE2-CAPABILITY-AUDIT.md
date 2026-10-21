@@ -29,10 +29,10 @@ reader that read the source through `gh api` (read-only; not independently re-re
   One reader tried a session hand-off (denied, no effect); two left scratch files
   (`/tmp/speckit_tests.txt`, `/tmp/sk_sel.txt`, outside the repo).
 - Stars and installs were not used as evidence.
-- **Not hunted this phase** (no lead supplied and no search run): productivity and
-  coordination; SEO and editorial quality beyond the marketing A/B skill; learning beyond
-  the K-12 repo; incident or operations tooling. These rows are Unknown, not "nothing
-  exists". The hunter covered eight engineering/research/stats gaps only.
+- First-pass hunt covered eight engineering/research/stats gaps only. A **second pass on
+  2026-10-22** covered productivity/ops, content (prose linting, SEO) and learning tooling
+  (section 7). Still not searched: brand-voice/terminology checkers, citation/link
+  checkers for content, curriculum-graph and autograder tooling beyond a light look.
 
 ## 2. Combo inventory (what exists)
 
@@ -100,8 +100,8 @@ Pilot = needs a test or owner approval first; Reference = note only; Reject.
 | business | experiment statistics (own formula; no external source) | power/sample-size, peeking | missing | verified arithmetic, section 4 [O] | Practice (addendum) | Low | none | recompute table in a test | **Adopt** |
 | media | majidmanzarpour/blender-game-skills @ f0ef293, MIT | fixed-world silhouette IoU with reference-only/model-only residuals | missing | method sound; **no tests, one commit, thresholds undocumented, world_gate exits 0 always** [A] | Practice (idea) | Low | Blender bpy for the script | measure on a known-wrong model | **Adopt idea as conditional clause**; Reference script |
 | media | pbakaus/impeccable @ dad8dbb, Apache-2.0 | Rust detector, 64 rules, three engines | partial | real and tested; telemetry default unverified; about 12 of 64 rule ids with no same-named fixture [A] | Tool | Medium | Rust binary, browser over CDP | run on a page with known slop | Pilot (approval) |
-| media | remotion-dev/skills @ 039e8a2, **no license** | newer API names | drift | Combo copy says `Img`, upstream says `CanvasImage` [A] | Reference | n/a | n/a | check installed Remotion | Reference (flag drift) |
-| productivity | **not hunted this phase; no lead supplied** | n/a | n/a | Combo's handoff/decision text exists (`productivity.md`, `context.md`); no external source was read for this workflow | n/a | n/a | n/a | n/a | Unknown |
+| media | remotion-dev/skills @ 039e8a2, **no license** | newer API names | none (checked 2026-10-22) | the reader flagged `Img` vs `CanvasImage` as drift; current Remotion docs keep `<Img>` standard and `<CanvasImage>` is the effects path `<Img>` routes to [O: Context7 docs]. The flag was wrong | Reference | n/a | n/a | n/a | Reference (no change) |
+| productivity | second-pass hunt 2026-10-22 (section 7): madr-lint, handoff-lint, slo-error-budget | ADR/handoff linters, SLO arithmetic | missing (executable) | all weeks to months old with thin tests; read, not run [A] | Tool | Low | node/python install | run on a fixture | Reference (leads) |
 | maintain | anthropics/skills `skill-creator` @ dbd4588, Apache-2.0 | repeat sampling with 0.5 threshold, description rewrite loop | partial | `run_eval.py` writes into the project `.claude/commands`, no isolation, no cost report; Combo's probe is stricter [A] | Eval | Low | claude CLI, sessions | re-sample only miss cases | Reference; Pilot repeat sampling |
 
 Hunt leads without enough reading (all young, MIT, shallow checks) [A]: sterium-ai/deepholm
@@ -165,3 +165,24 @@ Combo or host capability, or unsafe to adopt.
   gap, not by an outcome result; see the integration plan for what would prove value.
 - Haiku one-pass reads can miss content; negatives were re-searched, positives on
   external repos were not.
+
+## 7. Second-pass hunt, 2026-10-22 (leads; read-only by 3 Haiku readers, not run) [A]
+
+Rule applied: a candidate needs a computed or tool signal, verified tests, and a license.
+None below was run or vendored; ranking is within each area. Detail of what was read is in the
+reader reports summarised here; SHAs are full as reported.
+
+| Area | Lead (SHA, license) | Why it matters | Limits | Rec |
+| --- | --- | --- | --- | --- |
+| Learning | `open-spaced-repetition/py-fsrs` @ `9446cb06605c597a063aeee49f7d188d42e34dc2`, MIT | FSRS-6 scheduling in one call, typing-extensions only; tests assert an exact interval history (0, 2, 11, 46, 163, 498) and stability to 1e-4 | default parameters, not fitted; tests are regression snapshots; fuzzing on by default; not run | Pilot G (scratch venv, reproduce the test values) |
+| Learning | `eribean/girth` @ `daf22773`, MIT | item difficulty/discrimination from a response matrix | stale since 2022; `twopl_mml` routes through the GRM path; tests are snapshots | Reference |
+| Learning | `cdimascio/py-readability-metrics` @ `296e958a`, MIT | Flesch and others, deterministic | regex syllable counter, English, approximate | Reference |
+| Productivity | `knktkc/madr-lint` @ `760d06fd`, MIT | ADR rules (numbering gaps, supersedes bidirectional, broken links) with tests that assert findings | created 2026-05; Node deps | Reference |
+| Productivity | `officialwhitebird/handoff-lint` @ `3ae26a25`, MIT | handoff-file structure check, PyYAML only | checks structure, not content; created 2026-06 | Reference |
+| Ops | `Krishna89287/slo-error-budget` @ `ebf3e81e`, MIT | burn-rate and multi-window alert tiers with numeric oracles | single-day history | Reference |
+| Content | Vale `vale-cli/vale` @ `9f822e9d`, MIT; textlint @ `dd3d12f1`, MIT; proselint @ `dbed789c` (BSD per API, mirror); write-good; alex | real prose linters with behaviour tests | English-oriented, **Thai unverified for all**; Vale style packs have separate licenses | Reference |
+| Content | `madahzadeh/schema-audit` @ `4c2af36d`, MIT | JSON-LD validation with real parsing tests | created 2026-08, 1 star | Reference |
+
+Not credible this pass: readability calculators beyond the two above, near-duplicate content
+detection, item-analysis libraries other than girth, on-call tooling (not checked for tests).
+Search quota was hit twice, so lists are not exhaustive.

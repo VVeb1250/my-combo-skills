@@ -6,9 +6,14 @@ Companion to [PHASE2-CAPABILITY-AUDIT.md](PHASE2-CAPABILITY-AUDIT.md). Evidence 
 
 ## 0. Status
 
-- Four small source edits and one new addendum were made in the working tree. **Nothing is
-  committed. Nothing is installed.** The Claude install plan was generated and not applied
-  (section 6). Codex is untouched.
+- **Update 2026-10-22 (owner approved: commit, run all pilots, install what works, hunt,
+  Remotion check, delete scratch, and "both cost/clarity and hard-task quality").** The first
+  Phase 2 state was committed as `bcde7d2` and installed into Claude (6 files, receipt
+  `backups/claude-20261021-143830-656800`). Pilots A to F then ran; their results are in
+  `pilot-ab/RESULTS.md` and `pilot-cde/RESULTS.md`. Three small edits followed from them
+  (section 1, rows 5 to 7). Codex is untouched.
+- Original status (2026-10-21): four small source edits and one new addendum, nothing
+  committed or installed.
 - **Measured improvement from any of these edits: none.** Each Adopt rests on a gap I
   verified by search and on a signal the model cannot produce by reasoning (a computed number
   or a tool result). That is a justification, not an outcome result.
@@ -22,6 +27,18 @@ Companion to [PHASE2-CAPABILITY-AUDIT.md](PHASE2-CAPABILITY-AUDIT.md). Evidence 
 | 2 | Conditional axe-core path: `violations` are findings, `incomplete` is needs-review not pass, clean run is not WCAG conformance | `practices/e2e.md`, one bullet | host has accessibility snapshots, no rule engine; README states about 57% of WCAG issues are detected automatically [A] | about 90, only on e2e work |
 | 3 | Silhouette IoU with reference-only and model-only areas; bounding-box alignment hides scale error; thresholds are working targets | `practices/outcome-evidence.md`, 3D row | Combo compares views without a metric [O grep `IoU` = 0]; method read in source [A] | about 90, only on 3D reference work |
 | 4 | Route for ML training and evaluation (leakage, splits, guardrails, calibration) | `specialists/INDEX.md`, one row | reference existed but was routed only from research; combo-deliver and combo-business had no route [O] | about 35, only when the index is opened |
+
+Added 2026-10-22 from pilots C, D and E ([pilot-cde/RESULTS.md](pilot-cde/RESULTS.md)):
+
+| # | Change | Where | Evidence | Added tokens when loaded |
+| --- | --- | --- | --- | --- |
+| 5 | axe: run in a viewport with a real size (at 0x0 a failing contrast ratio moved to `incomplete`) | `practices/e2e.md`, one sentence in the axe bullet | observed on a local fixture, axe 4.14.0 [O] | about 25 |
+| 6 | dependency-risk collector named with its network and `gh` token behaviour; nonexistent package is unassessable | `practices/security.md`, one bullet | run unmodified on a fixture: flagged minimist@1.2.0, nonexistent package all unassessable, offline run refused [O] | about 110, only when the security lens loads |
+| 7 | Impeccable `detect` as an optional repeatable pre-check, with its taste caveat | `practices/outcome-evidence.md`, UI row | ran on 2 fixtures; found nothing a bare review missed; flagged a clean page (`cream-palette`) [O] | about 70, only on UI work |
+
+Rows 6 and 7 are tool pointers, not Combo content: nothing was vendored (Trail of Bits is
+CC BY-SA 4.0, Impeccable is a third-party signed binary). Row 7 is justified by cost and
+repeatability, not by extra detection, which the pilot did not show.
 
 Not adopted although proposed in the brief: see sections 2 to 4.
 
@@ -40,10 +57,13 @@ CC BY-SA, CC BY-NC-SA or unlicensed sources.
 
 ## 2. Pilot (needs a test or owner approval)
 
-**Update 2026-10-22: pilots A and B were run baseline-only (5 sessions, about $0.14) and
-every case passed. Clauses A and B are rejected for now; see
-[pilot-ab/RESULTS.md](pilot-ab/RESULTS.md).** Rows C to F below are still unrun. The table
-keeps A and B as originally planned.
+**Update 2026-10-22: all six pilots ran.** A and B (baseline-only, 5 sessions, about $0.14):
+every case passed, so those clauses are rejected ([pilot-ab/RESULTS.md](pilot-ab/RESULTS.md)).
+C (axe, 0 sessions): works, taught the viewport lesson. D (Impeccable, 1 LLM-review session,
+$0.06): works, no detection gain, one taste false positive. E (collector, 0 sessions): passed
+every pre-registered expectation. F (routing, 8 sessions, $0.18): 2 of 4 misses were noise,
+2 are stable. Details in [pilot-cde/RESULTS.md](pilot-cde/RESULTS.md). The table below is
+kept as originally planned.
 
 Session counts and cost are **estimates**: Phase 1 averaged roughly $0.10 reported cost per
 session (about $17 over about 175 sessions); short single-turn cases should cost less.
@@ -73,8 +93,7 @@ Recommended order by cost per decision: D read-only check, E read-only check, A,
 - Game development: Combo has none [O]. Candidates are young or structural; leads only
   (deepholm seeded Godot determinism tests, Godot headless runner). Write a specialist only on
   an owner need.
-- Remotion drift [A]: Combo's copy says `Img`, upstream says `CanvasImage`. Verify against the
-  installed Remotion version before changing; upstream has no license, so no text copying.
+- Remotion [A, corrected 2026-10-22]: the reader flagged `Img` vs `CanvasImage` as drift; current docs keep `<Img>` standard, so Combo's copy is not stale. Upstream has no license; no text copying.
 - skill-creator `run_eval.py` [A]: repeat sampling with a 0.5 threshold is the only idea
   Combo's probe lacks (pilot F). Do not adopt the script: it writes into the project and has
   no isolation or cost report.
@@ -126,16 +145,41 @@ Codex install (`setup.py plan`) is out of scope for this phase. The plan artifac
 `audit/claude/install-plan.json` was restored to its committed content; regenerate it with
 `plan`.
 
-## 7. Owner decisions requested
+**Update 2026-10-22:** the 6-file plan above was applied (receipt `backups/claude-20261021-143830-656800`). Rows 5 to 7 of section 1 changed three more files (`e2e.md`, `security.md`, `outcome-evidence.md`); a second plan/apply/verify for those is recorded in the commit that follows this edit.
 
-1. Apply the Claude install of the 6 files? (0 model sessions)
-2. ~~Approve pilots A and B~~ Done 2026-10-22, all pass, clauses rejected.
-3. Approve C (`npm install axe-core` in a scratch directory, network)?
-4. Approve D and E read-only code checks first, and their installs only if clean?
-5. Approve F (about 8 short sessions)?
-6. Commit the working tree? Nothing was committed.
-7. Carry-over from Phase 1: is Combo's value case cost and clarity, or hard-task quality? That
-   decides whether more prose gates are worth piloting at all.
+## 7. Owner decisions (2026-10-22) and what is still open
+
+Decided by the owner:
+1. Commit: done (`bcde7d2`, then the pilot-results commit).
+2. Run all pilots: done (section 2).
+3. Install what works: the three source edits from pilots C, D, E are applied to Claude (see
+   section 6). The tools themselves (Impeccable engine, Trail of Bits collector, axe-core) are
+   **not** installed globally; they were verified in a scratch directory. Install commands:
+   Impeccable: `gh release download engine-v0.1.16 --repo pbakaus/impeccable --pattern
+   "impeccable-windows-x64.exe*"` into a directory of your choice, then verify the SHA-256
+   against the `.sha256` file and `Get-AuthenticodeSignature` (expected signer Renaissance
+   Geek, Inc.). Collector: fetch `collect.py`, `sources.py`, `model.py`, `render.py` from
+   `trailofbits/skills` @ `a3131740a39291e42fd15b9eac07e0b393ad71b1` under
+   `plugins/supply-chain-risk-auditor/skills/supply-chain-risk-auditor/scripts/` into an empty
+   directory and run `py collect.py <project> --json out.json` with `gh` off PATH. axe-core:
+   `npm install axe-core --ignore-scripts` inside the project that needs it.
+4. Hunt: done (audit section 7); leads only.
+5. Remotion check: done, the earlier drift flag was wrong; no edit.
+6. Scratch files: the two `/tmp` files were deleted; the local fixture server was stopped.
+7. **Value case: both cost/clarity and hard-task quality.** Consequence for next work, not
+   started: (a) cost/clarity track: use the Phase 1 outcome-compare harness to price a
+   workflow load per task type, then decide audit items 10 and 11 (conditional `context.md`,
+   routing pointer) with the numbers; (b) hard-task track: source real failures from past
+   sessions (observed-failure bar) before writing any new gate, since the synthetic probes
+   hit the ceiling twice (Phase 1 and pilots A, B).
+
+Still open:
+- Pilot G: reproduce py-fsrs scheduling in a scratch venv before any learning-workflow pointer.
+- Routing: `pos-productivity-en` (native overlap with `agent-handoff-spec`) and
+  `conf-debug-investigate` (loads nothing) are stable misses; decide whether either is a defect.
+- Codex install (`setup.py plan`) is outside this phase.
+- The first-pass items marked Pilot in section 2 that need an LLM comparison arm (D beyond one
+  fixture) were not run.
 
 ## 8. Unresolved risks
 

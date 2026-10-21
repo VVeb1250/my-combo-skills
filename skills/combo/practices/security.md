@@ -18,6 +18,13 @@ pipeline for every code change.
   makes them relevant.
 - Prefer an existing vetted platform or library mechanism. Add a focused test
   or review check for the boundary and report the exact evidence.
+- For dependency risk beyond known advisories (existence, publishers, install scripts,
+  maintenance), a registry-metadata collector such as Trail of Bits'
+  `supply-chain-risk-auditor` reports each signal as assessed-clean, assessed-flagged, or
+  unassessable and refuses to report when nothing could be measured. It calls registry
+  and advisory hosts and reads the GitHub CLI token when `gh` is on PATH, so run it only
+  with that authorized, or with `gh` absent. A package never confirmed to exist in its
+  registry is unassessable even when an advisory lookup returns nothing.
 - If the risk is outside the requested scope, name it and preserve the user's
   required behavior. Do not invent a broad security rewrite.
 

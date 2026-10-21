@@ -1,0 +1,14 @@
+# Routing probe
+
+- **policy**: 2/4 routed acceptably
+  - positive: 0/1
+  - confusable: 2/3
+
+| case | expected | policy | description-only |
+| --- | --- | --- | --- |
+| pos-productivity-en | `combo-productivity` | MISS `anthropic-skills:agent-handoff-spec` | - |
+| conf-review-verify | `combo-review` | ok `combo-review` | - |
+| conf-plan-deliver | `combo-deliver` | ok `combo-deliver` | - |
+| conf-debug-investigate | `combo-debug` | MISS `none` | - |
+
+Reported cost (not an invoice): $0.09. One sample per case and arm; a miss is a lead for repeats, not a verdict.

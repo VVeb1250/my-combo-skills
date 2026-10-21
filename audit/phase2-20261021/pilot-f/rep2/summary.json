@@ -1,0 +1,79 @@
+[
+  {
+    "case": "pos-productivity-en",
+    "arm": "policy",
+    "kind": "positive",
+    "expected": "combo-productivity",
+    "acceptable": [
+      "combo-productivity"
+    ],
+    "routed": "anthropic-skills:agent-handoff-spec",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": false,
+    "seconds": 6.3,
+    "timed_out": false
+  },
+  {
+    "case": "conf-review-verify",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-review",
+    "acceptable": [
+      "combo-review",
+      "combo-verify"
+    ],
+    "routed": "combo-review",
+    "tools_before_skill": [],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 3.3,
+    "timed_out": false
+  },
+  {
+    "case": "conf-plan-deliver",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-deliver",
+    "acceptable": [
+      "combo-deliver",
+      "combo-plan"
+    ],
+    "routed": "combo-deliver",
+    "tools_before_skill": [
+      "Glob"
+    ],
+    "final_text": "",
+    "result_subtype": null,
+    "cost_usd": null,
+    "pass": true,
+    "seconds": 4.4,
+    "timed_out": false
+  },
+  {
+    "case": "conf-debug-investigate",
+    "arm": "policy",
+    "kind": "confusable",
+    "expected": "combo-debug",
+    "acceptable": [
+      "combo-debug",
+      "combo-investigate"
+    ],
+    "routed": "none",
+    "tools_before_skill": [
+      "Grep",
+      "Read",
+      "Read"
+    ],
+    "final_text": "`normalize_quantity` returns 1 for 0 because of its one line, `return value or 1` (`src\\quantity.py:7`).\n\nPython's `or` returns the right-hand side whenever the left-hand side is falsy, not only when it is `None`. `0` is falsy, so `0 or 1` evaluates to `1`. The same thing happens with `0.0`, `\"\"`, `False` and empty containers.\n\nThe docstring says the default of 1 should apply \"only when the input is actually missing\", so the code doesn't match its stated intent. A comment in the file calls this ",
+    "result_subtype": "success",
+    "cost_usd": 0.0926875,
+    "pass": false,
+    "seconds": 15.8,
+    "timed_out": false
+  }
+]
