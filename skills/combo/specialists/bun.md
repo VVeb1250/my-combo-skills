@@ -26,3 +26,4 @@ Migration review: compare lockfile changes, native modules, test behavior,
 declaring Node replacement complete.
 
 Source: ECC `bun-runtime`, pinned and mapped in [source-map.md](../references/source-map.md).
+For Bun 1.4 specifics see [bun-1-4.md](../references/addenda/bun-1-4.md).

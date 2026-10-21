@@ -22,6 +22,7 @@ lockfile and current official documentation.
 | --- | --- | --- |
 | Angular Signals, DI, forms, route loading, SSR | [angular.md](angular.md) | Check Angular version; use sidecar refs for exact APIs |
 | Bun runtime, lockfile, built-in test runner | [bun.md](bun.md) | Confirm dependency compatibility before replacing Node |
+| Bun 1.4 runtime, `bun audit`, test flags | [bun-1-4.md](../references/addenda/bun-1-4.md) | Check the installed Bun version before using flags |
 | Modern C++ ownership and RAII | [cpp.md](cpp.md) | Rule of Zero, strong types, lifetime/thread boundaries |
 | Django and Django REST Framework | [django.md](django.md) | Settings split, QuerySets, transactions, cache and signals |
 | Dockerfiles, Compose, image hardening | [docker.md](docker.md) | Multi-stage build, health gates, non-root runtime |
