@@ -6,7 +6,6 @@ This is a reference catalog of pinned source knowledge and templates. Use it onl
 | --- | --- | --- | --- |
 | ecc | knowledge-ops | direct-source-reference, host-bound | [ecc/knowledge-ops](ecc/skills/knowledge-ops/REFERENCE.md) |
 | ecc | project-flow-ops | direct-source-reference, host-bound | [ecc/project-flow-ops](ecc/skills/project-flow-ops/REFERENCE.md) |
-| matt | retro | direct-source-reference, experimental-or-version-sensitive | [matt/retro](matt/skills/in-progress/retro/REFERENCE.md) |
 | matt | writing-beats | direct-source-reference, experimental-or-version-sensitive | [matt/writing-beats](matt/skills/in-progress/writing-beats/REFERENCE.md) |
 | matt | writing-fragments | direct-source-reference, experimental-or-version-sensitive | [matt/writing-fragments](matt/skills/in-progress/writing-fragments/REFERENCE.md) |
 | matt | writing-shape | direct-source-reference, experimental-or-version-sensitive | [matt/writing-shape](matt/skills/in-progress/writing-shape/REFERENCE.md) |

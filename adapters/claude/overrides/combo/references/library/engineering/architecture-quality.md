@@ -59,17 +59,20 @@ This is a reference catalog of pinned source knowledge and templates. Use it onl
 | matt | diagnosing-bugs | adapted-in-combo, direct-source-reference | [matt/diagnosing-bugs](../matt/skills/engineering/diagnosing-bugs/REFERENCE.md) |
 | matt | domain-modeling | direct-source-reference | [matt/domain-modeling](../matt/skills/engineering/domain-modeling/REFERENCE.md) |
 | matt | grill-with-docs | direct-source-reference | [matt/grill-with-docs](../matt/skills/engineering/grill-with-docs/REFERENCE.md) |
+| matt | implement-spec | direct-source-reference | [matt/implement-spec](../matt/skills/engineering/implement-spec/REFERENCE.md) |
 | matt | implement | direct-source-reference | [matt/implement](../matt/skills/engineering/implement/REFERENCE.md) |
 | matt | improve-codebase-architecture | direct-source-reference | [matt/improve-codebase-architecture](../matt/skills/engineering/improve-codebase-architecture/REFERENCE.md) |
+| matt | pr | direct-source-reference | [matt/pr](../matt/skills/engineering/pr/REFERENCE.md) |
 | matt | prototype | direct-source-reference | [matt/prototype](../matt/skills/engineering/prototype/REFERENCE.md) |
 | matt | research | direct-source-reference | [matt/research](../matt/skills/engineering/research/REFERENCE.md) |
+| matt | retro | direct-source-reference | [matt/retro](../matt/skills/engineering/retro/REFERENCE.md) |
 | matt | tdd | adapted-in-combo, direct-source-reference | [matt/tdd](../matt/skills/engineering/tdd/REFERENCE.md) |
 | matt | to-spec | direct-source-reference | [matt/to-spec](../matt/skills/engineering/to-spec/REFERENCE.md) |
 | matt | to-tickets | direct-source-reference | [matt/to-tickets](../matt/skills/engineering/to-tickets/REFERENCE.md) |
 | matt | triage | direct-source-reference | [matt/triage](../matt/skills/engineering/triage/REFERENCE.md) |
 | matt | wayfinder | direct-source-reference | [matt/wayfinder](../matt/skills/engineering/wayfinder/REFERENCE.md) |
 | matt | wizard | direct-source-reference | [matt/wizard](../matt/skills/engineering/wizard/REFERENCE.md) |
-| matt | implement-spec | direct-source-reference, experimental-or-version-sensitive | [matt/implement-spec](../matt/skills/in-progress/implement-spec/REFERENCE.md) |
+| matt | chief-of-staff | direct-source-reference, experimental-or-version-sensitive | [matt/chief-of-staff](../matt/skills/in-progress/chief-of-staff/REFERENCE.md) |
 | matt | loop-me | direct-source-reference, experimental-or-version-sensitive | [matt/loop-me](../matt/skills/in-progress/loop-me/REFERENCE.md) |
 | matt | setup-ts-deep-modules | direct-source-reference, experimental-or-version-sensitive | [matt/setup-ts-deep-modules](../matt/skills/in-progress/setup-ts-deep-modules/REFERENCE.md) |
 | ponytail | ponytail-audit | direct-source-reference | [ponytail/ponytail-audit](../ponytail/skills/ponytail-audit/REFERENCE.md) |

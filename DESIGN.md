@@ -133,7 +133,7 @@ task. New files should retain operational detail, not just generic maxims.
 
 Preserve all source skill entries in a searchable in-package reference library,
 including noncoding methods, procedures, examples, and needed supporting files.
-Route through bounded domain indexes, not a 330-entry always-loaded catalog.
+Route through bounded domain indexes, not a 331-entry always-loaded catalog.
 Keep curated engineering notes as the quick shelf; the full sources provide
 depth when needed. Record source commit, original path, generated destination,
 domain, and lifecycle or host-dependence labels in a deterministic source map.

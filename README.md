@@ -74,11 +74,11 @@ flowchart TD
 
 - [12 workflows](skills/combo/workflows/) เป็นกระบวนการที่ออกแบบให้ทำงานร่วมกัน
 - [Shared practices](skills/combo/practices/) และ [27 engineering specialists](skills/combo/specialists/INDEX.md) ใช้เพิ่มความลึกเฉพาะเรื่อง
-- [Source library](skills/combo/references/library/INDEX.md) เก็บครบ **330 direct source entries** จาก 4 repositories พร้อม support files, source pins และ license notices
+- [Source library](skills/combo/references/library/INDEX.md) เก็บครบ **331 direct source entries** จาก 4 repositories พร้อม support files, source pins และ license notices
 - [POLICY.md](POLICY.md) รวมหลัก Karpathy/Ponytail สำหรับ engineering และกติกาเลือก workflow
 - [DESIGN.md](DESIGN.md) อธิบายการตัดสินใจของ architecture
 
-330 entries หมายถึงความครอบคลุมของต้นฉบับ ไม่ใช่ 330 integrations ที่รันผ่านแล้ว
+331 entries หมายถึงความครอบคลุมของต้นฉบับ ไม่ใช่ 331 integrations ที่รันผ่านแล้ว
 ส่วนที่ทับกันถูกจัดเจ้าของใหม่ ส่วน persona, ตัวเลขตัวอย่าง, tracker, hooks,
 memory และ installer ของ upstream ต้องปรับให้เข้ากับงานและ host จริง
 ไม่มีการเปิดระบบเหล่านี้เพียงเพราะอ่าน reference

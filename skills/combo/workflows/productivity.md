@@ -13,7 +13,9 @@ Create enough structure to clarify those actions without duplicating a tracker.
 For handoffs, retain binding decisions, completed evidence, current artifacts,
 and the next unresolved action; add context the recipient cannot cheaply recover.
 For agent-facing writing, keep one source of truth and conditional detail behind
-precise pointers. Use the native skill-creation workflow for skill authoring.
+precise pointers. Use the native skill-creation workflow for skill authoring; for
+completion criteria, pointer wording, and pruning an instruction file, see
+[writing for agents](../references/library/matt/skills/productivity/writing-for-agents/REFERENCE.md).
 
 Consult the [productivity index](../references/library/productivity.md) only when
 an unresolved coordination method needs detail. Use the

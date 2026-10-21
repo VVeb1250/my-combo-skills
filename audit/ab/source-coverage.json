@@ -14,7 +14,7 @@
     },
     "matt": {
       "url": "https://github.com/mattpocock/skills.git",
-      "commit": "3cca18b368ae95cdbdebbff572ccafa662551015"
+      "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2"
     },
     "ecc": {
       "url": "https://github.com/affaan-m/ECC.git",
@@ -24,27 +24,27 @@
   "direct_source_entrypoints": {
     "karpathy": 1,
     "ponytail": 6,
-    "matt": 37,
+    "matt": 38,
     "ecc": 286,
-    "total": 330
+    "total": 331
   },
   "current_combo": {
     "entrypoints": 2,
-    "workflows": 6,
-    "practices": 8,
+    "workflows": 12,
+    "practices": 11,
     "specialist_notes": 27
   },
   "reference_library": {
     "destination": "candidates/common/combo/references/library",
-    "entries": 330,
+    "entries": 331,
     "domain_entries": {
-      "engineering": 174,
+      "engineering": 176,
       "research": 23,
       "content": 11,
       "learning": 2,
       "business": 23,
       "media": 18,
-      "productivity": 12,
+      "productivity": 11,
       "host-integration": 67,
       "uncategorized": 0
     },
@@ -52,16 +52,16 @@
       "adapted-in-combo": 35,
       "alternate-persona": 1,
       "deprecated-duplicate": 1,
-      "direct-source-reference": 330,
-      "experimental-or-version-sensitive": 15,
+      "direct-source-reference": 331,
+      "experimental-or-version-sensitive": 14,
       "host-bound": 69,
       "host-bound-state": 2
     },
     "review_status": {
       "body-reviewed-for-adaptation": 35,
-      "metadata-classified": 295
+      "metadata-classified": 296
     },
-    "copied_files": 518,
+    "copied_files": 521,
     "excluded_files": 53,
     "link_stats": {
       "local_rewrites": 178,
@@ -72,7 +72,7 @@
   "decisions": {
     "software_and_all_types": "Both experiment arms should expose the same reference domains and source revisions; vary discovery and entrypoint shape only.",
     "active_router": "The A/B arms use the same full-domain reference library. The selected shipping layout and evidence are in audit/ab/DECISION.md; domain files remain indexes, not global skill entrypoints.",
-    "host_bound": "Memory, hooks, installers, orchestration, notifications, and native UI assumptions are reference-only. M2D and host tools remain authoritative."
+    "host_bound": "Memory, hooks, installers, orchestration, notifications, and native UI assumptions are reference-only. The host's memory rules and tools remain authoritative."
   },
   "limits": [
     "Only selected sources were body-reviewed for prior adaptation. Remaining entries are retained and metadata-classified.",

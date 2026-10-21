@@ -32,6 +32,14 @@ that change execution; create trackers or additional specs only when requested
 or necessary for the agreed deliverable. Ask only the smallest unresolved
 question that changes the plan.
 
+For an effort too large for one session whose route is not yet visible, borrow the
+idea of [wayfinder](../references/library/matt/skills/engineering/wayfinder/REFERENCE.md):
+name the destination, resolve decisions rather than build, record each decision once
+and index it, and keep a question you cannot yet state precisely as unspecified
+instead of ticketing it. Keep that state in one file or the tracker the repository
+already uses. Take its tracker, label, claim, and subagent mechanics only when
+sessions run in parallel and applicable authorization exists.
+
 <!-- BEGIN CONTEXT CORE (generated from practices/context.md by scripts/sync-context-core.py; edit there) -->
 ## Context rules
 

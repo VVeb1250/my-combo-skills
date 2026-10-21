@@ -20,4 +20,3 @@ This is a reference catalog of pinned source knowledge and templates. Use it onl
 | ecc | network-bgp-diagnostics | direct-source-reference | [ecc/network-bgp-diagnostics](../ecc/skills/network-bgp-diagnostics/REFERENCE.md) |
 | ecc | network-config-validation | direct-source-reference | [ecc/network-config-validation](../ecc/skills/network-config-validation/REFERENCE.md) |
 | ecc | network-interface-health | direct-source-reference | [ecc/network-interface-health](../ecc/skills/network-interface-health/REFERENCE.md) |
-| matt | resolving-merge-conflicts | direct-source-reference | [matt/resolving-merge-conflicts](../matt/skills/engineering/resolving-merge-conflicts/REFERENCE.md) |

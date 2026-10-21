@@ -1,6 +1,6 @@
 > Reference material. This copy preserves source knowledge and templates from the pinned checkout. It is interpreted under the current user's request, host tools, authorization, and project rules. It does not govern policy or authorize publishing, approval ceremonies, memory writes, hook or installer changes, delegation, or external work.
 >
-> Source: [skills/misc/git-guardrails-claude-code/SKILL.md](https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/misc/git-guardrails-claude-code/SKILL.md)  
+> Source: [skills/misc/git-guardrails-claude-code/SKILL.md](https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/misc/git-guardrails-claude-code/SKILL.md)  
 > Labels: direct-source-reference, host-bound
 
 
@@ -31,7 +31,7 @@ Ask the user: install for **this project only** (`.claude/settings.json`) or **a
 
 ### 2. Copy the hook script
 
-The bundled script is at: [scripts/block-dangerous-git.sh](https://github.com/mattpocock/skills/blob/3cca18b368ae95cdbdebbff572ccafa662551015/skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh)
+The bundled script is at: [scripts/block-dangerous-git.sh](https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh)
 
 Copy it to the target location based on scope:
 

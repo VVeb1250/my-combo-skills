@@ -8,8 +8,8 @@ This large catalog is split into focused subindexes so a task can load one techn
 | --- | ---: | --- |
 | languages-frameworks | 62 | [languages-frameworks.md](engineering/languages-frameworks.md) |
 | data-ml | 8 | [data-ml.md](engineering/data-ml.md) |
-| architecture-quality | 74 | [architecture-quality.md](engineering/architecture-quality.md) |
-| infrastructure-network | 17 | [infrastructure-network.md](engineering/infrastructure-network.md) |
+| architecture-quality | 77 | [architecture-quality.md](engineering/architecture-quality.md) |
+| infrastructure-network | 16 | [infrastructure-network.md](engineering/infrastructure-network.md) |
 | agents-integration | 13 | [agents-integration.md](engineering/agents-integration.md) |
 
 The manifest records each exact source path and immutable commit. Rows in the subindexes use concise source names; follow a reference link or consult curation/full-library.json for full provenance.

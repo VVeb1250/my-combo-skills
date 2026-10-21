@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-16T10:02:36.625Z",
+  "checked_at": "2026-10-21T19:00:39.108Z",
   "package_roots": [
     "combo",
     "combo-business",
@@ -16,14 +16,14 @@
     "combo-review",
     "combo-verify"
   ],
-  "package_files": 651,
+  "package_files": 657,
   "ownership_index": "skills/combo/.combo-owned.json",
   "skills": [
     {
       "name": "combo",
-      "files": 625,
+      "files": 631,
       "description_chars": 101,
-      "body_lines": 61
+      "body_lines": 62
     },
     {
       "name": "combo-business",
@@ -52,7 +52,7 @@
     {
       "name": "combo-investigate",
       "files": 2,
-      "description_chars": 73,
+      "description_chars": 196,
       "body_lines": 3
     },
     {
@@ -94,7 +94,7 @@
     {
       "name": "combo-review",
       "files": 2,
-      "description_chars": 74,
+      "description_chars": 206,
       "body_lines": 3
     },
     {

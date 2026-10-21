@@ -8,13 +8,13 @@ Every direct source skill is retained as REFERENCE.md. Safe support Markdown and
 
 | Domain | Entries | Index |
 | --- | ---: | --- |
-| engineering | 174 | [engineering.md](engineering.md) |
+| engineering | 176 | [engineering.md](engineering.md) |
 | research | 23 | [research.md](research.md) |
 | content | 11 | [content.md](content.md) |
 | learning | 2 | [learning.md](learning.md) |
 | business | 23 | [business.md](business.md) |
 | media | 18 | [media.md](media.md) |
-| productivity | 12 | [productivity.md](productivity.md) |
+| productivity | 11 | [productivity.md](productivity.md) |
 | host-integration | 67 | [host-integration.md](host-integration.md) |
 | uncategorized | 0 | [uncategorized.md](uncategorized.md) |
 

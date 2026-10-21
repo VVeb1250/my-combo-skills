@@ -29,7 +29,7 @@ AUDIT_JSON = ROOT / "audit" / "ab" / "source-coverage.json"
 AUDIT_MD = ROOT / "audit" / "ab" / "source-coverage.md"
 
 PACK_ORDER = ("karpathy", "ponytail", "matt", "ecc")
-EXPECTED_COUNTS = {"karpathy": 1, "ponytail": 6, "matt": 37, "ecc": 286}
+EXPECTED_COUNTS = {"karpathy": 1, "ponytail": 6, "matt": 38, "ecc": 286}
 DOMAINS = (
     "engineering",
     "research",
@@ -1264,7 +1264,7 @@ def check() -> int:
     if manifest.get("counts", {}).get("stable_entrypoints") != sum(
         EXPECTED_COUNTS.values()
     ):
-        errors.append("manifest stable entrypoint count is not 330")
+        errors.append(f"manifest stable entrypoint count is not {sum(EXPECTED_COUNTS.values())}")
     seen_destinations = set()
     for entry in entries:
         destination = OUTPUT / entry["destination"]
