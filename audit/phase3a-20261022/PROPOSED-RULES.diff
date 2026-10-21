@@ -1,0 +1,28 @@
+diff --git a/skills/combo/practices/context.md b/skills/combo/practices/context.md
+index 6cfecd3..6ce3062 100644
+--- a/skills/combo/practices/context.md
++++ b/skills/combo/practices/context.md
+@@ -22,6 +22,10 @@ show the evidence and request the consequential tradeoff instead of quietly
+ substituting an easier result. Distinguish facts, inference, and testable hypotheses
+ where that distinction changes a decision or claim.
+ 
++After a context reset or resumption, check the next plan against the user's own
++binding instructions and decisions, latest first, before the first action; a
++retained user instruction outranks your summary of the plan.
++
+ ## Decision triage
+ 
+ Resolve facts from context, files, references, tools, or a bounded experiment before
+diff --git a/skills/combo/practices/project-knowledge.md b/skills/combo/practices/project-knowledge.md
+index 4ba1b84..5c2c301 100644
+--- a/skills/combo/practices/project-knowledge.md
++++ b/skills/combo/practices/project-knowledge.md
+@@ -49,6 +49,8 @@ through an identified erratum, not by rewriting the original evidence.
+ For handoff, update the existing task or checkpoint only with the goal, verified
+ state, binding decisions, unresolved work, and next action that cannot be cheaply
+ recovered. Coordinate ownership before restructuring a file other sessions edit.
++For a long setup or debug flow driven by CLI or tool commands, include the commands
++that worked and the state already changed, so a reset does not repeat discovery.
+ Routine work does not require a new Markdown artifact or transcript summary.
+ 
+ ## Memory boundary and completion

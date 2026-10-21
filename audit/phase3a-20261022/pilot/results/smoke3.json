@@ -1,0 +1,40 @@
+{
+ "tag": "smoke3",
+ "arm": "A",
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "limit": 31200,
+ "seconds": 80,
+ "acceptance_pass": true,
+ "tests_unchanged": true,
+ "rollout_found": true,
+ "calls": 17,
+ "compactions": [
+  3,
+  11
+ ],
+ "verified_step1_at": 7,
+ "verified_step2_at": 13,
+ "cut_mid_step2": true,
+ "failed_attempt_before_cut": false,
+ "post_cut_calls": 6,
+ "step1_files_edited_after_cut": 0,
+ "step1_test_rerun_after_cut": 0,
+ "report_py_edited_after_cut": 0,
+ "settings_json_edited_after_cut": 0,
+ "readonly_calls_before_first_edit_after_cut": 1,
+ "state_file_calls_after_cut": 0,
+ "settings_json_edited_anywhere": 0,
+ "defaults_toml_edited_anywhere": 1,
+ "tokens": {
+  "input": 510686,
+  "cached_input": 470400,
+  "output": 3153,
+  "total": 513839
+ },
+ "context_tokens_max": 30882,
+ "plan_used_percent": {
+  "first": 16.0,
+  "last": 18.0
+ }
+}

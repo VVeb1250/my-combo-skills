@@ -1,0 +1,29 @@
+{
+ "tag": "smoke1",
+ "arm": "A",
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "limit": 65000,
+ "seconds": 53,
+ "acceptance_pass": true,
+ "tests_unchanged": true,
+ "rollout_found": true,
+ "calls": 12,
+ "compactions": [],
+ "verified_step1_at": null,
+ "verified_step2_at": null,
+ "settings_json_edited_anywhere": 0,
+ "defaults_toml_edited_anywhere": 1,
+ "tokens": {
+  "input": 382606,
+  "cached_input": 348544,
+  "output": 2462,
+  "total": 385068
+ },
+ "context_tokens_max": 31827,
+ "plan_used_percent": {
+  "first": 13.0,
+  "last": 14.0
+ },
+ "note": "acceptance re-run after fixing the harness bug (python -I hid the cwd from the unittest import path); original value was false"
+}

@@ -1,0 +1,11 @@
+{
+  "note": "Counts only. Window text and evidence quotes stay in the session scratchpad (private project content).",
+  "labeller": "claude-haiku-5-5 x3, blind to post/control, rubric REDO_DONE / CONTRADICTED_DECISION / REASKED_SETTLED / USER_CORRECTION / NONE",
+  "windows": {"post": 32, "control": 23},
+  "any_label": {"post": 6, "control": 3},
+  "by_label": {"post": {"USER_CORRECTION": 5, "CONTRADICTED_DECISION": 1}, "control": {"USER_CORRECTION": 1, "CONTRADICTED_DECISION": 2}},
+  "REDO_DONE": 0,
+  "REASKED_SETTLED": 0,
+  "manual_check": {"post_flags_checked": "6 of 6", "confirmed_continuity_failures": 0,
+                   "finding": "all six were ordinary design/visual feedback from the user, not lost context; control flags (3) unchecked"}
+}

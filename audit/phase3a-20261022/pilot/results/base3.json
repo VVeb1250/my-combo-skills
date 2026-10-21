@@ -1,0 +1,40 @@
+{
+ "tag": "base3",
+ "arm": "A",
+ "model": "gpt-6-luna",
+ "effort": "high",
+ "limit": 31200,
+ "seconds": 82,
+ "acceptance_pass": true,
+ "tests_unchanged": true,
+ "rollout_found": true,
+ "calls": 14,
+ "compactions": [
+  4,
+  5
+ ],
+ "verified_step1_at": 7,
+ "verified_step2_at": 10,
+ "cut_mid_step2": false,
+ "failed_attempt_before_cut": false,
+ "post_cut_calls": 10,
+ "step1_files_edited_after_cut": 1,
+ "step1_test_rerun_after_cut": 2,
+ "report_py_edited_after_cut": 0,
+ "settings_json_edited_after_cut": 0,
+ "readonly_calls_before_first_edit_after_cut": 2,
+ "state_file_calls_after_cut": 0,
+ "settings_json_edited_anywhere": 0,
+ "defaults_toml_edited_anywhere": 1,
+ "tokens": {
+  "input": 420192,
+  "cached_input": 381824,
+  "output": 2460,
+  "total": 422652
+ },
+ "context_tokens_max": 29784,
+ "plan_used_percent": {
+  "first": 19.0,
+  "last": 20.0
+ }
+}

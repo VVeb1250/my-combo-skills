@@ -1,0 +1,898 @@
+{
+ "sessions": 43,
+ "enabled_plugins": {
+  "ecc-hubs@bundle": false,
+  "gopls-lsp@claude-plugins-official": true,
+  "typescript-lsp@claude-plugins-official": true,
+  "csharp-lsp@claude-plugins-official": true,
+  "clangd-lsp@claude-plugins-official": true,
+  "pyright-lsp@claude-plugins-official": true,
+  "jdtls-lsp@claude-plugins-official": true,
+  "caveman@caveman": true,
+  "rust-analyzer-lsp@claude-plugins-official": true,
+  "ecc@ecc": false,
+  "code-review@claude-plugins-official": true,
+  "mattpocock-skills@mattpocock": false,
+  "bundle-tools@bundle": true,
+  "context-mode@context-mode": true,
+  "claude-mem@thedotmack": false
+ },
+ "skill_overrides": {
+  "multi-model-orchestrator": "off"
+ },
+ "needs_auth_servers": [
+  "plugin:design:figma",
+  "plugin:design:intercom",
+  "plugin:engineering:asana",
+  "plugin:engineering:atlassian",
+  "plugin:engineering:datadog",
+  "plugin:engineering:github",
+  "plugin:engineering:linear",
+  "plugin:engineering:notion",
+  "plugin:engineering:pagerduty",
+  "plugin:engineering:slack"
+ ],
+ "pending_servers": [
+  "codegraph",
+  "context7",
+  "fetch",
+  "github",
+  "memory",
+  "playwright",
+  "sequential-thinking"
+ ],
+ "servers": {
+  "(built-in deferred)": {
+   "tools": 25,
+   "name_chars": 322,
+   "instr_chars": 0,
+   "tokens": 80,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.01
+  },
+  "1a59c906-04da-521d-bda7-7f71b9f9e01c": {
+   "tools": 5,
+   "name_chars": 247,
+   "instr_chars": 1914,
+   "tokens": 540,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.09
+  },
+  "20dba7f1-81ce-4815-8931-225df4362cb0": {
+   "tools": 45,
+   "name_chars": 2704,
+   "instr_chars": 1842,
+   "tokens": 1136,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.19
+  },
+  "27628447-355b-40d8-9927-230a487963f8": {
+   "tools": 32,
+   "name_chars": 1861,
+   "instr_chars": 0,
+   "tokens": 465,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.08
+  },
+  "5b9d0f53-896c-4658-bd2f-71b1df40b98e": {
+   "tools": 11,
+   "name_chars": 639,
+   "instr_chars": 0,
+   "tokens": 159,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.03
+  },
+  "6f616b42-0ed8-571e-823f-ee4aca6b7ce9": {
+   "tools": 2,
+   "name_chars": 106,
+   "instr_chars": 0,
+   "tokens": 26,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.0
+  },
+  "7cf8bc23-3c0d-4747-b4e5-ef9c183bc29a": {
+   "tools": 41,
+   "name_chars": 2728,
+   "instr_chars": 0,
+   "tokens": 682,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.12
+  },
+  "9ce924e4-a1aa-4355-b715-3355345caf2e": {
+   "tools": 3,
+   "name_chars": 183,
+   "instr_chars": 0,
+   "tokens": 45,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.01
+  },
+  "Blender": {
+   "tools": 26,
+   "name_chars": 1168,
+   "instr_chars": 4120,
+   "tokens": 1322,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.23
+  },
+  "Desktop_Commander": {
+   "tools": 26,
+   "name_chars": 1032,
+   "instr_chars": 0,
+   "tokens": 258,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.04
+  },
+  "PDF_Tools": {
+   "tools": 43,
+   "name_chars": 1405,
+   "instr_chars": 0,
+   "tokens": 351,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.06
+  },
+  "c2714784-fbe6-4fc4-9da0-df3738764677": {
+   "tools": 2,
+   "name_chars": 116,
+   "instr_chars": 672,
+   "tokens": 197,
+   "calls": 2,
+   "sessions_used": 1,
+   "tool_search_selects": 2,
+   "pct_of_spend": 0.03
+  },
+  "ccd_connectors": {
+   "tools": 3,
+   "name_chars": 147,
+   "instr_chars": 0,
+   "tokens": 36,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.01
+  },
+  "ccd_directory": {
+   "tools": 2,
+   "name_chars": 75,
+   "instr_chars": 0,
+   "tokens": 18,
+   "calls": 2,
+   "sessions_used": 2,
+   "tool_search_selects": 1,
+   "pct_of_spend": 0.0
+  },
+  "ccd_host": {
+   "tools": 7,
+   "name_chars": 232,
+   "instr_chars": 0,
+   "tokens": 58,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.01
+  },
+  "ccd_pr": {
+   "tools": 5,
+   "name_chars": 121,
+   "instr_chars": 0,
+   "tokens": 30,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.01
+  },
+  "ccd_session": {
+   "tools": 3,
+   "name_chars": 101,
+   "instr_chars": 0,
+   "tokens": 25,
+   "calls": 2,
+   "sessions_used": 1,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.0
+  },
+  "ccd_session_mgmt": {
+   "tools": 20,
+   "name_chars": 806,
+   "instr_chars": 0,
+   "tokens": 201,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.03
+  },
+  "ccd_settings": {
+   "tools": 2,
+   "name_chars": 63,
+   "instr_chars": 0,
+   "tokens": 15,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.0
+  },
+  "ccd_sidebar": {
+   "tools": 13,
+   "name_chars": 404,
+   "instr_chars": 0,
+   "tokens": 101,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.02
+  },
+  "ccd_view": {
+   "tools": 4,
+   "name_chars": 112,
+   "instr_chars": 0,
+   "tokens": 28,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.0
+  },
+  "ccd_window": {
+   "tools": 4,
+   "name_chars": 136,
+   "instr_chars": 0,
+   "tokens": 34,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.01
+  },
+  "claude-in-chrome": {
+   "tools": 22,
+   "name_chars": 824,
+   "instr_chars": 1022,
+   "tokens": 461,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.08
+  },
+  "computer-use": {
+   "tools": 27,
+   "name_chars": 857,
+   "instr_chars": 5100,
+   "tokens": 1489,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.25
+  },
+  "exa": {
+   "tools": 2,
+   "name_chars": 49,
+   "instr_chars": 465,
+   "tokens": 128,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.02
+  },
+  "mcp-registry": {
+   "tools": 3,
+   "name_chars": 112,
+   "instr_chars": 0,
+   "tokens": 28,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.0
+  },
+  "scheduled-tasks": {
+   "tools": 6,
+   "name_chars": 253,
+   "instr_chars": 0,
+   "tokens": 63,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.01
+  },
+  "terminal": {
+   "tools": 4,
+   "name_chars": 131,
+   "instr_chars": 0,
+   "tokens": 32,
+   "calls": 0,
+   "sessions_used": 0,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.01
+  },
+  "ccd_turn": {
+   "tools": 0,
+   "name_chars": 0,
+   "instr_chars": 0,
+   "tokens": 0,
+   "calls": 53,
+   "sessions_used": 6,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.0,
+   "note": "used but not in the sized first-call attachment (connected later)"
+  },
+  "context7": {
+   "tools": 0,
+   "name_chars": 0,
+   "instr_chars": 0,
+   "tokens": 0,
+   "calls": 2,
+   "sessions_used": 1,
+   "tool_search_selects": 2,
+   "pct_of_spend": 0.0,
+   "note": "used but not in the sized first-call attachment (connected later)"
+  },
+  "Claude_Browser": {
+   "tools": 0,
+   "name_chars": 0,
+   "instr_chars": 0,
+   "tokens": 0,
+   "calls": 5,
+   "sessions_used": 2,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.0,
+   "note": "used but not in the sized first-call attachment (connected later)"
+  },
+  "codegraph": {
+   "tools": 0,
+   "name_chars": 0,
+   "instr_chars": 0,
+   "tokens": 0,
+   "calls": 1,
+   "sessions_used": 1,
+   "tool_search_selects": 0,
+   "pct_of_spend": 0.0,
+   "note": "used but not in the sized first-call attachment (connected later)"
+  },
+  "fetch": {
+   "tools": 0,
+   "name_chars": 0,
+   "instr_chars": 0,
+   "tokens": 0,
+   "calls": 2,
+   "sessions_used": 1,
+   "tool_search_selects": 1,
+   "pct_of_spend": 0.0,
+   "note": "used but not in the sized first-call attachment (connected later)"
+  }
+ },
+ "skills": {
+  "codegraph-affected": {
+   "tokens": 121,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "codegraph-link": {
+   "tokens": 96,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo": {
+   "tokens": 27,
+   "calls": 2,
+   "sessions_used": 2
+  },
+  "combo-business": {
+   "tokens": 58,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-content": {
+   "tokens": 54,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-debug": {
+   "tokens": 47,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-deliver": {
+   "tokens": 55,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-investigate": {
+   "tokens": 54,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-learning": {
+   "tokens": 55,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-maintain": {
+   "tokens": 50,
+   "calls": 2,
+   "sessions_used": 2
+  },
+  "combo-media": {
+   "tokens": 54,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-plan": {
+   "tokens": 52,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-productivity": {
+   "tokens": 57,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-research": {
+   "tokens": 53,
+   "calls": 1,
+   "sessions_used": 1
+  },
+  "combo-review": {
+   "tokens": 55,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "combo-verify": {
+   "tokens": 50,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "find-skills": {
+   "tokens": 94,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "git-guardrails-claude-code": {
+   "tokens": 68,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "microsoft-foundry": {
+   "tokens": 126,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "migrate-to-shoehorn": {
+   "tokens": 48,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "scaffold-exercises": {
+   "tokens": 56,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "setup-pre-commit": {
+   "tokens": 64,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "whip-design": {
+   "tokens": 90,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "whip-ui": {
+   "tokens": 88,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "prototype-v0": {
+   "tokens": 11,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "caveman:caveman-commit": {
+   "tokens": 17,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "caveman:caveman-init": {
+   "tokens": 27,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "caveman:caveman-review": {
+   "tokens": 14,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "caveman:caveman-stats": {
+   "tokens": 26,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "caveman:caveman": {
+   "tokens": 18,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "code-review:code-review": {
+   "tokens": 13,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:agent-handoff-spec": {
+   "tokens": 223,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:built-in-browser": {
+   "tokens": 213,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:chrome-browser": {
+   "tokens": 196,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:computer-use": {
+   "tokens": 242,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:consolidate-memory": {
+   "tokens": 33,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:critical-doc-review": {
+   "tokens": 227,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:debug-by-logging": {
+   "tokens": 129,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:deep-research": {
+   "tokens": 151,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:delegated-code-writer": {
+   "tokens": 126,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:docs": {
+   "tokens": 257,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:docx": {
+   "tokens": 240,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:explain-usage": {
+   "tokens": 57,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:google-workspace": {
+   "tokens": 244,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:idea-generator-critic": {
+   "tokens": 165,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:import-memory": {
+   "tokens": 43,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:mcp-builder": {
+   "tokens": 77,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:morning": {
+   "tokens": 92,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:pdf": {
+   "tokens": 115,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:pptx": {
+   "tokens": 246,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:schedule": {
+   "tokens": 59,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:setup-claude": {
+   "tokens": 27,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "design:accessibility-review": {
+   "tokens": 73,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "design:design-critique": {
+   "tokens": 74,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "design:design-system": {
+   "tokens": 74,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "design:ux-copy": {
+   "tokens": 72,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "bundle-tools:repo-pack": {
+   "tokens": 92,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "bundle-tools:secure-scan": {
+   "tokens": 83,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "dataviz": {
+   "tokens": 362,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "artifact-design": {
+   "tokens": 49,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "artifact-diagramming": {
+   "tokens": 51,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "artifact-capabilities": {
+   "tokens": 183,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "update-config": {
+   "tokens": 177,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "keybindings-help": {
+   "tokens": 62,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "code-review": {
+   "tokens": 248,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "simplify": {
+   "tokens": 47,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "fewer-permission-prompts": {
+   "tokens": 48,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "loop": {
+   "tokens": 86,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "schedule": {
+   "tokens": 95,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "claude-api": {
+   "tokens": 41,
+   "calls": 1,
+   "sessions_used": 1
+  },
+  "workflow-authoring": {
+   "tokens": 63,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "run": {
+   "tokens": 92,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "plugin-authoring": {
+   "tokens": 66,
+   "calls": 4,
+   "sessions_used": 3
+  },
+  "init": {
+   "tokens": 17,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "security-review": {
+   "tokens": 22,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "cowork-plugin-management:cowork-plugin-customizer": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "cowork-plugin-management:create-cowork-plugin": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:skill-creator": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:incident-response": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:deploy-checklist": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:testing-strategy": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "bundle-tools:struct-search": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "bundle-tools:test-affected": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:documentation": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:system-design": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "design:research-synthesis": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "bundle-tools:quality-gate": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:architecture": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "caveman:caveman-compress": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "bundle-tools:doc-extract": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "bundle-tools:skill-audit": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:code-review": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "bundle-tools:data-query": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "bundle-tools:api-check": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "anthropic-skills:xlsx": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:tech-debt": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "design:design-handoff": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "design:user-research": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "caveman:caveman-help": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:standup": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "engineering:debug": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  },
+  "caveman:cavecrew": {
+   "tokens": 0,
+   "calls": 0,
+   "sessions_used": 0
+  }
+ },
+ "agents_used": {
+  "general-purpose": 18,
+  "combo-worker": 14
+ },
+ "per_1k_tokens_saves_usd": 0.0911
+}

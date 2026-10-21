@@ -1,0 +1,2532 @@
+[
+ {
+  "label": "94f29205",
+  "kind": "main",
+  "agent_type": null,
+  "turns": 79,
+  "segments": 1,
+  "models": {
+   "claude-sonnet-5-5": 79
+  },
+  "tokens": {
+   "in": 160,
+   "cw": 221344,
+   "cr": 16874767,
+   "out": 63011
+  },
+  "cost": {
+   "in": 0.0003199999999999995,
+   "cw": 0.8828244999999999,
+   "cr": 1.6874767,
+   "out": 0.6301100000000001,
+   "advisor": 0.714724,
+   "m:claude-sonnet-5-5": 3.2007311999999994,
+   "total": 3.2007312
+  },
+  "tools": {
+   "Skill": {
+    "calls": 1,
+    "result_tok": 7,
+    "carried": 9.0675e-05
+   },
+   "Read": {
+    "calls": 5,
+    "result_tok": 5439,
+    "carried": 0.047344625
+   },
+   "Glob": {
+    "calls": 1,
+    "result_tok": 2409,
+    "carried": 0.027944400000000005
+   },
+   "Bash": {
+    "calls": 56,
+    "result_tok": 41699,
+    "carried": 0.38813729999999985
+   },
+   "ToolSearch": {
+    "calls": 2,
+    "result_tok": 45,
+    "carried": 0.00036937499999999997
+   },
+   "WebSearch": {
+    "calls": 8,
+    "result_tok": 5996,
+    "carried": 0.065578475
+   },
+   "WebFetch": {
+    "calls": 6,
+    "result_tok": 2248,
+    "carried": 0.023379924999999996
+   },
+   "Edit": {
+    "calls": 2,
+    "result_tok": 54,
+    "carried": 0.000427825
+   },
+   "Agent": {
+    "calls": 1,
+    "result_tok": 303,
+    "carried": 0.0017877000000000001
+   },
+   "mcp__ccd_directory__change_directory": {
+    "calls": 1,
+    "result_tok": 59,
+    "carried": 0.000238
+   }
+  },
+  "advisor": {
+   "calls": 1,
+   "input_tok": 155786,
+   "output_tok": 4579
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [
+   "advisor_message"
+  ],
+  "first_ts": "2026-10-20T16:58:03.298Z",
+  "last_ts": "2026-10-20T18:43:40.823Z"
+ },
+ {
+  "label": "94f29205",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 8,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 8
+  },
+  "tokens": {
+   "in": 16,
+   "cw": 125328,
+   "cr": 663911,
+   "out": 6169
+  },
+  "cost": {
+   "in": 1.6000000000000001e-06,
+   "cw": 0.015666000000000003,
+   "cr": 0.0033195550000000005,
+   "out": 0.0030845,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.022071655,
+   "total": 0.022071655000000003
+  },
+  "tools": {
+   "Glob": {
+    "calls": 9,
+    "result_tok": 7350,
+    "carried": 0.032092050000000004
+   },
+   "Read": {
+    "calls": 40,
+    "result_tok": 17660,
+    "carried": 0.076493025
+   },
+   "Write": {
+    "calls": 1,
+    "result_tok": 68,
+    "carried": 0.00027879999999999995
+   },
+   "Grep": {
+    "calls": 1,
+    "result_tok": 16,
+    "carried": 6.4e-05
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-20T18:21:13.519Z",
+  "last_ts": "2026-10-20T18:22:17.415Z"
+ },
+ {
+  "label": "47a635e9",
+  "kind": "main",
+  "agent_type": null,
+  "turns": 32,
+  "segments": 1,
+  "models": {
+   "claude-sonnet-5-5": 32
+  },
+  "tokens": {
+   "in": 64,
+   "cw": 108245,
+   "cr": 4171808,
+   "out": 25924
+  },
+  "cost": {
+   "in": 0.00012800000000000002,
+   "cw": 0.43298,
+   "cr": 0.4171808,
+   "out": 0.25924,
+   "advisor": 0,
+   "m:claude-sonnet-5-5": 1.1095287999999996,
+   "total": 1.1095288
+  },
+  "tools": {
+   "Skill": {
+    "calls": 2,
+    "result_tok": 16,
+    "carried": 9.9825e-05
+   },
+   "Bash": {
+    "calls": 17,
+    "result_tok": 12578,
+    "carried": 0.07918847500000002
+   },
+   "Write": {
+    "calls": 4,
+    "result_tok": 197,
+    "carried": 0.0012017
+   },
+   "Edit": {
+    "calls": 6,
+    "result_tok": 280,
+    "carried": 0.0014865999999999998
+   },
+   "mcp__ccd_turn__wrap_up": {
+    "calls": 1,
+    "result_tok": 47,
+    "carried": 0.000235
+   },
+   "AskUserQuestion": {
+    "calls": 1,
+    "result_tok": 43,
+    "carried": 0.0001935
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T12:20:05.668Z",
+  "last_ts": "2026-10-21T12:37:14.741Z"
+ },
+ {
+  "label": "a37c0229",
+  "kind": "main",
+  "agent_type": null,
+  "turns": 62,
+  "segments": 1,
+  "models": {
+   "claude-opus-5-5": 62
+  },
+  "tokens": {
+   "in": 126,
+   "cw": 168820,
+   "cr": 10529510,
+   "out": 46911
+  },
+  "cost": {
+   "in": 0.0005039999999999993,
+   "cw": 1.3505600000000006,
+   "cr": 2.105902000000001,
+   "out": 0.9382200000000003,
+   "advisor": 0,
+   "m:claude-opus-5-5": 4.395186,
+   "total": 4.395186000000002
+  },
+  "tools": {
+   "mcp__ccd_turn__update_plan": {
+    "calls": 1,
+    "result_tok": 5,
+    "carried": 5.25e-05
+   },
+   "Skill": {
+    "calls": 1,
+    "result_tok": 8,
+    "carried": 8.25e-05
+   },
+   "Bash": {
+    "calls": 42,
+    "result_tok": 23890,
+    "carried": 0.1974352
+   },
+   "Write": {
+    "calls": 4,
+    "result_tok": 215,
+    "carried": 0.0014968499999999999
+   },
+   "ToolSearch": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.00012150000000000003
+   },
+   "mcp__fetch__fetch": {
+    "calls": 2,
+    "result_tok": 4663,
+    "carried": 0.03719585
+   },
+   "Edit": {
+    "calls": 5,
+    "result_tok": 161,
+    "carried": 0.0010074250000000002
+   },
+   "Read": {
+    "calls": 4,
+    "result_tok": 2534,
+    "carried": 0.016565350000000003
+   },
+   "mcp__ccd_turn__wrap_up": {
+    "calls": 3,
+    "result_tok": 136,
+    "carried": 0.000609775
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T13:10:15.104Z",
+  "last_ts": "2026-10-21T13:44:12.859Z"
+ },
+ {
+  "label": "af6ed211",
+  "kind": "within",
+  "agent_type": null,
+  "turns": 31,
+  "segments": 1,
+  "models": {
+   "claude-sonnet-5-5": 31
+  },
+  "tokens": {
+   "in": 62,
+   "cw": 103603,
+   "cr": 3604026,
+   "out": 19696
+  },
+  "cost": {
+   "in": 0.00012400000000000003,
+   "cw": 0.414412,
+   "cr": 0.3604026,
+   "out": 0.19696,
+   "advisor": 0,
+   "m:claude-sonnet-5-5": 0.9718985999999998,
+   "total": 0.9718986000000001
+  },
+  "tools": {
+   "Bash": {
+    "calls": 16,
+    "result_tok": 4886,
+    "carried": 0.02827115
+   },
+   "Skill": {
+    "calls": 1,
+    "result_tok": 8,
+    "carried": 5.5275e-05
+   },
+   "mcp__ccd_turn__wrap_up": {
+    "calls": 1,
+    "result_tok": 44,
+    "carried": 0.0002685
+   },
+   "Read": {
+    "calls": 4,
+    "result_tok": 4049,
+    "carried": 0.019685475
+   },
+   "Edit": {
+    "calls": 2,
+    "result_tok": 59,
+    "carried": 0.0003057
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 1.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.001408475,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T12:48:24.455Z",
+  "last_ts": "2026-10-21T13:06:34.112Z"
+ },
+ {
+  "label": "e09cf79f",
+  "kind": "main",
+  "agent_type": null,
+  "turns": 146,
+  "segments": 3,
+  "models": {
+   "claude-sonnet-5-5": 146
+  },
+  "tokens": {
+   "in": 296,
+   "cw": 1265110,
+   "cr": 45089666,
+   "out": 186534
+  },
+  "cost": {
+   "in": 0.0005919999999999988,
+   "cw": 5.0547685000000016,
+   "cr": 4.508966600000001,
+   "out": 1.8653399999999996,
+   "advisor": 1.896616,
+   "m:claude-sonnet-5-5": 11.429667100000003,
+   "total": 11.429667100000001
+  },
+  "tools": {
+   "Skill": {
+    "calls": 1,
+    "result_tok": 7,
+    "carried": 0.00011935000000000001
+   },
+   "Bash": {
+    "calls": 131,
+    "result_tok": 73710,
+    "carried": 0.83052465
+   },
+   "Read": {
+    "calls": 6,
+    "result_tok": 8372,
+    "carried": 0.1243047
+   },
+   "ToolSearch": {
+    "calls": 1,
+    "result_tok": 25,
+    "carried": 0.000373375
+   },
+   "WebFetch": {
+    "calls": 2,
+    "result_tok": 11165,
+    "carried": 0.1597368
+   },
+   "WebSearch": {
+    "calls": 1,
+    "result_tok": 774,
+    "carried": 0.011149200000000001
+   },
+   "Agent": {
+    "calls": 2,
+    "result_tok": 544,
+    "carried": 0.0077248
+   },
+   "ListAgents": {
+    "calls": 1,
+    "result_tok": 344,
+    "carried": 0.0046096
+   },
+   "Write": {
+    "calls": 8,
+    "result_tok": 318,
+    "carried": 0.0023461750000000003
+   },
+   "Edit": {
+    "calls": 17,
+    "result_tok": 760,
+    "carried": 0.009697324999999998
+   },
+   "PowerShell": {
+    "calls": 1,
+    "result_tok": 56,
+    "carried": 0.000264375
+   },
+   "Glob": {
+    "calls": 2,
+    "result_tok": 55,
+    "carried": 0.00022652499999999996
+   }
+  },
+  "advisor": {
+   "calls": 2,
+   "input_tok": 386074,
+   "output_tok": 17616
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 2
+  },
+  "busts": [],
+  "non_message_iterations": [
+   "advisor_message"
+  ],
+  "first_ts": "2026-10-20T18:50:52.242Z",
+  "last_ts": "2026-10-21T12:18:08.125Z"
+ },
+ {
+  "label": "e09cf79f",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 3,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 3
+  },
+  "tokens": {
+   "in": 6,
+   "cw": 91017,
+   "cr": 141252,
+   "out": 17
+  },
+  "cost": {
+   "in": 6.000000000000001e-07,
+   "cw": 0.011377125,
+   "cr": 0.0007062600000000001,
+   "out": 8.5e-06,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.012092485,
+   "total": 0.012092485
+  },
+  "tools": {
+   "Bash": {
+    "calls": 4,
+    "result_tok": 12751,
+    "carried": 0.051257
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-20T18:54:44.512Z",
+  "last_ts": "2026-10-20T18:55:14.850Z"
+ },
+ {
+  "label": "e09cf79f",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 13,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 13
+  },
+  "tokens": {
+   "in": 26,
+   "cw": 69836,
+   "cr": 1125139,
+   "out": 80
+  },
+  "cost": {
+   "in": 2.600000000000001e-06,
+   "cw": 0.0087295,
+   "cr": 0.005625695000000001,
+   "out": 4e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.014397795,
+   "total": 0.014397795
+  },
+  "tools": {
+   "Bash": {
+    "calls": 14,
+    "result_tok": 15737,
+    "carried": 0.074609225
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-20T18:54:46.733Z",
+  "last_ts": "2026-10-20T18:56:43.613Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "main",
+  "agent_type": null,
+  "turns": 209,
+  "segments": 1,
+  "models": {
+   "claude-sonnet-5-5": 209
+  },
+  "tokens": {
+   "in": 424,
+   "cw": 606381,
+   "cr": 87208980,
+   "out": 297573
+  },
+  "cost": {
+   "in": 0.0008479999999999981,
+   "cw": 2.4179535,
+   "cr": 8.720898000000004,
+   "out": 2.975729999999999,
+   "advisor": 3.2523560000000002,
+   "m:claude-sonnet-5-5": 14.115429500000003,
+   "total": 14.115429500000003
+  },
+  "tools": {
+   "mcp__ccd_turn__update_plan": {
+    "calls": 6,
+    "result_tok": 47,
+    "carried": 0.000916875
+   },
+   "Skill": {
+    "calls": 1,
+    "result_tok": 7,
+    "carried": 0.000191425
+   },
+   "Bash": {
+    "calls": 126,
+    "result_tok": 58573,
+    "carried": 0.7822673499999998
+   },
+   "Read": {
+    "calls": 4,
+    "result_tok": 10969,
+    "carried": 0.2585372000000001
+   },
+   "PowerShell": {
+    "calls": 30,
+    "result_tok": 22302,
+    "carried": 0.499080175
+   },
+   "Agent": {
+    "calls": 14,
+    "result_tok": 3808,
+    "carried": 0.0823072
+   },
+   "ScheduleWakeup": {
+    "calls": 2,
+    "result_tok": 118,
+    "carried": 0.0025750499999999997
+   },
+   "Write": {
+    "calls": 15,
+    "result_tok": 670,
+    "carried": 0.011329025000000001
+   },
+   "Edit": {
+    "calls": 70,
+    "result_tok": 2732,
+    "carried": 0.038504724999999976
+   },
+   "mcp__ccd_turn__wrap_up": {
+    "calls": 8,
+    "result_tok": 466,
+    "carried": 0.006134425000000001
+   },
+   "ToolSearch": {
+    "calls": 1,
+    "result_tok": 50,
+    "carried": 0.00084
+   },
+   "mcp__c2714784-fbe6-4fc4-9da0-df3738764677__resolve-library-id": {
+    "calls": 1,
+    "result_tok": 410,
+    "carried": 0.006859525000000002
+   },
+   "mcp__c2714784-fbe6-4fc4-9da0-df3738764677__query-docs": {
+    "calls": 1,
+    "result_tok": 1973,
+    "carried": 0.032751800000000005
+   },
+   "mcp__Claude_Browser__browser_batch": {
+    "calls": 2,
+    "result_tok": 791,
+    "carried": 0.012726025
+   },
+   "mcp__Claude_Browser__javascript_tool": {
+    "calls": 2,
+    "result_tok": 236,
+    "carried": 0.003819775000000001
+   }
+  },
+  "advisor": {
+   "calls": 3,
+   "input_tok": 683619,
+   "output_tok": 25894
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [
+   "advisor_message"
+  ],
+  "first_ts": "2026-10-21T14:00:09.532Z",
+  "last_ts": "2026-10-21T17:28:53.190Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 9,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 9
+  },
+  "tokens": {
+   "in": 18,
+   "cw": 133579,
+   "cr": 769184,
+   "out": 10872
+  },
+  "cost": {
+   "in": 1.8000000000000001e-06,
+   "cw": 0.016697374999999997,
+   "cr": 0.0038459200000000005,
+   "out": 0.005436,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.025981095,
+   "total": 0.025981094999999996
+  },
+  "tools": {
+   "Glob": {
+    "calls": 7,
+    "result_tok": 5590,
+    "carried": 0.0253016
+   },
+   "Grep": {
+    "calls": 22,
+    "result_tok": 13916,
+    "carried": 0.059634150000000004
+   },
+   "Read": {
+    "calls": 8,
+    "result_tok": 4647,
+    "carried": 0.019924575
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [
+   {
+    "turn": 7,
+    "unexplained_write_tok": 11743,
+    "prefix_lost_tok": 0,
+    "cost": 0.00229003125
+   }
+  ],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:04:08.848Z",
+  "last_ts": "2026-10-21T14:05:52.719Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 8,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 8
+  },
+  "tokens": {
+   "in": 16,
+   "cw": 86259,
+   "cr": 753575,
+   "out": 472
+  },
+  "cost": {
+   "in": 1.6000000000000001e-06,
+   "cw": 0.010782374999999999,
+   "cr": 0.0037678750000000004,
+   "out": 0.00023600000000000002,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.014787849999999998,
+   "total": 0.014787849999999998
+  },
+  "tools": {
+   "Bash": {
+    "calls": 8,
+    "result_tok": 14935,
+    "carried": 0.0669655
+   },
+   "mcp__codegraph__codegraph_explore": {
+    "calls": 1,
+    "result_tok": 94,
+    "carried": 0.0004324
+   },
+   "mcp__Claude_Browser__navigate": {
+    "calls": 1,
+    "result_tok": 46,
+    "carried": 0.00020925
+   },
+   "Read": {
+    "calls": 2,
+    "result_tok": 6311,
+    "carried": 0.02755175
+   },
+   "mcp__ccd_session__read_widget_context": {
+    "calls": 1,
+    "result_tok": 157,
+    "carried": 0.000676175
+   },
+   "Grep": {
+    "calls": 1,
+    "result_tok": 1362,
+    "carried": 0.005585224999999999
+   },
+   "mcp__ccd_session__hand_off_to_session": {
+    "calls": 1,
+    "result_tok": 246,
+    "carried": 0.000986
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:07:46.123Z",
+  "last_ts": "2026-10-21T14:09:37.585Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 8,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 8
+  },
+  "tokens": {
+   "in": 16,
+   "cw": 136542,
+   "cr": 708133,
+   "out": 15821
+  },
+  "cost": {
+   "in": 1.6000000000000001e-06,
+   "cw": 0.01706775,
+   "cr": 0.0035406650000000006,
+   "out": 0.007910499999999999,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.028520515000000003,
+   "total": 0.028520515
+  },
+  "tools": {
+   "Glob": {
+    "calls": 6,
+    "result_tok": 3075,
+    "carried": 0.014148449999999996
+   },
+   "Grep": {
+    "calls": 25,
+    "result_tok": 21454,
+    "carried": 0.09227107499999998
+   },
+   "Read": {
+    "calls": 5,
+    "result_tok": 2768,
+    "carried": 0.0119024
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:04:09.392Z",
+  "last_ts": "2026-10-21T14:05:45.709Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 11,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 11
+  },
+  "tokens": {
+   "in": 22,
+   "cw": 55146,
+   "cr": 861023,
+   "out": 54
+  },
+  "cost": {
+   "in": 2.2000000000000005e-06,
+   "cw": 0.00689325,
+   "cr": 0.004305115000000001,
+   "out": 2.7e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.011227565,
+   "total": 0.011227565
+  },
+  "tools": {
+   "Bash": {
+    "calls": 12,
+    "result_tok": 6021,
+    "carried": 0.0261173
+   },
+   "ToolSearch": {
+    "calls": 1,
+    "result_tok": 25,
+    "carried": 0.0001236
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:07:46.761Z",
+  "last_ts": "2026-10-21T14:09:49.234Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 10,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 10
+  },
+  "tokens": {
+   "in": 20,
+   "cw": 97458,
+   "cr": 984945,
+   "out": 541
+  },
+  "cost": {
+   "in": 2.0000000000000003e-06,
+   "cw": 0.01218225,
+   "cr": 0.0049247250000000005,
+   "out": 0.0002705,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.017379475000000002,
+   "total": 0.017379475000000002
+  },
+  "tools": {
+   "Bash": {
+    "calls": 17,
+    "result_tok": 29868,
+    "carried": 0.133830725
+   },
+   "Read": {
+    "calls": 3,
+    "result_tok": 2524,
+    "carried": 0.011223074999999997
+   },
+   "TaskStop": {
+    "calls": 1,
+    "result_tok": 348,
+    "carried": 0.00146265
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:07:47.641Z",
+  "last_ts": "2026-10-21T14:11:51.117Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 10,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 10
+  },
+  "tokens": {
+   "in": 20,
+   "cw": 144187,
+   "cr": 842683,
+   "out": 24793
+  },
+  "cost": {
+   "in": 2.0000000000000003e-06,
+   "cw": 0.018023374999999998,
+   "cr": 0.004213415000000001,
+   "out": 0.0123965,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.034635290000000006,
+   "total": 0.03463529
+  },
+  "tools": {
+   "Glob": {
+    "calls": 3,
+    "result_tok": 2115,
+    "carried": 0.010131600000000001
+   },
+   "Grep": {
+    "calls": 41,
+    "result_tok": 20306,
+    "carried": 0.08636319999999999
+   },
+   "Read": {
+    "calls": 7,
+    "result_tok": 3832,
+    "carried": 0.016375825
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:04:08.818Z",
+  "last_ts": "2026-10-21T14:06:27.738Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 6,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 6
+  },
+  "tokens": {
+   "in": 12,
+   "cw": 79686,
+   "cr": 501588,
+   "out": 46
+  },
+  "cost": {
+   "in": 1.2000000000000002e-06,
+   "cw": 0.009960749999999999,
+   "cr": 0.0025079400000000006,
+   "out": 2.3e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.012492890000000001,
+   "total": 0.01249289
+  },
+  "tools": {
+   "Bash": {
+    "calls": 11,
+    "result_tok": 25956,
+    "carried": 0.10953812500000001
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:07:46.025Z",
+  "last_ts": "2026-10-21T14:09:11.607Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 11,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 11
+  },
+  "tokens": {
+   "in": 22,
+   "cw": 70436,
+   "cr": 955419,
+   "out": 77
+  },
+  "cost": {
+   "in": 2.2000000000000005e-06,
+   "cw": 0.008804500000000002,
+   "cr": 0.004777095000000001,
+   "out": 3.85e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.013622295000000001,
+   "total": 0.013622295000000003
+  },
+  "tools": {
+   "Bash": {
+    "calls": 15,
+    "result_tok": 16778,
+    "carried": 0.07551827500000001
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:07:45.772Z",
+  "last_ts": "2026-10-21T14:09:14.792Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 6,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 6
+  },
+  "tokens": {
+   "in": 12,
+   "cw": 99383,
+   "cr": 425699,
+   "out": 32
+  },
+  "cost": {
+   "in": 1.2000000000000002e-06,
+   "cw": 0.012422875000000002,
+   "cr": 0.002128495,
+   "out": 1.6e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.014568570000000003,
+   "total": 0.014568570000000001
+  },
+  "tools": {
+   "Bash": {
+    "calls": 13,
+    "result_tok": 9971,
+    "carried": 0.042256875
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T15:37:58.391Z",
+  "last_ts": "2026-10-21T15:39:25.384Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 14,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 14
+  },
+  "tokens": {
+   "in": 28,
+   "cw": 94154,
+   "cr": 1334646,
+   "out": 915
+  },
+  "cost": {
+   "in": 2.800000000000001e-06,
+   "cw": 0.01176925,
+   "cr": 0.0066732300000000005,
+   "out": 0.00045749999999999995,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.01890278,
+   "total": 0.01890278
+  },
+  "tools": {
+   "Bash": {
+    "calls": 15,
+    "result_tok": 23627,
+    "carried": 0.10957482499999997
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:07:46.441Z",
+  "last_ts": "2026-10-21T14:10:26.110Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 24,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 24
+  },
+  "tokens": {
+   "in": 50,
+   "cw": 126370,
+   "cr": 2916436,
+   "out": 379
+  },
+  "cost": {
+   "in": 5.000000000000002e-06,
+   "cw": 0.01579625,
+   "cr": 0.014582180000000004,
+   "out": 0.00018950000000000003,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.030572929999999998,
+   "total": 0.030572930000000005
+  },
+  "tools": {
+   "Bash": {
+    "calls": 24,
+    "result_tok": 36795,
+    "carried": 0.20200354999999995
+   },
+   "Monitor": {
+    "calls": 1,
+    "result_tok": 76,
+    "carried": 0.000366
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 6.1e-05
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:07:47.144Z",
+  "last_ts": "2026-10-21T14:13:42.050Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 10,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 10
+  },
+  "tokens": {
+   "in": 20,
+   "cw": 99361,
+   "cr": 819182,
+   "out": 52
+  },
+  "cost": {
+   "in": 2.0000000000000003e-06,
+   "cw": 0.012420124999999997,
+   "cr": 0.00409591,
+   "out": 2.6000000000000002e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.016544035000000002,
+   "total": 0.016544035
+  },
+  "tools": {
+   "ToolSearch": {
+    "calls": 1,
+    "result_tok": 25,
+    "carried": 0.0001236
+   },
+   "Bash": {
+    "calls": 11,
+    "result_tok": 9366,
+    "carried": 0.04407997499999999
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T15:37:58.502Z",
+  "last_ts": "2026-10-21T15:39:43.396Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 13,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 13
+  },
+  "tokens": {
+   "in": 26,
+   "cw": 99283,
+   "cr": 1432492,
+   "out": 263
+  },
+  "cost": {
+   "in": 2.600000000000001e-06,
+   "cw": 0.012410375000000001,
+   "cr": 0.0071624600000000024,
+   "out": 0.0001315,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.019706935,
+   "total": 0.019706935000000005
+  },
+  "tools": {
+   "Bash": {
+    "calls": 20,
+    "result_tok": 27907,
+    "carried": 0.13546677499999998
+   },
+   "mcp__ccd_directory__change_directory": {
+    "calls": 1,
+    "result_tok": 57,
+    "carried": 0.000246175
+   },
+   "Grep": {
+    "calls": 2,
+    "result_tok": 934,
+    "carried": 0.00374785
+   },
+   "Glob": {
+    "calls": 1,
+    "result_tok": 99,
+    "carried": 0.0004059
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T14:07:46.344Z",
+  "last_ts": "2026-10-21T14:12:59.605Z"
+ },
+ {
+  "label": "a3719bcf",
+  "kind": "subagent",
+  "agent_type": "combo-worker",
+  "turns": 12,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 12
+  },
+  "tokens": {
+   "in": 24,
+   "cw": 113537,
+   "cr": 1102531,
+   "out": 60
+  },
+  "cost": {
+   "in": 2.4000000000000007e-06,
+   "cw": 0.014192124999999998,
+   "cr": 0.005512655000000001,
+   "out": 2.9999999999999997e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.01973718,
+   "total": 0.01973718
+  },
+  "tools": {
+   "Bash": {
+    "calls": 17,
+    "result_tok": 15167,
+    "carried": 0.07240102500000002
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T15:37:58.814Z",
+  "last_ts": "2026-10-21T15:41:45.828Z"
+ },
+ {
+  "label": "53459293",
+  "kind": "main",
+  "agent_type": null,
+  "turns": 37,
+  "segments": 1,
+  "models": {
+   "claude-sonnet-5-5": 37
+  },
+  "tokens": {
+   "in": 74,
+   "cw": 50592,
+   "cr": 25472860,
+   "out": 38842
+  },
+  "cost": {
+   "in": 0.00014799999999999997,
+   "cw": 0.20236799999999994,
+   "cr": 2.547286,
+   "out": 0.38842000000000004,
+   "advisor": 0,
+   "m:claude-sonnet-5-5": 3.1382219999999994,
+   "total": 3.1382220000000003
+  },
+  "tools": {
+   "Bash": {
+    "calls": 26,
+    "result_tok": 5543,
+    "carried": 0.03349559999999999
+   },
+   "Edit": {
+    "calls": 2,
+    "result_tok": 50,
+    "carried": 0.00035499999999999996
+   },
+   "PowerShell": {
+    "calls": 1,
+    "result_tok": 164,
+    "carried": 0.001100475
+   },
+   "mcp__ccd_turn__wrap_up": {
+    "calls": 3,
+    "result_tok": 141,
+    "carried": 0.0007755
+   },
+   "Write": {
+    "calls": 1,
+    "result_tok": 59,
+    "carried": 0.00037642500000000006
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T17:52:30.159Z",
+  "last_ts": "2026-10-21T18:18:55.688Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "main",
+  "agent_type": null,
+  "turns": 97,
+  "segments": 1,
+  "models": {
+   "claude-sonnet-5-5": 97
+  },
+  "tokens": {
+   "in": 200,
+   "cw": 260140,
+   "cr": 21808310,
+   "out": 70882
+  },
+  "cost": {
+   "in": 0.0003999999999999993,
+   "cw": 1.03378,
+   "cr": 2.180831,
+   "out": 0.7088200000000001,
+   "advisor": 3.1964,
+   "m:claude-sonnet-5-5": 3.923831,
+   "total": 3.923831
+  },
+  "tools": {
+   "mcp__ccd_turn__update_plan": {
+    "calls": 13,
+    "result_tok": 135,
+    "carried": 0.0011653
+   },
+   "Skill": {
+    "calls": 1,
+    "result_tok": 5,
+    "carried": 7.425e-05
+   },
+   "Bash": {
+    "calls": 65,
+    "result_tok": 31915,
+    "carried": 0.3258557
+   },
+   "Read": {
+    "calls": 6,
+    "result_tok": 17153,
+    "carried": 0.19459715
+   },
+   "Agent": {
+    "calls": 12,
+    "result_tok": 3264,
+    "carried": 0.0294304
+   },
+   "Edit": {
+    "calls": 6,
+    "result_tok": 215,
+    "carried": 0.001979775
+   },
+   "Write": {
+    "calls": 2,
+    "result_tok": 86,
+    "carried": 0.000616075
+   },
+   "mcp__ccd_turn__wrap_up": {
+    "calls": 5,
+    "result_tok": 282,
+    "carried": 0.001894925
+   }
+  },
+  "advisor": {
+   "calls": 3,
+   "input_tok": 686655,
+   "output_tok": 22489
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [
+   "advisor_message"
+  ],
+  "first_ts": "2026-10-21T18:51:46.234Z",
+  "last_ts": "2026-10-21T19:56:19.729Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 18,
+  "segments": 1,
+  "models": {
+   "claude-opus-5-5": 18
+  },
+  "tokens": {
+   "in": 36,
+   "cw": 110820,
+   "cr": 1594453,
+   "out": 289
+  },
+  "cost": {
+   "in": 0.00014400000000000003,
+   "cw": 0.5541,
+   "cr": 0.3188906,
+   "out": 0.005780000000000003,
+   "advisor": 0,
+   "m:claude-opus-5-5": 0.8789146000000002,
+   "total": 0.8789146000000001
+  },
+  "tools": {
+   "Bash": {
+    "calls": 17,
+    "result_tok": 15490,
+    "carried": 0.07542510000000001
+   },
+   "Read": {
+    "calls": 1,
+    "result_tok": 1319,
+    "carried": 0.0068588
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T19:03:30.556Z",
+  "last_ts": "2026-10-21T19:05:39.682Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 8,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 8
+  },
+  "tokens": {
+   "in": 16,
+   "cw": 103591,
+   "cr": 629904,
+   "out": 1153
+  },
+  "cost": {
+   "in": 1.6000000000000001e-06,
+   "cw": 0.012948875000000002,
+   "cr": 0.003149520000000001,
+   "out": 0.0005765,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.016676495000000003,
+   "total": 0.016676495000000003
+  },
+  "tools": {
+   "Bash": {
+    "calls": 7,
+    "result_tok": 2493,
+    "carried": 0.0103305
+   },
+   "Read": {
+    "calls": 9,
+    "result_tok": 10801,
+    "carried": 0.048247399999999996
+   },
+   "Glob": {
+    "calls": 4,
+    "result_tok": 432,
+    "carried": 0.0019008000000000002
+   },
+   "Grep": {
+    "calls": 1,
+    "result_tok": 548,
+    "carried": 0.002359625
+   },
+   "mcp__ccd_turn__update_plan": {
+    "calls": 1,
+    "result_tok": 62,
+    "carried": 0.0
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T18:54:33.915Z",
+  "last_ts": "2026-10-21T18:55:47.953Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 4,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 4
+  },
+  "tokens": {
+   "in": 8,
+   "cw": 97167,
+   "cr": 241982,
+   "out": 23
+  },
+  "cost": {
+   "in": 8.000000000000001e-07,
+   "cw": 0.012145875000000002,
+   "cr": 0.0012099100000000002,
+   "out": 1.1499999999999998e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.013368085000000002,
+   "total": 0.013368085000000002
+  },
+  "tools": {
+   "Bash": {
+    "calls": 8,
+    "result_tok": 11897,
+    "carried": 0.048861425
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T19:21:19.220Z",
+  "last_ts": "2026-10-21T19:22:31.855Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 8,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 8
+  },
+  "tokens": {
+   "in": 16,
+   "cw": 121987,
+   "cr": 693763,
+   "out": 1352
+  },
+  "cost": {
+   "in": 1.6000000000000001e-06,
+   "cw": 0.015248375,
+   "cr": 0.0034688150000000005,
+   "out": 0.000676,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.01939479,
+   "total": 0.01939479
+  },
+  "tools": {
+   "Bash": {
+    "calls": 10,
+    "result_tok": 21646,
+    "carried": 0.09504570000000001
+   },
+   "Grep": {
+    "calls": 2,
+    "result_tok": 1196,
+    "carried": 0.005224049999999999
+   },
+   "Glob": {
+    "calls": 1,
+    "result_tok": 1493,
+    "carried": 0.006572500000000001
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T18:54:34.544Z",
+  "last_ts": "2026-10-21T18:55:46.512Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 8,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 8
+  },
+  "tokens": {
+   "in": 16,
+   "cw": 121523,
+   "cr": 652359,
+   "out": 10963
+  },
+  "cost": {
+   "in": 1.6000000000000001e-06,
+   "cw": 0.015190375,
+   "cr": 0.0032617950000000005,
+   "out": 0.0054815,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.023935270000000005,
+   "total": 0.02393527
+  },
+  "tools": {
+   "mcp__ccd_turn__update_plan": {
+    "calls": 1,
+    "result_tok": 62,
+    "carried": 0.00028634999999999994
+   },
+   "Glob": {
+    "calls": 2,
+    "result_tok": 182,
+    "carried": 0.0008395
+   },
+   "Read": {
+    "calls": 8,
+    "result_tok": 11200,
+    "carried": 0.04975675
+   },
+   "Grep": {
+    "calls": 11,
+    "result_tok": 10797,
+    "carried": 0.045768775000000005
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T18:54:34.405Z",
+  "last_ts": "2026-10-21T18:56:08.518Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 13,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 13
+  },
+  "tokens": {
+   "in": 26,
+   "cw": 121874,
+   "cr": 1240461,
+   "out": 62
+  },
+  "cost": {
+   "in": 2.600000000000001e-06,
+   "cw": 0.015234250000000001,
+   "cr": 0.006202305000000001,
+   "out": 3.1e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.021470155,
+   "total": 0.021470155
+  },
+  "tools": {
+   "Bash": {
+    "calls": 18,
+    "result_tok": 19321,
+    "carried": 0.09268182500000001
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T19:21:19.580Z",
+  "last_ts": "2026-10-21T19:23:33.626Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 4,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 4
+  },
+  "tokens": {
+   "in": 8,
+   "cw": 102736,
+   "cr": 254853,
+   "out": 6697
+  },
+  "cost": {
+   "in": 8.000000000000001e-07,
+   "cw": 0.012842,
+   "cr": 0.0012742650000000003,
+   "out": 0.0033485,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.017465565,
+   "total": 0.017465565
+  },
+  "tools": {
+   "Glob": {
+    "calls": 1,
+    "result_tok": 279,
+    "carried": 0.0011739
+   },
+   "Read": {
+    "calls": 14,
+    "result_tok": 10093,
+    "carried": 0.041956900000000005
+   },
+   "Grep": {
+    "calls": 2,
+    "result_tok": 3555,
+    "carried": 0.014672949999999999
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T18:54:34.390Z",
+  "last_ts": "2026-10-21T18:55:27.052Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 8,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 8
+  },
+  "tokens": {
+   "in": 16,
+   "cw": 122797,
+   "cr": 703295,
+   "out": 7681
+  },
+  "cost": {
+   "in": 1.6000000000000001e-06,
+   "cw": 0.015349625000000002,
+   "cr": 0.0035164750000000007,
+   "out": 0.0038405,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.022708199999999998,
+   "total": 0.0227082
+  },
+  "tools": {
+   "Glob": {
+    "calls": 6,
+    "result_tok": 742,
+    "carried": 0.0033735249999999996
+   },
+   "Read": {
+    "calls": 18,
+    "result_tok": 17532,
+    "carried": 0.077442725
+   },
+   "Grep": {
+    "calls": 9,
+    "result_tok": 5098,
+    "carried": 0.021956125000000007
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T18:54:35.038Z",
+  "last_ts": "2026-10-21T18:55:58.555Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 10,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 10
+  },
+  "tokens": {
+   "in": 20,
+   "cw": 121937,
+   "cr": 918908,
+   "out": 56
+  },
+  "cost": {
+   "in": 2.0000000000000003e-06,
+   "cw": 0.015242125,
+   "cr": 0.004594540000000001,
+   "out": 2.7999999999999996e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.019866665000000002,
+   "total": 0.019866665000000002
+  },
+  "tools": {
+   "Bash": {
+    "calls": 12,
+    "result_tok": 25771,
+    "carried": 0.11753352500000001
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T19:21:19.373Z",
+  "last_ts": "2026-10-21T19:23:27.949Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 7,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 7
+  },
+  "tokens": {
+   "in": 14,
+   "cw": 113358,
+   "cr": 580489,
+   "out": 37
+  },
+  "cost": {
+   "in": 1.4000000000000001e-06,
+   "cw": 0.01416975,
+   "cr": 0.002902445000000001,
+   "out": 1.8499999999999996e-05,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.017092095000000005,
+   "total": 0.017092095
+  },
+  "tools": {
+   "Bash": {
+    "calls": 13,
+    "result_tok": 18530,
+    "carried": 0.0812329
+   },
+   "Grep": {
+    "calls": 1,
+    "result_tok": 535,
+    "carried": 0.002354
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T19:21:19.160Z",
+  "last_ts": "2026-10-21T19:22:58.330Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 8,
+  "segments": 1,
+  "models": {
+   "claude-haiku-5-5": 8
+  },
+  "tokens": {
+   "in": 16,
+   "cw": 107577,
+   "cr": 658388,
+   "out": 1067
+  },
+  "cost": {
+   "in": 1.6000000000000001e-06,
+   "cw": 0.013447124999999999,
+   "cr": 0.0032919400000000006,
+   "out": 0.0005335,
+   "advisor": 0,
+   "m:claude-haiku-5-5": 0.017274165,
+   "total": 0.017274165
+  },
+  "tools": {
+   "Read": {
+    "calls": 4,
+    "result_tok": 3647,
+    "carried": 0.016777349999999996
+   },
+   "Bash": {
+    "calls": 13,
+    "result_tok": 13234,
+    "carried": 0.058304575000000004
+   },
+   "Grep": {
+    "calls": 1,
+    "result_tok": 243,
+    "carried": 0.0011189499999999998
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T19:21:19.203Z",
+  "last_ts": "2026-10-21T19:22:45.849Z"
+ },
+ {
+  "label": "b3d7230a",
+  "kind": "subagent",
+  "agent_type": "general-purpose",
+  "turns": 13,
+  "segments": 1,
+  "models": {
+   "claude-opus-5-5": 13
+  },
+  "tokens": {
+   "in": 26,
+   "cw": 97621,
+   "cr": 1047967,
+   "out": 1081
+  },
+  "cost": {
+   "in": 0.00010400000000000002,
+   "cw": 0.4881049999999999,
+   "cr": 0.2095934,
+   "out": 0.021620000000000004,
+   "advisor": 0,
+   "m:claude-opus-5-5": 0.7194224,
+   "total": 0.7194223999999999
+  },
+  "tools": {
+   "Bash": {
+    "calls": 10,
+    "result_tok": 6818,
+    "carried": 0.03296012500000001
+   },
+   "Read": {
+    "calls": 3,
+    "result_tok": 1669,
+    "carried": 0.007428
+   },
+   "Grep": {
+    "calls": 2,
+    "result_tok": 891,
+    "carried": 0.0037422
+   },
+   "SubagentHandback": {
+    "calls": 1,
+    "result_tok": 15,
+    "carried": 0.0
+   }
+  },
+  "advisor": {
+   "calls": 0,
+   "input_tok": 0,
+   "output_tok": 0
+  },
+  "dup": {
+   "read_within": 0.0,
+   "read_after_compaction": 0.0,
+   "cmd_within": 0.0,
+   "cmd_after_compaction": 0.0,
+   "carried_within": 0.0,
+   "carried_after_compaction": 0.0,
+   "rebuild_turns_after_compaction": 0
+  },
+  "busts": [],
+  "non_message_iterations": [],
+  "first_ts": "2026-10-21T19:27:27.694Z",
+  "last_ts": "2026-10-21T19:28:41.848Z"
+ }
+]

@@ -1,0 +1,446 @@
+[
+ {
+  "id": "2026-10-12T19-59-31",
+  "calls": 124,
+  "compactions": 1,
+  "post": {
+   "calls": 10,
+   "repeat_cmd": 1,
+   "reread_path_no_edit": 4,
+   "instr": 0,
+   "readonly_before_first_edit_mean": 12.0
+  },
+  "control": {
+   "calls": 5,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 0,
+   "instr": 0,
+   "readonly_before_first_edit_mean": 12.0
+  },
+  "kept": [
+   {
+    "user_msgs": 9,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 295989,
+    "ctx_after_first_call": 46878
+   }
+  ],
+  "edit_gap_mean": 12.4
+ },
+ {
+  "id": "2026-10-13T00-54-11",
+  "calls": 360,
+  "compactions": 3,
+  "post": {
+   "calls": 30,
+   "repeat_cmd": 1,
+   "reread_path_no_edit": 9,
+   "instr": 5,
+   "readonly_before_first_edit_mean": 6.3
+  },
+  "control": {
+   "calls": 30,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 12,
+   "instr": 15,
+   "readonly_before_first_edit_mean": 6.3
+  },
+  "kept": [
+   {
+    "user_msgs": 9,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 346772,
+    "ctx_after_first_call": 47310
+   },
+   {
+    "user_msgs": 15,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 316423,
+    "ctx_after_first_call": 47068
+   },
+   {
+    "user_msgs": 21,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 320059,
+    "ctx_after_first_call": 47990
+   }
+  ],
+  "edit_gap_mean": 4.1
+ },
+ {
+  "id": "2026-10-15T01-29-05",
+  "calls": 97,
+  "compactions": 1,
+  "post": {
+   "calls": 10,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 1,
+   "instr": 1,
+   "readonly_before_first_edit_mean": 20.0
+  },
+  "control": {
+   "calls": 10,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 0,
+   "instr": 0,
+   "readonly_before_first_edit_mean": 20.0
+  },
+  "kept": [
+   {
+    "user_msgs": 6,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 138653,
+    "ctx_after_first_call": 39685
+   }
+  ],
+  "edit_gap_mean": 97.0
+ },
+ {
+  "id": "2026-10-15T13-25-24",
+  "calls": 115,
+  "compactions": 1,
+  "post": {
+   "calls": 10,
+   "repeat_cmd": 1,
+   "reread_path_no_edit": 4,
+   "instr": 3,
+   "readonly_before_first_edit_mean": 5.0
+  },
+  "control": {
+   "calls": 10,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 3,
+   "instr": 0,
+   "readonly_before_first_edit_mean": 5.0
+  },
+  "kept": [
+   {
+    "user_msgs": 5,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 359163,
+    "ctx_after_first_call": 34422
+   }
+  ],
+  "edit_gap_mean": 2.1
+ },
+ {
+  "id": "2026-10-16T00-02-25",
+  "calls": 389,
+  "compactions": 4,
+  "post": {
+   "calls": 40,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 13,
+   "instr": 7,
+   "readonly_before_first_edit_mean": 4.5
+  },
+  "control": {
+   "calls": 40,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 6,
+   "instr": 3,
+   "readonly_before_first_edit_mean": 4.5
+  },
+  "kept": [
+   {
+    "user_msgs": 14,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 315320,
+    "ctx_after_first_call": 59553
+   },
+   {
+    "user_msgs": 22,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 328150,
+    "ctx_after_first_call": 64509
+   },
+   {
+    "user_msgs": 33,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 287346,
+    "ctx_after_first_call": 78223
+   },
+   {
+    "user_msgs": 39,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 309076,
+    "ctx_after_first_call": 76021
+   }
+  ],
+  "edit_gap_mean": 2.8
+ },
+ {
+  "id": "2026-10-16T08-51-38",
+  "calls": 394,
+  "compactions": 3,
+  "post": {
+   "calls": 30,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 15,
+   "instr": 8,
+   "readonly_before_first_edit_mean": 6.3
+  },
+  "control": {
+   "calls": 30,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 8,
+   "instr": 4,
+   "readonly_before_first_edit_mean": 6.3
+  },
+  "kept": [
+   {
+    "user_msgs": 13,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 290668,
+    "ctx_after_first_call": 45724
+   },
+   {
+    "user_msgs": 17,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 358061,
+    "ctx_after_first_call": 46025
+   },
+   {
+    "user_msgs": 24,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 358660,
+    "ctx_after_first_call": 52406
+   }
+  ],
+  "edit_gap_mean": 2.8
+ },
+ {
+  "id": "2026-10-16T09-16-18",
+  "calls": 318,
+  "compactions": 7,
+  "post": {
+   "calls": 70,
+   "repeat_cmd": 1,
+   "reread_path_no_edit": 21,
+   "instr": 5,
+   "readonly_before_first_edit_mean": 13.3
+  },
+  "control": {
+   "calls": 60,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 15,
+   "instr": 3,
+   "readonly_before_first_edit_mean": 13.3
+  },
+  "kept": [
+   {
+    "user_msgs": 4,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 223778,
+    "ctx_after_first_call": 40716
+   },
+   {
+    "user_msgs": 8,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 192193,
+    "ctx_after_first_call": 42596
+   },
+   {
+    "user_msgs": 10,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 166628,
+    "ctx_after_first_call": 42955
+   },
+   {
+    "user_msgs": 10,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 243858,
+    "ctx_after_first_call": 43873
+   },
+   {
+    "user_msgs": 13,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 169430,
+    "ctx_after_first_call": 45383
+   },
+   {
+    "user_msgs": 14,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 152391,
+    "ctx_after_first_call": 43884
+   },
+   {
+    "user_msgs": 17,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 141446,
+    "ctx_after_first_call": 45400
+   }
+  ],
+  "edit_gap_mean": 11.4
+ },
+ {
+  "id": "2026-10-18T02-08-44",
+  "calls": 155,
+  "compactions": 1,
+  "post": {
+   "calls": 10,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 2,
+   "instr": 1,
+   "readonly_before_first_edit_mean": 15.0
+  },
+  "control": {
+   "calls": 10,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 2,
+   "instr": 0,
+   "readonly_before_first_edit_mean": 15.0
+  },
+  "kept": [
+   {
+    "user_msgs": 7,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 389870,
+    "ctx_after_first_call": 46676
+   }
+  ],
+  "edit_gap_mean": 4.8
+ },
+ {
+  "id": "2026-10-19T05-21-40",
+  "calls": 804,
+  "compactions": 8,
+  "post": {
+   "calls": 80,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 14,
+   "instr": 7,
+   "readonly_before_first_edit_mean": 21.8
+  },
+  "control": {
+   "calls": 80,
+   "repeat_cmd": 4,
+   "reread_path_no_edit": 21,
+   "instr": 4,
+   "readonly_before_first_edit_mean": 21.8
+  },
+  "kept": [
+   {
+    "user_msgs": 4,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 206692,
+    "ctx_after_first_call": 43092
+   },
+   {
+    "user_msgs": 5,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 200676,
+    "ctx_after_first_call": 41453
+   },
+   {
+    "user_msgs": 6,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 208057,
+    "ctx_after_first_call": 41987
+   },
+   {
+    "user_msgs": 10,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 216378,
+    "ctx_after_first_call": 45405
+   },
+   {
+    "user_msgs": 11,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 230916,
+    "ctx_after_first_call": 45083
+   },
+   {
+    "user_msgs": 12,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 237472,
+    "ctx_after_first_call": 44877
+   },
+   {
+    "user_msgs": 14,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 221207,
+    "ctx_after_first_call": 44215
+   },
+   {
+    "user_msgs": 19,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 201623,
+    "ctx_after_first_call": 44869
+   }
+  ],
+  "edit_gap_mean": 14.4
+ },
+ {
+  "id": "2026-10-20T04-06-48",
+  "calls": 267,
+  "compactions": 3,
+  "post": {
+   "calls": 30,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 13,
+   "instr": 8,
+   "readonly_before_first_edit_mean": 18.3
+  },
+  "control": {
+   "calls": 30,
+   "repeat_cmd": 0,
+   "reread_path_no_edit": 10,
+   "instr": 7,
+   "readonly_before_first_edit_mean": 18.3
+  },
+  "kept": [
+   {
+    "user_msgs": 3,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 177974,
+    "ctx_after_first_call": 42531
+   },
+   {
+    "user_msgs": 4,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 233160,
+    "ctx_after_first_call": 43246
+   },
+   {
+    "user_msgs": 6,
+    "assistant_msgs": 0,
+    "summary_msg_empty": true,
+    "ctx_before": 184651,
+    "ctx_after_first_call": 43359
+   }
+  ],
+  "edit_gap_mean": 8.9
+ }
+]
