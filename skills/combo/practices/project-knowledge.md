@@ -49,6 +49,8 @@ through an identified erratum, not by rewriting the original evidence.
 For handoff, update the existing task or checkpoint only with the goal, verified
 state, binding decisions, unresolved work, and next action that cannot be cheaply
 recovered. Coordinate ownership before restructuring a file other sessions edit.
+For a long setup or debug flow driven by CLI or tool commands, include the commands
+that worked and the state already changed, so a reset does not repeat discovery.
 Routine work does not require a new Markdown artifact or transcript summary.
 
 ## Memory boundary and completion

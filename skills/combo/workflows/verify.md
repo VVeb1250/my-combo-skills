@@ -46,6 +46,10 @@ show the evidence and request the consequential tradeoff instead of quietly
 substituting an easier result. Distinguish facts, inference, and testable hypotheses
 where that distinction changes a decision or claim.
 
+After a context reset or resumption, check the next plan against the user's own
+binding instructions and decisions, latest first, before the first action; a
+retained user instruction outranks your summary of the plan.
+
 ### Decision triage
 
 Resolve facts from context, files, references, tools, or a bounded experiment before
