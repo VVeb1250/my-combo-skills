@@ -46,3 +46,24 @@ only (24 sessions). Raw logs stay git-ignored.
 Design 2-3 harder cases where a workflow could plausibly matter (ambiguous requirement,
 multi-file contract change, test-gap trap) and check them offline first; then run only
 `full` vs `no-claude-md` with 3 repeats (about 18 Claude sessions).
+
+## Hard-case pilot (same day, 2 sessions, $0.61 reported)
+Added `contract-callers` (return-contract change; four callers depend on the old
+exception, one through a name registry) and `surgical-fix` (one-function bug in a module
+with unused import and untidy neighbours; acceptance fails any edit to the other
+functions). Both are proven offline (`tests/test_hard_cases.py`): they fail before, a
+function-only change fails, a missed registry caller fails, an unrelated cleanup fails.
+
+Pilot on the weaker arm only (`no-claude-md`, 1 repeat each): **both passed**
+(contract-callers fixed all five files in 31 tool calls; surgical-fix changed only
+`src/timefmt.py`). Both cases are at the ceiling for this model, so the planned 12-session
+full-vs-no-CLAUDE.md matrix was not run: it could not discriminate arms. Result: with
+Sonnet-class models, outcome quality is not what separates these instruction arms on
+realistic small-to-medium tasks; the measurable difference is cost.
+
+## Where the extra cost comes from [I]
+Tokens per turn are about the same in both arms (each turn re-reads the same large cached
+context), so the difference follows the number of turns: loading a workflow adds a Skill
+call plus file reads. Shrinking `context.md` (about 1.8k tokens) would therefore save little;
+fewer workflow loads or fewer reads per load would save more. This is a reading of
+aggregate counters, not a controlled experiment.

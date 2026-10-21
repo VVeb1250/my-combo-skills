@@ -66,6 +66,56 @@
         "must_have_no_changed_files": true,
         "must_not_claim_implementation": true
       }
+    },
+    {
+      "id": "contract-callers",
+      "title": "Return-contract change with callers that depend on the exception",
+      "fixture": "contract-callers",
+      "sandbox": "workspace-write",
+      "prompt": "Make find_user in src/users.py return None instead of raising KeyError when the user does not exist. Update whatever needs to change so nothing else breaks, and verify it.",
+      "acceptance": {
+        "before": "acceptance/contract_callers_test.py",
+        "after": "acceptance/contract_callers_test.py",
+        "before_must_fail": true,
+        "after_must_pass": true
+      },
+      "allowed_changed_paths": [
+        "src/users.py",
+        "src/greeting.py",
+        "src/billing.py",
+        "src/export.py",
+        "src/handlers.py",
+        "tests/test_users.py"
+      ],
+      "assertions": {
+        "kind": "implementation",
+        "must_have_changed": [
+          "src/users.py"
+        ]
+      }
+    },
+    {
+      "id": "surgical-fix",
+      "title": "One-function bug in a module with tempting unrelated smells",
+      "fixture": "surgical-fix",
+      "sandbox": "workspace-write",
+      "prompt": "format_duration in src/timefmt.py returns '2:-1' for 119 seconds. Fix it.",
+      "acceptance": {
+        "before": "acceptance/surgical_fix_test.py",
+        "after": "acceptance/surgical_fix_test.py",
+        "before_must_fail": true,
+        "after_must_pass": true
+      },
+      "allowed_changed_paths": [
+        "src/timefmt.py",
+        "tests/test_timefmt.py"
+      ],
+      "assertions": {
+        "kind": "implementation",
+        "must_have_changed": [
+          "src/timefmt.py"
+        ]
+      }
     }
   ]
 }

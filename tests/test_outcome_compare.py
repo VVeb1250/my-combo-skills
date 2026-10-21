@@ -14,8 +14,8 @@ class CompareCases(unittest.TestCase):
     def setUpClass(cls):
         cls.cases = {c["id"]: c for c in oc.load_cases()}
 
-    def test_eight_cases_with_fixtures_and_acceptance_on_disk(self):
-        self.assertEqual(len(self.cases), 8)
+    def test_ten_cases_with_fixtures_and_acceptance_on_disk(self):
+        self.assertEqual(len(self.cases), 10)
         for case in self.cases.values():
             self.assertTrue((case["_root"] / "fixtures" / case["fixture"]).is_dir(), case["id"])
             for key in ("before", "after"):
