@@ -15,7 +15,7 @@
     {
       "name": "ponytail",
       "repository": "https://github.com/DietrichGebert/ponytail.git",
-      "immutable_commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "immutable_commit": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "primary_source": "skills/ponytail-review/SKILL.md",
       "license": "skills/combo/references/licenses/ponytail.txt",
       "decision": "ADAPT",

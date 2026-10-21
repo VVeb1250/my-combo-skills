@@ -14,15 +14,15 @@
     {
       "pack": "ponytail",
       "url": "https://github.com/DietrichGebert/ponytail.git",
-      "commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
-      "fetched_at": "2026-09-08T07:36:45Z",
+      "commit": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
+      "fetched_at": "2026-10-21T19:29:09Z",
       "stable_entrypoints": 6
     },
     {
       "pack": "matt",
       "url": "https://github.com/mattpocock/skills.git",
       "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-      "fetched_at": "2026-10-22T00:00:00Z",
+      "fetched_at": "2026-10-21T19:03:14Z",
       "stable_entrypoints": 38
     },
     {
@@ -82,8 +82,8 @@
       "id": "ponytail/skills/ponytail-audit",
       "pack": "ponytail",
       "source": "skills/ponytail-audit/SKILL.md",
-      "source_url": "https://github.com/DietrichGebert/ponytail/blob/356918eba965ee1eac64bd3a7f0dd02108350de5/skills/ponytail-audit/SKILL.md",
-      "immutable_commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "source_url": "https://github.com/DietrichGebert/ponytail/blob/09c434ab73ca43761c5d8b0c5d341926c2fba710/skills/ponytail-audit/SKILL.md",
+      "immutable_commit": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "destination": "ponytail/skills/ponytail-audit/REFERENCE.md",
       "domain": "engineering",
       "labels": [
@@ -96,8 +96,8 @@
       "id": "ponytail/skills/ponytail-debt",
       "pack": "ponytail",
       "source": "skills/ponytail-debt/SKILL.md",
-      "source_url": "https://github.com/DietrichGebert/ponytail/blob/356918eba965ee1eac64bd3a7f0dd02108350de5/skills/ponytail-debt/SKILL.md",
-      "immutable_commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "source_url": "https://github.com/DietrichGebert/ponytail/blob/09c434ab73ca43761c5d8b0c5d341926c2fba710/skills/ponytail-debt/SKILL.md",
+      "immutable_commit": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "destination": "ponytail/skills/ponytail-debt/REFERENCE.md",
       "domain": "engineering",
       "labels": [
@@ -110,8 +110,8 @@
       "id": "ponytail/skills/ponytail-gain",
       "pack": "ponytail",
       "source": "skills/ponytail-gain/SKILL.md",
-      "source_url": "https://github.com/DietrichGebert/ponytail/blob/356918eba965ee1eac64bd3a7f0dd02108350de5/skills/ponytail-gain/SKILL.md",
-      "immutable_commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "source_url": "https://github.com/DietrichGebert/ponytail/blob/09c434ab73ca43761c5d8b0c5d341926c2fba710/skills/ponytail-gain/SKILL.md",
+      "immutable_commit": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "destination": "ponytail/skills/ponytail-gain/REFERENCE.md",
       "domain": "engineering",
       "labels": [
@@ -124,8 +124,8 @@
       "id": "ponytail/skills/ponytail-help",
       "pack": "ponytail",
       "source": "skills/ponytail-help/SKILL.md",
-      "source_url": "https://github.com/DietrichGebert/ponytail/blob/356918eba965ee1eac64bd3a7f0dd02108350de5/skills/ponytail-help/SKILL.md",
-      "immutable_commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "source_url": "https://github.com/DietrichGebert/ponytail/blob/09c434ab73ca43761c5d8b0c5d341926c2fba710/skills/ponytail-help/SKILL.md",
+      "immutable_commit": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "destination": "ponytail/skills/ponytail-help/REFERENCE.md",
       "domain": "engineering",
       "labels": [
@@ -139,8 +139,8 @@
       "id": "ponytail/skills/ponytail-review",
       "pack": "ponytail",
       "source": "skills/ponytail-review/SKILL.md",
-      "source_url": "https://github.com/DietrichGebert/ponytail/blob/356918eba965ee1eac64bd3a7f0dd02108350de5/skills/ponytail-review/SKILL.md",
-      "immutable_commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "source_url": "https://github.com/DietrichGebert/ponytail/blob/09c434ab73ca43761c5d8b0c5d341926c2fba710/skills/ponytail-review/SKILL.md",
+      "immutable_commit": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "destination": "ponytail/skills/ponytail-review/REFERENCE.md",
       "domain": "engineering",
       "labels": [
@@ -154,8 +154,8 @@
       "id": "ponytail/skills/ponytail",
       "pack": "ponytail",
       "source": "skills/ponytail/SKILL.md",
-      "source_url": "https://github.com/DietrichGebert/ponytail/blob/356918eba965ee1eac64bd3a7f0dd02108350de5/skills/ponytail/SKILL.md",
-      "immutable_commit": "356918eba965ee1eac64bd3a7f0dd02108350de5",
+      "source_url": "https://github.com/DietrichGebert/ponytail/blob/09c434ab73ca43761c5d8b0c5d341926c2fba710/skills/ponytail/SKILL.md",
+      "immutable_commit": "09c434ab73ca43761c5d8b0c5d341926c2fba710",
       "destination": "ponytail/skills/ponytail/REFERENCE.md",
       "domain": "engineering",
       "labels": [
@@ -8478,12 +8478,12 @@
     "matt/skills/productivity/writing-for-agents/REFERENCE.md": "94773d5c35092e5851444909ab993a5d8abe6a08fdbd670d822a86cc360e6311",
     "matt/skills/productivity/writing-for-agents/SKILL-MECHANICS.md": "471661371b39636e6ac53628c9a45130e5395498f241e4d90ca132ecea3fc4da",
     "media.md": "f1f315e03c09a5c12feee0a8e1964ce49904c4f494a491176cd774a87065180a",
-    "ponytail/skills/ponytail/REFERENCE.md": "6eb4a6f575c1bd1647f514e8af87b2076c94f4487c9395c568e79fb9bbc6930c",
-    "ponytail/skills/ponytail-audit/REFERENCE.md": "eae66d67b9e3c077ac0615c0266a466d9c07194acae7c35a82a1d52880f4a384",
-    "ponytail/skills/ponytail-debt/REFERENCE.md": "9b0e304b26bfde87945190caab87cc461758ad0160cfabb4d4dbd6c5456ba3a4",
-    "ponytail/skills/ponytail-gain/REFERENCE.md": "57666a951da548805483242bfea4ff6d635fa0ea07e784acfd31e27f8b593687",
-    "ponytail/skills/ponytail-help/REFERENCE.md": "7cc74ad18c1a8cb5242c4120eabeb635cace0410b071eb506f46f79caba0d30b",
-    "ponytail/skills/ponytail-review/REFERENCE.md": "0c335fc6bb22a101bb7a6813af521f7aa23b3976a6f7c7ce5ae5831662d5a4a3",
+    "ponytail/skills/ponytail/REFERENCE.md": "f111a30f1463d517f846720c03e88eb0336f7ba559b4115981abbfbf22887f4f",
+    "ponytail/skills/ponytail-audit/REFERENCE.md": "35c652ce31cd86b8ce178a39c97b46bfdfe7a667c67bd902e40675ea0c1dc858",
+    "ponytail/skills/ponytail-debt/REFERENCE.md": "d8cb58e8fce9fab9de2e57da502aad07c9e518f76dd9c579c652812765d80cdf",
+    "ponytail/skills/ponytail-gain/REFERENCE.md": "cc3a939032b349d13b7c14a75f8c103cd1608ae3bf8b3059bbb407b761d44051",
+    "ponytail/skills/ponytail-help/REFERENCE.md": "b4c35e360023431710d70acddbf0bb8090ac919e161667791cd0cd3015e64c9e",
+    "ponytail/skills/ponytail-review/REFERENCE.md": "a34af5aa5abe8ec09ce15949d5fe92a8fb7c421543e37ea51004b78c9420e03a",
     "productivity.md": "35126fb570005ce2a4cdcd15da1d61f447c9f4b59bfc8eb677a1f4e1f57448df",
     "research.md": "aae63ac77a2860f22c155d225017b0c3efad0db4f83016f88d83c80f166b7641",
     "uncategorized.md": "068f974f8123ce718cf042623caa27b126ba0e5cad515d4c415e239989bceca1"

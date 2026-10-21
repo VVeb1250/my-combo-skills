@@ -10,7 +10,7 @@ not executable upstream skill entrypoints.
 | Pack | Commit | Decision | Destination | License | Reason |
 | --- | --- | --- | --- | --- | --- |
 | karpathy | `2c606141936f` | ADAPT | `skills/combo/SKILL.md` | [karpathy.txt](licenses/karpathy.txt) | Intent, observable success, and causal scope are expressed in the router and workflow owners; specialist notes keep technology-specific mechanics only. |
-| ponytail | `356918eba965` | ADAPT | `skills/combo/practices/simplicity.md` | [ponytail.txt](licenses/ponytail.txt) | The simplicity lens is owned by combo practices; technology notes preserve only concrete choices that affect design or operational risk. |
+| ponytail | `09c434ab73ca` | ADAPT | `skills/combo/practices/simplicity.md` | [ponytail.txt](licenses/ponytail.txt) | The simplicity lens is owned by combo practices; technology notes preserve only concrete choices that affect design or operational risk. |
 | matt | `5beb35b040e3` | ADAPT | `skills/combo/workflows` | [matt.txt](licenses/matt.txt) | Matt's decision boundaries and behavioral seams are owned by combo workflows; no upstream interview, tracker, or mandatory fanout is copied into the shelf. |
 | ecc | `5064474d4d76` | ADAPT | `skills/combo/specialists` | [ecc.txt](licenses/ecc.txt) | ECC supplies the concrete HTTP, language, framework, database, and MCP mechanics in the curated entries below; broad workflow, memory, orchestration, and duplicate owners stay archived. |
 

@@ -7,7 +7,7 @@ Generated read-only audit. A direct source entrypoint means a source skill direc
 | Pack | Immutable commit | Direct source entrypoints |
 | --- | --- | ---: |
 | karpathy | 2c606141936f1eeef17fa3043a72095b4765b9c2 | 1 |
-| ponytail | 356918eba965ee1eac64bd3a7f0dd02108350de5 | 6 |
+| ponytail | 09c434ab73ca43761c5d8b0c5d341926c2fba710 | 6 |
 | matt | 5beb35b040e3de97e54fa9e386d7e42d15c295c2 | 38 |
 | ecc | 5064474d4d762dc9640234a41617cccb79185cec | 286 |
 | Total | | 331 |
