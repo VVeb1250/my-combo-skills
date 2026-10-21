@@ -21,8 +21,8 @@ It supplements unit and integration checks; it does not replace them.
   matters, console/network error when relevant, and the command or session
   context. Redact tokens, personal data, and authorization headers.
 - For an accessibility claim, a rule engine gives a signal that the browser's
-  accessibility snapshot does not. If axe-core is already installed in the project, or
-  installing it is authorized, run it on the rendered page and report `violations` as
+  accessibility snapshot does not. If axe-core is already installed in the project (or at
+  `~/.combo-tools/axe-core`), or installing it is authorized, run it on the rendered page and report `violations` as
   findings. Report `incomplete` as needs review, never as a pass. Run it in a viewport
   with a real size: at 0x0 it moved a genuinely failing contrast ratio into `incomplete`
   instead of `violations`. A clean run is not WCAG conformance, since automated rules

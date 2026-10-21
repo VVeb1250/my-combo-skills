@@ -1,0 +1,62 @@
+runs=24  runs whose deduped cache sums differ from the Sonnet modelUsage: 0  runs that also billed another model (advisor): 0
+fitted $/Mtok: input=2.00 cache_write=4.00 cache_read=0.10 output=10.00  R2=1.000000  max|err|=$0.00000
+
+== by arm
+full                               n=12  sonnet=$0.124  advisor=$0.000  prefix(turn 1)=$0.076 (61%)  output=$0.022 (18%)  load=$0.0105 (8.5%)  load calls=1.8/5.8  loaded tok=1841
+inline                             n=12  sonnet=$0.125  advisor=$0.000  prefix(turn 1)=$0.076 (61%)  output=$0.021 (17%)  load=$0.0076 (6.1%)  load calls=0.5/5.7  loaded tok=1794
+
+== runs that loaded a workflow (load = counterfactual cost of the load)
+full loaded                        n=11  sonnet=$0.124  advisor=$0.000  prefix(turn 1)=$0.076 (61%)  output=$0.023 (18%)  load=$0.0115 (9.2%)  load calls=2.0/5.5  loaded tok=2009
+full not loaded                    n= 1  sonnet=$0.127  advisor=$0.000  prefix(turn 1)=$0.076 (60%)  output=$0.019 (15%)  load=$0.0000 (0.0%)  load calls=0.0/8.0  loaded tok=0
+inline loaded                      n= 6  sonnet=$0.121  advisor=$0.000  prefix(turn 1)=$0.075 (62%)  output=$0.022 (18%)  load=$0.0152 (12.6%)  load calls=1.0/3.2  loaded tok=3588
+inline not loaded                  n= 6  sonnet=$0.129  advisor=$0.000  prefix(turn 1)=$0.076 (59%)  output=$0.019 (15%)  load=$0.0000 (0.0%)  load calls=0.0/8.2  loaded tok=0
+
+== by workflow loaded (all arms)
+combo-debug                        n= 2  sonnet=$0.133  advisor=$0.000  prefix(turn 1)=$0.076 (57%)  output=$0.019 (14%)  load=$0.0124 (9.3%)  load calls=2.0/8.0  loaded tok=2058
+combo-deliver                      n= 3  sonnet=$0.143  advisor=$0.000  prefix(turn 1)=$0.077 (54%)  output=$0.025 (17%)  load=$0.0132 (9.2%)  load calls=2.0/8.3  loaded tok=2222
+combo-lab:combo-plan               n= 3  sonnet=$0.130  advisor=$0.000  prefix(turn 1)=$0.075 (58%)  output=$0.030 (23%)  load=$0.0145 (11.1%)  load calls=1.0/3.3  loaded tok=3414
+combo-lab:combo-review             n= 3  sonnet=$0.111  advisor=$0.000  prefix(turn 1)=$0.075 (68%)  output=$0.014 (13%)  load=$0.0158 (14.3%)  load calls=1.0/3.0  loaded tok=3763
+combo-plan                         n= 3  sonnet=$0.119  advisor=$0.000  prefix(turn 1)=$0.075 (63%)  output=$0.030 (25%)  load=$0.0117 (9.8%)  load calls=2.0/3.0  loaded tok=2249
+combo-review                       n= 3  sonnet=$0.104  advisor=$0.000  prefix(turn 1)=$0.075 (72%)  output=$0.016 (15%)  load=$0.0089 (8.6%)  load calls=2.0/3.7  loaded tok=1522
+
+== cost per load event type (mean over events)
+entry-stub (Skill call)      events= 17  mean cost=$0.0073  mean tokens added=1649
+workflow file                events= 11  mean cost=$0.0084  mean tokens added=1417
+
+== by case x arm
+bug-zero/full                      n= 3  sonnet=$0.131  advisor=$0.000  prefix(turn 1)=$0.076 (58%)  output=$0.019 (14%)  load=$0.0082 (6.3%)  load calls=1.3/8.0  loaded tok=1372
+bug-zero/inline                    n= 3  sonnet=$0.126  advisor=$0.000  prefix(turn 1)=$0.076 (61%)  output=$0.017 (14%)  load=$0.0000 (0.0%)  load calls=0.0/8.3  loaded tok=0
+inventory-feature/full             n= 3  sonnet=$0.143  advisor=$0.000  prefix(turn 1)=$0.077 (54%)  output=$0.025 (17%)  load=$0.0132 (9.2%)  load calls=2.0/8.3  loaded tok=2222
+inventory-feature/inline           n= 3  sonnet=$0.132  advisor=$0.000  prefix(turn 1)=$0.076 (58%)  output=$0.022 (17%)  load=$0.0000 (0.0%)  load calls=0.0/8.0  loaded tok=0
+plan-adapters/full                 n= 3  sonnet=$0.119  advisor=$0.000  prefix(turn 1)=$0.075 (63%)  output=$0.030 (25%)  load=$0.0117 (9.8%)  load calls=2.0/3.0  loaded tok=2249
+plan-adapters/inline               n= 3  sonnet=$0.130  advisor=$0.000  prefix(turn 1)=$0.075 (58%)  output=$0.030 (23%)  load=$0.0145 (11.1%)  load calls=1.0/3.3  loaded tok=3414
+security-review/full               n= 3  sonnet=$0.104  advisor=$0.000  prefix(turn 1)=$0.075 (72%)  output=$0.016 (15%)  load=$0.0089 (8.6%)  load calls=2.0/3.7  loaded tok=1522
+security-review/inline             n= 3  sonnet=$0.111  advisor=$0.000  prefix(turn 1)=$0.075 (68%)  output=$0.014 (13%)  load=$0.0158 (14.3%)  load calls=1.0/3.0  loaded tok=3763
+
+== where the Sonnet cost goes, mean $ per run (buckets are exact sums)
+bucket                                              full          inline    difference
+turn 1 (prefix write+read)                        0.0759          0.0759        0.0001
+later calls: context re-read                      0.0124          0.0120        0.0004
+later calls: new content written                  0.0137          0.0160       -0.0023
+output                                            0.0223          0.0208        0.0015
+(of which) load, counterfactual                   0.0105          0.0076        0.0029
+total sonnet                                      0.1243          0.1247
+
+== per-call re-read cost: mean cache_read tokens per later call, by arm
+full                26140 tokens -> $0.0026 per call
+inline              25787 tokens -> $0.0026 per call
+
+== CLAUDE.md prefix: first-call context size and what it costs per run
+full             first-call context = 23659 tokens, mean calls/run = 5.8
+inline           first-call context = 23646 tokens, mean calls/run = 5.7
+CLAUDE.md (13 tokens) costs $0.0001 for a 1-call run (negative case)
+CLAUDE.md (13 tokens) costs $0.0001 for a mean run
+CLAUDE.md (13 tokens) costs $0.0001 for a 20-call run
+Combo policy block ~2944 chars ~736 tokens (chars/4): $0.0033 per mean run
+
+== per-run mean saving if one load step never happened (all runs of the arm)
+full runs: 12
+inline runs: 12
+full           entry-stub (Skill call)    events= 11  per-run saving=$0.0028
+full           workflow file              events= 11  per-run saving=$0.0077
+inline         entry-stub (Skill call)    events=  6  per-run saving=$0.0076

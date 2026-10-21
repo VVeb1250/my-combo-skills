@@ -1,5 +1,7 @@
 # Cost/clarity track: pricing Combo workflow loads, 2026-10-22
 
+**Superseded in part, 2026-10-22:** these dollar figures are for the earlier model (`claude-sonnet-5`, $0.20 per Mtok cache read, with the advisor active). The current `claude-sonnet-5-5` prices cache reads at $0.10 and the same tasks cost about 0.66 times as much; see [../cost-experiment/RESULTS.md](../cost-experiment/RESULTS.md). The proportions and method stand.
+
 **Model sessions run: 0. Cost of this analysis: $0.** It reprices the 48 Claude sessions of
 Phase 1 (`evals/compare/results/claude-run1`, git-ignored raw logs, 8 cases x 2 arms x 3
 repeats) from their stored per-turn token usage. Script: `price_loads.py`; full output:

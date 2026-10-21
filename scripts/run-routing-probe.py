@@ -75,7 +75,7 @@ def analyze_events(events: list[dict[str, Any]]) -> dict[str, Any]:
 
 
 def score(case: dict[str, Any], analysis: dict[str, Any]) -> bool:
-    return analysis["routed"] in case["acceptable"]
+    return analysis["routed"] in case["acceptable"] or analysis["routed"] in case.get("native_overlap", [])
 
 
 def build_command(claude: str, case: dict[str, Any], model: str, max_turns: int) -> list[str]:

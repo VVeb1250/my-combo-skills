@@ -17,8 +17,12 @@ a course does not need to be invented.
 
 For sustained courses or an unresolved teaching method, consult the
 [learning index](../references/library/learning.md) for spacing, interleaving, or
-course structure. Use authoritative references for changing or uncertain facts
-and native visuals/artifacts when they clarify the mechanism or are requested.
+course structure. When a course schedules reviews, compute the due dates from actual
+review times with a scheduling library such as FSRS (`py-fsrs`,
+`Scheduler(enable_fuzzing=False)`) instead of estimating intervals; its defaults are
+population parameters, not fitted to this learner. Use authoritative references for
+changing or uncertain facts and native visuals/artifacts when they clarify the
+mechanism or are requested.
 
 Finish with the requested explanation and practice. Reduce redundant framing,
 not the examples or reasoning the learner needs. Create course records only for

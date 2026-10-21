@@ -177,14 +177,34 @@ Decided by the owner:
    task (15% of a Sonnet run); `context.md` is the largest single step ($0.015 per read);
    Combo's own policy block costs about $0.004 per run; the owner's non-Combo CLAUDE.md
    content costs about $0.020 per run. Track (b) is not started.
+   **Controlled follow-up run 2026-10-22 (26 sessions, $3.24):** [cost-experiment/RESULTS.md](cost-experiment/RESULTS.md).
+   Inlining workflow and `context.md` into the entry skill is not cheaper (identical total cost; more expensive in all 6
+   paired loaded runs) and changes routing. At the current model (`claude-sonnet-5-5`, cache read $0.10 per Mtok) a load
+   costs about $0.0105 per run, and `context.md` is not read at all (0 of 11 loaded runs), so audit item 10 saves nothing.
+
+Closed on 2026-10-22 (second round, owner instructions):
+- Pilot G done: py-fsrs 6.3.2 reproduces its own tests (42/42) and the schedule history; one sentence added to
+  `workflows/learning.md` ([pilot-g/RESULTS.md](pilot-g/RESULTS.md)).
+- Routing: the owner confirmed neither stable miss is a Combo defect. `conf-debug-investigate` now accepts `none`;
+  `pos-productivity-en` accepts the owner's `agent-handoff-spec` through a new `native_overlap` field (tests added).
+- Codex install applied and verified (receipts `backups/20261021-165820-239400`, `-165855-060100`,
+  `20261021-171454-176200`). The installer would have deleted the Codex `[memories]` section
+  (`generate_memories`/`use_memories` = true) that sat inside the Combo-managed block; it was restored unchanged
+  outside the block, where the installer preserves it, and `verify` and a fresh plan are clean.
+- Tools installed to `~/.combo-tools/` (Impeccable engine, pinned Trail of Bits collector, axe-core 4.14.0), not on PATH,
+  with SOURCE.txt per folder; the three practice clauses name that path.
+- Controlled cost experiment run (26 sessions, $3.24): see [cost-experiment/RESULTS.md](cost-experiment/RESULTS.md).
+- Claude install refreshed for the learning and path-hint edits (receipt `backups/claude-20261021-171446-056200`).
+
+Deliberately not done (owner): hard-task quality track (no real failures available yet); brand-voice, citation/link and
+curriculum/autograder searches (to be done later).
 
 Still open:
-- Pilot G: reproduce py-fsrs scheduling in a scratch venv before any learning-workflow pointer.
-- Routing: `pos-productivity-en` (native overlap with `agent-handoff-spec`) and
-  `conf-debug-investigate` (loads nothing) are stable misses; decide whether either is a defect.
-- Codex install (`setup.py plan`) is outside this phase.
-- The first-pass items marked Pilot in section 2 that need an LLM comparison arm (D beyond one
-  fixture) were not run.
+- Decide whether `context.md`'s invariants should be copied into the workflow bodies, since the current model never reads
+  `context.md` (cost about $0.007 per loaded task, no measured quality effect).
+- Why the plugin-namespaced debug and deliver skills were never chosen in the inline arm (not isolated).
+- Re-run the CLAUDE.md on/off comparison at the current model if the policy block's cost matters (Phase 1's figure is for
+  the earlier model).
 
 ## 8. Unresolved risks
 

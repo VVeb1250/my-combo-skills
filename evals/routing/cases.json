@@ -218,7 +218,11 @@
       "expected": "combo-productivity",
       "acceptable": [
         "combo-productivity"
-      ]
+      ],
+      "native_overlap": [
+        "anthropic-skills:agent-handoff-spec"
+      ],
+      "note": "owner confirmed 2026-10-22: the user's own agent-handoff-spec skill matches this prompt more specifically, so routing there is not a Combo defect (3/3 repeats)"
     },
     {
       "id": "pos-maintain",
@@ -279,7 +283,8 @@
       "expected": "combo-debug",
       "acceptable": [
         "combo-debug",
-        "combo-investigate"
+        "combo-investigate",
+        "none"
       ],
       "confusable_with": [
         "combo-investigate"

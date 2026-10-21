@@ -34,6 +34,7 @@ import shutil
 import statistics
 import subprocess
 import sys
+import tempfile
 import uuid
 import threading
 import time
@@ -48,7 +49,10 @@ smoke = importlib.util.module_from_spec(_SPEC)
 assert _SPEC.loader is not None
 _SPEC.loader.exec_module(smoke)
 
-CLAUDE_ARMS = {"full": {}, "no-claude-md": {"CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1"}}
+CLAUDE_ARMS = {"full": {}, "no-claude-md": {"CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1"}, "inline": {}}
+# "inline": the four workflow entries are replaced by a plugin whose skill bodies already contain
+# the workflow and context.md text, so a load needs no separate Read calls (same text, fewer calls).
+INLINE_WORKFLOWS = ("debug", "deliver", "plan", "review")
 CODEX_ARMS = {"full": {}}  # plus "home:<name>" arms, one per --codex-home NAME=PATH
 READ_TOOLS = "Read,Glob,Grep,Skill"
 WRITE_TOOLS = READ_TOOLS + ",Edit,Write,Bash"
@@ -81,11 +85,17 @@ NEGATION_BEFORE_RE = re.compile(
     r"(?i)(?:ไม่ได้|ยังไม่ได้|ไม่|มิได้|not|never|without|n't|no)\s*(?:ได้\s*)?(?:the\s+|any\s+|a\s+)?$")
 
 
+NEGATION_AFTER_RE = re.compile(r"(?i)^\s*(?:nothing|no\s+(?:files?|code|changes?)|none)\b")
+
+
 def claims_implementation(answer: str) -> bool:
-    """True when the answer claims to have changed things; "did not edit files" is not a claim."""
+    """True when the answer claims to have changed things; "did not edit files" and "changed nothing" are not claims."""
     for match in smoke.IMPLEMENTATION_CLAIM_RE.finditer(answer):
-        if not NEGATION_BEFORE_RE.search(answer[max(0, match.start() - 14):match.start()]):
-            return True
+        if NEGATION_BEFORE_RE.search(answer[max(0, match.start() - 14):match.start()]):
+            continue
+        if NEGATION_AFTER_RE.search(answer[match.end():match.end() + 16]):
+            continue
+        return True
     return False
 
 
@@ -139,13 +149,58 @@ def score_outcome(case: dict[str, Any], answer: str, changed: list[dict[str, Any
     return failures
 
 
-def claude_command(claude: str, case: dict[str, Any], model: str, max_turns: int) -> list[str]:
+def build_inline_plugin(dest: Path, home: Path | None = None) -> Path:
+    """Write the `inline` arm plugin: entry skills with the workflow and context.md text in the body."""
+    home = home or Path.home()
+    base = (home / ".claude" / "skills" / "combo").as_posix()
+    combo = ROOT / "skills" / "combo"
+    context = (combo / "practices" / "context.md").read_text(encoding="utf-8")
+    context = re.sub(r"^# .*\n+", "", context, count=1)
+    practices = "outcome-evidence|project-knowledge|build|delegation|design|e2e|security|simplicity|tests"
+    workflows = "debug|deliver|plan|review|verify|investigate|research|content|learning|business|media|productivity"
+
+    def absolute(text: str) -> str:
+        for folder in ("practices", "references", "specialists"):
+            text = text.replace(f"](../{folder}/", f"]({base}/{folder}/")
+        text = re.sub(rf"\]\(({practices})\.md\)", lambda m: f"]({base}/practices/{m.group(1)}.md)", text)
+        return re.sub(rf"\]\(({workflows})\.md\)", lambda m: f"]({base}/workflows/{m.group(1)}.md)", text)
+
+    (dest / ".claude-plugin").mkdir(parents=True, exist_ok=True)
+    (dest / ".claude-plugin" / "plugin.json").write_text(json.dumps(
+        {"name": "combo-lab", "version": "0.0.1", "description": "inline-workflow arm for cost experiments"}),
+        encoding="utf-8")
+    for name in INLINE_WORKFLOWS:
+        stub = (ROOT / "adapters" / "claude" / "overrides" / f"combo-{name}" / "SKILL.md").read_text(encoding="utf-8")
+        match = re.match(r"---\n.*?\n---\n", stub, re.S)
+        assert match, f"combo-{name}: stub has no frontmatter"
+        front = match.group(0)
+        workflow = (combo / "workflows" / f"{name}.md").read_text(encoding="utf-8")
+        workflow, n = re.subn(r"Read \[context\]\(\.\./practices/context\.md\) once for\s+evidence\s+selection\s+and\s+reporting\.",
+                              "The context rules at the end of this skill apply.", workflow)
+        assert n == 1, f"{name}: context sentence not found"
+        body = (absolute(workflow).rstrip() + "\n\n## Context selection and reporting (inlined)\n\n"
+                + absolute(context).strip()
+                + f"\n\nFor Plan Mode, delegation, or context resumption, consult [Claude execution]({base}/references/claude-code.md).\n")
+        target = dest / "skills" / f"combo-{name}"
+        target.mkdir(parents=True, exist_ok=True)
+        (target / "SKILL.md").write_text(front + "\n" + body, encoding="utf-8")
+    return dest
+
+
+def claude_command(claude: str, case: dict[str, Any], model: str, max_turns: int,
+                   arm: str = "full", plugin_dir: Path | None = None) -> list[str]:
     writable = case["sandbox"] == "workspace-write"
+    settings: dict[str, Any] = {"disableAllHooks": True}
+    extra: list[str] = []
+    if arm == "inline":
+        settings["skillOverrides"] = {f"combo-{n}": "off" for n in INLINE_WORKFLOWS}
+        extra = ["--plugin-dir", str(plugin_dir)]
     return [claude, "-p", case["prompt"], "--output-format", "stream-json", "--verbose",
             "--max-turns", str(max_turns), "--model", model,
             "--tools", WRITE_TOOLS if writable else READ_TOOLS,
             "--allowedTools", WRITE_ALLOWED if writable else READ_TOOLS,
-            "--strict-mcp-config", "--settings", '{"disableAllHooks":true}', "--no-session-persistence"]
+            "--strict-mcp-config", "--settings", json.dumps(settings, separators=(",", ":")),
+            "--no-session-persistence", *extra]
 
 
 def analyze_claude(events: list[dict[str, Any]]) -> dict[str, Any]:
@@ -192,7 +247,7 @@ def execute(host: str, case: dict[str, Any], arm: str, args: argparse.Namespace,
         env.update(CLAUDE_ARMS[arm])
         if arm == "full":
             env.pop("CLAUDE_CODE_DISABLE_CLAUDE_MDS", None)
-        command = claude_command(args.claude, case, args.model, args.max_turns)
+        command = claude_command(args.claude, case, args.model, args.max_turns, arm, getattr(args, "plugin_dir", None))
         stdin_text = None
     else:
         if arm.startswith("home:"):
@@ -356,6 +411,8 @@ def main(argv: list[str] | None = None) -> int:
         print("claude CLI not found on PATH")
         return 2
     cases = [c for c in load_cases() if not args.cases or c["id"] in args.cases]
+    if args.host == "claude" and "inline" in args.arms:
+        args.plugin_dir = build_inline_plugin(Path(tempfile.mkdtemp(prefix="combo-inline-")) / "plugin")
     out_dir = args.output or ROOT / "evals" / "compare" / "results" / time.strftime("run-%Y%m%d-%H%M%S")
     out_dir.mkdir(parents=True, exist_ok=True)
     jobs = [(arm, case, rep) for rep in range(1, args.repeats + 1) for case in cases for arm in args.arms]

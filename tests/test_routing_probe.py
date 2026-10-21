@@ -86,6 +86,23 @@ class RoutingAnalysis(unittest.TestCase):
         self.assertFalse(probe.score(case, {"routed": "combo-review"}))
         self.assertFalse(probe.score(case, {"routed": "none"}))
 
+    def test_native_overlap_is_accepted_but_other_skills_are_not(self):
+        case = {"acceptable": ["combo-productivity"],
+                "native_overlap": ["anthropic-skills:agent-handoff-spec"]}
+        self.assertTrue(probe.score(case, {"routed": "anthropic-skills:agent-handoff-spec"}))
+        self.assertFalse(probe.score(case, {"routed": "anthropic-skills:docx"}))
+        self.assertFalse(probe.score({"acceptable": ["combo-productivity"]},
+                                     {"routed": "anthropic-skills:agent-handoff-spec"}))
+
+    def test_native_overlap_names_are_not_combo_entries(self):
+        suite = probe.load_cases()
+        entries = probe.entry_names()
+        for case in suite["cases"]:
+            overlap = set(case.get("native_overlap", []))
+            self.assertTrue(overlap.isdisjoint(entries), case["id"])
+            if overlap:
+                self.assertTrue(case.get("note"), case["id"])
+
     def test_non_combo_skill_counts_as_that_skill(self):
         events = [assistant(tool("Skill", skill="anthropic-skills:docx"))]
         self.assertEqual(probe.analyze_events(events)["routed"], "anthropic-skills:docx")

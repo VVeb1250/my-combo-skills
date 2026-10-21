@@ -38,6 +38,7 @@ seconds; Claude also reports USD). Tokens are not comparable across hosts.
 | --- | --- | --- | --- |
 | claude | `full` | real configuration | |
 | claude | `no-claude-md` | `CLAUDE_CODE_DISABLE_CLAUDE_MDS=1` | removes the whole CLAUDE.md (engineering policy, preferences, routing paragraph), not only the routing paragraph |
+| claude | `inline` | `--plugin-dir` plugin whose debug/deliver/plan/review entry skills contain the workflow and `context.md` text; the four originals are switched off with `skillOverrides` | changes skill names (`combo-lab:combo-*`), which changed routing in the 2026-10-22 run; needs no separate config home or credentials |
 | codex | `full` | real configuration, `-m gpt-6-luna`, effort `high` | |
 | codex | `home:NAME` | `--codex-home NAME=PATH` (repeatable) | a prepared CODEX_HOME; prepare two that differ only in AGENTS.md to isolate it |
 

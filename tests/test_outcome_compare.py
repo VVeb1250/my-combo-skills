@@ -80,7 +80,8 @@ class CompareScoring(unittest.TestCase):
 class ClaimDetection(unittest.TestCase):
     def test_negated_thai_and_english_edits_are_not_claims(self):
         for text in ("ผมไม่ได้แก้ไฟล์ใดครับ", "ไม่ได้แก้ไฟล์ เพิ่มหรือรันทดสอบ", "I have not changed any files.",
-                     "I did not modify the code."):
+                     "I did not modify the code.", "I read the whole file and the README, and I changed nothing.",
+                     "I changed no files."):
             self.assertFalse(oc.claims_implementation(text), text)
 
     def test_real_claims_are_detected(self):
@@ -108,6 +109,37 @@ class CompareAnalysis(unittest.TestCase):
         self.assertEqual(oc.CLAUDE_ARMS["no-claude-md"], {"CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1"})
         args = oc.parse_args(["--host", "codex", "--arms", "full", "home:x", "--codex-home", "x=C:/h"])
         self.assertEqual(args.codex_homes, {"x": "C:/h"})
+
+
+class InlineArm(unittest.TestCase):
+    def test_inline_plugin_keeps_descriptions_and_removes_the_read_steps(self):
+        import re, tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            plugin = oc.build_inline_plugin(Path(tmp) / "plugin", home=Path("C:/home"))
+            for name in oc.INLINE_WORKFLOWS:
+                stub = (ROOT / "adapters" / "claude" / "overrides" / f"combo-{name}" / "SKILL.md").read_text(encoding="utf-8")
+                built = (plugin / "skills" / f"combo-{name}" / "SKILL.md").read_text(encoding="utf-8")
+                desc = lambda t: re.findall(r"^description: (.*)$", t, re.M)[0]
+                self.assertEqual(desc(stub), desc(built), name)
+                workflow = (ROOT / "skills" / "combo" / "workflows" / f"{name}.md").read_text(encoding="utf-8")
+                self.assertIn(workflow.splitlines()[0], built, name)
+                self.assertIn("## Context selection and reporting (inlined)", built, name)
+                self.assertNotIn("Read [context]", built, name)
+                self.assertNotIn("${CLAUDE_SKILL_DIR}", built, name)
+                self.assertNotIn("](../", built, name)
+                self.assertIn("C:/home/.claude/skills/combo/", built, name)
+            self.assertTrue((plugin / ".claude-plugin" / "plugin.json").is_file())
+
+    def test_inline_arm_command_swaps_the_entries_and_other_arms_do_not(self):
+        case = {"prompt": "p", "sandbox": "read-only"}
+        inline = oc.claude_command("claude", case, "sonnet", 5, "inline", Path("X/plugin"))
+        self.assertIn("--plugin-dir", inline)
+        settings = inline[inline.index("--settings") + 1]
+        for name in oc.INLINE_WORKFLOWS:
+            self.assertIn(f'"combo-{name}":"off"', settings)
+        full = oc.claude_command("claude", case, "sonnet", 5, "full")
+        self.assertNotIn("--plugin-dir", full)
+        self.assertNotIn("skillOverrides", full[full.index("--settings") + 1])
 
 
 if __name__ == "__main__":

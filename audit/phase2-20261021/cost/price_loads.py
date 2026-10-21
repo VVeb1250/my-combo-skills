@@ -85,7 +85,9 @@ for d in dirs:
         if turns and result and result.get("usage"):
             runs.append((meta, turns, result))
 
-SONNET = "claude-sonnet-5"
+# the Sonnet entry of modelUsage (its id changed between runs: claude-sonnet-5, then claude-sonnet-5-5)
+SONNET = next(k for k in runs[0][2]["modelUsage"] if "sonnet" in k)
+assert all(SONNET in r[2]["modelUsage"] for r in runs), "mixed Sonnet versions in one results directory"
 sm = lambda r: r[2]["modelUsage"][SONNET]
 bad = sum(1 for r in runs if sum(t["cw"] for t in r[1]) != sm(r)["cacheCreationInputTokens"]
           or sum(t["cr"] for t in r[1]) != sm(r)["cacheReadInputTokens"])
@@ -223,6 +225,6 @@ for a in arms:
         tot = sum(per_arm_events[a][k])
         print(f"{a:14} {k:26} events={len(per_arm_events[a][k]):3}  per-run saving=${tot/n_runs:.4f}")
 
-out = Path(__file__).parent / "price_loads.json"
+out = Path(__file__).parent / ("price_loads.json" if dirs[0].name == "claude-run1" else f"price_loads.{dirs[0].name}.json")
 out.write_text(json.dumps({"rates_per_token": {"input": ri, "cache_write": rw, "cache_read": rr, "output": ro},
                            "r2": r2, "rows": rows}, indent=1), encoding="utf-8")

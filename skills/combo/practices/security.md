@@ -20,7 +20,7 @@ pipeline for every code change.
   or review check for the boundary and report the exact evidence.
 - For dependency risk beyond known advisories (existence, publishers, install scripts,
   maintenance), a registry-metadata collector such as Trail of Bits'
-  `supply-chain-risk-auditor` reports each signal as assessed-clean, assessed-flagged, or
+  `supply-chain-risk-auditor` (pinned copy at `~/.combo-tools/supply-chain-risk-auditor`) reports each signal as assessed-clean, assessed-flagged, or
   unassessable and refuses to report when nothing could be measured. It calls registry
   and advisory hosts and reads the GitHub CLI token when `gh` is on PATH, so run it only
   with that authorized, or with `gh` absent. A package never confirmed to exist in its

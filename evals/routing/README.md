@@ -29,7 +29,8 @@ routing decision only.
 and English), and `confusable` (pairs flagged in audit 6.3: investigate/research,
 review/verify, plan/deliver, debug/investigate, lesson vs implementation, and a
 cross-workflow request for the router). `acceptable` lists every route that counts
-as correct; ambiguous prompts accept both sides and exist to measure confusion, not
+as correct; `native_overlap` (optional, with a `note`) names a non-Combo skill the owner
+confirmed is a legitimate better match, so routing there is not scored as a miss; ambiguous prompts accept both sides and exist to measure confusion, not
 to fail a side.
 
 ## What a result does and does not show

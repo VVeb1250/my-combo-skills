@@ -1,0 +1,552 @@
+[
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "bug-zero",
+    "rep": 1,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/quantity.py",
+      "tests/test_quantity.py"
+    ],
+    "seconds": 52.4,
+    "tool_count": 10,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-debug"
+    ],
+    "turns": 12,
+    "cost_usd": 0.127529,
+    "tokens_total": 191322,
+    "output_tokens": 1735,
+    "final_answer": "A quantity of zero is now kept as zero, and `None` still defaults to 1. All three tests in `tests/test_quantity.py` pass.\n\n**Cause:** `normalize_quantity` in `src/quantity.py` used `value or 1`. Python treats `0` as falsy, so zero was replaced with the default.\n\n**Fix:** it now returns `1 if value is None else value`, so only a missing value gets the default. I also removed the \"seeded defect\" comment, which no longer applies.\n\n**Test:** I added `test_zero_quantity_is_preserved` to `tests/test_quantity.py`. I didn't run it against the old code first, so I haven't seen it fail there.\n\nThe other values that `or` used to default (empty string, `False`, `0.0`) now pass through unchanged. `0.0` is the same zero bug; the other two weren't in the report.\n\nThe project has no git repo, so there's no diff to show. I ran the tests with a one-off `py -c` command that puts `src` on the path, because `tests` isn't an importable package."
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "bug-zero",
+    "rep": 1,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/quantity.py",
+      "tests/test_quantity.py"
+    ],
+    "seconds": 26.5,
+    "tool_count": 9,
+    "workflow_loaded": false,
+    "skills": [],
+    "turns": 10,
+    "cost_usd": 0.12394,
+    "tokens_total": 210537,
+    "output_tokens": 1685,
+    "final_answer": "Zero is now kept as zero, and `None` still falls back to the default of 1. All 3 tests pass, including the new zero-value one.\n\n- **Fix:** in `src/quantity.py`, `normalize_quantity` used `value or 1`, which treats `0` as missing. It now returns `1 if value is None else value`. I also removed the \"deliberately seeded defect\" comment, since the defect is gone.\n- **Test:** I added `test_zero_quantity_is_preserved` to `tests/test_quantity.py`. It asserts that `normalize_quantity(0)` returns `0`.\n\nThe tests need `src` on the import path. I ran them with `py -c \"import sys, unittest; sys.path.insert(0, 'src'); unittest.main(module=None, argv=['unittest', 'discover', '-s', 'tests', '-v'])\"`.\n\nI didn't run the `PYTHONPATH=src` form, because the tool required approval for it. I only touched this parser and its test file."
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "inventory-feature",
+    "rep": 1,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/inventory.py",
+      "tests/test_inventory.py"
+    ],
+    "seconds": 36.3,
+    "tool_count": 11,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-deliver"
+    ],
+    "turns": 13,
+    "cost_usd": 0.139145,
+    "tokens_total": 223678,
+    "output_tokens": 2290,
+    "final_answer": "`inventory_summary` in `src/inventory.py` now takes a keyword-only `include_discontinued` flag, which defaults to `False`. All three tests pass, including the original one.\n\n- **Default:** Discontinued items are still excluded, as before.\n- **With the flag on:** Discontinued items with stock above zero are counted. Zero and negative stock stay excluded in both modes.\n- **Any iterable:** The function reads `items` in a single pass, so generators and iterators already worked. I added a test that covers this rather than changing any code for it.\n- **Result shape:** Still `{\"count\", \"units\"}`.\n- **Calls:** The flag is keyword-only, so existing positional calls can't misread it. The only code that calls `inventory_summary` is the test file.\n\nI added two tests to `tests/test_inventory.py`:\n- **Flag on:** Positive-stock discontinued items count, zero and negative stock are excluded, and the default is unchanged on the same data.\n- **Single-pass input:** A generator and an iterator give the right results, with and without the flag.\n\nI ran the tests with a one-off `py -c` that puts `src` and `tests` on the path, because the project has no test config. I did not run a linter or type checker."
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "inventory-feature",
+    "rep": 1,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/inventory.py",
+      "tests/test_inventory.py"
+    ],
+    "seconds": 21.6,
+    "tool_count": 10,
+    "workflow_loaded": false,
+    "skills": [],
+    "turns": 11,
+    "cost_usd": 0.1309064,
+    "tokens_total": 215329,
+    "output_tokens": 2072,
+    "final_answer": "`inventory_summary` in `src/inventory.py` now takes an `include_discontinued=False` flag, and all 3 tests pass. I ran them with `unittest` through `py`.\n\n- **Default:** discontinued items are still excluded, as before.\n- **With the flag:** discontinued items count only when their stock is positive. Zero or negative stock is excluded either way.\n- **Any iterable:** the function already read `items` once, so generators and iterators work. I added a test to confirm it.\n- **Result shape:** unchanged, still `{\"count\": ..., \"units\": ...}`.\n\nI added two tests to `tests/test_inventory.py`: one for the flag, including zero and negative stock on discontinued and non-discontinued items, and one for single-pass iterables. The original test is untouched.\n\nI didn't run any lint or type checks."
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "security-review",
+    "rep": 1,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 29.5,
+    "tool_count": 4,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-review"
+    ],
+    "turns": 6,
+    "cost_usd": 0.106822,
+    "tokens_total": 96071,
+    "output_tokens": 1742,
+    "final_answer": "I found two problems in `src/orders.py`, one security and one correctness. I only read the file and didn't run anything. A grep found no callers or tests, so I judged it on the file alone.\n\n## Findings\n\n**1. High, security: any logged-in user can read any order (`src/orders.py:18-22`)**\n- **Trigger:** `show_order(current_user, order_id)` loads the order by ID and never uses `current_user`. Any caller who knows or guesses an `order_id` gets that order back. The stub `get_order` always returns `owner_id=\"customer-2\"`, so even `customer-1` would get it.\n- **Consequence:** this breaks the rule that a customer sees only their own order. It is an insecure direct object reference (IDOR).\n- **Smallest repair:** compare owners after loading, and fail the same way a missing order would, so IDs can't be probed:\n  ```python\n  order = get_order(order_id)\n  if order.owner_id != current_user.id:\n      raise LookupError(\"order not found\")  # same error the missing-order path should raise\n  ```\n- **Assumption:** `current_user.id` is the identifier that matches `owner_id`. The parameter is untyped, so confirm the real attribute.\n- **Anonymous callers:** a `None` or anonymous `current_user` raises `AttributeError`. That fails closed, but as a 500. The login check belongs at the caller.\n- **Optional hardening:** in the real repository, filter by owner in the query (`WHERE id=? AND owner_id=?`) so another customer's row is never loaded.\n\n**2. Medium, correctness: quantity 0 is returned as 1 (`src"
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "security-review",
+    "rep": 1,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 20.4,
+    "tool_count": 3,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-lab:combo-review"
+    ],
+    "turns": 5,
+    "cost_usd": 0.1098309,
+    "tokens_total": 76878,
+    "output_tokens": 1342,
+    "final_answer": "I found two defects in `src/orders.py`, both in `show_order` (lines 18–22). I only read the file and searched for callers. I ran nothing and changed nothing.\n\n## 1. Any logged-in user can read any order (security, high)\n\n`src/orders.py:20-22` loads the order by `order_id` and returns it without comparing `order.owner_id` to the caller. `current_user` is never used.\n\n- **Trigger:** any caller who passes any `order_id`.\n- **Evidence:** the stub `get_order` always returns `owner_id=\"customer-2\"`. `show_order` returns that order for any `current_user`, including `customer-1`.\n- **Consequence:** this is an insecure direct object reference. A customer can read other customers' orders by guessing or enumerating IDs.\n- **Smallest repair:** add an ownership check after the load. This assumes `current_user` exposes an `id` attribute, which this file doesn't confirm. Adjust it to the real user type.\n\n```python\norder = get_order(order_id)\nif order.owner_id != current_user.id:\n    raise LookupError(\"order not found\")  # same error as a missing order, so IDs can't be probed\n```\n\nTwo related points:\n- Use the same \"not found\" outcome for a missing order and a foreign one, so the response doesn't reveal which IDs exist.\n- Decide what an unauthenticated `current_user` (`None`) does. The docstring says \"logged-in user\", but nothing enforces it. `current_user.id` raises on `None`, which fails closed but unclearly. The real framework's auth layer should reject it first.\n\n## 2. Quantity zero is t"
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "plan-adapters",
+    "rep": 1,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 33.5,
+    "tool_count": 6,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-plan"
+    ],
+    "turns": 8,
+    "cost_usd": 0.11773890000000001,
+    "tokens_total": 73329,
+    "output_tokens": 2881,
+    "final_answer": "# Plan: retryable notification gateway\n\nNothing has been created or modified. I read `src\\notifications.py`, `src\\notification_adapters.py` and `tests\\test_notifications.py`. I haven't run anything, including the existing test.\n\n## What exists\n\n- **The seam** is the `NotificationAdapter` Protocol in `src\\notification_adapters.py:7`. It has one method, `send(recipient: str, body: str) -> str`, which returns a provider receipt.\n- **The two production adapters** are `EmailAdapter(smtp_host)` and `SmsAdapter(account_id)`. They are dataclasses that satisfy the Protocol structurally. Both currently return a formatted string and never raise or do I/O.\n- **The callers** are `send_welcome` and `send_receipt` in `src\\notifications.py`. They take any `NotificationAdapter` and return `adapter.send(...)`'s string unchanged. They don't know which adapter they get.\n- **The only test** passes both real adapters through both callers and checks the receipt prefix.\n\n## Recommendation\n\nAdd a single decorator, `RetryingAdapter`, that wraps any `NotificationAdapter` and is itself one. It needs no new interface, registry, router or provider-selection layer. A caller that wants retries is handed `RetryingAdapter(EmailAdapter(...))` instead of the bare adapter.\n\n- `notifications.py` and the two adapters stay untouched.\n- Retry works the same for email and SMS, and for any future adapter.\n- I'm deliberately not building a multi-provider \"gateway\" with fallback or routing. Nothing in the code or reques"
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "plan-adapters",
+    "rep": 1,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 46.1,
+    "tool_count": 5,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-lab:combo-plan"
+    ],
+    "turns": 8,
+    "cost_usd": 0.1349877,
+    "tokens_total": 105736,
+    "output_tokens": 2994,
+    "final_answer": "**Plan: retryable notification gateway.** I read `src/notification_adapters.py`, `src/notifications.py` and `tests/test_notifications.py`. Nothing was modified and I ran no tests.\n\n## What exists\n\n- **The seam is `NotificationAdapter`** (`notification_adapters.py:7`). It is a structural `Protocol` with one method, `send(recipient: str, body: str) -> str`, which returns a provider receipt.\n- **Two production adapters implement it:** `EmailAdapter(smtp_host)` and `SmsAdapter(account_id)`. Both are currently stubs that return a formatted string and never raise or do I/O.\n- **The callers are `send_welcome` and `send_receipt`** (`notifications.py:6,10`). They take any `NotificationAdapter` and call only `.send(recipient, body)`. They never import a concrete adapter.\n- **The only test** (`test_notifications.py:8`) passes both real adapters through both callers.\n\n## Approach\n\nBuild the gateway as a **decorator that is itself a `NotificationAdapter`**. It wraps one inner adapter and retries `send`. Callers and the two adapters stay unchanged, because a gateway instance can be passed wherever an adapter is accepted today.\n\n```python\n# src/notification_gateway.py (new module; keeps notification_adapters.py's docstring true)\n@dataclass\nclass RetryingGateway:\n    inner: NotificationAdapter\n    max_attempts: int = 3\n    base_delay: float = 0.5\n    retry_on: tuple[type[BaseException], ...] = (ConnectionError, TimeoutError)\n    sleep: Callable[[float], None] = time.sleep\n\n    def send(self,"
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "bug-zero",
+    "rep": 2,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/quantity.py",
+      "tests/test_quantity.py"
+    ],
+    "seconds": 31.5,
+    "tool_count": 9,
+    "workflow_loaded": false,
+    "skills": [],
+    "turns": 10,
+    "cost_usd": 0.1268996,
+    "tokens_total": 211810,
+    "output_tokens": 1886,
+    "final_answer": "A quantity of zero now stays zero. `None` still defaults to 1. All three tests pass, including the new zero test, but I didn't run the new test against the old code to watch it fail.\n\n- **Fix:** in `src/quantity.py`, `normalize_quantity` returned `value or 1`, which treats any falsy value as missing. It now returns `1 if value is None else value`. I also removed the \"seeded defect\" comment, since the defect is fixed.\n- **Test:** I added `test_zero_quantity_is_preserved` to `tests/test_quantity.py`.\n- **Not covered:** other falsy values, such as an empty string or `False`, now pass through unchanged instead of becoming 1. The task was only about zero, so I left that alone.\n\nI ran the tests with an inline `py -c` runner, because the plain `unittest discover` commands failed on the `src` import path or needed approval."
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "bug-zero",
+    "rep": 2,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/quantity.py",
+      "tests/test_quantity.py"
+    ],
+    "seconds": 26.7,
+    "tool_count": 9,
+    "workflow_loaded": false,
+    "skills": [],
+    "turns": 10,
+    "cost_usd": 0.123143,
+    "tokens_total": 211138,
+    "output_tokens": 1626,
+    "final_answer": "Zero is no longer treated as missing, and the tests pass (3 of 3).\n\n- **Fix:** In `src/quantity.py`, `normalize_quantity` now returns `1 if value is None else value`. The old `value or 1` replaced every falsy value with 1. Now only `None` gets the default.\n- **Test:** I added `test_zero_quantity_is_preserved` to `tests/test_quantity.py`. It asserts that `normalize_quantity(0)` returns 0.\n- **Comment:** I removed the \"seeded defect\" comment, since it no longer applies.\n\nI ran the test file directly with `src` and `tests` added to `sys.path`. The standard `unittest discover` call failed because `tests` has no `__init__.py`, and I didn't add one since that's outside this parser. I only checked the behavior covered by this file's tests. I didn't check other falsy inputs such as `\"\"`, `False` or `0.0`; these are now returned unchanged rather than replaced by 1."
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "inventory-feature",
+    "rep": 2,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/inventory.py",
+      "tests/test_inventory.py"
+    ],
+    "seconds": 38.7,
+    "tool_count": 10,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-deliver"
+    ],
+    "turns": 12,
+    "cost_usd": 0.13187439999999997,
+    "tokens_total": 193271,
+    "output_tokens": 2274,
+    "final_answer": "I added `include_discontinued` to `inventory_summary`, but I couldn't run the tests. The shell asked for approval on each attempt, and none was granted. I've checked the logic only by reading it.\n\n**Change in `src/inventory.py`**\n- The signature is now `inventory_summary(items, include_discontinued=False)`.\n- The filter is `item.quantity > 0 and (include_discontinued or not item.discontinued)`.\n- By default discontinued items are still excluded.\n- With the flag set, discontinued items count only if their stock is positive. Zero or negative stock is excluded either way.\n- The result is still `{\"count\", \"units\"}`.\n- The function reads `items` once in a single list comprehension, so a generator or iterator works. I added a docstring note saying so.\n\n**Tests added in `tests/test_inventory.py`**\n- One test uses a mix of items:\n  - With the flag, discontinued items with zero or negative stock stay out, and the result is `{\"count\": 2, \"units\": 5}`.\n  - Without the flag, the same items give `{\"count\": 1, \"units\": 2}`.\n- One test uses one-shot generators with and without the flag, plus an empty iterator.\n\nTo run them, approve this command or run it yourself from the project root:\n\n```\nPYTHONPATH=src py -m unittest discover -s tests -v\n```\n\nIn PowerShell that is `$env:PYTHONPATH=\"src\"; py -m unittest discover -s tests -v`."
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "inventory-feature",
+    "rep": 2,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/inventory.py",
+      "tests/test_inventory.py"
+    ],
+    "seconds": 32.1,
+    "tool_count": 9,
+    "workflow_loaded": false,
+    "skills": [],
+    "turns": 10,
+    "cost_usd": 0.1338669,
+    "tokens_total": 215267,
+    "output_tokens": 2337,
+    "final_answer": "`inventory_summary` in `src/inventory.py` now takes an `include_discontinued` flag, and all 3 tests pass.\n\n- **Default:** it still excludes discontinued items, and the result is still `{\"count\", \"units\"}`.\n- **With `include_discontinued=True`:** discontinued items count only if their stock is positive. Zero or negative stock is excluded either way.\n- **Flag style:** it's keyword-only (`*, include_discontinued=False`), so a stray positional argument can't flip it.\n- **Any iterable:** the code already read `items` in a single pass, so generators and iterators work. I only documented that in the docstring.\n\nIn `tests/test_inventory.py` I added two tests. One covers the flag against positive, zero and negative stock, and the default on the same data. The other passes a generator and an iterator, with and without the flag. The original test is unchanged.\n\nThe repo has no configured test runner. I ran the tests with `unittest` discovery and `src` added to the path from inside Python. I didn't run any lint or type checks."
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "security-review",
+    "rep": 2,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 19.6,
+    "tool_count": 4,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-review"
+    ],
+    "turns": 6,
+    "cost_usd": 0.10276930000000001,
+    "tokens_total": 95645,
+    "output_tokens": 1333,
+    "final_answer": "I found two defects in `src/orders.py`, both in `show_order` (lines 18–22). No other code in the directory calls these functions. I read the file and searched for callers, and changed nothing.\n\n## 1. Any logged-in user can view any order (High, security)\n\n- **Where:** `src/orders.py:20`\n- **Trigger:** `show_order(current_user, order_id)` loads the order and never looks at `current_user`. Any caller can pass any `order_id`, and the stub's `get_order` always returns `owner_id=\"customer-2\"`.\n- **Consequence:** Any logged-in customer can read another customer's order by guessing or enumerating IDs. This breaks the rule that a customer sees only their own order.\n- **Smallest repair:** Compare the owner to the user before returning. Return the same result for \"not found\" and \"not yours\", so the response doesn't reveal which order IDs exist.\n\n  ```python\n  order = get_order(order_id)\n  if order is None or order.owner_id != current_user.id:\n      raise LookupError(\"order not found\")  # or the framework's 404\n  ```\n\n  I assumed `current_user` has an `.id` that matches `owner_id`, since the file doesn't say. Confirm that attribute name. Better still, filter by owner in the repository query so other customers' rows are never loaded.\n\n## 2. Quantity 0 is returned as 1 (High, correctness)\n\n- **Where:** `src/orders.py:21`\n- **Trigger:** `order.quantity or 1` treats `0` as falsy, so a valid quantity of 0 becomes 1. The stub returns `quantity=0`, so it hits this path.\n- **Consequence:** The "
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "security-review",
+    "rep": 2,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 26.3,
+    "tool_count": 4,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-lab:combo-review"
+    ],
+    "turns": 6,
+    "cost_usd": 0.113476,
+    "tokens_total": 77362,
+    "output_tokens": 1699,
+    "final_answer": "I found two defects in `src/orders.py`. One is a security hole that lets any caller read another customer's order. The other turns a valid quantity of 0 into 1. I only read the file and `README.md` and ran nothing. The repo has no callers, tests or auth layer, so I couldn't check how `current_user` is built or what `get_order` does for a missing order.\n\n**1. Any caller can read any customer's order (high, security)**\n\n- **Where:** `src/orders.py:18-22`, in `show_order`.\n- **Trigger:** `show_order` loads the order by `order_id` and never compares `order.owner_id` with `current_user`. `current_user` is not used anywhere in the function. `get_order` returns `owner_id=\"customer-2\"` for every id, so any other logged-in customer who supplies an id gets that order. A caller with no user at all gets it too.\n- **Consequence:** this is an insecure direct object reference. One customer can read another's order, and ids can be enumerated.\n- **Smallest repair:** check ownership right after loading the order, and reject a missing user as well:\n  ```python\n  order = get_order(order_id)\n  if current_user is None or order.owner_id != current_user.id:\n      raise LookupError(\"order not found\")  # map to 404\n  ```\n  - Use the same error and response for \"not yours\" as for \"doesn't exist\", so callers can't tell which order ids exist.\n  - The `current_user.id` attribute name is my assumption. Use whatever identifier the auth layer exposes, and make sure it is the same kind of value as `owner_id`."
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "plan-adapters",
+    "rep": 2,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 30.5,
+    "tool_count": 6,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-plan"
+    ],
+    "turns": 8,
+    "cost_usd": 0.1209905,
+    "tokens_total": 73745,
+    "output_tokens": 3182,
+    "final_answer": "# Plan: retryable notification gateway\n\nNothing was created or modified.\n\n## What exists\n\n| Piece | Location | Role |\n|---|---|---|\n| `NotificationAdapter` Protocol | `src/notification_adapters.py:7` | The seam: `send(recipient: str, body: str) -> str`, returning the provider receipt. |\n| `EmailAdapter`, `SmsAdapter` | `src/notification_adapters.py:12-25` | The two production adapters. They are dataclasses with one config field each. Both are stubs that return a string and never raise. |\n| `send_welcome`, `send_receipt` | `src/notifications.py:6-11` | The only callers. They take any `NotificationAdapter` and call `.send(recipient, body)` once. |\n| `test_both_real_adapters_work_with_existing_callers` | `tests/test_notifications.py:8` | Runs both real adapters through both callers. |\n\n- **Imports:** modules use bare imports (`from notification_adapters import ...`), so `src/` is on the path.\n- **Test runner:** the test uses `unittest`.\n- **No error contract:** nothing in the code defines which failures are transient. The adapters can't fail today.\n\n## Recommended approach: a decorator that satisfies the same Protocol\n\nAdd one class, `RetryingAdapter`, that wraps any `NotificationAdapter` and is itself a `NotificationAdapter`.\n\n```python\n@dataclass\nclass RetryingAdapter:\n    inner: NotificationAdapter\n    max_attempts: int = 3\n    base_delay: float = 0.5\n    sleep: Callable[[float], None] = time.sleep   # injectable for tests\n\n    def send(self, recipient: str, body: str) -> str"
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "plan-adapters",
+    "rep": 2,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 28.4,
+    "tool_count": 5,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-lab:combo-plan"
+    ],
+    "turns": 7,
+    "cost_usd": 0.1269846,
+    "tokens_total": 78462,
+    "output_tokens": 2909,
+    "final_answer": "# Plan: retryable notification gateway\n\nNothing was created or modified. I read `src/notification_adapters.py`, `src/notifications.py` and `tests/test_notifications.py`, which are the only three files in the project.\n\n## What the code establishes\n\n- **The seam is `NotificationAdapter`.** It is a `Protocol` with one method, `send(recipient: str, body: str) -> str`, which returns the provider receipt (`src/notification_adapters.py:7-9`).\n- **Two adapters implement it.** `EmailAdapter(smtp_host)` and `SmsAdapter(account_id)` are both stubs. They return a string and never raise (`src/notification_adapters.py:12-25`). So the code has no failure behaviour to hook into yet.\n- **Callers depend only on the Protocol.** `send_welcome` and `send_receipt` take any `NotificationAdapter` and return `adapter.send(...)` unchanged (`src/notifications.py:6-11`). They don't know which adapter they hold.\n- **The one test only checks that both adapters work with the callers.** It asserts the receipt prefixes `email:` and `sms:` (`tests/test_notifications.py:8-10`). It uses flat imports, so `src` is on the path.\n\n## Recommendation\n\nBuild the gateway as a decorator that is itself a `NotificationAdapter`. It wraps one adapter and retries `send`. Callers, `EmailAdapter` and `SmsAdapter` stay unchanged. Retry is then opt-in at the point where an adapter is constructed:\n\n```python\nsend_welcome(RetryingGateway(EmailAdapter(\"smtp\")), \"a@example.test\")\n```\n\n**Alternatives rejected:**\n- **Retry inside each "
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "bug-zero",
+    "rep": 3,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/quantity.py",
+      "tests/test_quantity.py"
+    ],
+    "seconds": 33.7,
+    "tool_count": 12,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-debug"
+    ],
+    "turns": 14,
+    "cost_usd": 0.13929760000000002,
+    "tokens_total": 250810,
+    "output_tokens": 2055,
+    "final_answer": "A quantity of zero is no longer treated as missing: `normalize_quantity(0)` now returns `0`, and all 3 tests pass. I didn't run any other checks.\n\nThe cause was `return value or 1` in `src/quantity.py`. It replaced every falsy value with the default, and 0 is falsy. I changed it to `return 1 if value is None else value`, so `None` still defaults to 1. I also removed the \"seeded defect\" comment, since the defect is gone.\n\nI added `test_zero_quantity_is_preserved` to `tests/test_quantity.py`. Before the fix it failed with `1 != 0`.\n\nNothing else changed. The two existing tests still pass: `None` gives 1 and 4 gives 4. Other falsy inputs such as `\"\"` or `False` are now passed through unchanged, because only `None` counts as missing. The task only named zero, so I left that as is.\n\nTo run the tests, I used `py -c \"import sys, unittest; sys.path.insert(0, 'src'); unittest.main(module=None, argv=['x', 'discover', '-s', 'tests', '-v'])\"`. The tests import `quantity` directly, so `src` has to be on the path. Setting `PYTHONPATH` inline needed approval in this sandbox."
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "bug-zero",
+    "rep": 3,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/quantity.py",
+      "tests/test_quantity.py"
+    ],
+    "seconds": 22.8,
+    "tool_count": 10,
+    "workflow_loaded": false,
+    "skills": [],
+    "turns": 11,
+    "cost_usd": 0.1294961,
+    "tokens_total": 239681,
+    "output_tokens": 1786,
+    "final_answer": "A quantity of zero is no longer treated as missing: `normalize_quantity(0)` now returns `0`, and `None` still returns `1`. All three tests pass.\n\n- **Fix:** `src/quantity.py` used `value or 1`, which turns every falsy value into the default. It now reads `return 1 if value is None else value`. I also removed the \"seeded defect\" comment, since it no longer applies.\n- **Test:** I added `test_zero_quantity_is_preserved` to `tests/test_quantity.py`.\n- **Tests run:** the missing-quantity, positive-quantity and new zero-quantity tests. `unittest discover` and the `PYTHONPATH=` form both failed or needed approval, so I ran them through a `py -c` call that puts `src` and `tests` on `sys.path`.\n\nOther falsy values, such as `\"\"`, `False` or `0.0`, are now passed through unchanged instead of becoming `1`. You only asked about zero and `None`, so I left them alone."
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "inventory-feature",
+    "rep": 3,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/inventory.py",
+      "tests/test_inventory.py"
+    ],
+    "seconds": 35.3,
+    "tool_count": 12,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-deliver"
+    ],
+    "turns": 15,
+    "cost_usd": 0.15790690000000002,
+    "tokens_total": 286880,
+    "output_tokens": 2816,
+    "final_answer": "`inventory_summary` in `src/inventory.py` now takes an `include_discontinued` flag, and all three tests pass (the original default test plus two new ones).\n\n- **Flag:** it is keyword-only and defaults to `False`. With the default, discontinued items are excluded as before. With `include_discontinued=True`, discontinued items count only if their stock is positive. Zero or negative stock is excluded either way.\n- **Result shape:** still `{\"count\": ..., \"units\": ...}`.\n- **Any iterable:** the function already walked `items` once in a list comprehension, so generators, iterators and tuples work. I added a docstring note that the iterable is consumed once and a test that proves it.\n\nThe new tests in `tests/test_inventory.py` cover both parts. One mixes positive, zero and negative stock across discontinued and active items, with the flag on and off. The other runs a generator and an iterator, plus an empty tuple.\n\nI ran the tests through `unittest` with `src` and `tests` added to `sys.path`. I didn't run a linter or type checker."
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "inventory-feature",
+    "rep": 3,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [
+      "src/inventory.py",
+      "tests/test_inventory.py"
+    ],
+    "seconds": 35.0,
+    "tool_count": 10,
+    "workflow_loaded": false,
+    "skills": [],
+    "turns": 11,
+    "cost_usd": 0.13193330000000003,
+    "tokens_total": 215005,
+    "output_tokens": 2166,
+    "final_answer": "`inventory_summary` in `src/inventory.py` now takes a keyword-only `include_discontinued` flag, and all 3 tests pass.\n\n- **Default:** the flag defaults to `False`, so discontinued items are still excluded and existing callers behave as before.\n- **With the flag on:** discontinued items are counted only when their stock is above zero. Zero or negative stock is excluded either way.\n- **Any iterable:** the function already read `items` in a single pass, so generators and iterators work without changes. I noted that in the docstring.\n- **Result shape:** unchanged, still `{\"count\", \"units\"}`.\n\nI added two tests to `tests/test_inventory.py`. One mixes active, discontinued, zero and negative stock and checks both the flag-on and default results. The other passes an iterator and a generator.\n\nI ran the tests with `py` and a path override rather than `unittest discover`, because the shell asked for approval on the first two attempts and I then switched to a simpler command."
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "security-review",
+    "rep": 3,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 19.4,
+    "tool_count": 4,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-review"
+    ],
+    "turns": 6,
+    "cost_usd": 0.1028161,
+    "tokens_total": 71932,
+    "output_tokens": 1619,
+    "final_answer": "I found two defects in `src/orders.py`. One is a security hole and one is a correctness bug. I didn't modify, run or publish anything. `orders.py` is the only Python file in the directory, and it has no callers or tests.\n\n## 1. Any logged-in customer can view any order (high, security)\n**Location:** `src/orders.py:18-22`, `show_order`\n\n- **Trigger:** A user calls `show_order(current_user, \"<any id>\")`.\n- **Cause:** The order is fetched by `order_id` alone. `current_user` is never read, and `order.owner_id` is never compared to it. The stub `get_order` returns `owner_id=\"customer-2\"` for every id. So `customer-1` gets customer-2's order, and so does a `None` user.\n- **Consequence:** This is the broken object-level authorization (IDOR) case. It breaks your rule that a customer may view only their own order.\n- **Smallest repair:** Check ownership right after loading the order. Raise the same error for \"missing\" and \"not yours\", so order ids can't be probed for existence.\n\n```python\norder = get_order(order_id)\nif current_user is None or order.owner_id != current_user.id:\n    raise LookupError(\"order not found\")  # map to 404 at the web layer\n```\n\n`current_user.id` is my assumption about the user object, since no user type exists in this file. Use whichever attribute actually holds the customer id, and use your framework's not-found exception in place of `LookupError`.\n\n## 2. Quantity 0 is reported as 1 (high, correctness)\n**Location:** `src/orders.py:21`, `quantity = order.quanti"
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "security-review",
+    "rep": 3,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 18.7,
+    "tool_count": 3,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-lab:combo-review"
+    ],
+    "turns": 5,
+    "cost_usd": 0.10892940000000001,
+    "tokens_total": 76776,
+    "output_tokens": 1250,
+    "final_answer": "I found two defects in `src/orders.py`. The first is a security hole and the second is a correctness bug. The file has no callers, tests or other code that could guard either one, so the review is of the file alone. I didn't run anything or edit any files.\n\n## 1. Any user can view any order (`src/orders.py:18-22`, high)\n\n- **Trigger:** `show_order(current_user, order_id)` loads the order with `get_order(order_id)` and never looks at `current_user`. Any logged-in user who supplies an order ID gets that order back.\n- **Evidence:** the stub always returns `owner_id=\"customer-2\"`, so even `customer-1` would be served that order. The `owner_id` field is never read.\n- **Consequence:** this is an insecure direct object reference, so one customer can read another customer's order data.\n- **Smallest repair:** compare the owner to the caller after loading, and raise the same error whether the order is missing or belongs to someone else, so IDs can't be probed:\n\n```python\norder = get_order(order_id)\nif current_user is None or order.owner_id != current_user.id:\n    raise PermissionError(\"order not found\")  # use the app's 404/NotFound type\n```\n\nThe `current_user.id` attribute is my assumption, because `current_user` is untyped here. Adjust it to whatever identity field the app uses. If `get_order` can return `None` or raise for a missing order, handle that case with the same error.\n\n## 2. Quantity 0 is reported as 1 (`src/orders.py:21`, medium)\n\n- **Trigger:** `order.quantity or 1` treat"
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "plan-adapters",
+    "rep": 3,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 31.5,
+    "tool_count": 6,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-plan"
+    ],
+    "turns": 8,
+    "cost_usd": 0.1183073,
+    "tokens_total": 73394,
+    "output_tokens": 2935,
+    "final_answer": "# Plan: retryable notification gateway\n\n## What the code shows\n- `src/notification_adapters.py:7` defines the seam: `NotificationAdapter` is a `Protocol` with one method, `send(recipient: str, body: str) -> str`, which returns a receipt.\n- `EmailAdapter(smtp_host)` and `SmsAdapter(account_id)` are the two production adapters. Both are plain dataclasses that satisfy the Protocol structurally. Neither raises, retries or sleeps.\n- `src/notifications.py:6` and `:10` hold the callers, `send_welcome` and `send_receipt`. They are typed against `NotificationAdapter` only and don't know which adapter they get.\n- `tests/test_notifications.py` checks that both real adapters work with both callers. It uses flat imports (`from notification_adapters import ...`), so `src` has to be on `PYTHONPATH`.\n\n## Recommendation: the gateway is a decorator over the seam\n`RetryingGateway` wraps any `NotificationAdapter` and is itself a `NotificationAdapter`. It has the same `send(recipient, body) -> str` signature and returns the receipt from the first successful attempt.\n\n- **Callers:** no changes. A caller that today gets `EmailAdapter(...)` gets `RetryingGateway(EmailAdapter(...))` instead.\n- **Adapters:** no changes to `EmailAdapter` or `SmsAdapter`, and no new base class.\n- **Placement:** a new module, `src/notification_gateway.py`. It imports only the Protocol. This keeps the adapters file as \"the two production adapters\" and avoids a circular dependency.\n\nI considered two alternatives and reject"
+  },
+  {
+    "host": "claude",
+    "arm": "inline",
+    "case": "plan-adapters",
+    "rep": 3,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 37.3,
+    "tool_count": 5,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-lab:combo-plan"
+    ],
+    "turns": 7,
+    "cost_usd": 0.1291313,
+    "tokens_total": 78749,
+    "output_tokens": 3106,
+    "final_answer": "# Plan: retryable notification gateway\n\n## What the code shows\n\n- **The seam** is `NotificationAdapter`, a Protocol with one method, `send(recipient: str, body: str) -> str`. It returns a provider receipt (`src/notification_adapters.py:7-9`).\n- **The two production adapters**, `EmailAdapter(smtp_host)` and `SmsAdapter(account_id)`, are dataclasses that satisfy it structurally (`src/notification_adapters.py:12-25`). Neither can fail today. Both just return a formatted string, so nothing defines what a transient failure is.\n- **The callers**, `send_welcome` and `send_receipt`, take any `NotificationAdapter` and call `.send(recipient, body)` (`src/notifications.py:6-11`). They know nothing about concrete adapters.\n- **The one test** runs both real adapters through both callers (`tests/test_notifications.py:9-10`). It imports flat (`from notification_adapters import ...`), so `src` must be on the path.\n- This is not a git repo, so there is no history to check for other callers. The Glob found only these three files.\n\n## Approach: the gateway is a decorator that implements the seam\n\nBuild `RetryingGateway`, which wraps any `NotificationAdapter` and also satisfies `NotificationAdapter`. Callers and the existing adapters need no changes. You adopt retries by writing `send_welcome(RetryingGateway(EmailAdapter(\"smtp\")), to)`.\n\nThe alternative is a gateway with its own API, such as `gateway.deliver(channel, ...)`. That would force a caller migration and break the seam, so I'm not recom"
+  }
+]
