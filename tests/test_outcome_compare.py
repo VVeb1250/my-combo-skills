@@ -72,6 +72,25 @@ class CompareScoring(unittest.TestCase):
         self.assertTrue(self.score("diagnose-only", answer=good, changed=["src/quantity.py"]))
         self.assertTrue(self.score("diagnose-only", answer="It is a bug."))
 
+    def test_plan_answer_that_recommends_without_the_word_plan_is_accepted(self):
+        # A valid plan-only answer can say "Recommendation" and never use "plan"/"proposed" (seen 2026-10-22).
+        answer = ("I read the adapters and changed nothing.\n\n## What exists\n"
+                  "`NotificationAdapter` is a Protocol with `send(recipient, body)`. EmailAdapter(smtp_host) and "
+                  "SmsAdapter(account_id) satisfy it.\n\n## Recommendation\n"
+                  "Build the gateway as a decorator that wraps any adapter; callers and both adapters stay unchanged.")
+        self.assertEqual(self.score("plan-adapters", answer=answer), [])
+
+    def test_plan_answer_without_any_planning_signal_still_fails(self):
+        answer = ("`NotificationAdapter` is a Protocol with `send(recipient, body)`. EmailAdapter(smtp_host) and "
+                  "SmsAdapter(account_id) satisfy it. The seam is clean.")
+        self.assertTrue(any("planning intent" in f for f in self.score("plan-adapters", answer=answer)))
+
+    def test_recommend_does_not_excuse_an_implementation_claim_or_a_changed_file(self):
+        claim = "I recommend this and I implemented it: EmailAdapter and SmsAdapter now sit behind the protocol seam."
+        self.assertTrue(any("claims implementation" in f for f in self.score("plan-adapters", answer=claim)))
+        ok = "Recommendation: wrap EmailAdapter and SmsAdapter in a decorator over the protocol seam."
+        self.assertTrue(self.score("plan-adapters", answer=ok, changed=["src/notifications.py"]))
+
     def test_no_tool_case_rejects_tools(self):
         self.assertTrue(self.score("translation-negative", answer="ใบแจ้งหนี้พร้อมสำหรับการตรวจสอบ", tools=1))
         self.assertEqual(self.score("translation-negative", answer="ใบแจ้งหนี้พร้อมสำหรับการตรวจสอบ"), [])
@@ -123,7 +142,7 @@ class InlineArm(unittest.TestCase):
                 self.assertEqual(desc(stub), desc(built), name)
                 workflow = (ROOT / "skills" / "combo" / "workflows" / f"{name}.md").read_text(encoding="utf-8")
                 self.assertIn(workflow.splitlines()[0], built, name)
-                self.assertIn("## Context selection and reporting (inlined)", built, name)
+                self.assertTrue("## Context selection and reporting (inlined)" in built or "BEGIN CONTEXT CORE" in built, name)
                 self.assertNotIn("Read [context]", built, name)
                 self.assertNotIn("${CLAUDE_SKILL_DIR}", built, name)
                 self.assertNotIn("](../", built, name)

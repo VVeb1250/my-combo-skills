@@ -1,0 +1,223 @@
+{
+ "rates_per_token": {
+  "input": 2.000000000000893e-06,
+  "cache_write": 4.000000000000004e-06,
+  "cache_read": 9.999999999999834e-08,
+  "output": 9.999999999999996e-06
+ },
+ "r2": 1.0,
+ "rows": [
+  {
+   "arm": "full",
+   "case": "bug-zero",
+   "rep": 1,
+   "skills": [],
+   "calls": 8,
+   "load_calls": 0,
+   "cost": 0.1235167,
+   "base": 0.07643140000000007,
+   "output": 0.016579999999999994,
+   "advisor": 0.0,
+   "load": 0.0,
+   "loaded_tokens": 0,
+   "loaded": false,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "bug-zero",
+   "rep": 2,
+   "skills": [
+    "combo-debug"
+   ],
+   "calls": 8,
+   "load_calls": 2,
+   "cost": 0.1401985,
+   "base": 0.07642740000000008,
+   "output": 0.019349999999999992,
+   "advisor": 0.0,
+   "load": 0.01748529999999994,
+   "loaded_tokens": 3194,
+   "loaded": true,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "bug-zero",
+   "rep": 3,
+   "skills": [
+    "combo-debug"
+   ],
+   "calls": 8,
+   "load_calls": 2,
+   "cost": 0.1338927,
+   "base": 0.07637540000000007,
+   "output": 0.017359999999999993,
+   "advisor": 0.0,
+   "load": 0.017672699999999937,
+   "loaded_tokens": 3235,
+   "loaded": true,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "inventory-feature",
+   "rep": 1,
+   "skills": [],
+   "calls": 8,
+   "load_calls": 0,
+   "cost": 0.13736969999999996,
+   "base": 0.07654740000000007,
+   "output": 0.02547999999999999,
+   "advisor": 0.0,
+   "load": 0.0,
+   "loaded_tokens": 0,
+   "loaded": false,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "inventory-feature",
+   "rep": 2,
+   "skills": [
+    "combo-deliver"
+   ],
+   "calls": 8,
+   "load_calls": 2,
+   "cost": 0.14385929999999997,
+   "base": 0.07653940000000008,
+   "output": 0.022079999999999992,
+   "advisor": 0.0,
+   "load": 0.018268099999999936,
+   "loaded_tokens": 3365,
+   "loaded": true,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "inventory-feature",
+   "rep": 3,
+   "skills": [
+    "combo-deliver"
+   ],
+   "calls": 7,
+   "load_calls": 2,
+   "cost": 0.1403112,
+   "base": 0.07652340000000007,
+   "output": 0.02429999999999999,
+   "advisor": 0.0,
+   "load": 0.018705399999999945,
+   "loaded_tokens": 3537,
+   "loaded": true,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "plan-adapters",
+   "rep": 1,
+   "skills": [
+    "combo-plan"
+   ],
+   "calls": 3,
+   "load_calls": 2,
+   "cost": 0.1223045,
+   "base": 0.07538860000000008,
+   "output": 0.028509999999999987,
+   "advisor": 0.0,
+   "load": 0.016442299999999972,
+   "loaded_tokens": 3437,
+   "loaded": true,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "plan-adapters",
+   "rep": 2,
+   "skills": [
+    "combo-plan"
+   ],
+   "calls": 3,
+   "load_calls": 2,
+   "cost": 0.1246593,
+   "base": 0.07540460000000009,
+   "output": 0.030859999999999988,
+   "advisor": 0.0,
+   "load": 0.01643889999999997,
+   "loaded_tokens": 3436,
+   "loaded": true,
+   "passed": false
+  },
+  {
+   "arm": "full",
+   "case": "plan-adapters",
+   "rep": 3,
+   "skills": [
+    "combo-plan"
+   ],
+   "calls": 3,
+   "load_calls": 2,
+   "cost": 0.1227404,
+   "base": 0.07536060000000008,
+   "output": 0.029039999999999986,
+   "advisor": 0.0,
+   "load": 0.016372799999999976,
+   "loaded_tokens": 3420,
+   "loaded": true,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "security-review",
+   "rep": 1,
+   "skills": [
+    "combo-review"
+   ],
+   "calls": 4,
+   "load_calls": 3,
+   "cost": 0.11612990000000001,
+   "base": 0.07536060000000008,
+   "output": 0.018219999999999993,
+   "advisor": 0.0,
+   "load": 0.020621199999999937,
+   "loaded_tokens": 3826,
+   "loaded": true,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "security-review",
+   "rep": 2,
+   "skills": [
+    "combo-review"
+   ],
+   "calls": 3,
+   "load_calls": 2,
+   "cost": 0.1064744,
+   "base": 0.07537660000000009,
+   "output": 0.014829999999999994,
+   "advisor": 0.0,
+   "load": 0.014304499999999972,
+   "loaded_tokens": 2896,
+   "loaded": true,
+   "passed": true
+  },
+  {
+   "arm": "full",
+   "case": "security-review",
+   "rep": 3,
+   "skills": [
+    "combo-review"
+   ],
+   "calls": 4,
+   "load_calls": 3,
+   "cost": 0.11559459999999999,
+   "base": 0.07536460000000007,
+   "output": 0.01757999999999999,
+   "advisor": 0.0,
+   "load": 0.020750399999999933,
+   "loaded_tokens": 3858,
+   "loaded": true,
+   "passed": true
+  }
+ ]
+}

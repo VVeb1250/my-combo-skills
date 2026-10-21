@@ -175,11 +175,14 @@ def build_inline_plugin(dest: Path, home: Path | None = None) -> Path:
         assert match, f"combo-{name}: stub has no frontmatter"
         front = match.group(0)
         workflow = (combo / "workflows" / f"{name}.md").read_text(encoding="utf-8")
-        workflow, n = re.subn(r"Read \[context\]\(\.\./practices/context\.md\) once for\s+evidence\s+selection\s+and\s+reporting\.",
-                              "The context rules at the end of this skill apply.", workflow)
-        assert n == 1, f"{name}: context sentence not found"
-        body = (absolute(workflow).rstrip() + "\n\n## Context selection and reporting (inlined)\n\n"
-                + absolute(context).strip()
+        if "BEGIN CONTEXT CORE" in workflow:
+            inlined = ""  # the workflow already carries its core context rules (scripts/sync-context-core.py)
+        else:
+            workflow, n = re.subn(r"Read \[context\]\(\.\./practices/context\.md\) once for\s+evidence\s+selection\s+and\s+reporting\.",
+                                  "The context rules at the end of this skill apply.", workflow)
+            assert n == 1, f"{name}: context sentence not found"
+            inlined = "\n\n## Context selection and reporting (inlined)\n\n" + absolute(context).strip()
+        body = (absolute(workflow).rstrip() + inlined
                 + f"\n\nFor Plan Mode, delegation, or context resumption, consult [Claude execution]({base}/references/claude-code.md).\n")
         target = dest / "skills" / f"combo-{name}"
         target.mkdir(parents=True, exist_ok=True)

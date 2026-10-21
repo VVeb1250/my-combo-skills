@@ -1,0 +1,68 @@
+[
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "plan-adapters",
+    "rep": 1,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 33.5,
+    "tool_count": 6,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-plan"
+    ],
+    "turns": 8,
+    "cost_usd": 0.1233155,
+    "tokens_total": 74645,
+    "output_tokens": 2950,
+    "final_answer": "# Plan: retryable notification gateway\n\nI only read `src\\notification_adapters.py`, `src\\notifications.py` and `tests\\test_notifications.py`. Nothing was created or changed.\n\n## What exists\n\n- **The seam.** `NotificationAdapter` is a `Protocol` with one method, `send(recipient, body) -> str`, which returns a receipt (`src\\notification_adapters.py:7`).\n- **The two adapters.** `EmailAdapter(smtp_host)` and `SmsAdapter(account_id)` are dataclasses that satisfy the protocol structurally. Both are stubs: they return a string and never raise.\n- **The callers.** `send_welcome` and `send_receipt` in `src\\notifications.py` accept any `NotificationAdapter` and call only `.send(...)`. They never construct adapters.\n- **The tests.** One test checks that both real adapters work with both callers.\n- **Imports.** Imports are flat (`from notification_adapters import ...`), so `src` must be on the path when running tests.\n\n## Approach\n\nThe gateway should be a **decorator that is itself a `NotificationAdapter`**. It wraps any adapter, exposes the same `send(recipient, body) -> str`, and retries internally.\n\n- **Callers:** `send_welcome` and `send_receipt` stay untouched. You pass them `RetryingGateway(EmailAdapter(...))` where you used to pass the bare adapter.\n- **Adapters:** `EmailAdapter` and `SmsAdapter` stay untouched.\n- **Rejected alternative:** a gateway with its own API (such as `gateway.deliver(channel, ...)`) would force a change to both callers and to the tests. Nothing in the code "
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "plan-adapters",
+    "rep": 2,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 31.4,
+    "tool_count": 6,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-plan"
+    ],
+    "turns": 8,
+    "cost_usd": 0.12215419999999999,
+    "tokens_total": 74510,
+    "output_tokens": 2838,
+    "final_answer": "# Plan: retryable notification gateway\n\nI only read the code. I ran no tests and changed nothing.\n\n## What the code does today\n\n- **The seam** is `NotificationAdapter`, a `Protocol` with one method: `send(recipient: str, body: str) -> str`. It returns a provider receipt (`src\\notification_adapters.py:7`).\n- **The two production adapters** are `EmailAdapter(smtp_host)` and `SmsAdapter(account_id)`. Both are dataclasses that satisfy the Protocol structurally, with no base class. Today they are stubs that return a formatted string, never raise, and define no error types.\n- **The callers** are `send_welcome` and `send_receipt` in `src\\notifications.py`. They depend only on `NotificationAdapter`. They don't know which adapter they get, and they have no error handling.\n- **The test** is one `unittest` case, `tests\\test_notifications.py`. It checks that both real adapters work with both callers.\n\n## Approach\n\nMake the gateway a decorator that is itself a `NotificationAdapter`. It wraps any adapter and retries `send`. The existing callers and adapters then need no changes, and the gateway is the only new code. Callers get retries by being passed `RetryingAdapter(EmailAdapter(...))` where they get `EmailAdapter(...)` today.\n\nI rejected a gateway with its own `send_via(channel, ...)` API. It would add a second seam, force changes to both callers, and duplicate what the Protocol already provides.\n\n## Design\n\nNew file `src\\notification_gateway.py`:\n\n```python\nclass TransientNotificationE"
+  },
+  {
+    "host": "claude",
+    "arm": "full",
+    "case": "plan-adapters",
+    "rep": 3,
+    "model": "sonnet",
+    "passed": true,
+    "failures": [],
+    "timed_out": false,
+    "changed": [],
+    "seconds": 34.4,
+    "tool_count": 6,
+    "workflow_loaded": true,
+    "skills": [
+      "combo-plan"
+    ],
+    "turns": 8,
+    "cost_usd": 0.1272212,
+    "tokens_total": 75002,
+    "output_tokens": 3348,
+    "final_answer": "# Plan: retryable notification gateway\n\nNothing has been created or modified. I read `src/notification_adapters.py`, `src/notifications.py` and `tests/test_notifications.py`.\n\n## What exists\n\n- **The seam** is the `NotificationAdapter` Protocol: `send(recipient: str, body: str) -> str`, where the return value is the provider receipt (`src/notification_adapters.py:7-9`).\n- **The two adapters** are `EmailAdapter(smtp_host)` and `SmsAdapter(account_id)`. They are structural implementations with no shared base class. Both are stubs that return a string and never raise, so there is no failure or error model yet.\n- **The callers** are `send_welcome` and `send_receipt` (`src/notifications.py:6-11`). They take any `NotificationAdapter` and call `.send(recipient, body)`. They don't know about or depend on a concrete adapter.\n- **The test** exercises both adapters through both callers (`tests/test_notifications.py:8-10`). Imports are flat (`from notification_adapters import ...`), so `src` has to be on the path when tests run.\n- **No composition root exists.** Nothing in the repo constructs adapters for production, so wiring happens outside this codebase.\n\n## Recommendation\n\nBuild the gateway as a **decorator that is itself a `NotificationAdapter`**. It wraps any adapter, has the same `send` signature, and returns the same receipt string.\n\n- **Callers:** no change. `send_welcome(RetryingGateway(EmailAdapter(\"smtp\")), ...)` type-checks and behaves as before.\n- **Adapters:** no change to"
+  }
+]

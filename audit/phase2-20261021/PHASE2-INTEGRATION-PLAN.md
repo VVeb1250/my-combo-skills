@@ -199,12 +199,18 @@ Closed on 2026-10-22 (second round, owner instructions):
 Deliberately not done (owner): hard-task quality track (no real failures available yet); brand-voice, citation/link and
 curriculum/autograder searches (to be done later).
 
+Context-core move, 2026-10-22 ([context-move/RESULTS.md](context-move/RESULTS.md)): the three invariant sections of
+`practices/context.md` are copied into all 12 workflows by `scripts/sync-context-core.py` (single source stays `context.md`).
+First run 11/12 (a lexical scorer false negative), so the install was rolled back per the pre-registered rule; the owner chose
+to fix the `planning intent` scorer group and re-run plan-adapters. Re-run 3/3, all original criteria met on 15 moved runs
+(+$0.0020 per loaded run, `context.md` never read), so it was **adopted** and installed into Claude and Codex (both verified).
+Uncommitted.
+
 Still open:
-- Decide whether `context.md`'s invariants should be copied into the workflow bodies, since the current model never reads
-  `context.md` (cost about $0.007 per loaded task, no measured quality effect).
+- Re-run the CLAUDE.md on/off comparison at the current model if the policy block's cost matters (Phase 1's figure is for the
+  earlier model).
 - Why the plugin-namespaced debug and deliver skills were never chosen in the inline arm (not isolated).
-- Re-run the CLAUDE.md on/off comparison at the current model if the policy block's cost matters (Phase 1's figure is for
-  the earlier model).
+- An unrelated Phase 1 record (`claude-run1`, no-CLAUDE.md, plan-adapters r1) fails EmailAdapter evidence under the current scorer.
 
 ## 8. Unresolved risks
 

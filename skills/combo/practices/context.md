@@ -1,7 +1,10 @@
 # Context selection and reporting
 
-Read once with the selected workflow. Apply these rules during work; keep the
-working state in context rather than narrating a checklist or creating a file.
+The first three sections (Own the outcome, Decision triage, Verify against intent) are
+copied into every workflow by `scripts/sync-context-core.py`; edit them here, then run
+it. Read the rest only when its mechanics are unresolved. Apply these rules during
+work; keep the working state in context rather than narrating a checklist or creating
+a file.
 
 ## Own the outcome
 

@@ -149,7 +149,7 @@
       "required_final_term_groups": [
         {
           "name": "planning intent",
-          "any": ["plan", "แผน", "วางแผน", "proposed"]
+          "any": ["plan", "แผน", "วางแผน", "proposed", "recommend", "แนะนำ"]
         },
         {
           "name": "adapter seam",
