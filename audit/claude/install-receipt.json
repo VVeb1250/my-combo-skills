@@ -1,469 +1,69 @@
 {
-  "receipt": "D:\\0_person-project\\my-combo-skills\\backups\\claude-20261021-191825-025500\\receipt.json",
+  "receipt": "D:\\0_person-project\\my-combo-skills\\backups\\claude-20261021-195603-846700\\receipt.json",
   "files": [
     {
       "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\.combo-owned.json",
       "action": "write",
-      "before_sha256": "aac45887e19fd15100152abfb5b42274db3f8488f21ecbc449ca0bd440f9ab59",
-      "after_sha256": "8c0e1fcc5ac819008c6139b88145cbefa5ee63aa69e8f77c26b63ec32f2b2e2f",
-      "bytes_before": 123563,
+      "before_sha256": "8c0e1fcc5ac819008c6139b88145cbefa5ee63aa69e8f77c26b63ec32f2b2e2f",
+      "after_sha256": "a2b65b9150e9986002293bc92529a572bc58b6aa8355121947c4936d252169d4",
+      "bytes_before": 123963,
       "bytes_after": 123963
     },
     {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\engineering.md",
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\ponytail\\skills\\ponytail-audit\\REFERENCE.md",
       "action": "write",
-      "before_sha256": "c06852a0df1823278e37d131d35a0eb7363e06e4e89246b51efb99dbb6d023ff",
-      "after_sha256": "8510ccce2413e6e6abec5c0d939faa202b99218a4aa8ed1f20fe21cd8f337dd1",
-      "bytes_before": 1234,
-      "bytes_after": 1234
+      "before_sha256": "eae66d67b9e3c077ac0615c0266a466d9c07194acae7c35a82a1d52880f4a384",
+      "after_sha256": "35c652ce31cd86b8ce178a39c97b46bfdfe7a667c67bd902e40675ea0c1dc858",
+      "bytes_before": 2197,
+      "bytes_after": 5962
     },
     {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\engineering\\architecture-quality.md",
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\ponytail\\skills\\ponytail-debt\\REFERENCE.md",
       "action": "write",
-      "before_sha256": "9cb7441ccd21b0d15c9746b4407232769897a68cb55f0fd62b5de10557e51042",
-      "after_sha256": "16d97774964eee59d42db866dfe2167c10e64505faaf6aa240dbc034ca40c39a",
-      "bytes_before": 10193,
-      "bytes_after": 10529
+      "before_sha256": "9b0e304b26bfde87945190caab87cc461758ad0160cfabb4d4dbd6c5456ba3a4",
+      "after_sha256": "d8cb58e8fce9fab9de2e57da502aad07c9e518f76dd9c579c652812765d80cdf",
+      "bytes_before": 2246,
+      "bytes_after": 2312
     },
     {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\engineering\\infrastructure-network.md",
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\ponytail\\skills\\ponytail-gain\\REFERENCE.md",
       "action": "write",
-      "before_sha256": "1a7eddaaf3f72c90338df9fa670ea9e964dd3908bc1203ea5d4f92a2d51a4ce9",
-      "after_sha256": "32d68ed76acbfba1c8f489c7bf16a36602217986715dd62021b8c8aa1d2e3cec",
-      "bytes_before": 2887,
-      "bytes_after": 2721
+      "before_sha256": "57666a951da548805483242bfea4ff6d635fa0ea07e784acfd31e27f8b593687",
+      "after_sha256": "cc3a939032b349d13b7c14a75f8c103cd1608ae3bf8b3059bbb407b761d44051",
+      "bytes_before": 2516,
+      "bytes_after": 2707
     },
     {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\INDEX.md",
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\ponytail\\skills\\ponytail-help\\REFERENCE.md",
       "action": "write",
-      "before_sha256": "a858e86a0773ae532d1c84630608360ac3a5fa47116a5cfe2b64b7d6205b6157",
-      "after_sha256": "dca8893c2e10b3876b426c71dae363657718562bcde3e4dc1c4fb02ed514fd06",
-      "bytes_before": 1645,
-      "bytes_after": 1645
+      "before_sha256": "7cc74ad18c1a8cb5242c4120eabeb635cace0410b071eb506f46f79caba0d30b",
+      "after_sha256": "b4c35e360023431710d70acddbf0bb8090ac919e161667791cd0cd3015e64c9e",
+      "bytes_before": 3357,
+      "bytes_after": 3749
     },
     {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\ask-matt\\REFERENCE.md",
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\ponytail\\skills\\ponytail-review\\REFERENCE.md",
       "action": "write",
-      "before_sha256": "6c09df5ecd8c17a1ee8816a40febd894ec75a064d37f5d497ca70de0170a8d70",
-      "after_sha256": "5e6ff4c37e9f1d72a22a4bf8a8e09cf190fc861ccb3f0d8468b39fc1ad1514a8",
-      "bytes_before": 11986,
-      "bytes_after": 13163
+      "before_sha256": "0c335fc6bb22a101bb7a6813af521f7aa23b3976a6f7c7ce5ae5831662d5a4a3",
+      "after_sha256": "a34af5aa5abe8ec09ce15949d5fe92a8fb7c421543e37ea51004b78c9420e03a",
+      "bytes_before": 2948,
+      "bytes_after": 5708
     },
     {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\code-review\\REFERENCE.md",
+      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\ponytail\\skills\\ponytail\\REFERENCE.md",
       "action": "write",
-      "before_sha256": "c67768ed368ece60be5247a9f37a850bdd53e2568b50ea1f5bc184a10c0b80ff",
-      "after_sha256": "77254fcc8f095f594e06b0c2a48b794d9303dce99077d26b38f84168d7af5656",
-      "bytes_before": 7164,
-      "bytes_after": 7245
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\codebase-design\\DESIGN-IT-TWICE.md",
-      "action": "write",
-      "before_sha256": "0d0e62024bcf5e6c7635a7194fa110cacdc81eca657accd06321a419ae157252",
-      "after_sha256": "912610d6373878f4006a612717a312e782fceac523807909a3b2d5f5a2fd87c6",
-      "bytes_before": 2672,
-      "bytes_after": 2673
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\codebase-design\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "14c72c0f97fc319a3da683ac8e6f294470e13317fa76d8958837140bc68bc064",
-      "after_sha256": "4561c2097e3e968a9863932a38edbbe7ac34e0c3d19a2a537df2ece3bae2e606",
-      "bytes_before": 7029,
-      "bytes_after": 7029
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\diagnosing-bugs\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "7f310b5f1ec0666377c0af46e5b01dae91c3555f7ae5a3bba01e51649d8a2846",
-      "after_sha256": "7ff18ebda29a91e1997d30c42618e2fe2963bb8f108cf0b0caa15dd829493165",
-      "bytes_before": 9112,
-      "bytes_after": 9247
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\domain-modeling\\CONTEXT-FORMAT.md",
-      "action": "delete",
-      "before_sha256": "17ab16ce783e4d2801ee52fd9acdf550cbf44de65ae76797a93943bbedf22a13",
-      "after_sha256": null,
-      "bytes_before": 2290,
-      "bytes_after": null
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\domain-modeling\\GLOSSARY-FORMAT.md",
-      "action": "write",
-      "before_sha256": null,
-      "after_sha256": "21dcc40cdec8e151a829b98ab1517c1867bc444e3665134a98c6983411996801",
-      "bytes_before": null,
-      "bytes_after": 2300
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\domain-modeling\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "5022ccdeda6767356346287ff7a83de580889841c9729ea7989476c8488e0419",
-      "after_sha256": "7e3f9291b53b126d86b038ee4145688515448822a3ad28427e7abb2ba0b56aa5",
-      "bytes_before": 3892,
-      "bytes_after": 3907
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\grill-with-docs\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "f2b8b9038e88b4062e5c38a168e91e6059bfa919be8f51408a20ba63e39dc6ad",
-      "after_sha256": "4ab4ec27072171d0d074ef3aa8a0195b0218a305e5419b4b3fa688ba6888aaa8",
-      "bytes_before": 812,
-      "bytes_after": 812
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\implement-spec\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": null,
-      "after_sha256": "28e3e5af0ec1b029e333138e54b9278cd6ad2ce2f64446f6a3bd4059608c9892",
-      "bytes_before": null,
-      "bytes_after": 3343
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\implement\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "3a57d8185ad35913111eb2d688eb73d300156ad62d332ebfae2cbfa41409062d",
-      "after_sha256": "4ba54a18ca1e52f0baa18a25e6a4d50849eba0dafaafa1cb0847ed7ba6a601d7",
-      "bytes_before": 986,
-      "bytes_after": 1175
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\improve-codebase-architecture\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "63876eced03196fad1c40d9742fbb55b8ddd7ee92c1856ce6dfeb91caa15f9e0",
-      "after_sha256": "28e677fc79412cf558ac3b5400a5c0f88174651732e27787c8886cd9057c1150",
-      "bytes_before": 6586,
-      "bytes_after": 6593
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\pr\\CREDITS.md",
-      "action": "write",
-      "before_sha256": null,
-      "after_sha256": "a7a087127665d7298a72280ef6e19c41ad8404523712a788c8dc3ab414bc2497",
-      "bytes_before": null,
-      "bytes_after": 604
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\pr\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": null,
-      "after_sha256": "3555a9705e67326dc9b762bd179904852374d3f6995eb60cabb4cc9804c6a2cc",
-      "bytes_before": null,
-      "bytes_after": 4708
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\prototype\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "5d797c6f1aff58e835024e08924ce3c0e7bb8d455856f694c666b905818100a6",
-      "after_sha256": "fabb31d755ca8143e617b7d0040a327f740ebc77361e86e8c1b1685592a3ff86",
-      "bytes_before": 3484,
-      "bytes_after": 3484
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\research\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "469d347b8863de8cb26a304f6df89581412431e0dd338c0576f78d3a98e8c898",
-      "after_sha256": "deb8ddecb16afd9413789971ec0fcb63684d21e4c14da0e3afb2e417984067f8",
-      "bytes_before": 1345,
-      "bytes_after": 1345
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\resolving-merge-conflicts\\REFERENCE.md",
-      "action": "delete",
-      "before_sha256": "e84936df4f2dc98a4d44a5a7ac658369776c2938f5263e9dcf41e89e2ae96af7",
-      "after_sha256": null,
-      "bytes_before": 1503,
-      "bytes_after": null
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\retro\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": null,
-      "after_sha256": "79feecc82f9548c59c78aa774363c569fc6f60cf9a30afd382e55c1f2d71b4bc",
-      "bytes_before": null,
-      "bytes_after": 4914
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\setup-matt-pocock-skills\\domain.md",
-      "action": "write",
-      "before_sha256": "edc6d6131fdffc4b7135704f5262124fc43355c95f61b7399dc5a4db643e28ca",
-      "after_sha256": "593a7042218689f1d24df89df14eaf0a20e19e0d0a7d479a01947ac78f0784b9",
-      "bytes_before": 2033,
-      "bytes_after": 2042
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\setup-matt-pocock-skills\\issue-tracker-github.md",
-      "action": "write",
-      "before_sha256": "afd6852a80185217bd28aa5cbe456bef1e85be25be7bd1fba382d5b8ee428325",
-      "after_sha256": "f0653fe106dd8ee7b33be27bd7fe3104b40555896cb45f61997aed20467020c3",
-      "bytes_before": 3731,
-      "bytes_after": 4117
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\setup-matt-pocock-skills\\issue-tracker-gitlab.md",
-      "action": "write",
-      "before_sha256": "ea175f73d193b3f55819c0ed9bbccf6ee0e70ad8f928e3d7607596c53380acd6",
-      "after_sha256": "591a9e7057382aaccdfbed3f7ea3f2ad07e0cd29f012d18b82ee4e485fd81e24",
-      "bytes_before": 3809,
-      "bytes_after": 3816
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\setup-matt-pocock-skills\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "d5f0a396b771a506aa14e70bdf07f53f1bf7245ee95dc31f391947ad48e990d3",
-      "after_sha256": "3ab5856c6abfe02985ce6d1088ae18cea2123d9f97ac4e96b7bd5fbb1bd83b06",
-      "bytes_before": 7426,
-      "bytes_after": 7563
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\setup-matt-pocock-skills\\triage-labels.md",
-      "action": "write",
-      "before_sha256": "4f53c9b40ce2651e3611aa090eaedbd6dbc9b71ef8c5f7e65eac0d8263190d0d",
-      "after_sha256": "ae512af838c78b8750471c42cd2b20fa32319553e61d84c9a23d171b40ce14aa",
-      "bytes_before": 1045,
-      "bytes_after": 1057
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\tdd\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "6b9f7143f4d090bf549f9de17f4d3341df383f6f771ba1da8f328bbe79bde7de",
-      "after_sha256": "4c5a5bf75da9cd2791b733abf869cd0563acd8c3cb48646e05f34b1f034e21b9",
-      "bytes_before": 4108,
-      "bytes_after": 4188
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\to-spec\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "fbbfd49c7d6cbd4458069020308eef26c87f064c582047f53de826bb82b34d35",
-      "after_sha256": "111d51b6a79db5e935112c1145024e5e6d3387f6333f911158a297a65a14d4ef",
-      "bytes_before": 3592,
-      "bytes_after": 3592
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\to-tickets\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "6318d01f6e66377f845a2cb53ee8e149c22c5bb1ef40812a44ffa0c26868bf26",
-      "after_sha256": "bcd0e79f85a978ef6a9b81a483c6015e2549add517f09c8554bc0f83c0780543",
-      "bytes_before": 6226,
-      "bytes_after": 6367
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\triage\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "3bab62f8f4e8622d2b3dde0f76092c6f791efc36d6afbd62eeb9e4ec522d0684",
-      "after_sha256": "58e9006d638af9170424051d593df44c5201b852070ef8266ba4c9b7b7474f56",
-      "bytes_before": 7104,
-      "bytes_after": 7105
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\wayfinder\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "5b4c209215dcd9a4c6786c886e9e33844eaa5c856926ddaa752fb89572684588",
-      "after_sha256": "6e034998c2a07d14cdd532260c41982408abc9d5dcdc059d754c92ea0199b04d",
-      "bytes_before": 12461,
-      "bytes_after": 12933
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\engineering\\wizard\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "48920f227a219936642fb23764cc7374d37bb0048aff06057d4aa19b60579ee4",
-      "after_sha256": "6ae6d3bf298ce350896cb3d9986fc3783320170e991c0c65fc087ad7a032ace1",
-      "bytes_before": 4779,
-      "bytes_after": 4779
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\in-progress\\chief-of-staff\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": null,
-      "after_sha256": "754d9b9478b44f171ee7a71a4f33a71c2a5262e2d95d824513379b9ca19b9011",
-      "bytes_before": null,
-      "bytes_after": 4414
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\in-progress\\claude-handoff\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "cdef497431f9b4fd93be559718d09d71e9d42f1032b1ba32dbdb41af6a18aa7f",
-      "after_sha256": "90c17ae4fc6a7449dc0d48154d4cde29c813c3862bf34a9d5fe7b25bd622932b",
-      "bytes_before": 1911,
-      "bytes_after": 2034
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\in-progress\\implement-spec\\REFERENCE.md",
-      "action": "delete",
-      "before_sha256": "a761bfdee5bf8d53947b8a810392981959aac170021e6e77085afcf86ef5000d",
-      "after_sha256": null,
-      "bytes_before": 2641,
-      "bytes_after": null
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\in-progress\\loop-me\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "0cc177c46cc27eb41a10c118fcf59484c856126fbcd2712504bbdc2addf068f9",
-      "after_sha256": "f0a1ed33ade4399f9be357ff81fa0e68771866f35fb908518c04acb288e9397a",
-      "bytes_before": 3106,
-      "bytes_after": 3106
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\in-progress\\retro\\REFERENCE.md",
-      "action": "delete",
-      "before_sha256": "c87bc1d805f59ceeb07d127ec4c031eef9f862633b9bfc75b8db9415c877c567",
-      "after_sha256": null,
-      "bytes_before": 3968,
-      "bytes_after": null
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\in-progress\\setup-ts-deep-modules\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "1c49a341fd04a4ca9e7a50d8e887dd8dbd83e83a4881cb658517f59f89d0caee",
-      "after_sha256": "0f1e525bf3f43d612bfe3fe02c047e93de7793cbf93554c8daadf3054d25cca5",
-      "bytes_before": 8280,
-      "bytes_after": 8280
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\in-progress\\writing-beats\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "c48b25211853ebde279df9d6e9a4a7d2bc1fa871e3751db8fd4264dc8fa0e018",
-      "after_sha256": "7fb1490824e45a0c22ae29189fac7f8d01266854f5bc1e704ac67dbeefb2ae8f",
-      "bytes_before": 5451,
-      "bytes_after": 5451
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\in-progress\\writing-fragments\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "ddb2d69102d77a4843689c66d2e15d4c74092fd19128427f3c887b876f9778f8",
-      "after_sha256": "de7c7f554f0f154e728480a6bbf17ea6badfbee7ef9ef3a3f053026bf10be71a",
-      "bytes_before": 4162,
-      "bytes_after": 4162
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\in-progress\\writing-shape\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "8f9c9549e368ef574bbb7e99b1201f36a7b54ea2f20295cc0a84402983ca323e",
-      "after_sha256": "da680ca9d6ef655c3eb651087e87807eda3fefd798362186c84c0f3300c1b24c",
-      "bytes_before": 6518,
-      "bytes_after": 6518
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\misc\\git-guardrails-claude-code\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "ec4522b4c5e90eba65e050357afde19852eae4499519dff648e82f6f1e556a96",
-      "after_sha256": "6a4ffd306fad5642157fda199647b9bffe749e1458d9015061c16c335fd96f2a",
-      "bytes_before": 3020,
-      "bytes_after": 3020
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\misc\\migrate-to-shoehorn\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "4e36b236750ab934ecd615196395a8efd92131d60c5f356fd62f2ff2a6a32272",
-      "after_sha256": "a1c2770c51b3bad1a3acb073f297d9854870bea2313c0ab1140fdf2cdb4a80de",
-      "bytes_before": 3366,
-      "bytes_after": 3366
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\misc\\scaffold-exercises\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "c429b5ab364b2fea25f30410cf93d244c89bbb961f00e4c63b51d9913eb0c8d4",
-      "after_sha256": "6da76efe300a3d7b8a31d4d7f9ada033085be081cc91b6c5df064c787a6f4160",
-      "bytes_before": 4146,
-      "bytes_after": 4146
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\misc\\setup-pre-commit\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "96d62376cc6ca3506768cefa1a342cf4d976a9140a6d051505a49f8b627987b0",
-      "after_sha256": "22f05fae67668a3764ead5fa3d6fc2d7660d1ec5bf07ec925eac58fdadeb2c77",
-      "bytes_before": 2823,
-      "bytes_after": 2823
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\productivity\\grill-me\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "f4c00f4dacb604f2380fb1afa549f5a09aa13b7ebbf073d353f44e4efc1ecfeb",
-      "after_sha256": "b9fd1d925f4a8291426912f5593f0d9ba228ff30fc329d911cca9a30a459d185",
-      "bytes_before": 710,
-      "bytes_after": 710
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\productivity\\grilling\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "cf6b15c21b0e4757e47e0b80b18ea18294c187929d320aa6856f09d7e7a54146",
-      "after_sha256": "2583216f7c6aba013ccaf9e28b2b53c6797843b3b3b4aed1bc4e69c6717fb30c",
-      "bytes_before": 2540,
-      "bytes_after": 2602
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\productivity\\handoff\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "5a2a81a3739ca582b244017919c10b2fac997594ebebfa6dca15c30621edbf8b",
-      "after_sha256": "8f03218cb0adee14d81f9203dc3dc1cc3d591675921256d94b9371a96b951cb2",
-      "bytes_before": 1445,
-      "bytes_after": 1491
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\productivity\\teach\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "1240c7e14362d841eafdef43d4a971bfc8ef1db91d0e343acb6d540f587173fd",
-      "after_sha256": "1247c5371ff6e6992815233b78ad6eb69b80fd4aeb2f6beeb1f8af08123b1df7",
-      "bytes_before": 10047,
-      "bytes_after": 10274
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\productivity\\to-questionnaire\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "23df92bad99f41c480890286e8587682efeafbac9935ea5e7460aea75301e00d",
-      "after_sha256": "3fafc3eb470bd1997cf32562d0134b25cc8f012ab517b55d410ddfc373619610",
-      "bytes_before": 3473,
-      "bytes_after": 3473
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\productivity\\wait-what\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "352a2bacc8b0be5d6a35b11b4da82909b325421bb1201655651adbbacb1ac9c2",
-      "after_sha256": "0aa562502447f3c46a1dd811eb7953628c75d368b073d648e209603aa753cd2c",
-      "bytes_before": 949,
-      "bytes_after": 951
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\matt\\skills\\productivity\\writing-for-agents\\REFERENCE.md",
-      "action": "write",
-      "before_sha256": "4f5c690db3824c0280f8e661f59fa9db9b3652999d070dcfd695011d146a1e10",
-      "after_sha256": "94773d5c35092e5851444909ab993a5d8abe6a08fdbd670d822a86cc360e6311",
-      "bytes_before": 11459,
-      "bytes_after": 11459
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\library\\productivity.md",
-      "action": "write",
-      "before_sha256": "1d9821824fd1bd67e6f9a7dd006dc8e7c59075d1d8583dca8ce020d1fb4bbe07",
-      "after_sha256": "39a19a78301329ef47a824c7fdc368657078465cd1aa85c907e62a4c601286a6",
-      "bytes_before": 2060,
-      "bytes_after": 1922
+      "before_sha256": "6eb4a6f575c1bd1647f514e8af87b2076c94f4487c9395c568e79fb9bbc6930c",
+      "after_sha256": "f111a30f1463d517f846720c03e88eb0336f7ba559b4115981abbfbf22887f4f",
+      "bytes_before": 7206,
+      "bytes_after": 4065
     },
     {
       "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\references\\source-map.md",
       "action": "write",
-      "before_sha256": "23133e30c744e136b846a3ce58cd14498fc6ba0f246ab093018a2c5b3968822f",
-      "after_sha256": "a3ef169d5ab52f490f4938d9cc9c835db052de1211f38c0b0e6af5b82272a21c",
-      "bytes_before": 15031,
+      "before_sha256": "a3ef169d5ab52f490f4938d9cc9c835db052de1211f38c0b0e6af5b82272a21c",
+      "after_sha256": "c499140dd6edea436b73e67c8f68c7b73324dc63c4d699d83e9ccca29f76d1c2",
+      "bytes_before": 14960,
       "bytes_after": 14960
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\plan.md",
-      "action": "write",
-      "before_sha256": "b3d9d9f2c3a1e2f5000284d0b4fe9bbfe9dc44233aea87a7c256926f624994ba",
-      "after_sha256": "4536fc7aa93dd831c45970cc7760ef474de417b4efa9fb214978e02810d35bd4",
-      "bytes_before": 5341,
-      "bytes_after": 5905
-    },
-    {
-      "path": "C:\\Users\\VVeb1250\\.claude\\skills\\combo\\workflows\\productivity.md",
-      "action": "write",
-      "before_sha256": "44bf50bfd429381b190fad99df2b17240f935f6a2a3dc32eb2a111caa80562f1",
-      "after_sha256": "f8ae869273edbb242acc89f592e4e2b9f3cd56c5cf96f043447ed57a2bd48e7a",
-      "bytes_before": 5010,
-      "bytes_after": 5191
     }
   ]
 }
