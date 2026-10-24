@@ -59,6 +59,21 @@ discovery ครบ 14 entries และทดสอบการเรียก�
 Native skills ยังรับผิดชอบการใช้ browser, เอกสาร, ภาพ, spreadsheet และเครื่องมือ
 เฉพาะทาง Combo ช่วยเลือกกระบวนการและความรู้ที่เกี่ยวข้อง
 
+## Optional `.combo/` project ecosystem
+
+Opt-in project knowledge for accepted specs, proposed delta changes, evidence-backed retro, tested shortcuts and a generated routing index. This does not add a new workflow or global hook, and does not silently replace a project's existing OpenSpec source. See [project ecosystem](skills/combo/practices/project-ecosystem.md) and [verification economy](skills/combo/practices/verification-economy.md).
+
+Use the stdlib CLI from the target project's root:
+
+```bash
+python /path/to/installed/combo/tools/project_kb.py init
+python /path/to/installed/combo/tools/project_kb.py index
+python /path/to/installed/combo/tools/project_kb.py lookup --area ai-commander --kind retro --digest
+python /path/to/installed/combo/tools/project_kb.py check
+```
+
+`init` is explicit; use accepted specs as contracts, not model-authored approvals.
+
 ## ข้างในมีอะไร
 
 ```mermaid
