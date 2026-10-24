@@ -5,6 +5,10 @@ Verification-only does not authorize repair.
 Apply the context rules at the end of this file; read
 [context](../practices/context.md) only for evidence-selection or reporting
 mechanics that are unresolved.
+Where `.combo/` already exists, consult [project ecosystem](../practices/project-ecosystem.md)
+for relevant accepted requirements as verification targets. Retro and shortcuts
+are leads, not proof or exemptions from required checks. Verification-only does
+not authorize repair or acceptance changes.
 
 1. Identify requested coverage, revision, environment, fixture, and pass signal
    tied to behavior or an invariant. Inspect existing scripts before choosing

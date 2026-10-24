@@ -4,6 +4,9 @@ Answer a code/architecture question or compare technical options without edits.
 Apply the context rules at the end of this file; read
 [context](../practices/context.md) only for evidence-selection or reporting
 mechanics that are unresolved.
+Where `.combo/` already exists, consult [project ecosystem](../practices/project-ecosystem.md)
+for task-relevant specs, decisions and lessons; compare historical claims with
+current code. Investigation-only does not authorize writing project knowledge.
 
 1. Bound the question, decision, and relevant version/environment.
 2. Inspect primary evidence along the actual input-to-output path: entrypoint,
