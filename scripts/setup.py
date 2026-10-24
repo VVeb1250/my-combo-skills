@@ -65,7 +65,7 @@ def is_installable_source(path: Path) -> bool:
 
     path = Path(path)
     return (
-        path.name != CACHE_DIRECTORY
+        CACHE_DIRECTORY not in path.parts
         and path.suffix.lower() not in CACHE_SUFFIXES
     )
 
