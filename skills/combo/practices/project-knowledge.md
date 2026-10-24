@@ -53,6 +53,10 @@ For a long setup or debug flow driven by CLI or tool commands, include the comma
 that worked and the state already changed, so a reset does not repeat discovery.
 Routine work does not require a new Markdown artifact or transcript summary.
 
+## Optional project ecosystem
+
+When a project already has `.combo/` or the owner requests it, consult [project ecosystem](project-ecosystem.md) for canonical accepted specs, proposed change deltas, evidence-linked retro, tested shortcuts and a generated index. Do not duplicate existing ADRs, OpenSpec sources, raw experiment artifacts, or personal memory.
+
 ## Memory boundary and completion
 
 Project documentation must remain understandable to collaborators without access
