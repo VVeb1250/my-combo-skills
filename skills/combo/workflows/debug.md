@@ -6,6 +6,8 @@ Apply the context rules at the end of this file; read
 [context](../practices/context.md) only for evidence-selection or reporting
 mechanics that are unresolved.
 
+Where `.combo/` exists, retrieve only relevant accepted specs, retro and tested shortcuts using [project ecosystem](../practices/project-ecosystem.md). Check applicability and primary evidence before relying on an old lesson.
+
 ## Establish and distinguish
 
 1. Identify the reported input, environment, expected result, and exact symptom.
