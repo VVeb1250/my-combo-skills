@@ -48,6 +48,7 @@ Use the smallest additional material that resolves a concrete uncertainty:
 - [build](practices/build.md) for compiler/dependency failures;
   [E2E](practices/e2e.md) for user journeys with native browser tools.
 - [delegation](practices/delegation.md) only for authorized independent work.
+- [project ecosystem](practices/project-ecosystem.md) for opted-in `.combo/` project knowledge; [verification economy](practices/verification-economy.md) for check escalation with material cost.
 
 For unresolved technical mechanisms, find the relevant note in
 [specialists](specialists/INDEX.md); use a known note path directly.
