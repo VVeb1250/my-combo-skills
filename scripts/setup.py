@@ -56,6 +56,20 @@ def remap(path: Path, home: Path) -> Path:
         return path
 
 
+CACHE_DIRECTORY = "__pycache__"
+CACHE_SUFFIXES = frozenset({".pyc", ".pyo"})
+
+
+def is_installable_source(path: Path) -> bool:
+    """Generated Python caches are runtime state, never package content."""
+
+    path = Path(path)
+    return (
+        path.name != CACHE_DIRECTORY
+        and path.suffix.lower() not in CACHE_SUFFIXES
+    )
+
+
 def _load_manifest() -> dict:
     path = ROOT / "install-manifest.json"
     return json.loads(path.read_text(encoding="utf-8"))
@@ -552,13 +566,13 @@ def build_plan(home: Path, manifest: dict | None = None) -> list[dict]:
         if not source_root.is_dir() or source_root.is_symlink():
             raise ValueError(f"Missing package source directory: {source_root}")
         for source_file in sorted(source_root.rglob("*")):
-            if not source_file.is_file():
+            relative = source_file.relative_to(source_root)
+            if not source_file.is_file() or not is_installable_source(relative):
                 continue
             if source_file.is_symlink() or source_file.name == ".combo-owned.json":
                 if source_file.is_symlink():
                     raise ValueError(f"Symlink in package source: {source_file}")
                 continue
-            relative = source_file.relative_to(source_root)
             target = root / target_root / relative
             _assert_target(target, home)
             if target in target_bytes:

@@ -262,6 +262,8 @@ def _walk_files(root: Path) -> Iterable[Path]:
     for child in sorted(root.iterdir(), key=lambda p: p.name.lower()):
         if _is_link(child):
             raise ValueError(f"Symlink or junction in source: {child}")
+        if not _helpers.is_installable_source(child):
+            continue
         if child.is_dir():
             yield from _walk_files(child)
         elif child.is_file():

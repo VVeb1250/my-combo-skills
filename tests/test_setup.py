@@ -151,6 +151,34 @@ class SetupTests(unittest.TestCase):
             self.assertNotIn('skills/matt-plan/SKILL.md', paths)
             self.assertNotIn('hooks.json', paths)
 
+    def test_python_cache_entries_are_never_installed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / 'source'
+            package = root / 'skills/combo'
+            (package / 'tools/__pycache__').mkdir(parents=True)
+            (package / 'tools/__pycache__/project_kb.cpython-314.pyc').write_bytes(b'cache')
+            (package / 'tools/orphan.pyc').write_bytes(b'cache')
+            (package / 'SKILL.md').write_text(
+                '---\nname: combo\ndescription: Mini\n---\n\nBody.\n', encoding='utf-8')
+            (package / 'practices').mkdir()
+            (package / 'practices/project-knowledge-rule.md').write_text('rule', encoding='utf-8')
+            home = Path(tmp) / 'home'; codex = home / '.codex'; codex.mkdir(parents=True)
+            (codex / 'config.toml').write_text('model = "custom"\n', encoding='utf-8')
+            (codex / 'AGENTS.md').write_text('# Keep\n', encoding='utf-8')
+            manifest = {
+                'version': 2,
+                'source_roots': [{'source': 'skills/combo', 'target': 'skills/combo'}],
+                'ownership_index': 'skills/combo/.combo-owned.json',
+                'global_pointer': 'Use Combo.',
+            }
+            with mock.patch.object(setup, 'ROOT', root):
+                changes = setup.build_plan(home, manifest)
+            paths = {Path(change['path']).relative_to(codex).as_posix() for change in changes}
+            self.assertIn('skills/combo/SKILL.md', paths)
+            self.assertFalse(
+                any('__pycache__' in path or path.endswith(('.pyc', '.pyo')) for path in paths)
+            )
+
     def test_owned_stale_file_is_deleted_and_restored_by_rollback(self):
         with tempfile.TemporaryDirectory() as tmp:
             home, codex=self._fake_codex_home(Path(tmp))

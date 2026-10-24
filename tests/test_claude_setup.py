@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 import importlib.util
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -165,6 +166,45 @@ class ClaudeSetupTests(unittest.TestCase):
             self.assertEqual((codex / "config.toml").read_bytes(), codex_config)
             self.assertEqual((codex / "AGENTS.md").read_bytes(), codex_agents)
             self.assertEqual((home / "config.toml").read_bytes(), unrelated_config)
+
+    def test_python_cache_entries_are_never_installed(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary) / "source"
+            home = Path(temporary) / "home"
+            self._mini_root(root)
+            cache = root / "skills/combo/tools/__pycache__"
+            cache.mkdir(parents=True)
+            (cache / "project_kb.cpython-314.pyc").write_bytes(b"cache")
+            (root / "skills/combo/tools/orphan.pyo").write_bytes(b"cache")
+            manifest = self._mini_manifest()
+
+            with mock.patch.object(claude_setup, "ROOT", root):
+                changes = claude_setup.build_plan(home, manifest)
+            paths = {
+                Path(change["path"]).relative_to(home / ".claude").as_posix()
+                for change in changes
+            }
+            self.assertIn("skills/combo/SKILL.md", paths)
+            self.assertFalse(
+                any(
+                    "__pycache__" in path or path.endswith((".pyc", ".pyo"))
+                    for path in paths
+                )
+            )
+
+    def test_claude_router_override_keeps_every_source_practice_link(self):
+        # The Claude override is a maintained copy of the portable router. A
+        # stale copy silently hides newly added practices from Claude, so guard
+        # the practice index rather than only the host-specific wording.
+        practice_link = re.compile(r"\(practices/[^)]+\.md\)")
+        source = (ROOT / "skills/combo/SKILL.md").read_text(encoding="utf-8")
+        override = (
+            ROOT / "adapters/claude/overrides/combo/SKILL.md"
+        ).read_text(encoding="utf-8")
+        self.assertEqual(
+            set(practice_link.findall(source)),
+            set(practice_link.findall(override)),
+        )
 
     def test_unowned_file_inside_package_refuses_plan_before_writes(self):
         with tempfile.TemporaryDirectory() as temporary:
