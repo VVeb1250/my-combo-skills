@@ -9,7 +9,7 @@ mechanics that are unresolved.
    the safe assumption. Confirm the target exists and has reviewable material.
 2. Read the originating requirement and affected callers, tests, configuration,
    and conventions. Cover the requested scope even when early files look clean.
-3. Evaluate requirement fidelity (missing, incompatible, partial, or extra
+3. If `.combo/` exists, use accepted specs and authorized changes as the contract and retro as hypotheses, not proof of a live defect. Evaluate requirement fidelity (missing, incompatible, partial, or extra
    behavior) and implementation quality (correctness, error boundaries, data,
    concurrency, security, and maintainability) in one impact ranking. When
    volume or concurrency matters, state the load assumed (from the README or
