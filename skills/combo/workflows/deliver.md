@@ -24,6 +24,8 @@ and error handling at trust boundaries; use [security](../practices/security.md)
 when those boundaries change. Add dependencies, flexibility, or adjacent changes
 only when the requirement or causal evidence needs them.
 
+If the project has `.combo/`, consult [project ecosystem](../practices/project-ecosystem.md) for accepted requirements, task-scoped deltas, selective retro, and tested shortcuts. Never use an old lesson to override current code or approved intent.
+
 ## Verify and finish
 
 - Select behavioral checks with [tests](../practices/tests.md). Use red-green
@@ -39,6 +41,8 @@ only when the requirement or causal evidence needs them.
   [e2e](../practices/e2e.md) when browser testing is within the authorized scope.
   Include the transitions that could invalidate saved or derived state, rather
   than treating successful individual controls as a completed journey.
+- Inspect the changed area for repeated root causes, unclear state ownership, shotgun edits and duplicated transitions. Apply targeted behavior-preserving refactoring only when justified by actual friction and recheck affected behavior.
+- Use [verification economy](../practices/verification-economy.md) to select adequate focused evidence before an expensive Browser/reviewer pass; never weaken explicit gates.
 - Inspect the final diff for scope, missed requirements, error paths, and coupling.
   Apply [simplicity](../practices/simplicity.md) when new layers or options appear.
   Repair actionable in-scope findings and verify the affected behavior again.
