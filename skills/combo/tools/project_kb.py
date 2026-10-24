@@ -225,6 +225,25 @@ def rebuild(root):
     return data
 
 
+def _stale_detail(old, current):
+    old_entries = {row["path"]: row for row in old.get("entries", [])}
+    new_entries = {row["path"]: row for row in current.get("entries", [])}
+    lines = []
+    for path in sorted(new_entries.keys() - old_entries.keys()):
+        lines.append(f"added: {path}")
+    for path in sorted(old_entries.keys() - new_entries.keys()):
+        lines.append(f"removed: {path}")
+    for path in sorted(old_entries.keys() & new_entries.keys()):
+        before, after = old_entries[path], new_entries[path]
+        if before.get("sha256") != after.get("sha256"):
+            lines.append(f"changed: {path}")
+        elif before != after:
+            lines.append(f"index record differs (tampered?): {path}")
+    if old.get("areas") != current.get("areas"):
+        lines.append("area index differs")
+    return lines
+
+
 def load_index(root):
     path = root / ".combo" / "index.json"
     if not path.exists():
@@ -236,10 +255,15 @@ def load_index(root):
     if data.get("schema") != SCHEMA:
         raise IndexErrorInfo(f"index schema {data.get('schema')} unsupported; run 'index' to migrate")
     current = collect(root)
+    current_index = _index_data(current)
     # Compare the entire generated representation: the cache is untrusted and
     # must not keep stale tags, links or authority with valid file hashes.
-    if data != _index_data(current):
-        raise IndexErrorInfo("index_stale: project knowledge added/removed/modified; run 'index'")
+    if data != current_index:
+        details = _stale_detail(data, current_index)
+        suffix = ("\n  " + "\n  ".join(details)) if details else ""
+        raise IndexErrorInfo(
+            "index_stale: project knowledge added/removed/modified; run 'index'" + suffix
+        )
     errors = _validate(root, current)
     if errors:
         raise IndexErrorInfo("\n".join(errors))
@@ -336,10 +360,12 @@ def hop(index, from_id, *, include_inactive=False, limit=10, offset=0):
     return {"from": from_id, "type": "record", "total": len(items), "offset": offset, "items": items[offset:offset + limit]}
 
 
-def lookup(index, *, area=None, kind=None, query=None, limit=3, include_inactive=False):
+def lookup(index, *, area=None, kind=None, query=None, limit=3, include_inactive=False, ident=None):
     records = []
     for row in index["entries"]:
         if not include_inactive and row["status"] in INACTIVE:
+            continue
+        if ident and ident != row["id"]:
             continue
         if area and area != row["area"] and area not in row["tags"]:
             continue
@@ -362,6 +388,8 @@ def main(argv=None):
     browse.add_argument("--path", action="append", default=[])
     browse.add_argument("--query")
     browse.add_argument("--id")
+    browse.add_argument("query_words", nargs="*", metavar="QUERY",
+                        help="Query text; equivalent to --query")
     browse.add_argument("--why", action="store_true", help="Reasons are always included in JSON output")
     follow = commands.add_parser("hop")
     follow.add_argument("--from", dest="from_id", required=True)
@@ -372,6 +400,9 @@ def main(argv=None):
     look.add_argument("--area")
     look.add_argument("--kind", choices=list(KINDS.values()))
     look.add_argument("--query")
+    look.add_argument("--id", dest="ident")
+    look.add_argument("id_positional", nargs="?", metavar="ID",
+                      help="Record id; equivalent to --id")
     look.add_argument("--limit", type=int, default=3)
     look.add_argument("--digest", action="store_true")
     look.add_argument("--include-superseded", action="store_true")
@@ -383,7 +414,7 @@ def main(argv=None):
                 raise IndexErrorInfo(".combo already exists; run index for an explicit migration")
             for directory in KINDS:
                 (root / ".combo" / directory).mkdir(parents=True, exist_ok=True)
-            print(f"initialized .combo (run 'index' to generate metadata)")
+            print("initialized .combo (run 'index' to generate metadata)")
             return 0
         if args.cmd == "index":
             if not (root / ".combo").exists():
@@ -398,13 +429,19 @@ def main(argv=None):
         if args.cmd == "areas":
             output = index["areas"]
         elif args.cmd == "route":
-            output = route(index, area=args.area, paths=args.path, query=args.query, ident=args.id)
+            if args.query and args.query_words:
+                parser.error("route accepts either --query or positional query words, not both")
+            query = args.query or (" ".join(args.query_words) or None)
+            output = route(index, area=args.area, paths=args.path, query=query, ident=args.id)
         elif args.cmd == "hop":
             output = hop(index, args.from_id, include_inactive=args.include_inactive,
                          limit=max(0, args.limit), offset=max(0, args.offset))
         elif args.cmd == "lookup":
+            if args.ident and args.id_positional:
+                parser.error("lookup accepts either --id or a positional ID, not both")
             output = lookup(index, area=args.area, kind=args.kind, query=args.query,
-                            limit=args.limit, include_inactive=args.include_superseded)
+                            limit=args.limit, include_inactive=args.include_superseded,
+                            ident=args.ident or args.id_positional)
             if args.digest:
                 output = [{**item, "digest": next((x["summary"] for x in index["entries"] if x["id"] == item["id"]), "")} for item in output]
         print(json.dumps(output, ensure_ascii=False, indent=2))

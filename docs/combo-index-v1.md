@@ -12,9 +12,11 @@ From a project root with an opted-in `.combo/`:
 python /path/to/combo/tools/project_kb.py index
 python /path/to/combo/tools/project_kb.py areas
 python /path/to/combo/tools/project_kb.py route --path src/ai/commander/orders.ts --query 'target oscillation'
+python /path/to/combo/tools/project_kb.py route --path src/ai/commander/orders.ts target oscillation
 python /path/to/combo/tools/project_kb.py hop --from commander
 python /path/to/combo/tools/project_kb.py hop --from adr.target-state --limit 10 --offset 0
 python /path/to/combo/tools/project_kb.py lookup --area commander --kind retro
+python /path/to/combo/tools/project_kb.py lookup --id adr.target-owner
 python /path/to/combo/tools/project_kb.py check
 ```
 
@@ -58,9 +60,10 @@ path hints. Supported relations: `related_to`, `constrained_by`,
 `depends_on`, `verified_by`, `supersedes`, `informs`.
 
 The script validates IDs, broken links, tested evidence and shortcut headings.
-It writes index.json atomically, and read commands fail on content mismatches.
-Hashes detect Markdown/index drift, not whether a historical lesson still
-applies to a changed codebase. No automatic capture, run execution or hooks.
+It writes index.json atomically, and read commands fail on content mismatches,
+naming the added, changed or removed record paths so the Agent can decide to
+re-index. Hashes detect Markdown/index drift, not whether a historical lesson
+still applies to a changed codebase. No automatic capture, run execution or hooks.
 
 ## A/B limitation
 
