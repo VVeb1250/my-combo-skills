@@ -9,7 +9,7 @@ mechanics that are unresolved.
 1. Identify requested coverage, revision, environment, fixture, and pass signal
    tied to behavior or an invariant. Inspect existing scripts before choosing
    commands.
-2. Choose the cheapest reliable check that meets that coverage: focused test,
+2. Choose the cheapest reliable check that meets that coverage (consult [verification economy](../practices/verification-economy.md) when additional checks are expensive): focused test,
    typecheck, lint, build, API/integration, or E2E. If a full suite or broad gate
    was requested, run it completely; focused checks may order work, not replace
    requested coverage. Explicit fail-fast behavior remains valid.
