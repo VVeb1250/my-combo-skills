@@ -10,6 +10,8 @@ def collect(root):
     result = []
     for directory, kind in KINDS.items():
         for p in sorted((root / ".combo" / directory).rglob("*.md")):
+            if p.name == "TEMPLATE.md":
+                continue
             relative = p.relative_to(root).as_posix()
             if directory == "changes" and "archive" in p.parts:
                 continue
