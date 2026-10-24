@@ -26,6 +26,8 @@ behavior, the chosen approach, acceptance checks, and the first action, with
 decision-changing unknowns resolved or explicitly assigned. Stop exploring
 equivalent alternatives at that point.
 
+For an opt-in `.combo/` project, read [project ecosystem](../practices/project-ecosystem.md): write observable capability requirements using RFC 2119/8174 and proposed change deltas without duplicating Matt and OpenSpec planning pipelines. Tiny fixes do not need new docs.
+
 A bounded plan can live in the response. Use existing artifact conventions for
 multi-session or independent execution when useful. Include rationale and risks
 that change execution; create trackers or additional specs only when requested
