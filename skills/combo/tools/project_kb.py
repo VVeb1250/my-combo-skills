@@ -92,7 +92,7 @@ def main():
         if row["kind"] == "shortcut" and row["status"] == "tested":
             content = (root / row["path"]).read_text(encoding="utf-8").lower()
             for heading in ("preconditions", "validation", "fallback"):
-                if not re.search(r"^## " + heading + r"\\b", content, flags=re.M):
+                if not re.search(r"^## " + heading + r"\b", content, flags=re.M):
                     errors.append(f'missing {heading}: {row["path"]}')
     if errors:
         raise SystemExit("\n".join(errors))
