@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-21T21:58:18.696Z",
+  "checked_at": "2026-10-24T18:30:24.848Z",
   "package_roots": [
     "combo",
     "combo-business",
@@ -16,14 +16,14 @@
     "combo-review",
     "combo-verify"
   ],
-  "package_files": 657,
+  "package_files": 660,
   "ownership_index": "skills/combo/.combo-owned.json",
   "skills": [
     {
       "name": "combo",
-      "files": 631,
+      "files": 634,
       "description_chars": 101,
-      "body_lines": 62
+      "body_lines": 63
     },
     {
       "name": "combo-business",
