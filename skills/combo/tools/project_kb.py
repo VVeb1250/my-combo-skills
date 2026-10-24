@@ -125,6 +125,10 @@ def collect(root):
             raw = data.decode("utf-8")
         except UnicodeDecodeError as exc:
             raise IndexErrorInfo(f"{relative}: expected UTF-8") from exc
+        # Checked-out files may be CRLF (core.autocrlf on Windows). Parse and
+        # hash the normalized text so line endings are not content drift.
+        raw = raw.replace("\r\n", "\n").replace("\r", "\n")
+        data = raw.encode("utf-8")
         meta, body = _metadata(raw, relative)
         if not isinstance(meta, dict):
             raise IndexErrorInfo(f"{relative}: metadata must be a mapping")

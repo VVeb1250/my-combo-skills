@@ -50,7 +50,7 @@ class ProjectKbV1(unittest.TestCase):
     def test_index_stale_on_edit_and_tamper(self):
         self.fixture()
         kb.rebuild(self.root)
-        self.write("specs/target.md", "# Changed")
+        self.write("specs/target.md", "+++\nid='spec.target'\narea='commander'\nstatus='accepted'\nsummary='Changed'\n+++\n# Changed")
         with self.assertRaisesRegex(kb.IndexErrorInfo, "index_stale"):
             kb.load_index(self.root)
         kb.rebuild(self.root)
