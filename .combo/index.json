@@ -1,20 +1,90 @@
 {
-  "schema": 1,
+  "schema": 2,
+  "areas": {
+    "combo": {
+      "count": 3,
+      "summary": "Project knowledge indexing and Agent navigation",
+      "entrypoints": [
+        "skills/combo/practices/project-ecosystem.md",
+        "skills/combo/tools/**"
+      ],
+      "ids": [
+        "area.combo",
+        "combo-project-ecosystem",
+        "change.combo-index-v1"
+      ]
+    }
+  },
   "entries": [
+    {
+      "id": "area.combo",
+      "kind": "area",
+      "path": ".combo/areas/combo.md",
+      "area": "combo",
+      "status": "accepted",
+      "summary": "Project knowledge indexing and Agent navigation",
+      "tags": [
+        "routing",
+        "indexing"
+      ],
+      "paths": [
+        "skills/combo/tools/**",
+        "skills/combo/practices/project-ecosystem.md"
+      ],
+      "links": [
+        {
+          "relation": "constrained_by",
+          "target": "combo-project-ecosystem"
+        }
+      ],
+      "evidence": [],
+      "validated_at": "",
+      "sha256": "2ad04981eaf9cdd2791445641c5287a3eb0964de09dfe12a0687ced18f9b0296"
+    },
     {
       "id": "combo-project-ecosystem",
       "kind": "spec",
       "path": ".combo/specs/project-ecosystem.md",
       "area": "combo",
+      "status": "accepted",
+      "summary": "Opt-in single-source project knowledge and bounded retrieval",
       "tags": [
         "specs",
         "retro",
         "shortcuts",
         "verification"
       ],
-      "status": "accepted",
-      "summary": "Opt-in single-source project knowledge and bounded retrieval",
-      "evidence": ""
+      "paths": [],
+      "links": [],
+      "evidence": [],
+      "validated_at": "",
+      "sha256": "ee708fd905fae31a7cab5432a19289c085ae392dfe3dbe3956409542802ffabd"
+    },
+    {
+      "id": "change.combo-index-v1",
+      "kind": "change",
+      "path": ".combo/changes/index-v1/proposal.md",
+      "area": "combo",
+      "status": "implemented",
+      "summary": "Progressive agent-selected index and hop with metadata checks",
+      "tags": [
+        "index",
+        "route",
+        "hop",
+        "retrieval"
+      ],
+      "paths": [
+        "skills/combo/tools/project_kb.py"
+      ],
+      "links": [
+        {
+          "relation": "constrained_by",
+          "target": "combo-project-ecosystem"
+        }
+      ],
+      "evidence": [],
+      "validated_at": "",
+      "sha256": "1f81318c116f2c49a5294e463f558915cb4c2965a8baef0ff4ac90162beedadf"
     }
   ]
 }
