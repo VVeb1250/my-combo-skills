@@ -7,10 +7,16 @@ user-invocable: true
 
 # Combo maintenance for Claude Code
 
-The source checkout is `D:/0_person-project/my-combo-skills`. Confirm it contains
-`adapters/claude/install-manifest.json` and `scripts/setup-claude.py`; if moved,
-use the source path supplied by the user. Runtime workflows need only their
-installed package; this checkout is needed for package maintenance.
+The source checkout is the path the user supplies. Confirm it contains
+`adapters/claude/install-manifest.json` and `scripts/setup-claude.py`; do not
+infer the checkout from the current working directory or a machine-specific
+default. Runtime workflows need only their installed package; this checkout is
+needed for package maintenance.
+
+For authoring or adapting the pack itself, use
+[authoring](../combo/practices/authoring.md) or the explicit `/combo-author`
+entry instead. This skill owns installation maintenance and behavior improvement
+from observed task failures, not redesigning the workflow pack.
 
 Read [context](../combo/practices/context.md) once for evidence selection and
 concise reporting. Inspection-only ends with findings; updates use the plan below.

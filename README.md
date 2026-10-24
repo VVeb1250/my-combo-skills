@@ -3,8 +3,10 @@
 Workflow pack ที่ออกแบบการทำงานร่วมกันใหม่จาก **Karpathy, Ponytail, Matt Pocock
 และ ECC** ครอบคลุมทั้ง engineering และงานนอก coding
 
-เลือกโครงสร้าง **12 ทางเข้าตามงาน + `combo` router + `combo-maintain`**
+เลือกโครงสร้าง **12 ทางเข้าตามงาน + `combo` router + `combo-maintain` + `combo-author`**
 ทุกทางเข้าใช้ workflow และ library ร่วมกัน อ่านเฉพาะส่วนที่ต้องใช้
+`combo-author` เป็น explicit-only สำหรับปรับ pack หรือสร้างระบบแบบ Combo
+จึงไม่ถูกเลือกอัตโนมัติจากคำขอทำงานปกติ
 รายละเอียดการเลือกและผลทดสอบอยู่ใน [รายงาน A/B](audit/ab/DECISION.md)
 
 **Outcome ownership และ decision triage:** แกนร่วมใน
@@ -21,12 +23,17 @@ Workflow pack ที่ออกแบบการทำงานร่วมก
 ดู [ผลตรวจรอบนี้](audit/context-20260914/REPORT.md) และ
 [โจทย์ context probes](evals/context/README.md)
 
-**ติดตั้งใน Codex และตรวจแล้ว (10 กันยายน 2026):** discovery ครบ 14 entries,
-ไฟล์ตรงกับ source และซ้อม rollback ผ่าน โดย config ส่วนอื่นและ M2D คงเดิม
+**ติดตั้งใน Codex และตรวจแล้ว (10 กันยายน 2026):** discovery ครบ 14 entries
+ในรอบนั้น ไฟล์ตรงกับ source และซ้อม rollback ผ่าน โดย config ส่วนอื่นและ M2D คงเดิม
+
+**รอบ authoring (25 ตุลาคม 2026):** discovery ครบ 15 entries รวม `combo-author`
+แบบ explicit-only, installed bytes ตรงกับ source และ config ที่ไม่ใช่ของ Combo คงเดิม
 
 **Claude Code ติดตั้งแล้วเช่นกัน:** ปรับเป็น native Skill/Plan Mode/subagent,
-discovery ครบ 14 entries และทดสอบการเรียกอัตโนมัติใน session จริงแล้ว
-ดู [Claude setup](adapters/claude/README.md) และ [ผลตรวจ](audit/claude/REPORT.md)
+discovery ครบ 14 entries ในรอบนั้น และทดสอบการเรียกอัตโนมัติใน session จริงแล้ว
+รอบ authoring เพิ่ม `/combo-author` แบบ explicit-only รวมเป็น 15 skills
+และ verify installed bytes ผ่าน ดู [Claude setup](adapters/claude/README.md)
+และ [ผลตรวจ](audit/claude/REPORT.md)
 
 ## ใช้งาน
 
@@ -59,6 +66,21 @@ discovery ครบ 14 entries และทดสอบการเรียก�
 Native skills ยังรับผิดชอบการใช้ browser, เอกสาร, ภาพ, spreadsheet และเครื่องมือ
 เฉพาะทาง Combo ช่วยเลือกกระบวนการและความรู้ที่เกี่ยวข้อง
 
+## ปรับแต่งหรือสร้างระบบแบบ Combo
+
+ใช้ `$combo-author` (Claude Code: `/combo-author`) เมื่อต้องการเพิ่ม แก้ หรือถอด
+workflow, practice, entry, template หรือ host adapter ของ pack นี้ หรือสร้างระบบ
+แบบ Combo ที่เล็กกว่าขึ้นมาเอง ทางเข้านี้เป็น explicit-only จึงไม่ถูกเลือกอัตโนมัติ
+จากคำขอทำงานปกติ และไม่ใช่ task workflow
+
+เริ่มจาก [authoring practice](skills/combo/practices/authoring.md) ซึ่งเป็นขั้นตอน
+ตัดสินใจที่ agent ใช้จริง และ [คู่มือ authoring](docs/authoring.md) สำหรับเหตุผลของ
+pattern, บันไดการเปลี่ยนแปลงที่เล็กที่สุด, host boundary, การติดตั้งแบบ manifest
+และวิธีแยก structural checks ออกจาก behavioral evidence
+
+ใช้ [`combo-maintain`](skills/combo-maintain/SKILL.md) สำหรับติดตั้ง อัปเดต
+ตรวจสอบ หรือ rollback ของที่ติดตั้งแล้ว
+
 ## Optional `.combo/` project ecosystem
 
 Opt-in project knowledge for accepted specs, proposed delta changes, evidence-backed retro, tested shortcuts and a generated routing index. This does not add a new workflow or global hook, and does not silently replace a project's existing OpenSpec source. See [project ecosystem](skills/combo/practices/project-ecosystem.md) and [verification economy](skills/combo/practices/verification-economy.md).
@@ -90,6 +112,7 @@ flowchart TD
 - [12 workflows](skills/combo/workflows/) เป็นกระบวนการที่ออกแบบให้ทำงานร่วมกัน
 - [Shared practices](skills/combo/practices/) และ [27 engineering specialists](skills/combo/specialists/INDEX.md) ใช้เพิ่มความลึกเฉพาะเรื่อง
 - [Source library](skills/combo/references/library/INDEX.md) เก็บครบ **331 direct source entries** จาก 4 repositories พร้อม support files, source pins และ license notices
+- [Authoring templates](skills/combo/templates/) และ [คู่มือปรับแต่ง pack](docs/authoring.md) สำหรับการเพิ่มหรือแก้ระบบ
 - [POLICY.md](POLICY.md) รวมหลัก Karpathy/Ponytail สำหรับ engineering และกติกาเลือก workflow
 - [DESIGN.md](DESIGN.md) อธิบายการตัดสินใจของ architecture
 
@@ -138,8 +161,9 @@ Codex ใช้คำสั่งด้านล่าง ส่วน Claude Co
 [ตัวติดตั้งและคำแนะนำเฉพาะ Claude](adapters/claude/README.md)
 Claude เว็บ/Cowork และ ChatGPT ทั่วไปอยู่นอกขอบเขตการติดตั้งนี้
 เปิด task ใหม่เพื่อรับ skill listing และ role ปัจจุบัน หากแอปยังแสดงรายการเก่า
-ให้เปิด Codex ใหม่ ทางเข้าทั้งชุดมี `allow_implicit_invocation: true`
-และมี global routing policy ประกอบการเลือก
+ให้เปิด Codex ใหม่ ทางเข้าตามงานและ `combo-maintain` มี
+`allow_implicit_invocation: true` ส่วน `combo-author` ตั้งเป็น `false`
+เพื่อให้เรียกได้เฉพาะเมื่อผู้ใช้ระบุ และมี global routing policy ประกอบการเลือก
 
 ```powershell
 python scripts/prepare.py
@@ -151,7 +175,8 @@ python scripts/setup.py verify
 ตัวติดตั้งเก็บ baseline, ownership index และ receipt สำหรับ rollback
 แก้เฉพาะ package กับส่วนของ Combo ใน config/AGENTS.md รักษา Preferences,
 M2D, hooks, MCP, credentials และ native skills ส่วนอื่น
-ใช้ `$combo-maintain` เมื่อจะอัปเดต ตรวจสถานะ หรือย้อนกลับ
+ใช้ `$combo-maintain` เมื่อจะอัปเดต ตรวจสถานะ หรือย้อนกลับ และใช้
+`$combo-author` เมื่อจะปรับโครงสร้าง pack เอง
 
 Baseline ก่อนขยายอยู่ที่ [archive/v2-engineering](archive/v2-engineering/)
 และ receipt เดิมยังเก็บอยู่ การ rollback จะหยุดเมื่อพบไฟล์ถูกแก้ภายหลัง

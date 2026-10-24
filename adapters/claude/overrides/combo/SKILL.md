@@ -70,3 +70,10 @@ discovery. Finish at the chosen workflow's observable stopping condition.
 
 For Plan Mode, delegation, or host context controls, consult
 [Claude execution](references/claude-code.md). Use `/combo` for explicit routing.
+
+## System entries
+
+Use `/combo-author` only when the user explicitly asks to customize this pack
+or build a Combo-like system. Use `/combo-maintain` for installation, update,
+verification, or rollback. These are not task routes and do not participate in
+implicit workflow selection.

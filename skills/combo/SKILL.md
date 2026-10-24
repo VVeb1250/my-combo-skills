@@ -67,3 +67,10 @@ use the context practice to recover the unresolved action without restarting
 discovery. Finish at the chosen workflow's observable stopping condition.
 
 Use `$combo` for explicit routing when automatic discovery did not activate.
+
+## System entries
+
+Use `$combo-author` only when the user explicitly asks to customize this pack
+or build a Combo-like system. Use `$combo-maintain` for installation, update,
+verification, or rollback. These are not task routes and do not participate in
+implicit workflow selection.

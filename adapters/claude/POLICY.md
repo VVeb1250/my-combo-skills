@@ -49,3 +49,7 @@ continues through implementation and verification. An active Plan Mode retains
 its native read-only and approval boundary. When authorized independent work
 benefits from delegation, give `combo-worker` explicit context and file ownership.
 The host's configured memory and permission rules remain authoritative.
+
+System entries are not task routes. `/combo-author` is explicit-only for
+customizing this pack or building a Combo-like system, not an implicit route.
+`/combo-maintain` owns installation, update, verification, and rollback.

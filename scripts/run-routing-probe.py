@@ -41,9 +41,23 @@ def load_cases(path: Path = CASES_FILE) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def _allows_implicit_invocation(package: Path) -> bool:
+    """False only when a package explicitly opts out of implicit routing."""
+    policy = package / "agents" / "openai.yaml"
+    if not policy.is_file():
+        return True
+    return "allow_implicit_invocation: false" not in policy.read_text(encoding="utf-8")
+
+
 def entry_names() -> set[str]:
-    """Names of the Combo entries shipped in this checkout."""
-    return {p.name for p in (ROOT / "skills").iterdir() if p.name.startswith("combo")}
+    """Names of Combo entries eligible for implicit discovery in this checkout."""
+    return {
+        path.name
+        for path in (ROOT / "skills").iterdir()
+        if path.name.startswith("combo")
+        and path.is_dir()
+        and _allows_implicit_invocation(path)
+    }
 
 
 def analyze_events(events: list[dict[str, Any]]) -> dict[str, Any]:
