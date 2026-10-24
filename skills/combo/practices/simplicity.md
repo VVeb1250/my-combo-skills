@@ -11,6 +11,7 @@ The goal is a smaller maintainable design that still meets the full requirement.
   speculative extension points, and abstractions with no demonstrated second
   use when evidence shows they are unnecessary. Keep a cohesive module that
   hides substantial behavior or enforces an invariant, even with one caller.
+- Track structural debt at changed hotspots: repeated edits with regressions, unclear state ownership, shotgun surgery and test seams that cannot observe real behavior. Prefer bounded behavior-preserving refactor with regression evidence; do not rewrite healthy modules periodically.
 - Watch for duplicated logic, long message chains, primitive domain concepts,
   shotgun edits, divergent responsibilities, and middle-man layers. Fix only
   what the task or the new change makes relevant.
