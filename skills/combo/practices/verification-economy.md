@@ -1,0 +1,7 @@
+# Evidence-efficient verification and structural maintenance
+
+Choose evidence that could falsify the actual acceptance at the lowest adequate cost. Prefer focused deterministic tests, replay/simulation traces, type checks and integration probes at the real public seam. For UI/cross-component journeys, use Browser only where the acceptance requires observed interaction or cheaper evidence leaves a material gap. Follow host browser rules.
+
+Reuse still-valid evidence when revision, relevant code, inputs and environment are unchanged; do not replay a costly journey to gain subjective confidence. Escalate only for a failed result, changed boundary or uncovered criterion. One model agreeing with itself is not independent proof. Stop on adequate coverage, not personal confidence. Preserve explicit user/repository full suites, trust boundaries, security and data-loss gates. Report exact unverified claims when access is blocked.
+
+After repeated edits, bugs or shotgun changes, inspect ownership, duplicated transitions, coupling and test seams. Apply targeted behavior-preserving refactoring only with a concrete reason and a regression check, never an automatic wide rewrite. A shortcut is allowed only when its preconditions hold and its validation covers the same required outcome. If it fails, use its fallback; don't silently trim coverage.
