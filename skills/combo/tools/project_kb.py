@@ -628,12 +628,13 @@ def main(argv=None):
                 result = load_index(args.global_catalog, global_catalog=True)
                 print(f"OK: global catalog has {len(result['entries'])} techniques")
             return 0
-        index = load_index(root)
         global_index = None
         if args.global_catalog is not None:
             global_index = load_index(args.global_catalog, global_catalog=True)
             external_ids = {"global:" + row["id"] for row in global_index["entries"]}
             index = load_index(root, external_ids=external_ids)
+        else:
+            index = load_index(root)
         if args.cmd == "check":
             print(f"OK: index schema {SCHEMA}, {len(index['entries'])} entries, {len(index['areas'])} areas")
             return 0
