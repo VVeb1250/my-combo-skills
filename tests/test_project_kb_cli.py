@@ -77,14 +77,14 @@ summary = "Old targeting rules"
         init = self.cli("init")
         self.assertEqual(init.returncode, 0, init.stderr)
         dirs = [p.name for p in (self.root / ".combo").iterdir() if p.is_dir()]
-        self.assertEqual(len(dirs), 7)
+        self.assertEqual(len(dirs), 8)
         self.fixture()
         indexed = self.cli("index")
         self.assertEqual(indexed.returncode, 0, indexed.stderr)
         cache = self.root / ".combo" / "index.json"
         self.assertTrue(cache.is_file())
         data = json.loads(cache.read_text(encoding="utf-8"))
-        self.assertEqual(data["schema"], 2)
+        self.assertEqual(data["schema"], 3)
         self.assertEqual(len(data["entries"]), 4)
         checked = self.cli("check")
         self.assertEqual(checked.returncode, 0, checked.stderr)

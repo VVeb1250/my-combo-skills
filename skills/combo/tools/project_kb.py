@@ -28,10 +28,16 @@ KINDS = {
     "verification": "verification",
     "retro": "retro",
     "shortcuts": "shortcut",
+    "techniques": "technique",
 }
 INACTIVE = frozenset({"superseded", "rejected", "archived"})
 RELATIONS = frozenset({"constrained_by", "related_to", "depends_on", "verified_by", "supersedes", "informs"})
-SCHEMA = 2
+SCHEMA = 3
+TECHNIQUE_STATES = frozenset({"candidate", "prototyped", "project-tested",
+                              "portable-candidate", "cross-project-tested",
+                              "rejected", "superseded"})
+TECHNIQUE_TESTED = frozenset({"prototyped", "project-tested",
+                              "portable-candidate", "cross-project-tested"})
 
 
 class IndexErrorInfo(ValueError):
@@ -150,14 +156,20 @@ def collect(root):
         for pattern in paths:
             if pattern.startswith(("/", "~")) or ".." in PurePosixPath(pattern).parts or "\\" in pattern:
                 raise IndexErrorInfo(f"{relative}: unsafe project-relative path pattern: {pattern}")
-        result.append({
+        record = {
             "id": ident, "kind": kind, "path": relative,
             "area": area, "status": status, "summary": summary,
             "tags": _normalize_list(meta.get("tags"), "tags", relative),
             "paths": paths, "links": links, "evidence": evidence,
             "validated_at": str(meta.get("validated_at", "")),
             "sha256": hashlib.sha256(data).hexdigest(),
-        })
+        }
+        if kind == "technique":
+            if "id" not in meta:
+                raise IndexErrorInfo(f"{relative}: technique requires an explicit stable id")
+            for field in ("problem_signals", "engine", "renderer"):
+                record[field] = _normalize_list(meta.get(field), field, relative)
+        result.append(record)
     return result
 
 
@@ -175,6 +187,42 @@ def _validate(root, rows):
                 errors.append(f"{row['path']}: broken {edge['relation']} -> {edge['target']}")
             if edge["target"] == row["id"]:
                 errors.append(f"{row['path']}: self link {edge['relation']}")
+        if row["kind"] == "technique":
+            if row["status"] not in TECHNIQUE_STATES:
+                errors.append(f"{row['path']}: unknown technique status {row['status']!r}")
+            if not row["problem_signals"]:
+                errors.append(f"{row['path']}: technique requires problem_signals")
+            content = (root / row["path"]).read_text(encoding="utf-8").lower()
+            for heading in ("problem and decision rule", "mechanism",
+                            "applicability and constraints", "implementation",
+                            "trade-offs and failure modes", "verification"):
+                if not re.search(r"^## " + re.escape(heading) + r"\b", content, re.MULTILINE):
+                    errors.append(f"{row['path']}: technique lacks section: {heading}")
+            if row["status"] in TECHNIQUE_TESTED and not row["evidence"]:
+                errors.append(f"{row['path']}: {row['status']} technique lacks evidence")
+            local_evidence = False
+            for pointer in row["evidence"]:
+                if pointer in by_id:
+                    local_evidence = True
+                    continue
+                if pointer.startswith(("https://", "http://")):
+                    continue  # Remote source remains unverified.
+                value = PurePosixPath(pointer)
+                if (not pointer or pointer.startswith(("/", "~")) or
+                        "\\" in pointer or ".." in value.parts):
+                    errors.append(f"{row['path']}: unsafe technique evidence: {pointer!r}")
+                    continue
+                target = root / pointer
+                try:
+                    _inside(root, target)
+                    if not target.is_file():
+                        errors.append(f"{row['path']}: missing technique evidence: {pointer}")
+                    else:
+                        local_evidence = True
+                except (OSError, IndexErrorInfo):
+                    errors.append(f"{row['path']}: invalid technique evidence: {pointer}")
+            if row["status"] in TECHNIQUE_TESTED and not local_evidence:
+                errors.append(f"{row['path']}: {row['status']} requires local evidence or a record link")
         if row["kind"] in ("retro", "shortcut") and row["status"] == "tested":
             if not row["evidence"]:
                 errors.append(f"{row['path']}: tested {row['kind']} lacks evidence")
@@ -280,6 +328,34 @@ def _terms(words):
     return [w.lower() for w in re.split(r"[^\w-]+", words or "") if w]
 
 
+def _technique_score(row, query):
+    if row["kind"] != "technique" or not query:
+        return 0
+    terms = set(_terms(query))
+    signals = row.get("problem_signals", [])
+    phrases = sum(8 for phrase in signals if
+                  (normalized := " ".join(_terms(phrase))) and
+                  normalized in " ".join(_terms(query)))
+    return (phrases + 4 * len(terms & set(_terms(" ".join(signals)))) +
+            3 * len(terms & set(_terms(" ".join(row["tags"])))) +
+            2 * len(terms & set(_terms(row["summary"]))))
+
+
+def _compatibility(row, *, engine=None, renderer=None):
+    if row["kind"] != "technique" or (not engine and not renderer):
+        return "not-checked"
+    unknown = False
+    for field, requested in (("engine", engine), ("renderer", renderer)):
+        if not requested:
+            continue
+        declared = {x.casefold() for x in row.get(field, [])}
+        if not declared or "unknown" in declared:
+            unknown = True
+        elif requested.casefold() not in declared and "any" not in declared:
+            return "incompatible"
+    return "unknown" if unknown else "metadata-match"
+
+
 def _match(row, areas, paths, query, ident):
     reasons = []
     if ident and row["id"] == ident:
@@ -292,16 +368,21 @@ def _match(row, areas, paths, query, ident):
     haystack = " ".join([row["summary"], row["area"], row["path"], *row["tags"]]).lower()
     if terms and any(term in haystack for term in terms):
         reasons.append("query")
+    if row["kind"] == "technique" and _technique_score(row, query) and "query" not in reasons:
+        reasons.append("problem_signal")
     return reasons
 
 
-def _result(row, reasons):
-    return {"id": row["id"], "kind": row["kind"], "status": row["status"],
+def _result(row, reasons, *, engine=None, renderer=None):
+    item = {"id": row["id"], "kind": row["kind"], "status": row["status"],
             "path": row["path"], "summary": row["summary"], "area": row["area"],
             "reasons": reasons}
+    if row["kind"] == "technique":
+        item["compatibility"] = _compatibility(row, engine=engine, renderer=renderer)
+    return item
 
 
-def route(index, *, area=None, paths=(), query=None, ident=None):
+def route(index, *, area=None, paths=(), query=None, ident=None, engine=None, renderer=None):
     """Broad entrypoints only. Agent chooses subsequent hop; no forced traversal."""
     areas = set(area or [])
     possible_areas = []
@@ -319,14 +400,18 @@ def route(index, *, area=None, paths=(), query=None, ident=None):
     for row in index["entries"]:
         if row["status"] in INACTIVE:
             continue
+        if _compatibility(row, engine=engine, renderer=renderer) == "incompatible" and ident != row["id"]:
+            continue
         reasons = _match(row, areas, paths, query, ident)
         if not reasons:
             continue
         destination = required if row["kind"] == "spec" and row["status"] == "accepted" else suggested
-        destination.append(_result(row, reasons))
+        destination.append(_result(row, reasons, engine=engine, renderer=renderer))
     # No hard top-k cap on binding specs. For other results, return a small shelf;
     # agent can follow a single link or ask for deeper lookup as needed.
-    suggested.sort(key=lambda x: (-int("explicit_id" in x["reasons"]), -int("path" in x["reasons"]), -int("area" in x["reasons"]), x["id"]))
+    scores = {row["id"]: _technique_score(row, query) for row in index["entries"]}
+    suggested.sort(key=lambda x: (-int("explicit_id" in x["reasons"]), -int("path" in x["reasons"]),
+                                  -int("area" in x["reasons"]), -scores[x["id"]], x["id"]))
     result = {"mode": "progressive", "areas": possible_areas, "required": required,
               "suggested": suggested[:5], "more_suggestions": max(0, len(suggested) - 5),
               "warning": None}
@@ -360,7 +445,7 @@ def hop(index, from_id, *, include_inactive=False, limit=10, offset=0):
     return {"from": from_id, "type": "record", "total": len(items), "offset": offset, "items": items[offset:offset + limit]}
 
 
-def lookup(index, *, area=None, kind=None, query=None, limit=3, include_inactive=False, ident=None):
+def lookup(index, *, area=None, kind=None, query=None, limit=3, include_inactive=False, ident=None, engine=None, renderer=None):
     records = []
     for row in index["entries"]:
         if not include_inactive and row["status"] in INACTIVE:
@@ -371,10 +456,14 @@ def lookup(index, *, area=None, kind=None, query=None, limit=3, include_inactive
             continue
         if kind and kind != row["kind"]:
             continue
+        if _compatibility(row, engine=engine, renderer=renderer) == "incompatible" and ident != row["id"]:
+            continue
         if query and not _match(row, set(), [], query, None):
             continue
-        records.append(_result(row, ["lookup"]))
-    return records[:max(0, limit)]
+        records.append((row, _result(row, ["lookup"], engine=engine, renderer=renderer)))
+    if query and any(row["kind"] == "technique" for row, _ in records):
+        records.sort(key=lambda pair: (-_technique_score(pair[0], query), pair[0]["id"]))
+    return [item for _, item in records[:max(0, limit)]]
 
 
 def main(argv=None):
@@ -388,6 +477,8 @@ def main(argv=None):
     browse.add_argument("--path", action="append", default=[])
     browse.add_argument("--query")
     browse.add_argument("--id")
+    browse.add_argument("--engine")
+    browse.add_argument("--renderer")
     browse.add_argument("query_words", nargs="*", metavar="QUERY",
                         help="Query text; equivalent to --query")
     browse.add_argument("--why", action="store_true", help="Reasons are always included in JSON output")
@@ -400,6 +491,8 @@ def main(argv=None):
     look.add_argument("--area")
     look.add_argument("--kind", choices=list(KINDS.values()))
     look.add_argument("--query")
+    look.add_argument("--engine")
+    look.add_argument("--renderer")
     look.add_argument("--id", dest="ident")
     look.add_argument("id_positional", nargs="?", metavar="ID",
                       help="Record id; equivalent to --id")
@@ -432,7 +525,8 @@ def main(argv=None):
             if args.query and args.query_words:
                 parser.error("route accepts either --query or positional query words, not both")
             query = args.query or (" ".join(args.query_words) or None)
-            output = route(index, area=args.area, paths=args.path, query=query, ident=args.id)
+            output = route(index, area=args.area, paths=args.path, query=query, ident=args.id,
+                           engine=args.engine, renderer=args.renderer)
         elif args.cmd == "hop":
             output = hop(index, args.from_id, include_inactive=args.include_inactive,
                          limit=max(0, args.limit), offset=max(0, args.offset))
@@ -441,7 +535,8 @@ def main(argv=None):
                 parser.error("lookup accepts either --id or a positional ID, not both")
             output = lookup(index, area=args.area, kind=args.kind, query=args.query,
                             limit=args.limit, include_inactive=args.include_superseded,
-                            ident=args.ident or args.id_positional)
+                            ident=args.ident or args.id_positional, engine=args.engine,
+                            renderer=args.renderer)
             if args.digest:
                 output = [{**item, "digest": next((x["summary"] for x in index["entries"] if x["id"] == item["id"]), "")} for item in output]
         print(json.dumps(output, ensure_ascii=False, indent=2))

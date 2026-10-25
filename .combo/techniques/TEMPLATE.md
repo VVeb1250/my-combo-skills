@@ -11,7 +11,7 @@ evidence = []
 +++
 # Technique title
 
-> Phase A design-only template. The current `project_kb.py` schema 2 does not index `.combo/techniques/`, match `problem_signals`, validate engine/renderer compatibility or enforce technique status transitions.
+> Schema 3 indexes this local record's metadata and checks section headings, status names, and local evidence prerequisites. The indexer does not validate the technique's actual outcome or global portability.
 
 ## Problem and decision rule
 Describe the symptoms, outcome and when to choose this technique over alternatives.
