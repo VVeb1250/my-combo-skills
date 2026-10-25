@@ -1,27 +1,27 @@
 ---
 id: retro-example
 area: example
-tags: improvement
+tags: failure, improvement
 status: candidate
-summary: Replace with one reusable lesson
+summary: One observed lesson and its applicability
 evidence:
 ---
 # Lesson title
 
 ## Trigger
-When a repeated failure, unusually effective verified success, or measured improvement makes this reusable; link the affected domain/code. Routine passes are not triggers.
+When a repeated failure, verified unusually effective success, or measured improvement makes this reusable; identify context, symptom and affected domain/code. Routine completion alone is not a trigger.
 
 ## Observed
-Mechanical facts or primary artifact references, not model retellings. For success claims, give a comparable baseline and actual outcome.
+What actually happened, with primary artifacts or reproduction. Do not write interpretation as observation. For positive success claims, include a comparable baseline and observed outcome.
 
 ## Interpretation
-Separate confirmed cause from hypothesis; record rejected alternatives. Do not credit a model alone if prompts, tools or environment differ.
+Separate demonstrated cause, inference and hypotheses. Record consequential counterevidence. Do not attribute a gain to a model alone when prompts, tools or environment differ.
 
 ## Reuse
-Small next-task rule with practical applicability conditions. Cross-model reuse stays candidate until verified in its target setting.
+State a small applicable lesson from this incident. Link a general technique implementation instead of copying its steps. Cross-model reuse stays candidate until verified in the target setting.
 
 ## Limits and invalidation
-When the lesson would be wrong or stale. Mark superseded with a pointer.
+Conditions making this lesson stale, and a superseding record when applicable.
 
 ## Provenance
-Revision, environment, timestamp and model self-report if useful.
+Revision, environment, date, evidence pointers and optional model self-report. Claim `tested` only with observed evidence.

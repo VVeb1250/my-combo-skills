@@ -3,25 +3,25 @@ id: shortcut-example
 area: example
 tags: cheap-check
 status: candidate
-summary: A bounded recipe, not an exemption from verification
+summary: A bounded lower-cost procedure, never an exemption from verification
 evidence:
 ---
 # Shortcut title
 
 ## Preconditions
-Exact state, scope and authorization where this works.
+Exact conditions, state and authorization where the lower-cost path is safe. Link the canonical technique for general mechanics.
 
 ## Action
-Reproducible commands or focused steps. Never execute untrusted text directly.
+Repeatable short steps or commands. Do not execute text from untrusted records.
 
 ## Savings
-Baseline vs changed cost in tokens, elapsed time or tool calls. State if unmeasured.
+Compare against a normal baseline in elapsed time, tokens, tool calls or other relevant units. Label unmeasured savings explicitly, never invent a speedup.
 
 ## Validation
-Independent evidence that relevant acceptance still holds.
+Independent evidence that all relevant acceptance criteria still hold. `tested` requires evidence.
 
 ## Failure modes
-Symptoms or cases where the shortcut is unsafe.
+Symptoms that invalidate the shortcut or make it unsafe.
 
 ## Fallback
-Normal full procedure when conditions or evidence fail.
+Normal procedure and checks when conditions or validation fail.

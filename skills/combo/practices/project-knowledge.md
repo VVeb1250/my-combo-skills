@@ -23,6 +23,11 @@ record and link from affected code. Create a separate record only when the
 decision needs independent discovery or maintenance. Link an existing record
 rather than copying its rationale into the task list and every caller.
 
+For reusable project knowledge, choose one canonical owner per claim: technique
+for a transferable mechanism, retro for an observed lesson, and shortcut for a
+cheaper validated procedure. Link the related records without copying their
+implementation or incident explanation. A task does not need one of each.
+
 ## Make Markdown navigable
 
 Lead with the document's purpose and the information its reader needs to act.
@@ -55,7 +60,7 @@ Routine work does not require a new Markdown artifact or transcript summary.
 
 ## Optional project ecosystem
 
-When a project already has `.combo/` or the owner requests it, consult [project ecosystem](project-ecosystem.md) for canonical accepted specs, proposed change deltas, evidence-linked retro, tested shortcuts and a generated index. Do not duplicate existing ADRs, OpenSpec sources, raw experiment artifacts, or personal memory.
+When a project already has `.combo/` or the owner requests it, consult [project ecosystem](project-ecosystem.md) for canonical accepted specs, proposed change deltas, evidence-linked retro, tested shortcuts, Phase A technique ownership and a generated index. A template alone does not add an indexed technique type. Do not duplicate existing ADRs, OpenSpec sources, raw experiment artifacts, or personal memory.
 
 ## Memory boundary and completion
 

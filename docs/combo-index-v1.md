@@ -20,7 +20,7 @@ python /path/to/combo/tools/project_kb.py lookup --id adr.target-owner
 python /path/to/combo/tools/project_kb.py check
 ```
 
-The `index` command explicitly migrates index schema 1 to 2 without changing
+The `index` command explicitly migrates index schemas 1 or 2 to 3 without changing
 source Markdown. Legacy single-line `---` metadata remains valid. TOML `+++`
 metadata supports arrays and `[[links]]` on Python 3.11+.
 
@@ -64,6 +64,16 @@ It writes index.json atomically, and read commands fail on content mismatches,
 naming the added, changed or removed record paths so the Agent can decide to
 re-index. Hashes detect Markdown/index drift, not whether a historical lesson
 still applies to a changed codebase. No automatic capture, run execution or hooks.
+
+## Phase B local technique retrieval
+
+[Project ecosystem guidance](../skills/combo/practices/project-ecosystem.md) separates technique methods, retro lessons, lower-cost shortcuts, and scoped verification. Technique Discovery is a conditional process, not a stored kind. Do not create every record kind for each task.
+
+**Implemented:** Schema 3 indexes local `.combo/techniques/` with `problem_signals`, `engine`, and `renderer` metadata. `route` and `lookup` accept optional `--engine` and `--renderer` to exclude explicit incompatibilities; exact ID lookups report them. `metadata-match` only means the declared metadata matches, not validated runtime success. Stronger technique states require local evidence records or files. Agent-controlled one-hop and project-local routing remain unchanged.
+
+**Future phases:** Global library resolution, cross-scope IDs and links, automated promotion, and cross-agent synchronization remain unimplemented. Lexical ranking has not been benchmarked on actual outcomes.
+
+**Phase A acceptance scenarios for future tests (not executed):** unsuccessful experiments do not become verified techniques; tested-in-one-project does not imply portable; unmeasured shortcuts do not claim savings; overlapping retro/technique records link rather than duplicate; specs outrank advisory recipes; unknown applicability stays unknown; missing evidence cannot certify tested claims; concurrent canonical edits detect conflicts; schema-2 indexes require explicit regeneration without changing source Markdown.
 
 ## A/B limitation
 
