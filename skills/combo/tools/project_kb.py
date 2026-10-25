@@ -615,7 +615,11 @@ def main(argv=None):
         if args.cmd == "index":
             if not (root / ".combo").exists():
                 raise IndexErrorInfo(".combo does not exist; run 'init' explicitly")
-            data = rebuild(root)
+            external_ids = ()
+            if args.global_catalog is not None:
+                catalog = load_index(args.global_catalog, global_catalog=True)
+                external_ids = {"global:" + row["id"] for row in catalog["entries"]}
+            data = rebuild(root, external_ids=external_ids)
             print(f"indexed {len(data['entries'])} entries in {len(data['areas'])} areas")
             return 0
         if args.cmd in ("global-index", "global-check"):
