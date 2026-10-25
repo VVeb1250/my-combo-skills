@@ -28,10 +28,16 @@ KINDS = {
     "verification": "verification",
     "retro": "retro",
     "shortcuts": "shortcut",
+    "techniques": "technique",
 }
 INACTIVE = frozenset({"superseded", "rejected", "archived"})
 RELATIONS = frozenset({"constrained_by", "related_to", "depends_on", "verified_by", "supersedes", "informs"})
-SCHEMA = 2
+SCHEMA = 3
+TECHNIQUE_STATES = frozenset({"candidate", "prototyped", "project-tested",
+                              "portable-candidate", "cross-project-tested",
+                              "rejected", "superseded"})
+TECHNIQUE_TESTED = frozenset({"prototyped", "project-tested",
+                              "portable-candidate", "cross-project-tested"})
 
 
 class IndexErrorInfo(ValueError):
@@ -150,14 +156,20 @@ def collect(root):
         for pattern in paths:
             if pattern.startswith(("/", "~")) or ".." in PurePosixPath(pattern).parts or "\\" in pattern:
                 raise IndexErrorInfo(f"{relative}: unsafe project-relative path pattern: {pattern}")
-        result.append({
+        record = {
             "id": ident, "kind": kind, "path": relative,
             "area": area, "status": status, "summary": summary,
             "tags": _normalize_list(meta.get("tags"), "tags", relative),
             "paths": paths, "links": links, "evidence": evidence,
             "validated_at": str(meta.get("validated_at", "")),
             "sha256": hashlib.sha256(data).hexdigest(),
-        })
+        }
+        if kind == "technique":
+            if "id" not in meta:
+                raise IndexErrorInfo(f"{relative}: technique requires an explicit stable id")
+            for field in ("problem_signals", "engine", "renderer"):
+                record[field] = _normalize_list(meta.get(field), field, relative)
+        result.append(record)
     return result
 
 
@@ -175,6 +187,42 @@ def _validate(root, rows):
                 errors.append(f"{row['path']}: broken {edge['relation']} -> {edge['target']}")
             if edge["target"] == row["id"]:
                 errors.append(f"{row['path']}: self link {edge['relation']}")
+        if row["kind"] == "technique":
+            if row["status"] not in TECHNIQUE_STATES:
+                errors.append(f"{row['path']}: unknown technique status {row['status']!r}")
+            if not row["problem_signals"]:
+                errors.append(f"{row['path']}: technique requires problem_signals")
+            content = (root / row["path"]).read_text(encoding="utf-8").lower()
+            for heading in ("problem and decision rule", "mechanism",
+                            "applicability and constraints", "implementation",
+                            "trade-offs and failure modes", "verification"):
+                if not re.search(r"^## " + re.escape(heading) + r"\b", content, re.MULTILINE):
+                    errors.append(f"{row['path']}: technique lacks section: {heading}")
+            if row["status"] in TECHNIQUE_TESTED and not row["evidence"]:
+                errors.append(f"{row['path']}: {row['status']} technique lacks evidence")
+            local_evidence = False
+            for pointer in row["evidence"]:
+                if pointer in by_id:
+                    local_evidence = True
+                    continue
+                if pointer.startswith(("https://", "http://")):
+                    continue  # Remote source remains unverified.
+                value = PurePosixPath(pointer)
+                if (not pointer or pointer.startswith(("/", "~")) or
+                        "\\" in pointer or ".." in value.parts):
+                    errors.append(f"{row['path']}: unsafe technique evidence: {pointer!r}")
+                    continue
+                target = root / pointer
+                try:
+                    _inside(root, target)
+                    if not target.is_file():
+                        errors.append(f"{row['path']}: missing technique evidence: {pointer}")
+                    else:
+                        local_evidence = True
+                except (OSError, IndexErrorInfo):
+                    errors.append(f"{row['path']}: invalid technique evidence: {pointer}")
+            if row["status"] in TECHNIQUE_TESTED and not local_evidence:
+                errors.append(f"{row['path']}: {row['status']} requires local evidence or a record link")
         if row["kind"] in ("retro", "shortcut") and row["status"] == "tested":
             if not row["evidence"]:
                 errors.append(f"{row['path']}: tested {row['kind']} lacks evidence")
