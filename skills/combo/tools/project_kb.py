@@ -490,11 +490,90 @@ def lookup(index, *, area=None, kind=None, query=None, limit=3, include_inactive
     return [item for _, item in records[:max(0, limit)]]
 
 
+def _scoped_result(row, scope, reasons, *, engine=None, renderer=None):
+    item = _result(row, reasons, engine=engine, renderer=renderer)
+    item["scope"] = scope
+    item["scoped_id"] = scope + ":" + row["id"]
+    return item
+
+
+def _resolve_scoped(index, global_index, identifier):
+    if identifier.startswith("global:"):
+        return "global", identifier[7:], global_index
+    if identifier.startswith("project:"):
+        return "project", identifier[8:], index
+    return "project", identifier, index
+
+
+def scoped_hop(index, global_index, identifier, *, limit=10, offset=0, include_inactive=False):
+    """One edge per call, including explicit cross-scope links."""
+    scope, ident, selected = _resolve_scoped(index, global_index, identifier)
+    if selected is None:
+        raise IndexErrorInfo("global catalog is not configured")
+    by_id = {row["id"]: row for row in selected["entries"]}
+    if ident not in by_id and ident not in selected["areas"]:
+        raise IndexErrorInfo(f"unknown scoped id: {identifier}")
+    if ident in selected["areas"]:
+        result = hop(selected, ident, limit=limit, offset=offset, include_inactive=include_inactive)
+        result["items"] = [{**item, "scope": scope, "scoped_id": scope + ":" + item["id"]}
+                           for item in result["items"]]
+        return result
+    edges = []
+    origin = by_id[ident]
+    for edge in origin["links"]:
+        target_scope, target_id, target_index = _resolve_scoped(index, global_index, edge["target"])
+        if target_index is None:
+            raise IndexErrorInfo("global catalog is not configured")
+        target = next((row for row in target_index["entries"] if row["id"] == target_id), None)
+        if target is None:
+            raise IndexErrorInfo(f"broken scoped link: {edge['target']}")
+        if include_inactive or target["status"] not in INACTIVE:
+            edges.append(_scoped_result(target, target_scope, [edge["relation"] + " from " + identifier]))
+    for row in selected["entries"]:
+        if row["id"] == ident:
+            continue
+        for edge in row["links"]:
+            if edge["target"] in (ident, scope + ":" + ident):
+                if include_inactive or row["status"] not in INACTIVE:
+                    edges.append(_scoped_result(row, scope, ["incoming " + edge["relation"]]))
+    unique = {item["scoped_id"]: item for item in edges}
+    items = list(unique.values())
+    return {"from": identifier, "type": "record", "total": len(items),
+            "offset": offset, "items": items[offset:offset + limit]}
+
+
+def scoped_route(index, global_index, *, area=None, paths=(), query=None, ident=None,
+                 engine=None, renderer=None):
+    """Project-first results; globally sourced techniques only fill a local gap."""
+    local = route(index, area=area, paths=paths, query=query, ident=ident,
+                  engine=engine, renderer=renderer)
+    local["suggested"] = [{**item, "scope": "project", "scoped_id": "project:" + item["id"]}
+                          for item in local["suggested"]]
+    local["required"] = [{**item, "scope": "project", "scoped_id": "project:" + item["id"]}
+                         for item in local["required"]]
+    local["fallback_used"] = False
+    if global_index is None:
+        return local
+    suitable = any(item["kind"] == "technique" and item.get("compatibility") != "incompatible"
+                   for item in local["suggested"])
+    if suitable:
+        return local
+    shelf = lookup(global_index, kind="technique", query=query, area=area[0] if area and len(area) == 1 else None,
+                   engine=engine, renderer=renderer, limit=5)
+    local["suggested"].extend({**item, "scope": "global",
+                                "scoped_id": "global:" + item["id"]} for item in shelf)
+    local["fallback_used"] = bool(shelf)
+    if shelf and local["warning"]:
+        local["warning"] = None
+    return local
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
+    parser.add_argument("--global-catalog", type=Path, help="Explicit catalog root with index.json and recipes/")
     commands = parser.add_subparsers(dest="cmd", required=True)
-    for name in ("init", "index", "check", "areas"):
+    for name in ("init", "index", "check", "areas", "global-index", "global-check"):
         commands.add_parser(name)
     browse = commands.add_parser("route")
     browse.add_argument("--area", action="append")
@@ -539,7 +618,20 @@ def main(argv=None):
             data = rebuild(root)
             print(f"indexed {len(data['entries'])} entries in {len(data['areas'])} areas")
             return 0
+        if args.cmd in ("global-index", "global-check"):
+            if args.global_catalog is None:
+                raise IndexErrorInfo("--global-catalog is required")
+            if args.cmd == "global-index":
+                result = rebuild(args.global_catalog, global_catalog=True)
+                print(f"indexed {len(result['entries'])} global techniques")
+            else:
+                result = load_index(args.global_catalog, global_catalog=True)
+                print(f"OK: global catalog has {len(result['entries'])} techniques")
+            return 0
         index = load_index(root)
+        global_index = None
+        if args.global_catalog is not None:
+            global_index = load_index(args.global_catalog, global_catalog=True)
         if args.cmd == "check":
             print(f"OK: index schema {SCHEMA}, {len(index['entries'])} entries, {len(index['areas'])} areas")
             return 0
@@ -549,11 +641,18 @@ def main(argv=None):
             if args.query and args.query_words:
                 parser.error("route accepts either --query or positional query words, not both")
             query = args.query or (" ".join(args.query_words) or None)
-            output = route(index, area=args.area, paths=args.path, query=query, ident=args.id,
-                           engine=args.engine, renderer=args.renderer)
+            output = (scoped_route(index, global_index, area=args.area, paths=args.path,
+                                   query=query, ident=args.id, engine=args.engine,
+                                   renderer=args.renderer) if global_index is not None else
+                      route(index, area=args.area, paths=args.path, query=query, ident=args.id,
+                            engine=args.engine, renderer=args.renderer))
         elif args.cmd == "hop":
-            output = hop(index, args.from_id, include_inactive=args.include_inactive,
-                         limit=max(0, args.limit), offset=max(0, args.offset))
+            output = (scoped_hop(index, global_index, args.from_id,
+                                 include_inactive=args.include_inactive,
+                                 limit=max(0, args.limit), offset=max(0, args.offset))
+                      if global_index is not None else
+                      hop(index, args.from_id, include_inactive=args.include_inactive,
+                          limit=max(0, args.limit), offset=max(0, args.offset)))
         elif args.cmd == "lookup":
             if args.ident and args.id_positional:
                 parser.error("lookup accepts either --id or a positional ID, not both")
