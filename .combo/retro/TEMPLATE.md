@@ -3,25 +3,25 @@ id: retro-example
 area: example
 tags: failure, improvement
 status: candidate
-summary: Replace with one reusable lesson
+summary: One observed lesson and its applicability
 evidence:
 ---
 # Lesson title
 
 ## Trigger
-When this applies; link the affected domain/code.
+When this incident or lesson is relevant; identify context and symptom.
 
 ## Observed
-Mechanical facts or primary artifact references, not model retellings.
+What actually happened, with primary artifacts or reproduction. Do not write interpretation as observation.
 
 ## Interpretation
-Separate confirmed cause from hypothesis; record rejected alternatives.
+Separate demonstrated cause, inference and hypotheses. Record consequential counterevidence.
 
 ## Reuse
-Small next-task rule with practical applicability conditions.
+State a small applicable lesson. Link any general technique implementation instead of copying steps here.
 
 ## Limits and invalidation
-When the lesson would be wrong or stale. Mark superseded with a pointer.
+Conditions making this lesson stale, and a superseding record when applicable.
 
 ## Provenance
-Revision, environment, timestamp and model self-report if useful.
+Revision, environment, date, evidence pointers and optional model self-report. Claim `tested` only with observed evidence.
