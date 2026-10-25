@@ -104,6 +104,26 @@ def _paths(root):
             yield subdir, path
 
 
+def _global_paths(root):
+    """Curated global recipe shelf. Only recipes/*.md are indexed."""
+    folder = root / "recipes"
+    if not folder.is_dir():
+        return
+    for path in sorted(folder.rglob("*.md")):
+        if path.name == "TEMPLATE.md" or path.is_symlink():
+            continue
+        _inside(root, path)
+        yield "techniques", path
+
+
+def _source_paths(root, *, global_catalog=False):
+    return _global_paths(root) if global_catalog else _paths(root)
+
+
+def _index_path(root, *, global_catalog=False):
+    return root / "index.json" if global_catalog else root / ".combo" / "index.json"
+
+
 def _parse_links(value, location):
     if value is None:
         return []
@@ -121,10 +141,10 @@ def _parse_links(value, location):
     return out
 
 
-def collect(root):
+def collect(root, *, global_catalog=False):
     root = Path(root).resolve()
     result = []
-    for folder, p in _paths(root):
+    for folder, p in _source_paths(root, global_catalog=global_catalog):
         relative = p.relative_to(root).as_posix()
         data = p.read_bytes()
         try:
@@ -173,9 +193,10 @@ def collect(root):
     return result
 
 
-def _validate(root, rows):
+def _validate(root, rows, *, external_ids=()):
     errors = []
     by_id = {}
+    allowed_external = set(external_ids)
     for row in rows:
         ident = row["id"]
         if ident in by_id:
@@ -183,7 +204,7 @@ def _validate(root, rows):
         by_id[ident] = row
     for row in rows:
         for edge in row["links"]:
-            if edge["target"] not in by_id:
+            if edge["target"] not in by_id and edge["target"] not in allowed_external:
                 errors.append(f"{row['path']}: broken {edge['relation']} -> {edge['target']}")
             if edge["target"] == row["id"]:
                 errors.append(f"{row['path']}: self link {edge['relation']}")
@@ -263,13 +284,15 @@ def _atomic_write(path, content):
             os.unlink(temp)
 
 
-def rebuild(root):
-    rows = collect(root)
-    errors = _validate(root, rows)
+def rebuild(root, *, global_catalog=False, external_ids=()):
+    root = Path(root).resolve()
+    rows = collect(root, global_catalog=global_catalog)
+    errors = _validate(root, rows, external_ids=external_ids)
     if errors:
         raise IndexErrorInfo("\n".join(errors))
     data = _index_data(rows)
-    _atomic_write(root / ".combo" / "index.json", json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+    _atomic_write(_index_path(root, global_catalog=global_catalog),
+                  json.dumps(data, indent=2, ensure_ascii=False) + "\n")
     return data
 
 
@@ -292,8 +315,9 @@ def _stale_detail(old, current):
     return lines
 
 
-def load_index(root):
-    path = root / ".combo" / "index.json"
+def load_index(root, *, global_catalog=False, external_ids=()):
+    root = Path(root).resolve()
+    path = _index_path(root, global_catalog=global_catalog)
     if not path.exists():
         raise IndexErrorInfo("missing .combo/index.json; run 'index' (does not create .combo automatically during lookup)")
     try:
@@ -302,7 +326,7 @@ def load_index(root):
         raise IndexErrorInfo("invalid .combo/index.json; run 'index'") from exc
     if data.get("schema") != SCHEMA:
         raise IndexErrorInfo(f"index schema {data.get('schema')} unsupported; run 'index' to migrate")
-    current = collect(root)
+    current = collect(root, global_catalog=global_catalog)
     current_index = _index_data(current)
     # Compare the entire generated representation: the cache is untrusted and
     # must not keep stale tags, links or authority with valid file hashes.
@@ -312,7 +336,7 @@ def load_index(root):
         raise IndexErrorInfo(
             "index_stale: project knowledge added/removed/modified; run 'index'" + suffix
         )
-    errors = _validate(root, current)
+    errors = _validate(root, current, external_ids=external_ids)
     if errors:
         raise IndexErrorInfo("\n".join(errors))
     return data
