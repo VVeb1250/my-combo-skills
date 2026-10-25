@@ -49,8 +49,13 @@ If the project has `.combo/`, consult [project ecosystem](../practices/project-e
 
 For failed checks, retain the command and first useful symptom, distinguish
 change-caused from pre-existing/environment failures, and fix the causal issue.
-Use [build](../practices/build.md) for compiler/dependency chains or
-[debug](debug.md) when diagnosis becomes the main task.
+If two meaningful repairs leave the same symptom, or the next patch would produce
+no new diagnostic evidence, stop speculative retries. Follow [debug](debug.md):
+collect a discriminating observation with a targeted log, trace, assertion,
+replay or debugger before another patch. Preserve failed attempts in working
+context or an existing task note, not a mandatory new log file. Use
+[build](../practices/build.md) for compiler/dependency failures. Resume
+relevant acceptance checks only after a cause-supported repair.
 
 Return the result, useful file links, check verdicts, and material unchecked
 limits. Commit, publish, or hand off only when existing authorization includes it.

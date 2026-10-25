@@ -39,8 +39,10 @@ result instead of offering implementation as an optional follow-up.
 
 ## Load on demand
 
-Read the chosen workflow and its [context practice](practices/context.md) once
-for outcome ownership, decision triage, and evidence selection.
+Read the chosen workflow, which already embeds the shared context core.
+Read [context](practices/context.md) only for unresolved evidence-selection or
+reporting mechanics; do not load it a second time by default. A direct workflow
+entry does not need to reopen this router.
 Use the smallest additional material that resolves a concrete uncertainty:
 
 - [tests](practices/tests.md) for behavioral seams and coverage;
