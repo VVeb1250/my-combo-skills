@@ -552,7 +552,7 @@ def scoped_route(index, global_index, *, area=None, paths=(), query=None, ident=
     local["required"] = [{**item, "scope": "project", "scoped_id": "project:" + item["id"]}
                          for item in local["required"]]
     local["fallback_used"] = False
-    if global_index is None:
+    if global_index is None or (not query and not ident):
         return local
     suitable = any(item["kind"] == "technique" and item.get("compatibility") != "incompatible"
                    for item in local["suggested"])
@@ -632,6 +632,8 @@ def main(argv=None):
         global_index = None
         if args.global_catalog is not None:
             global_index = load_index(args.global_catalog, global_catalog=True)
+            external_ids = {"global:" + row["id"] for row in global_index["entries"]}
+            index = load_index(root, external_ids=external_ids)
         if args.cmd == "check":
             print(f"OK: index schema {SCHEMA}, {len(index['entries'])} entries, {len(index['areas'])} areas")
             return 0
