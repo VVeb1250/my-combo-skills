@@ -563,7 +563,17 @@ def scoped_route(index, global_index, *, area=None, paths=(), query=None, ident=
     local["required"] = [{**item, "scope": "project", "scoped_id": "project:" + item["id"]}
                          for item in local["required"]]
     local["fallback_used"] = False
-    if global_index is None or (not query and not ident):
+    if global_index is None:
+        return local
+    if ident and ident.startswith("global:"):
+        target_id = ident[len("global:"):]
+        shelf = lookup(global_index, ident=target_id, kind="technique", limit=1,
+                       engine=engine, renderer=renderer)
+        local["suggested"].extend({**item, "scope": "global",
+                                    "scoped_id": "global:" + item["id"]} for item in shelf)
+        local["fallback_used"] = bool(shelf)
+        return local
+    if not query:
         return local
     # Area-only shelves do not establish relevance to the user problem.
     suitable = any(
