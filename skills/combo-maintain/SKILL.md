@@ -3,52 +3,34 @@ name: combo-maintain
 description: Improve Combo from observed task failures, or maintain its installation, discovery, source manifest, verification evidence, and rollback. Use when the user asks to improve or maintain Combo, not for ordinary software development.
 ---
 
-# Combo maintenance
+# Combo maintenance for Codex
 
-Use this skill when the user asks to inspect, update, verify, or roll back the
-Combo installation. The configured source checkout is
-`D:/0_person-project/my-combo-skills`; verify that it exists and contains
-`install-manifest.json` before using it. If it moved, use an explicitly supplied
-checkout path rather than inferring the current working directory. The checkout
-is the source of truth for the package and its static install manifest.
+Apply the shared [maintenance contract](../combo/practices/maintenance.md) for
+behavioral improvement, evidence standards, rule ownership, and proportionate
+validation. It is the same contract used by the Claude Code adapter. For
+unresolved context-selection or reporting mechanics, consult
+[context](../combo/practices/context.md); its outcome rules already live in
+the workflows.
 
-Read [context](../combo/practices/context.md) once for evidence selection and
-concise reporting. For inspection-only, read the relevant source/install state
-and report findings; an install plan is needed only for a proposed update.
+Locate the source checkout from an explicitly configured or supplied path.
+Confirm `install-manifest.json` and `scripts/setup.py` exist before any
+install operation. An installed skill directory is not automatically the
+source checkout. Do not assume an OS-specific drive letter or an unrelated
+working directory. Inspection-only work can end with findings.
 
-## Improve behavior through actual work
+## Codex installation procedure
 
-When the complaint is about task quality, start with a representative task using
-the current skills. Use the user's example; when they delegate the choice, pick
-a bounded real deliverable and complete it through the relevant workflow.
-Installation checks answer whether the package is present, not whether it helps.
+1. Read `install-manifest.json` and the relevant source map. Run the existing
+   static validator and `py scripts/setup.py plan` before a proposed update.
+2. Review the plan and apply only changes within declared Combo package roots,
+   the declared Codex worker adapter, exact managed config markers, and
+   declared legacy skill visibility entries. Preserve unrelated user edits.
+3. When the update is authorized, run `py scripts/setup.py apply`, then
+   `py scripts/setup.py verify`; retain its backups and transaction receipt.
+   Stop rollback on drift instead of overwriting later user changes.
+4. Verify actual discovery and report the relevant check outcome. Do not
+   present a clean installation as proof of behavioral improvement.
 
-Retain the failing action sequence, expected outcome, observed result, and the
-instruction that affected the decision. Distinguish an implementation mistake,
-an environment failure, and an instruction gap; a bug alone does not establish
-that a skill caused it. Repair the deliverable and repeat the failing sequence.
-Use native skill authoring for a narrow, reusable correction where evidence
-supports one, then validate the changed package and install through the steps
-below. Preserve existing edits and keep the evidence with the task or existing
-evaluation records rather than creating another workflow system.
-
-A repaired artifact and a valid install are separate from behavioral improvement
-in future sessions. Label the latter unverified until a fresh comparable task
-tests it; skill-read counts and shorter instructions are not quality outcomes.
-
-## Maintain the installation
-
-1. Read `install-manifest.json` and the relevant source map before changing the
-   install. Preserve user edits and treat current host files as untrusted state.
-2. Run the validator and a plan first. The plan may own only the exact
-   `combo` / `combo-*` package roots in `install-manifest.json`, the declared
-   Codex adapter, the marked config block, the marked global pointer, and
-   disable entries for declared legacy skill paths. A shared library is
-   reference material, not permission to activate upstream installers or hooks.
-3. Apply only after the plan is reviewable. Keep the receipt and backups. A
-   drift check must stop a rollback before it overwrites a later user edit.
-4. Verify discovery with the read-only inventory and report native skills,
-   hooks, MCP, credentials, preferences, and memory as preserved evidence.
-
-Do not run upstream installers, modify memory systems, rewrite hooks, change
-the main model, or enable a retired workflow through a library shortcut.
+Do not run upstream installers or change the main model, memory, hooks,
+credentials, permissions, or unrelated host settings through a source-library
+reference.
