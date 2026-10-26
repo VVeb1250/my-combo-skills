@@ -112,5 +112,28 @@ class MultiScopeTests(unittest.TestCase):
         self.assertEqual(result["items"][0]["scoped_id"], "global:tech.global")
         self.assertEqual(result["total"], 1)
 
+    def test_global_relative_link_stays_global(self):
+        self.add_global("one.md", doc("tech.one", links='[[links]]\nrelation = "related_to"\ntarget = "tech.two"'))
+        self.add_global("two.md", doc("tech.two"))
+        local, global_index = self.indexes()
+        ids = [x["scoped_id"] for x in kb.scoped_hop(local, global_index, "global:tech.one")["items"]]
+        self.assertEqual(ids, ["global:tech.two"])
+
+    def test_global_hop_includes_project_incoming(self):
+        self.add_global("one.md", doc("tech.one"))
+        self.add_local("one.md", doc("tech.local", links='[[links]]\nrelation = "related_to"\ntarget = "global:tech.one"'))
+        global_index = kb.rebuild(self.catalog, global_catalog=True)
+        local = kb.rebuild(self.project, external_ids={"global:tech.one"})
+        ids = [x["scoped_id"] for x in kb.scoped_hop(local, global_index, "global:tech.one")["items"]]
+        self.assertIn("project:tech.local", ids)
+
+    def test_area_only_local_does_not_suppress_global(self):
+        self.add_local("generic.md", doc("tech.local", signal="road generation"))
+        self.add_global("target.md", doc("tech.global", signal="thin silhouette"))
+        local, global_index = self.indexes()
+        output = kb.scoped_route(local, global_index, query="thin silhouette", area=["foliage"])
+        self.assertTrue(output["fallback_used"])
+        self.assertIn("global:tech.global", [r["scoped_id"] for r in output["suggested"]])
+
 if __name__ == "__main__":
     unittest.main()
