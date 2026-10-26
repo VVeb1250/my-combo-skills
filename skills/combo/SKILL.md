@@ -37,8 +37,10 @@ result instead of offering implementation as an optional follow-up.
 
 ## Load on demand
 
-Read the chosen workflow and its [context practice](practices/context.md) once
-for outcome ownership, decision triage, and evidence selection.
+Read the chosen workflow once; its generated context core already carries
+outcome ownership, decision triage, and verification against intent. Read
+[context practice](practices/context.md) only when its additional evidence-
+selection or reporting mechanics remain unresolved.
 Use the smallest additional material that resolves a concrete uncertainty:
 
 - [tests](practices/tests.md) for behavioral seams and coverage;
