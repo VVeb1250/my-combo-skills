@@ -565,11 +565,16 @@ def scoped_route(index, global_index, *, area=None, paths=(), query=None, ident=
     local["fallback_used"] = False
     if global_index is None or (not query and not ident):
         return local
-    suitable = any(item["kind"] == "technique" and item.get("compatibility") != "incompatible"
-                   for item in local["suggested"])
+    # Area-only shelves do not establish relevance to the user problem.
+    suitable = any(
+        item["kind"] == "technique" and
+        (not query or "query" in item["reasons"] or "problem_signal" in item["reasons"]
+         or "explicit_id" in item["reasons"]) and
+        item.get("compatibility") != "incompatible"
+        for item in local["suggested"])
     if suitable:
         return local
-    shelf = lookup(global_index, kind="technique", query=query, area=area[0] if area and len(area) == 1 else None,
+    shelf = lookup(global_index, kind="technique", query=query,
                    engine=engine, renderer=renderer, limit=5)
     local["suggested"].extend({**item, "scope": "global",
                                 "scoped_id": "global:" + item["id"]} for item in shelf)
