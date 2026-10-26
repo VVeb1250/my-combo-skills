@@ -497,11 +497,13 @@ def _scoped_result(row, scope, reasons, *, engine=None, renderer=None):
     return item
 
 
-def _resolve_scoped(index, global_index, identifier):
+def _resolve_scoped(index, global_index, identifier, *, default_scope="project"):
     if identifier.startswith("global:"):
         return "global", identifier[7:], global_index
     if identifier.startswith("project:"):
         return "project", identifier[8:], index
+    if default_scope == "global":
+        return "global", identifier, global_index
     return "project", identifier, index
 
 
@@ -521,7 +523,7 @@ def scoped_hop(index, global_index, identifier, *, limit=10, offset=0, include_i
     edges = []
     origin = by_id[ident]
     for edge in origin["links"]:
-        target_scope, target_id, target_index = _resolve_scoped(index, global_index, edge["target"])
+        target_scope, target_id, target_index = _resolve_scoped(index, global_index, edge["target"], default_scope=scope)
         if target_index is None:
             raise IndexErrorInfo("global catalog is not configured")
         target = next((row for row in target_index["entries"] if row["id"] == target_id), None)
@@ -529,13 +531,22 @@ def scoped_hop(index, global_index, identifier, *, limit=10, offset=0, include_i
             raise IndexErrorInfo(f"broken scoped link: {edge['target']}")
         if include_inactive or target["status"] not in INACTIVE:
             edges.append(_scoped_result(target, target_scope, [edge["relation"] + " from " + identifier]))
-    for row in selected["entries"]:
-        if row["id"] == ident:
-            continue
-        for edge in row["links"]:
-            if edge["target"] in (ident, scope + ":" + ident):
-                if include_inactive or row["status"] not in INACTIVE:
-                    edges.append(_scoped_result(row, scope, ["incoming " + edge["relation"]]))
+    # Also include local records linking to a global record. Each returned record
+    # is an immediate neighbor only; no automatic second hop is performed.
+    sources = [(scope, selected)]
+    if scope == "global":
+        sources.append(("project", index))
+    for source_scope, source_index in sources:
+        for row in source_index["entries"]:
+            if source_scope == scope and row["id"] == ident:
+                continue
+            for edge in row["links"]:
+                target_scope, target_id, _ = _resolve_scoped(
+                    index, global_index, edge["target"], default_scope=source_scope)
+                if target_scope == scope and target_id == ident:
+                    if include_inactive or row["status"] not in INACTIVE:
+                        edges.append(_scoped_result(
+                            row, source_scope, ["incoming " + edge["relation"]]))
     unique = {item["scoped_id"]: item for item in edges}
     items = list(unique.values())
     return {"from": identifier, "type": "record", "total": len(items),
