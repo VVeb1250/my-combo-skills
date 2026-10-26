@@ -1,31 +1,41 @@
 ---
 name: combo-maintain
-description: Inspect, update, verify, or roll back the Combo installation for Claude Code, including source provenance and skill discovery. Use for package maintenance, not ordinary task execution.
+description: Improve Combo from observed task failures, or inspect, update, verify, and roll back its Claude Code installation. Use for Combo quality or package maintenance, not ordinary execution.
 disable-model-invocation: false
 user-invocable: true
 ---
 
 # Combo maintenance for Claude Code
 
-The source checkout is `D:/0_person-project/my-combo-skills`. Confirm it contains
-`adapters/claude/install-manifest.json` and `scripts/setup-claude.py`; if moved,
-use the source path supplied by the user. Runtime workflows need only their
-installed package; this checkout is needed for package maintenance.
+Apply the shared [maintenance contract](../combo/practices/maintenance.md)
+for behavioral improvement, evidence standards, rule ownership, and
+proportionate validation. It is the same contract used by the Codex entry.
+For unresolved context-selection or reporting mechanics, consult
+[context](../combo/practices/context.md); its outcome rules already live in
+the workflows.
 
-Read [context](../combo/practices/context.md) once for evidence selection and
-concise reporting. Inspection-only ends with findings; updates use the plan below.
+Locate the source checkout from an explicitly configured or supplied path.
+Confirm `adapters/claude/install-manifest.json` and
+`scripts/setup-claude.py` exist before any install operation. The runtime
+only needs the installed package; do not assume the checkout is on a
+particular drive or silently use an unrelated working directory.
+Inspection-only work can end with findings.
 
-Read the Claude manifest, inspect relevant changes, and run
-`py scripts/setup-claude.py plan` before applying an update. A reviewable plan
-plus the user's existing setup/update request authorizes that scoped work.
-Use `apply`, then `verify`; keep the generated receipt and backups.
+## Claude Code installation procedure
 
-The installer owns only declared Combo skill files, `agents/combo-worker.md`,
-the marked Combo policy, and the exact retired-plugin/skill visibility keys.
-Preserve the host's model, effort, permissions, hooks, credentials, memory,
-and unrelated plugins. Updating pinned source references does not activate
-their installers or competing memory systems.
+1. Read the Claude manifest and relevant source mappings; inspect changes
+   and run `py scripts/setup-claude.py plan` before a proposed update.
+2. Review the plan, preserving all non-Combo host state. An existing authorized
+   setup/update request covers only its stated scope.
+3. When authorized, run `py scripts/setup-claude.py apply`, then
+   `py scripts/setup-claude.py verify`; retain its backups and receipt.
+   Roll back with `py scripts/setup-claude.py rollback --receipt <receipt.json>`
+   only when drift checks permit.
+4. Validate actual Claude skill discovery and applicable checks, reporting
+   behavioral improvement as unverified unless separately observed.
 
-Rollback uses `py scripts/setup-claude.py rollback --receipt <receipt.json>`.
-Stop on detected drift rather than overwriting a later user edit. Validate
-actual Claude discovery and relevant behavior before reporting success.
+The installer owns only declared Combo skill files, its worker adapter,
+marked policy, and exact retired-plugin/skill visibility keys. Preserve
+the host's model, effort, permissions, hooks, credentials, memory,
+unrelated plugins, and native skills. Pinned source references do not
+authorize external installers or competing memory systems.
