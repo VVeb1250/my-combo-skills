@@ -5,10 +5,16 @@ publishing unless authorized. Apply the context rules at the end of this file; r
 [context](../practices/context.md) only for evidence-selection or reporting
 mechanics that are unresolved.
 
-1. Resolve the target/revision. If omitted, inspect the current diff and state
-   the safe assumption. Confirm the target exists and has reviewable material.
+1. Resolve the target, revision, and requested scope. For a change review with
+   no target named, inspect the current diff and state the safe assumption. An
+   explicit folder-wide or repository-wide audit is **not** a diff review.
+   Confirm the target exists and has reviewable material.
 2. Read the originating requirement and affected callers, tests, configuration,
    and conventions. Cover the requested scope even when early files look clean.
+   For a repository-wide audit, first map entrypoints, important data/trust
+   paths, expected load, and existing checks. Go deep first where failures have
+   the highest consequence; sample less critical areas and state what was not
+   inspected. Do not claim a complete file-by-file audit from a risk sample.
 3. If `.combo/` exists, use accepted specs and authorized changes as the contract and retro as hypotheses, not proof of a live defect. Evaluate requirement fidelity (missing, incompatible, partial, or extra
    behavior) and implementation quality (correctness, error boundaries, data,
    concurrency, security, and maintainability) in one impact ranking. When
