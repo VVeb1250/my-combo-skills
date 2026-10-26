@@ -27,8 +27,8 @@ population parameters, not fitted to this learner. Use authoritative references 
 changing or uncertain facts and native visuals/artifacts when they clarify the
 mechanism or are requested.
 
-Finish with the requested explanation and practice. Reduce redundant framing,
-not the examples or reasoning the learner needs. Create course records only for
+Finish with the explanation and any practice actually requested. Reduce
+redundant framing, not the examples or reasoning the learner needs. Create course records only for
 a requested workspace; durable personal information follows host memory rules.
 
 <!-- BEGIN CONTEXT CORE (generated from practices/context.md by scripts/sync-context-core.py; edit there) -->
