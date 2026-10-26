@@ -26,6 +26,15 @@ Where `.combo/` exists, retrieve only relevant accepted specs, retro and tested 
    only as the signal requires. Prefer a debugger/REPL or targeted instrumentation;
    tag temporary logs and keep secrets out.
 
+When probes repeatedly fail to distinguish causes, stop repeating the same
+attempt. Retain a compact attempt history: symptom, candidate causes, probe
+inputs/commands, actual observations, eliminated explanations, and the next
+check that could discriminate. Reuse an existing task checkpoint for long or
+resumed work; keep it in working context for a short investigation. Switch the
+probe, evidence source, or boundary rather than adding more speculative fixes.
+Do not create a per-task log or mandate extra instrumentation when progress is
+already clear.
+
 Use [security](../practices/security.md) when the failing path crosses a real
 trust or sensitive-data boundary. Lack of reproduction alone is not a blocker.
 
