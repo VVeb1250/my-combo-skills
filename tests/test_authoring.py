@@ -65,6 +65,32 @@ class AuthoringEntryTests(unittest.TestCase):
             )
             self.assertIn(f"(../templates/{name}.md)", practice, name)
 
+    def test_both_hosts_share_the_maintenance_contract(self):
+        contract = ROOT / "skills/combo/practices/maintenance.md"
+        self.assertTrue(contract.is_file())
+        body = contract.read_text(encoding="utf-8")
+        self.assertIn("combo-author", body)
+        self.assertIn("combo-maintain", body)
+        for relative in (
+            "skills/combo-maintain/SKILL.md",
+            "adapters/claude/overrides/combo-maintain/SKILL.md",
+        ):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertIn("../combo/practices/maintenance.md", text, relative)
+            self.assertIn("observed", text.lower(), relative)
+
+    def test_authoring_remains_explicit_only_and_keeps_maintenance_boundary(self):
+        for relative in (
+            "skills/combo-author/SKILL.md",
+            "adapters/claude/overrides/combo-author/SKILL.md",
+        ):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertIn("combo-maintain", text, relative)
+        for relative in ("POLICY.md", "adapters/claude/POLICY.md"):
+            text = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertIn("Structural authoring", text, relative)
+            self.assertIn("observed-failure", text, relative)
+
     def test_maintain_does_not_hardcode_a_source_checkout(self):
         for relative in (
             "skills/combo-maintain/SKILL.md",
