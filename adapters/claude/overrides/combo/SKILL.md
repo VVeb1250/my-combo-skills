@@ -75,7 +75,8 @@ For Plan Mode, delegation, or host context controls, consult
 
 ## System entries
 
-Use `/combo-author` only when the user explicitly asks to customize this pack
-or build a Combo-like system. Use `/combo-maintain` for installation, update,
-verification, or rollback. These are not task routes and do not participate in
+Use `/combo-author` only for explicitly requested structural customization,
+new skills/workflows/adapters, or a Combo-like system. Use `/combo-maintain`
+for observed-failure improvement of existing rules as well as installation,
+update, verification, or rollback. These are not task routes and do not participate in
 implicit workflow selection.
