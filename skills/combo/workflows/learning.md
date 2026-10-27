@@ -7,8 +7,10 @@ mechanics that are unresolved. Ask about prerequisites only when they change cor
 
 Explain the concept needed for that outcome, then work a concrete example with
 useful reasoning visible. Check example mechanics, including executable behavior
-and type consistency for code. Offer a small recall or transfer exercise aimed
-at an important misconception; avoid recognition-only questions when they would
+and type consistency for code. Include a small recall or transfer exercise when the user requests practice,
+interactive instruction, or a course designed for active recall. For read-only
+teaching, use worked examples and contrastive cases without requiring a learner
+response or ending with a quiz. Avoid recognition-only questions when they would
 hide misunderstanding.
 
 Give feedback from the learner's actual response and adjust the next step.
@@ -25,8 +27,8 @@ population parameters, not fitted to this learner. Use authoritative references 
 changing or uncertain facts and native visuals/artifacts when they clarify the
 mechanism or are requested.
 
-Finish with the requested explanation and practice. Reduce redundant framing,
-not the examples or reasoning the learner needs. Create course records only for
+Finish with the explanation and any practice actually requested. Reduce
+redundant framing, not the examples or reasoning the learner needs. Create course records only for
 a requested workspace; durable personal information follows host memory rules.
 
 <!-- BEGIN CONTEXT CORE (generated from practices/context.md by scripts/sync-context-core.py; edit there) -->
