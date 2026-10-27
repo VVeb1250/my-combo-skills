@@ -13,13 +13,14 @@ infer the checkout from the current working directory or a machine-specific
 default. Runtime workflows need only their installed package; this checkout is
 needed for package maintenance.
 
-For authoring or adapting the pack itself, use
-[authoring](../combo/practices/authoring.md) or the explicit `/combo-author`
-entry instead. This skill owns installation maintenance and behavior improvement
-from observed task failures, not redesigning the workflow pack.
+For new workflows, entries, practices, host adapters, or structural pack
+redesign, use explicit `/combo-author`. For observed failures or successes in
+existing Combo behavior, this skill may fix an existing canonical rule without
+creating a competing owner. Read the shared
+[maintenance contract](../combo/practices/maintenance.md), also used by Codex.
 
-Read [context](../combo/practices/context.md) once for evidence selection and
-concise reporting. Inspection-only ends with findings; updates use the plan below.
+Read [context](../combo/practices/context.md) only for unresolved evidence
+selection or reporting mechanics; task workflows embed the context core. Inspection-only ends with findings; updates use the plan below.
 
 Read the Claude manifest, inspect relevant changes, and run
 `py scripts/setup-claude.py plan` before applying an update. A reviewable plan
