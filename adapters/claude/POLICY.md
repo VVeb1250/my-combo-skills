@@ -53,4 +53,6 @@ The host's configured memory and permission rules remain authoritative.
 
 System entries are not task routes. `/combo-author` is explicit-only for
 customizing this pack or building a Combo-like system, not an implicit route.
-`/combo-maintain` owns installation, update, verification, and rollback.
+`/combo-maintain` owns observed-failure improvement to existing Combo behavior
+and installation, update, verification, and rollback. Structural authoring
+remains explicit-only.
