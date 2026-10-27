@@ -12,6 +12,7 @@ const relativeLink = /!?\[[^\]]*\]\(([^)\s]+)(?:\s+['"][^)]*['"])?\)/g;
 let packageRoots = [];
 let manifestEntries = [];
 let ownershipIndex = defaultOwnershipIndex;
+const explicitOnly = new Set();
 
 function read(file) {
   return fs.readFileSync(file, 'utf8');
@@ -95,7 +96,12 @@ function validatePackage(name) {
   else {
     try {
       const parsed = yaml.load(read(policy));
-      if (!parsed || parsed.policy?.allow_implicit_invocation !== true) errors.push(`${name}: implicit invocation is not enabled`);
+      const implicit = parsed?.policy?.allow_implicit_invocation;
+      if (explicitOnly.has(name)) {
+        if (implicit !== false) errors.push(`${name}: explicit-only entry must disable implicit invocation`);
+      } else if (implicit !== true) {
+        errors.push(`${name}: implicit invocation is not enabled`);
+      }
     } catch (_) {
       errors.push(`${name}: invalid agents/openai.yaml`);
     }
@@ -161,6 +167,20 @@ try {
       packageRoots.push(name);
     }
     if (!seen.has('combo')) errors.push('install-manifest.json: source_roots must include combo');
+  }
+  const architecture = manifest.architecture;
+  if (architecture && architecture.explicit_only !== undefined) {
+    if (!Array.isArray(architecture.explicit_only)) {
+      errors.push('install-manifest.json: architecture.explicit_only must be an array');
+    } else {
+      for (const name of architecture.explicit_only) {
+        if (typeof name !== 'string' || !packageRoots.includes(name)) {
+          errors.push(`install-manifest.json: explicit-only entry is not a declared package: ${name}`);
+        } else {
+          explicitOnly.add(name);
+        }
+      }
+    }
   }
   ownershipIndex = canonicalRelative(manifest.ownership_index || defaultOwnershipIndex, 'install-manifest.json: ownership_index') || defaultOwnershipIndex;
   if (ownershipIndex !== defaultOwnershipIndex) {

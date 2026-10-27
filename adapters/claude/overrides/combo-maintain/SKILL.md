@@ -7,13 +7,20 @@ user-invocable: true
 
 # Combo maintenance for Claude Code
 
-The source checkout is `D:/0_person-project/my-combo-skills`. Confirm it contains
-`adapters/claude/install-manifest.json` and `scripts/setup-claude.py`; if moved,
-use the source path supplied by the user. Runtime workflows need only their
-installed package; this checkout is needed for package maintenance.
+The source checkout is the path the user supplies. Confirm it contains
+`adapters/claude/install-manifest.json` and `scripts/setup-claude.py`; do not
+infer the checkout from the current working directory or a machine-specific
+default. Runtime workflows need only their installed package; this checkout is
+needed for package maintenance.
 
-Read [context](../combo/practices/context.md) once for evidence selection and
-concise reporting. Inspection-only ends with findings; updates use the plan below.
+For new workflows, entries, practices, host adapters, or structural pack
+redesign, use explicit `/combo-author`. For observed failures or successes in
+existing Combo behavior, this skill may fix an existing canonical rule without
+creating a competing owner. Read the shared
+[maintenance contract](../combo/practices/maintenance.md), also used by Codex.
+
+Read [context](../combo/practices/context.md) only for unresolved evidence
+selection or reporting mechanics; task workflows embed the context core. Inspection-only ends with findings; updates use the plan below.
 
 Read the Claude manifest, inspect relevant changes, and run
 `py scripts/setup-claude.py plan` before applying an update. A reviewable plan

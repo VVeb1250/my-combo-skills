@@ -6,14 +6,21 @@ description: Improve Combo from observed task failures, or maintain its installa
 # Combo maintenance
 
 Use this skill when the user asks to inspect, update, verify, or roll back the
-Combo installation. The configured source checkout is
-`D:/0_person-project/my-combo-skills`; verify that it exists and contains
-`install-manifest.json` before using it. If it moved, use an explicitly supplied
-checkout path rather than inferring the current working directory. The checkout
-is the source of truth for the package and its static install manifest.
+Combo installation. The source checkout is the path the user supplies; verify
+that it contains `install-manifest.json` before using it. Do not infer the
+checkout from the current working directory or a machine-specific default. The
+checkout is the source of truth for the package and its static install manifest.
 
-Read [context](../combo/practices/context.md) once for evidence selection and
-concise reporting. For inspection-only, read the relevant source/install state
+For creating a new workflow, practice, entry, host adapter, or designing a
+Combo-like pack, use explicit `$combo-author`. For a real failure or success
+observed while using existing Combo behavior, this skill may correct the
+existing canonical instruction, without creating duplicate owners or invoking
+a new authoring pipeline. Read the shared
+[maintenance contract](../combo/practices/maintenance.md) for the boundary,
+evidence standard, and regression approach.
+
+Read [context](../combo/practices/context.md) only when evidence-selection or
+reporting mechanics remain unresolved; task workflows embed the context core. For inspection-only, read the relevant source/install state
 and report findings; an install plan is needed only for a proposed update.
 
 ## Improve behavior through actual work

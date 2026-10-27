@@ -41,13 +41,23 @@ class RoutingCases(unittest.TestCase):
             self.assertNotIn("combo", prompt, case["id"])
             self.assertNotIn("skill", prompt, case["id"])
 
-    def test_every_direct_entry_has_a_positive_case_and_negatives_exist(self):
+    def test_every_implicit_entry_has_a_positive_case_and_negatives_exist(self):
         positives = {c["expected"] for c in self.cases if c["kind"] == "positive"}
         direct = self.entries - {"combo"}
         self.assertEqual(direct - positives, set())
         negatives = [c for c in self.cases if c["kind"] == "negative"]
         self.assertGreaterEqual(len(negatives), 5)
         self.assertTrue(all(probe.NONE in c["acceptable"] for c in negatives))
+
+    def test_explicit_only_entries_are_not_implicit_routes(self):
+        self.assertNotIn("combo-author", self.entries)
+        self.assertIn("combo-maintain", self.entries)
+        prompted = {
+            route
+            for case in self.cases
+            for route in [case["expected"], *case.get("confusable_with", [])]
+        }
+        self.assertNotIn("combo-author", prompted)
 
     def test_audit_confusable_pairs_are_covered(self):
         pairs = {(c["expected"], other) for c in self.cases for other in c.get("confusable_with", [])}

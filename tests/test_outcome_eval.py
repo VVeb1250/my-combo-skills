@@ -238,8 +238,9 @@ class OutcomeChecks(unittest.TestCase):
             self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_all_direct_workflows_reach_shared_context(self):
+        system_entries = {"combo-author", "combo-maintain"}
         for entry in (ROOT / "skills").glob("combo-*/SKILL.md"):
-            if entry.parent.name == "combo-maintain":
+            if entry.parent.name in system_entries:
                 continue
             name = entry.parent.name.removeprefix("combo-")
             workflow = ROOT / "skills/combo/workflows" / f"{name}.md"

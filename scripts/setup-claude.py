@@ -33,6 +33,7 @@ PACKAGE_PREFIX = "skills/"
 PACKAGE_NAME_RE = re.compile(r"^combo(?:-[a-z0-9]+)*$")
 EXPECTED_PACKAGES = (
     "combo",
+    "combo-author",
     "combo-business",
     "combo-content",
     "combo-debug",
@@ -155,7 +156,7 @@ def _manifest_package_roots(manifest: dict) -> dict[str, str]:
         roots[name] = source
     if set(roots) != set(EXPECTED_PACKAGES):
         raise ValueError(
-            "Claude source_roots must contain exactly the 14 declared Combo packages"
+            f"Claude source_roots must contain exactly the {len(EXPECTED_PACKAGES)} declared Combo packages"
         )
     return roots
 

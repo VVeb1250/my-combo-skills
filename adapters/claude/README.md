@@ -4,14 +4,17 @@
 และ ECC ร่วมกับ Codex แต่แยกวิธีติดตั้งและคำสั่งที่ขึ้นกับ host
 ขอบเขตนี้คือ Claude Code บนเครื่อง ไม่ใช่ Claude เว็บหรือ Cowork
 
-**ติดตั้งและตรวจแล้ว:** discovery ครบ 14 skills, auto-trigger ผ่านใน 3 งาน
-และไม่โหลด workflow ในคำขอแปลสั้น ตรวจโค้ดที่ Claude สร้างผ่าน 6 tests
-ดู [ผลทดสอบและขอบเขตหลักฐาน](../../audit/claude/REPORT.md)
+**ติดตั้งและตรวจแล้ว:** discovery ครบ 14 skills ในรอบนั้น, auto-trigger ผ่านใน
+3 งาน และไม่โหลด workflow ในคำขอแปลสั้น ตรวจโค้ดที่ Claude สร้างผ่าน 6 tests
+รอบ authoring เพิ่ม `/combo-author` แบบ explicit-only รวมเป็น 15 skills
+และ verify installed bytes ผ่าน ดู [ผลทดสอบและขอบเขตหลักฐาน](../../audit/claude/REPORT.md)
 
 ## สิ่งที่ปรับให้ Claude
 
 - 12 ทางเข้าตามงาน พร้อม `combo` router และ `combo-maintain` รวม 14 skills
   เปิดทั้ง automatic invocation และคำสั่ง `/combo-*`
+- `/combo-author` เป็น explicit-only (`disable-model-invocation: true`,
+  `user-invocable: true`) สำหรับปรับ pack หรือสร้างระบบแบบ Combo รวมเป็น 15 skills
 - เลือก Skill tool หนึ่งทางหลัก แล้วอ่านเฉพาะ workflow และ references ที่จำเป็น
   แทนคำสั่งเดิมที่ให้อ่านทุก skill ที่อาจเกี่ยวข้อง
 - ใช้ `${CLAUDE_SKILL_DIR}` อ้างไฟล์โดยไม่สมมติ working directory
@@ -38,6 +41,15 @@ settings hooks ของผู้ใช้และกฎ memory ของ Claud
 
 Auto-trigger อาศัย description และ global routing guidance จึงไม่ใช่การบังคับ
 แบบ deterministic ผลตรวจจริงต้องแยกจากคำอธิบายโครงสร้าง
+
+## ปรับแต่ง pack
+
+ใช้ `/combo-author` เมื่อต้องการเพิ่ม แก้ หรือถอด workflow, practice, entry,
+template หรือ host adapter ของ pack นี้ หรือสร้างระบบแบบ Combo ที่เล็กกว่าเดิม
+ทางเข้านี้เป็น explicit-only จึงไม่ถูกเลือกอัตโนมัติจากคำขอทำงานปกติ
+เริ่มจาก [authoring practice](../../skills/combo/practices/authoring.md) และ
+[คู่มือ authoring](../../docs/authoring.md) ส่วนการติดตั้ง อัปเดต ตรวจสอบ หรือ
+rollback ใช้ `/combo-maintain`
 
 ## ดูแลและ rollback
 

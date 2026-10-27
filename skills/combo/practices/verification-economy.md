@@ -1,7 +1,29 @@
-# Evidence-efficient verification and structural maintenance
+# Evidence-efficient verification
 
-Choose evidence that could falsify the actual acceptance at the lowest adequate cost. Prefer focused deterministic tests, replay/simulation traces, type checks and integration probes at the real public seam. For UI/cross-component journeys, use Browser only where the acceptance requires observed interaction or cheaper evidence leaves a material gap. Follow host browser rules.
+Use this practice **only** when deciding whether to escalate from adequate
+focused checks to an additional expensive Browser journey, broad test suite,
+external reviewer, or other costly verification. Acceptance and stopping point
+are owned by [context](context.md); test seams and relevant checks by
+[tests](tests.md); rendered/reference fidelity by
+[outcome evidence](outcome-evidence.md). This practice does not add another
+mandatory review stage.
 
-Reuse still-valid evidence when revision, relevant code, inputs and environment are unchanged; do not replay a costly journey to gain subjective confidence. Escalate only for a failed result, changed boundary or uncovered criterion. One model agreeing with itself is not independent proof. Stop on adequate coverage, not personal confidence. Preserve explicit user/repository full suites, trust boundaries, security and data-loss gates. Report exact unverified claims when access is blocked.
+Choose evidence capable of falsifying the uncovered criterion at the lowest
+adequate cost. Prefer existing deterministic results, focused tests, type
+checks, replay/simulation traces, or integration probes at the public seam.
+Use the Browser for UI/cross-component journeys when observed interaction is
+part of acceptance or cheaper evidence leaves a material gap. Follow native
+host/browser requirements.
 
-After repeated edits, bugs or shotgun changes, inspect ownership, duplicated transitions, coupling and test seams. Apply targeted behavior-preserving refactoring only with a concrete reason and a regression check, never an automatic wide rewrite. A shortcut is allowed only when its preconditions hold and its validation covers the same required outcome. If it fails, use its fallback; don't silently trim coverage.
+Reuse valid checks when the revision, relevant code, inputs and environment
+are unchanged. Escalate for a failed check, changed behavior boundary, material
+uncovered criterion, or explicitly required coverage, **not** for another
+confidence pass on unchanged evidence. A model agreeing with itself is not
+independent proof. Stop once acceptance has adequate support; disclose exact
+unverified claims when access is blocked. Do not weaken explicitly requested
+full suites, repository gates, security or data-loss requirements.
+
+Structural refactoring belongs to [simplicity](simplicity.md).
+Project-local shortcut preconditions, validation and fallback belong to
+[project ecosystem](project-ecosystem.md); neither is a required part of
+verification escalation.

@@ -24,7 +24,8 @@ mandatory interview/tracker/commit ceremonies, and indiscriminate reviewer fanou
 ## Architecture decision
 
 Ship candidate B: twelve direct workflow entries, a fallback `combo` router,
-and `combo-maintain` for installation maintenance. All paths share workflow and
+`combo-maintain` for installation maintenance, and the explicit-only
+`combo-author` for changing the pack itself. All paths share workflow and
 reference files inside `combo`; no workflow body is duplicated. The matched
 comparison and its limits are recorded in `audit/ab/DECISION.md`. This is a
 maintainability choice for the full domain scope, not proof of universal model
