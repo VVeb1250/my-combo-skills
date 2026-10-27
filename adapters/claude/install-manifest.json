@@ -3,6 +3,7 @@
   "profile": "claude-combo",
   "source_roots": [
     {"source": "skills/combo", "target": "skills/combo"},
+    {"source": "skills/combo-author", "target": "skills/combo-author"},
     {"source": "skills/combo-business", "target": "skills/combo-business"},
     {"source": "skills/combo-content", "target": "skills/combo-content"},
     {"source": "skills/combo-debug", "target": "skills/combo-debug"},
