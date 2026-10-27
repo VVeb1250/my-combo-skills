@@ -26,6 +26,12 @@ Where `.combo/` exists, retrieve only relevant accepted specs, retro and tested 
    only as the signal requires. Prefer a debugger/REPL or targeted instrumentation;
    tag temporary logs and keep secrets out.
 
+For prolonged failures, keep a compact record of hypotheses, attempts, observations
+and eliminated causes in working context or an existing task artifact. Before a
+retry, identify what new evidence will distinguish competing explanations;
+otherwise instrument the uncertain boundary rather than guessing at another
+patch. Prefer scoped state snapshots or structured logs over broad verbose logs.
+
 Use [security](../practices/security.md) when the failing path crosses a real
 trust or sensitive-data boundary. Lack of reproduction alone is not a blocker.
 

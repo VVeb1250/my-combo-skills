@@ -5,6 +5,10 @@ Apply the context rules at the end of this file; read
 [context](../practices/context.md) only for evidence-selection or reporting
 mechanics that are unresolved.
 Native image/design/video/document/presentation tools own concrete operations.
+Where `.combo/` already exists, consult [project ecosystem](../practices/project-ecosystem.md)
+for task-relevant accepted visual or artifact specs, then applicable retro and
+shortcuts. Verify old lessons against the supplied reference; they do not define
+the user's taste. Do not scaffold project knowledge during ordinary production.
 
 For reference-led work, inspect the actual reference and separate its role
 (shape, style, pose, framing, or identity) from unrelated qualities. Lock choices
