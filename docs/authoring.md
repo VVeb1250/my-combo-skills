@@ -10,8 +10,9 @@ This guide is for two audiences:
 The agent-facing decision procedure is
 [`skills/combo/practices/authoring.md`](../skills/combo/practices/authoring.md).
 Use the explicit `/combo-author` or `$combo-author` entry when you want an agent
-to apply it. Use `combo-maintain` for installation updates, verification, and
-rollback.
+to apply it. Use `combo-maintain` for evidence-based correction of existing Combo behavior,
+installation updates, verification, and rollback. New or structurally changed
+skills, workflows, and adapters remain explicit authoring work.
 
 ## The pattern in this repository
 
