@@ -20,6 +20,7 @@ invariant before choosing the test shape.
   trust boundaries need rejection-path checks. Complete explicitly requested
   suites and gates. Reuse results while their relevant inputs and code remain
   unchanged; rerun when freshness is requested or the evidence is invalidated.
+- Consider property-based testing only for a falsifiable invariant spanning many inputs (for example round-trip, idempotence, ordering, conservation, or seeded graph reachability). Use an independent oracle, generators that exercise valid inputs, and retain the failing seed or counterexample. Otherwise use focused example tests; do not install a framework or run a large random campaign by default.
 - Do not add a test suite for a tiny reversible edit with no behavior risk. Do
   not test implementation details merely to increase coverage.
 - If no appropriate seam exists, record the best available evidence and the
