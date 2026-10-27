@@ -7,6 +7,10 @@
       "target": "skills/combo"
     },
     {
+      "source": "skills/combo-author",
+      "target": "skills/combo-author"
+    },
+    {
       "source": "skills/combo-business",
       "target": "skills/combo-business"
     },
@@ -317,6 +321,10 @@
     "primary_entries": 12,
     "shared_router": "combo",
     "maintenance": "combo-maintain",
+    "authoring": "combo-author",
+    "explicit_only": [
+      "combo-author"
+    ],
     "decision": "audit/ab/DECISION.md"
   },
   "full_library": true
