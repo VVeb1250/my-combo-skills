@@ -3,8 +3,10 @@
 Use this practice only when the user explicitly asks to customize this Combo
 pack, add or revise a workflow, practice, entry, template, or adapter, or build
 a Combo-like system from scratch. It is not a task workflow; use the task
-entries for ordinary work. For installation, update, verification, or rollback
-of an existing install, use `combo-maintain`.
+entries for ordinary work. For installation, update, verification, rollback, or an evidence-backed fix to
+existing Combo behavior, use `combo-maintain` and the shared
+[maintenance contract](maintenance.md). This authoring practice owns explicit
+creation and structural customization, not every bug fix to an existing rule.
 
 ## Start from observed work
 
