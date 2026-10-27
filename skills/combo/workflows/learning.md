@@ -7,9 +7,7 @@ mechanics that are unresolved. Ask about prerequisites only when they change cor
 
 Explain the concept needed for that outcome, then work a concrete example with
 useful reasoning visible. Check example mechanics, including executable behavior
-and type consistency for code. Offer a small recall or transfer exercise aimed
-at an important misconception; avoid recognition-only questions when they would
-hide misunderstanding.
+and type consistency for code. Offer a recall or transfer exercise when the user requests practice or interactive instruction. For read-only teaching, use worked examples and contrastive cases without requiring a response or ending with a quiz. Avoid recognition-only questions that hide misunderstanding.
 
 Give feedback from the learner's actual response and adjust the next step.
 Keep solutions separate when early disclosure spoils practice. For a bounded
@@ -25,7 +23,7 @@ population parameters, not fitted to this learner. Use authoritative references 
 changing or uncertain facts and native visuals/artifacts when they clarify the
 mechanism or are requested.
 
-Finish with the requested explanation and practice. Reduce redundant framing,
+Finish with the requested explanation and any practice actually requested. Reduce redundant framing,
 not the examples or reasoning the learner needs. Create course records only for
 a requested workspace; durable personal information follows host memory rules.
 
