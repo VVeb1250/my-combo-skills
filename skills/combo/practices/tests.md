@@ -12,6 +12,15 @@ invariant before choosing the test shape.
   actually occurs; a shallow test can give false confidence.
 - Prefer deterministic fixtures, pinned time or randomness, isolated state, and
   assertions on the specific symptom. "It did not crash" is rarely enough.
+- When behavior admits a falsifiable property over a broad input space
+  (round-trip, idempotence, ordering, conservation, seeded reproducibility,
+  or valid map/graph reachability), consider property-based testing instead
+  of enumerating only examples. Define the expected invariant independently
+  of the implementation; reject tautological checks, generators that filter
+  away meaningful inputs, and suites that execute no valid cases. Preserve a
+  failing seed and minimal counterexample for regression. Otherwise prefer
+  focused example tests. Reuse installed testing tools; do not add a property
+  testing dependency or run a large randomized campaign by default.
 - Run a focused test while iterating, then broaden to typecheck, lint, build,
   integration, or the full suite according to blast radius and repository
   practice.
