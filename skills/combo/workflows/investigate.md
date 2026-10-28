@@ -18,7 +18,11 @@ current code. Investigation-only does not authorize writing project knowledge.
 2. Inspect primary evidence along the actual input-to-output path: entrypoint,
    callers, transformations, error boundaries, persistence, ownership, and tests.
    Expand only to explain an unresolved link, counterexample, or contract.
-3. Separate observations from inference. Use a read-only discriminating probe
+3. For WHY questions, check relevant accepted project decisions/specs and
+   their existing one-hop links first. If these do not settle the rationale,
+   inspect targeted design records, commits, PRs or issues. Never invent a past
+   intention from the current code or perform a full history crawl by default.
+4. Separate observations from inference. Use a read-only discriminating probe
    when it can settle the question. For changing or uncertain external facts,
    verify authoritative documentation and retain version/date.
 4. For comparisons, state criteria from the user's constraints, evaluate viable
