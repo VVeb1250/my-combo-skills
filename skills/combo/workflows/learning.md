@@ -5,6 +5,12 @@ and time. Apply the context rules at the end of this file; read
 [context](../practices/context.md) only for evidence-selection or reporting
 mechanics that are unresolved. Ask about prerequisites only when they change correctness.
 
+HOW/WHY teaching questions seek mechanism, causal explanation, and a useful
+mental model, not necessarily project archaeology. Keep learning as the primary
+workflow when the user asks to be taught, even if the example is from their
+codebase; retrieve specific accepted decisions through the investigation method
+only when necessary for factual accuracy. Do not run two full workflows.
+
 Explain the concept needed for that outcome, then work a concrete example with
 useful reasoning visible. Check example mechanics, including executable behavior
 and type consistency for code. Include a small recall or transfer exercise when the user requests practice,
