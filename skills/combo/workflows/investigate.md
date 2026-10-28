@@ -8,7 +8,13 @@ Where `.combo/` already exists, consult [project ecosystem](../practices/project
 for task-relevant specs, decisions and lessons; compare historical claims with
 current code. Investigation-only does not authorize writing project knowledge.
 
-1. Bound the question, decision, and relevant version/environment.
+1. Bound the question, decision, and relevant version/environment. Distinguish
+   HOW (trace what the current system does via code, callers and tests) from WHY
+   (recover the original accepted decision, constraints, considered alternatives
+   and primary evidence). Current implementation alone cannot establish the
+   historical rationale. If the user wants a lesson or general conceptual
+   explanation rather than the actual project's facts, use learning as the
+   primary workflow, and retrieve project evidence only as needed.
 2. Inspect primary evidence along the actual input-to-output path: entrypoint,
    callers, transformations, error boundaries, persistence, ownership, and tests.
    Expand only to explain an unresolved link, counterexample, or contract.
