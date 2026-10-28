@@ -24,6 +24,9 @@ invariant before choosing the test shape.
 - Run a focused test while iterating, then broaden to typecheck, lint, build,
   integration, or the full suite according to blast radius and repository
   practice.
+- For a consequential change, name the one or two critical invariants that
+  might be broken before expanding checks; select the smallest existing seam
+  that can falsify them. Do not require this step for tiny reversible edits.
 - Map checks to acceptance: shared contracts need affected-caller coverage;
   dependency/config changes need the relevant build or integration check;
   trust boundaries need rejection-path checks. Complete explicitly requested
