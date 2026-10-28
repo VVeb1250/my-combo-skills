@@ -29,6 +29,11 @@ invariant before choosing the test shape.
   trust boundaries need rejection-path checks. Complete explicitly requested
   suites and gates. Reuse results while their relevant inputs and code remain
   unchanged; rerun when freshness is requested or the evidence is invalidated.
+- For a recurring defect, first ask whether an existing architecture, type/schema,
+  static check, or public-seam regression can make invalid behavior impossible
+  or observable. Choose the lowest-maintenance effective enforcement and replay
+  the original failure to show it would be caught. A prose rule is not a
+  regression check; avoid duplicate gates without distinct failure coverage.
 - Do not add a test suite for a tiny reversible edit with no behavior risk. Do
   not test implementation details merely to increase coverage.
 - If no appropriate seam exists, record the best available evidence and the
