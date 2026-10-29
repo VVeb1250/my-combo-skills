@@ -8,14 +8,24 @@ Where `.combo/` already exists, consult [project ecosystem](../practices/project
 for task-relevant specs, decisions and lessons; compare historical claims with
 current code. Investigation-only does not authorize writing project knowledge.
 
-1. Bound the question, decision, and relevant version/environment.
+1. Bound the question, decision, and relevant version/environment. Distinguish
+   HOW (trace what the current system does via code, callers and tests) from WHY
+   (recover the original accepted decision, constraints, considered alternatives
+   and primary evidence). Current implementation alone cannot establish the
+   historical rationale. If the user wants a lesson or general conceptual
+   explanation rather than the actual project's facts, use learning as the
+   primary workflow, and retrieve project evidence only as needed.
 2. Inspect primary evidence along the actual input-to-output path: entrypoint,
    callers, transformations, error boundaries, persistence, ownership, and tests.
    Expand only to explain an unresolved link, counterexample, or contract.
-3. Separate observations from inference. Use a read-only discriminating probe
+3. For WHY questions, check relevant accepted project decisions/specs and
+   their existing one-hop links first. If these do not settle the rationale,
+   inspect targeted design records, commits, PRs or issues. Never invent a past
+   intention from the current code or perform a full history crawl by default.
+4. Separate observations from inference. Use a read-only discriminating probe
    when it can settle the question. For changing or uncertain external facts,
    verify authoritative documentation and retain version/date.
-4. For comparisons, state criteria from the user's constraints, evaluate viable
+5. For comparisons, state criteria from the user's constraints, evaluate viable
    options, and recommend one. Retain a rejected option only for a material
    tradeoff.
 
