@@ -30,7 +30,10 @@ For prolonged failures, keep a compact record of hypotheses, attempts, observati
 and eliminated causes in working context or an existing task artifact. Before a
 retry, identify what new evidence will distinguish competing explanations;
 otherwise instrument the uncertain boundary rather than guessing at another
-patch. Prefer scoped state snapshots or structured logs over broad verbose logs.
+patch. If two cause-directed repairs leave the same symptom, or the next patch
+would add no distinguishing evidence, reset the premise: identify what the
+attempts assumed in common and probe the nearest boundary that could falsify it.
+Prefer scoped state snapshots or structured logs over broad verbose logs.
 
 Use [security](../practices/security.md) when the failing path crosses a real
 trust or sensitive-data boundary. Lack of reproduction alone is not a blocker.
@@ -43,7 +46,11 @@ trust or sensitive-data boundary. Lack of reproduction alone is not a blocker.
   If you forced the red by mutating code or a fixture, diff against a pristine
   copy to confirm the mutation landed before trusting the failure.
 - Make the smallest causal repair, preserving real callers' contracts. Retries,
-  catches, or refactors need evidence that they address the cause.
+  catches, or refactors need evidence that they address the cause. For a recurring
+  defect, prefer a durable enforcement at the responsible seam (state ownership,
+  type/schema, lint/CI, or regression test) over another prose warning. Prove
+  that the chosen enforcement detects the observed failure; do not add all layers
+  by default.
 - Check the regression and original unminimized symptom; one run can cover both.
   Broaden for affected callers, contracts, dependencies, or required gates.
 - Remove diagnostic-only instrumentation; retain durable regression fixtures.

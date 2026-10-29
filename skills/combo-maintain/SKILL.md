@@ -11,13 +11,16 @@ that it contains `install-manifest.json` before using it. Do not infer the
 checkout from the current working directory or a machine-specific default. The
 checkout is the source of truth for the package and its static install manifest.
 
-For authoring or adapting the pack itself, use
-[authoring](../combo/practices/authoring.md) or the explicit `$combo-author`
-entry instead. This skill owns installation maintenance and behavior improvement
-from observed task failures, not redesigning the workflow pack.
+For creating a new workflow, practice, entry, host adapter, or designing a
+Combo-like pack, use explicit `$combo-author`. For a real failure or success
+observed while using existing Combo behavior, this skill may correct the
+existing canonical instruction, without creating duplicate owners or invoking
+a new authoring pipeline. Read the shared
+[maintenance contract](../combo/practices/maintenance.md) for the boundary,
+evidence standard, and regression approach.
 
-Read [context](../combo/practices/context.md) once for evidence selection and
-concise reporting. For inspection-only, read the relevant source/install state
+Read [context](../combo/practices/context.md) only when evidence-selection or
+reporting mechanics remain unresolved; task workflows embed the context core. For inspection-only, read the relevant source/install state
 and report findings; an install plan is needed only for a proposed update.
 
 ## Improve behavior through actual work

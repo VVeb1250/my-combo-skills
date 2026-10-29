@@ -12,8 +12,10 @@ pack, adapt it to another host, or build a Combo-like system from scratch.
 It is not a task workflow and does not authorize ordinary implementation,
 review, or verification work.
 
-For installation update, verification, or rollback of an existing install, use
-[combo-maintain](../combo-maintain/SKILL.md) instead.
+For installation update, verification, rollback, or evidence-backed correction
+to existing Combo behavior, use [combo-maintain](../combo-maintain/SKILL.md)
+instead. An observed defect does not automatically authorize new entries or
+structural redesign.
 
 Work in a source checkout when possible. Installed-package edits are not durable
 across updates. Keep workflow, practice, and reference bodies host-neutral; put

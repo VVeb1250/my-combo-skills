@@ -30,6 +30,12 @@ the cheapest relevant check. Simple conversation, one-sentence translation, and
 straightforward stable explanations need no workflow. Coding vocabulary in a
 lesson or writing request does not make it implementation.
 
+HOW/WHY words alone do not select a route. Teach a general mechanism with
+learning; trace current code or an actual historical design decision with
+investigate; diagnose an observed failure with debug. When teaching from the
+user's project, keep learning primary and retrieve specific project evidence
+only as needed, not a second complete workflow.
+
 Honor explicit plan-only, diagnosis-only, review-only, and verification-only
 boundaries. Otherwise use dominant intent and risk to choose one primary path.
 A build request includes planning and verification; continue to the authorized
@@ -72,7 +78,8 @@ Use `$combo` for explicit routing when automatic discovery did not activate.
 
 ## System entries
 
-Use `$combo-author` only when the user explicitly asks to customize this pack
-or build a Combo-like system. Use `$combo-maintain` for installation, update,
-verification, or rollback. These are not task routes and do not participate in
+Use `$combo-author` only for explicitly requested structural customization,
+new skills/workflows/adapters, or a Combo-like system. Use `$combo-maintain`
+for observed-failure improvement of existing rules as well as installation,
+update, verification, or rollback. These are not task routes and do not participate in
 implicit workflow selection.

@@ -5,17 +5,26 @@ publishing unless authorized. Apply the context rules at the end of this file; r
 [context](../practices/context.md) only for evidence-selection or reporting
 mechanics that are unresolved.
 
-1. Resolve the target/revision. If omitted, inspect the current diff and state
-   the safe assumption. Confirm the target exists and has reviewable material.
+1. Resolve the target, revision, and requested scope. For a change review with
+   no target named, inspect the current diff and state the safe assumption. An
+   explicit folder-wide or repository-wide audit is **not** a diff review.
+   Confirm the target exists and has reviewable material.
 2. Read the originating requirement and affected callers, tests, configuration,
    and conventions. Cover the requested scope even when early files look clean.
+   For a repository-wide audit, first map entrypoints, important data/trust
+   paths, expected load, and existing checks. Go deep first where failures have
+   the highest consequence; sample less critical areas and state what was not
+   inspected. Do not claim a complete file-by-file audit from a risk sample.
 3. If `.combo/` exists, use accepted specs and authorized changes as the contract and retro as hypotheses, not proof of a live defect. Evaluate requirement fidelity (missing, incompatible, partial, or extra
    behavior) and implementation quality (correctness, error boundaries, data,
    concurrency, security, and maintainability) in one impact ranking. When
    volume or concurrency matters, state the load assumed (from the README or
    deploy config) and judge scale against it.
 4. For each candidate finding, establish location -> reachable trigger ->
-   consequence -> evidence -> smallest remedy. Inspect guards and callers that
+   consequence -> evidence -> smallest remedy. For a changed shared contract,
+   identify the affected callers and the critical invariant that might fail;
+   prioritize a targeted check capable of falsifying it over generic confidence
+   passes. Do not expand coverage for an unaffected tiny change. Inspect guards and callers that
    could invalidate it; use a focused non-mutating probe when useful.
 5. Consolidate symptoms of the same cause while preserving distinct impacts.
    Report supported actionable issues; separate an unresolved concern when the
