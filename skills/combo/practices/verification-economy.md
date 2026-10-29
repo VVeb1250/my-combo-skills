@@ -8,6 +8,13 @@ are owned by [context](context.md); test seams and relevant checks by
 [outcome evidence](outcome-evidence.md). This practice does not add another
 mandatory review stage.
 
+Before escalating, identify the change's affected contract and one or two
+critical invariants that could fail. Map changes to checks at the relevant seam:
+local logic -> focused behavioral test; shared API/state -> affected callers and
+contract test; schema/persistence -> migration and integrity check; interactive UI
+-> observed journey; trust boundary -> rejection/authorization path. These are
+starting points, not a fixed test matrix or a substitute for requested gates.
+
 Choose evidence capable of falsifying the uncovered criterion at the lowest
 adequate cost. Prefer existing deterministic results, focused tests, type
 checks, replay/simulation traces, or integration probes at the public seam.

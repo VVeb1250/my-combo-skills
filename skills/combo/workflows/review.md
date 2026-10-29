@@ -21,7 +21,10 @@ mechanics that are unresolved.
    volume or concurrency matters, state the load assumed (from the README or
    deploy config) and judge scale against it.
 4. For each candidate finding, establish location -> reachable trigger ->
-   consequence -> evidence -> smallest remedy. Inspect guards and callers that
+   consequence -> evidence -> smallest remedy. For a changed shared contract,
+   identify the affected callers and the critical invariant that might fail;
+   prioritize a targeted check capable of falsifying it over generic confidence
+   passes. Do not expand coverage for an unaffected tiny change. Inspect guards and callers that
    could invalidate it; use a focused non-mutating probe when useful.
 5. Consolidate symptoms of the same cause while preserving distinct impacts.
    Report supported actionable issues; separate an unresolved concern when the
