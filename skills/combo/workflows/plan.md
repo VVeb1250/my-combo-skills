@@ -8,15 +8,16 @@ mechanics that are unresolved.
 
 1. Identify the outcome, constraints, compatibility obligations, and requested
    fidelity. Inspect relevant code, real callers, tests, domain terms, and ADRs.
-2. Resolve facts from evidence. Seek consequential unresolved user-owned design
-   decisions even if the wording appears clear. When one exists, auto-grill in
-   short rounds (one to three high-impact questions, recommended options and
-   tradeoffs) before committing dependent design. Do not grill a clear tiny fix.
+2. Resolve facts from evidence and apply the context auto-grill trigger to
+   consequential unresolved user-owned choices before committing dependent
+   design. Do not ask about clear routine choices or repeat accepted decisions.
    Use primary sources with version/date for changing external facts.
 3. Compare viable approaches against these constraints and recommend one.
    Keep an alternative only when its tradeoff affects the decision.
-4. Preserve existing adapters and public seams. Use [design](../practices/design.md)
-   for unresolved boundaries and [tests](../practices/tests.md) for acceptance.
+4. Preserve required adapters and public seams. For consequential cross-module
+   design, known required variations or state-ownership risk, consult
+   [design](../practices/design.md) even if the prompt sounds clear.
+   Use [tests](../practices/tests.md) for acceptance.
    If an uncertainty needs a runnable prototype, run it only within the requested
    scope and host mode; otherwise specify the bounded experiment in the plan.
 5. Express implementation as vertical slices with observable done conditions and
