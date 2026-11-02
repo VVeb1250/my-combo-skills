@@ -13,6 +13,12 @@ the deliverable needs a report. Native skills own concrete tool operations.
 | Research | Trace consequential claims to direct sources and check applicability, contradictions, date, and inference. A completed search or several repetitions of one claim cannot establish correctness. |
 | Writing/documents | Compare source facts, voice samples, audience, requested depth, and constraints with the delivered text. Render when pagination/layout matters. File creation or spellcheck cannot establish factual or stylistic fidelity. |
 
+Before expensive browser/manual checks consider faithful headless/direct render
+from the actual scene or generation pipeline. Batch independent seeds/views
+and structural invariants when shared setup makes this cheaper. A separate
+mock renderer does not establish product fidelity; real UI journeys still need
+interactive verification when state transitions or persistence are acceptance.
+
 Inspect the actual resulting artifact, not a cached preview, earlier revision, or
 tool's claim that it saved successfully. When a check fails, preserve the symptom,
 distinguish artifact, fixture, and environment causes, and make a causal repair
