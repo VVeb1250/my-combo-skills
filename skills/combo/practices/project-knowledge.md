@@ -45,6 +45,12 @@ status tables that cannot be kept current.
 
 ## Update without losing evidence
 
+Maintain documentation by scoped changes: patch the affected canonical
+contract, ownership, rationale and entry pointers; regenerate mechanical
+indexes rather than rewriting full documents or creating a parallel summary.
+Detailed references can stay long when retrieval is selective. Do not spawn
+a documentation agent or perform a full handoff review unless requested.
+
 When changing behavior or a decision, inspect and update the explanations directly
 affected by that change. Replace obsolete current claims; keep necessary history
 in its existing evidence record, clearly marked as superseded with a pointer to
