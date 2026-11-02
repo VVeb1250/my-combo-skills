@@ -14,9 +14,12 @@ mechanics that are unresolved.
 2. Inspect status, relevant repository instructions, affected code, real callers,
    and nearby tests. Preserve unrelated edits. Resolve routine choices from
    evidence; ask only when missing input changes correctness or intended scope.
-3. Reuse existing public seams. Read [design](../practices/design.md) for unresolved
-   ownership, adapter, or invariant decisions. Choose the smallest design that
-   meets the complete requirement, retaining demonstrated extension needs.
+3. Reuse required existing public seams. For a consequential cross-module
+   change, state ownership, or known required variation, consult
+   [design](../practices/design.md) even when the request appears clear.
+   Resolve user-owned choices through context's decision triage before
+   implementing dependent behavior. Choose the minimum sustainable design,
+   preserving necessary extension points without speculative features.
 
 Before expensive or repetitive execution, choose the cheapest method that
 faithfully proves the outcome: targeted scripts, headless/direct rendering,
