@@ -31,6 +31,13 @@ principles do not impose engineering ceremonies on unrelated work.
 - **Durable knowledge:** Maintain decision-critical rationale at one canonical
   source; patch only affected documentation and generated pointers.
 
+### Baseline execution
+
+Before changing code, inspect the affected implementation and real callers;
+define observable success at a depth proportional to the task. A clear tiny
+fix can proceed directly, but retain required validation and report material
+checks not run. Preserve unrelated user changes.
+
 ### Conflict resolution
 
 Safety and binding host instructions > accepted user intent and required gates
