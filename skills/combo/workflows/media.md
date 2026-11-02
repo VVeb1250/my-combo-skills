@@ -14,8 +14,12 @@ For reference-led work, inspect the actual reference and separate its role
 (shape, style, pose, framing, or identity) from unrelated qualities. Lock choices
 already supplied by the user; use context's decision triage for material gaps.
 For 3D/Blender, inspect silhouette, major masses, and relevant views before fine
-detail. Use [outcome evidence](../practices/outcome-evidence.md) to choose rendered
-checks; a valid scene or completed script alone does not establish visual fidelity.
+detail. Before expensive or repeated inspection, choose the cheapest faithful
+method: reuse an existing script, render real scene views headlessly, or batch
+independent seeds/cameras when setup cost dominates. Use a real interactive
+journey when interaction, state persistence, or the served result is at stake.
+Use [outcome evidence](../practices/outcome-evidence.md) for fidelity limits;
+a valid scene, mock render or completed script does not prove visual fidelity.
 
 Define observable acceptance before production: required content, dimensions,
 readability at delivery size, timing, audio, or visual style as applicable.
