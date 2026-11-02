@@ -33,6 +33,15 @@ A new workflow is not the default answer. A technique usually belongs in a
 practice or specialist note, not a new task path. Add an entry only when a
 user would otherwise fail to discover the right workflow.
 
+## Fusion of external techniques
+
+Inventory candidate skills, then separate transferable mechanisms from their
+persona, orchestration, hooks and required ceremonies. Extract a concrete
+trigger, decision, failure mode and stopping condition; refine the existing
+workflow/practice owner rather than adding competing instructions. Keep pinned
+source provenance and license obligations for copied material. New paid-agent
+A/B runs are not a required gate for each instruction edit.
+
 ## Define the contract
 
 Every new or changed file needs:
