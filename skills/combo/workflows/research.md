@@ -101,5 +101,4 @@ anything the change could invalidate. Keep passing parts and still-valid evidenc
 Finish when the agreed criteria are supported; if decisive access is unavailable,
 deliver independent work and name the exact unverified criterion. Do not loop on
 unchanged evidence or claim completion across that gap.
-
 <!-- END CONTEXT CORE -->
