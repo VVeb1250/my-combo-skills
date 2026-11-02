@@ -18,6 +18,12 @@ mechanics that are unresolved.
    ownership, adapter, or invariant decisions. Choose the smallest design that
    meets the complete requirement, retaining demonstrated extension needs.
 
+Before expensive or repetitive execution, choose the cheapest method that
+faithfully proves the outcome: targeted scripts, headless/direct rendering,
+replays or batches of independent observations sharing setup. Diagnose related
+symptoms together before causal repairs, but keep changes attributable and
+escalate when a cheap proxy misses acceptance. No mandatory cost report.
+
 Implement independently verifiable vertical slices. For mechanical migration,
 use expand/migrate/contract when it preserves working callers. Keep validation
 and error handling at trust boundaries; use [security](../practices/security.md)
