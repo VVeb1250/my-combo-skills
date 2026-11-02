@@ -31,6 +31,13 @@ principles do not impose engineering ceremonies on unrelated work.
 - **Durable knowledge:** Maintain decision-critical rationale at one canonical
   source; patch only affected documentation and generated pointers.
 
+### Baseline execution
+
+Before changing code, inspect the affected implementation and real callers;
+define observable success at a depth proportional to the task. A clear tiny
+fix can proceed directly, but retain required validation and report material
+checks not run. Preserve unrelated user changes.
+
 ### Conflict resolution
 
 Safety and binding host instructions > accepted user intent and required gates
@@ -52,8 +59,9 @@ skills remain responsible for browser and artifact operations.
 
 Honor the requested stopping point. In normal execution, a request to build
 continues through implementation and verification. An active Plan Mode retains
-its native read-only and approval boundary. Only when the user explicitly requests or approves delegation, give
-`combo-worker` bounded work with explicit context and file ownership.
+its native read-only and approval boundary. Only when the user explicitly
+requests or approves delegation, give `combo-worker` bounded work with explicit
+context and file ownership.
 A broad implementation request alone does not authorize spawning agents.
 The host's configured memory and permission rules remain authoritative.
 
