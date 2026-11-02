@@ -21,6 +21,13 @@ class ContextCore(unittest.TestCase):
             self.assertIn("practices/context.md", text, path.name)
             self.assertNotRegex(text, r"Read \[context\]\(\.\./practices/context\.md\) once", path.name)
 
+    def test_auto_grill_is_present_but_does_not_block_clear_fixes(self):
+        block = core.core_block()
+        self.assertIn("bounded auto-grill", block)
+        self.assertIn("even if the prompt sounds clear", block)
+        self.assertIn("clear tiny fix", block)
+        self.assertIn("repeat accepted decisions", block)
+
     def test_links_inside_the_block_resolve_from_the_workflows_folder(self):
         for target in re.findall(r"\]\(([^)#]+)\)", core.core_block()):
             if target.startswith(("http", "mailto")):

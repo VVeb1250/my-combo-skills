@@ -11,7 +11,15 @@ The goal is a smaller maintainable design that still meets the full requirement.
   speculative extension points, and abstractions with no demonstrated second
   use when evidence shows they are unnecessary. Keep a cohesive module that
   hides substantial behavior or enforces an invariant, even with one caller.
-- Track structural debt at changed hotspots: repeated edits with regressions, unclear state ownership, shotgun surgery and test seams that cannot observe real behavior. Prefer bounded behavior-preserving refactor with regression evidence; do not rewrite healthy modules periodically.
+- Minimize total future rework, not just diff size. A known required variation
+  can justify a small extension seam; a hypothetical possibility cannot.
+- Track structural debt at changed hotspots: scattered domain decisions,
+  special-case patches, unclear state ownership and shotgun changes. Inspect
+  architectural evidence immediately rather than waiting for failed retries;
+  major out-of-scope rewrites still need approval.
+- Minimize reader load: collapse pointless forwarding layers and localize state,
+  while preserving deep modules that hide meaningful behavior. Do not impose
+  file-length quotas or refactor healthy unrelated code.
 - Watch for duplicated logic, long message chains, primitive domain concepts,
   shotgun edits, divergent responsibilities, and middle-man layers. Fix only
   what the task or the new change makes relevant.

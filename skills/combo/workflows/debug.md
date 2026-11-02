@@ -26,6 +26,11 @@ Where `.combo/` exists, retrieve only relevant accepted specs, retro and tested 
    only as the signal requires. Prefer a debugger/REPL or targeted instrumentation;
    tag temporary logs and keep secrets out.
 
+When evidence already points to wrong ownership, invalid domain states,
+scattered special cases or a shared false premise, investigate that structural
+cause immediately; the two-repair threshold is only a fallback. Inspection
+is not authorization for an out-of-scope rewrite.
+
 For prolonged failures, keep a compact record of hypotheses, attempts, observations
 and eliminated causes in working context or an existing task artifact. Before a
 retry, identify what new evidence will distinguish competing explanations;
@@ -91,6 +96,17 @@ asking. Choose routine methods from that evidence. Ask only about an unresolved
 choice that materially changes outcome, taste, compatibility, risk, cost, or scope
 and cannot be established from the available evidence. An unavailable reference
 is a gap to resolve, not permission to guess its contents.
+
+Before consequential implementation or design, actively check whether
+different plausible architectures or product behaviors lead to materially
+different outcomes, even if the prompt sounds clear. If an unresolved
+user-owned decision remains, initiate a bounded auto-grill; do not silently
+pick a default or implement the dependent design. Ask the highest-impact one
+to three independent questions per round with a recommendation and real
+tradeoffs. Continue only if an answer exposes another consequential decision.
+Explicit grill requests may go deeper. Do not manufacture choices for a
+clear tiny fix, repeat accepted decisions, or ask for facts inspectable
+in code. See [design](../practices/design.md) for architecture-specific probes.
 
 For a behavior change, current implementation establishes what exists, not the
 requested new intent. If two plausible readings produce materially different

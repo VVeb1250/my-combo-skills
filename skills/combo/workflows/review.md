@@ -26,7 +26,10 @@ mechanics that are unresolved.
    prioritize a targeted check capable of falsifying it over generic confidence
    passes. Do not expand coverage for an unaffected tiny change. Inspect guards and callers that
    could invalidate it; use a focused non-mutating probe when useful.
-5. Consolidate symptoms of the same cause while preserving distinct impacts.
+5. For consequential changes, inspect reader load: redundant layers between
+   behavior and owner, hidden mutable state, scattered domain decisions and
+   contracts that callers cannot locate. Report concrete impact, not style taste.
+6. Consolidate symptoms of the same cause while preserving distinct impacts.
    Report supported actionable issues; separate an unresolved concern when the
    missing evidence matters. Style preferences and clean lint are not behavioral
    findings or proof of correctness.
@@ -70,6 +73,17 @@ asking. Choose routine methods from that evidence. Ask only about an unresolved
 choice that materially changes outcome, taste, compatibility, risk, cost, or scope
 and cannot be established from the available evidence. An unavailable reference
 is a gap to resolve, not permission to guess its contents.
+
+Before consequential implementation or design, actively check whether
+different plausible architectures or product behaviors lead to materially
+different outcomes, even if the prompt sounds clear. If an unresolved
+user-owned decision remains, initiate a bounded auto-grill; do not silently
+pick a default or implement the dependent design. Ask the highest-impact one
+to three independent questions per round with a recommendation and real
+tradeoffs. Continue only if an answer exposes another consequential decision.
+Explicit grill requests may go deeper. Do not manufacture choices for a
+clear tiny fix, repeat accepted decisions, or ask for facts inspectable
+in code. See [design](../practices/design.md) for architecture-specific probes.
 
 For a behavior change, current implementation establishes what exists, not the
 requested new intent. If two plausible readings produce materially different

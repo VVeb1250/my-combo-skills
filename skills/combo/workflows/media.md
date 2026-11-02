@@ -14,8 +14,12 @@ For reference-led work, inspect the actual reference and separate its role
 (shape, style, pose, framing, or identity) from unrelated qualities. Lock choices
 already supplied by the user; use context's decision triage for material gaps.
 For 3D/Blender, inspect silhouette, major masses, and relevant views before fine
-detail. Use [outcome evidence](../practices/outcome-evidence.md) to choose rendered
-checks; a valid scene or completed script alone does not establish visual fidelity.
+detail. Before expensive or repeated inspection, choose the cheapest faithful
+method: reuse an existing script, render real scene views headlessly, or batch
+independent seeds/cameras when setup cost dominates. Use a real interactive
+journey when interaction, state persistence, or the served result is at stake.
+Use [outcome evidence](../practices/outcome-evidence.md) for fidelity limits;
+a valid scene, mock render or completed script does not prove visual fidelity.
 
 Define observable acceptance before production: required content, dimensions,
 readability at delivery size, timing, audio, or visual style as applicable.
@@ -66,6 +70,17 @@ asking. Choose routine methods from that evidence. Ask only about an unresolved
 choice that materially changes outcome, taste, compatibility, risk, cost, or scope
 and cannot be established from the available evidence. An unavailable reference
 is a gap to resolve, not permission to guess its contents.
+
+Before consequential implementation or design, actively check whether
+different plausible architectures or product behaviors lead to materially
+different outcomes, even if the prompt sounds clear. If an unresolved
+user-owned decision remains, initiate a bounded auto-grill; do not silently
+pick a default or implement the dependent design. Ask the highest-impact one
+to three independent questions per round with a recommendation and real
+tradeoffs. Continue only if an answer exposes another consequential decision.
+Explicit grill requests may go deeper. Do not manufacture choices for a
+clear tiny fix, repeat accepted decisions, or ask for facts inspectable
+in code. See [design](../practices/design.md) for architecture-specific probes.
 
 For a behavior change, current implementation establishes what exists, not the
 requested new intent. If two plausible readings produce materially different

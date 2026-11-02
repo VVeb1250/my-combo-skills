@@ -8,13 +8,16 @@ mechanics that are unresolved.
 
 1. Identify the outcome, constraints, compatibility obligations, and requested
    fidelity. Inspect relevant code, real callers, tests, domain terms, and ADRs.
-2. Resolve routine details from evidence. Surface unknowns only when they change
-   behavior, contracts, integrity, security, cost, or scope. Use primary sources
-   with version/date for changing external facts.
+2. Resolve facts from evidence and apply the context auto-grill trigger to
+   consequential unresolved user-owned choices before committing dependent
+   design. Do not ask about clear routine choices or repeat accepted decisions.
+   Use primary sources with version/date for changing external facts.
 3. Compare viable approaches against these constraints and recommend one.
    Keep an alternative only when its tradeoff affects the decision.
-4. Preserve existing adapters and public seams. Use [design](../practices/design.md)
-   for unresolved boundaries and [tests](../practices/tests.md) for acceptance.
+4. Preserve required adapters and public seams. For consequential cross-module
+   design, known required variations or state-ownership risk, consult
+   [design](../practices/design.md) even if the prompt sounds clear.
+   Use [tests](../practices/tests.md) for acceptance.
    If an uncertainty needs a runnable prototype, run it only within the requested
    scope and host mode; otherwise specify the bounded experiment in the plan.
 5. Express implementation as vertical slices with observable done conditions and
@@ -72,6 +75,17 @@ asking. Choose routine methods from that evidence. Ask only about an unresolved
 choice that materially changes outcome, taste, compatibility, risk, cost, or scope
 and cannot be established from the available evidence. An unavailable reference
 is a gap to resolve, not permission to guess its contents.
+
+Before consequential implementation or design, actively check whether
+different plausible architectures or product behaviors lead to materially
+different outcomes, even if the prompt sounds clear. If an unresolved
+user-owned decision remains, initiate a bounded auto-grill; do not silently
+pick a default or implement the dependent design. Ask the highest-impact one
+to three independent questions per round with a recommendation and real
+tradeoffs. Continue only if an answer exposes another consequential decision.
+Explicit grill requests may go deeper. Do not manufacture choices for a
+clear tiny fix, repeat accepted decisions, or ask for facts inspectable
+in code. See [design](../practices/design.md) for architecture-specific probes.
 
 For a behavior change, current implementation establishes what exists, not the
 requested new intent. If two plausible readings produce materially different
