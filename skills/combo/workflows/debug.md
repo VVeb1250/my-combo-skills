@@ -26,6 +26,11 @@ Where `.combo/` exists, retrieve only relevant accepted specs, retro and tested 
    only as the signal requires. Prefer a debugger/REPL or targeted instrumentation;
    tag temporary logs and keep secrets out.
 
+When evidence already points to wrong ownership, invalid domain states,
+scattered special cases or a shared false premise, investigate that structural
+cause immediately; the two-repair threshold is only a fallback. Inspection
+is not authorization for an out-of-scope rewrite.
+
 For prolonged failures, keep a compact record of hypotheses, attempts, observations
 and eliminated causes in working context or an existing task artifact. Before a
 retry, identify what new evidence will distinguish competing explanations;
