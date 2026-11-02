@@ -6,9 +6,13 @@ the current domain language.
 
 - Read real callers and nearby tests before choosing a boundary. Keep the
   responsibility where the behavior and data naturally belong.
-- Prefer one high seam with a small interface that hides substantial behavior.
-  Existing seams are evidence; add a new one only when it improves observability
-  or isolates a real invariant.
+- Prefer a deep module with a small meaningful interface. Existing seams are
+  evidence, not a veto: a confirmed planned variation or domain invariant can
+  justify a boundary before a second implementation. Do not build unused variants.
+- For substantial cross-module work, model domain states, ownership, data flow
+  and invariants first. Prefer localized decisions over scattered special cases.
+- Minimize reader load: reduce indirection from a behavior question to its owner
+  and hidden mutable state the next agent would need to hold in context.
 - State assumptions about lifecycle, ownership, failure, concurrency,
   compatibility, and data integrity. Resolve routine choices from code and
   repository conventions.
