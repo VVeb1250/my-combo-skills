@@ -8,9 +8,11 @@ mechanics that are unresolved.
 
 1. Identify the outcome, constraints, compatibility obligations, and requested
    fidelity. Inspect relevant code, real callers, tests, domain terms, and ADRs.
-2. Resolve routine details from evidence. Surface unknowns only when they change
-   behavior, contracts, integrity, security, cost, or scope. Use primary sources
-   with version/date for changing external facts.
+2. Resolve facts from evidence. Seek consequential unresolved user-owned design
+   decisions even if the wording appears clear. When one exists, auto-grill in
+   short rounds (one to three high-impact questions, recommended options and
+   tradeoffs) before committing dependent design. Do not grill a clear tiny fix.
+   Use primary sources with version/date for changing external facts.
 3. Compare viable approaches against these constraints and recommend one.
    Keep an alternative only when its tradeoff affects the decision.
 4. Preserve existing adapters and public seams. Use [design](../practices/design.md)
