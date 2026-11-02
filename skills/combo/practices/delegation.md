@@ -1,7 +1,9 @@
 # Delegation
 
-Delegate only when the task is authorized, independent, bounded, and cheaper to
-run outside the primary context. The primary agent keeps ownership of intent,
+Single agent is the default. Delegate only if the user explicitly requests
+or approves multi-agent work for this task and the work is independent,
+bounded and worthwhile. A general implementation request or a large task
+alone does not authorize agent fanout. The primary agent keeps ownership of intent,
 architecture, difficult tradeoffs, integration, and final acceptance.
 
 - Give the executor one clear objective, explicit file or responsibility scope,
