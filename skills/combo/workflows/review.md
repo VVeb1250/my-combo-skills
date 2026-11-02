@@ -74,6 +74,17 @@ choice that materially changes outcome, taste, compatibility, risk, cost, or sco
 and cannot be established from the available evidence. An unavailable reference
 is a gap to resolve, not permission to guess its contents.
 
+Before consequential implementation or design, actively check whether
+different plausible architectures or product behaviors lead to materially
+different outcomes, even if the prompt sounds clear. If an unresolved
+user-owned decision remains, initiate a bounded auto-grill; do not silently
+pick a default or implement the dependent design. Ask the highest-impact one
+to three independent questions per round with a recommendation and real
+tradeoffs. Continue only if an answer exposes another consequential decision.
+Explicit grill requests may go deeper. Do not manufacture choices for a
+clear tiny fix, repeat accepted decisions, or ask for facts inspectable
+in code. See [design](../practices/design.md) for architecture-specific probes.
+
 For a behavior change, current implementation establishes what exists, not the
 requested new intent. If two plausible readings produce materially different
 user-visible results and the evidence leaves both open, ask before committing
@@ -102,4 +113,5 @@ anything the change could invalidate. Keep passing parts and still-valid evidenc
 Finish when the agreed criteria are supported; if decisive access is unavailable,
 deliver independent work and name the exact unverified criterion. Do not loop on
 unchanged evidence or claim completion across that gap.
+
 <!-- END CONTEXT CORE -->
