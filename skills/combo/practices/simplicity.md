@@ -23,6 +23,15 @@ The goal is a smaller maintainable design that still meets the full requirement.
 - Watch for duplicated logic, long message chains, primitive domain concepts,
   shotgun edits, divergent responsibilities, and middle-man layers. Fix only
   what the task or the new change makes relevant.
+- Treat an overfull folder as a *navigation signal*, never an automatic file-count
+  violation. Inspect whether unrelated responsibilities share one directory,
+  whether names help locate an owner, and whether meaningful domain/feature
+  subdirectories would shorten the path from a behavior question to its code.
+  Keep a cohesive flat directory when a split would only add indirection.
+- For a justified folder reorganization, prefer mechanical moves with unchanged
+  behavior, preserve imports/entrypoints/config/tests, and verify affected callers.
+  Separate mechanical moves from behavior changes when that makes rollback and
+  review more reliable. Do not reorganize the whole repository as drive-by cleanup.
 - Preserve validation, data-loss protection, security, accessibility, explicit
   user requirements, and proven adapters. Fewer lines is not a reason to remove
   a necessary boundary. Code that is moved or merged keeps its validation and
