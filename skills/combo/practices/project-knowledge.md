@@ -38,7 +38,9 @@ Keep scope and qualifications beside the claims they constrain.
 
 Separate current contracts, pending work, and historical results when their
 mixture obscures which information applies. An accepted design and its unfinished
-implementation are distinct states. A task list points to rationale and results;
+implementation are distinct states. A module's README/ADR may be its canonical
+ownership and boundary guide; a `.combo/areas/` record should link to it rather
+than copy the same claims. Avoid a second architecture encyclopedia. A task list points to rationale and results;
 it need not duplicate them. Reuse an existing entrypoint instead of adding another
 index. Maintain a summary together with its source, or omit duplicate counts and
 status tables that cannot be kept current.
@@ -48,6 +50,13 @@ status tables that cannot be kept current.
 Maintain documentation by scoped changes: patch the affected canonical
 contract, ownership, rationale and entry pointers; regenerate mechanical
 indexes rather than rewriting full documents or creating a parallel summary.
+For Git-backed edits, compare the task-owned change against its recorded
+baseline (including staged and unstaged diffs); use changed source paths to
+locate possibly affected module/area documents. A path match is only a candidate,
+not semantic proof, and a miss cannot rule out drift. Read actual code and real
+callers when deciding whether an ownership, public contract, invariant, or
+accepted decision statement has changed. Do not revalidate every document for
+an unrelated implementation-only change.
 Detailed references can stay long when retrieval is selective. Do not spawn
 a documentation agent or perform a full handoff review unless requested.
 
