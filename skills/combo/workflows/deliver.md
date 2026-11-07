@@ -27,6 +27,12 @@ replays or batches of independent observations sharing setup. Diagnose related
 symptoms together before causal repairs, but keep changes attributable and
 escalate when a cheap proxy misses acceptance. No mandatory cost report.
 
+For risky or multi-slice Git-backed changes, follow [Git checkpoints](../practices/git-checkpoints.md):
+record branch/HEAD and existing dirty paths before editing, and create meaningful
+unpublished WIP checkpoints **only when authorized**. A clean initial HEAD is
+already a baseline; no checkpoint is required for a tiny edit. Do not stage or
+commit unrelated work.
+
 Implement independently verifiable vertical slices. For mechanical migration,
 use expand/migrate/contract when it preserves working callers. Keep validation
 and error handling at trust boundaries; use [security](../practices/security.md)
@@ -66,8 +72,14 @@ context or an existing task note, not a mandatory new log file. Use
 [build](../practices/build.md) for compiler/dependency failures. Resume
 relevant acceptance checks only after a cause-supported repair.
 
+For an opted-in `.combo/` project, use changed source paths to find candidate
+owner/spec/decision records with the existing [project ecosystem](../practices/project-ecosystem.md)
+routing. Update changed canonical contracts and regenerate a touched index; a
+path miss does not prove no documentation impact.
+
 Return the result, useful file links, check verdicts, and material unchecked
-limits. Commit, publish, or hand off only when existing authorization includes it.
+limits. Finalize an authorized draft only after appropriate verification;
+commit, publish, or hand off only within the granted Git authorization.
 
 <!-- BEGIN CONTEXT CORE (generated from practices/context.md by scripts/sync-context-core.py; edit there) -->
 ## Context rules
