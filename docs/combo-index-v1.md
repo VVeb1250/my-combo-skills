@@ -65,6 +65,14 @@ naming the added, changed or removed record paths so the Agent can decide to
 re-index. Hashes detect Markdown/index drift, not whether a historical lesson
 still applies to a changed codebase. No automatic capture, run execution or hooks.
 
+When a Git diff identifies a changed source path, `route --path` can find *candidate*
+records for manual/agent inspection. It does not read Git history, establish
+module ownership, or prove semantic freshness. After file moves, inspect changed
+source/test imports and update affected area path metadata; use `index` then
+`check` on modified project docs. A no-match result does not prove absence of a
+contract or drift. See `practices/project-ecosystem.md` and
+`practices/git-checkpoints.md`.
+
 ## Phase B local technique retrieval
 
 [Project ecosystem guidance](../skills/combo/practices/project-ecosystem.md) separates technique methods, retro lessons, lower-cost shortcuts, and scoped verification. Technique Discovery is a conditional process, not a stored kind. Do not create every record kind for each task.

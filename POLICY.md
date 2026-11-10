@@ -20,6 +20,7 @@ Applies to coding, debugging, software design, and code review. These principles
 - **Single-agent default:** The primary agent owns decisions and integration. Only spawn advisors,
   reviewers or subagents when the user explicitly requests or approves delegation. Complexity alone does not authorize multi-agent work.
 - **Durable knowledge:** Maintain decision-critical rationale at one canonical source; patch only affected documentation and generated pointers.
+- **Reversible changes:** Inspect Git ownership before consequential edits. When authorized, use task-owned draft checkpoints for risky changes and scoped recovery; never silently commit others' work or publish changes. See `skills/combo/practices/git-checkpoints.md`.
 
 ### Baseline execution
 

@@ -96,6 +96,21 @@ python /path/to/installed/combo/tools/project_kb.py check
 
 `init` is explicit; use accepted specs as contracts, not model-authored approvals.
 
+## Maintainability: Git checkpoints and knowledge hygiene
+
+For authorized Git-backed work, [Git checkpoints](skills/combo/practices/git-checkpoints.md)
+describes task-owned local WIP commits, safe recovery, and dirty-tree protection.
+There is no automatic commit, push, branch rewrite or new Git daemon. Local
+commit permission must come from the task or an existing repository instruction;
+a checkpoint does not imply tests have passed.
+
+When a task changes module responsibilities, public contracts or file locations,
+update only affected canonical docs using [project knowledge](skills/combo/practices/project-knowledge.md),
+[project ecosystem](skills/combo/practices/project-ecosystem.md), and the existing
+`project_kb.py route --path ...` lookup. Path matches are leads, not semantic
+validation. [Simplicity](skills/combo/practices/simplicity.md) covers large mixed
+directories without imposing arbitrary file-count limits.
+
 ## ข้างในมีอะไร
 
 ```mermaid

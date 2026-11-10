@@ -43,5 +43,48 @@ class ProjectKbTest(unittest.TestCase):
         self.assertEqual(kb.collect(self.root)[0]["status"], "candidate")
 
 
+    def test_changed_source_path_routes_to_candidate_area_and_spec(self):
+        self.put(
+            "areas/combat.md",
+            "+++\nid = \"area.combat\"\narea = \"combat\"\nstatus = \"accepted\"\n"
+            "summary = \"Combat navigation\"\npaths = [\"src/combat/**\"]\n+++\n"
+            "# Combat navigation\n",
+        )
+        self.put(
+            "specs/ammo.md",
+            "+++\nid = \"spec.ammo\"\narea = \"combat\"\nstatus = \"accepted\"\n"
+            "summary = \"Ammo contract\"\npaths = [\"src/combat/weapon/**\"]\n+++\n"
+            "# Ammo contract\n",
+        )
+        rows = kb.collect(self.root)
+        index = kb._index_data(rows)
+        match = kb.route(index, paths=["src/combat/weapon/state.js"])
+        self.assertEqual(
+            {item["id"] for item in match["required"]}, {"spec.ammo"}
+        )
+        self.assertIn("combat", {item["area"] for item in match["areas"]})
+        self.assertFalse(kb.route(index, paths=["src/unrelated.js"])["required"])
+        # A missing path match only warns; it does not certify doc freshness.
+        self.assertIsNotNone(kb.route(index, paths=["src/unrelated.js"])["warning"])
+
+    def test_index_staleness_is_only_markdown_freshness(self):
+        self.put(
+            "areas/combat.md",
+            "+++\nid = \"area.combat\"\narea = \"combat\"\nstatus = \"accepted\"\n"
+            "paths = [\"src/combat/**\"]\n+++\n# Combat\n",
+        )
+        kb.rebuild(self.root)
+        # Editing arbitrary source outside .combo is not captured by index hashes.
+        (self.root / "src").mkdir()
+        (self.root / "src" / "combat.js").write_text("changed", encoding="utf-8")
+        self.assertEqual(len(kb.load_index(self.root)["entries"]), 1)
+        self.put(
+            "areas/combat.md",
+            "+++\nid = \"area.combat\"\narea = \"combat\"\nstatus = \"accepted\"\n"
+            "paths = [\"src/combat/**\"]\n+++\n# Changed navigation\n",
+        )
+        with self.assertRaises(kb.IndexErrorInfo):
+            kb.load_index(self.root)
+
 if __name__ == "__main__":
     unittest.main()

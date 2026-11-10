@@ -31,6 +31,13 @@ scattered special cases or a shared false premise, investigate that structural
 cause immediately; the two-repair threshold is only a fallback. Inspection
 is not authorization for an out-of-scope rewrite.
 
+For risky Git-backed repairs, establish HEAD, branch and pre-existing dirty paths
+before making a change. If the task authorizes local commits, use
+[Git checkpoints](../practices/git-checkpoints.md) for recoverable WIP slices;
+otherwise keep read-only baseline/diff evidence. Revert only proven agent-owned
+commits or changes; never use a destructive whole-tree reset to erase a failed
+hypothesis, and do not treat a successful revert as behavior verification.
+
 For prolonged failures, keep a compact record of hypotheses, attempts, observations
 and eliminated causes in working context or an existing task artifact. Before a
 retry, identify what new evidence will distinguish competing explanations;

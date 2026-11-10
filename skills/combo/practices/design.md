@@ -15,6 +15,11 @@ Start from the user outcome and current domain language.
   and invariants first. Prefer localized decisions over scattered special cases.
 - Minimize reader load: reduce indirection from a behavior question to its owner
   and hidden mutable state the next agent would need to hold in context.
+- When navigation is hard, inspect actual folder contents and dependency edges
+  before deciding to group by domain or feature. A folder name, file count, or
+  documentation claim alone does not prove code ownership. Prefer boundaries
+  supported by existing responsibilities and real callers; avoid speculative
+  packages and pass-through layers.
 - State assumptions about lifecycle, ownership, failure, concurrency,
   compatibility, and data integrity. Resolve routine choices from code and
   repository conventions.
