@@ -174,7 +174,7 @@ def collect(root, *, global_catalog=False):
         kind = KINDS[folder]
         domains = _normalize_list(meta.get("domains"), "domains", relative)
         area = meta.get("area", domains[0] if domains else (p.stem if folder == "areas" else p.parent.name))
-        status = meta.get("status", "draft")
+        status = meta.get("status", "candidate" if kind == "knowledge" else "draft")
         summary = meta.get("summary", title)
         if not all(isinstance(x, str) and x for x in (area, status, summary)):
             raise IndexErrorInfo(f"{relative}: area/status/summary must be nonempty strings")
@@ -353,7 +353,7 @@ def markdown_views(root, data):
                        "See the installed Combo project-ecosystem practice for authoring."])
     else:
         if "project" in data["areas"]:
-            header.extend([_md_link("Project-wide contracts and context", top, base / "areas" / _domain_directory("project") / "INDEX.md"), ""])
+            header.extend(["Read project-wide contracts for consequential work:", _md_link("Project-wide contracts and context", top, base / "areas" / _domain_directory("project") / "INDEX.md"), ""])
         header.extend(["| Domain | Covers |", "| --- | --- |"])
     for domain, meta in data["areas"].items():
         path = base / "areas" / _domain_directory(domain) / "INDEX.md"
@@ -541,7 +541,7 @@ def _match(row, areas, paths, query, ident):
     if paths and any(_pathmatch(p, pat) for p in paths for pat in row["paths"]):
         reasons.append("path")
     terms = _terms(query)
-    haystack = " ".join([row["summary"], row["area"], row["path"], *row["tags"]]).lower()
+    haystack = " ".join([row["summary"], row["area"], row["path"], *row["tags"], *row.get("domains", []), *row.get("topics", []), *row.get("kinds", [])]).lower()
     if terms and any(term in haystack for term in terms):
         reasons.append("query")
     if row["kind"] in ("technique", "knowledge") and _technique_score(row, query) and "query" not in reasons:
