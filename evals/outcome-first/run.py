@@ -62,6 +62,31 @@ def save_json(path, obj):
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
+def render_outputs(generator, renderer, target, failures):
+    target.mkdir(parents=True, exist_ok=True)
+    for seed in (17,41,83,109,151):
+        data = target/f"seed-{seed}.json"
+        try:
+            subprocess.run([sys.executable,str(generator),str(seed),str(data)],
+                           cwd=generator.parent,check=True,timeout=15,capture_output=True)
+            subprocess.run([sys.executable,str(renderer),str(data),str(target/f"seed-{seed}.svg")],
+                           check=True,timeout=15,capture_output=True)
+        except (subprocess.SubprocessError,OSError) as exc:
+            failures.append(f"independent render seed {seed}: {exc}")
+
+def check_known_host_contamination(work_root):
+    # Do not change global instructions. Reject known Combo injection in the
+    # selected Codex home or inherited workspace guidance. This is not proof
+    # that all possible host prompt sources are absent.
+    home = Path(os.environ.get("CODEX_HOME",str(Path.home()/".codex")))
+    locations = [home,work_root,*work_root.parents]
+    for folder in locations:
+        for name in ("AGENTS.md","AGENTS.override.md"):
+            path = folder/name
+            if path.is_file() and "combo" in path.read_text(encoding="utf-8-sig").lower():
+                raise RuntimeError(f"Known Combo host guidance would contaminate A: {path}. "
+                                   "Use a clean evaluation CODEX_HOME/workspace; do not edit the live installation.")
+
 def capture(result, case, target, blind):
     cwd = Path(result["workdir"])
     target.mkdir(parents=True, exist_ok=True)
@@ -69,16 +94,11 @@ def capture(result, case, target, blind):
         # Preserve actual candidate outputs, independently render using the locked
         # source renderer; never accept agent-created preview files as proof.
         renderer = HERE/"fixtures/river/render.py"
-        for seed in (17,41,83,109,151):
-            data = target/f"seed-{seed}.json"
-            try:
-                subprocess.run([sys.executable,str(cwd/"generator.py"),str(seed),str(data)],
-                               cwd=cwd,check=True,timeout=15,capture_output=True)
-                subprocess.run([sys.executable,str(renderer),str(data),str(target/f"seed-{seed}.svg")],
-                               check=True,timeout=15,capture_output=True)
-            except (subprocess.SubprocessError,OSError) as exc:
-                result["task_failures"].append(f"independent render seed {seed}: {exc}")
-        shutil.copy2(cwd/"generator.py",target/"generator.py")
+        if (cwd/"generator.py").is_file():
+            render_outputs(cwd/"generator.py",renderer,target,result["task_failures"])
+            shutil.copy2(cwd/"generator.py",target/"generator.py")
+        else:
+            result["task_failures"].append("generator missing")
         if (cwd/"previews").is_dir():
             shutil.copytree(cwd/"previews", target/"agent-previews")
         for file in target.glob("*.svg"):
@@ -90,7 +110,10 @@ def capture(result, case, target, blind):
         if "generator.py" not in changed:
             result["task_failures"].append("generator unchanged")
     else:
-        shutil.copy2(cwd/"src/ui.py",target/"ui.py")
+        if (cwd/"src/ui.py").is_file():
+            shutil.copy2(cwd/"src/ui.py",target/"ui.py")
+        else:
+            result["task_failures"].append("label source missing")
         if any(r["path"] != "src/ui.py" for r in result["changed_files"]):
             result["task_failures"].append("label control changed unrelated files")
     events,_ = ab.SMOKE.parse_events(Path(result["events_path"]).read_text(encoding="utf-8"))
@@ -99,6 +122,11 @@ def capture(result, case, target, blind):
     # A local Combo reference in A invalidates the treatment, not the model.
     if result["variant"]=="A" and any("combo" in str(r).lower() for r in result["actual_references"]):
         result["environment_failures"].append("A loaded Combo; treatment contaminated")
+    if case["id"]=="river" and result["variant"] in ("B","C") and not any(
+        str(r).lower().startswith("combo/workflows/") for r in result["actual_references"]
+    ):
+        # Lack of a detected read is an evidence gap, not proof of non-use.
+        result["environment_failures"].append("B/C workflow read not observed; treatment unverified")
     result["classification"] = "environmental" if result["environment_failures"] else (
         "task" if result["task_failures"] else "passed")
     result["quality_verdict"] = "pending-human-review" if case["id"]=="river" else "not-applicable"
@@ -116,9 +144,16 @@ def main():
     p.add_argument("--effort",default="max")
     p.add_argument("--timeout",type=int,default=300)
     p.add_argument("--stage-only",action="store_true")
+    p.add_argument("--cli",help="native Codex executable or npm codex.js wrapper")
+    p.add_argument("--codex-home",type=Path,help="prepared evaluation home; does not install or edit settings")
     p.add_argument("--allow-shared-host-policy",action="store_true",
                    help="acknowledge global instructions may contaminate all arms")
     a=p.parse_args()
+    if a.codex_home:
+        home=a.codex_home.resolve()
+        if not home.is_dir():
+            p.error("--codex-home must be an existing prepared directory")
+        os.environ["CODEX_HOME"]=str(home)
     if not 1<=a.repeat<=5 or not 60<=a.timeout<=600:
         p.error("repeat 1..5; timeout 60..600")
     if revision(a.baseline)!=BASE:
@@ -131,10 +166,13 @@ def main():
     a.work_root=a.work_root.resolve()
     if a.output.exists():
         p.error("choose a new output directory; existing evidence is never overwritten")
-    if a.output==ROOT or ROOT in a.output.parents or a.work_root==ROOT or ROOT in a.work_root.parents:
-        p.error("keep results/workspaces outside the source checkout")
+    for source in (ROOT,a.baseline.resolve()):
+        if any(path==source or source in path.parents for path in (a.output,a.work_root)):
+            p.error("keep results/workspaces outside both source checkouts")
     if not a.stage_only and not a.allow_shared_host_policy:
         p.error("read README host caveats, use a clean matched host and acknowledge --allow-shared-host-policy")
+    if not a.stage_only:
+        check_known_host_contamination(a.work_root)
     a.output.mkdir(parents=True)
     a.work_root.mkdir(parents=True,exist_ok=True)
     root=Path(tempfile.mkdtemp(prefix="outcome-first-",dir=a.work_root))
@@ -159,8 +197,14 @@ def main():
         return result
     ab.rows_for=rows
     if not a.stage_only:
-        _,cli=ab.SMOKE.find_cli()
+        _,cli=ab.SMOKE.find_cli(a.cli)
         mcp=ab.SMOKE.configured_mcp_names()
+    if any(c["id"]=="river" for c in selected):
+        reference=HERE/"fixtures/river"
+        failures=[]
+        render_outputs(reference/"generator.py",reference/"render.py",a.output/"reference",failures)
+        if failures:
+            raise RuntimeError("could not render baseline: "+str(failures))
     results=[]
     blind_key=[]
     for rep in range(a.repeat):
@@ -173,7 +217,8 @@ def main():
                 fixture=stage(arm,source,base,dest)
                 if a.stage_only:
                     check=ab.acceptance(base["acceptance"]["before"],fixture)
-                    if check["passed"] or check.get("returncode") != 1:
+                    symptom="disconnected water" if base["id"]=="river" else "label or unrelated behavior differs"
+                    if check["passed"] or check.get("returncode") != 1 or symptom not in check.get("stdout",""):
                         raise RuntimeError(f"invalid seeded failure: {check}")
                     print("STAGED",name,arm,flush=True)
                     continue

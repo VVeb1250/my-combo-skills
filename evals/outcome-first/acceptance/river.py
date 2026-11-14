@@ -8,6 +8,8 @@ from pathlib import Path
 
 SEEDS = (17, 41, 83, 109, 151)
 ROOT = Path(os.environ["COMBO_EVAL_ROOT"])
+if not __debug__:
+    raise RuntimeError("acceptance requires Python assertions enabled")
 
 def check(data, seed):
     assert data["size"] == 96 and data["seed"] == seed
@@ -32,6 +34,11 @@ def check(data, seed):
                 seen.add(p)
                 todo.append(p)
     assert seen == wet, "disconnected water"
+    def runs(row):
+        xs = sorted(x for x,y in wet if y == row)
+        return sum(i == 0 or x != xs[i-1] + 1 for i,x in enumerate(xs))
+    assert runs(0) == 2 and runs(95) == 1, "wrong number of inlets/outlets"
+    assert runs(31) == 2 and runs(64) == 1, "merge outside middle third"
     def average(rows):
         return sum(sum(y == r for x,y in wet) for r in rows) / len(rows)
     assert average(range(75,90)) >= average(range(5,20)) - 0.5, "downstream too narrow"
@@ -56,7 +63,7 @@ def main():
                 mask = check(first, seed)
                 assert first == generate(seed, path), "nondeterministic output"
                 masks.append(mask)
-            except (AssertionError, KeyError, TypeError, ValueError, subprocess.SubprocessError) as exc:
+            except (AssertionError, KeyError, TypeError, ValueError, OSError, subprocess.SubprocessError) as exc:
                 errors.append(f"seed {seed}: {exc}")
     if len(masks) == len(SEEDS) and min(len(a ^ b) for i,a in enumerate(masks) for b in masks[i+1:]) < 12:
         errors.append("seeds have insufficient distinct geometry")
