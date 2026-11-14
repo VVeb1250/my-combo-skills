@@ -8,9 +8,9 @@ mechanics that are unresolved.
 
 1. Identify the outcome, constraints, compatibility obligations, and requested
    fidelity. Inspect relevant code, real callers, tests, domain terms, and ADRs.
-2. Resolve facts from evidence and apply the context auto-grill trigger to
+2. Resolve facts from evidence and front-load the context design interview for
    consequential unresolved user-owned choices before committing dependent
-   design. Do not ask about clear routine choices or repeat accepted decisions.
+   design. Ask the complete ready frontier and settle prerequisites in rounds. Do not ask about clear routine choices or repeat accepted decisions.
    Use primary sources with version/date for changing external facts.
 3. Compare viable approaches against these constraints and recommend one.
    Keep an alternative only when its tradeoff affects the decision.
@@ -79,39 +79,37 @@ retained user instruction outranks your summary of the plan.
 
 ### Decision triage
 
-Resolve facts from context, files, references, tools, or a bounded experiment before
-asking. Choose routine methods from that evidence. Ask only about an unresolved
-choice that materially changes outcome, taste, compatibility, risk, cost, or scope
-and cannot be established from the available evidence. An unavailable reference
-is a gap to resolve, not permission to guess its contents.
+Resolve facts from context, code, references, tools, and bounded experiments.
+Do not ask the user to discover facts or choose routine implementation methods.
+For consequential design, identify unresolved user-owned choices early; do not
+treat the existence of multiple viable algorithms as missing user intent.
 
-Before consequential implementation or design, actively check whether
-different plausible architectures or product behaviors lead to materially
-different outcomes, even if the prompt sounds clear. If an unresolved
-user-owned decision remains, initiate a bounded auto-grill; do not silently
-pick a default or implement the dependent design. Ask the highest-impact one
-to three independent questions per round with a recommendation and real
-tradeoffs. Continue only if an answer exposes another consequential decision.
-Explicit grill requests may go deeper. Do not manufacture choices for a
-clear tiny fix, repeat accepted decisions, or ask for facts inspectable
-in code. See [design](../practices/design.md) for architecture-specific probes.
+**Design alignment (before execution).** If the intended outcome, binding
+constraints, or consequential user-owned design decisions are unresolved,
+front-load a design interview before committing to dependent design. Map the
+relevant decision tree; ask the whole frontier of independent decisions whose
+prerequisites are settled, with a recommendation and meaningful tradeoff for
+each. Recompute the frontier after answers. Research facts concurrently when
+economical (see [delegation](../practices/delegation.md)); only dependent questions wait.
+Use a bounded prototype when seeing an outcome is necessary to settle taste,
+within the authorized stopping point. Close the interview when the material
+decisions are settled and shared understanding is established. Confirm when
+an actual approval boundary remains; an explicit authorization on an agreed
+design already suffices. Do not impose a new interview or approval ceremony
+on an already-aligned request, routine edit, or delegated design decision.
 
-For a behavior change, current implementation establishes what exists, not the
-requested new intent. If two plausible readings produce materially different
-user-visible results and the evidence leaves both open, ask before committing
-either. Keeping an existing default is a recommendation, not user assent.
-
-Ask the smallest decision-changing question, with a recommended answer and the
-tradeoff of a viable alternative. Settle prerequisites before dependent choices;
-bundle only independent questions when useful. Wait for answers before dependent
-work, while continuing independent authorized work. Prior user answers remain
-binding. For reversible details with little effect, state a material assumption
-when needed and proceed; do not turn every implementation choice into an interview.
-
-When taste needs seeing, use a small prototype or visual alternatives within the
-authorized scope, identify what the choice settles, and get the user's selection
-before committing the disputed direction. A plan-only boundary still applies.
-Stop questioning once remaining uncertainty cannot materially change the result.
+**Execution authority (after alignment).** Own the authorized outcome.
+Independently choose implementation methods, investigate unknown mechanisms,
+experiment, inspect integrated results, and refine fixable quality gaps.
+Do not reopen settled decisions, stop for intermediate verification or require
+approval for every slice. Progress updates do not request approval; continue
+authorized work. Escalate only if new evidence exposes a consequential
+user-owned choice outside existing authority, such as a necessary change to
+binding intent, a material risk, or an infeasible accepted constraint.
+Explain the evidence, viable tradeoff and recommendation; continue independent
+authorized work. Preserve plan-only and explicit user checkpoints and host
+permission boundaries. Record material assumptions or unresolved limits.
+See [design](../practices/design.md) for technical probes.
 
 ### Verify against intent
 

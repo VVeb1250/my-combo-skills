@@ -47,9 +47,9 @@ prototype routine known solutions. Keep the agreed acceptance intact.
   architecture trade-offs, risk, fidelity or scope.
 - For meaningful design risk, identify a few genuinely different viable
   outcomes before implementing. If one consequential choice is user-owned and
-  unresolved, apply the bounded auto-grill in [context](context.md); do not
-  silently settle it by picking the existing behavior. Once known choices are
-  accepted, stop questioning and continue within the authorized scope.
+  unresolved, use the front-loaded design interview in [context](context.md)
+  before dependent work. Once aligned, choose technical methods autonomously
+  within the agreed scope; only a new user-owned tradeoff requires escalation.
 - Challenge a core contract against one or two meaningfully different known
   variations or failure conditions. Use the cheapest contrastive probe (a
   caller trace, state table, minimal test or throwaway prototype) that could
