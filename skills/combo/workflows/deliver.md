@@ -13,6 +13,12 @@ actual outcome, not the implementation medium.
 
 ## Choose the slice
 
+If an opted-in project has `.combo/`, navigate `.combo/INDEX.md` and the
+relevant domain before consequential choices (use a known record directly).
+Read accepted behavior, relevant decisions and candidate knowledge; confirm
+applicability against actual code. For legacy projects without Markdown views,
+use [project ecosystem](../practices/project-ecosystem.md) to regenerate or navigate existing records.
+
 1. Identify user-visible behavior and an observable acceptance condition for
    each requirement, including actual compatibility, security, performance,
    accessibility, and data-loss constraints.
@@ -37,6 +43,14 @@ unpublished WIP checkpoints **only when authorized**. A clean initial HEAD is
 already a baseline; no checkpoint is required for a tiny edit. Do not stage or
 commit unrelated work.
 
+For new observable behavior or a reproduced regression, use [tests](../practices/tests.md)
+**before production edits**: choose one scenario and independent expectation,
+select the highest useful public seam, demonstrate red, implement green, then
+choose the next meaningful behavior. A rendered/spatial outcome may instead
+need a real before/after probe. Do not bulk-write imagined tests or fit expectations
+to finished code. If red is infeasible, state the evidence gap and use the
+closest faithful check.
+
 Implement independently verifiable vertical slices. When quality depends on
 composition or interaction among generators/features, make the slice a small
 integrated outcome (not merely a feature that exists in isolation). For a
@@ -47,13 +61,15 @@ and error handling at trust boundaries; use [security](../practices/security.md)
 when those boundaries change. Add dependencies, flexibility, or adjacent changes
 only when the requirement or causal evidence needs them.
 
-If the project has `.combo/`, consult [project ecosystem](../practices/project-ecosystem.md) for accepted requirements, task-scoped deltas, selective retro, and tested shortcuts. Never use an old lesson to override current code or approved intent.
+For opted-in projects, capture consequential reusable discoveries and accepted
+decisions as they emerge in their canonical records; continue the work. Use
+[project ecosystem](../practices/project-ecosystem.md) for editing, not a second
+workflow. Never let advisory knowledge override approved intent.
 
 ## Verify and finish
 
-- Select behavioral checks with [tests](../practices/tests.md). Use red-green
-  when it clarifies new behavior or a regression. Tiny reversible edits need
-  inspection and the cheapest relevant check, not an artificial suite.
+- Continue the behavioral checks selected before each slice. Tiny reversible
+  edits need inspection and the cheapest relevant check, not an artificial suite.
 - Check each meaningful slice. Map every acceptance condition to actual evidence;
   keep this mapping in context unless a report needs it.
 - A shared contract change needs affected-caller coverage; dependency/config
@@ -86,7 +102,8 @@ relevant acceptance checks only after a cause-supported repair.
 
 For an opted-in `.combo/` project, use changed source paths to find candidate
 owner/spec/decision records with the existing [project ecosystem](../practices/project-ecosystem.md)
-routing. Update changed canonical contracts and regenerate a touched index; a
+navigation or path hints. Reconcile accepted contracts and actual verification
+status separately; update useful knowledge and regenerate touched indexes. A
 path miss does not prove no documentation impact.
 
 Return the result, useful file links, check verdicts, and material unchecked
