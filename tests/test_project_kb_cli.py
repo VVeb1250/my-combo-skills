@@ -139,6 +139,7 @@ summary = "Old targeting rules"
     def test_stale_error_names_added_and_tampered_entries(self):
         self.build()
         write_added = self.root / ".combo" / "verification" / "new.md"
+        write_added.parent.mkdir(parents=True, exist_ok=True)
         write_added.write_text("---\nid: check.new\n---\n# New\n", encoding="utf-8")
         added = self.cli("check")
         self.assertEqual(added.returncode, 1)
