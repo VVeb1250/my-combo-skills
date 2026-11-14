@@ -29,9 +29,9 @@ concern justifies another check. Report a denied or unavailable check as such.
 
 ## Delegation and resumption
 
-When authorized independent work benefits from isolation, use the native Agent
-tool with `combo-worker` and give it the goal, file ownership, constraints,
-chosen workflow path, and expected evidence. A subagent needs its own task
+When authorized bounded work is economical, use the native Agent tool with
+`subcombo-research`, `subcombo-implement` or `subcombo-verify` as appropriate.
+Give it the goal, file ownership, constraints, relevant reference and expected evidence. A subagent needs its own task
 context; pass the facts it needs rather than assuming it saw the conversation
 or the skills already read by the parent. The parent owns decisions, integration,
 and verification. Keep tightly coupled or tiny work in the current session.

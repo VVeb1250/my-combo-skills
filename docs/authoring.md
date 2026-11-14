@@ -128,7 +128,7 @@ practice or specialist note, not a new task path.
 For Codex, the adapter supplies `agents/openai.yaml` per entry and the worker
 configuration. For Claude Code, the adapter supplies frontmatter such as
 `disable-model-invocation` and `user-invocable`, `${CLAUDE_SKILL_DIR}` runtime
-paths, a native subagent with `model: inherit`, and host settings.
+paths, native Subcombo role adapters with host-specific model defaults, and host settings.
 
 An explicit-only system entry needs both:
 

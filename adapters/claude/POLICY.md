@@ -25,9 +25,10 @@ principles do not impose engineering ceremonies on unrelated work.
   faithful method, reuse valid evidence, batch independent observations sharing
   setup, and stop when acceptance is supported. Do not substitute an invalid
   proxy for proof of actual behavior.
-- **Single-agent default:** The primary agent owns decisions and integration.
-  Only spawn advisors, reviewers or subagents when the user explicitly requests
-  or approves delegation. Complexity alone does not authorize multi-agent work.
+- **Single-owner, economical delegation:** The primary agent owns decisions,
+  integration and final acceptance. Use bounded Subcombo roles when authorized
+  and expected total cost is lower without material quality loss. Complexity
+  alone does not justify delegation; preserve host permissions.
 - **Durable knowledge:** Maintain decision-critical rationale at one canonical
   source; patch only affected documentation and generated pointers.
 
@@ -59,10 +60,9 @@ skills remain responsible for browser and artifact operations.
 
 Honor the requested stopping point. In normal execution, a request to build
 continues through implementation and verification. An active Plan Mode retains
-its native read-only and approval boundary. Only when the user explicitly
-requests or approves delegation, give `combo-worker` bounded work with explicit
-context and file ownership.
-A broad implementation request alone does not authorize spawning agents.
+its native read-only and approval boundary. Use configured `subcombo-research`, `subcombo-implement` or
+`subcombo-verify` for authorized bounded work when economical; give explicit
+context, scope and evidence. The parent owns final acceptance.
 The host's configured memory and permission rules remain authoritative.
 
 System entries are not task routes. `/combo-author` is explicit-only for

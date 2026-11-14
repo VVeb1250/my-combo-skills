@@ -24,7 +24,9 @@ OWNERSHIP_INDEX = "skills/combo/.combo-owned.json"
 AGENT_TARGET = "agents/combo-worker.md"
 OVERRIDE_ROOT = "adapters/claude/overrides"
 POLICY_SOURCE = "adapters/claude/POLICY.md"
-AGENT_SOURCE = "adapters/claude/agents/combo-worker.md"
+AGENT_SOURCE = "adapters/claude/agents/combo-worker.md"  # legacy migration
+SUBCOMBO_ROLES = ("research", "implement", "verify")
+AGENT_TARGETS = {AGENT_TARGET, *(f"agents/subcombo-{r}.md" for r in SUBCOMBO_ROLES)}
 CLAUDE_FILE = "CLAUDE.md"
 SETTINGS_FILE = "settings.json"
 CLAUDE_BEGIN = "<!-- BEGIN COMBO -->"
@@ -198,18 +200,46 @@ def _legacy_prefix(text: str, expected: str) -> str | None:
     return None
 
 
+def _manifest_agent_files(manifest: dict) -> list[dict]:
+    if "agent_files" not in manifest:
+        return [{"source": _manifest_path(manifest, "agent_source", AGENT_SOURCE),
+                 "target": _legacy_agent_target(manifest)}]
+    if "agent_source" in manifest or "agent_target" in manifest:
+        raise ValueError("Do not mix legacy and Subcombo agent declarations")
+    rows = manifest["agent_files"]
+    if not isinstance(rows, list):
+        raise TypeError("agent_files must be a list")
+    expected = {f"agents/subcombo-{r}.md" for r in SUBCOMBO_ROLES}
+    seen = set()
+    for row in rows:
+        if not isinstance(row, dict):
+            raise TypeError("agent_files entry must be an object")
+        target = _relative(row.get("target"), "agent target")
+        source = _relative(row.get("source"), "agent source")
+        if target not in expected or source != f"adapters/claude/{target}" or target in seen:
+            raise ValueError(f"Unsupported or duplicate agent adapter: {target}")
+        seen.add(target)
+    if seen != expected:
+        raise ValueError("Declare the complete Subcombo role set")
+    return rows
+
+
+def _legacy_agent_target(manifest: dict) -> str:
+    target = _relative(manifest.get("agent_target", AGENT_TARGET), "agent_target")
+    if target != AGENT_TARGET:
+        raise ValueError(f"agent_target must be {AGENT_TARGET}: {target}")
+    return target
+
+
 def _validate_manifest(manifest: dict) -> dict[str, str]:
     roots = _manifest_package_roots(manifest)
     _manifest_settings(manifest)
     _manifest_path(manifest, "ownership_index", OWNERSHIP_INDEX)
     _manifest_path(manifest, "override_root", OVERRIDE_ROOT)
     _manifest_path(manifest, "policy_source", POLICY_SOURCE)
-    _manifest_path(manifest, "agent_source", AGENT_SOURCE)
     _manifest_path(manifest, "claude_file", CLAUDE_FILE)
     _manifest_path(manifest, "settings_file", SETTINGS_FILE)
-    agent_target = _relative(manifest.get("agent_target", AGENT_TARGET), "agent_target")
-    if agent_target != AGENT_TARGET:
-        raise ValueError(f"agent_target must be {AGENT_TARGET}: {agent_target}")
+    _manifest_agent_files(manifest)
     markers = manifest.get("claude_markers", {})
     if not isinstance(markers, dict):
         raise TypeError("claude_markers must be an object")
@@ -531,14 +561,16 @@ def _validate_rendered(files: dict[str, bytes], overrides: set[str]) -> None:
                 raise ValueError(
                     f"Claude skill contains Codex invocation marker: {relative}"
                 )
-    _frontmatter(
-        files[AGENT_TARGET].decode("utf-8"), Path(AGENT_TARGET), "combo-worker"
-    )
+    agents = set(files) & AGENT_TARGETS
+    if agents not in ({AGENT_TARGET}, AGENT_TARGETS - {AGENT_TARGET}):
+        raise ValueError("Incomplete or mixed agent adapters")
+    for target in sorted(agents):
+        _frontmatter(files[target].decode("utf-8"), Path(target), Path(target).stem)
     _validate_links(files)
 
 
 def _ownership_allowed(relative: str, packages: dict[str, str]) -> bool:
-    if relative == AGENT_TARGET:
+    if relative in AGENT_TARGETS:
         return True
     return any(relative.startswith(f"{root}/") for root in packages.values())
 
@@ -661,11 +693,12 @@ def build_plan(home: Path, manifest: dict | None = None) -> list[dict]:
         raise ValueError(f"Claude target is not a directory: {target_root}")
 
     target, overrides = _collect_sources(packages, target_root, manifest)
-    agent_source = ROOT / _manifest_path(manifest, "agent_source", AGENT_SOURCE)
-    _assert_source(agent_source)
-    if not agent_source.is_file():
-        raise ValueError(f"Missing Claude worker agent: {agent_source}")
-    target[AGENT_TARGET] = agent_source.read_bytes()
+    for row in _manifest_agent_files(manifest):
+        agent_source = ROOT / row["source"]
+        _assert_source(agent_source)
+        if not agent_source.is_file():
+            raise ValueError(f"Missing Claude worker agent: {agent_source}")
+        target[row["target"]] = agent_source.read_bytes()
 
     _validate_rendered(target, overrides)
 

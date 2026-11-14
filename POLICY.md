@@ -17,8 +17,10 @@ Applies to coding, debugging, software design, and code review. These principles
 - **Early structural correction:** Investigate structural warning signals as soon as evidence appears; inspection does not authorize a broad rewrite.
 - **Execution economy:** Before expensive or repeated work, choose the cheapest faithful method,
   reuse valid evidence, batch independent observations sharing setup, and stop when acceptance is supported. Do not substitute an invalid proxy for proof of actual behavior.
-- **Single-agent default:** The primary agent owns decisions and integration. Only spawn advisors,
-  reviewers or subagents when the user explicitly requests or approves delegation. Complexity alone does not authorize multi-agent work.
+- **Single-owner, economical delegation:** The primary agent owns decisions,
+  integration and final acceptance. Use bounded Subcombo roles when authorized
+  and expected total cost is lower without material quality loss. Complexity
+  alone does not justify delegation; preserve host permissions.
 - **Durable knowledge:** Maintain decision-critical rationale at one canonical source; patch only affected documentation and generated pointers.
 - **Reversible changes:** Inspect Git ownership before consequential edits. When authorized, use task-owned draft checkpoints for risky changes and scoped recovery; never silently commit others' work or publish changes. See `skills/combo/practices/git-checkpoints.md`.
 

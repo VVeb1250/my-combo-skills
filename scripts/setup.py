@@ -26,7 +26,9 @@ REAL_HOME = Path.home()
 # copier.
 PACKAGE_NAME_RE = re.compile(r"^combo(?:-[a-z0-9]+)*$")
 PACKAGE_PREFIX = "skills/"
-ADAPTER_TARGET = "agents/combo-worker.toml"
+ADAPTER_TARGET = "agents/combo-worker.toml"  # legacy ownership/migration
+SUBCOMBO_ROLES = ("research", "implement", "verify")
+ADAPTER_TARGETS = {ADAPTER_TARGET, *(f"agents/subcombo-{r}.toml" for r in SUBCOMBO_ROLES)}
 OWNERSHIP_INDEX = "skills/combo/.combo-owned.json"
 
 # BEGIN/END are kept as compatibility aliases for callers of the v0 helper.
@@ -155,7 +157,7 @@ def _manifest_owned_relative(path: str, manifest: dict) -> bool:
     """Whether an ownership row names a package file or the worker role."""
     if path == _manifest_ownership_index(manifest):
         return False
-    if path == ADAPTER_TARGET:
+    if path in ADAPTER_TARGETS:
         return True
     return any(path.startswith(prefix) for prefix in _manifest_owned_prefixes(manifest))
 
@@ -306,13 +308,14 @@ def render_config(raw: bytes, manifest: dict, home: Path) -> bytes:
             "A targeted skill has an unmanaged override; reconcile it before applying."
         )
 
-    role = _manifest_worker_role(manifest)
-    if role and role["name"] in stripped.get("agents", {}):
-        raise ValueError(f"An unmanaged agent role already exists: {role['name']}")
+    roles = _manifest_worker_roles(manifest)
+    for role in roles:
+        if role["name"] in stripped.get("agents", {}):
+            raise ValueError(f"An unmanaged agent role already exists: {role['name']}")
 
     begin, end = _config_markers(manifest)
     block = [begin]
-    if role:
+    for role in roles:
         block += [
             f"[agents.{role['name']}]",
             f"config_file = {json.dumps(role['config_file'])}",
@@ -334,7 +337,7 @@ def render_config(raw: bytes, manifest: dict, home: Path) -> bytes:
     for plugin in plugins:
         if plugin in expected.get("plugins", {}):
             expected["plugins"][plugin]["enabled"] = False
-    if role:
+    for role in roles:
         _set_nested(
             expected,
             "agents",
@@ -479,7 +482,7 @@ def _read_owned_index(
 
 def _ownership_bytes(files: dict[Path, bytes], home: Path, manifest: dict) -> bytes:
     root = _codex_root(home)
-    allowed = (*_manifest_owned_prefixes(manifest), ADAPTER_TARGET)
+    allowed = _manifest_owned_prefixes(manifest)
     rows = [
         {
             "path": path.relative_to(root).as_posix(),
@@ -489,7 +492,7 @@ def _ownership_bytes(files: dict[Path, bytes], home: Path, manifest: dict) -> by
         for path, data in sorted(files.items(), key=lambda item: str(item[0]).lower())
         if data is not None
         and (
-            path.relative_to(root).as_posix() == ADAPTER_TARGET
+            path.relative_to(root).as_posix() in ADAPTER_TARGETS
             or any(
                 path.relative_to(root).as_posix().startswith(prefix)
                 for prefix in allowed
@@ -521,35 +524,47 @@ def _manifest_adapters(manifest: dict) -> list[dict]:
         target = _relative_manifest_path(
             entry.get("target"), f"adapter_files[{index}].target"
         )
-        if target != ADAPTER_TARGET:
-            raise ValueError(
-                f"adapter_files[{index}] target must be {ADAPTER_TARGET}: {target}"
-            )
+        if target not in ADAPTER_TARGETS:
+            raise ValueError(f"Unsupported Combo adapter target: {target}")
+        if any(row["target"] == target for row in result):
+            raise ValueError(f"Duplicate adapter target: {target}")
         if source in {"", "."} or not source.startswith("adapters/"):
             raise ValueError(
                 f"adapter_files[{index}] source must be under adapters/: {source}"
             )
         result.append({"source": source, "target": target})
-    if len(result) > 1:
-        raise ValueError("only the combo-worker.toml adapter role may be declared")
     return result
 
 
-def _manifest_worker_role(manifest: dict) -> dict | None:
-    role = manifest.get("config", {}).get("worker_role")
-    if role is None:
-        return None
-    if not isinstance(role, dict):
-        raise TypeError("config.worker_role must be an object")
-    if role.get("name") != "combo_worker":
-        raise ValueError("only the combo_worker role may be declared")
-    if role.get("config_file") != ADAPTER_TARGET:
-        raise ValueError(
-            f"worker role config_file must be {ADAPTER_TARGET}: {role.get('config_file')}"
-        )
-    if not isinstance(role.get("description"), str) or not role["description"].strip():
-        raise ValueError("worker role description must be a non-empty string")
-    return role
+def _manifest_worker_roles(manifest: dict) -> list[dict]:
+    config = manifest.get("config", {})
+    if "worker_roles" in config and "worker_role" in config:
+        raise ValueError("Use either worker_roles or legacy worker_role, not both")
+    raw = config.get("worker_roles", [config["worker_role"]] if "worker_role" in config else [])
+    if not isinstance(raw, list):
+        raise TypeError("worker_roles must be a list")
+    allowed = {"combo_worker": ADAPTER_TARGET, **{
+        f"subcombo-{r}": f"agents/subcombo-{r}.toml" for r in SUBCOMBO_ROLES
+    }}
+    seen = set()
+    for role in raw:
+        if not isinstance(role, dict):
+            raise TypeError("worker role must be an object")
+        name = role.get("name")
+        if name not in allowed or role.get("config_file") != allowed[name]:
+            raise ValueError(f"Unsupported worker role/config_file: {name}")
+        if name in seen:
+            raise ValueError(f"Duplicate worker role: {name}")
+        seen.add(name)
+        if not isinstance(role.get("description"), str) or not role["description"].strip():
+            raise ValueError("worker role description must be a non-empty string")
+    if seen == {"combo_worker"} or not seen:
+        pass
+    elif seen != {f"subcombo-{r}" for r in SUBCOMBO_ROLES}:
+        raise ValueError("Declare the complete Subcombo role set")
+    if {role["config_file"] for role in raw} != {row["target"] for row in _manifest_adapters(manifest)}:
+        raise ValueError("Worker roles and adapter targets must correspond exactly")
+    return raw
 
 
 def build_plan(home: Path, manifest: dict | None = None) -> list[dict]:
@@ -636,6 +651,12 @@ def build_plan(home: Path, manifest: dict | None = None) -> list[dict]:
     ):
         _assert_target(path, home)
         before = existing(path)
+        relative = path.relative_to(root).as_posix()
+        if relative in ADAPTER_TARGETS and before is not None and before != after:
+            if relative not in previous:
+                raise ValueError(f"Unowned agent adapter collision: {path}")
+            if digest(before) != previous[relative]:
+                raise ValueError(f"Owned agent adapter drifted: {path}")
         if before != after:
             changes.append({"path": path, "before": before, "after": after})
     return changes

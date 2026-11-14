@@ -146,7 +146,7 @@ class SetupTests(unittest.TestCase):
             paths={Path(change['path']).relative_to(codex).as_posix() for change in changes}
             self.assertTrue(any(path.startswith('skills/combo/') for path in paths))
             self.assertTrue(any(path.startswith('skills/combo-maintain/') for path in paths))
-            self.assertIn('agents/combo-worker.toml', paths)
+            self.assertTrue({f'agents/subcombo-{role}.toml' for role in ('research', 'implement', 'verify')} <= paths)
             self.assertNotIn('skills/ecc-api-design/SKILL.md', paths)
             self.assertNotIn('skills/matt-plan/SKILL.md', paths)
             self.assertNotIn('hooks.json', paths)

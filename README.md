@@ -140,19 +140,17 @@ memory และ installer ของ upstream ต้องปรับให้�
 [Source manifest](curation/full-library.json) ระบุที่มา การจัดกลุ่ม การปรับลิงก์
 และ hash ของไฟล์ ไม่ต้องโหลด library ทั้งหมดเข้า context ทุกครั้ง
 
-## Agent หลักและ Luna Max
+## Main Agent และ Subcombo
 
-Agent หลักรับผิดชอบเจตนา workflow, architecture, tradeoffs และการยอมรับผลงาน
-เมื่องานเหมาะกับ delegation และได้รับอนุญาต ใช้ `combo_worker` สำหรับงานอิสระ
-ที่กำหนดขอบเขตชัด โดย [Codex adapter](adapters/codex/combo-worker.toml)
-ตั้งเป็น **Luna Max** ไม่เปลี่ยน model หลักของผู้ใช้
-
-Workflow ไม่มีชื่อ model ฝังอยู่ จึงใช้ร่วมกับ model อื่นได้
-ผลทดลองรอบนี้วัด Luna Max เท่านั้น ยังไม่ใช่หลักฐาน auto-trigger ของทุก model
-
-Claude Code ใช้ [native `combo-worker`](adapters/claude/agents/combo-worker.md)
-แบบ `model: inherit` ตาม model หลักของ Claude พร้อมส่ง context และขอบเขตงาน
-ให้ subagent อย่างชัดเจน ดู [Claude setup](adapters/claude/README.md)
+Agent หลักเป็นเจ้าของ Intent, Architecture, Integration และ Final Acceptance
+ใช้ `subcombo-research` (ค้น facts), `subcombo-implement` (งานที่มี contract ชัด)
+หรือ `subcombo-verify` (ตรวจผล) เมื่อประหยัดต้นทุนรวมและคุณภาพไม่ตก
+ดู [delegation](skills/combo/practices/delegation.md) และ adapters ของ
+[Codex](adapters/codex/) / [Claude Code](adapters/claude/agents/).
+ค่าเริ่มต้น candidate: Codex Luna medium สำหรับ research/verify และ max สำหรับ
+implement; Claude Haiku สำหรับ research/verify และ Sonnet สำหรับ implement.
+ค่าเหล่านี้เป็นสมมติฐานทดลอง ไม่ใช่หลักฐานว่าคุ้มกว่าทำเอง
+ไม่เปลี่ยน model หลัก ไม่บังคับ fanout หรือเพิ่ม approval ceremony.
 
 ## ผลเปรียบเทียบ
 
