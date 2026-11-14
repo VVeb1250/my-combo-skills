@@ -50,11 +50,16 @@ prototype routine known solutions. Keep the agreed acceptance intact.
   unresolved, use the front-loaded design interview in [context](context.md)
   before dependent work. Once aligned, choose technical methods autonomously
   within the agreed scope; only a new user-owned tradeoff requires escalation.
-- Challenge a core contract against one or two meaningfully different known
-  variations or failure conditions. Use the cheapest contrastive probe (a
-  caller trace, state table, minimal test or throwaway prototype) that could
-  falsify the boundary. A routine edit needs no probe; do not build the
-  future features or a full benchmark to validate a proposed seam.
+- Challenge a core contract against meaningfully different required variations
+  or failure conditions. Match evidence to the claim: caller traces for static
+  ownership, state tables for transitions, runnable contrastive variants for
+  claimed integration or runtime capability, real renders for visual fidelity,
+  representative benchmarks for capacity. A paper sketch cannot verify a
+  runtime claim. Use a bounded integrated probe when needed, not speculative
+  future features or a full system. A routine edit needs no probe.
+- For consequential mechanisms, trace input -> state/data owner -> real
+  processing -> caller-visible output and predict the effect of the proposed
+  change; inspect counterevidence. Keep this in context, not a required report.
 - Keep the decisions visible in domain naming, localized state ownership and
   interfaces. Retain only rationale that cannot be cheaply recovered from code.
 
