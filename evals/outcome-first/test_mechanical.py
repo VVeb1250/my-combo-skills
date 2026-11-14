@@ -1,6 +1,6 @@
 """Self-tests for the evaluation, not a candidate model solution."""
 import importlib.util
-import json
+import inspect
 import math
 import os
 from pathlib import Path
@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+import xml.etree.ElementTree as ET
 from unittest.mock import patch
 
 HERE = Path(__file__).resolve().parent
@@ -23,13 +24,14 @@ with patch.dict(os.environ,{"COMBO_EVAL_ROOT":str(FIXTURE)}):
     acceptance = load("river_acceptance",HERE/"acceptance/river.py")
 legacy = load("river_legacy",FIXTURE/"generator.py")
 runner = load("outcome_first_runner",HERE/"run.py")
+SEEDS = acceptance.SEEDS
 
 def connected_sample(seed):
     # Mathematical positive control ONLY: deliberately not an art reference.
     # Small smooth seed shift, a west branch merging near y=50.
     wet = []
     for y in range(96):
-        main = 49 + (seed % 5 - 2) * math.sin(y/22)
+        main = 49 + (SEEDS.index(seed) - 2) * 2 * math.sin(y/22)
         tributary = 10 + (main - 10) * y/50
         radius = 2 if y < 45 else 4
         for x in range(96):
@@ -88,6 +90,60 @@ class MechanicalTests(unittest.TestCase):
             self.assertEqual(check(original).returncode,1)
             self.assertEqual(check(original.replace('"Save"','"Save changes"')).returncode,0)
             self.assertEqual(check(original.replace('"Save"','"Save changes"').replace("<button>","<div>")).returncode,1)
+
+    def test_full_acceptance_pass_and_reject_no_variation(self):
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            path = root/"generator.py"
+            sample = inspect.getsource(connected_sample)
+            header = f"import json, math, sys\nfrom pathlib import Path\nSEEDS = {SEEDS!r}\n"
+            footer = '\nseed = int(sys.argv[1])\ndata = connected_sample(seed)\nPath(sys.argv[2]).write_text(json.dumps(data),encoding="utf-8")\n'
+            env = {**os.environ,"COMBO_EVAL_ROOT":d}
+            def check(body):
+                path.write_text(header+sample+body,encoding="utf-8")
+                return subprocess.run([sys.executable,str(HERE/"acceptance/river.py")],
+                                      env=env,capture_output=True,text=True,timeout=30)
+            good = check(footer)
+            self.assertEqual(good.returncode,0,good.stdout+good.stderr)
+            constant = footer.replace("connected_sample(seed)","connected_sample(SEEDS[0])").replace(
+                'Path(sys.argv[2])','data["seed"] = seed\nPath(sys.argv[2])')
+            bad = check(constant)
+            self.assertEqual(bad.returncode,1,bad.stdout+bad.stderr)
+            self.assertIn("insufficient distinct geometry",bad.stdout)
+
+    def test_stage_three_treatments(self):
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d)
+            for arm in ("B","C"):
+                source=root/arm
+                (source/"skills/combo").mkdir(parents=True)
+                (source/"skills/combo/SKILL.md").write_text(arm,encoding="utf-8")
+                (source/"POLICY.md").write_text(arm,encoding="utf-8")
+            case=runner.CASES[0]
+            for arm in runner.ARMS:
+                dest=root/f"stage-{arm}"
+                fixture=runner.stage(arm,root/arm,case,dest)
+                self.assertEqual((fixture/"generator.py").read_bytes(),(FIXTURE/"generator.py").read_bytes())
+                self.assertEqual((fixture/"render.py").read_bytes(),(FIXTURE/"render.py").read_bytes())
+                if arm=="A":
+                    self.assertEqual(list((dest/"skills").iterdir()),[])
+                    self.assertFalse((fixture/"POLICY.md").exists())
+                    self.assertNotIn("combo", (fixture/"AGENTS.md").read_text().lower())
+                else:
+                    self.assertEqual((dest/"skills/combo/SKILL.md").read_text(),arm)
+                    self.assertEqual((fixture/"POLICY.md").read_text(),arm)
+                    self.assertIn("combo-", (fixture/"AGENTS.md").read_text())
+
+    def test_locked_renderer_produces_all_seed_views(self):
+        with tempfile.TemporaryDirectory() as d:
+            target=Path(d)
+            failures=[]
+            runner.render_outputs(FIXTURE/"generator.py",FIXTURE/"render.py",target,failures)
+            self.assertFalse(failures)
+            self.assertEqual(len(list(target.glob("*.svg"))),len(SEEDS))
+            for seed in SEEDS:
+                svg=ET.parse(target/f"seed-{seed}.svg").getroot()
+                self.assertEqual(svg.attrib["viewBox"],"0 0 96 96")
 
     def test_order_rotates(self):
         for i in range(2):

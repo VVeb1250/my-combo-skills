@@ -38,8 +38,9 @@ python scripts/sync-context-core.py --check
 ```
 
 These exercise the independent mechanical grader with a known-pass synthetic
-channel and deliberate defects, the legacy seeded failures, the label control,
-and arm order. They do not establish model behavior or visual quality.
+channel and deliberate defects, the full multi-seed acceptance (including
+rejection of seed-invariant geometry), the legacy seeded failures, the label
+control, staged treatment separation, locked renderer and arm order. They do not establish model behavior or visual quality.
 
 ## Cases
 

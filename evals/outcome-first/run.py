@@ -18,10 +18,14 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 BASE = "2ec0e2033bdcc783ab021efa508eaf98d0c28786"
 ARMS = ("A", "B", "C")
-spec = importlib.util.spec_from_file_location("outcome_first_ab", ROOT/"scripts/run-ab-eval.py")
-assert spec and spec.loader
-ab = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(ab)
+ab = None
+
+def load_harness():
+    spec = importlib.util.spec_from_file_location("outcome_first_ab", ROOT/"scripts/run-ab-eval.py")
+    assert spec and spec.loader
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
 
 CASES = [
     {"id":"river", "fixture":"river", "sandbox":"workspace-write",
@@ -134,6 +138,7 @@ def capture(result, case, target, blind):
     save_json(Path(result["result_path"]),result)
 
 def main():
+    global ab
     p=argparse.ArgumentParser(description=__doc__)
     p.add_argument("--baseline",type=Path,required=True)
     p.add_argument("--output",type=Path,required=True)
@@ -182,6 +187,7 @@ def main():
               "repeat":a.repeat,"work_root":str(root),"stage_only":a.stage_only,
               "cases":selected,"limitations":"synthetic 2D proxy; shared global policy; not filesystem isolation"}
     save_json(a.output/"run.json",manifest)
+    ab=load_harness()
     ab.ACCEPTANCE=HERE/"acceptance"
     original_rows=ab.rows_for
     def rows(variant,global_combo):
