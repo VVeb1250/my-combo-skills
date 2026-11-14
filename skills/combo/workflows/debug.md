@@ -50,6 +50,14 @@ Prefer scoped state snapshots or structured logs over broad verbose logs.
 Use [security](../practices/security.md) when the failing path crosses a real
 trust or sensitive-data boundary. Lack of reproduction alone is not a blocker.
 
+For a quality failure with technically valid output, reproduce the rejected
+artifact and compare it with the intended result using
+[outcome evidence](../practices/outcome-evidence.md). Distinguish a local defect
+from a mechanism or representation whose output cannot reach the required
+quality. A passing functional regression does not close that quality gap.
+Reset the premise when evidence shows the current method's ceiling; explore
+a bounded alternative within scope instead of accumulating cosmetic patches.
+
 ## Repair within authorization
 
 - Convert the repro into a regression at the highest existing seam that detects
@@ -83,6 +91,15 @@ acceptance. Discover necessary implicit work from real references, callers, and
 delivery conditions: choose the method and carry authorized work through to that
 result. Inferred implementation steps are not permission to expand scope or cross
 the requested stopping point.
+
+Keep quality, fidelity, and domain behavior in the acceptance target even when
+they are harder to measure than functionality. Define checks from that target,
+not from the first implementation or what is easiest to test. A working
+mechanism, a complete feature list, or a passing proxy is not evidence of an
+adequate outcome. When the method's ability to reach the target is materially
+uncertain, use a bounded real-output probe before scaling it; compare the
+observed result against the target and revise the method if needed. This is
+conditional, not a new stage for routine work.
 
 Keep the user's spec and design intent as the comparison target. Preserve approved
 choices and parts that already pass. A proposed simplification, style direction,
@@ -140,7 +157,11 @@ signals, read [outcome evidence](../practices/outcome-evidence.md). A successful
 only that command's result, not task success. Compare the actual deliverable with
 acceptance; diagnose an observed gap, refine the affected part, and recheck it and
 anything the change could invalidate. Keep passing parts and still-valid evidence.
-Finish when the agreed criteria are supported; if decisive access is unavailable,
-deliver independent work and name the exact unverified criterion. Do not loop on
-unchanged evidence or claim completion across that gap.
+Finish when the agreed criteria are supported. Distinguish implementation,
+technical checks, outcome quality, and any required user approval when their
+verdicts differ. If quality is below target, refine within scope or report the
+outcome as incomplete; if decisive access is unavailable, name the exact
+unverified criterion and deliver independent work. Do not loop on unchanged
+evidence, equate self-reported checks with acceptance, or claim completion across
+a material gap.
 <!-- END CONTEXT CORE -->

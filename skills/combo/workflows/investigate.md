@@ -45,6 +45,15 @@ delivery conditions: choose the method and carry authorized work through to that
 result. Inferred implementation steps are not permission to expand scope or cross
 the requested stopping point.
 
+Keep quality, fidelity, and domain behavior in the acceptance target even when
+they are harder to measure than functionality. Define checks from that target,
+not from the first implementation or what is easiest to test. A working
+mechanism, a complete feature list, or a passing proxy is not evidence of an
+adequate outcome. When the method's ability to reach the target is materially
+uncertain, use a bounded real-output probe before scaling it; compare the
+observed result against the target and revise the method if needed. This is
+conditional, not a new stage for routine work.
+
 Keep the user's spec and design intent as the comparison target. Preserve approved
 choices and parts that already pass. A proposed simplification, style direction,
 or changed acceptance remains a proposal until the user agrees; silence, a tool
@@ -101,7 +110,11 @@ signals, read [outcome evidence](../practices/outcome-evidence.md). A successful
 only that command's result, not task success. Compare the actual deliverable with
 acceptance; diagnose an observed gap, refine the affected part, and recheck it and
 anything the change could invalidate. Keep passing parts and still-valid evidence.
-Finish when the agreed criteria are supported; if decisive access is unavailable,
-deliver independent work and name the exact unverified criterion. Do not loop on
-unchanged evidence or claim completion across that gap.
+Finish when the agreed criteria are supported. Distinguish implementation,
+technical checks, outcome quality, and any required user approval when their
+verdicts differ. If quality is below target, refine within scope or report the
+outcome as incomplete; if decisive access is unavailable, name the exact
+unverified criterion and deliver independent work. Do not loop on unchanged
+evidence, equate self-reported checks with acceptance, or claim completion across
+a material gap.
 <!-- END CONTEXT CORE -->

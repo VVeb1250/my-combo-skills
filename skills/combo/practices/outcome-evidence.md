@@ -9,6 +9,7 @@ the deliverable needs a report. Native skills own concrete tool operations.
 | --- | --- |
 | 3D/anime hair/Blender | Compare required rendered views and silhouette/volume against supplied reference at consistent framing. Scene validity does not prove visual fidelity. For conditional silhouette IoU and camera checks, see [optional tool validation](../references/addenda/conditional-tool-validation.md). |
 | UX/UI from reference | Compare the current served revision with reference across relevant viewports and exercise meaningful states. A build or screenshot alone does not establish interaction. For optional generic-UI detectors, see [optional tool validation](../references/addenda/conditional-tool-validation.md). |
+| Generated environments, procedural assets, game systems | Generate the actual integrated artifact from the current implementation. Inspect relevant scales, transitions/junctions and diverse fixed inputs/seeds, including a known failure and a contrasting case when available. Compare visible/spatial quality against the target and baseline; check domain behavior (e.g. vehicle mobility, LOS, counterplay) and performance when they are acceptance constraints. A valid graph, feature count, one favorable seed, or attractive render alone cannot prove the intended outcome. |
 | Coding/debugging | Exercise behavior through real callers or the reproduced symptom; include affected contracts and rejection paths where material. Run required repository gates. A test mirroring implementation or a changed expected value cannot justify changing the contract. |
 | Research | Trace consequential claims to direct sources and check applicability, contradictions, date, and inference. A completed search or several repetitions of one claim cannot establish correctness. |
 | Writing/documents | Compare source facts, voice samples, audience, requested depth, and constraints with the delivered text. Render when pagination/layout matters. File creation or spellcheck cannot establish factual or stylistic fidelity. |
@@ -25,7 +26,14 @@ distinguish artifact, fixture, and environment causes, and make a causal repair
 within scope. Recheck what the repair could change. Stop after acceptance passes;
 broaden only for a new change, failure, uncovered criterion, or explicit coverage.
 When tools or references are missing, state the gap and the next useful check.
-Keep technical validation separate from human taste approval.
+Keep technical validation separate from human taste approval. For uncertain
+quality, compare a bounded real candidate against the intended result before
+expanding implementation. Use an alternative method or change the representation
+when the evidence indicates a quality ceiling, not repeated cosmetic patches.
+Keep failure examples and still-valid evidence. Report objective checks, observed
+quality gaps, and any pending user judgment separately; an unverified or rejected
+material quality criterion prevents an overall completion claim. Do not require
+new user approval for routine, objectively verifiable work.
 
 ## Mechanical gates
 

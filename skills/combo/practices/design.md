@@ -33,6 +33,13 @@ Start from the user outcome and current domain language.
   integration that paper reasoning cannot settle. Carry its decision back into
   the real plan and keep throwaway code clearly marked.
 
+When outcome quality is uncertain (not just implementation correctness), use a
+small representative output to test whether the candidate mechanism can achieve
+the required fidelity, variation, or domain behavior. Inspect it against the
+actual target before scaling. Compare a materially different approach if the
+first method exposes a quality ceiling; do not build multiple full systems or
+prototype routine known solutions. Keep the agreed acceptance intact.
+
 ## Decision frontier and cheap core probes
 
 - Resolve factual unknowns from code, callers, accepted specs and bounded
