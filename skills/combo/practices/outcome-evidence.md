@@ -35,6 +35,17 @@ quality gaps, and any pending user judgment separately; an unverified or rejecte
 material quality criterion prevents an overall completion claim. Do not require
 new user approval for routine, objectively verifiable work.
 
+## Reusable verification entrypoints
+
+If a required real outcome is difficult to observe repeatedly, locate the
+project's existing run/capture/inspection commands first. When missing and
+within scope, make the smallest runnable entrypoint for the actual pipeline
+with explicit inputs, current revision, observable outputs and known limits.
+Run it and inspect the result; link it from the relevant `.combo/` domain/spec
+so a fresh agent can reproduce the check. A prose recipe without a demonstrated
+run is not a working verification capability. Do not invent a parallel renderer,
+framework or background runner by default.
+
 ## Mechanical gates
 
 Prefer an existing project test/CI gate for machine-checkable invariants. A
