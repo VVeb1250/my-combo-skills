@@ -1,9 +1,9 @@
 {
-  "schema": 3,
+  "schema": 4,
   "areas": {
     "combo": {
       "count": 3,
-      "summary": "Project knowledge indexing and Agent navigation",
+      "summary": "Project knowledge navigation, behavioral specs, records and index compiler",
       "entrypoints": [
         "skills/combo/practices/project-ecosystem.md",
         "skills/combo/tools/**"
@@ -12,6 +12,20 @@
         "area.combo",
         "combo-project-ecosystem",
         "change.combo-index-v1"
+      ]
+    },
+    "host-integration": {
+      "count": 2,
+      "summary": "Codex and Claude Code installation, owned policy blocks, adapter migration and rollback",
+      "entrypoints": [
+        "adapters/**",
+        "install-manifest.json",
+        "scripts/setup-claude.py",
+        "scripts/setup.py"
+      ],
+      "ids": [
+        "area.host-integration",
+        "knowledge.managed-block-idempotence"
       ]
     }
   },
@@ -22,7 +36,7 @@
       "path": ".combo/areas/combo.md",
       "area": "combo",
       "status": "accepted",
-      "summary": "Project knowledge indexing and Agent navigation",
+      "summary": "Project knowledge navigation, behavioral specs, records and index compiler",
       "tags": [
         "routing",
         "indexing"
@@ -39,7 +53,45 @@
       ],
       "evidence": [],
       "validated_at": "",
-      "sha256": "2ad04981eaf9cdd2791445641c5287a3eb0964de09dfe12a0687ced18f9b0296"
+      "sha256": "bd40d792919eebece03452f6501bdf96bda9545610a203ce418d08e9b23ccab5",
+      "domains": [
+        "combo"
+      ],
+      "title": "Combo project ecosystem",
+      "topics": [],
+      "kinds": [],
+      "verify": [
+        "skills/combo/tools/project_kb.py",
+        "tests/test_project_kb_navigation.py"
+      ]
+    },
+    {
+      "id": "area.host-integration",
+      "kind": "area",
+      "path": ".combo/areas/host-integration.md",
+      "area": "host-integration",
+      "status": "accepted",
+      "summary": "Codex and Claude Code installation, owned policy blocks, adapter migration and rollback",
+      "tags": [],
+      "paths": [
+        "scripts/setup.py",
+        "scripts/setup-claude.py",
+        "adapters/**",
+        "install-manifest.json"
+      ],
+      "links": [],
+      "evidence": [],
+      "validated_at": "",
+      "sha256": "15a471d90976f8b5e04ddc01f8184bf60469d988cb9ca2124d1f7edfafcaaa6d",
+      "domains": [
+        "host-integration"
+      ],
+      "title": "Host integration",
+      "topics": [],
+      "kinds": [],
+      "verify": [
+        "tests/test_setup.py"
+      ]
     },
     {
       "id": "combo-project-ecosystem",
@@ -47,25 +99,32 @@
       "path": ".combo/specs/project-ecosystem.md",
       "area": "combo",
       "status": "accepted",
-      "summary": "Opt-in single-source project knowledge and bounded retrieval",
+      "summary": "Navigation-first, single-source project knowledge and behavioral contracts",
       "tags": [
         "specs",
-        "retro",
-        "shortcuts",
+        "knowledge",
+        "navigation",
         "verification"
       ],
       "paths": [],
       "links": [],
       "evidence": [],
       "validated_at": "",
-      "sha256": "7ed21485143fdd6b440008a045f3523e2b568afc8905b75772a1dfa10ab319a2"
+      "sha256": "ded918a765e897fe60c557ed07132722deb3a4541cd1ef03da74356a9a2e3741",
+      "domains": [
+        "combo"
+      ],
+      "title": "Project knowledge contract",
+      "topics": [],
+      "kinds": [],
+      "verify": []
     },
     {
       "id": "change.combo-index-v1",
       "kind": "change",
       "path": ".combo/changes/index-v1/proposal.md",
       "area": "combo",
-      "status": "implemented",
+      "status": "superseded",
       "summary": "Progressive agent-selected index and hop with metadata checks",
       "tags": [
         "index",
@@ -84,7 +143,47 @@
       ],
       "evidence": [],
       "validated_at": "",
-      "sha256": "1f81318c116f2c49a5294e463f558915cb4c2965a8baef0ff4ac90162beedadf"
+      "sha256": "33c462f801d0c1b76066a495a9957f3a00047f47a1dee20de8de97f3de6bfb61",
+      "domains": [
+        "combo"
+      ],
+      "title": "Proposed index upgrade",
+      "topics": [],
+      "kinds": [],
+      "verify": []
+    },
+    {
+      "id": "knowledge.managed-block-idempotence",
+      "kind": "knowledge",
+      "path": ".combo/knowledge/managed-block-idempotence.md",
+      "area": "host-integration",
+      "status": "tested",
+      "summary": "Managed policy replacement must not add separators when its surrounding prefix is empty.",
+      "tags": [],
+      "paths": [],
+      "links": [],
+      "evidence": [
+        "tests/test_setup.py"
+      ],
+      "validated_at": "",
+      "sha256": "47ffd06f3bb8d861163223152df76d4b262c48cdba4f1634c990a8af4990d729",
+      "domains": [
+        "host-integration"
+      ],
+      "title": "Managed block idempotence",
+      "topics": [
+        "idempotence",
+        "migration",
+        "rollback"
+      ],
+      "kinds": [
+        "lesson",
+        "technique"
+      ],
+      "verify": [],
+      "problem_signals": [],
+      "engine": [],
+      "renderer": []
     }
   ]
 }
