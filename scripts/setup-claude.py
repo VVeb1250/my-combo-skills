@@ -715,6 +715,8 @@ def build_plan(home: Path, manifest: dict | None = None) -> list[dict]:
     index_path = target_root / PurePosixPath(index_rel)
     _assert_target(index_path, target_root)
     previous = _read_owned_index(index_path, target_root, packages, manifest)
+    if AGENT_TARGET not in target and _read_file(target_root / AGENT_TARGET) is not None and AGENT_TARGET not in previous:
+        raise ValueError("Unowned legacy combo-worker agent; reconcile before migration")
 
     # Existing files inside a Combo package are either previously owned or part
     # of this exact desired render.  An unknown collision is user state, so

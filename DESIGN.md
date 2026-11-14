@@ -31,9 +31,11 @@ comparison and its limits are recorded in `audit/ab/DECISION.md`. This is a
 maintainability choice for the full domain scope, not proof of universal model
 or token-cost superiority. Source entries use REFERENCE.md, not nested SKILL.md.
 
-Keep the short engineering policy scoped to engineering. The global routing
-pointer selects the matching workflow entry for substantive work across the
-supported domains, and uses combo when the route is uncertain. Once loaded,
+Keep the global policy as a short outcome, authority and quality contract plus
+host routing. Engineering methods and detailed standards belong to the owning
+practices and review, not repeated global steering. The global routing pointer
+selects the matching workflow entry for substantive work across the supported
+domains, and uses combo when the route is uncertain. Once loaded,
 continue without rereading on every follow-up. Native host skills for browsers,
 documents, images, and concrete utilities remain independently discoverable.
 
@@ -46,10 +48,10 @@ dependency is needed for this design.
 
 | Source | Responsibility | Adaptation |
 |---|---|---|
-| Karpathy | Understand intent, observable success, causal/surgical scope | Routine decisions proceed from evidence; preserve the complete user requirement |
-| Ponytail | Challenge unnecessary complexity before and after a change | Preserve proven design, safety, accessibility, and requested extensibility; no code golf |
-| Matt | Workflow shape, decision exploration, behavioral TDD, spec/standards review, context boundaries | Borrow ask-matt's paths and on-ramps; route automatically; remove mandatory interviews, tracker setup, commits, and fanout |
-| ECC | Engineering specialists plus research, content, commercial operations, media, and productivity methods | Consult relevant source methods, adapt example companies/thresholds/personas, and keep native tools and the host's configured memory rules authoritative |
+| Karpathy | Understand intent, observable success, causal/surgical scope | Goal-driven autonomous execution after alignment; changes justified by the complete outcome |
+| Ponytail | Challenge unnecessary complexity before and after a change | Minimize accidental complexity, not capability or delivery effort; no code golf |
+| Matt | Workflow methods, design alignment, behavioral TDD, distinct spec/standards review, context economics, retro | Preserve interview/execution boundaries, integrated tracer bullets and separate verdicts; use bounded workers and environment-first correction when justified, not mandatory ceremonies |
+| ECC | Engineering specialists plus research, content, commercial operations, media, and productivity methods | Contextual specialist knowledge, not global universal standards or default exhaustive verification; respect host tools and memory authority |
 
 Role ownership applies to knowledge/process, not branding in the user's normal
 output. A response should describe work and evidence rather than reciting packs.

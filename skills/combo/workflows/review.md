@@ -15,11 +15,18 @@ mechanics that are unresolved.
    paths, expected load, and existing checks. Go deep first where failures have
    the highest consequence; sample less critical areas and state what was not
    inspected. Do not claim a complete file-by-file audit from a risk sample.
-3. If `.combo/` exists, use accepted specs and authorized changes as the contract and retro as hypotheses, not proof of a live defect. Evaluate requirement fidelity (missing, incompatible, partial, or extra
-   behavior) and implementation quality (correctness, error boundaries, data,
-   concurrency, security, and maintainability) in one impact ranking. When
-   volume or concurrency matters, state the load assumed (from the README or
-   deploy config) and judge scale against it.
+3. If `.combo/` exists, use accepted specs and authorized changes as the contract and retro as hypotheses, not proof of a live defect. Keep two independent review axes when both are in scope:
+   - **Outcome / Spec:** compare actual behavior and fidelity to originating
+     intent, accepted requirements and constraints. Find missing, incorrect,
+     partial or extra behavior. Use actual artifacts or behavioral evidence;
+     code existence and passing checks alone do not prove fidelity.
+   - **Engineering / Standards:** inspect correctness, safety, error/data
+     boundaries, concurrency, performance at expected load, maintainability
+     and documented repository standards. Generic code smells are hypotheses,
+     not hard violations; skip style checks already enforced by tools.
+   Neither axis can compensate for failure or missing evidence in the other.
+   For a narrow requested review, report only its relevant axis and limits.
+   When volume or concurrency matters, state the load assumed from evidence.
 4. For each candidate finding, establish location -> reachable trigger ->
    consequence -> evidence -> smallest remedy. For a changed shared contract,
    identify the affected callers and the critical invariant that might fail;
@@ -35,13 +42,19 @@ mechanics that are unresolved.
    findings or proof of correctness.
 
 Use [security](../practices/security.md) for actual trust boundaries and
-[simplicity](../practices/simplicity.md) for unnecessary layers/options. Additional
-reviewers or full suites are conditional, not a universal pipeline.
+[simplicity](../practices/simplicity.md) for unnecessary layers/options. Review
+against the repository's own standards, not a generic ECC checklist. When a
+fresh bounded perspective is worthwhile, use [delegation](../practices/delegation.md)
+for a focused Subcombo check; pass the fixed revision, relevant contract or
+standards and evidence question. The main agent may review both axes locally;
+never claim independent agents or checks that did not occur.
 
-Lead with the highest-impact findings and precise locations. Include checks and
-material unreviewed limits without repeating the whole investigation. If no
-material issue is found, say so with the evidence and its limits. For an
-authorized repair, continue through [deliver](deliver.md); review-only stops here.
+For a substantive two-axis review, report separate findings, evidence,
+unreviewed limits and verdicts (pass, fail, inconclusive, or not applicable) for
+each axis. Rank findings by consequence within each axis, not a single merged
+ranking. Distinguish a missing spec from a spec pass. A narrowly scoped review
+can be concise. For authorized repair, continue through [deliver](deliver.md);
+review-only stops here.
 
 <!-- BEGIN CONTEXT CORE (generated from practices/context.md by scripts/sync-context-core.py; edit there) -->
 ## Context rules

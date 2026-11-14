@@ -309,6 +309,8 @@ def render_config(raw: bytes, manifest: dict, home: Path) -> bytes:
         )
 
     roles = _manifest_worker_roles(manifest)
+    if any(role["name"].startswith("subcombo-") for role in roles) and "combo_worker" in stripped.get("agents", {}):
+        raise ValueError("Unmanaged legacy combo_worker role; reconcile before migration")
     for role in roles:
         if role["name"] in stripped.get("agents", {}):
             raise ValueError(f"An unmanaged agent role already exists: {role['name']}")
@@ -620,6 +622,8 @@ def build_plan(home: Path, manifest: dict | None = None) -> list[dict]:
     index = root / _manifest_ownership_index(manifest)
     _assert_target(index, home)
     previous = _read_owned_index(index, home, manifest)
+    if root / ADAPTER_TARGET not in target_bytes and existing(root / ADAPTER_TARGET) is not None and ADAPTER_TARGET not in previous:
+        raise ValueError("Unowned legacy combo-worker adapter; reconcile before migration")
     desired = {
         path.relative_to(root).as_posix(): digest(data)
         for path, data in target_bytes.items()

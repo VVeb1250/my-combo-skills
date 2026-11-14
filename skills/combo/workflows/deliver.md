@@ -27,11 +27,9 @@ actual outcome, not the implementation medium.
    resolve technical unknowns without reopening the interview. Choose the minimum sustainable design,
    preserving necessary extension points without speculative features.
 
-Before expensive or repetitive execution, choose the cheapest method that
-faithfully proves the outcome: targeted scripts, headless/direct rendering,
-replays or batches of independent observations sharing setup. Diagnose related
-symptoms together before causal repairs, but keep changes attributable and
-escalate when a cheap proxy misses acceptance. No mandatory cost report.
+Reuse tools and evidence, batch independent work, and use bounded
+[Subcombo delegation](../practices/delegation.md) when it reduces total cost
+without quality loss. Keep necessary discovery and actual-output checks.
 
 For risky or multi-slice Git-backed changes, follow [Git checkpoints](../practices/git-checkpoints.md):
 record branch/HEAD and existing dirty paths before editing, and create meaningful
@@ -68,9 +66,13 @@ If the project has `.combo/`, consult [project ecosystem](../practices/project-e
   than treating successful individual controls as a completed journey.
 - Inspect the changed area for repeated root causes, unclear state ownership, shotgun edits and duplicated transitions. Apply targeted behavior-preserving refactoring only when justified by actual friction and recheck affected behavior.
 - Use [verification economy](../practices/verification-economy.md) to select adequate focused evidence before an expensive Browser/reviewer pass; never weaken explicit gates.
-- Inspect the final diff for scope, missed requirements, error paths, and coupling.
+- Inspect the final result and diff along the separate outcome/spec and
+  engineering/standards axes in [review](review.md). Keep their verdicts
+  distinct when either has a material gap; neither substitutes for the other.
   Apply [simplicity](../practices/simplicity.md) when new layers or options appear.
   Repair actionable in-scope findings and verify the affected behavior again.
+  Use a focused reviewer only if justified; no additional stage or formal
+  report is required for a routine edit.
 
 For failed checks, retain the command and first useful symptom, distinguish
 change-caused from pre-existing/environment failures, and fix the causal issue.

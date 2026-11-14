@@ -151,6 +151,44 @@ class SetupTests(unittest.TestCase):
             self.assertNotIn('skills/matt-plan/SKILL.md', paths)
             self.assertNotIn('hooks.json', paths)
 
+    def test_subcombo_migration_and_rollback_preserve_other_agents(self):
+        import copy
+        import tomllib
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            home = root / "home"
+            target = home / ".codex"
+            target.mkdir(parents=True)
+            config = target / "config.toml"
+            config.write_text('model = "custom"\n[agents.user_agent]\ndescription = "keep"\n', encoding="utf-8")
+            manifest = setup._load_manifest()
+            legacy = copy.deepcopy(manifest)
+            legacy["adapter_files"] = [{"source": "adapters/codex/combo-worker.toml", "target": setup.ADAPTER_TARGET}]
+            legacy["config"].pop("worker_roles")
+            legacy["config"]["worker_role"] = {"name": "combo_worker", "config_file": setup.ADAPTER_TARGET, "description": "legacy"}
+            # Use actual source, including the legacy adapter. Only fake home is changed.
+            setup.apply(setup.build_plan(home, legacy), root / "old", target)
+            old = target / setup.ADAPTER_TARGET
+            original = old.read_bytes()
+            unrelated = target / "agents/user.toml"
+            unrelated.write_bytes(b"keep")
+            receipt = setup.apply(setup.build_plan(home, manifest), root / "new", target)
+            self.assertFalse(old.exists())
+            self.assertEqual(unrelated.read_bytes(), b"keep")
+            cfg = tomllib.loads(config.read_text(encoding="utf-8"))
+            self.assertEqual(cfg["model"], "custom")
+            self.assertEqual(cfg["agents"]["user_agent"]["description"], "keep")
+            self.assertNotIn("combo_worker", cfg["agents"])
+            self.assertTrue({f"subcombo-{r}" for r in setup.SUBCOMBO_ROLES} <= set(cfg["agents"]))
+            self.assertEqual(setup.build_plan(home, manifest), [])
+            setup.rollback(receipt, target)
+            self.assertEqual(old.read_bytes(), original)
+            self.assertEqual(unrelated.read_bytes(), b"keep")
+            self.assertEqual(setup.build_plan(home, legacy), [])
+            old.write_bytes(b"user edit")
+            with self.assertRaisesRegex(ValueError, "drifted"):
+                setup.build_plan(home, manifest)
+
     def test_python_cache_entries_are_never_installed(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / 'source'

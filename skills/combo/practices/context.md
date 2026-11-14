@@ -85,15 +85,14 @@ unverified criterion and deliver independent work. Do not loop on unchanged
 evidence, equate self-reported checks with acceptance, or claim completion across
 a material gap.
 
-## Minimum sufficient work
+## Execution economy
 
-Before a multi-step task, ask whether the result needs less work: skip steps the
-outcome does not need, reuse an existing tool, script, or result, and replace many
-repeated tool calls with one deterministic script or batch. Optimize only among
-approaches that satisfy the task requirements, tool-specific constraints, and
-necessary verification; never trim a check by cost. This section changes how work
-is executed, not what [outcome evidence](outcome-evidence.md) or the user's
-acceptance requires.
+Minimize total effort, not outcome quality or necessary discovery. Reuse valid
+evidence and existing tools; batch independent repeated work. Delegate bounded
+work when [delegation](delegation.md) is economical. Choose among methods that
+fully meet the target; [simplicity](simplicity.md) owns solution complexity and
+[verification economy](verification-economy.md) owns expensive check escalation.
+No separate economy review, cost report or approval step is required.
 
 ## Select evidence
 
