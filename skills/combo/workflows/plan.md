@@ -6,6 +6,10 @@ Apply the context rules at the end of this file; read
 [context](../practices/context.md) only for evidence-selection or reporting
 mechanics that are unresolved.
 
+For opted-in projects, navigate `.combo/INDEX.md` and relevant domains before
+choosing a design; use known record paths directly. See [project ecosystem](../practices/project-ecosystem.md)
+for legacy fallback and record authoring.
+
 1. Identify the outcome, constraints, compatibility obligations, and requested
    fidelity. Inspect relevant code, real callers, tests, domain terms, and ADRs.
 2. Resolve facts from evidence and front-load the context design interview for
@@ -29,7 +33,11 @@ behavior, the chosen approach, acceptance checks, and the first action, with
 decision-changing unknowns resolved or explicitly assigned. Stop exploring
 equivalent alternatives at that point.
 
-For an opt-in `.combo/` project, read [project ecosystem](../practices/project-ecosystem.md): write observable capability requirements using RFC 2119/8174 and proposed change deltas without duplicating Matt and OpenSpec planning pipelines. Tiny fixes do not need new docs.
+For opted-in projects, retain agreed intent, representative behavior scenarios,
+critical invariants, important design decisions and testing seams in the canonical
+behavioral spec when useful. Distinguish proposed, accepted and implemented/verified
+behavior. Add formal constraints only where precision matters. Tiny fixes do not
+need new docs; no duplicate OpenSpec or ticket pipeline.
 
 A bounded plan can live in the response. Use existing artifact conventions for
 multi-session or independent execution when useful. Include rationale and risks
