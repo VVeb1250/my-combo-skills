@@ -15,7 +15,7 @@ mechanics that are unresolved.
    paths, expected load, and existing checks. Go deep first where failures have
    the highest consequence; sample less critical areas and state what was not
    inspected. Do not claim a complete file-by-file audit from a risk sample.
-3. If `.combo/` exists, use accepted specs and authorized changes as the contract and retro as hypotheses, not proof of a live defect. Keep two independent review axes when both are in scope:
+3. If `.combo/` exists, navigate `.combo/INDEX.md` and relevant domain records (or known paths). Use accepted specs and authorized changes as the contract; advisory knowledge is a hypothesis, not proof of a live defect. Keep two independent review axes when both are in scope:
    - **Outcome / Spec:** compare actual behavior and fidelity to originating
      intent, accepted requirements and constraints. Find missing, incorrect,
      partial or extra behavior. Use actual artifacts or behavioral evidence;
