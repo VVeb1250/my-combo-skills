@@ -32,7 +32,10 @@ advisory knowledge can be challenged, tested and corrected.
   inference and hypotheses. A tested claim needs scoped evidence; measured
   savings need comparable baseline, otherwise unmeasured. Preserve historical
   evidence and invalidate/correct the interpretation when new evidence warrants.
-  No routine logs or compulsory retro.
+  Capture verified unusually effective approaches as well as failures, with
+  provenance and comparable baseline when claiming improvement. Cross-model transfer remains candidate
+  until demonstrated on the target model. Routine completion does not require
+  a new record; no routine logs or compulsory retro.
 - Evidence may be existing tests, screenshots, benchmark artifacts, experiment
   notes or optional verification records. Link rather than copy. Record
   revision, environment, verdict and limits when material. A pass on one

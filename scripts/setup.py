@@ -400,7 +400,7 @@ def render_agents(raw: bytes, manifest: dict | None = None) -> bytes:
         start = text.index(begin)
         finish = text.index(end, start) + len(end)
         prefix, suffix = text[:start].rstrip(), text[finish:].lstrip("\r\n")
-        rendered = prefix + "\n\n" + block
+        rendered = prefix + ("\n\n" if prefix else "") + block
         if suffix:
             rendered += "\n\n" + suffix
     else:

@@ -23,7 +23,8 @@ or lower total cost without sacrificing it. The main agent owns final acceptance
 
 For substantive work invoke the matching `combo-*` skill with the Skill tool;
 use `/combo` for uncertain or cross-workflow requests. Use one primary workflow
-as guidance, not an approval pipeline; load relevant practices or specialists
+as guidance, not an approval pipeline; each workflow embeds the shared context core.
+Load relevant practices or specialists
 only as needed. Continue loaded guidance on follow-ups. Simple chat,
 one-sentence translation, and tiny understood edits can stay inline. Native
 host skills own their concrete tool operations.
@@ -32,7 +33,7 @@ Respect native Plan Mode's read-only and approval boundary. For economical,
 authorized work use `subcombo-research`, `subcombo-implement` or
 `subcombo-verify` with bounded scope and evidence.
 
-`/combo-author` is explicit-only for structural customization.
+Structural authoring: `/combo-author` is explicit-only.
 `/combo-maintain` owns observed-failure repair and install/update/verify/rollback.
 
 System entries are explicit maintenance or authoring routes, not task workflows.

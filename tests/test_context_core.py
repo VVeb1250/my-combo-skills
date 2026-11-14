@@ -21,12 +21,14 @@ class ContextCore(unittest.TestCase):
             self.assertIn("practices/context.md", text, path.name)
             self.assertNotRegex(text, r"Read \[context\]\(\.\./practices/context\.md\) once", path.name)
 
-    def test_auto_grill_is_present_but_does_not_block_clear_fixes(self):
+    def test_alignment_and_execution_have_distinct_authority(self):
         block = core.core_block()
-        self.assertIn("bounded auto-grill", block)
-        self.assertIn("even if the prompt sounds clear", block)
-        self.assertIn("clear tiny fix", block)
-        self.assertIn("repeat accepted decisions", block)
+        self.assertIn("whole frontier of independent decisions", block)
+        self.assertIn("Do not ask the user to discover facts", block)
+        self.assertIn("already-aligned request", block)
+        self.assertIn("Do not reopen settled decisions", block)
+        self.assertIn("Progress updates do not request approval", block)
+        self.assertIn("outside existing authority", block)
 
     def test_links_inside_the_block_resolve_from_the_workflows_folder(self):
         for target in re.findall(r"\]\(([^)#]+)\)", core.core_block()):
