@@ -159,7 +159,7 @@ def collect(root, *, global_catalog=False):
         # hash the normalized text so line endings are not content drift.
         raw = raw.replace("\r\n", "\n").replace("\r", "\n")
         data = raw.encode("utf-8")
-        if not global_catalog and raw.startswith(GENERATED):
+        if not global_catalog and (raw.startswith(GENERATED) or (folder == "areas" and p.name == "INDEX.md")):
             continue
         meta, body = _metadata(raw, relative)
         if not global_catalog and (meta.get("record") is False or (
@@ -180,8 +180,8 @@ def collect(root, *, global_catalog=False):
             raise IndexErrorInfo(f"{relative}: area/status/summary must be nonempty strings")
         if not global_catalog:
             domains = list(dict.fromkeys([area, *domains]))
-            if any(not re.fullmatch(r"[\w][\w.-]*", d) for d in domains):
-                raise IndexErrorInfo(f"{relative}: unsafe domain name")
+            # Legacy area labels need not be filesystem-safe; generated paths
+            # use a deterministic portable mapping, never raw unsafe labels.
         links = _parse_links(meta.get("links"), relative)
         for target in _normalize_list(meta.get("relates_to"), "relates_to", relative):
             links.append({"relation": "related_to", "target": target})
@@ -200,7 +200,8 @@ def collect(root, *, global_catalog=False):
         }
         if not global_catalog:
             record.update(domains=domains, title=title, topics=_normalize_list(meta.get("topics"), "topics", relative),
-                          kinds=_normalize_list(meta.get("kinds"), "kinds", relative))
+                          kinds=_normalize_list(meta.get("kinds"), "kinds", relative),
+                          verify=_normalize_list(meta.get("verify"), "verify", relative))
         if kind == "knowledge" and ("id" not in meta or "summary" not in meta or not (meta.get("domains") or meta.get("area"))):
             raise IndexErrorInfo(f"{relative}: knowledge requires explicit stable id, domain and summary")
         if kind in ("technique", "knowledge"):
@@ -227,6 +228,17 @@ def _validate(root, rows, *, external_ids=()):
                 errors.append(f"{row['path']}: broken {edge['relation']} -> {edge['target']}")
             if edge["target"] == row["id"]:
                 errors.append(f"{row['path']}: self link {edge['relation']}")
+        if row["status"] not in INACTIVE:
+            for pointer in row.get("verify", []):
+                value = PurePosixPath(pointer)
+                if not pointer or value.is_absolute() or "\\" in pointer or ".." in value.parts or ":" in pointer or pointer.startswith("~"):
+                    errors.append(f"{row['path']}: unsafe verification entrypoint: {pointer}")
+                    continue
+                try:
+                    if not _inside(root, root / pointer).is_file():
+                        errors.append(f"{row['path']}: missing verification entrypoint: {pointer}")
+                except (OSError, IndexErrorInfo):
+                    errors.append(f"{row['path']}: invalid verification entrypoint: {pointer}")
         if row["kind"] == "knowledge":
             if row["status"] not in TECHNIQUE_STATES | {"draft", "tested", "archived"}:
                 errors.append(f"{row['path']}: unknown knowledge status")
@@ -319,16 +331,32 @@ def _md_link(label, source, target):
     return f"[{_inline(label)}]({quote(relative, safe='/.-_')})"
 
 
+def _domain_directory(domain):
+    # Keep normal project slugs readable; preserve legacy labels and avoid
+    # Windows reserved names, case collisions, traversal and long components.
+    if (re.fullmatch(r"[a-z0-9][a-z0-9_-]{0,79}", domain) and
+            not re.fullmatch(r"(con|prn|aux|nul|com[1-9]|lpt[1-9])", domain)):
+        return domain
+    return "_" + hashlib.sha256(domain.encode("utf-8")).hexdigest()
+
+
 def markdown_views(root, data):
     base = root / ".combo"
     top = base / "INDEX.md"
     views = {}
     rows = {r["id"]: r for r in data["entries"]}
     header = [GENERATED, "", "# Project knowledge", "",
-              "Choose relevant domains; open records directly. Accepted specs constrain work; knowledge is advisory.", "",
-              "| Domain | Covers |", "| --- | --- |"]
+              "Choose relevant domains; open records directly. Accepted specs constrain work; knowledge is advisory.", ""]
+    if not data["areas"]:
+        header.extend(["No records yet. Define meaningful project domains in areas/<name>.md",
+                       "and add useful specs or knowledge as work proceeds; reuse existing docs.",
+                       "See the installed Combo project-ecosystem practice for authoring."])
+    else:
+        if "project" in data["areas"]:
+            header.extend([_md_link("Project-wide contracts and context", top, base / "areas" / _domain_directory("project") / "INDEX.md"), ""])
+        header.extend(["| Domain | Covers |", "| --- | --- |"])
     for domain, meta in data["areas"].items():
-        path = base / "areas" / domain / "INDEX.md"
+        path = base / "areas" / _domain_directory(domain) / "INDEX.md"
         members = [rows[i] for i in meta["ids"]]
         active = [r for r in members if r["status"] not in INACTIVE]
         description = meta["summary"]
@@ -351,12 +379,18 @@ def markdown_views(root, data):
             body.extend([f"## {heading}", ""])
             for row in sorted(selected, key=lambda r: (r.get("title", r["id"]).casefold(), r["id"])):
                 label = row.get("title", row["id"])
-                body.append(f"- {_md_link(label, path, root / row['path'])} [{_inline(row['status'])}] — {_inline(row['summary'])}")
+                suffix = f" — {_inline(row['summary'])}" if row["summary"] != label else ""
+                body.append(f"- {_md_link(label, path, root / row['path'])} [{_inline(row['status'])}]{suffix}")
+            body.append("")
+        verification = sorted({pointer for row in active for pointer in row.get("verify", [])})
+        if verification:
+            body.extend(["## Verification entrypoints", ""])
+            body.extend(f"- {_md_link(pointer, path, root / pointer)}" for pointer in verification)
             body.append("")
         related = sorted({d for r in active for d in r.get("domains", [r["area"]]) if d != domain})
         if related:
             body.extend(["## Related domains", ""])
-            body.extend(f"- {_md_link(d, path, base / 'areas' / d / 'INDEX.md')}" for d in related)
+            body.extend(f"- {_md_link(d, path, base / 'areas' / _domain_directory(d) / 'INDEX.md')}" for d in related)
         views[path] = "\n".join(body).rstrip() + "\n"
     views[top] = "\n".join(header).rstrip() + "\n"
     return views
@@ -366,6 +400,8 @@ def _write_views(root, data):
     views = markdown_views(root, data)
     for path in views:
         _inside(root, path)
+        if path.is_symlink():
+            raise IndexErrorInfo(f"refusing symlink index destination: {path}")
         if path.exists() and not path.read_text(encoding="utf-8").startswith(GENERATED):
             raise IndexErrorInfo(f"refusing to overwrite handwritten index: {path}")
     for path, body in views.items():
@@ -448,9 +484,13 @@ def load_index(root, *, global_catalog=False, external_ids=()):
     if errors:
         raise IndexErrorInfo("\n".join(errors))
     if not global_catalog:
-        for path, expected in markdown_views(root, data).items():
-            if not path.is_file() or path.read_text(encoding="utf-8") != expected:
+        views = markdown_views(root, data)
+        for path, expected in views.items():
+            if not path.is_file() or path.is_symlink() or path.read_text(encoding="utf-8") != expected:
                 raise IndexErrorInfo(f"index_stale: generated view differs: {path}; run index")
+        for path in (root / ".combo" / "areas").glob("*/INDEX.md"):
+            if path not in views and not path.is_symlink() and path.read_text(encoding="utf-8").startswith(GENERATED):
+                raise IndexErrorInfo(f"index_stale: obsolete generated view: {path}; run index")
     return data
 
 
@@ -539,6 +579,8 @@ def route(index, *, area=None, paths=(), query=None, ident=None, engine=None, re
         if _compatibility(row, engine=engine, renderer=renderer) == "incompatible" and ident != row["id"]:
             continue
         reasons = _match(row, areas, paths, query, ident)
+        if (area or paths or query) and row["kind"] == "spec" and row["status"] == "accepted" and "project" in row.get("domains", []):
+            reasons.append("project_contract")
         if not reasons:
             continue
         destination = required if row["kind"] == "spec" and row["status"] == "accepted" else suggested
