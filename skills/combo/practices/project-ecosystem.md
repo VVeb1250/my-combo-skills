@@ -42,6 +42,35 @@ advisory knowledge can be challenged, tested and corrected.
   owner. Preserve existing README, ADR, native OpenSpec and source artifacts
   as canonical where already used; link rather than silently migrate.
 
+## Authoring quick start
+
+For a new opted-in project, run the installed combo skill's
+`tools/project_kb.py init`; open .combo/INDEX.md. Define a meaningful domain
+in areas/<name>.md (id, area, summary; optional source paths). Use existing
+domain names first; reserve `project` for project-wide binding contracts.
+For a new knowledge record in knowledge/<name>.md, a minimal TOML header:
+
+```toml
++++
+id = "knowledge.shared-junction"
+domains = ["terrain", "simulation"]
+summary = "Connect river branches through shared junction geometry."
+status = "candidate"
++++
+```
+
+Below it explain the reusable method/observation, when it applies, limits,
+and evidence if any. For specs use the same metadata with a spec ID and
+accepted/draft status; write intent and scenarios first. Use native relative
+Markdown links to related records/details. Optional typed metadata links
+support machine hops. An area or spec can declare `verify = ["tools/verify.py"]`
+(project-relative existing files), which adds direct verification links to
+its domain shelves. Link the instructions to run and observe real output,
+not just a file name. Use `evidence = ["artifacts/run.json"]` or a record ID
+for tested knowledge. Do not claim tested status from a pointer alone.
+Keep a short actionable core; place long details in linked documents.
+After meaningful changes run `index`, then `check`.
+
 ## Navigation and ownership
 
 One stable ID per canonical record; one record may appear in several domains.

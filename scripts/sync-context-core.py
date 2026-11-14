@@ -27,7 +27,7 @@ OLD_SENTENCE = re.compile(
     r"Read \[context\]\(\.\./practices/context\.md\) once for\s+evidence\s+selection\s+and\s+reporting\."
     r"|Apply the context rules at the end of this file;\s+read\s+\[context\]\(\.\./practices/context\.md\)"
     r"\s+only\s+for\s+evidence-selection\s+or\s+reporting\s+mechanics\s+that\s+are\s+unresolved\.")
-SAME_DIR_LINK = re.compile(r"\]\((outcome-evidence|project-knowledge|build|delegation|design|e2e|security|simplicity|tests)\.md\)")
+SAME_DIR_LINK = re.compile(r"\]\((outcome-evidence|project-knowledge|project-ecosystem|build|delegation|design|e2e|security|simplicity|tests)\.md\)")
 
 
 def core_block() -> str:

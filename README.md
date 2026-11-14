@@ -83,18 +83,25 @@ pattern, บันไดการเปลี่ยนแปลงที่เ�
 
 ## Optional `.combo/` project ecosystem
 
-Opt-in project knowledge for accepted specs, proposed delta changes, evidence-backed retro, tested shortcuts and a generated routing index. This does not add a new workflow or global hook, and does not silently replace a project's existing OpenSpec source. See [project ecosystem](skills/combo/practices/project-ecosystem.md) and [verification economy](skills/combo/practices/verification-economy.md).
-
-Use the stdlib CLI from the target project's root:
+Navigation-first, opt-in project environment. Open `.combo/INDEX.md`, choose
+a relevant domain and follow Markdown links to behavioral specs, reusable
+knowledge and verification entrypoints. No required search query or additional
+workflow. Specs preserve intent/scenarios/design and evidence; knowledge is
+advisory and can be tested or corrected. Capture useful discoveries when they
+emerge, not routine session logs. Existing ADRs/OpenSpec and legacy records
+remain canonical until deliberately migrated.
 
 ```bash
 python /path/to/installed/combo/tools/project_kb.py init
 python /path/to/installed/combo/tools/project_kb.py index
-python /path/to/installed/combo/tools/project_kb.py lookup --area ai-commander --kind retro --digest
 python /path/to/installed/combo/tools/project_kb.py check
 ```
 
-`init` is explicit; use accepted specs as contracts, not model-authored approvals.
+`index` compiles Markdown views and local schema-4 JSON; search/hop/lookup
+remain optional. Global catalog remains schema 3. Existing projects should
+run `index` to regenerate views without rewriting records. See
+[project ecosystem](skills/combo/practices/project-ecosystem.md) and
+[index contract](docs/combo-index-v1.md).
 
 ## Maintainability: Git checkpoints and knowledge hygiene
 

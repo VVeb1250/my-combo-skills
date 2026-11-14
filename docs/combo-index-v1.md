@@ -44,13 +44,21 @@ validation semantics. New tested knowledge needs local evidence or an evidence
 record, not just a label; applicability must be checked by the reader.
 Optional fields: paths, tags, topics, kinds, problem_signals, engine, renderer,
 evidence, validated_at and typed links. Legacy area remains accepted. Domain
-names must be safe path components.
+names should be readable lowercase slugs. Legacy nonportable labels are
+preserved and mapped to deterministic safe directory names. Reserve the
+explicit domain `project` for project-wide contracts (root links to its shelf;
+route includes its accepted specs for substantive queries).
 
 Spec records use the same routing metadata and status accepted/draft/etc.
 Keep intent, scenarios, invariants, consequential design decisions, testing
 seams and evidence near each other; distinguish proposed/accepted intent
 from implemented/verified behavior. No mandatory template or ticket.
 Preserve existing ADR/OpenSpec as canonical where applicable.
+
+Declare optional `verify = ["tools/verify.py"]` on a domain or spec to
+link a real project-relative runnable verification entrypoint. The compiler
+checks file existence and safe paths, not that a command proves an outcome.
+Use relative Markdown links from canonical records for direct human/agent hops.
 
 Generated domain indexes group accepted specs, design/pending, advisory
 knowledge, verification and domain entrypoints. They point to actual files,

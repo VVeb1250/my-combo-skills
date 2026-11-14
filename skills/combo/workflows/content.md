@@ -34,6 +34,13 @@ honor authorization already supplied.
 
 ### Own the outcome
 
+For substantive work on opted-in projects, read `.combo/INDEX.md` and relevant
+domain records before consequential choices (known paths or loaded context
+suffice). Accepted specs constrain work; knowledge is advisory. Capture useful
+consequential discoveries and accepted decisions as they emerge, then regenerate
+changed indexes. No routine logs. See [project ecosystem](../practices/project-ecosystem.md)
+for legacy fallback and record authoring.
+
 Translate the request into its intended result, binding constraints, and observable
 acceptance. Discover necessary implicit work from real references, callers, and
 delivery conditions: choose the method and carry authorized work through to that
