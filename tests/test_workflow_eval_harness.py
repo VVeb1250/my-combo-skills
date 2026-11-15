@@ -1,6 +1,7 @@
 import importlib.util
 import json
 import os
+import shutil
 from pathlib import Path
 import subprocess
 import sys
@@ -163,7 +164,11 @@ class WorkflowEvalHarnessTests(unittest.TestCase):
         self.assertLessEqual(self.suite["timeout_seconds"], 180)
 
     def test_installed_native_cli_is_available_and_reports_version(self):
-        launcher, executable = smoke.find_cli()
+        # This is an installed-host smoke check, not an offline unit test.
+        native = shutil.which("codex")
+        if not native and not os.environ.get("APPDATA"):
+            self.skipTest("native Codex CLI not installed on this runner")
+        launcher, executable = smoke.find_cli(native) if native else smoke.find_cli()
         self.assertIsNone(launcher)
         self.assertTrue(executable.is_file())
         version = subprocess.run(

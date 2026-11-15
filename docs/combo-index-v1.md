@@ -1,91 +1,95 @@
-# Progressive Index v1
+# Project Knowledge Index v2
 
-Default is **A: agent-driven progressive route + deliberate one-hop**. This is an
-optional, project-local document router, not a vector DB, AST index, agent
-replacement, personal memory store, or model-powered summary generator.
+Navigation-first, deterministic and opt-in. Read .combo/INDEX.md then the
+relevant domain index; use native file tools and links. Known paths bypass
+the index. Search is a fallback, not the default. No service or model calls.
 
-## Commands
-
-From a project root with an opted-in `.combo/`:
+## Setup and maintenance
 
 ```bash
+python /path/to/combo/tools/project_kb.py init
 python /path/to/combo/tools/project_kb.py index
-python /path/to/combo/tools/project_kb.py areas
-python /path/to/combo/tools/project_kb.py route --path src/ai/commander/orders.ts --query 'target oscillation'
-python /path/to/combo/tools/project_kb.py route --path src/ai/commander/orders.ts target oscillation
-python /path/to/combo/tools/project_kb.py hop --from commander
-python /path/to/combo/tools/project_kb.py hop --from adr.target-state --limit 10 --offset 0
-python /path/to/combo/tools/project_kb.py lookup --area commander --kind retro
-python /path/to/combo/tools/project_kb.py lookup --id adr.target-owner
 python /path/to/combo/tools/project_kb.py check
 ```
 
-The `index` command explicitly migrates index schemas 1 or 2 to 3 without changing
-source Markdown. Legacy single-line `---` metadata remains valid. TOML `+++`
-metadata supports arrays and `[[links]]` on Python 3.11+.
+init creates minimal areas/specs/knowledge folders and views. index migrates
+the local JSON cache to schema 4 and regenerates Markdown from canonical
+records, without rewriting source records. Global catalog keeps schema 3.
+check verifies source metadata, generated JSON and Markdown freshness.
+Generated views are not canonical records. Handwritten indexes are not
+overwritten: reconcile them explicitly. Legacy records remain discoverable.
 
-## Agent contract
+## Domain and record format
 
-1. If the exact relevant source is already known, read it directly. Otherwise
-   query once for the current task, using real intent/paths/area.
-2. Treat `required` accepted specs as binding candidate contracts, not a
-   finite top-k recommendation. Verify actual relevance and user's current intent.
-3. Use `suggested` to navigate a small shelf. Decide which record or area
-   merits another hop; `hop` never recurses. Follow another step only for a
-   newly found dependency, unresolved question or evidence contradiction.
-4. When the index misses, broaden or inspect primary code/test/doc sources.
-   Do not guess absent knowledge.
-5. Retro and shortcuts are advisory and must be validated against current code,
-   owner-approved specs and evidence.
-
-## Document format
+Domain descriptors live in .combo/areas/<domain>.md, with id, area, summary,
+and optional source paths. Choose descriptive project vocabulary. A record
+may belong to multiple domains; its stable ID has one owner.
 
 ```toml
 +++
-id = "adr.target-owner"
-area = "commander"
-status = "accepted"
-summary = "Squad owns the targeting state"
-tags = ["targeting", "state"]
-paths = ["src/ai/commander/**"]
-[[links]]
-relation = "constrained_by"
-target = "spec.commander.targeting"
+id = "knowledge.shared-junction"
+domains = ["terrain", "simulation"]
+summary = "Construct connected junctions from incident edges."
+status = "candidate"
+topics = ["hydrology", "geometry"]
+kinds = ["technique", "lesson"]
 +++
 ```
 
-Store one canonical Markdown source per record. `id` should remain stable
-across renames. Optional `.combo/areas/<area>.md` supplies ownership and
-path hints. Supported relations: `related_to`, `constrained_by`,
-`depends_on`, `verified_by`, `supersedes`, `informs`.
+Use a short core: mechanism, when to apply, limits, evidence. Link long
+implementation notes or evidence. For supporting Markdown inside indexed
+folders use TOML frontmatter record = false; nested knowledge files without
+explicit IDs are treated as detail. Legacy records retain existing scan and
+validation semantics. New tested knowledge needs local evidence or an evidence
+record, not just a label; applicability must be checked by the reader.
+Optional fields: paths, tags, topics, kinds, problem_signals, engine, renderer,
+evidence, validated_at and typed links. Legacy area remains accepted. Domain
+names should be readable lowercase slugs. Legacy nonportable labels are
+preserved and mapped to deterministic safe directory names. Reserve the
+explicit domain `project` for project-wide contracts (root links to its shelf;
+route includes its accepted specs for substantive queries).
 
-The script validates IDs, broken links, tested evidence and shortcut headings.
-It writes index.json atomically, and read commands fail on content mismatches,
-naming the added, changed or removed record paths so the Agent can decide to
-re-index. Hashes detect Markdown/index drift, not whether a historical lesson
-still applies to a changed codebase. No automatic capture, run execution or hooks.
+Spec records use the same routing metadata and status accepted/draft/etc.
+Keep intent, scenarios, invariants, consequential design decisions, testing
+seams and evidence near each other; distinguish proposed/accepted intent
+from implemented/verified behavior. No mandatory template or ticket.
+Preserve existing ADR/OpenSpec as canonical where applicable.
 
-When a Git diff identifies a changed source path, `route --path` can find *candidate*
-records for manual/agent inspection. It does not read Git history, establish
-module ownership, or prove semantic freshness. After file moves, inspect changed
-source/test imports and update affected area path metadata; use `index` then
-`check` on modified project docs. A no-match result does not prove absence of a
-contract or drift. See `practices/project-ecosystem.md` and
-`practices/git-checkpoints.md`.
+Declare optional `verify = ["tools/verify.py"]` on a domain or spec to
+link a real project-relative runnable verification entrypoint. The compiler
+checks file existence and safe paths, not that a command proves an outcome.
+Use relative Markdown links from canonical records for direct human/agent hops.
 
-## Phase B local technique retrieval
+Generated domain indexes group accepted specs, design/pending, advisory
+knowledge, verification and domain entrypoints. They point to actual files,
+not duplicated prose. Inactive records remain in JSON and source history,
+not default shelves. Cross-domain records appear in each domain, one owner.
+Domain growth: group or refine meaningful project domains when needed; no
+automatic hierarchy or arbitrary size gate.
 
-[Project ecosystem guidance](../skills/combo/practices/project-ecosystem.md) separates technique methods, retro lessons, lower-cost shortcuts, and scoped verification. Technique Discovery is a conditional process, not a stored kind. Do not create every record kind for each task.
+## Optional machine utilities
 
-**Implemented:** Schema 3 indexes local `.combo/techniques/` with `problem_signals`, `engine`, and `renderer` metadata. `route` and `lookup` accept optional `--engine` and `--renderer` to exclude explicit incompatibilities; exact ID lookups report them. `metadata-match` only means the declared metadata matches, not validated runtime success. Stronger technique states require local evidence records or files. Agent-controlled one-hop and project-local routing remain unchanged.
+```bash
+python /path/to/combo/tools/project_kb.py areas
+python /path/to/combo/tools/project_kb.py route --path src/simulation/vehicle.ts
+python /path/to/combo/tools/project_kb.py route --query "target oscillation"
+python /path/to/combo/tools/project_kb.py hop --from simulation
+python /path/to/combo/tools/project_kb.py lookup --id knowledge.shared-junction
+```
 
-**Future phases:** Global library resolution, cross-scope IDs and links, automated promotion, and cross-agent synchronization remain unimplemented. Lexical ranking has not been benchmarked on actual outcomes.
+route without filters shows domains; path/lexical matching is advisory.
+Required specs are not top-k limited. hop follows one edge/shelf; no
+automatic recursion. Explicit global catalog retains existing scoped
+resolution and fallback. Index hashes detect record/view drift, not
+semantic code drift or truth of evidence. Check current revision and
+primary evidence before consequential reliance. No automatic capture,
+publishing, hooks or global synchronization.
 
-**Phase A acceptance scenarios for future tests (not executed):** unsuccessful experiments do not become verified techniques; tested-in-one-project does not imply portable; unmeasured shortcuts do not claim savings; overlapping retro/technique records link rather than duplicate; specs outrank advisory recipes; unknown applicability stays unknown; missing evidence cannot certify tested claims; concurrent canonical edits detect conflicts; schema-2 indexes require explicit regeneration without changing source Markdown.
+## Behavioral acceptance
 
-## A/B limitation
-
-A is implemented. A deterministic one-hop B is only a proposed comparison.
-A/B conclusions require actual task traces, known-needed document IDs,
-quality/correctness verdicts, and per-task token/tool cost. Unit tests of A
-do not establish a token saving or superior RTS debugging.
+A fresh agent should discover relevant records from Markdown alone,
+apply or challenge them against actual code, and preserve useful
+discoveries for a later session. Compare equal-content search-first vs
+navigation-first on matched tasks, with a no-knowledge control and routine
+negative control. Mechanical compiler tests do not establish model behavior,
+token savings or outcome improvement.

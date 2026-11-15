@@ -31,9 +31,11 @@ comparison and its limits are recorded in `audit/ab/DECISION.md`. This is a
 maintainability choice for the full domain scope, not proof of universal model
 or token-cost superiority. Source entries use REFERENCE.md, not nested SKILL.md.
 
-Keep the short engineering policy scoped to engineering. The global routing
-pointer selects the matching workflow entry for substantive work across the
-supported domains, and uses combo when the route is uncertain. Once loaded,
+Keep the global policy as a short outcome, authority and quality contract plus
+host routing. Engineering methods and detailed standards belong to the owning
+practices and review, not repeated global steering. The global routing pointer
+selects the matching workflow entry for substantive work across the supported
+domains, and uses combo when the route is uncertain. Once loaded,
 continue without rereading on every follow-up. Native host skills for browsers,
 documents, images, and concrete utilities remain independently discoverable.
 
@@ -46,10 +48,10 @@ dependency is needed for this design.
 
 | Source | Responsibility | Adaptation |
 |---|---|---|
-| Karpathy | Understand intent, observable success, causal/surgical scope | Routine decisions proceed from evidence; preserve the complete user requirement |
-| Ponytail | Challenge unnecessary complexity before and after a change | Preserve proven design, safety, accessibility, and requested extensibility; no code golf |
-| Matt | Workflow shape, decision exploration, behavioral TDD, spec/standards review, context boundaries | Borrow ask-matt's paths and on-ramps; route automatically; remove mandatory interviews, tracker setup, commits, and fanout |
-| ECC | Engineering specialists plus research, content, commercial operations, media, and productivity methods | Consult relevant source methods, adapt example companies/thresholds/personas, and keep native tools and the host's configured memory rules authoritative |
+| Karpathy | Understand intent, observable success, causal/surgical scope | Goal-driven autonomous execution after alignment; changes justified by the complete outcome |
+| Ponytail | Challenge unnecessary complexity before and after a change | Minimize accidental complexity, not capability or delivery effort; no code golf |
+| Matt | Workflow methods, design alignment, behavioral TDD, distinct spec/standards review, context economics, retro | Preserve interview/execution boundaries, integrated tracer bullets and separate verdicts; use bounded workers and environment-first correction when justified, not mandatory ceremonies |
+| ECC | Engineering specialists plus research, content, commercial operations, media, and productivity methods | Contextual specialist knowledge, not global universal standards or default exhaustive verification; respect host tools and memory authority |
 
 Role ownership applies to knowledge/process, not branding in the user's normal
 output. A response should describe work and evidence rather than reciting packs.
@@ -156,18 +158,13 @@ the requested artifact, and productivity supports coordination and handoff.
 
 ## Delegation and model cost
 
-Primary agent owns interpretation, architecture, difficult tradeoffs, integration,
-and final acceptance. When delegation is authorized and independent work exists,
-use Luna (`gpt-5.6-luna`, effort `max`) for bounded research, file implementation,
-routine checks, and evidence gathering. Give concrete ownership and acceptance
-criteria, and tell workers they share a workspace. Delegation should remove work
-from the primary context, not duplicate it. One small task can stay local.
-
-Keep model-specific configuration in a Codex adapter, not portable workflow
-content. Configure a `combo_worker` role if the installed host supports it,
-using its supported role/config-file schema. In hosts without model-selection or
-agent tools, run the workflow locally; do not claim a fallback agent is Luna.
-Existing explicit user choices override the default. Do not pin the main model.
+Single owner, economical delegation. The primary agent owns interpretation,
+architecture, difficult tradeoffs, integration and final acceptance. Use
+bounded research, implementation and verification roles when their expected
+total cost including handoff, review and rework is lower at equivalent quality.
+Keep model configuration host-specific; choose the cheapest capable worker,
+not a universal model pin. Keep tightly coupled work local and respect
+authorization and host constraints. See [delegation](skills/combo/practices/delegation.md).
 
 ## Replacing v0 and legacy overlaps
 
@@ -233,10 +230,9 @@ one primary route and selective supporting reads. Preserve normal completion for
 build requests, requested stopping points, and Claude's actual Plan Mode approval
 transition. Do not add hooks, permission grants, mandatory forks, or model pins.
 
-Use a native personal `combo-worker` subagent with `model: inherit`; the parent
-passes bounded context, ownership, and expected evidence. Codex's Luna Max role
-does not translate into a fictional cross-provider Claude model. Preserve the
-user's current Claude main model, effort, and permissions.
+Use native personal Subcombo roles for factual discovery, bounded implementation
+and verification. The parent passes scope and expected evidence. Preserve the
+user's current Claude main model, effort and permissions.
 
 Retire only the overlapping ECC, ECC hubs, Matt plugin discovery and the old
 multi-model-orchestrator skill. Keep original plugin/skill files and unrelated

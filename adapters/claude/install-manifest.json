@@ -2,25 +2,68 @@
   "version": 1,
   "profile": "claude-combo",
   "source_roots": [
-    {"source": "skills/combo", "target": "skills/combo"},
-    {"source": "skills/combo-author", "target": "skills/combo-author"},
-    {"source": "skills/combo-business", "target": "skills/combo-business"},
-    {"source": "skills/combo-content", "target": "skills/combo-content"},
-    {"source": "skills/combo-debug", "target": "skills/combo-debug"},
-    {"source": "skills/combo-deliver", "target": "skills/combo-deliver"},
-    {"source": "skills/combo-investigate", "target": "skills/combo-investigate"},
-    {"source": "skills/combo-learning", "target": "skills/combo-learning"},
-    {"source": "skills/combo-maintain", "target": "skills/combo-maintain"},
-    {"source": "skills/combo-media", "target": "skills/combo-media"},
-    {"source": "skills/combo-plan", "target": "skills/combo-plan"},
-    {"source": "skills/combo-productivity", "target": "skills/combo-productivity"},
-    {"source": "skills/combo-research", "target": "skills/combo-research"},
-    {"source": "skills/combo-review", "target": "skills/combo-review"},
-    {"source": "skills/combo-verify", "target": "skills/combo-verify"}
+    {
+      "source": "skills/combo",
+      "target": "skills/combo"
+    },
+    {
+      "source": "skills/combo-author",
+      "target": "skills/combo-author"
+    },
+    {
+      "source": "skills/combo-business",
+      "target": "skills/combo-business"
+    },
+    {
+      "source": "skills/combo-content",
+      "target": "skills/combo-content"
+    },
+    {
+      "source": "skills/combo-debug",
+      "target": "skills/combo-debug"
+    },
+    {
+      "source": "skills/combo-deliver",
+      "target": "skills/combo-deliver"
+    },
+    {
+      "source": "skills/combo-investigate",
+      "target": "skills/combo-investigate"
+    },
+    {
+      "source": "skills/combo-learning",
+      "target": "skills/combo-learning"
+    },
+    {
+      "source": "skills/combo-maintain",
+      "target": "skills/combo-maintain"
+    },
+    {
+      "source": "skills/combo-media",
+      "target": "skills/combo-media"
+    },
+    {
+      "source": "skills/combo-plan",
+      "target": "skills/combo-plan"
+    },
+    {
+      "source": "skills/combo-productivity",
+      "target": "skills/combo-productivity"
+    },
+    {
+      "source": "skills/combo-research",
+      "target": "skills/combo-research"
+    },
+    {
+      "source": "skills/combo-review",
+      "target": "skills/combo-review"
+    },
+    {
+      "source": "skills/combo-verify",
+      "target": "skills/combo-verify"
+    }
   ],
   "override_root": "adapters/claude/overrides",
-  "agent_source": "adapters/claude/agents/combo-worker.md",
-  "agent_target": "agents/combo-worker.md",
   "policy_source": "adapters/claude/POLICY.md",
   "ownership_index": "skills/combo/.combo-owned.json",
   "settings_file": "settings.json",
@@ -39,5 +82,19 @@
     "skill_overrides": {
       "multi-model-orchestrator": "off"
     }
-  }
+  },
+  "agent_files": [
+    {
+      "source": "adapters/claude/agents/subcombo-research.md",
+      "target": "agents/subcombo-research.md"
+    },
+    {
+      "source": "adapters/claude/agents/subcombo-implement.md",
+      "target": "agents/subcombo-implement.md"
+    },
+    {
+      "source": "adapters/claude/agents/subcombo-verify.md",
+      "target": "agents/subcombo-verify.md"
+    }
+  ]
 }

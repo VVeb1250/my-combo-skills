@@ -1,7 +1,7 @@
 +++
 id = "change.combo-index-v1"
 area = "combo"
-status = "implemented"
+status = "superseded"
 summary = "Progressive agent-selected index and hop with metadata checks"
 tags = ["index", "route", "hop", "retrieval"]
 paths = ["skills/combo/tools/project_kb.py"]
@@ -24,5 +24,4 @@ Deterministic index; path routing; bounded hops; stale detection; duplicate and 
 validation; historical records excluded from active suggestions.
 
 ## Status
-Implemented on experimental branch, not yet accepted or archived. Retrieval-quality
-and actual token-cost A/B remain to be evaluated.
+Historical v1 implementation, superseded as the primary navigation interface by the [accepted navigation-first contract](../../specs/project-ecosystem.md). The CLI utilities and legacy record format remain supported. Retrieval-quality and actual token-cost A/B remain to be evaluated.

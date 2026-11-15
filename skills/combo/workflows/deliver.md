@@ -6,7 +6,18 @@ Apply the context rules at the end of this file; read
 [context](../practices/context.md) only for evidence-selection or reporting
 mechanics that are unresolved.
 
+For code whose intended output is a rendered, generated, spatial, interactive,
+or emergent artifact, explicitly use [outcome evidence](../practices/outcome-evidence.md)
+alongside functional checks. Keep the primary workflow; choose evidence by the
+actual outcome, not the implementation medium.
+
 ## Choose the slice
+
+If an opted-in project has `.combo/`, navigate `.combo/INDEX.md` and the
+relevant domain before consequential choices (use a known record directly).
+Read accepted behavior, relevant decisions and candidate knowledge; confirm
+applicability against actual code. For legacy projects without Markdown views,
+use [project ecosystem](../practices/project-ecosystem.md) to regenerate or navigate existing records.
 
 1. Identify user-visible behavior and an observable acceptance condition for
    each requirement, including actual compatibility, security, performance,
@@ -17,15 +28,14 @@ mechanics that are unresolved.
 3. Reuse required existing public seams. For a consequential cross-module
    change, state ownership, or known required variation, consult
    [design](../practices/design.md) even when the request appears clear.
-   Resolve user-owned choices through context's decision triage before
-   implementing dependent behavior. Choose the minimum sustainable design,
+   Close unresolved design alignment before implementing dependent behavior.
+   Accept an already agreed design as execution authority; choose methods and
+   resolve technical unknowns without reopening the interview. Choose the minimum sustainable design,
    preserving necessary extension points without speculative features.
 
-Before expensive or repetitive execution, choose the cheapest method that
-faithfully proves the outcome: targeted scripts, headless/direct rendering,
-replays or batches of independent observations sharing setup. Diagnose related
-symptoms together before causal repairs, but keep changes attributable and
-escalate when a cheap proxy misses acceptance. No mandatory cost report.
+Reuse tools and evidence, batch independent work, and use bounded
+[Subcombo delegation](../practices/delegation.md) when it reduces total cost
+without quality loss. Keep necessary discovery and actual-output checks.
 
 For risky or multi-slice Git-backed changes, follow [Git checkpoints](../practices/git-checkpoints.md):
 record branch/HEAD and existing dirty paths before editing, and create meaningful
@@ -33,19 +43,33 @@ unpublished WIP checkpoints **only when authorized**. A clean initial HEAD is
 already a baseline; no checkpoint is required for a tiny edit. Do not stage or
 commit unrelated work.
 
-Implement independently verifiable vertical slices. For mechanical migration,
+For new observable behavior or a reproduced regression, use [tests](../practices/tests.md)
+**before production edits**: choose one scenario and independent expectation,
+select the highest useful public seam, demonstrate red, implement green, then
+choose the next meaningful behavior. A rendered/spatial outcome may instead
+need a real before/after probe. Do not bulk-write imagined tests or fit expectations
+to finished code. If red is infeasible, state the evidence gap and use the
+closest faithful check.
+
+Implement independently verifiable vertical slices. When quality depends on
+composition or interaction among generators/features, make the slice a small
+integrated outcome (not merely a feature that exists in isolation). For a
+materially uncertain quality method, first produce and inspect a bounded real
+candidate; carry the demonstrated method into the integrated slice. For mechanical migration,
 use expand/migrate/contract when it preserves working callers. Keep validation
 and error handling at trust boundaries; use [security](../practices/security.md)
 when those boundaries change. Add dependencies, flexibility, or adjacent changes
 only when the requirement or causal evidence needs them.
 
-If the project has `.combo/`, consult [project ecosystem](../practices/project-ecosystem.md) for accepted requirements, task-scoped deltas, selective retro, and tested shortcuts. Never use an old lesson to override current code or approved intent.
+For opted-in projects, capture consequential reusable discoveries and accepted
+decisions as they emerge in their canonical records; continue the work. Use
+[project ecosystem](../practices/project-ecosystem.md) for editing, not a second
+workflow. Never let advisory knowledge override approved intent.
 
 ## Verify and finish
 
-- Select behavioral checks with [tests](../practices/tests.md). Use red-green
-  when it clarifies new behavior or a regression. Tiny reversible edits need
-  inspection and the cheapest relevant check, not an artificial suite.
+- Continue the behavioral checks selected before each slice. Tiny reversible
+  edits need inspection and the cheapest relevant check, not an artificial suite.
 - Check each meaningful slice. Map every acceptance condition to actual evidence;
   keep this mapping in context unless a report needs it.
 - A shared contract change needs affected-caller coverage; dependency/config
@@ -58,9 +82,13 @@ If the project has `.combo/`, consult [project ecosystem](../practices/project-e
   than treating successful individual controls as a completed journey.
 - Inspect the changed area for repeated root causes, unclear state ownership, shotgun edits and duplicated transitions. Apply targeted behavior-preserving refactoring only when justified by actual friction and recheck affected behavior.
 - Use [verification economy](../practices/verification-economy.md) to select adequate focused evidence before an expensive Browser/reviewer pass; never weaken explicit gates.
-- Inspect the final diff for scope, missed requirements, error paths, and coupling.
+- Inspect the final result and diff along the separate outcome/spec and
+  engineering/standards axes in [review](review.md). Keep their verdicts
+  distinct when either has a material gap; neither substitutes for the other.
   Apply [simplicity](../practices/simplicity.md) when new layers or options appear.
   Repair actionable in-scope findings and verify the affected behavior again.
+  Use a focused reviewer only if justified; no additional stage or formal
+  report is required for a routine edit.
 
 For failed checks, retain the command and first useful symptom, distinguish
 change-caused from pre-existing/environment failures, and fix the causal issue.
@@ -74,7 +102,8 @@ relevant acceptance checks only after a cause-supported repair.
 
 For an opted-in `.combo/` project, use changed source paths to find candidate
 owner/spec/decision records with the existing [project ecosystem](../practices/project-ecosystem.md)
-routing. Update changed canonical contracts and regenerate a touched index; a
+navigation or path hints. Reconcile accepted contracts and actual verification
+status separately; update useful knowledge and regenerate touched indexes. A
 path miss does not prove no documentation impact.
 
 Return the result, useful file links, check verdicts, and material unchecked
@@ -86,11 +115,27 @@ commit, publish, or hand off only within the granted Git authorization.
 
 ### Own the outcome
 
+For substantive work on opted-in projects, read `.combo/INDEX.md` and relevant
+domain records before consequential choices (known paths or loaded context
+suffice). Accepted specs constrain work; knowledge is advisory. Capture useful
+consequential discoveries and accepted decisions as they emerge, then regenerate
+changed indexes. No routine logs. See [project ecosystem](../practices/project-ecosystem.md)
+for legacy fallback and record authoring.
+
 Translate the request into its intended result, binding constraints, and observable
 acceptance. Discover necessary implicit work from real references, callers, and
 delivery conditions: choose the method and carry authorized work through to that
 result. Inferred implementation steps are not permission to expand scope or cross
 the requested stopping point.
+
+Keep quality, fidelity, and domain behavior in the acceptance target even when
+they are harder to measure than functionality. Define checks from that target,
+not from the first implementation or what is easiest to test. A working
+mechanism, a complete feature list, or a passing proxy is not evidence of an
+adequate outcome. When the method's ability to reach the target is materially
+uncertain, use a bounded real-output probe before scaling it; compare the
+observed result against the target and revise the method if needed. This is
+conditional, not a new stage for routine work.
 
 Keep the user's spec and design intent as the comparison target. Preserve approved
 choices and parts that already pass. A proposed simplification, style direction,
@@ -106,39 +151,37 @@ retained user instruction outranks your summary of the plan.
 
 ### Decision triage
 
-Resolve facts from context, files, references, tools, or a bounded experiment before
-asking. Choose routine methods from that evidence. Ask only about an unresolved
-choice that materially changes outcome, taste, compatibility, risk, cost, or scope
-and cannot be established from the available evidence. An unavailable reference
-is a gap to resolve, not permission to guess its contents.
+Resolve facts from context, code, references, tools, and bounded experiments.
+Do not ask the user to discover facts or choose routine implementation methods.
+For consequential design, identify unresolved user-owned choices early; do not
+treat the existence of multiple viable algorithms as missing user intent.
 
-Before consequential implementation or design, actively check whether
-different plausible architectures or product behaviors lead to materially
-different outcomes, even if the prompt sounds clear. If an unresolved
-user-owned decision remains, initiate a bounded auto-grill; do not silently
-pick a default or implement the dependent design. Ask the highest-impact one
-to three independent questions per round with a recommendation and real
-tradeoffs. Continue only if an answer exposes another consequential decision.
-Explicit grill requests may go deeper. Do not manufacture choices for a
-clear tiny fix, repeat accepted decisions, or ask for facts inspectable
-in code. See [design](../practices/design.md) for architecture-specific probes.
+**Design alignment (before execution).** If the intended outcome, binding
+constraints, or consequential user-owned design decisions are unresolved,
+front-load a design interview before committing to dependent design. Map the
+relevant decision tree; ask the whole frontier of independent decisions whose
+prerequisites are settled, with a recommendation and meaningful tradeoff for
+each. Recompute the frontier after answers. Research facts concurrently when
+economical (see [delegation](../practices/delegation.md)); only dependent questions wait.
+Use a bounded prototype when seeing an outcome is necessary to settle taste,
+within the authorized stopping point. Close the interview when the material
+decisions are settled and shared understanding is established. Confirm when
+an actual approval boundary remains; an explicit authorization on an agreed
+design already suffices. Do not impose a new interview or approval ceremony
+on an already-aligned request, routine edit, or delegated design decision.
 
-For a behavior change, current implementation establishes what exists, not the
-requested new intent. If two plausible readings produce materially different
-user-visible results and the evidence leaves both open, ask before committing
-either. Keeping an existing default is a recommendation, not user assent.
-
-Ask the smallest decision-changing question, with a recommended answer and the
-tradeoff of a viable alternative. Settle prerequisites before dependent choices;
-bundle only independent questions when useful. Wait for answers before dependent
-work, while continuing independent authorized work. Prior user answers remain
-binding. For reversible details with little effect, state a material assumption
-when needed and proceed; do not turn every implementation choice into an interview.
-
-When taste needs seeing, use a small prototype or visual alternatives within the
-authorized scope, identify what the choice settles, and get the user's selection
-before committing the disputed direction. A plan-only boundary still applies.
-Stop questioning once remaining uncertainty cannot materially change the result.
+**Execution authority (after alignment).** Own the authorized outcome.
+Independently choose implementation methods, investigate unknown mechanisms,
+experiment, inspect integrated results, and refine fixable quality gaps.
+Do not reopen settled decisions, stop for intermediate verification or require
+approval for every slice. Progress updates do not request approval; continue
+authorized work. Escalate only if new evidence exposes a consequential
+user-owned choice outside existing authority, such as a necessary change to
+binding intent, a material risk, or an infeasible accepted constraint.
+Explain the evidence, viable tradeoff and recommendation; continue independent
+authorized work. Preserve plan-only and explicit user checkpoints and host
+permission boundaries. Record material assumptions or unresolved limits.
+See [design](../practices/design.md) for technical probes.
 
 ### Verify against intent
 
@@ -148,7 +191,11 @@ signals, read [outcome evidence](../practices/outcome-evidence.md). A successful
 only that command's result, not task success. Compare the actual deliverable with
 acceptance; diagnose an observed gap, refine the affected part, and recheck it and
 anything the change could invalidate. Keep passing parts and still-valid evidence.
-Finish when the agreed criteria are supported; if decisive access is unavailable,
-deliver independent work and name the exact unverified criterion. Do not loop on
-unchanged evidence or claim completion across that gap.
+Finish when the agreed criteria are supported. Distinguish implementation,
+technical checks, outcome quality, and any required user approval when their
+verdicts differ. If quality is below target, refine within scope or report the
+outcome as incomplete; if decisive access is unavailable, name the exact
+unverified criterion and deliver independent work. Do not loop on unchanged
+evidence, equate self-reported checks with acceptance, or claim completion across
+a material gap.
 <!-- END CONTEXT CORE -->

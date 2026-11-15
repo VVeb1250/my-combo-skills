@@ -16,7 +16,10 @@ contract test; schema/persistence -> migration and integrity check; interactive 
 starting points, not a fixed test matrix or a substitute for requested gates.
 
 Choose evidence capable of falsifying the uncovered criterion at the lowest
-adequate cost. Prefer existing deterministic results, focused tests, type
+adequate cost. Adequacy includes every material outcome-quality and domain
+behavior criterion; compare cost only among methods that preserve that target.
+Cheap mechanical checks cannot substitute for required generated-output,
+visual, or gameplay evidence. Prefer existing deterministic results, focused tests, type
 checks, replay/simulation traces, or integration probes at the public seam.
 Use the Browser for UI/cross-component journeys when observed interaction is
 part of acceptance or cheaper evidence leaves a material gap. Follow native

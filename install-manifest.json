@@ -65,8 +65,16 @@
   ],
   "adapter_files": [
     {
-      "source": "adapters/codex/combo-worker.toml",
-      "target": "agents/combo-worker.toml"
+      "source": "adapters/codex/subcombo-research.toml",
+      "target": "agents/subcombo-research.toml"
+    },
+    {
+      "source": "adapters/codex/subcombo-implement.toml",
+      "target": "agents/subcombo-implement.toml"
+    },
+    {
+      "source": "adapters/codex/subcombo-verify.toml",
+      "target": "agents/subcombo-verify.toml"
     }
   ],
   "ownership_index": "skills/combo/.combo-owned.json",
@@ -78,11 +86,23 @@
     "disable_plugins": [
       "ecc@ecc"
     ],
-    "worker_role": {
-      "name": "combo_worker",
-      "config_file": "agents/combo-worker.toml",
-      "description": "Bounded worker for independent research, implementation, artifacts, and checks."
-    }
+    "worker_roles": [
+      {
+        "name": "subcombo-research",
+        "config_file": "agents/subcombo-research.toml",
+        "description": "Bounded factual discovery and source extraction; return evidence, contradictions and gaps."
+      },
+      {
+        "name": "subcombo-implement",
+        "config_file": "agents/subcombo-implement.toml",
+        "description": "Implement a bounded, assigned change against an agreed contract; return diff and relevant checks."
+      },
+      {
+        "name": "subcombo-verify",
+        "config_file": "agents/subcombo-verify.toml",
+        "description": "Run focused checks and inspect actual outputs; return failures, evidence and unverified limits."
+      }
+    ]
   },
   "agents": {
     "markers": {

@@ -20,9 +20,9 @@
 - ใช้ `${CLAUDE_SKILL_DIR}` อ้างไฟล์โดยไม่สมมติ working directory
 - งานที่ขอให้สร้างจนเสร็จเดินต่อถึง implementation และ verification
   ส่วน plan-only, diagnosis-only และ Plan Mode รักษาจุดหยุดตามคำขอและ host
-- `combo-worker` เป็น native Claude subagent แบบ `model: inherit`
-  รับงานที่มีขอบเขตและ context ชัด ส่วน agent หลักตัดสินใจและตรวจการรวมงาน
-  การเลือก Luna Max เป็นของ Codex adapter เท่านั้น
+- Native Subcombo roles: `subcombo-research` และ `subcombo-verify` ใช้ Haiku,
+  `subcombo-implement` ใช้ Sonnet เป็น candidate defaults; เลือกงานตาม
+  ความคุ้มค่าและความสามารถ ไม่เปลี่ยน main model. Agent หลักตัดสินและรวมงาน
 - ปิด discovery ของ plugins `ecc-hubs@bundle`, `ecc@ecc` และ
   `mattpocock-skills@mattpocock` พร้อมตั้ง `multi-model-orchestrator` เป็น `off`
   เพื่อหยุด router เก่าที่ซ้อนกัน โดยเก็บไฟล์เดิมไว้สำหรับ rollback

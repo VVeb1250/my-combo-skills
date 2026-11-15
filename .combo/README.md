@@ -1,5 +1,5 @@
-# .combo dogfood example
+# Combo project knowledge
 
-This repository uses the opt-in project-local knowledge convention described in [project ecosystem](../skills/combo/practices/project-ecosystem.md).
+Start at [INDEX.md](INDEX.md). Open only the relevant domain and records before consequential work; follow source, test and evidence links when needed. The [project ecosystem practice](../skills/combo/practices/project-ecosystem.md) explains how to author and update records.
 
-Paths: specs/ for accepted contracts; changes/ for proposals/deltas; retro/ for evidence-backed lessons; shortcuts/ for validated recipes; index.json for generated pointers. Raw evidence stays in original files. The example does not imply automatic project setup or OpenSpec CLI compatibility.
+Specs preserve accepted intent and observable behavior. Knowledge records capture reusable discoveries and limitations. Legacy records stay discoverable; migrate deliberately, not in bulk. Generated Markdown and JSON indexes are views, not editable sources. Regenerate with `python skills/combo/tools/project_kb.py index`, then run `check`.

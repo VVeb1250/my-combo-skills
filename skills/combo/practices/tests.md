@@ -7,9 +7,14 @@ invariant before choosing the test shape.
 - Prefer the highest existing seam that can detect the real behavior. Add a new
   seam only when the existing surface cannot make the result observable. When
   proposing seams, note for each what it catches and what it misses.
-- Use a focused red-green loop for new behavior and demonstrated regressions
-  when it gives useful feedback. Keep the test at the call chain where the bug
-  actually occurs; a shallow test can give false confidence.
+- For new observable behavior or a reproduced regression, choose the scenario,
+  independent expected result and public seam before production edits. Run one
+  failing test for the missing behavior, then implement and run green; repeat
+  with the next meaningful behavior. Do not bulk-write imagined tests or derive
+  the oracle from the implementation. A pre-existing passing test is not red.
+  For visual or emergent behavior use an actual failing/missing-output probe
+  where suitable; report an unavailable red rather than inventing one. Keep
+  the check at the real call chain, not private helpers for their own sake.
 - Prefer deterministic fixtures, pinned time or randomness, isolated state, and
   assertions on the specific symptom. "It did not crash" is rarely enough.
 - When behavior admits a falsifiable property over a broad input space

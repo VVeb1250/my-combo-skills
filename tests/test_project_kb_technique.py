@@ -37,7 +37,7 @@ class TechniqueIndexTests(unittest.TestCase):
     def test_index_and_lookup(self):
         self.write("techniques/tree.md", technique("tech.tree"))
         index = kb.rebuild(self.root)
-        self.assertEqual(index["schema"], 3)
+        self.assertEqual(index["schema"], 4)
         self.assertEqual(kb.lookup(index, kind="technique")[0]["id"], "tech.tree")
 
     def test_signal_query(self):
@@ -101,7 +101,7 @@ class TechniqueIndexTests(unittest.TestCase):
         with self.assertRaisesRegex(kb.IndexErrorInfo, "unsupported"):
             kb.load_index(self.root)
         kb.rebuild(self.root)
-        self.assertEqual(kb.load_index(self.root)["schema"], 3)
+        self.assertEqual(kb.load_index(self.root)["schema"], 4)
 
 if __name__ == "__main__":
     unittest.main()

@@ -2,7 +2,14 @@
 
 Use this lens when a change adds abstractions, configuration, dependencies,
 layers, retries, or a broad refactor, or when the user asks for simplification.
-The goal is a smaller maintainable design that still meets the full requirement.
+Minimize accidental complexity, not required capability, quality, or the
+effort needed to deliver them. Be economical about the solution, thorough about
+the change. A simpler candidate that loses fidelity, required variation,
+performance, or behavior is not a complete solution. Finish every necessary
+caller, test, fixture and integration; do not mistake fewer lines for success.
+When no small faithful method exists, implement the necessary complexity in
+cohesive modules. For material uncertainty, use the design and actual-output
+evidence practices; do not cut discovery to get a shorter implementation.
 
 - Before adding code, check existing code, the standard library, native
   platform facilities, and installed dependencies in that order. A project's
@@ -39,6 +46,8 @@ The goal is a smaller maintainable design that still meets the full requirement.
 - Do not perform unrelated cleanup or enforce a line-count target. Match the
   repository's style when it does not conflict with correctness.
 
-For a review, phrase a complexity finding as location, what to cut, and what
-replaces it, or say the code is already lean. For implementation, apply the
-smallest justified simplification before broadening scope.
+For a review, phrase a complexity finding as location, concrete cost, what to
+cut, and what replaces it, or say the code is already lean. Keep style and
+possible smells distinct from correctness defects; repository standards and
+actual constraints override generic heuristics. Simplify as part of delivery
+only when it improves the requested result or prevents a demonstrated problem.

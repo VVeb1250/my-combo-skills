@@ -39,11 +39,12 @@ class ClaudeSetupTests(unittest.TestCase):
         (adapter_root / "POLICY.md").write_text(
             "## Mini policy\nUse the selected workflow.\n", encoding="utf-8"
         )
-        (adapter_root / "agents" / "combo-worker.md").write_text(
-            "---\nname: combo-worker\ndescription: Mini worker\nmodel: inherit\n---\n\n"
-            "Complete the delegated task.\n",
-            encoding="utf-8",
-        )
+        for name in ("combo-worker", *(f"subcombo-{r}" for r in claude_setup.SUBCOMBO_ROLES)):
+            (adapter_root / "agents" / f"{name}.md").write_text(
+                f"---\nname: {name}\ndescription: Mini worker\nmodel: inherit\n---\n\n"
+                "Complete the delegated task.\n",
+                encoding="utf-8",
+            )
 
     def _mini_manifest(self) -> dict:
         return copy.deepcopy(claude_setup.load_manifest())
@@ -159,13 +160,48 @@ class ClaudeSetupTests(unittest.TestCase):
                 path.relative_to(target_root).as_posix() for path in paths
             }
             self.assertIn("skills/combo/SKILL.md", relative_paths)
-            self.assertIn("agents/combo-worker.md", relative_paths)
+            self.assertTrue({f"agents/subcombo-{r}.md" for r in claude_setup.SUBCOMBO_ROLES} <= relative_paths)
+            self.assertNotIn("agents/combo-worker.md", relative_paths)
             self.assertIn("CLAUDE.md", relative_paths)
             self.assertIn("settings.json", relative_paths)
             self.assertTrue(all(path.is_relative_to(target_root) for path in paths))
             self.assertEqual((codex / "config.toml").read_bytes(), codex_config)
             self.assertEqual((codex / "AGENTS.md").read_bytes(), codex_agents)
             self.assertEqual((home / "config.toml").read_bytes(), unrelated_config)
+
+    def test_subcombo_migration_and_rollback_preserve_other_agents(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            source, home = root / "source", root / "home"
+            self._mini_root(source)
+            target = home / ".claude"
+            manifest = self._mini_manifest()
+            legacy = copy.deepcopy(manifest)
+            legacy.pop("agent_files")
+            legacy["agent_source"] = claude_setup.AGENT_SOURCE
+            legacy["agent_target"] = claude_setup.AGENT_TARGET
+            with mock.patch.object(claude_setup, "ROOT", source):
+                claude_setup.apply(claude_setup.build_plan(home, legacy), root / "old", target)
+                old = target / claude_setup.AGENT_TARGET
+                original = old.read_bytes()
+                unrelated = target / "agents/user-agent.md"
+                unrelated.write_bytes(b"keep")
+                changes = claude_setup.build_plan(home, manifest)
+                receipt = claude_setup.apply(changes, root / "new", target)
+                self.assertFalse(old.exists())
+                self.assertEqual(unrelated.read_bytes(), b"keep")
+                self.assertTrue(all((target / f"agents/subcombo-{r}.md").is_file()
+                                    for r in claude_setup.SUBCOMBO_ROLES))
+                self.assertEqual(claude_setup.build_plan(home, manifest), [])
+                claude_setup.rollback(receipt, target)
+                self.assertEqual(old.read_bytes(), original)
+                self.assertEqual(unrelated.read_bytes(), b"keep")
+                self.assertFalse(any((target / f"agents/subcombo-{r}.md").exists()
+                                     for r in claude_setup.SUBCOMBO_ROLES))
+                self.assertEqual(claude_setup.build_plan(home, legacy), [])
+                old.write_bytes(b"user edit")
+                with self.assertRaisesRegex(ValueError, "drifted"):
+                    claude_setup.build_plan(home, manifest)
 
     def test_python_cache_entries_are_never_installed(self):
         with tempfile.TemporaryDirectory() as temporary:
@@ -229,7 +265,7 @@ class ClaudeSetupTests(unittest.TestCase):
             self._mini_root(root)
             manifest = self._mini_manifest()
 
-            for relative in ("skills/combo/SKILL.md", "agents/combo-worker.md"):
+            for relative in ("skills/combo/SKILL.md", "agents/subcombo-research.md"):
                 with self.subTest(relative=relative):
                     home = temporary_root / ("home-" + relative.replace("/", "-"))
                     target = home / ".claude" / relative

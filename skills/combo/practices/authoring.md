@@ -36,8 +36,10 @@ user would otherwise fail to discover the right workflow.
 ## Fusion of external techniques
 
 Inventory candidate skills, then separate transferable mechanisms from their
-persona, orchestration, hooks and required ceremonies. Extract a concrete
-trigger, decision, failure mode and stopping condition; refine the existing
+persona, orchestration, hooks and required ceremonies. Extract the source's concrete trigger, decision, authority, context boundary,
+failure mode and stopping condition before merging or shortening it. Preserve
+functional distinctions (e.g. design interview vs execution, spec vs standards
+review); do not flatten them into one always-active rule. Refine the existing
 workflow/practice owner rather than adding competing instructions. Keep pinned
 source provenance and license obligations for copied material. New paid-agent
 A/B runs are not a required gate for each instruction edit.
