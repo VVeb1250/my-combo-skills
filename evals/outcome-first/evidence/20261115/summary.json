@@ -1,0 +1,381 @@
+{
+  "baseline": "2ec0e2033bdcc783ab021efa508eaf98d0c28786",
+  "candidate": "0cce09648496f96d67abb3b2da80b77774d520c6",
+  "suite": {
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high"
+  },
+  "timeout_seconds": 300,
+  "repeat": 3,
+  "modified_evaluator_sha256": {
+    "evals/outcome-first/README.md": "92a53b682bc817c12f96839a4ecf6a70ee556307262a7dd84a193594f29b805b",
+    "evals/outcome-first/acceptance/river.py": "9923a0478fc57685b29ddd95672f3ea70c92a74e0f473207c1fa93ec169f444d",
+    "evals/outcome-first/run.py": "55caaf62aac239ef465382c91a86de4296ecbb5bba8936e42382df1761c81299",
+    "evals/outcome-first/test_mechanical.py": "c1aeceb3a492ccded45a22c505967897128dbe3a195df15aed51af14c9d75251"
+  },
+  "blind_key_after_review": [
+    {
+      "case": "river-r1",
+      "blind_id": "ba824bf6f46a",
+      "arm": "A"
+    },
+    {
+      "case": "river-r1",
+      "blind_id": "abadc4d25c1f",
+      "arm": "B"
+    },
+    {
+      "case": "river-r1",
+      "blind_id": "3dd154833737",
+      "arm": "C"
+    },
+    {
+      "case": "river-r2",
+      "blind_id": "b5a5d0b89fc9",
+      "arm": "B"
+    },
+    {
+      "case": "river-r2",
+      "blind_id": "93c5dc1c12d4",
+      "arm": "C"
+    },
+    {
+      "case": "river-r2",
+      "blind_id": "fad4a343d7f4",
+      "arm": "A"
+    },
+    {
+      "case": "river-r3",
+      "blind_id": "aab045143939",
+      "arm": "C"
+    },
+    {
+      "case": "river-r3",
+      "blind_id": "eaa4bc032191",
+      "arm": "A"
+    },
+    {
+      "case": "river-r3",
+      "blind_id": "63868e84a9eb",
+      "arm": "B"
+    }
+  ],
+  "results": [
+    {
+      "case": "river-r1",
+      "arm": "A",
+      "classification": "task",
+      "timed_out": false,
+      "duration_seconds": 302.431,
+      "acceptance_before": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 17: disconnected water\nseed 41: disconnected water\nseed 83: disconnected water\nseed 109: disconnected water\nseed 151: disconnected water\n",
+        "stderr": ""
+      },
+      "acceptance_after": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 109: merge outside middle third\n",
+        "stderr": ""
+      },
+      "image_delivery": {
+        "image_payload_items": [],
+        "delivery": "not_observed",
+        "artifact_and_visual_inspection": "unverified"
+      },
+      "actual_references": [],
+      "task_failures": [
+        "independent after acceptance did not pass"
+      ],
+      "environment_failures": [],
+      "usage": {
+        "input_tokens": 678684,
+        "cached_input_tokens": 633472,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 12841,
+        "reasoning_output_tokens": 6300
+      }
+    },
+    {
+      "case": "river-r1",
+      "arm": "B",
+      "classification": "environmental",
+      "timed_out": true,
+      "duration_seconds": 306.795,
+      "acceptance_before": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 17: disconnected water\nseed 41: disconnected water\nseed 83: disconnected water\nseed 109: disconnected water\nseed 151: disconnected water\n",
+        "stderr": ""
+      },
+      "acceptance_after": {
+        "returncode": 0,
+        "passed": true,
+        "stdout": "PASS: topology, boundaries, route, width, determinism, minimum variation\n",
+        "stderr": ""
+      },
+      "image_delivery": {
+        "image_payload_items": [],
+        "delivery": "not_observed",
+        "artifact_and_visual_inspection": "unverified"
+      },
+      "actual_references": [
+        "combo/workflows/deliver"
+      ],
+      "task_failures": [],
+      "environment_failures": [
+        "session exceeded 300s",
+        "Codex exited with 1",
+        "no completed turn"
+      ],
+      "usage": null
+    },
+    {
+      "case": "river-r1",
+      "arm": "C",
+      "classification": "passed",
+      "timed_out": false,
+      "duration_seconds": 270.756,
+      "acceptance_before": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 17: disconnected water\nseed 41: disconnected water\nseed 83: disconnected water\nseed 109: disconnected water\nseed 151: disconnected water\n",
+        "stderr": ""
+      },
+      "acceptance_after": {
+        "returncode": 0,
+        "passed": true,
+        "stdout": "PASS: topology, boundaries, route, width, determinism, minimum variation\n",
+        "stderr": ""
+      },
+      "image_delivery": {
+        "image_payload_items": [],
+        "delivery": "not_observed",
+        "artifact_and_visual_inspection": "unverified"
+      },
+      "actual_references": [
+        "combo/workflows/deliver"
+      ],
+      "task_failures": [],
+      "environment_failures": [],
+      "usage": {
+        "input_tokens": 854989,
+        "cached_input_tokens": 814464,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 12097,
+        "reasoning_output_tokens": 4845
+      }
+    },
+    {
+      "case": "river-r2",
+      "arm": "B",
+      "classification": "environmental",
+      "timed_out": true,
+      "duration_seconds": 306.591,
+      "acceptance_before": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 17: disconnected water\nseed 41: disconnected water\nseed 83: disconnected water\nseed 109: disconnected water\nseed 151: disconnected water\n",
+        "stderr": ""
+      },
+      "acceptance_after": {
+        "returncode": 0,
+        "passed": true,
+        "stdout": "PASS: topology, boundaries, route, width, determinism, minimum variation\n",
+        "stderr": ""
+      },
+      "image_delivery": {
+        "image_payload_items": [],
+        "delivery": "not_observed",
+        "artifact_and_visual_inspection": "unverified"
+      },
+      "actual_references": [
+        "combo/workflows/deliver"
+      ],
+      "task_failures": [],
+      "environment_failures": [
+        "session exceeded 300s",
+        "Codex exited with 1",
+        "no completed turn"
+      ],
+      "usage": null
+    },
+    {
+      "case": "river-r2",
+      "arm": "C",
+      "classification": "passed",
+      "timed_out": false,
+      "duration_seconds": 177.489,
+      "acceptance_before": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 17: disconnected water\nseed 41: disconnected water\nseed 83: disconnected water\nseed 109: disconnected water\nseed 151: disconnected water\n",
+        "stderr": ""
+      },
+      "acceptance_after": {
+        "returncode": 0,
+        "passed": true,
+        "stdout": "PASS: topology, boundaries, route, width, determinism, minimum variation\n",
+        "stderr": ""
+      },
+      "image_delivery": {
+        "image_payload_items": [],
+        "delivery": "not_observed",
+        "artifact_and_visual_inspection": "unverified"
+      },
+      "actual_references": [
+        "combo/workflows/deliver"
+      ],
+      "task_failures": [],
+      "environment_failures": [],
+      "usage": {
+        "input_tokens": 443974,
+        "cached_input_tokens": 402944,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 8309,
+        "reasoning_output_tokens": 4165
+      }
+    },
+    {
+      "case": "river-r2",
+      "arm": "A",
+      "classification": "passed",
+      "timed_out": false,
+      "duration_seconds": 187.726,
+      "acceptance_before": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 17: disconnected water\nseed 41: disconnected water\nseed 83: disconnected water\nseed 109: disconnected water\nseed 151: disconnected water\n",
+        "stderr": ""
+      },
+      "acceptance_after": {
+        "returncode": 0,
+        "passed": true,
+        "stdout": "PASS: topology, boundaries, route, width, determinism, minimum variation\n",
+        "stderr": ""
+      },
+      "image_delivery": {
+        "image_payload_items": [],
+        "delivery": "not_observed",
+        "artifact_and_visual_inspection": "unverified"
+      },
+      "actual_references": [],
+      "task_failures": [],
+      "environment_failures": [],
+      "usage": {
+        "input_tokens": 342102,
+        "cached_input_tokens": 317184,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9115,
+        "reasoning_output_tokens": 4405
+      }
+    },
+    {
+      "case": "river-r3",
+      "arm": "C",
+      "classification": "environmental",
+      "timed_out": true,
+      "duration_seconds": 306.641,
+      "acceptance_before": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 17: disconnected water\nseed 41: disconnected water\nseed 83: disconnected water\nseed 109: disconnected water\nseed 151: disconnected water\n",
+        "stderr": ""
+      },
+      "acceptance_after": {
+        "returncode": 0,
+        "passed": true,
+        "stdout": "PASS: topology, boundaries, route, width, determinism, minimum variation\n",
+        "stderr": ""
+      },
+      "image_delivery": {
+        "image_payload_items": [],
+        "delivery": "not_observed",
+        "artifact_and_visual_inspection": "unverified"
+      },
+      "actual_references": [
+        "combo/workflows/deliver"
+      ],
+      "task_failures": [],
+      "environment_failures": [
+        "session exceeded 300s",
+        "Codex exited with 1",
+        "no completed turn"
+      ],
+      "usage": null
+    },
+    {
+      "case": "river-r3",
+      "arm": "A",
+      "classification": "task",
+      "timed_out": false,
+      "duration_seconds": 208.488,
+      "acceptance_before": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 17: disconnected water\nseed 41: disconnected water\nseed 83: disconnected water\nseed 109: disconnected water\nseed 151: disconnected water\n",
+        "stderr": ""
+      },
+      "acceptance_after": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 83: merge outside middle third\n",
+        "stderr": ""
+      },
+      "image_delivery": {
+        "image_payload_items": [],
+        "delivery": "not_observed",
+        "artifact_and_visual_inspection": "unverified"
+      },
+      "actual_references": [],
+      "task_failures": [
+        "independent after acceptance did not pass"
+      ],
+      "environment_failures": [],
+      "usage": {
+        "input_tokens": 626696,
+        "cached_input_tokens": 591616,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 9386,
+        "reasoning_output_tokens": 4078
+      }
+    },
+    {
+      "case": "river-r3",
+      "arm": "B",
+      "classification": "passed",
+      "timed_out": false,
+      "duration_seconds": 302.095,
+      "acceptance_before": {
+        "returncode": 1,
+        "passed": false,
+        "stdout": "seed 17: disconnected water\nseed 41: disconnected water\nseed 83: disconnected water\nseed 109: disconnected water\nseed 151: disconnected water\n",
+        "stderr": ""
+      },
+      "acceptance_after": {
+        "returncode": 0,
+        "passed": true,
+        "stdout": "PASS: topology, boundaries, route, width, determinism, minimum variation\n",
+        "stderr": ""
+      },
+      "image_delivery": {
+        "image_payload_items": [],
+        "delivery": "not_observed",
+        "artifact_and_visual_inspection": "unverified"
+      },
+      "actual_references": [
+        "combo/workflows/deliver"
+      ],
+      "task_failures": [],
+      "environment_failures": [],
+      "usage": {
+        "input_tokens": 911038,
+        "cached_input_tokens": 863232,
+        "cache_write_input_tokens": 0,
+        "output_tokens": 14092,
+        "reasoning_output_tokens": 5969
+      }
+    }
+  ]
+}

@@ -76,6 +76,23 @@ class MechanicalTests(unittest.TestCase):
         with self.assertRaisesRegex(AssertionError,"merge outside middle third"):
             acceptance.check(data,17)
 
+    def test_main_widening_does_not_require_combined_inlet_width(self):
+        data = connected_sample(17)
+        wet = {tuple(p) for p in data["water"]}
+        # Widen only the separate tributary upstream: the main river still
+        # widens downstream, while the two inlets together exceed its outlet.
+        wet |= {(x, y) for x, y in wet if y < 20 and x < 35 for x in range(x-2, x+3)}
+        data["water"] = [list(p) for p in sorted(wet)]
+        self.assertTrue(acceptance.check(data, 17))
+
+    def test_main_that_does_not_widen_is_rejected(self):
+        data = connected_sample(17)
+        wet = {tuple(p) for p in data["water"]}
+        wet |= {(x, y) for x, y in wet if y < 20 and 40 <= x <= 60 for x in range(x-3, x+4)}
+        data["water"] = [list(p) for p in sorted(wet)]
+        with self.assertRaisesRegex(AssertionError, "main does not widen"):
+            acceptance.check(data, 17)
+
     def test_label_immutable_acceptance(self):
         with tempfile.TemporaryDirectory() as d:
             root = Path(d)
@@ -150,6 +167,18 @@ class MechanicalTests(unittest.TestCase):
             self.assertEqual({runner.order(r,i)[0] for r in range(3)},set(runner.ARMS))
             for r in range(3):
                 self.assertEqual(set(runner.order(r,i)),set(runner.ARMS))
+
+    def test_image_delivery_requires_structured_tool_image(self):
+        screenshot = {"type": "item.completed", "item": {
+            "id": "a", "type": "command_execution", "aggregated_output": "saved preview.png"}}
+        claim = {"type": "item.completed", "item": {
+            "id": "b", "type": "agent_message", "text": "I inspected the image"}}
+        self.assertEqual(runner.image_evidence([screenshot, claim])["delivery"], "not_observed")
+        image = {"type": "item.completed", "item": {
+            "id": "c", "type": "mcp_tool_call", "result": {"content": [{"type": "image"}]}}}
+        evidence = runner.image_evidence([image])
+        self.assertEqual(evidence["delivery"], "image_payload_observed")
+        self.assertEqual(evidence["artifact_and_visual_inspection"], "unverified")
 
 if __name__=="__main__":
     unittest.main()

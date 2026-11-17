@@ -1,5 +1,9 @@
 # Outcome-first A/B/C experiment (candidate, behavioral result unverified)
 
+[The 15 November 2026 pilot](evidence/20261115/README.md) records a corrected
+width oracle, three matched river rounds, blind image review and the timeout
+and image-delivery limitations.
+
 A = no staged Combo; B = current main pinned to `2ec0e2033bdcc783ab021efa508eaf98d0c28786`; C = this branch. Same Codex model/effort, prompt, fixture, seeds, tools and timeout. This compares the whole Combo treatment (including routing/policy), not individual rules. No new global hooks, installation or paid runs occur automatically.
 
 ## Run on the machine with Codex
@@ -41,6 +45,15 @@ These exercise the independent mechanical grader with a known-pass synthetic
 channel and deliberate defects, the full multi-seed acceptance (including
 rejection of seed-invariant geometry), the legacy seeded failures, the label
 control, staged treatment separation, locked renderer and arm order. They do not establish model behavior or visual quality.
+
+The runner normally requires a clean candidate checkout. For evaluator-only
+changes, `--allow-eval-only-dirty` permits only the four outcome-first
+evaluator files and records their SHA-256 hashes in `run.json`. Changes to
+the staged Combo treatment remain prohibited. River results distinguish the
+independent mechanical acceptance from observed structured tool image payloads
+and pending visual review. A screenshot command or an assistant claim does not
+establish image delivery, and an image payload alone does not establish that the
+current artifact was visually inspected.
 
 ## Cases
 

@@ -41,7 +41,6 @@ def check(data, seed):
     assert runs(31) == 2 and runs(64) == 1, "merge outside middle third"
     def average(rows):
         return sum(sum(y == r for x,y in wet) for r in rows) / len(rows)
-    assert average(range(75,90)) >= average(range(5,20)) - 0.5, "downstream too narrow"
     # Main width above merge, measured only in its inlet neighborhood.
     upstream = sum(40 <= x <= 60 and 5 <= y < 20 for x,y in wet) / 15
     assert average(range(75,90)) >= upstream + 1, "main does not widen"

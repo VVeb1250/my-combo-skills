@@ -91,6 +91,26 @@ def check_known_host_contamination(work_root):
                 raise RuntimeError(f"Known Combo host guidance would contaminate A: {path}. "
                                    "Use a clean evaluation CODEX_HOME/workspace; do not edit the live installation.")
 
+def image_evidence(events):
+    # A screenshot command, filename, or assistant claim is not image delivery.
+    # Even an image payload does not establish its provenance or visual review.
+    observed = []
+    for event in events:
+        item = event.get("item", {})
+        if event.get("type") != "item.completed":
+            continue
+        if item.get("type") not in ("mcp_tool_call", "image_view"):
+            continue
+        result = item.get("result")
+        if isinstance(result, dict) and any(
+            isinstance(content, dict) and content.get("type") == "image"
+            for content in result.get("content", [])
+        ):
+            observed.append(item.get("id"))
+    return {"image_payload_items": observed,
+            "delivery": "image_payload_observed" if observed else "not_observed",
+            "artifact_and_visual_inspection": "unverified"}
+
 def capture(result, case, target, blind):
     cwd = Path(result["workdir"])
     target.mkdir(parents=True, exist_ok=True)
@@ -121,6 +141,20 @@ def capture(result, case, target, blind):
         if any(r["path"] != "src/ui.py" for r in result["changed_files"]):
             result["task_failures"].append("label control changed unrelated files")
     events,_ = ab.SMOKE.parse_events(Path(result["events_path"]).read_text(encoding="utf-8"))
+    if case["id"] == "river":
+        result["evidence_by_requirement"] = {
+            "mechanical_contract": {
+                "requirements": ["JSON shape", "boundaries", "protected approach",
+                                 "connectivity", "middle-third merge", "main widening",
+                                 "determinism", "seed variation"],
+                "independent_acceptance": result.get("acceptance", {}).get("after"),
+                "scope": "fixed seeds only; row-run and width proxies",
+            },
+            "rendered_spatial_quality": {
+                "image_delivery": image_evidence(events),
+                "blind_visual_review": "pending",
+            },
+        }
     if not any(e.get("type")=="turn.completed" for e in events):
         result["environment_failures"].append("no completed turn")
     # A local Combo reference in A invalidates the treatment, not the model.
@@ -153,6 +187,8 @@ def main():
     p.add_argument("--codex-home",type=Path,help="prepared evaluation home; does not install or edit settings")
     p.add_argument("--allow-shared-host-policy",action="store_true",
                    help="acknowledge global instructions may contaminate all arms")
+    p.add_argument("--allow-eval-only-dirty",action="store_true",
+                   help="allow only modified evaluator files; record their hashes")
     a=p.parse_args()
     if a.codex_home:
         home=a.codex_home.resolve()
@@ -165,8 +201,12 @@ def main():
         p.error("baseline must be pinned main revision "+BASE)
     if subprocess.check_output(["git","-C",str(a.baseline),"status","--porcelain"],text=True).strip():
         p.error("baseline must be clean")
-    if subprocess.check_output(["git","-C",str(ROOT),"status","--porcelain"],text=True).strip():
-        p.error("candidate checkout must be clean")
+    status = subprocess.check_output(["git","-C",str(ROOT),"status","--porcelain"],text=True)
+    dirty = [line[3:] for line in status.splitlines()]
+    allowed = {"evals/outcome-first/run.py", "evals/outcome-first/acceptance/river.py",
+               "evals/outcome-first/test_mechanical.py", "evals/outcome-first/README.md"}
+    if dirty and (not a.allow_eval_only_dirty or any(path not in allowed for path in dirty)):
+        p.error("candidate must be clean, or use --allow-eval-only-dirty for evaluator files only")
     a.output=a.output.resolve()
     a.work_root=a.work_root.resolve()
     if a.output.exists():
@@ -186,6 +226,9 @@ def main():
     manifest={"baseline":BASE,"candidate":revision(ROOT),"suite":suite,"timeout":a.timeout,
               "repeat":a.repeat,"work_root":str(root),"stage_only":a.stage_only,
               "cases":selected,"limitations":"synthetic 2D proxy; shared global policy; not filesystem isolation"}
+    manifest["modified_evaluator_sha256"] = {
+        path: hashlib.sha256((ROOT/path).read_bytes()).hexdigest() for path in dirty
+    }
     save_json(a.output/"run.json",manifest)
     ab=load_harness()
     ab.ACCEPTANCE=HERE/"acceptance"
