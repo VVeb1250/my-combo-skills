@@ -20,6 +20,8 @@ evidence practices; do not cut discovery to get a shorter implementation.
   hides substantial behavior or enforces an invariant, even with one caller.
 - Minimize total future rework, not just diff size. A known required variation
   can justify a small extension seam; a hypothetical possibility cannot.
+- When evidence identifies a high-churn hotspot or repeated repair at the same boundary, inspect the related callers, state owner and change history *selectively* to determine whether the friction comes from a bad abstraction or merely independent local bugs. Prefer a cohesive deep module and a smaller meaningful API when they reduce actual reader load; apply the deletion test by checking whether removing a layer localizes complexity or merely pushes it into callers. For hard-to-reverse changes, compare two materially different viable designs without requiring two full implementations.
+- After a justified structural replacement, check for duplicate decision owners, obsolete APIs and compatibility wrappers that still expose the invalid model. Migrate supported callers and retire old paths when safe; retain externally required compatibility with a clear owner and retirement condition rather than deleting blindly.
 - Track structural debt at changed hotspots: scattered domain decisions,
   special-case patches, unclear state ownership and shotgun changes. Inspect
   architectural evidence immediately rather than waiting for failed retries;
