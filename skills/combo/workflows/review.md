@@ -33,10 +33,11 @@ mechanics that are unresolved.
    prioritize a targeted check capable of falsifying it over generic confidence
    passes. Do not expand coverage for an unaffected tiny change. Inspect guards and callers that
    could invalidate it; use a focused non-mutating probe when useful.
-5. For consequential changes, inspect reader load: redundant layers between
+5. For a consequential repair, refactor, or rework, evaluate whether the selected intervention matches the demonstrated cause. A refactor should preserve accepted behavior at affected public seams; a rework should satisfy independently defined intended behavior rather than preserve a disproven model. Inspect affected supported callers and any obsolete parallel path or compatibility shim that could reintroduce invalid behavior. Do not infer a need for rewrite from code style or the age of a module alone.
+6. For consequential changes, inspect reader load: redundant layers between
    behavior and owner, hidden mutable state, scattered domain decisions and
    contracts that callers cannot locate. Report concrete impact, not style taste.
-6. Consolidate symptoms of the same cause while preserving distinct impacts.
+7. Consolidate symptoms of the same cause while preserving distinct impacts.
    Report supported actionable issues; separate an unresolved concern when the
    missing evidence matters. Style preferences and clean lint are not behavioral
    findings or proof of correctness.
