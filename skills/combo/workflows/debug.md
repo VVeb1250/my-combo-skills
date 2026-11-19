@@ -31,8 +31,12 @@ for legacy fallback and capture of consequential discoveries.
 
 When evidence already points to wrong ownership, invalid domain states,
 scattered special cases or a shared false premise, investigate that structural
-cause immediately; the two-repair threshold is only a fallback. Inspection
-is not authorization for an out-of-scope rewrite.
+cause immediately; the two-repair threshold is only a fallback. Use
+[design](../practices/design.md) to distinguish a local **repair**, a
+behavior-preserving **refactor**, and a model/contract-changing **rework**.
+A recurring workaround is a signal to challenge the premise, not automatic
+authorization to rewrite. Inspection is not authorization for an out-of-scope
+rewrite.
 
 For risky Git-backed repairs, establish HEAD, branch and pre-existing dirty paths
 before making a change. If the task authorizes local commits, use
@@ -68,8 +72,13 @@ a bounded alternative within scope instead of accumulating cosmetic patches.
   identify the confidence gap. Use [tests](../practices/tests.md) for seam choices.
   If you forced the red by mutating code or a fixture, diff against a pristine
   copy to confirm the mutation landed before trusting the failure.
-- Make the smallest causal repair, preserving real callers' contracts. Retries,
-  catches, or refactors need evidence that they address the cause. For a recurring
+- Make the smallest cause-supported intervention. Preserve **valid** caller
+  contracts, but not historical behavior shown to contradict accepted intent.
+  A local defect calls for repair; a structural defect with valid behavior calls
+  for behavior-preserving refactor; a disproven domain model calls for scoped
+  rework against independent intended scenarios. For a necessary public contract
+  change, migrate affected callers and preserve only required compatibility.
+  Retries, catches, refactors or redesigns need evidence that they address the cause. For a recurring
   defect, prefer a durable enforcement at the responsible seam (state ownership,
   type/schema, lint/CI, or regression test) over another prose warning. Prove
   that the chosen enforcement detects the observed failure; do not add all layers
