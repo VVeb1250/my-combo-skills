@@ -26,7 +26,7 @@ class ArchitectureRecoveryGuidance(unittest.TestCase):
         design = practice("design.md")
         self.assertIn("## Choose the intervention from the cause", design)
         for term in ("**Repair:**", "**Refactor:**", "**Rework:**",
-                     "accepted intent", "disproven domain model"):
+                     "accepted intent", "domain state model"):
             self.assertIn(term, design)
         self.assertIn("Repeated failed repairs alone", design)
         self.assertIn("Routine fixes need no new interview", design)
