@@ -15,6 +15,12 @@ invariant before choosing the test shape.
   For visual or emergent behavior use an actual failing/missing-output probe
   where suitable; report an unavailable red rather than inventing one. Keep
   the check at the real call chain, not private helpers for their own sake.
+Match acceptance to the intervention, not the convenient shape of the change:
+- **Repair:** fail on the original reproduced defect and pass with the causal fix, including still-valid adjacent behavior.
+- **Refactor:** characterize the accepted observable behavior at real public seams before changing structure, then check equivalence and affected callers. Historical tests that encode a known defect are not an acceptance oracle.
+- **Rework:** specify accepted desired scenarios and invariants independently of the old implementation, including a negative case for the disproven behavior where observable. Prove the replacement satisfies those scenarios; preserve unaffected contracts, but update or remove assertions that merely enshrine the invalid premise. Do not silently change acceptance to fit new code.
+If the intervention spans multiple kinds, apply each check to its own boundary. A full rewrite, test suite or formal proof is not required for a local repair.
+
 - Prefer deterministic fixtures, pinned time or randomness, isolated state, and
   assertions on the specific symptom. "It did not crash" is rarely enough.
 - When behavior admits a falsifiable property over a broad input space
