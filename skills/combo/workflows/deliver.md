@@ -33,6 +33,13 @@ use [project ecosystem](../practices/project-ecosystem.md) to regenerate or navi
    resolve technical unknowns without reopening the interview. Choose the minimum sustainable design,
    preserving necessary extension points without speculative features.
 
+For a consequential change, use the intervention distinction in
+[design](../practices/design.md): repair a local defect, refactor when existing
+behavior is valid but its structure is costly, or rework a disproven domain model
+against accepted intended behavior. Do not treat current code, historical tests
+or a compatibility shim as authority to preserve a known defect. Do not force
+this classification or an architecture interview onto a tiny understood edit.
+
 Reuse tools and evidence, batch independent work, and use bounded
 [Subcombo delegation](../practices/delegation.md) when it reduces total cost
 without quality loss. Keep necessary discovery and actual-output checks.
@@ -56,7 +63,10 @@ composition or interaction among generators/features, make the slice a small
 integrated outcome (not merely a feature that exists in isolation). For a
 materially uncertain quality method, first produce and inspect a bounded real
 candidate; carry the demonstrated method into the integrated slice. For mechanical migration,
-use expand/migrate/contract when it preserves working callers. Keep validation
+use expand/migrate/contract when it preserves working callers. For a justified
+structural replacement, migrate all affected supported callers, confirm whether
+external compatibility is required, and remove obsolete duplicate APIs, owners
+or adapters once safe; do not leave invalid legacy paths as agent examples. Keep validation
 and error handling at trust boundaries; use [security](../practices/security.md)
 when those boundaries change. Add dependencies, flexibility, or adjacent changes
 only when the requirement or causal evidence needs them.
