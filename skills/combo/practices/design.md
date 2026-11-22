@@ -6,6 +6,18 @@ ownership. Do not wait for the agent to declare a decision unresolved:
 inspect design risk from the request, code and accepted requirements first.
 Start from the user outcome and current domain language.
 
+## Choose the intervention from the cause
+
+Before a consequential fix or redesign, separate **accepted intent**, **observed behavior**, and the **implementation's current assumptions**. Legacy behavior, tests and caller shapes are evidence, not automatic proof that the model is right. Choose the smallest cause-supported intervention; these modes may coexist within a task:
+
+- **Repair:** the domain model and ownership are sound, but local implementation violates the accepted contract. Reproduce the symptom, correct the cause, and prevent the regression.
+- **Refactor:** intended observable behavior is sound, but boundaries, ownership, or indirection make change unsafe or unnecessarily expensive. Establish a behavioral baseline and prove equivalence at affected public seams.
+- **Rework:** a domain state model, responsibility assignment, or architectural premise cannot express required behavior without conflicting invariants or recurrent workarounds. Specify intended scenarios independently of historical implementation, redesign the responsible boundary, and prove the new contract; do not preserve known-invalid behavior merely to keep old tests green.
+
+Signs of structural trouble include scattered owners for one domain decision, repeated cross-module patches, incompatible states, or a falsified shared premise. Repeated failed repairs alone are a lead, not proof that a rewrite is warranted. Inspect a supported structural cause immediately; do not wait for two patch attempts. When uncertain, use a small discriminating caller/state probe instead of guessing at the next patch.
+
+For a justified rework, challenge how the system would be designed if the accepted behavior existed from the start. Compare materially different viable boundaries when the change is hard to reverse, then replace only the necessary ownership/model slice. Preserve valid public compatibility and unaffected behavior; identify callers to migrate and legacy paths to retire once unsupported usage is ruled out. Keep the reasoning in working context unless a future executor needs a decision record. Routine fixes need no new interview or architecture report.
+
 - Read real callers and nearby tests before choosing a boundary. Keep the
   responsibility where the behavior and data naturally belong.
 - Prefer a deep module with a small meaningful interface. Existing seams are

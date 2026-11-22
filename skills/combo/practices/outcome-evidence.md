@@ -38,7 +38,10 @@ new user approval for routine, objectively verifiable work.
 ## Reusable verification entrypoints
 
 If a required real outcome is difficult to observe repeatedly, locate the
-project's existing run/capture/inspection commands first. When missing and
+project's existing run/capture/inspection commands first. For a rework involving
+interactive, generated or emergent output, ensure the evidence exercises the
+real replacement route and distinguishes it from the rejected historical
+behavior; static validity alone cannot validate a corrected domain model. When missing and
 within scope, make the smallest runnable entrypoint for the actual pipeline
 with explicit inputs, current revision, observable outputs and known limits.
 Run it and inspect the result; link it from the relevant `.combo/` domain/spec
