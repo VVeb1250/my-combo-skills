@@ -5,7 +5,10 @@ const yaml = require(path.join(process.env.APPDATA, 'npm/node_modules/promptfoo/
 const root = path.resolve(__dirname, '..');
 const packageNamePattern = /^combo(?:-[a-z0-9]+)*$/;
 const defaultOwnershipIndex = 'skills/combo/.combo-owned.json';
-const adapterTarget = 'agents/combo-worker.toml';
+const adapterTargets = new Set([
+  'agents/combo-worker.toml',
+  ...['research', 'implement', 'verify'].map(role => `agents/subcombo-${role}.toml`),
+]);
 const errors = [];
 const stats = [];
 const relativeLink = /!?\[[^\]]*\]\(([^)\s]+)(?:\s+['"][^)]*['"])?\)/g;
@@ -186,14 +189,18 @@ try {
   if (ownershipIndex !== defaultOwnershipIndex) {
     errors.push(`install-manifest.json: ownership_index must be ${defaultOwnershipIndex}`);
   }
-  for (const entry of manifest.adapter_files || []) {
-    const target = canonicalRelative(entry && entry.target, 'install-manifest.json: adapter target');
-    if (target !== adapterTarget) errors.push(`install-manifest.json: adapter target must be ${adapterTarget}`);
-    const source = canonicalRelative(entry && entry.source, 'install-manifest.json: adapter source');
-    if (source && !source.startsWith('adapters/')) errors.push(`install-manifest.json: unsafe adapter source ${source}`);
-  }
   if (!Array.isArray(manifest.adapter_files)) errors.push('install-manifest.json: adapter_files must be an array');
-  else if (manifest.adapter_files.length > 1) errors.push('install-manifest.json: only combo-worker.toml may be declared as an adapter');
+  else {
+    const seenTargets = new Set();
+    for (const entry of manifest.adapter_files) {
+      const target = canonicalRelative(entry && entry.target, 'install-manifest.json: adapter target');
+      if (target && !adapterTargets.has(target)) errors.push(`install-manifest.json: unsupported adapter target ${target}`);
+      if (target && seenTargets.has(target)) errors.push(`install-manifest.json: duplicate adapter target ${target}`);
+      if (target) seenTargets.add(target);
+      const source = canonicalRelative(entry && entry.source, 'install-manifest.json: adapter source');
+      if (source && !source.startsWith('adapters/')) errors.push(`install-manifest.json: unsafe adapter source ${source}`);
+    }
+  }
   for (const entry of manifest.disable_local || []) {
     const value = typeof entry === 'string' ? entry : entry.path;
     const normalized = canonicalRelative(value, 'install-manifest.json: disable path');

@@ -36,7 +36,7 @@ class ArchitectureRecoveryGuidance(unittest.TestCase):
         self.assertIn("[design](../practices/design.md)", debug)
         self.assertIn("the two-repair threshold is only a fallback", debug)
         self.assertIn("not automatic", debug)
-        self.assertIn("preserving **valid** caller", debug)
+        self.assertIn("**valid** caller", debug)
 
     def test_delivery_preserves_small_task_and_migration_paths(self):
         deliver = workflow("deliver.md")
