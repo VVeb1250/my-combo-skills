@@ -11,9 +11,9 @@ user-invocable: true
 This is a navigation map, not an execution router. Use only the method whose problem is present; continue native execution without declaring a primary workflow.
 
 - [Alignment](methods/alignment.md): uncertain user-owned intent, terminology.
-- [Design](methods/design.md): reuse, ownership, structure, intervention choice.
+- [Design](methods/design.md): reuse, ownership, structure, intervention and interaction choices.
 - [Implementation](methods/implementation.md): behavioral tests and vertical slices.
-- [Diagnosis](methods/diagnosis.md): unexplained failure, cause, regression.
+- [Diagnosis](methods/diagnosis.md): unexplained failure, cause, regression, missing diagnostic evidence.
 - [Experiment](methods/experiment.md): uncertain mechanism or quality.
 - [Assurance](methods/assurance.md): review, verification, actual acceptance.
 - [Wiki](methods/wiki.md): cold-start navigation, semantic read/write, canonical ownership.

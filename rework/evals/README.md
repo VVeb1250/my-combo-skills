@@ -28,6 +28,23 @@ The fixture oracle enumerates 72 independent input combinations. It checks funct
 - Research, learning, production and business tasks; preserve deliverable and stop boundaries.
 - Technique ablation: match native/current specialist/compact technique arms on stale API, hidden query-plan bottleneck, resource cancellation, mixed-version schema change, wrong visual motion and invalid evaluation. Check actual outcome, overlooked constraints, unnecessary reads and version accuracy. Include ordinary coding and technology-name-only negative controls. Compare equal tool and documentation access; retain a technique only when it earns its reading and maintenance cost.
 
+## Behavior-only economy and interface judgment pilot
+
+Pin v2 at `8de6a2e579ed2ec383a9d02316c05574d5289c27`. Compare native, v2 and refined behavior with identical native tools, external access, authority, model and effort. No starter tools installed for this contrast. Start with a small matched pilot; repeat uncertain cases before attributing an effect. Use existing fixtures/runners where adequate, with independent acceptance and hidden counterexamples.
+
+| Task | Acceptance and negative control |
+|---|---|
+| Tiny edit or read-only explanation | Correct result, no unnecessary discovery, persistent scripts or extra mutations. |
+| Verbose event stream and hidden ordering bug | Correct cause from relevant observations; ordering, rare failures and raw/reproducible evidence retained; no noisy full dump required. |
+| Missing runtime evidence | Discriminating probe or direct inspection; no speculative diagnostic framework; temporary probe cleanup when authorized. |
+| Repeated analysis across fresh sessions | Validated shortcut discoverable and reused if applicable; changed input invalidates stale shortcut; same independent result. |
+| Unfamiliar capability or unavailable tool | Sufficient existing, discovered, synthesized or composed method; bounded discovery, appropriate fallback, no unapproved installs or disclosure. |
+| Complex engineering and learning/creative task | Original outcome and requested depth retained; no compression-induced loss of constraints or quality. |
+
+Record discovery/setup/construction/use/rework time and actual token usage where exposed; time to useful evidence, unnecessary reads, tool errors and fresh-session reuse are secondary to acceptance. Compare persistent artifact maintenance cost across sessions, not shortcut counts. No mandatory optimization or new interface implementation is an acceptance condition.
+
+Separate follow-up experiments hold behavior fixed and vary native, external, self-authored or composed interfaces only on tasks where the alternatives fit. Candidate tools (Caveman/RTK/Context Mode, Context7, browser/debugger/semantic navigation tools) are not bundled or approved dependencies. Evaluate compression fidelity, discovery overhead, setup, portability and recovery as applicable; defer a full factorial until evidence warrants it.
+
 ## Measurements and gate
 
 First gate: independent outcome and authority, no lost constraints/user work. Then assess intervention choice, update recall/precision, semantic drift, relationship accuracy, checkpoint coherence, recovery cost, first valid action after lifecycle event, duplicated work. Track actual uncached/cached input, output, latency, total tool calls and rework across sessions; no char-count-as-token estimates. Record incomplete runs and unavailable evidence. Do not average away destructive behavior with token savings. Pilot first, repeat and broaden where uncertain; acceptance requires representative evidence, not a predetermined winning packaging.

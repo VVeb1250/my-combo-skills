@@ -8,6 +8,8 @@ Start at the existing project map (README, architecture map or `.combo/INDEX.md`
 
 A useful project map exposes purpose, boundaries, cross-cutting invariants, and descriptive problem-to-domain links. A domain page gives a short mental model, contracts, ownership and relationships, non-obvious rationale/failure modes, runnable verification and relevant links. Prefer semantic cohesion; split details only when independent reading or maintenance becomes cheaper. The link should tell a cold reader what question it answers and where changes belong. Use existing terminology; don't duplicate signatures or generated counts cheaply recoverable from source.
 
+When an interface or shortcut proves useful beyond the current task, record its purpose, invocation or reasoning path, applicability, evidence, limits and fallback at the relevant domain owner. Link rather than duplicate implementation; label unvalidated candidates honestly. Keep discovery cues near the problem they solve. Correct or retire stale shortcuts when their assumptions no longer hold. No required shortcut folder or catalog.
+
 ## Write at the change, not the end
 
 - Accepted material intent: patch the canonical contract before dependent work, explicitly mark unimplemented behavior when consequential.

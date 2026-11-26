@@ -16,6 +16,10 @@ Scope: targeted read of the current upstream core mechanisms and the existing Co
 
 Common obligation belongs in policy; skill description identifies a distinct problem; short root names conditions for following a method; detailed technique is a reference. Do not copy shared policy into each entry. Use domain nouns and symptoms as navigation cues. Avoid procedural restatement and token quotas. Measure actual behavior and total read/write/recovery cost rather than file size. A skill call is not evidence that its method was applied.
 
+## Behavior refinement provenance
+
+User design discussion on AX, shortcut evolution, question-driven logging and Caveman-inspired communication informed this delta. Extend the existing necessity/reuse, causal observation and context-efficiency mechanisms without importing a persona, compression engine, external tool inventory or new runtime. The proposed economy and interface strategy remain hypotheses for matched evaluation, not measured savings.
+
 ## Outstanding audit
 
 Inspect full installer, native discovery and host versions. Review current upstream selectively for uncovered consequential mechanisms and verify licenses before copying. The legacy 331 references and 27 specialist notes are historical source inventory, not a target coverage quota. No claims of benchmark superiority.
