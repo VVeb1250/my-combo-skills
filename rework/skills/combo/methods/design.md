@@ -1,0 +1,9 @@
+# Intervention and interfaces
+
+Before adding code, identify the intended behavior, actual owner, callers, relevant invariants and the cost of change. Prefer an existing mechanism, platform capability or installed dependency that fully meets the need. Delete obsolete task-owned complexity instead of adding compensating layers. Do not trade correctness, performance, security, accessibility or failure handling for fewer lines.
+
+Choose from keep/reuse/remove/repair/refactor/rework; these are alternatives, not stages. Repair a defect at the responsible owner when the model is sound. Refactor a sound contract when structure makes change unsafe; establish equivalence first. Rework a falsified premise or invalid ownership model when the desired invariants cannot coexist under it. Repeated patches are a signal, not proof; probe the shared assumption immediately when evidence warrants. Preserve valid behavior and compatibility, not assertions that encode the known-invalid premise.
+
+A deep interface lets callers exercise meaningful behavior with little knowledge of implementation. Interface includes constraints, ordering, errors, configuration and performance, not just signatures. Trace input → state/data owner → decision → output. Keep decisions local, avoid pass-through wrappers and speculative variants. A real adapter or required variation can justify a seam before a second implementation. Compare materially different designs when risk or uncertainty justifies it; use a small [experiment](experiment.md) rather than a speculative rewrite.
+
+Before a risky migration preserve a recoverable [Git baseline](git.md). Identify affected callers and migrate them coherently; retire legacy paths only once valid compatibility and actual use are accounted for. Record the accepted invariant/rationale in its [wiki owner](wiki.md). Verify with [intervention-specific evidence](implementation.md), not a blanket green test count.

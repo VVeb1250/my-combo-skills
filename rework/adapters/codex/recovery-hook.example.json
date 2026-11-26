@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "^compact$|^resume$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"Combo recovery: context was reset or resumed. Before consequential work, recover latest authorized intent, relevant wiki sections, actual Git branch/worktree/index and operation state, valid evidence, pending wiki/checkpoint work and the next unresolved action. Read narrowly and do not restart completed work, assume ownership, or mutate after a stop.\""
+          }
+        ]
+      }
+    ]
+  }
+}
