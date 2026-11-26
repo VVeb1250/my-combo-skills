@@ -1,0 +1,9 @@
+# Context lifecycle
+
+The context is temporary. Keep accepted material intent in its canonical contract, meaningful discoveries in the wiki, verified or WIP progress in authorized Git checkpoints, and unresolved consequential state in an existing discoverable change note when needed. Do not rely on a final answer, native plan, transcript or future hook as the only copy of binding intent. No routine handoff file or session log.
+
+At fresh entry, recover the relevant project map and actual state before consequential work. After compaction or resumption, treat the summary as a hint, not authority: recover latest user intent, affected canonical sections, branch/worktree/HEAD, staged/unstaged/untracked and in-progress Git state, applicable evidence, pending Wiki/checkpoint duties and next unresolved action. Use narrow reads rather than replaying everything. Verify that inherited evidence still applies. If original intent/ownership cannot be recovered, preserve uncertain work, state the gap and ask only the necessary decision. Never infer that all dirty files belong to you.
+
+A question is not cancellation. A scope change supersedes only affected intent; defer leaves the requirement intact; explicit cancellation supersedes the relevant contract, not unrelated work. Before changing focus, reconcile known material changes and preserve meaningful progress when authorized. Pause at a safe boundary if permitted; hard stop means no further mutations, including docs or Git. Crash recovery can only use existing durable information. Do not promise lossless recovery.
+
+Use native compaction/resume events where supported to inject a short recovery cue, not a full wiki or an automatic mutation. The same procedure must work without hooks when resumption is detected. Avoid recursion and stop-hook loops. No scanning unrelated sessions or changing host permissions.

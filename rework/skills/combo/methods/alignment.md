@@ -1,0 +1,7 @@
+# Align intent and domain
+
+Read the relevant accepted contract and source before asking about an apparent ambiguity. Separate facts (investigate), routine mechanisms (decide), and consequential preferences/trade-offs (ask). Do not ask for permission to make ordinary technical decisions already delegated. For explicit grilling, map dependencies between unresolved decisions; ask only the current independent frontier, with a recommendation and concrete consequences. Do not require another approval when the user has already authorized implementation and the frontier is resolved.
+
+Use the project's terminology. Expose overloaded words with a concrete scenario, identify domain identities, states and transitions, and trace who owns each decision. Challenge a contradiction between stated behavior and current code; code is evidence of reality, not proof of intent. Define observable examples and meaningful exceptions before selecting implementation. Persist settled material intent in the existing contract within authority; avoid a separate spec/glossary if its owner already exists. Separate proposed, accepted, implemented and verified claims.
+
+For cross-service contracts, use an existing machine-checkable schema/type if it is authoritative; one boundary artifact, consumer jobs, compatibility and error cases. Do not add schema infrastructure to a simple atomic module. When a durable decision is surprising, difficult to reverse and trades real alternatives, record the rationale at its existing owner. Continue at the authorized stopping point.

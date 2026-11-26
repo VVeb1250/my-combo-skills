@@ -1,0 +1,7 @@
+# Current evidence
+
+Candidate checks: `python -B -m unittest discover -s rework/tests -v` passed (7 tests), including metadata, local links, method discoverability, static recovery hook command, selective technique discovery/no legacy catalog dependency, and baseline oracle discrimination. First pass rejected a semicolon in the static echo command; removed it, reran the check. Public fixture baseline: `cd rework/evals/fixtures/commander && python -B -m unittest discover -s tests -v` passed (5 tests). Independent oracle baseline passes and smoke/threshold target phases reject the unchanged baseline. The oracle also accepts synthetic corrected variants and rejects a manual-order regression. This is not a live agent result or host hook delivery test.
+
+The candidate is not yet integrated with the actual installer or source library. Live Codex/Claude behavior, native compaction, Windows hook shell, migration/rollback, selective source coverage, technique ablations and model token consumption remain unverified. See [integration](../INTEGRATION.md).
+
+Behavior refinement: rechecked the v2 snapshot against its published `rework/` tree, then reran the unchanged structural suite (7/7) and Commander baseline (5/5) on the refined candidate. `git diff --check` passed. No added skill entries, dependencies, runtime code or adapter changes. Economy, discovery, shortcut and observability behavior remain untested with actual agents; the pilot is specified in [evaluation](README.md).

@@ -1,0 +1,5 @@
+# Production
+
+Recover the user's goal, audience, medium, source facts, constraints and acceptance. Respect voice and format; separate required fidelity from creative choices. For revisions preserve unaffected content and layout. Use native artifact tooling and relevant installed skills rather than implementing a new renderer or delivering a proxy. If the intended quality is uncertain, use a bounded real candidate and inspect it before scaling.
+
+Writing: verify facts, argument, structure, audience, tone, claims and completeness. Visual/3D/media: inspect the actual artifact at relevant framing, scales and states; compare supplied references without replacing user intent with generic taste. UI: validate meaningful interaction and persistence, not only screenshot or build. Documents: render when pagination/layout matters and inspect actual output. Preserve editable source where required. Report unverified fidelity or missing tools instead of claiming success. Do not publish, send or contact anyone without authority.
